@@ -1,0 +1,1639 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR MATE Desktop Environment team
+# This file is distributed under the same license as the eom package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Yasen Pramatarov <yasen@lindeas.com>, 2020
+# clefebvre <clement.lefebvre@linuxmint.com>, 2020
+# Stefano Karapetsas <stefano@karapetsas.com>, 2020
+# Kiril Kirilov <cybercop_montana@abv.bg>, 2020
+# Любомир Василев, 2020
+# Georgi Georgiev <georgiev_1994@abv.bg>, 2020
+# breaker loc <breaker9loc@gmail.com>, 2020
+# Борислав Георгиев <crazyroler@gmail.com>, 2020
+# Замфир Йончев <zamfir.yonchev@gmail.com>, 2020
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: eom 1.23.1\n"
+"Report-Msgid-Bugs-To: http://www.mate-desktop.org\n"
+"POT-Creation-Date: 2020-01-10 14:33+0100\n"
+"PO-Revision-Date: 2020-02-14 12:07+0000\n"
+"Last-Translator: Замфир Йончев <zamfir.yonchev@gmail.com>, 2020\n"
+"Language-Team: Bulgarian (https://www.transifex.com/mate/teams/13566/bg/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: bg\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:946
+#, c-format
+msgid "Show “_%s”"
+msgstr "Показване на “_%s”"
+
+#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1420
+msgid "_Move on Toolbar"
+msgstr "П_оставяне в лентата с инструменти"
+
+#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1421
+msgid "Move the selected item on the toolbar"
+msgstr "Преместване на избрания обект в лентата с инструменти"
+
+#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1422
+msgid "_Remove from Toolbar"
+msgstr "Пр_емахване от лентата с инструменти"
+
+#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1423
+msgid "Remove the selected item from the toolbar"
+msgstr "Премахване на избрания обект от лентата с инструменти"
+
+#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1424
+msgid "_Delete Toolbar"
+msgstr "П_ремахване на лентата с инструменти"
+
+#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1425
+msgid "Remove the selected toolbar"
+msgstr "Премахване на избраната лента с инструменти"
+
+#: cut-n-paste/toolbar-editor/egg-toolbar-editor.c:483
+msgid "Separator"
+msgstr "Разделител"
+
+#: data/eom.appdata.xml.in:6 src/eom-window.c:2640
+msgid "Eye of MATE"
+msgstr "Eye of MATE"
+
+#: data/eom.appdata.xml.in:7
+msgid "Simple image viewer"
+msgstr "Опростен преглед на изображения"
+
+#: data/eom.appdata.xml.in:9
+msgid ""
+"Eye of MATE is a simple viewer for browsing images on your computer. Once an"
+" image is loaded, you can zoom and rotate the image, and also view "
+"subsequent images in the directory the image was loaded from."
+msgstr ""
+
+#: data/eom.desktop.in.in:3 src/main.c:65 src/main.c:166
+msgid "Eye of MATE Image Viewer"
+msgstr "Програма за преглед на изображения EoG"
+
+#: data/eom.desktop.in.in:4
+msgid "Browse and rotate images"
+msgstr "Преглед и завъртане на изображения"
+
+#. Translators: Do NOT translate or transliterate this text (this is an icon
+#. file name)!
+#: data/eom.desktop.in.in:8
+msgid "eom"
+msgstr ""
+
+#. Translators: Search terms to find this application. Do NOT translate or
+#. localize the semicolons! The list MUST also end with a semicolon!
+#: data/eom.desktop.in.in:14
+msgid "image;viewer;JPEG;PNG;TIFF;SVG;MATE;photos;browse;thumbnails;rotate;"
+msgstr ""
+
+#: data/eom-image-properties-dialog.ui:8
+msgid "Image Properties"
+msgstr "Настройки на изображението"
+
+#: data/eom-image-properties-dialog.ui:54
+msgid "_Previous"
+msgstr "_Предишен"
+
+#: data/eom-image-properties-dialog.ui:101
+msgid "_Next"
+msgstr "_Следващ"
+
+#: data/eom-image-properties-dialog.ui:198
+msgid "Name:"
+msgstr "Име:"
+
+#: data/eom-image-properties-dialog.ui:217
+msgid "Width:"
+msgstr "Широчина:"
+
+#: data/eom-image-properties-dialog.ui:235
+msgid "Height:"
+msgstr "Височина:"
+
+#: data/eom-image-properties-dialog.ui:253
+msgid "Type:"
+msgstr "Вид:"
+
+#: data/eom-image-properties-dialog.ui:271
+msgid "Bytes:"
+msgstr "Байтове:"
+
+#: data/eom-image-properties-dialog.ui:289
+#: data/eom-image-properties-dialog.ui:614
+msgid "Location:"
+msgstr "Местоположение:"
+
+#: data/eom-image-properties-dialog.ui:422
+msgid "General"
+msgstr "Общи"
+
+#: data/eom-image-properties-dialog.ui:455
+msgid "Aperture Value:"
+msgstr "Стойност на блендата:"
+
+#: data/eom-image-properties-dialog.ui:471
+msgid "Exposure Time:"
+msgstr "Време на експозицията:"
+
+#: data/eom-image-properties-dialog.ui:487
+msgid "Focal Length:"
+msgstr "Фокусно разстояние:"
+
+#: data/eom-image-properties-dialog.ui:503
+msgid "Flash:"
+msgstr "Светкавица:"
+
+#: data/eom-image-properties-dialog.ui:519
+msgid "ISO Speed Rating:"
+msgstr "Чувствителност по ISO:"
+
+#: data/eom-image-properties-dialog.ui:535
+msgid "Metering Mode:"
+msgstr "Режим на мерене:"
+
+#: data/eom-image-properties-dialog.ui:551
+msgid "Camera Model:"
+msgstr "Модел на фотоапарата:"
+
+#: data/eom-image-properties-dialog.ui:568
+msgid "Date/Time:"
+msgstr "Дата и час:"
+
+#: data/eom-image-properties-dialog.ui:598
+msgid "Description:"
+msgstr "Описание:"
+
+#: data/eom-image-properties-dialog.ui:630
+msgid "Keywords:"
+msgstr "Ключови думи:"
+
+#: data/eom-image-properties-dialog.ui:646
+msgid "Author:"
+msgstr "Автор:"
+
+#: data/eom-image-properties-dialog.ui:662
+msgid "Copyright:"
+msgstr "Авторски права:"
+
+#: data/eom-image-properties-dialog.ui:941
+#: data/eom-image-properties-dialog.ui:990 data/metadata-sidebar.ui:409
+msgid "Details"
+msgstr "Подробности"
+
+#: data/eom-image-properties-dialog.ui:966
+msgid "Metadata"
+msgstr "Допълнителни данни"
+
+#: data/eom-multiple-save-as-dialog.ui:16
+msgid "Save As"
+msgstr "Запазване като"
+
+#: data/eom-multiple-save-as-dialog.ui:101
+msgid "<b>%f:</b> original filename"
+msgstr "<b>%f:</b> оригинално име на файла"
+
+#: data/eom-multiple-save-as-dialog.ui:119
+msgid "<b>%n:</b> counter"
+msgstr "<b>%n:</b> брояч"
+
+#: data/eom-multiple-save-as-dialog.ui:169
+msgid "Choose a folder"
+msgstr "Изберете папка"
+
+#: data/eom-multiple-save-as-dialog.ui:182
+msgid "Destination folder:"
+msgstr "Целева папка:"
+
+#: data/eom-multiple-save-as-dialog.ui:194
+msgid "Filename format:"
+msgstr "Формат на името:"
+
+#: data/eom-multiple-save-as-dialog.ui:212
+msgid "File Path Specifications"
+msgstr "Характеристики на файловия път"
+
+#: data/eom-multiple-save-as-dialog.ui:253
+msgid "Start counter at:"
+msgstr "Стартиране брояча на:"
+
+#: data/eom-multiple-save-as-dialog.ui:285
+msgid "Replace spaces with underscores"
+msgstr "Замяна на интервалите с долни черти"
+
+#: data/eom-multiple-save-as-dialog.ui:307
+msgid "Options"
+msgstr "Настройки"
+
+#: data/eom-multiple-save-as-dialog.ui:369
+msgid "Rename from:"
+msgstr "Преименуване от:"
+
+#: data/eom-multiple-save-as-dialog.ui:381
+msgid "To:"
+msgstr "До:"
+
+#: data/eom-multiple-save-as-dialog.ui:396
+msgid "File Name Preview"
+msgstr "Преглед на файловото име"
+
+#: data/eom-preferences-dialog.ui:16
+msgid "Eye of MATE Preferences"
+msgstr "Настройки на програмата"
+
+#: data/eom-preferences-dialog.ui:88
+msgid "Image Enhancements"
+msgstr "Подобряване на изображението"
+
+#: data/eom-preferences-dialog.ui:117
+msgid "Smooth images when zoomed-_out"
+msgstr "Заглаждане при _намаляване"
+
+#: data/eom-preferences-dialog.ui:155
+msgid "Smooth images when zoomed-_in"
+msgstr "Заглаждане при _увеличаване"
+
+#: data/eom-preferences-dialog.ui:193
+msgid "_Automatic orientation"
+msgstr "_Автоматично завъртане"
+
+#: data/eom-preferences-dialog.ui:231
+msgid "Background"
+msgstr "Фон"
+
+#: data/eom-preferences-dialog.ui:250
+msgid "As custom color:"
+msgstr "Като цвят:"
+
+#: data/eom-preferences-dialog.ui:267 data/org.mate.eom.gschema.xml.in:16
+msgid "Background Color"
+msgstr "Фонов цвят"
+
+#: data/eom-preferences-dialog.ui:300
+msgid "Transparent Parts"
+msgstr "Прозрачни части"
+
+#: data/eom-preferences-dialog.ui:335
+msgid "As check _pattern"
+msgstr "Като _шахматна дъска"
+
+#: data/eom-preferences-dialog.ui:356
+msgid "As custom c_olor:"
+msgstr "Като _цвят:"
+
+#: data/eom-preferences-dialog.ui:377
+msgid "Color for Transparent Areas"
+msgstr "Оцветяване на прозрачните зони"
+
+#: data/eom-preferences-dialog.ui:395
+msgid "As _background"
+msgstr "Като _фон"
+
+#: data/eom-preferences-dialog.ui:437
+msgid "Image View"
+msgstr "Преглед на изображения"
+
+#: data/eom-preferences-dialog.ui:461
+msgid "Image Zoom"
+msgstr "Мащаб"
+
+#: data/eom-preferences-dialog.ui:496
+msgid "E_xpand images to fit screen"
+msgstr "Раз_ширяване на изображенията за напасване към екрана"
+
+#: data/eom-preferences-dialog.ui:541
+msgid "Sequence"
+msgstr "Последователност"
+
+#: data/eom-preferences-dialog.ui:583
+msgid "_Switch image after:"
+msgstr "_Смяна на изображението след:"
+
+#: data/eom-preferences-dialog.ui:611
+msgid "seconds"
+msgstr "секунди"
+
+#: data/eom-preferences-dialog.ui:628
+msgid "_Random sequence"
+msgstr "Случайна последователност"
+
+#: data/eom-preferences-dialog.ui:644
+msgid "_Loop sequence"
+msgstr "П_оследователност на завъртанията"
+
+#: data/eom-preferences-dialog.ui:688
+msgid "Slideshow"
+msgstr "Прожекция"
+
+#: data/eom-preferences-dialog.ui:722
+msgid "Plugins"
+msgstr "Приставки"
+
+#: data/metadata-sidebar.ui:29 src/eom-print-image-setup.c:896
+msgid "Size"
+msgstr "Размер"
+
+#: data/metadata-sidebar.ui:46
+msgid "Type"
+msgstr "Вид"
+
+#: data/metadata-sidebar.ui:63
+msgid "File Size"
+msgstr ""
+
+#: data/metadata-sidebar.ui:82
+msgid "Folder"
+msgstr "Папка"
+
+#: data/metadata-sidebar.ui:99
+msgid "Aperture"
+msgstr ""
+
+#: data/metadata-sidebar.ui:116
+msgid "Exposure"
+msgstr ""
+
+#: data/metadata-sidebar.ui:133
+msgid "ISO"
+msgstr ""
+
+#: data/metadata-sidebar.ui:151
+msgid "Metering"
+msgstr ""
+
+#: data/metadata-sidebar.ui:169 src/eom-metadata-details.c:65
+msgid "Camera"
+msgstr "Фотоапарат"
+
+#: data/metadata-sidebar.ui:187
+msgid "Date"
+msgstr "Дата"
+
+#: data/metadata-sidebar.ui:204
+msgid "Time"
+msgstr "Време"
+
+#: data/metadata-sidebar.ui:380
+msgid "Focal Length"
+msgstr "Фокална дължина"
+
+#: data/org.mate.eom.gschema.xml.in:11
+msgid "Automatic orientation"
+msgstr "Автоматично завъртане"
+
+#: data/org.mate.eom.gschema.xml.in:12
+msgid ""
+"Whether the image should be rotated automatically based on EXIF orientation."
+msgstr ""
+"Дали изображението да бъде завъртано автоматично в зависимост на "
+"ориентацията в EXIF."
+
+#: data/org.mate.eom.gschema.xml.in:17
+msgid ""
+"The color that is used to fill the area behind the image. If the use-"
+"background-color key is not set, the color is determined by the active GTK+ "
+"theme instead."
+msgstr ""
+"Цветът, който се използва за запълване на областта зад изображението. Ако "
+"ключът use-background-color е лъжа, цветът се определя от текущата тема на "
+"GTK+."
+
+#: data/org.mate.eom.gschema.xml.in:21
+msgid "Use a custom background color"
+msgstr "Използване на цвят на фона, избран от потребителя"
+
+#: data/org.mate.eom.gschema.xml.in:22
+msgid ""
+"If this is active, the color set by the background-color key will be used to"
+" fill the area behind the image. If it is not set, the current GTK+ theme "
+"will determine the fill color."
+msgstr ""
+"Ако е истина, цветът зададен чрез ключа background-color, ще се използва за "
+"запълване на областта зад изображението. Ако е лъжа, цветът ще се определи "
+"от текущата тема на GTK+."
+
+#: data/org.mate.eom.gschema.xml.in:26
+msgid "Interpolate Image"
+msgstr "Интерполиране на изображението"
+
+#: data/org.mate.eom.gschema.xml.in:27
+msgid ""
+"Whether the image should be interpolated on zoom-out. This leads to better "
+"quality but is somewhat slower than non-interpolated images."
+msgstr ""
+"Дали изображението да бъде интерполирано при увеличение или не. Това води до"
+" по-добро качество и по-бавно показване."
+
+#: data/org.mate.eom.gschema.xml.in:31
+msgid "Extrapolate Image"
+msgstr "Екстраполиране на изображението"
+
+#: data/org.mate.eom.gschema.xml.in:32
+msgid ""
+"Whether the image should be extrapolated on zoom-in. This leads to blurry "
+"quality and is somewhat slower than non-extrapolated images."
+msgstr ""
+"Дали изображението да бъде екстраполирано при увеличение или не. Това води "
+"до по-мъгляво качество при големи увеличения и по-бавно показване."
+
+#: data/org.mate.eom.gschema.xml.in:36
+msgid "Transparency indicator"
+msgstr "Индикатор на прозрачността"
+
+#: data/org.mate.eom.gschema.xml.in:37
+msgid ""
+"Determines how transparency should be indicated. Valid values are checked, "
+"color and none. If color is chosen, then the trans-color key determines the "
+"color value used."
+msgstr ""
+"Определя как прозрачността да бъде показвана. Проверява се валидността на "
+"стойностите - цвят и без определение. Ако цвят е избран, копчето за транс-"
+"цветността определя величината на цвета."
+
+#: data/org.mate.eom.gschema.xml.in:41
+msgid "Scroll wheel zoom"
+msgstr "Увеличение с колелцето на мишката"
+
+#: data/org.mate.eom.gschema.xml.in:42
+msgid "Whether the scroll wheel should be used for zooming."
+msgstr "Включване на възможност за увеличение с колелцето на мишката."
+
+#: data/org.mate.eom.gschema.xml.in:46
+msgid "Zoom multiplier"
+msgstr "Коефициент на увеличение"
+
+#: data/org.mate.eom.gschema.xml.in:47
+msgid ""
+"The multiplier to be applied when using the mouse scroll wheel for zooming. "
+"This value defines the zooming step used for each scroll event. For example,"
+" 0.05 results in a 5% zoom increment for each scroll event and 1.00 result "
+"in a 100% zoom increment."
+msgstr ""
+"Коефициентът, който да се използва при увеличение с колелцето на мишката. "
+"Тази стойност определя стъпката за увеличение при всяко движение на "
+"колелцето. Например 0.05 означава коефициент 5% увеличение или намаляване "
+"при движение на колелцето, а 1.00 означава 100% промяна на увеличението."
+
+#: data/org.mate.eom.gschema.xml.in:51
+msgid "Transparency color"
+msgstr "Цвят на прозрачността"
+
+#: data/org.mate.eom.gschema.xml.in:52
+msgid ""
+"If the transparency key has the value COLOR, then this key determines the "
+"color which is used for indicating transparency."
+msgstr ""
+"Ако ключът за прозрачността има стойността „COLOR“, тогава той определя "
+"цвета, който ще бъде използван за изобразяване на прозрачността."
+
+#: data/org.mate.eom.gschema.xml.in:58
+msgid "Randomize the image sequence"
+msgstr "Случайно повторение на изображенията"
+
+#: data/org.mate.eom.gschema.xml.in:59
+msgid "Whether the sequence of images should be shown in an random loop."
+msgstr ""
+"Дали последователността от изображения да бъде показвана чрез случаен процес"
+" на повтаряне."
+
+#: data/org.mate.eom.gschema.xml.in:63
+msgid "Loop through the image sequence"
+msgstr "Повтаряне на последователността на изображенията"
+
+#: data/org.mate.eom.gschema.xml.in:64
+msgid "Whether the sequence of images should be shown in an endless loop."
+msgstr ""
+"Дали последователността от изображения да бъде показвана чрез безкраен "
+"процес на повтаряне."
+
+#: data/org.mate.eom.gschema.xml.in:68
+msgid "Allow zoom greater than 100% initially"
+msgstr "Позволяване на по-голям мащаб от 100%"
+
+#: data/org.mate.eom.gschema.xml.in:69
+msgid ""
+"If this is set to FALSE small images will not be stretched to fit into the "
+"screen initially."
+msgstr ""
+"Ако тук е ЛЪЖА, малките изображения няма да бъдат разтягани, за да паснат на"
+" големината на екрана."
+
+#: data/org.mate.eom.gschema.xml.in:73
+msgid "Delay in seconds until showing the next image"
+msgstr "Секунди между показване на изображенията"
+
+#: data/org.mate.eom.gschema.xml.in:74
+msgid ""
+"A value greater than 0 determines the seconds an image stays on screen until"
+" the next one is shown automatically. Zero disables the automatic browsing."
+msgstr ""
+"Стойност, по-голяма от 0, определя секундите, в които изображението да стои "
+"на екрана докато не бъде заменено от следващото. 0 спира автоматичното "
+"разглеждане."
+
+#: data/org.mate.eom.gschema.xml.in:80
+msgid "Show/Hide the window toolbar."
+msgstr "Показване/скриване на лентата с инструментите."
+
+#: data/org.mate.eom.gschema.xml.in:84
+msgid "Show/Hide the window statusbar."
+msgstr "Показване/скриване на лентата за състоянието."
+
+#: data/org.mate.eom.gschema.xml.in:88
+msgid "Show/Hide the image collection pane."
+msgstr "Показване/скриване на панела за колекцията."
+
+#: data/org.mate.eom.gschema.xml.in:92
+msgid "Image collection pane position."
+msgstr "Позиция на панела за колекцията."
+
+#: data/org.mate.eom.gschema.xml.in:96
+msgid "Whether the image collection pane should be resizable."
+msgstr "Дали панелът на колекциите да се преоразмерява или не."
+
+#: data/org.mate.eom.gschema.xml.in:100
+msgid "Show/Hide the window side pane."
+msgstr "Показване/скриване на страничния панел."
+
+#: data/org.mate.eom.gschema.xml.in:104
+msgid "Show/Hide the image collection pane scroll buttons."
+msgstr "Показване/скриване на плъзгачите на панела за колекцията."
+
+#: data/org.mate.eom.gschema.xml.in:108
+msgid "Close main window without asking to save changes."
+msgstr "Затвори главния прозорец без запазване на промените."
+
+#: data/org.mate.eom.gschema.xml.in:112
+msgid "Trash images without asking"
+msgstr "Преместване в кошчето без питане"
+
+#: data/org.mate.eom.gschema.xml.in:113
+msgid ""
+"If activated, Eye of MATE won't ask for confirmation when moving images to "
+"the trash. It will still ask if any of the files cannot be moved to the "
+"trash and would be deleted instead."
+msgstr ""
+"Ако е истина, програмата няма да пита за потвърждение при преместване на "
+"изображенията в кошчето. Когато поради някаква причина изображенията не "
+"могат да бъдат преместени в кошчето, а ще бъдат изтрити, все пак ще се иска "
+"потвърждение."
+
+#: data/org.mate.eom.gschema.xml.in:117
+msgid ""
+"Whether the metadata list in the properties dialog should have its own page."
+msgstr ""
+"Дали допълнителните подробни данни от прозореца с информация за "
+"изображението да се преместят на собствена страница."
+
+#: data/org.mate.eom.gschema.xml.in:118
+msgid ""
+"If activated, the detailed metadata list in the properties dialog will be "
+"moved to its own page in the dialog. This should make the dialog more usable"
+" on smaller screens, e.g. as used by netbooks. If disabled, the widget will "
+"be embedded on the \"Metadata\" page."
+msgstr ""
+"Ако е истина, допълнителните подробни за изображението ще бъдат преместени в"
+" собствен прозорец. Така програмата ще се ползва по-лесно на малки екрани "
+"(напр. при ултра преносими компютри). Ако е лъжа, данните се показват в "
+"страницата „Допълнителни данни“."
+
+#: data/org.mate.eom.gschema.xml.in:122
+msgid "External program to use for editing images"
+msgstr "Изполване на външна програма за редактиране на изображения."
+
+#: data/org.mate.eom.gschema.xml.in:123
+msgid ""
+"The desktop file name (including the \".desktop\") of the application to use"
+" for editing images (when the \"Edit Image\" toolbar button is clicked). Set"
+" to the empty string to disable this feature."
+msgstr ""
+"Името на иконката на работния плот (включително „.desktop“) на програмата за"
+" редактиране на изображения (когато бъде натиснат бутонът „Редактиране на "
+"изображението“ в лентата с инструменти). Оставете празно, за да изключите "
+"тази възможност."
+
+#: data/org.mate.eom.gschema.xml.in:127
+msgid ""
+"Whether the file chooser should show the user's pictures folder if no images"
+" are loaded."
+msgstr ""
+"Дали прозорецът за избор на изображения ще показва потребителската папка за "
+"изображения, ако не е заредено изображение."
+
+#: data/org.mate.eom.gschema.xml.in:128
+msgid ""
+"If activated and no image is loaded in the active window, the file chooser "
+"will display the user's pictures folder using the XDG special user "
+"directories. If deactivated or the pictures folder has not been set up, it "
+"will show the current working directory."
+msgstr ""
+"Ако е истина и в активния прозорец не е заредено изображение, прозорецът за "
+"избор на изображения ще показва потребителската папка за изображения според "
+"XDG. Ако е лъжа или не е настроена папка за изображения, ще се покаже "
+"текущата работна папка."
+
+#: data/org.mate.eom.gschema.xml.in:134
+msgid "Active plugins"
+msgstr "Включени приставки"
+
+#: data/org.mate.eom.gschema.xml.in:135
+msgid ""
+"List of active plugins. It doesn't contain the \"Location\" of the active "
+"plugins. See the .eom-plugin file for obtaining the \"Location\" of a given "
+"plugin."
+msgstr ""
+"Списък с включените приставки. Не съдържа „местоположението“ на включените "
+"приставки. За да разберете къде е дадена приставка, проверете във файла "
+".eom-plugin."
+
+#: plugins/fullscreen/fullscreen.plugin.desktop.in:5
+msgid "Fullscreen with double-click"
+msgstr "Цял екран с двойно натискане с мишката"
+
+#: plugins/fullscreen/fullscreen.plugin.desktop.in:6
+msgid "view-fullscreen"
+msgstr ""
+
+#: plugins/reload/eom-reload-plugin.c:45
+#: plugins/reload/reload.plugin.desktop.in:5
+msgid "Reload Image"
+msgstr "Презареждане на изображението"
+
+#: plugins/reload/eom-reload-plugin.c:45
+msgid "Reload current image"
+msgstr "Презареждане на текущото изображение"
+
+#: plugins/reload/reload.plugin.desktop.in:6
+msgid "view-refresh"
+msgstr ""
+
+#: plugins/statusbar-date/statusbar-date.plugin.desktop.in:5
+msgid "Date in statusbar"
+msgstr "Показване дата в лентата за състояние"
+
+#: src/eom-close-confirmation-dialog.c:154
+msgid "Close _without Saving"
+msgstr "_Без запазване"
+
+#: src/eom-close-confirmation-dialog.c:187
+msgid "Question"
+msgstr "Въпрос"
+
+#: src/eom-close-confirmation-dialog.c:366
+msgid "If you don't save, your changes will be lost."
+msgstr "Ако не запазите промените, те ще бъдат изгубени."
+
+#: src/eom-close-confirmation-dialog.c:402
+#, c-format
+msgid "Save changes to image \"%s\" before closing?"
+msgstr "Запазване на промените в „%s“ преди затваряне?"
+
+#: src/eom-close-confirmation-dialog.c:597
+#, c-format
+msgid "There is %d image with unsaved changes. Save changes before closing?"
+msgid_plural ""
+"There are %d images with unsaved changes. Save changes before closing?"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/eom-close-confirmation-dialog.c:614
+msgid "S_elect the images you want to save:"
+msgstr "И_зберете изображенията, които искате да се запазят:"
+
+#: src/eom-close-confirmation-dialog.c:633
+msgid "If you don't save, all your changes will be lost."
+msgstr "Ако не запазите промените, те ще бъдат изгубени."
+
+#: src/eom-file-chooser.c:121
+msgid "File format is unknown or unsupported"
+msgstr "Файловият формат е непознат или неподдържан"
+
+#: src/eom-file-chooser.c:126
+msgid ""
+"Eye of MATE could not determine a supported writable file format based on "
+"the filename."
+msgstr ""
+"Програмата не може да определи поддържан файлов формат на основата на "
+"файловото име."
+
+#: src/eom-file-chooser.c:127
+msgid "Please try a different file extension like .png or .jpg."
+msgstr "Опитайте с различно разширение, като .png или .jpg."
+
+#: src/eom-file-chooser.c:159
+msgid "All Files"
+msgstr "Всички файлове"
+
+#: src/eom-file-chooser.c:164
+msgid "All Images"
+msgstr "Всички изображения"
+
+#: src/eom-file-chooser.c:185
+#, c-format
+msgid "%s (*.%s)"
+msgstr "%s (*.%s)"
+
+#: src/eom-file-chooser.c:281 src/eom-properties-dialog.c:163
+#: src/eom-properties-dialog.c:165 src/eom-thumb-view.c:516
+msgid "pixel"
+msgid_plural "pixels"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/eom-file-chooser.c:451
+msgid "Open Image"
+msgstr "Отваряне на изображение"
+
+#: src/eom-file-chooser.c:459
+msgid "Save Image"
+msgstr "Запазване на изображение"
+
+#: src/eom-file-chooser.c:467 src/eom-window.c:4009
+msgid "Open Folder"
+msgstr "Отваряне на папка"
+
+#: src/eom-image.c:552
+msgid "Transformation on unloaded image."
+msgstr "Преобразуване на незаредено изображение."
+
+#: src/eom-image.c:580
+msgid "Transformation failed."
+msgstr "Неуспешно преобразуване."
+
+#: src/eom-image.c:1054
+msgid "EXIF not supported for this file format."
+msgstr "За този файлов формат не се поддържа EXIF."
+
+#: src/eom-image.c:1203
+msgid "Image loading failed."
+msgstr "Неуспех при зареждане на изображението"
+
+#: src/eom-image.c:1732 src/eom-image.c:1834
+msgid "No image loaded."
+msgstr "Няма заредено изображение."
+
+#: src/eom-image.c:1742 src/eom-image.c:1846
+msgid "Temporary file creation failed."
+msgstr "Създаването на временния файл е неуспешно."
+
+#: src/eom-image-jpeg.c:384
+#, c-format
+msgid "Couldn't create temporary file for saving: %s"
+msgstr "Временният файл за запазването на %s не може да бъде създаден"
+
+#: src/eom-image-jpeg.c:395
+msgid "Couldn't allocate memory for loading JPEG file"
+msgstr "Недостатъчна свободна памет за зареждане на файла във формат JPEG"
+
+#: src/eom-error-message-area.c:108
+msgid "_Retry"
+msgstr "Повторен опит"
+
+#: src/eom-error-message-area.c:151
+#, c-format
+msgid "Could not load image '%s'."
+msgstr "Неуспех при зареждане на изображението „%s“."
+
+#: src/eom-error-message-area.c:193
+#, c-format
+msgid "No images found in '%s'."
+msgstr "Не са открити изображения в „%s“."
+
+#: src/eom-error-message-area.c:200
+msgid "The given locations contain no images."
+msgstr "Указаното местоположение не съдържа изображения."
+
+#: src/eom-metadata-details.c:66
+msgid "Image Data"
+msgstr "Данни на изображението"
+
+#: src/eom-metadata-details.c:67
+msgid "Image Taking Conditions"
+msgstr "Условия за заснемане"
+
+#: src/eom-metadata-details.c:68
+msgid "GPS Data"
+msgstr ""
+
+#: src/eom-metadata-details.c:69
+msgid "Maker Note"
+msgstr "Бележка на създателя"
+
+#: src/eom-metadata-details.c:70
+msgid "Other"
+msgstr "Други"
+
+#: src/eom-metadata-details.c:72
+msgid "XMP Exif"
+msgstr "XMP Exif"
+
+#: src/eom-metadata-details.c:73
+msgid "XMP IPTC"
+msgstr "XMP IPTC"
+
+#: src/eom-metadata-details.c:74
+msgid "XMP Rights Management"
+msgstr "Управление на правата по XMP"
+
+#: src/eom-metadata-details.c:75
+msgid "XMP Other"
+msgstr "Друго в XMP"
+
+#: src/eom-metadata-details.c:251
+msgid "Tag"
+msgstr "Етикет"
+
+#: src/eom-metadata-details.c:261
+msgid "Value"
+msgstr "Стойност"
+
+#: src/eom-metadata-details.c:436
+msgid "North"
+msgstr "Север"
+
+#: src/eom-metadata-details.c:439
+msgid "East"
+msgstr "Изток"
+
+#: src/eom-metadata-details.c:442
+msgid "West"
+msgstr "Запад"
+
+#: src/eom-metadata-details.c:445
+msgid "South"
+msgstr "Юг"
+
+#: src/eom-exif-util.c:191 src/eom-exif-util.c:193
+msgid "%a, %d %B %Y  %X"
+msgstr "%A, %d %B %Y %X"
+
+#: src/eom-exif-util.c:282
+#, c-format
+msgid "%.1f (lens)"
+msgstr "%.1f (mm)"
+
+#: src/eom-exif-util.c:293
+#, c-format
+msgid "%.1f (35mm film)"
+msgstr "%.1f (mm приравнено)"
+
+#: src/eom-metadata-sidebar.c:153
+#, c-format
+msgid "%i × %i pixel"
+msgid_plural "%i × %i pixels"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/eom-metadata-sidebar.c:164 src/eom-properties-dialog.c:180
+msgid "Unknown"
+msgstr "Неизвестно"
+
+#: src/eom-metadata-sidebar.c:229
+msgid "%a, %d %B %Y"
+msgstr "%A, %d %B %Y"
+
+#: src/eom-metadata-sidebar.c:233
+#, c-format
+msgid "%X"
+msgstr ""
+
+#: src/eom-print.c:371
+msgid "Image Settings"
+msgstr "Настройки"
+
+#: src/eom-print-image-setup.c:824
+msgid "Image"
+msgstr "Изображение"
+
+#: src/eom-print-image-setup.c:825
+msgid "The image whose printing properties will be set up"
+msgstr "Изображението, за което ще бъдат задавани настройки за печат"
+
+#: src/eom-print-image-setup.c:831
+msgid "Page Setup"
+msgstr "Настройки на страницата"
+
+#: src/eom-print-image-setup.c:832
+msgid "The information for the page where the image will be printed"
+msgstr "Информация за страницата, където ще се печата изображението"
+
+#: src/eom-print-image-setup.c:858
+msgid "Position"
+msgstr "Позиция"
+
+#: src/eom-print-image-setup.c:862
+msgid "_Left:"
+msgstr "_Ляво:"
+
+#: src/eom-print-image-setup.c:864
+msgid "_Right:"
+msgstr "_Дясно:"
+
+#: src/eom-print-image-setup.c:865
+msgid "_Top:"
+msgstr "_Горе:"
+
+#: src/eom-print-image-setup.c:866
+msgid "_Bottom:"
+msgstr "Дол_у:"
+
+#: src/eom-print-image-setup.c:869
+msgid "C_enter:"
+msgstr "_Центриране:"
+
+#: src/eom-print-image-setup.c:874
+msgid "None"
+msgstr "Без"
+
+#: src/eom-print-image-setup.c:876
+msgid "Horizontal"
+msgstr "Хоризонтално"
+
+#: src/eom-print-image-setup.c:878
+msgid "Vertical"
+msgstr "Вертикално"
+
+#: src/eom-print-image-setup.c:880
+msgid "Both"
+msgstr "По двете оси"
+
+#: src/eom-print-image-setup.c:899
+msgid "_Width:"
+msgstr "_Широчина:"
+
+#: src/eom-print-image-setup.c:901
+msgid "_Height:"
+msgstr "_Височина:"
+
+#: src/eom-print-image-setup.c:904
+msgid "_Scaling:"
+msgstr "Ма_щабиране:"
+
+#: src/eom-print-image-setup.c:915
+msgid "_Unit:"
+msgstr "_Единица:"
+
+#: src/eom-print-image-setup.c:920
+msgid "Millimeters"
+msgstr "милиметри"
+
+#: src/eom-print-image-setup.c:922
+msgid "Inches"
+msgstr "инчове"
+
+#: src/eom-print-image-setup.c:950
+msgid "Preview"
+msgstr "Преглед"
+
+#: src/eom-save-as-dialog-helper.c:161
+msgid "as is"
+msgstr "както е"
+
+#. Translators: This string is displayed in the statusbar.
+#. * The first token is the image number, the second is total image
+#. * count.
+#. *
+#. * Translate to "%Id" if you want to use localized digits, or
+#. * translate to "%d" otherwise.
+#. *
+#. * Note that translating this doesn't guarantee that you get localized
+#. * digits. That needs support from your system and locale definition
+#. * too.
+#: src/eom-statusbar.c:122
+#, c-format
+msgid "%d / %d"
+msgstr "%d / %d"
+
+#: src/eom-thumb-view.c:544
+msgid "Taken on"
+msgstr "Заснето на"
+
+#: src/eom-uri-converter.c:986
+msgid "At least two file names are equal."
+msgstr "Поне два файла имат еднакви имена."
+
+#: src/eom-util.c:68
+msgid "Could not display help for Eye of MATE"
+msgstr "Ръководството на Eye of MATE не може да бъде показано"
+
+#: src/eom-util.c:116
+msgid " (invalid Unicode)"
+msgstr " (грешен Уникод)"
+
+#. Translators: This is the string displayed in the statusbar
+#. * The tokens are from left to right:
+#. * - image width
+#. * - image height
+#. * - image size in bytes
+#. * - zoom in percent
+#: src/eom-window.c:521
+#, c-format
+msgid "%i × %i pixel  %s    %i%%"
+msgid_plural "%i × %i pixels  %s    %i%%"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/eom-window.c:832
+msgid "_Reload"
+msgstr "П_резареждане"
+
+#: src/eom-window.c:834 src/eom-window.c:2794
+msgctxt "MessageArea"
+msgid "Hi_de"
+msgstr "_Скриване"
+
+#: src/eom-window.c:844
+#, c-format
+msgid ""
+"The image \"%s\" has been modified by an external application.\n"
+"Would you like to reload it?"
+msgstr ""
+"Изображението „%s“ е променено от друга програма.\n"
+"Искате ли да то да бъде заредено отново?"
+
+#: src/eom-window.c:1012
+#, c-format
+msgid "Use \"%s\" to open the selected image"
+msgstr "Използвайте „%s“ за отваряне на избраното изображение"
+
+#. Translators: This string is displayed in the statusbar
+#. * while saving images. The tokens are from left to right:
+#. * - the original filename
+#. * - the current image's position in the queue
+#. * - the total number of images queued for saving
+#: src/eom-window.c:1176
+#, c-format
+msgid "Saving image \"%s\" (%u/%u)"
+msgstr "Запазване на изображението „%s“ (%u/%u)"
+
+#: src/eom-window.c:1543
+#, c-format
+msgid "Opening image \"%s\""
+msgstr "Отваряне на изображението „%s“"
+
+#: src/eom-window.c:1909
+msgid "Leave Fullscreen"
+msgstr "Напускане на режим „Цял екран“"
+
+#: src/eom-window.c:2050
+msgid "Viewing a slideshow"
+msgstr ""
+
+#: src/eom-window.c:2263
+#, c-format
+msgid ""
+"Error printing file:\n"
+"%s"
+msgstr ""
+"Грешка при печата на файла:\n"
+"%s"
+
+#: src/eom-window.c:2526
+msgid "Toolbar Editor"
+msgstr "Редактор на лентата с инструменти"
+
+#: src/eom-window.c:2529
+msgid "_Reset to Default"
+msgstr "_Обратно към стандартните настройки"
+
+#: src/eom-window.c:2594
+msgid ""
+"This program is free software; you can redistribute it and/or modify it "
+"under the terms of the GNU General Public License as published by the Free "
+"Software Foundation; either version 2 of the License, or (at your option) "
+"any later version.\n"
+msgstr ""
+"Тази програма (Eye of MATE) е свободен софтуер. Можете да я разпространявате"
+" и/или променяте под условията на Общия публичен лиценз на GNU (GNU GPL), "
+"както е публикуван от Фондацията за свободен софтуер — версия 2 на лиценза "
+"или (по ваше решение) по-късна версия.\n"
+
+#: src/eom-window.c:2598
+msgid ""
+"This program is distributed in the hope that it will be useful, but WITHOUT "
+"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
+"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
+"more details.\n"
+msgstr ""
+"Тази програма се разпространява с надеждата, че ще бъде полезна, но БЕЗ "
+"НИКАКВИ ГАРАНЦИИ, дори и косвените за ПРОДАЖБА или СЪОТВЕТСТВИЕ С КАКВАТО И "
+"ДА Е УПОТРЕБА. За подробности погледнете Общия публичен лиценз на GNU.\n"
+
+#: src/eom-window.c:2602
+msgid ""
+"You should have received a copy of the GNU General Public License along with"
+" this program; if not, write to the Free Software Foundation, Inc., 51 "
+"Franklin St, Fifth Floor, Boston, MA 02110-1301, USA."
+msgstr ""
+"Трябва да сте получили копие от Общия публичен лиценз на GNU GPL заедно с "
+"тази програма. Ако не сте, пишете до Free Software Foundation, Inc., 51 "
+"Franklin St, Fifth Floor, Boston, MA 02110-1301, USA."
+
+#: src/eom-window.c:2641
+msgid "About Eye of MATE"
+msgstr ""
+
+#: src/eom-window.c:2643
+msgid ""
+"Copyright © 2000-2010 Free Software Foundation, Inc.\n"
+"Copyright © 2011 Perberos\n"
+"Copyright © 2012-2020 MATE developers"
+msgstr ""
+
+#: src/eom-window.c:2646
+msgid "The MATE image viewer."
+msgstr "Програма за преглед на изображения."
+
+#: src/eom-window.c:2649
+msgid "translator-credits"
+msgstr ""
+"Владимир „Kaladan“ Петков <vpetkov@i-space.org>\n"
+"Борислав Александров <B.Aleksandrov@cnsys.bg>\n"
+"Александър Шопов <ash@contact.bg>\n"
+"Любомир Василев <lyubomirv@abv.bg>\n"
+"\n"
+"Проектът за превод на MATE има нужда от подкрепа.\n"
+"Научете повече за нас на http://mate.cult.bg\n"
+"Докладвайте за грешки на http://mate.cult.bg/bugs"
+
+#: src/eom-window.c:2742 src/eom-window.c:2757
+msgid "Error launching appearance preferences dialog: "
+msgstr ""
+
+#: src/eom-window.c:2792
+msgid "_Open Background Preferences"
+msgstr "_Настройки на фона"
+
+#: src/eom-window.c:2808
+#, c-format
+msgid ""
+"The image \"%s\" has been set as Desktop Background.\n"
+"Would you like to modify its appearance?"
+msgstr ""
+"Изображението „%s“ се използва за фон на плота.\n"
+"Искате ли да го редактирате?"
+
+#: src/eom-window.c:3249
+msgid "Saving image locally…"
+msgstr "Запазване на изображението локално…"
+
+#: src/eom-window.c:3329
+#, c-format
+msgid ""
+"Are you sure you want to move\n"
+"\"%s\" to the trash?"
+msgstr ""
+"Сигурни ли сте, че искате да преместите\n"
+"„%s“ в кошчето?"
+
+#: src/eom-window.c:3332
+#, c-format
+msgid ""
+"A trash for \"%s\" couldn't be found. Do you want to remove this image "
+"permanently?"
+msgstr ""
+"Не може да бъде открито кошче, където „%s“ да бъде преместено. Искате ли да "
+"премахнете това изображение завинаги?"
+
+#: src/eom-window.c:3337
+#, c-format
+msgid ""
+"Are you sure you want to move\n"
+"the %d selected image to the trash?"
+msgid_plural ""
+"Are you sure you want to move\n"
+"the %d selected images to the trash?"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/eom-window.c:3342
+msgid ""
+"Some of the selected images can't be moved to the trash and will be removed "
+"permanently. Are you sure you want to proceed?"
+msgstr ""
+"Някои от избраните изображения не могат да бъдат преместени в кошчето и ще "
+"бъдат премахнати завинаги. Искате ли да продължите?"
+
+#: src/eom-window.c:3359 src/eom-window.c:3855 src/eom-window.c:3882
+msgid "Move to _Trash"
+msgstr "Преместване в _кошчето"
+
+#: src/eom-window.c:3361
+msgid "_Do not ask again during this session"
+msgstr "_Без повторно запитване през тази сесия"
+
+#: src/eom-window.c:3406 src/eom-window.c:3420
+msgid "Couldn't access trash."
+msgstr "Нямате достъп до кошчето."
+
+#: src/eom-window.c:3428
+msgid "Couldn't delete file"
+msgstr "Файлът не може да бъде изтрит"
+
+#: src/eom-window.c:3530
+#, c-format
+msgid "Error on deleting image %s"
+msgstr "Грешка при изтриването на изображението %s"
+
+#: src/eom-window.c:3776
+msgid "_Image"
+msgstr "_Изображение"
+
+#: src/eom-window.c:3777
+msgid "_Edit"
+msgstr "_Редактиране"
+
+#: src/eom-window.c:3778
+msgid "_View"
+msgstr "_Изглед"
+
+#: src/eom-window.c:3779
+msgid "_Go"
+msgstr "_Отиване"
+
+#: src/eom-window.c:3780
+msgid "_Tools"
+msgstr "И_нструменти"
+
+#: src/eom-window.c:3781
+msgid "_Help"
+msgstr "_Помощ"
+
+#: src/eom-window.c:3783
+msgid "_Open…"
+msgstr "_Отваряне…"
+
+#: src/eom-window.c:3784
+msgid "Open a file"
+msgstr "Отваряне на файл"
+
+#: src/eom-window.c:3786
+msgid "_Close"
+msgstr "_Затваряне"
+
+#: src/eom-window.c:3787
+msgid "Close window"
+msgstr "Затваряне на прозореца"
+
+#: src/eom-window.c:3789
+msgid "T_oolbar"
+msgstr "Лента с _инструменти"
+
+#: src/eom-window.c:3790
+msgid "Edit the application toolbar"
+msgstr "Редактиране лентата с инструменти на програмата"
+
+#: src/eom-window.c:3792
+msgid "Prefere_nces"
+msgstr "_Настройки"
+
+#: src/eom-window.c:3793
+msgid "Preferences for Eye of MATE"
+msgstr "Настройки на Eye of MATE"
+
+#: src/eom-window.c:3795
+msgid "_Contents"
+msgstr "_Ръководство"
+
+#: src/eom-window.c:3796
+msgid "Help on this application"
+msgstr "Помощ за тази програма"
+
+#: src/eom-window.c:3798
+msgid "_About"
+msgstr "_Относно…"
+
+#: src/eom-window.c:3799
+msgid "About this application"
+msgstr "Относно тази програма"
+
+#: src/eom-window.c:3804
+msgid "_Toolbar"
+msgstr "_Лента с инструменти"
+
+#: src/eom-window.c:3805
+msgid "Changes the visibility of the toolbar in the current window"
+msgstr "Промяна видимостта на лентата с инструментите на текущия прозорец"
+
+#: src/eom-window.c:3807
+msgid "_Statusbar"
+msgstr "Лента за _състоянието"
+
+#: src/eom-window.c:3808
+msgid "Changes the visibility of the statusbar in the current window"
+msgstr "Промяна видимостта на лентата за състоянието на текущия прозорец"
+
+#: src/eom-window.c:3810
+msgid "_Image Collection"
+msgstr "_Колекция от изображения"
+
+#: src/eom-window.c:3811
+msgid ""
+"Changes the visibility of the image collection pane in the current window"
+msgstr "Промяна видимостта на панела с колекцията в текущия прозорец"
+
+#: src/eom-window.c:3813
+msgid "Side _Pane"
+msgstr "Страничен _панел"
+
+#: src/eom-window.c:3814
+msgid "Changes the visibility of the side pane in the current window"
+msgstr "Промяна видимостта на страничния панел на текущия прозорец"
+
+#: src/eom-window.c:3819
+msgid "_Save"
+msgstr "_Запазване"
+
+#: src/eom-window.c:3820
+msgid "Save changes in currently selected images"
+msgstr "Запазване на промените на избраните изображения"
+
+#: src/eom-window.c:3822
+msgid "Open _with"
+msgstr "Отваряне _с"
+
+#: src/eom-window.c:3823
+msgid "Open the selected image with a different application"
+msgstr "Отваряне на избраното изображение с друга програма"
+
+#: src/eom-window.c:3825
+msgid "Save _As…"
+msgstr "Запазване _като…"
+
+#: src/eom-window.c:3826
+msgid "Save the selected images with a different name"
+msgstr "Запазване на избраните изображения под друго име"
+
+#: src/eom-window.c:3828
+msgid "Open Containing _Folder"
+msgstr "Отваряне на съдържащата _папка"
+
+#: src/eom-window.c:3829
+msgid "Show the folder which contains this file in the file manager"
+msgstr ""
+
+#: src/eom-window.c:3831
+msgid "_Print…"
+msgstr "_Печат…"
+
+#: src/eom-window.c:3832
+msgid "Print the selected image"
+msgstr "Разпечатване на избраното изображение"
+
+#: src/eom-window.c:3834
+msgid "Prope_rties"
+msgstr "Под_робности"
+
+#: src/eom-window.c:3835
+msgid "Show the properties and metadata of the selected image"
+msgstr "Показване на допълнителните данни на избраното изображение"
+
+#: src/eom-window.c:3837
+msgid "_Undo"
+msgstr "_Връщане"
+
+#: src/eom-window.c:3838
+msgid "Undo the last change in the image"
+msgstr "Възстановяване на последната промяна по изображението"
+
+#: src/eom-window.c:3840
+msgid "Flip _Horizontal"
+msgstr "_Хоризонтално обръщане"
+
+#: src/eom-window.c:3841
+msgid "Mirror the image horizontally"
+msgstr "Хоризонтален огледален образ"
+
+#: src/eom-window.c:3843
+msgid "Flip _Vertical"
+msgstr "_Вертикално обръщане"
+
+#: src/eom-window.c:3844
+msgid "Mirror the image vertically"
+msgstr "Вертикален огледален образ"
+
+#: src/eom-window.c:3846
+msgid "_Rotate Clockwise"
+msgstr "Завъртане на_дясно"
+
+#: src/eom-window.c:3847
+msgid "Rotate the image 90 degrees to the right"
+msgstr "Завъртане на изображението 90° надясно"
+
+#: src/eom-window.c:3849
+msgid "Rotate Counterc_lockwise"
+msgstr "Завъртане на_ляво"
+
+#: src/eom-window.c:3850
+msgid "Rotate the image 90 degrees to the left"
+msgstr "Завъртане на изображението 90° наляво"
+
+#: src/eom-window.c:3852
+msgid "Set as _Desktop Background"
+msgstr "Задаване като _фон"
+
+#: src/eom-window.c:3853
+msgid "Set the selected image as the desktop background"
+msgstr "Задаване на избраното изображение като фон на работния плот"
+
+#: src/eom-window.c:3856
+msgid "Move the selected image to the trash folder"
+msgstr "Преместване на избраното изображение в кошчето"
+
+#: src/eom-window.c:3858
+msgid "_Copy"
+msgstr "_Копиране"
+
+#: src/eom-window.c:3859
+msgid "Copy the selected image to the clipboard"
+msgstr "Копиране на избраното изображение в буфера за обмен"
+
+#: src/eom-window.c:3861 src/eom-window.c:3873 src/eom-window.c:3876
+msgid "_Zoom In"
+msgstr "_Увеличаване"
+
+#: src/eom-window.c:3862 src/eom-window.c:3874
+msgid "Enlarge the image"
+msgstr "Увеличаване на изображението"
+
+#: src/eom-window.c:3864 src/eom-window.c:3879
+msgid "Zoom _Out"
+msgstr "На_маляване"
+
+#: src/eom-window.c:3865 src/eom-window.c:3877 src/eom-window.c:3880
+msgid "Shrink the image"
+msgstr "Смаляване на изображението"
+
+#: src/eom-window.c:3867
+msgid "_Normal Size"
+msgstr "Но_рмален размер"
+
+#: src/eom-window.c:3868
+msgid "Show the image at its normal size"
+msgstr "Показване на изображението в нормалния му размер"
+
+#: src/eom-window.c:3870
+msgid "_Best Fit"
+msgstr "Напасване по _екрана"
+
+#: src/eom-window.c:3871
+msgid "Fit the image to the window"
+msgstr "Вместване на изображението съобразно прозореца"
+
+#: src/eom-window.c:3888
+msgid "_Fullscreen"
+msgstr "_Цял екран"
+
+#: src/eom-window.c:3889
+msgid "Show the current image in fullscreen mode"
+msgstr "Показване на текущото изображение на цял екран"
+
+#: src/eom-window.c:3891
+msgid "Pause Slideshow"
+msgstr "Временно спиране на прожекцията"
+
+#: src/eom-window.c:3892
+msgid "Pause or resume the slideshow"
+msgstr "Продължаване или временно спиране на прожекцията"
+
+#: src/eom-window.c:3897 src/eom-window.c:3912
+msgid "_Previous Image"
+msgstr "_Предишно изображение"
+
+#: src/eom-window.c:3898
+msgid "Go to the previous image of the collection"
+msgstr "Отиване на предишното изображение от колекцията"
+
+#: src/eom-window.c:3900
+msgid "_Next Image"
+msgstr "_Следващо изображение"
+
+#: src/eom-window.c:3901
+msgid "Go to the next image of the collection"
+msgstr "Отиване на следващото изображение от колекцията"
+
+#: src/eom-window.c:3903 src/eom-window.c:3915
+msgid "_First Image"
+msgstr "Пър_во изображение"
+
+#: src/eom-window.c:3904
+msgid "Go to the first image of the collection"
+msgstr "Отиване на първото изображение от колекцията"
+
+#: src/eom-window.c:3906 src/eom-window.c:3918
+msgid "_Last Image"
+msgstr "П_оследно изображение"
+
+#: src/eom-window.c:3907
+msgid "Go to the last image of the collection"
+msgstr "Отиване на последното изображение от колекцията"
+
+#: src/eom-window.c:3909
+msgid "_Random Image"
+msgstr "Слу_чайно изображение"
+
+#: src/eom-window.c:3910
+msgid "Go to a random image of the collection"
+msgstr "Отиване на случайно изображение от колекцията"
+
+#: src/eom-window.c:3924
+msgid "S_lideshow"
+msgstr "С_лайдшоу"
+
+#: src/eom-window.c:3925
+msgid "Start a slideshow view of the images"
+msgstr "Прожектиране на изображенията"
+
+#: src/eom-window.c:3995
+msgid "Previous"
+msgstr "Предишна"
+
+#: src/eom-window.c:3999
+msgid "Next"
+msgstr "Следваща"
+
+#: src/eom-window.c:4003
+msgid "Right"
+msgstr "Дясно"
+
+#: src/eom-window.c:4006
+msgid "Left"
+msgstr "Ляво"
+
+#: src/eom-window.c:4012
+msgid "In"
+msgstr "Увеличаване"
+
+#: src/eom-window.c:4015
+msgid "Out"
+msgstr "Намаляване"
+
+#: src/eom-window.c:4018
+msgid "Normal"
+msgstr "Нормален"
+
+#: src/eom-window.c:4021
+msgid "Fit"
+msgstr "Наместване"
+
+#: src/eom-window.c:4024
+msgid "Collection"
+msgstr "Колекция"
+
+#: src/eom-window.c:4027
+msgctxt "action (to trash)"
+msgid "Trash"
+msgstr "Кошче"
+
+#: src/eom-window.c:4385
+#, c-format
+msgid "Edit the current image using %s"
+msgstr "Обработи сегашното изображение, използвайки %s"
+
+#: src/eom-window.c:4388
+msgid "Edit Image"
+msgstr "Редактиране на изображението"
+
+#: src/eom-window.c:4612
+msgid "Properties"
+msgstr "Свойства"
+
+#: src/main.c:72
+msgid "Open in fullscreen mode"
+msgstr "Зареждане в режим на цял екран"
+
+#: src/main.c:73
+msgid "Disable image collection"
+msgstr "Изключване на колекцията от изображения"
+
+#: src/main.c:74
+msgid "Open in slideshow mode"
+msgstr "Зареждане в режим на прожекция"
+
+#: src/main.c:75
+msgid "Start a new instance instead of reusing an existing one"
+msgstr "Стартиране на нов процес вместо преизползване на съществуващ"
+
+#: src/main.c:77
+msgid "Show the application's version"
+msgstr "Показване на версията на програмата"
+
+#: src/main.c:108
+msgid "[FILE…]"
+msgstr "[ФАЙЛ…]"
+
+#: src/main.c:121
+#, c-format
+msgid "Run '%s --help' to see a full list of available command line options."
+msgstr ""
+"Изпълнете „%s --help“, за да видите списък с наличните опции за командния "
+"ред."

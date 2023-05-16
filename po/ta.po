@@ -1,0 +1,1592 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR MATE Desktop Environment team
+# This file is distributed under the same license as the eom package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Stefano Karapetsas <stefano@karapetsas.com>, 2020
+# Martin Wimpress <code@flexion.org>, 2020
+# Mooglie <mooglietech@gmail.com>, 2020
+# Maurious Paul Vincent <paulmaurious@gmail.com>, 2020
+# Kamala Kannan, 2020
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: eom 1.23.1\n"
+"Report-Msgid-Bugs-To: http://www.mate-desktop.org\n"
+"POT-Creation-Date: 2020-01-10 14:33+0100\n"
+"PO-Revision-Date: 2020-02-14 12:07+0000\n"
+"Last-Translator: Kamala Kannan, 2020\n"
+"Language-Team: Tamil (https://www.transifex.com/mate/teams/13566/ta/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:946
+#, c-format
+msgid "Show “_%s”"
+msgstr "“_%s”காட்டு"
+
+#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1420
+msgid "_Move on Toolbar"
+msgstr "கருவிப்பட்டியை நகர்த்து(_M)"
+
+#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1421
+msgid "Move the selected item on the toolbar"
+msgstr "கருவிப்பட்டையில் தேர்ந்தெடுக்கப்பட்ட உருப்படியை நகர்த்து"
+
+#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1422
+msgid "_Remove from Toolbar"
+msgstr "கருவிப்பட்டியிலிருந்து நீக்கு(_R)"
+
+#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1423
+msgid "Remove the selected item from the toolbar"
+msgstr "கருவிப்பட்டையிலிருந்து தேர்ந்தெடுக்கப்பட்டதை நீக்கு"
+
+#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1424
+msgid "_Delete Toolbar"
+msgstr "கருவிப்பட்டியை அழி (_D)"
+
+#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1425
+msgid "Remove the selected toolbar"
+msgstr "தேர்ந்தெடுக்கப்பட்ட கருவிப்பட்டியை நீக்கு"
+
+#: cut-n-paste/toolbar-editor/egg-toolbar-editor.c:483
+msgid "Separator"
+msgstr "பிரிப்பி"
+
+#: data/eom.appdata.xml.in:6 src/eom-window.c:2640
+msgid "Eye of MATE"
+msgstr "ஐ ஆப் க்னோம்"
+
+#: data/eom.appdata.xml.in:7
+msgid "Simple image viewer"
+msgstr ""
+
+#: data/eom.appdata.xml.in:9
+msgid ""
+"Eye of MATE is a simple viewer for browsing images on your computer. Once an"
+" image is loaded, you can zoom and rotate the image, and also view "
+"subsequent images in the directory the image was loaded from."
+msgstr ""
+
+#: data/eom.desktop.in.in:3 src/main.c:65 src/main.c:166
+msgid "Eye of MATE Image Viewer"
+msgstr "ஐ ஆப் க்னோம் பிம்ப காட்டி"
+
+#: data/eom.desktop.in.in:4
+msgid "Browse and rotate images"
+msgstr "பிம்பங்களை உலாவு சுழற்று"
+
+#. Translators: Do NOT translate or transliterate this text (this is an icon
+#. file name)!
+#: data/eom.desktop.in.in:8
+msgid "eom"
+msgstr ""
+
+#. Translators: Search terms to find this application. Do NOT translate or
+#. localize the semicolons! The list MUST also end with a semicolon!
+#: data/eom.desktop.in.in:14
+msgid "image;viewer;JPEG;PNG;TIFF;SVG;MATE;photos;browse;thumbnails;rotate;"
+msgstr ""
+
+#: data/eom-image-properties-dialog.ui:8
+msgid "Image Properties"
+msgstr "பிம்ப பண்புகள்"
+
+#: data/eom-image-properties-dialog.ui:54
+msgid "_Previous"
+msgstr "(_P)முந்தைய"
+
+#: data/eom-image-properties-dialog.ui:101
+msgid "_Next"
+msgstr "(_N)அடுத்து"
+
+#: data/eom-image-properties-dialog.ui:198
+msgid "Name:"
+msgstr "பெயர்:"
+
+#: data/eom-image-properties-dialog.ui:217
+msgid "Width:"
+msgstr "அகலம்:"
+
+#: data/eom-image-properties-dialog.ui:235
+msgid "Height:"
+msgstr "உயரம்:"
+
+#: data/eom-image-properties-dialog.ui:253
+msgid "Type:"
+msgstr "வகை:"
+
+#: data/eom-image-properties-dialog.ui:271
+msgid "Bytes:"
+msgstr "பைட்டுகள்:"
+
+#: data/eom-image-properties-dialog.ui:289
+#: data/eom-image-properties-dialog.ui:614
+msgid "Location:"
+msgstr "இடம்:"
+
+#: data/eom-image-properties-dialog.ui:422
+msgid "General"
+msgstr "பொது"
+
+#: data/eom-image-properties-dialog.ui:455
+msgid "Aperture Value:"
+msgstr "துளை மதிப்பு:"
+
+#: data/eom-image-properties-dialog.ui:471
+msgid "Exposure Time:"
+msgstr "வெளிக்காட்டிய நேரம்"
+
+#: data/eom-image-properties-dialog.ui:487
+msgid "Focal Length:"
+msgstr "குவி தூரம்:"
+
+#: data/eom-image-properties-dialog.ui:503
+msgid "Flash:"
+msgstr "மின்ஒளி:"
+
+#: data/eom-image-properties-dialog.ui:519
+msgid "ISO Speed Rating:"
+msgstr "ISO வேக அளவு:"
+
+#: data/eom-image-properties-dialog.ui:535
+msgid "Metering Mode:"
+msgstr "மீட்டர் பாங்கு:"
+
+#: data/eom-image-properties-dialog.ui:551
+msgid "Camera Model:"
+msgstr "காமரா மாதிரி:"
+
+#: data/eom-image-properties-dialog.ui:568
+msgid "Date/Time:"
+msgstr "தேதி/நேரம்:"
+
+#: data/eom-image-properties-dialog.ui:598
+msgid "Description:"
+msgstr "விளக்கம்:"
+
+#: data/eom-image-properties-dialog.ui:630
+msgid "Keywords:"
+msgstr "முக்கிய சொற்கள்:"
+
+#: data/eom-image-properties-dialog.ui:646
+msgid "Author:"
+msgstr "ஆசிரியர்:"
+
+#: data/eom-image-properties-dialog.ui:662
+msgid "Copyright:"
+msgstr "காப்புரிமை:"
+
+#: data/eom-image-properties-dialog.ui:941
+#: data/eom-image-properties-dialog.ui:990 data/metadata-sidebar.ui:409
+msgid "Details"
+msgstr "விவரங்கள்"
+
+#: data/eom-image-properties-dialog.ui:966
+msgid "Metadata"
+msgstr "மெடாதரவு"
+
+#: data/eom-multiple-save-as-dialog.ui:16
+msgid "Save As"
+msgstr "வேறு பெயரில் சேமி"
+
+#: data/eom-multiple-save-as-dialog.ui:101
+msgid "<b>%f:</b> original filename"
+msgstr "<b>%f:</b> ஆரம்ப கோப்பின் பெயர்"
+
+#: data/eom-multiple-save-as-dialog.ui:119
+msgid "<b>%n:</b> counter"
+msgstr "<b>%n:</b> எண்ணி"
+
+#: data/eom-multiple-save-as-dialog.ui:169
+msgid "Choose a folder"
+msgstr "ஒரு அடைவை தேர்ந்தெடுக்கவும்"
+
+#: data/eom-multiple-save-as-dialog.ui:182
+msgid "Destination folder:"
+msgstr "இலக்கு அடைவு:"
+
+#: data/eom-multiple-save-as-dialog.ui:194
+msgid "Filename format:"
+msgstr "கோப்பு பெயர் வடிவமைப்பு:"
+
+#: data/eom-multiple-save-as-dialog.ui:212
+msgid "File Path Specifications"
+msgstr "கோப்பின் பாதை குறிப்புகள்"
+
+#: data/eom-multiple-save-as-dialog.ui:253
+msgid "Start counter at:"
+msgstr "எண்ணிக்கையை இங்கே துவங்கு:"
+
+#: data/eom-multiple-save-as-dialog.ui:285
+msgid "Replace spaces with underscores"
+msgstr "இடைவெளிகளை அடிக்கோடுகளாக மாற்று"
+
+#: data/eom-multiple-save-as-dialog.ui:307
+msgid "Options"
+msgstr "தேர்வுகள்"
+
+#: data/eom-multiple-save-as-dialog.ui:369
+msgid "Rename from:"
+msgstr "இதிலிருந்து மறுபெயரிடு:"
+
+#: data/eom-multiple-save-as-dialog.ui:381
+msgid "To:"
+msgstr "முடிவு:"
+
+#: data/eom-multiple-save-as-dialog.ui:396
+msgid "File Name Preview"
+msgstr "கோப்பின் பெயர் முன்தோற்றம்"
+
+#: data/eom-preferences-dialog.ui:16
+msgid "Eye of MATE Preferences"
+msgstr "ஐ ஆப் க்னோம் விருப்பங்கள்"
+
+#: data/eom-preferences-dialog.ui:88
+msgid "Image Enhancements"
+msgstr "பிம்ப மேம்பாடுகள்"
+
+#: data/eom-preferences-dialog.ui:117
+msgid "Smooth images when zoomed-_out"
+msgstr "(_o) படத்தை விலகி பார்க்கும் போது பிம்பத்தை சீராக்கு"
+
+#: data/eom-preferences-dialog.ui:155
+msgid "Smooth images when zoomed-_in"
+msgstr "(_i) படத்தை அணுகி பார்க்கும் போது பிம்பத்தை சீராக்கு"
+
+#: data/eom-preferences-dialog.ui:193
+msgid "_Automatic orientation"
+msgstr "(_A) தானியங்கி ஆற்றுப்படுத்தல்"
+
+#: data/eom-preferences-dialog.ui:231
+msgid "Background"
+msgstr "பின்னணி"
+
+#: data/eom-preferences-dialog.ui:250
+msgid "As custom color:"
+msgstr ""
+
+#: data/eom-preferences-dialog.ui:267 data/org.mate.eom.gschema.xml.in:16
+msgid "Background Color"
+msgstr "பின்னணி வண்ணம்"
+
+#: data/eom-preferences-dialog.ui:300
+msgid "Transparent Parts"
+msgstr "ஊடு தெரியும் பகுதிகள்"
+
+#: data/eom-preferences-dialog.ui:335
+msgid "As check _pattern"
+msgstr "(_p) கட்ட தோரணியாக"
+
+#: data/eom-preferences-dialog.ui:356
+msgid "As custom c_olor:"
+msgstr "(_o) தனிப்பயன் வண்ணமாக:"
+
+#: data/eom-preferences-dialog.ui:377
+msgid "Color for Transparent Areas"
+msgstr "ஊடு தெரியும் இடங்களின் வண்ணம்"
+
+#: data/eom-preferences-dialog.ui:395
+msgid "As _background"
+msgstr "(_b) பின்னனி"
+
+#: data/eom-preferences-dialog.ui:437
+msgid "Image View"
+msgstr "பிம்ப காட்சி"
+
+#: data/eom-preferences-dialog.ui:461
+msgid "Image Zoom"
+msgstr "பிம்ப அளவு மாற்றம்"
+
+#: data/eom-preferences-dialog.ui:496
+msgid "E_xpand images to fit screen"
+msgstr "(_x) திரையில் பொருந்தும் படி பிம்பத்தை பெரிதாக்குக"
+
+#: data/eom-preferences-dialog.ui:541
+msgid "Sequence"
+msgstr "வரிசைமுறை"
+
+#: data/eom-preferences-dialog.ui:583
+msgid "_Switch image after:"
+msgstr "(_S) பிறகு பிம்பத்தை மாற்று:"
+
+#: data/eom-preferences-dialog.ui:611
+msgid "seconds"
+msgstr "விநாடிகள்"
+
+#: data/eom-preferences-dialog.ui:628
+msgid "_Random sequence"
+msgstr ""
+
+#: data/eom-preferences-dialog.ui:644
+msgid "_Loop sequence"
+msgstr "(_L) லூப் வரிசைமுறை"
+
+#: data/eom-preferences-dialog.ui:688
+msgid "Slideshow"
+msgstr "படவில்லை காட்சி"
+
+#: data/eom-preferences-dialog.ui:722
+msgid "Plugins"
+msgstr "சொருகுப்பொருள்கள்"
+
+#: data/metadata-sidebar.ui:29 src/eom-print-image-setup.c:896
+msgid "Size"
+msgstr "அளவு"
+
+#: data/metadata-sidebar.ui:46
+msgid "Type"
+msgstr "þனம்"
+
+#: data/metadata-sidebar.ui:63
+msgid "File Size"
+msgstr ""
+
+#: data/metadata-sidebar.ui:82
+msgid "Folder"
+msgstr "அடைவு"
+
+#: data/metadata-sidebar.ui:99
+msgid "Aperture"
+msgstr ""
+
+#: data/metadata-sidebar.ui:116
+msgid "Exposure"
+msgstr ""
+
+#: data/metadata-sidebar.ui:133
+msgid "ISO"
+msgstr ""
+
+#: data/metadata-sidebar.ui:151
+msgid "Metering"
+msgstr ""
+
+#: data/metadata-sidebar.ui:169 src/eom-metadata-details.c:65
+msgid "Camera"
+msgstr "கேமரா"
+
+#: data/metadata-sidebar.ui:187
+msgid "Date"
+msgstr "திகதி"
+
+#: data/metadata-sidebar.ui:204
+msgid "Time"
+msgstr "நேரம்"
+
+#: data/metadata-sidebar.ui:380
+msgid "Focal Length"
+msgstr "குவிய தூரம்"
+
+#: data/org.mate.eom.gschema.xml.in:11
+msgid "Automatic orientation"
+msgstr "தானியங்கி ஆற்றுப்படுத்தல்"
+
+#: data/org.mate.eom.gschema.xml.in:12
+msgid ""
+"Whether the image should be rotated automatically based on EXIF orientation."
+msgstr ""
+"பிம்பத்தை EXIF ஆற்றுப்படுத்தலை ஆதாரமாக கொண்டு தானியங்கியாக சுழற்ற வேண்டுமா?"
+
+#: data/org.mate.eom.gschema.xml.in:17
+msgid ""
+"The color that is used to fill the area behind the image. If the use-"
+"background-color key is not set, the color is determined by the active GTK+ "
+"theme instead."
+msgstr ""
+
+#: data/org.mate.eom.gschema.xml.in:21
+msgid "Use a custom background color"
+msgstr ""
+
+#: data/org.mate.eom.gschema.xml.in:22
+msgid ""
+"If this is active, the color set by the background-color key will be used to"
+" fill the area behind the image. If it is not set, the current GTK+ theme "
+"will determine the fill color."
+msgstr ""
+
+#: data/org.mate.eom.gschema.xml.in:26
+msgid "Interpolate Image"
+msgstr "பிம்பத்தை இடைச்சொருகுக"
+
+#: data/org.mate.eom.gschema.xml.in:27
+msgid ""
+"Whether the image should be interpolated on zoom-out. This leads to better "
+"quality but is somewhat slower than non-interpolated images."
+msgstr ""
+
+#: data/org.mate.eom.gschema.xml.in:31
+msgid "Extrapolate Image"
+msgstr "பிம்பத்தை புறச்செருகல் செய்க"
+
+#: data/org.mate.eom.gschema.xml.in:32
+msgid ""
+"Whether the image should be extrapolated on zoom-in. This leads to blurry "
+"quality and is somewhat slower than non-extrapolated images."
+msgstr ""
+"அணுகல் போது பிம்பத்தை  புறச்செருக வேண்டுமா வேண்டாமா. இதனால் தெளிவு குறைவான, "
+"புறச்செருகாத பிம்பத்தை விட மெதுவாக பிம்பம் கிடைக்கும்"
+
+#: data/org.mate.eom.gschema.xml.in:36
+msgid "Transparency indicator"
+msgstr "ஊடு தெரிதல் காட்டி"
+
+#: data/org.mate.eom.gschema.xml.in:37
+msgid ""
+"Determines how transparency should be indicated. Valid values are checked, "
+"color and none. If color is chosen, then the trans-color key determines the "
+"color value used."
+msgstr ""
+
+#: data/org.mate.eom.gschema.xml.in:41
+msgid "Scroll wheel zoom"
+msgstr "சக்கர உருட்டு பார்வை அணுகல்"
+
+#: data/org.mate.eom.gschema.xml.in:42
+msgid "Whether the scroll wheel should be used for zooming."
+msgstr "உருளை சக்கரத்தை அணுகலுக்கு பயன்படுத்த வேண்டுமா இல்லையா?"
+
+#: data/org.mate.eom.gschema.xml.in:46
+msgid "Zoom multiplier"
+msgstr "அணுகல் பெருக்கி"
+
+#: data/org.mate.eom.gschema.xml.in:47
+msgid ""
+"The multiplier to be applied when using the mouse scroll wheel for zooming. "
+"This value defines the zooming step used for each scroll event. For example,"
+" 0.05 results in a 5% zoom increment for each scroll event and 1.00 result "
+"in a 100% zoom increment."
+msgstr ""
+"சக்கர உருளையால் அணுகிப் பார்க்க பயன் படும் பெருக்கி. இந்த மதிப்பு ஒவ்வொரு "
+"உருட்டுக்குமான அணுகல் படியை வரையறுக்கிறது. உதாரணமாக 0.05 என்பது ஒவ்வொரு "
+"உருட்டுக்கும் 5% அணுகல் அதிகரிப்பு. 1.00 என்பது 100% அணுகல் அதிகரிப்பு."
+
+#: data/org.mate.eom.gschema.xml.in:51
+msgid "Transparency color"
+msgstr "ஊடு தெரிதல் வண்ணம்"
+
+#: data/org.mate.eom.gschema.xml.in:52
+msgid ""
+"If the transparency key has the value COLOR, then this key determines the "
+"color which is used for indicating transparency."
+msgstr ""
+"ஒளிபுகும் விசையின் மதிப்பு COLOR ஆக இருந்தால், விசை ஒளிபுகும் தன்மை "
+"காட்டப்பட வேண்டிய வண்ணத்தை தேர்வு செய்யும்"
+
+#: data/org.mate.eom.gschema.xml.in:58
+msgid "Randomize the image sequence"
+msgstr ""
+
+#: data/org.mate.eom.gschema.xml.in:59
+msgid "Whether the sequence of images should be shown in an random loop."
+msgstr ""
+
+#: data/org.mate.eom.gschema.xml.in:63
+msgid "Loop through the image sequence"
+msgstr "பிம்ப வரிசையில் மீண்டும் முயலவும்"
+
+#: data/org.mate.eom.gschema.xml.in:64
+msgid "Whether the sequence of images should be shown in an endless loop."
+msgstr "முடிவற்ற சுற்றில் பிம்பங்களை வரிசையாக காட்ட வேண்டுமா இல்லையா."
+
+#: data/org.mate.eom.gschema.xml.in:68
+msgid "Allow zoom greater than 100% initially"
+msgstr "100% மேல் பெரிதாக்குவதற்கு தொடக்கத்தில் அனுமதிக்கவும்"
+
+#: data/org.mate.eom.gschema.xml.in:69
+msgid ""
+"If this is set to FALSE small images will not be stretched to fit into the "
+"screen initially."
+msgstr ""
+"இதை பொய் என அமைத்தால் சிறிய பிம்பங்கள் திரையில் பொருந்தும் அளவிற்கு "
+"அமைக்கப்படும்"
+
+#: data/org.mate.eom.gschema.xml.in:73
+msgid "Delay in seconds until showing the next image"
+msgstr "அடுத்த பிம்பத்தைக் காண்பிப்பதற்கு தாமதம் (நொடிகளில்)"
+
+#: data/org.mate.eom.gschema.xml.in:74
+msgid ""
+"A value greater than 0 determines the seconds an image stays on screen until"
+" the next one is shown automatically. Zero disables the automatic browsing."
+msgstr ""
+"0 க்கும் மேற்பட்ட மதிப்புகள் அடுத்ததை காட்டுவதற்கு முன் பிம்பம் எவ்வளவு "
+"நேரம் திரையில் இருக்கும் என்பதை நொடிகளில் காட்டும். 0 தானியங்கி உலாவலை "
+"செயலிழக்க வைக்கும்."
+
+#: data/org.mate.eom.gschema.xml.in:80
+msgid "Show/Hide the window toolbar."
+msgstr "சாளர கருவிப்பட்டையை காட்டுக/மறைக்கவும்."
+
+#: data/org.mate.eom.gschema.xml.in:84
+msgid "Show/Hide the window statusbar."
+msgstr "சாளர நிலைப்பட்டையை காட்டுக/மறைக்கவும்."
+
+#: data/org.mate.eom.gschema.xml.in:88
+msgid "Show/Hide the image collection pane."
+msgstr "பிம்ப சேகரிப்பு பலகத்தை காட்டு/மறை."
+
+#: data/org.mate.eom.gschema.xml.in:92
+msgid "Image collection pane position."
+msgstr ""
+
+#: data/org.mate.eom.gschema.xml.in:96
+msgid "Whether the image collection pane should be resizable."
+msgstr "பிம்ப சேகரிப்பு பலகம் மறு அளவு ஆக்க இயல வேண்டுமா இல்லையா?"
+
+#: data/org.mate.eom.gschema.xml.in:100
+msgid "Show/Hide the window side pane."
+msgstr "சாளர பக்கப்பட்டையை காட்டுக/மறைக்கவும்."
+
+#: data/org.mate.eom.gschema.xml.in:104
+msgid "Show/Hide the image collection pane scroll buttons."
+msgstr "பிம்ப சேகரிப்பு பலக உருளை பொத்தான்களை காட்டு/மறை."
+
+#: data/org.mate.eom.gschema.xml.in:108
+msgid "Close main window without asking to save changes."
+msgstr ""
+
+#: data/org.mate.eom.gschema.xml.in:112
+msgid "Trash images without asking"
+msgstr "கேளாமல் பிம்பங்களை குப்பைக்கு நகர்த்துக"
+
+#: data/org.mate.eom.gschema.xml.in:113
+msgid ""
+"If activated, Eye of MATE won't ask for confirmation when moving images to "
+"the trash. It will still ask if any of the files cannot be moved to the "
+"trash and would be deleted instead."
+msgstr ""
+
+#: data/org.mate.eom.gschema.xml.in:117
+msgid ""
+"Whether the metadata list in the properties dialog should have its own page."
+msgstr "பண்புகள் உரையாடலின்  மெடா தரவுக்கு அதற்கான பக்கம் இருக்க வேண்டுமா"
+
+#: data/org.mate.eom.gschema.xml.in:118
+msgid ""
+"If activated, the detailed metadata list in the properties dialog will be "
+"moved to its own page in the dialog. This should make the dialog more usable"
+" on smaller screens, e.g. as used by netbooks. If disabled, the widget will "
+"be embedded on the \"Metadata\" page."
+msgstr ""
+
+#: data/org.mate.eom.gschema.xml.in:122
+msgid "External program to use for editing images"
+msgstr ""
+
+#: data/org.mate.eom.gschema.xml.in:123
+msgid ""
+"The desktop file name (including the \".desktop\") of the application to use"
+" for editing images (when the \"Edit Image\" toolbar button is clicked). Set"
+" to the empty string to disable this feature."
+msgstr ""
+
+#: data/org.mate.eom.gschema.xml.in:127
+msgid ""
+"Whether the file chooser should show the user's pictures folder if no images"
+" are loaded."
+msgstr ""
+"படங்கள் ஏதும் ஏற்றப்படாத போது பயனரின் படங்கள் அடைவை கோப்பு தேர்வி காட்ட "
+"வேண்டுமா?"
+
+#: data/org.mate.eom.gschema.xml.in:128
+msgid ""
+"If activated and no image is loaded in the active window, the file chooser "
+"will display the user's pictures folder using the XDG special user "
+"directories. If deactivated or the pictures folder has not been set up, it "
+"will show the current working directory."
+msgstr ""
+
+#: data/org.mate.eom.gschema.xml.in:134
+msgid "Active plugins"
+msgstr "செயல்படும் செருகிகள்"
+
+#: data/org.mate.eom.gschema.xml.in:135
+msgid ""
+"List of active plugins. It doesn't contain the \"Location\" of the active "
+"plugins. See the .eom-plugin file for obtaining the \"Location\" of a given "
+"plugin."
+msgstr ""
+"செயலில் உள்ள சொருகிகளின் பட்டியல். இதில் அவற்றின் இடம் \"Location\"  "
+"கிடையாது. ஒரு சொருகியைன் இடத்தை \"Location\" அறிய .eom-plugin கோப்பை "
+"பார்க்கவும்."
+
+#: plugins/fullscreen/fullscreen.plugin.desktop.in:5
+msgid "Fullscreen with double-click"
+msgstr "இரட்டிப்பு சொடுக்கால் முழுத்திரை "
+
+#: plugins/fullscreen/fullscreen.plugin.desktop.in:6
+msgid "view-fullscreen"
+msgstr ""
+
+#: plugins/reload/eom-reload-plugin.c:45
+#: plugins/reload/reload.plugin.desktop.in:5
+msgid "Reload Image"
+msgstr "பிம்பத்தை மீள் ஏற்று"
+
+#: plugins/reload/eom-reload-plugin.c:45
+msgid "Reload current image"
+msgstr "இப்போதைய படத்தை மீண்டும் ஏற்று "
+
+#: plugins/reload/reload.plugin.desktop.in:6
+msgid "view-refresh"
+msgstr ""
+
+#: plugins/statusbar-date/statusbar-date.plugin.desktop.in:5
+msgid "Date in statusbar"
+msgstr "நிலைப்பட்டையில் தேதிை "
+
+#: src/eom-close-confirmation-dialog.c:154
+msgid "Close _without Saving"
+msgstr "சேமிக்காமல் மூடு (_w)"
+
+#: src/eom-close-confirmation-dialog.c:187
+msgid "Question"
+msgstr "வினா"
+
+#: src/eom-close-confirmation-dialog.c:366
+msgid "If you don't save, your changes will be lost."
+msgstr ""
+"நீங்கள் சேமிக்கவில்லையென்றால், நீங்கள் செய்த மாற்றங்களை இழக்க நேரும். "
+
+#: src/eom-close-confirmation-dialog.c:402
+#, c-format
+msgid "Save changes to image \"%s\" before closing?"
+msgstr "பிம்பம் \"%s\" க்கான மாற்றங்களை மூடும் முன் சேமிக்கலாமா?"
+
+#: src/eom-close-confirmation-dialog.c:597
+#, c-format
+msgid "There is %d image with unsaved changes. Save changes before closing?"
+msgid_plural ""
+"There are %d images with unsaved changes. Save changes before closing?"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/eom-close-confirmation-dialog.c:614
+msgid "S_elect the images you want to save:"
+msgstr "_e சேமிக்க விரும்பும் பிம்பங்களை தேர்வு செய்க:"
+
+#: src/eom-close-confirmation-dialog.c:633
+msgid "If you don't save, all your changes will be lost."
+msgstr ""
+"நீங்கள் சேமிக்கவில்லையென்றால், உங்கள் அனைத்து மாற்றங்களையும் இழக்க நேரும். "
+
+#: src/eom-file-chooser.c:121
+msgid "File format is unknown or unsupported"
+msgstr "கோப்பு ஒழுங்கு தெரியாதது அல்லது ஆதரவு இல்லாதது"
+
+#: src/eom-file-chooser.c:126
+msgid ""
+"Eye of MATE could not determine a supported writable file format based on "
+"the filename."
+msgstr ""
+"கோப்புப் பெயர் கொண்டு ஐ ஆப் க்னோம் ஆதரவுள்ள எழுதக்கூடிய கோப்பு ஒழுங்கை "
+"நிர்ணயிக்க முடியவில்லை."
+
+#: src/eom-file-chooser.c:127
+msgid "Please try a different file extension like .png or .jpg."
+msgstr ""
+"தயவு செய்து .png அல்லது .jpg. போன்ற கோப்பு விரிவாக்கத்தை பயன்படுத்தவும்."
+
+#: src/eom-file-chooser.c:159
+msgid "All Files"
+msgstr "அனைத்து கோப்புகள்"
+
+#: src/eom-file-chooser.c:164
+msgid "All Images"
+msgstr "அனைத்து பிம்பங்களும்"
+
+#: src/eom-file-chooser.c:185
+#, c-format
+msgid "%s (*.%s)"
+msgstr "%s (*.%s)"
+
+#: src/eom-file-chooser.c:281 src/eom-properties-dialog.c:163
+#: src/eom-properties-dialog.c:165 src/eom-thumb-view.c:516
+msgid "pixel"
+msgid_plural "pixels"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/eom-file-chooser.c:451
+msgid "Open Image"
+msgstr ""
+
+#: src/eom-file-chooser.c:459
+msgid "Save Image"
+msgstr "பிம்பத்தை சேமி"
+
+#: src/eom-file-chooser.c:467 src/eom-window.c:4009
+msgid "Open Folder"
+msgstr "அடைவை திறக்கவும்"
+
+#: src/eom-image.c:552
+msgid "Transformation on unloaded image."
+msgstr "ஏற்றப்படாத பிம்பத்தை மாற்றுதல்."
+
+#: src/eom-image.c:580
+msgid "Transformation failed."
+msgstr "உருமாற்றுதல் தோல்வியுற்றது."
+
+#: src/eom-image.c:1054
+msgid "EXIF not supported for this file format."
+msgstr "இந்த கோப்பு வடிவத்திற்கு EXIF துணையில்லை."
+
+#: src/eom-image.c:1203
+msgid "Image loading failed."
+msgstr "பிம்ப ஏற்றம் தோல்வியுற்றது."
+
+#: src/eom-image.c:1732 src/eom-image.c:1834
+msgid "No image loaded."
+msgstr "பிம்பம் ஏதும் ஏற்றப்படவில்லை."
+
+#: src/eom-image.c:1742 src/eom-image.c:1846
+msgid "Temporary file creation failed."
+msgstr "தற்காலிக கோப்பு உருவாக்கம் தோல்வியில் முடிந்தது"
+
+#: src/eom-image-jpeg.c:384
+#, c-format
+msgid "Couldn't create temporary file for saving: %s"
+msgstr "இதனை சேமிப்பதற்கு தற்காலிக கோப்பு படைக்கமுடியவில்லை: %s"
+
+#: src/eom-image-jpeg.c:395
+msgid "Couldn't allocate memory for loading JPEG file"
+msgstr "JPEG கோப்பை ஏற்றுவதற்கு நினைவகத்தை ஒதுக்கி வைக்க முடியவில்லை"
+
+#: src/eom-error-message-area.c:108
+msgid "_Retry"
+msgstr "_ மறுமுயல்க"
+
+#: src/eom-error-message-area.c:151
+#, c-format
+msgid "Could not load image '%s'."
+msgstr "`%s' பிம்பத்தை ஏற்ற முடியவில்லை"
+
+#: src/eom-error-message-area.c:193
+#, c-format
+msgid "No images found in '%s'."
+msgstr "'%s' இல் பிம்பங்கள் ஏதும் இல்லை."
+
+#: src/eom-error-message-area.c:200
+msgid "The given locations contain no images."
+msgstr "கொடுத்த இடங்களில் பிம்பங்கள் ஏதும் இல்லை."
+
+#: src/eom-metadata-details.c:66
+msgid "Image Data"
+msgstr "பிம்ப தகவல்"
+
+#: src/eom-metadata-details.c:67
+msgid "Image Taking Conditions"
+msgstr "பிம்பத்தை எடுத்த சூழ்நிலை"
+
+#: src/eom-metadata-details.c:68
+msgid "GPS Data"
+msgstr ""
+
+#: src/eom-metadata-details.c:69
+msgid "Maker Note"
+msgstr "உருவாக்கியவர் குறிப்பு"
+
+#: src/eom-metadata-details.c:70
+msgid "Other"
+msgstr "மற்றவை"
+
+#: src/eom-metadata-details.c:72
+msgid "XMP Exif"
+msgstr "எக்ஸ்எம்பி(XMP) Exif"
+
+#: src/eom-metadata-details.c:73
+msgid "XMP IPTC"
+msgstr "எக்ஸ்எம்பி(XMP) ஐபிடிசி(IPTC)"
+
+#: src/eom-metadata-details.c:74
+msgid "XMP Rights Management"
+msgstr "எக்ஸ்எம்பி(XMP) உரிமை மேலாண்மை"
+
+#: src/eom-metadata-details.c:75
+msgid "XMP Other"
+msgstr "எக்ஸ்எம்பி மற்றவை"
+
+#: src/eom-metadata-details.c:251
+msgid "Tag"
+msgstr "குறி"
+
+#: src/eom-metadata-details.c:261
+msgid "Value"
+msgstr "மதிப்பு"
+
+#: src/eom-metadata-details.c:436
+msgid "North"
+msgstr "வடக்கு"
+
+#: src/eom-metadata-details.c:439
+msgid "East"
+msgstr "கிழக்கு"
+
+#: src/eom-metadata-details.c:442
+msgid "West"
+msgstr "மேற்கு"
+
+#: src/eom-metadata-details.c:445
+msgid "South"
+msgstr "தெற்கு"
+
+#: src/eom-exif-util.c:191 src/eom-exif-util.c:193
+msgid "%a, %d %B %Y  %X"
+msgstr "%a, %d %B %Y  %X"
+
+#: src/eom-exif-util.c:282
+#, c-format
+msgid "%.1f (lens)"
+msgstr "%.1f (lens)"
+
+#: src/eom-exif-util.c:293
+#, c-format
+msgid "%.1f (35mm film)"
+msgstr "%.1f (35மிமி பிலிம்)"
+
+#: src/eom-metadata-sidebar.c:153
+#, c-format
+msgid "%i × %i pixel"
+msgid_plural "%i × %i pixels"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/eom-metadata-sidebar.c:164 src/eom-properties-dialog.c:180
+msgid "Unknown"
+msgstr "தெரியாத"
+
+#: src/eom-metadata-sidebar.c:229
+msgid "%a, %d %B %Y"
+msgstr "%a, %d %B %Y"
+
+#: src/eom-metadata-sidebar.c:233
+#, c-format
+msgid "%X"
+msgstr ""
+
+#: src/eom-print.c:371
+msgid "Image Settings"
+msgstr "பிம்ப அமைப்பு"
+
+#: src/eom-print-image-setup.c:824
+msgid "Image"
+msgstr "படம்"
+
+#: src/eom-print-image-setup.c:825
+msgid "The image whose printing properties will be set up"
+msgstr "அச்சிட பண்புகளை அமைக்க வேண்டிய பிம்பம்."
+
+#: src/eom-print-image-setup.c:831
+msgid "Page Setup"
+msgstr "பக்க அமைப்பு"
+
+#: src/eom-print-image-setup.c:832
+msgid "The information for the page where the image will be printed"
+msgstr "பிம்பம் அச்சிடப்படும் பக்கத்திற்கு தகவல்."
+
+#: src/eom-print-image-setup.c:858
+msgid "Position"
+msgstr "நிலை"
+
+#: src/eom-print-image-setup.c:862
+msgid "_Left:"
+msgstr "(_L) இடது:"
+
+#: src/eom-print-image-setup.c:864
+msgid "_Right:"
+msgstr "(_R) வலது:"
+
+#: src/eom-print-image-setup.c:865
+msgid "_Top:"
+msgstr "(_T) மேலே:"
+
+#: src/eom-print-image-setup.c:866
+msgid "_Bottom:"
+msgstr "(_B) கீழே:"
+
+#: src/eom-print-image-setup.c:869
+msgid "C_enter:"
+msgstr "(_e) மையம்"
+
+#: src/eom-print-image-setup.c:874
+msgid "None"
+msgstr "இல்லை"
+
+#: src/eom-print-image-setup.c:876
+msgid "Horizontal"
+msgstr "கிடைதிசை"
+
+#: src/eom-print-image-setup.c:878
+msgid "Vertical"
+msgstr "செங்குத்து"
+
+#: src/eom-print-image-setup.c:880
+msgid "Both"
+msgstr "இரண்டும்"
+
+#: src/eom-print-image-setup.c:899
+msgid "_Width:"
+msgstr "அகலம்: (_W)"
+
+#: src/eom-print-image-setup.c:901
+msgid "_Height:"
+msgstr "(_H) உயரம்:"
+
+#: src/eom-print-image-setup.c:904
+msgid "_Scaling:"
+msgstr "(_S) அளவு மாற்றம்:"
+
+#: src/eom-print-image-setup.c:915
+msgid "_Unit:"
+msgstr "(_U) அளவை:"
+
+#: src/eom-print-image-setup.c:920
+msgid "Millimeters"
+msgstr "மில்லிமீட்டர்கள்"
+
+#: src/eom-print-image-setup.c:922
+msgid "Inches"
+msgstr "இஞ்ச்கள்"
+
+#: src/eom-print-image-setup.c:950
+msgid "Preview"
+msgstr "முன்காட்சி"
+
+#: src/eom-save-as-dialog-helper.c:161
+msgid "as is"
+msgstr "இருப்பது போலவே"
+
+#. Translators: This string is displayed in the statusbar.
+#. * The first token is the image number, the second is total image
+#. * count.
+#. *
+#. * Translate to "%Id" if you want to use localized digits, or
+#. * translate to "%d" otherwise.
+#. *
+#. * Note that translating this doesn't guarantee that you get localized
+#. * digits. That needs support from your system and locale definition
+#. * too.
+#: src/eom-statusbar.c:122
+#, c-format
+msgid "%d / %d"
+msgstr "%d / %d"
+
+#: src/eom-thumb-view.c:544
+msgid "Taken on"
+msgstr "எடுக்கப்பட்ட தேதி"
+
+#: src/eom-uri-converter.c:986
+msgid "At least two file names are equal."
+msgstr "குறைந்தது இரண்டு கோப்புகளின் பெயர்கள் சமமாக உள்ளன"
+
+#: src/eom-util.c:68
+msgid "Could not display help for Eye of MATE"
+msgstr "ஐ ஆப் க்னோம் உதவியை காட்ட முடியவில்லை"
+
+#: src/eom-util.c:116
+msgid " (invalid Unicode)"
+msgstr " (தவறான யூனிகோட்)"
+
+#. Translators: This is the string displayed in the statusbar
+#. * The tokens are from left to right:
+#. * - image width
+#. * - image height
+#. * - image size in bytes
+#. * - zoom in percent
+#: src/eom-window.c:521
+#, c-format
+msgid "%i × %i pixel  %s    %i%%"
+msgid_plural "%i × %i pixels  %s    %i%%"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/eom-window.c:832
+msgid "_Reload"
+msgstr "மீண்டும் ஏற்று (_R)"
+
+#: src/eom-window.c:834 src/eom-window.c:2794
+msgctxt "MessageArea"
+msgid "Hi_de"
+msgstr ""
+
+#: src/eom-window.c:844
+#, c-format
+msgid ""
+"The image \"%s\" has been modified by an external application.\n"
+"Would you like to reload it?"
+msgstr ""
+
+#: src/eom-window.c:1012
+#, c-format
+msgid "Use \"%s\" to open the selected image"
+msgstr "தேர்ந்தெடுத்த பிம்பத்தை திறக்க \"%s\"  ஐ பயன்படுத்துக"
+
+#. Translators: This string is displayed in the statusbar
+#. * while saving images. The tokens are from left to right:
+#. * - the original filename
+#. * - the current image's position in the queue
+#. * - the total number of images queued for saving
+#: src/eom-window.c:1176
+#, c-format
+msgid "Saving image \"%s\" (%u/%u)"
+msgstr "\"%s\" பிம்பம் சேமிக்கப்படுகின்றது  (%u/%u)"
+
+#: src/eom-window.c:1543
+#, c-format
+msgid "Opening image \"%s\""
+msgstr ""
+
+#: src/eom-window.c:1909
+msgid "Leave Fullscreen"
+msgstr "முழுத்திரையாக விடவும்"
+
+#: src/eom-window.c:2050
+msgid "Viewing a slideshow"
+msgstr ""
+
+#: src/eom-window.c:2263
+#, c-format
+msgid ""
+"Error printing file:\n"
+"%s"
+msgstr ""
+"கோப்பை அச்சிடும் போது பிழை:\n"
+"%s"
+
+#: src/eom-window.c:2526
+msgid "Toolbar Editor"
+msgstr "கருவிப்பட்டி தொகுப்பி"
+
+#: src/eom-window.c:2529
+msgid "_Reset to Default"
+msgstr "முன்னிருப்புக்கு்மீமீ ட்ட(_R)ரை "
+
+#: src/eom-window.c:2594
+msgid ""
+"This program is free software; you can redistribute it and/or modify it "
+"under the terms of the GNU General Public License as published by the Free "
+"Software Foundation; either version 2 of the License, or (at your option) "
+"any later version.\n"
+msgstr ""
+"இது இலவச மென் பொருளாகும். இலவச மென்பொருள் அமைப்பினால் வெளியிடப்பட்ட ஜிஎன்யு "
+"பொது அனுமதிக்கான விதிகளின் படி இந்த 2ம் பதிப்பையோ / அல்லது அடுத்த "
+"பதிப்புகளையோ நீங்கள் மாற்றலாம். அல்லது மீண்டும் பறிமாறலாம்..\n"
+
+#: src/eom-window.c:2598
+msgid ""
+"This program is distributed in the hope that it will be useful, but WITHOUT "
+"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
+"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
+"more details.\n"
+msgstr ""
+"உபயோகப்படும் என்ற எதிர்பார்ப்புடன் இந்த மென்பொருள் வெளியிடப்படுகிறது. ஆனால் "
+"விற்க தகுதி,குறிப்பிட்ட  செயலுக்கான தகுதி உள்பட எந்த உத்திரவாதமும் "
+"அளிக்கப்படவில்லை. மேற் கொண்டு விவரங்களுக்கு ஜிஎன்யு பொது அனுமதிக்கான விதிகளை"
+" பார்க்கவும்.\n"
+
+#: src/eom-window.c:2602
+msgid ""
+"You should have received a copy of the GNU General Public License along with"
+" this program; if not, write to the Free Software Foundation, Inc., 51 "
+"Franklin St, Fifth Floor, Boston, MA 02110-1301, USA."
+msgstr ""
+
+#: src/eom-window.c:2641
+msgid "About Eye of MATE"
+msgstr ""
+
+#: src/eom-window.c:2643
+msgid ""
+"Copyright © 2000-2010 Free Software Foundation, Inc.\n"
+"Copyright © 2011 Perberos\n"
+"Copyright © 2012-2020 MATE developers"
+msgstr ""
+
+#: src/eom-window.c:2646
+msgid "The MATE image viewer."
+msgstr "க்னோம் பிம்ப காட்டி"
+
+#: src/eom-window.c:2649
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Valmantas Palikša https://launchpad.net/~walmis\n"
+"  bhuvi https://launchpad.net/~bhuvanesh"
+
+#: src/eom-window.c:2742 src/eom-window.c:2757
+msgid "Error launching appearance preferences dialog: "
+msgstr ""
+
+#: src/eom-window.c:2792
+msgid "_Open Background Preferences"
+msgstr ""
+
+#: src/eom-window.c:2808
+#, c-format
+msgid ""
+"The image \"%s\" has been set as Desktop Background.\n"
+"Would you like to modify its appearance?"
+msgstr ""
+"பிம்பம்  \"%s\" மேல்மேசை   பின்னணியாக  வைக்கப்பட்டுள்ள து\n"
+" அதன் தோற்றத்தை   மாற்ற விருப்பமா? "
+
+#: src/eom-window.c:3249
+msgid "Saving image locally…"
+msgstr "படத்தை உள்ளமைவாக சேமிக்கிறது"
+
+#: src/eom-window.c:3329
+#, c-format
+msgid ""
+"Are you sure you want to move\n"
+"\"%s\" to the trash?"
+msgstr ""
+"நீங்கள் நிச்சயமாக\n"
+"\"%s\" ஐ குப்பைக்கு நகர்த்த வேண்டுமா?"
+
+#: src/eom-window.c:3332
+#, c-format
+msgid ""
+"A trash for \"%s\" couldn't be found. Do you want to remove this image "
+"permanently?"
+msgstr ""
+"ஒரு குப்பை \"%s\"க்கு தேட முடியவில்லை. இந்த படத்தை நிரந்தரமாக நீக்க "
+"வேண்டுமா?"
+
+#: src/eom-window.c:3337
+#, c-format
+msgid ""
+"Are you sure you want to move\n"
+"the %d selected image to the trash?"
+msgid_plural ""
+"Are you sure you want to move\n"
+"the %d selected images to the trash?"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/eom-window.c:3342
+msgid ""
+"Some of the selected images can't be moved to the trash and will be removed "
+"permanently. Are you sure you want to proceed?"
+msgstr ""
+"சில தேர்ந்தெடுக்கப்பட்ட படங்களை குப்பைக்கு நகர்த்த முடியவில்லை அவை "
+"நிரந்தரமாக நீக்கப்படும். அதனை செய்ய வேண்டுமா?"
+
+#: src/eom-window.c:3359 src/eom-window.c:3855 src/eom-window.c:3882
+msgid "Move to _Trash"
+msgstr "_T குப்பைக்கு நகர்த்து"
+
+#: src/eom-window.c:3361
+msgid "_Do not ask again during this session"
+msgstr "(_D) மீண்டும் இந்த அமர்வில் கேட்காதே"
+
+#: src/eom-window.c:3406 src/eom-window.c:3420
+msgid "Couldn't access trash."
+msgstr "குப்பை தொட்டியை அணுக முடியவில்லை"
+
+#: src/eom-window.c:3428
+msgid "Couldn't delete file"
+msgstr "கோப்பினை சேமிக்க முடியவில்லை"
+
+#: src/eom-window.c:3530
+#, c-format
+msgid "Error on deleting image %s"
+msgstr "பிம்பத்தை நீக்கும் போது பிழை %s"
+
+#: src/eom-window.c:3776
+msgid "_Image"
+msgstr "_I பிம்பம்"
+
+#: src/eom-window.c:3777
+msgid "_Edit"
+msgstr "தொகு (_E)"
+
+#: src/eom-window.c:3778
+msgid "_View"
+msgstr "_பார்"
+
+#: src/eom-window.c:3779
+msgid "_Go"
+msgstr "_G போ"
+
+#: src/eom-window.c:3780
+msgid "_Tools"
+msgstr "_T கருவிகள்"
+
+#: src/eom-window.c:3781
+msgid "_Help"
+msgstr "_உதவி"
+
+#: src/eom-window.c:3783
+msgid "_Open…"
+msgstr "(_O) திற"
+
+#: src/eom-window.c:3784
+msgid "Open a file"
+msgstr "ஓர் கோப்பைத் திறக்கவும்"
+
+#: src/eom-window.c:3786
+msgid "_Close"
+msgstr "மூடு (_C)"
+
+#: src/eom-window.c:3787
+msgid "Close window"
+msgstr "விண்டோவை  மூடுக "
+
+#: src/eom-window.c:3789
+msgid "T_oolbar"
+msgstr "கருவிப்பட்டை (_o)"
+
+#: src/eom-window.c:3790
+msgid "Edit the application toolbar"
+msgstr "பயன்பாட்டு கருவிப்பட்டையை திருத்துக"
+
+#: src/eom-window.c:3792
+msgid "Prefere_nces"
+msgstr "விருப்பங்_கள்"
+
+#: src/eom-window.c:3793
+msgid "Preferences for Eye of MATE"
+msgstr "ஐ ஆப் க்னோம் விருப்பங்கள்"
+
+#: src/eom-window.c:3795
+msgid "_Contents"
+msgstr "_C உள்ளடக்கங்கள்"
+
+#: src/eom-window.c:3796
+msgid "Help on this application"
+msgstr "இந்த செயல்பாட்டுக்கான உதவி"
+
+#: src/eom-window.c:3798
+msgid "_About"
+msgstr "பற்றி "
+
+#: src/eom-window.c:3799
+msgid "About this application"
+msgstr "இந்த பயன்பாட்டினை பற்றி"
+
+#: src/eom-window.c:3804
+msgid "_Toolbar"
+msgstr "கருவிப்பட்டை (_T)"
+
+#: src/eom-window.c:3805
+msgid "Changes the visibility of the toolbar in the current window"
+msgstr "நடப்பு சாளரத்தில் கருவிப்பட்டையின் தெரிதலை மாற்றுகிறது"
+
+#: src/eom-window.c:3807
+msgid "_Statusbar"
+msgstr "நிலைப்பட்டை (_S)"
+
+#: src/eom-window.c:3808
+msgid "Changes the visibility of the statusbar in the current window"
+msgstr "நடப்பு சாளரத்தில் நிலைப்பட்டையின் தெரிதலை மாற்றுகிறது"
+
+#: src/eom-window.c:3810
+msgid "_Image Collection"
+msgstr "_I பிம்ப சேகரிப்பு "
+
+#: src/eom-window.c:3811
+msgid ""
+"Changes the visibility of the image collection pane in the current window"
+msgstr "நடப்பு சாளரத்தில் பிம்ப சேகரிப்பு பலக தெரிதலை மாற்றுகிறது"
+
+#: src/eom-window.c:3813
+msgid "Side _Pane"
+msgstr "பக்க பலகம் (_P)"
+
+#: src/eom-window.c:3814
+msgid "Changes the visibility of the side pane in the current window"
+msgstr "நடப்பு சாளரத்தில் நிலைப்பட்டையின் தெரிதலை மாற்றுகிறது"
+
+#: src/eom-window.c:3819
+msgid "_Save"
+msgstr "சேமி (_S)"
+
+#: src/eom-window.c:3820
+msgid "Save changes in currently selected images"
+msgstr "தேர்ந்தெடுத்த பிம்பத்தில் மாற்றங்களை சேமிக்கவும் "
+
+#: src/eom-window.c:3822
+msgid "Open _with"
+msgstr "_w இதனுடன் திறக்க"
+
+#: src/eom-window.c:3823
+msgid "Open the selected image with a different application"
+msgstr "தேர்ந்தெடுக்கப்பட்ட படத்தை வேறு ஒரு பயன்பாட்டால் திற"
+
+#: src/eom-window.c:3825
+msgid "Save _As…"
+msgstr "(_A) இப்படி சேமி..."
+
+#: src/eom-window.c:3826
+msgid "Save the selected images with a different name"
+msgstr "தேர்ந்தெடுக்கப்பட்ட படத்தை வேறு ஒரு பெயரால் சேமி"
+
+#: src/eom-window.c:3828
+msgid "Open Containing _Folder"
+msgstr ""
+
+#: src/eom-window.c:3829
+msgid "Show the folder which contains this file in the file manager"
+msgstr ""
+
+#: src/eom-window.c:3831
+msgid "_Print…"
+msgstr "_P அச்சிடு."
+
+#: src/eom-window.c:3832
+msgid "Print the selected image"
+msgstr "தேர்ந்தெடுத்த பிம்பத்தை அச்சிடவும்"
+
+#: src/eom-window.c:3834
+msgid "Prope_rties"
+msgstr "_r பண்புகள்"
+
+#: src/eom-window.c:3835
+msgid "Show the properties and metadata of the selected image"
+msgstr "தேர்ந்தெடுக்கப்பட்ட படத்தின் பண்புகள் மற்றும்  மெடாதரவையும் காட்டுக"
+
+#: src/eom-window.c:3837
+msgid "_Undo"
+msgstr "_கவில்"
+
+#: src/eom-window.c:3838
+msgid "Undo the last change in the image"
+msgstr "படத்தில் கடைசி மாற்றத்தை செயல்நீக்கு"
+
+#: src/eom-window.c:3840
+msgid "Flip _Horizontal"
+msgstr "(_H) கிடைதிசையாக திருப்புக"
+
+#: src/eom-window.c:3841
+msgid "Mirror the image horizontally"
+msgstr "படத்தை கிடையில் கண்ணாடி பிம்பம் போல் காட்டு"
+
+#: src/eom-window.c:3843
+msgid "Flip _Vertical"
+msgstr "(_V) செங்குத்தாக திருப்புக"
+
+#: src/eom-window.c:3844
+msgid "Mirror the image vertically"
+msgstr "படத்தை செங்குத்தில் கண்ணாடி பிம்பம் போல் காட்டு"
+
+#: src/eom-window.c:3846
+msgid "_Rotate Clockwise"
+msgstr "(_R) நேர்திசையில் சுழற்றவும்"
+
+#: src/eom-window.c:3847
+msgid "Rotate the image 90 degrees to the right"
+msgstr "படத்தை 90 பாகைகள் வலமாக சுற்றுக"
+
+#: src/eom-window.c:3849
+msgid "Rotate Counterc_lockwise"
+msgstr "(_l) எதிர்திசையில் சுழற்றவும்"
+
+#: src/eom-window.c:3850
+msgid "Rotate the image 90 degrees to the left"
+msgstr "படத்தை 90 பாகைகள் இடமாக சுற்றுக"
+
+#: src/eom-window.c:3852
+msgid "Set as _Desktop Background"
+msgstr "பணிமேடை பின்னணியாக அமை (_D)"
+
+#: src/eom-window.c:3853
+msgid "Set the selected image as the desktop background"
+msgstr "தேர்வு செய்யப்பட்ட படத்தை பணிமேடை பின்னணியாக்கு"
+
+#: src/eom-window.c:3856
+msgid "Move the selected image to the trash folder"
+msgstr "தேர்வு செய்யப்பட்ட உருப்படியை குப்பை அடைவுக்கு நகர்த்து"
+
+#: src/eom-window.c:3858
+msgid "_Copy"
+msgstr "நகல் (_C)"
+
+#: src/eom-window.c:3859
+msgid "Copy the selected image to the clipboard"
+msgstr ""
+
+#: src/eom-window.c:3861 src/eom-window.c:3873 src/eom-window.c:3876
+msgid "_Zoom In"
+msgstr "(_Z) அணுகிப் பார்"
+
+#: src/eom-window.c:3862 src/eom-window.c:3874
+msgid "Enlarge the image"
+msgstr "படத்தை பெரிதாக்கு"
+
+#: src/eom-window.c:3864 src/eom-window.c:3879
+msgid "Zoom _Out"
+msgstr "(_O) விலகிப் பார்"
+
+#: src/eom-window.c:3865 src/eom-window.c:3877 src/eom-window.c:3880
+msgid "Shrink the image"
+msgstr "படத்தை சுருக்கவும் "
+
+#: src/eom-window.c:3867
+msgid "_Normal Size"
+msgstr "(_N) இயல்பான அளவு"
+
+#: src/eom-window.c:3868
+msgid "Show the image at its normal size"
+msgstr "படத்தை இயல்பான அளவில் காட்டு"
+
+#: src/eom-window.c:3870
+msgid "_Best Fit"
+msgstr "சரியான பொருந்து (_B)"
+
+#: src/eom-window.c:3871
+msgid "Fit the image to the window"
+msgstr "படத்தை சாளரத்தில் பொருத்தவும்"
+
+#: src/eom-window.c:3888
+msgid "_Fullscreen"
+msgstr "முழுத்திரை (_F)"
+
+#: src/eom-window.c:3889
+msgid "Show the current image in fullscreen mode"
+msgstr "இப்போதைய படத்தை முழுத்திரை பாங்கில் காட்டுக"
+
+#: src/eom-window.c:3891
+msgid "Pause Slideshow"
+msgstr ""
+
+#: src/eom-window.c:3892
+msgid "Pause or resume the slideshow"
+msgstr ""
+
+#: src/eom-window.c:3897 src/eom-window.c:3912
+msgid "_Previous Image"
+msgstr "(_P) முந்தைய பிம்பம்"
+
+#: src/eom-window.c:3898
+msgid "Go to the previous image of the collection"
+msgstr "பட சேகரிப்பில் முந்தைய படத்துக்கு போ"
+
+#: src/eom-window.c:3900
+msgid "_Next Image"
+msgstr "(_N) அடுத்த பிம்பம்"
+
+#: src/eom-window.c:3901
+msgid "Go to the next image of the collection"
+msgstr "பட சேகரிப்பில் அடுத்த படத்துக்கு போ"
+
+#: src/eom-window.c:3903 src/eom-window.c:3915
+msgid "_First Image"
+msgstr "(_F) ஆரம்ப பிம்பம்"
+
+#: src/eom-window.c:3904
+msgid "Go to the first image of the collection"
+msgstr "பட சேகரிப்பில் முதல் படத்துக்கு போ"
+
+#: src/eom-window.c:3906 src/eom-window.c:3918
+msgid "_Last Image"
+msgstr "(_L) கடைசி பிம்பம்"
+
+#: src/eom-window.c:3907
+msgid "Go to the last image of the collection"
+msgstr "பட சேகரிப்பில் கடைசி படத்துக்கு போ"
+
+#: src/eom-window.c:3909
+msgid "_Random Image"
+msgstr "_R  குறிப்பில்லா பிம்பம்"
+
+#: src/eom-window.c:3910
+msgid "Go to a random image of the collection"
+msgstr "பட சேகரிப்பில் குறிப்பில்லா து ஒரு படத்துக்கு போ"
+
+#: src/eom-window.c:3924
+msgid "S_lideshow"
+msgstr ""
+
+#: src/eom-window.c:3925
+msgid "Start a slideshow view of the images"
+msgstr "பட வரிசை காட்சி ஒன்றை துவக்கு"
+
+#: src/eom-window.c:3995
+msgid "Previous"
+msgstr "முந்தைய"
+
+#: src/eom-window.c:3999
+msgid "Next"
+msgstr "அடுத்து"
+
+#: src/eom-window.c:4003
+msgid "Right"
+msgstr "வலது"
+
+#: src/eom-window.c:4006
+msgid "Left"
+msgstr "இடது"
+
+#: src/eom-window.c:4012
+msgid "In"
+msgstr "உள்ளே"
+
+#: src/eom-window.c:4015
+msgid "Out"
+msgstr "வெளியே"
+
+#: src/eom-window.c:4018
+msgid "Normal"
+msgstr "இயல்பான"
+
+#: src/eom-window.c:4021
+msgid "Fit"
+msgstr "பொருத்து"
+
+#: src/eom-window.c:4024
+msgid "Collection"
+msgstr "சேகரிப்பு"
+
+#: src/eom-window.c:4027
+msgctxt "action (to trash)"
+msgid "Trash"
+msgstr "அகற்றிடம்"
+
+#: src/eom-window.c:4385
+#, c-format
+msgid "Edit the current image using %s"
+msgstr ""
+
+#: src/eom-window.c:4388
+msgid "Edit Image"
+msgstr ""
+
+#: src/eom-window.c:4612
+msgid "Properties"
+msgstr "பண்புகள்"
+
+#: src/main.c:72
+msgid "Open in fullscreen mode"
+msgstr "முழுத்திரை பாங்கில் திறக்கவும்."
+
+#: src/main.c:73
+msgid "Disable image collection"
+msgstr "பிம்ப சேகரிப்பை செயல் நீக்கு"
+
+#: src/main.c:74
+msgid "Open in slideshow mode"
+msgstr "பட வில்லை காட்சி பாங்கில் திற"
+
+#: src/main.c:75
+msgid "Start a new instance instead of reusing an existing one"
+msgstr "இருப்பில் உள்ளதை பயனாக்குவது தவிர்த்து புதியது துவக்கு "
+
+#: src/main.c:77
+msgid "Show the application's version"
+msgstr "பயன்பாட்டின் பதிப்பினை காட்டு"
+
+#: src/main.c:108
+msgid "[FILE…]"
+msgstr "[FILE...]"
+
+#: src/main.c:121
+#, c-format
+msgid "Run '%s --help' to see a full list of available command line options."
+msgstr ""
+"'%s --help' என்பதை இயக்கி இருக்கும் கட்டளை வரி விருப்பங்களை பட்டியலிடவும்."

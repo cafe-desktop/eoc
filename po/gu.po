@@ -1,0 +1,1578 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR MATE Desktop Environment team
+# This file is distributed under the same license as the eom package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Jay Patel <jetslimited@gmail.com>, 2020
+# Stefano Karapetsas <stefano@karapetsas.com>, 2020
+# Milan Savaliya <milansavaliyaz@gmail.com>, 2020
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: eom 1.23.1\n"
+"Report-Msgid-Bugs-To: http://www.mate-desktop.org\n"
+"POT-Creation-Date: 2020-01-10 14:33+0100\n"
+"PO-Revision-Date: 2020-02-14 12:07+0000\n"
+"Last-Translator: Milan Savaliya <milansavaliyaz@gmail.com>, 2020\n"
+"Language-Team: Gujarati (https://www.transifex.com/mate/teams/13566/gu/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: gu\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:946
+#, c-format
+msgid "Show “_%s”"
+msgstr "“_%s” બતાવો"
+
+#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1420
+msgid "_Move on Toolbar"
+msgstr "સાધનપટ્ટી પર ખસો (_M)"
+
+#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1421
+msgid "Move the selected item on the toolbar"
+msgstr "સાધનપટ્ટી પર પસંદ કરેલ વસ્તુ ખસેડો"
+
+#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1422
+msgid "_Remove from Toolbar"
+msgstr "સાધનપટ્ટીમાંથી દૂર કરો (_R)"
+
+#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1423
+msgid "Remove the selected item from the toolbar"
+msgstr "સાધનપટ્ટીમાંથી પસંદ કરેલ વસ્તુ દૂર કરો"
+
+#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1424
+msgid "_Delete Toolbar"
+msgstr "સાધનપટ્ટી કાઢી નાંખો (_D)"
+
+#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1425
+msgid "Remove the selected toolbar"
+msgstr "પસંદ કરેલ સાધનપટ્ટી દૂર કરો"
+
+#: cut-n-paste/toolbar-editor/egg-toolbar-editor.c:483
+msgid "Separator"
+msgstr "વિભાજક"
+
+#: data/eom.appdata.xml.in:6 src/eom-window.c:2640
+msgid "Eye of MATE"
+msgstr "Eye of MATE"
+
+#: data/eom.appdata.xml.in:7
+msgid "Simple image viewer"
+msgstr ""
+
+#: data/eom.appdata.xml.in:9
+msgid ""
+"Eye of MATE is a simple viewer for browsing images on your computer. Once an"
+" image is loaded, you can zoom and rotate the image, and also view "
+"subsequent images in the directory the image was loaded from."
+msgstr ""
+
+#: data/eom.desktop.in.in:3 src/main.c:65 src/main.c:166
+msgid "Eye of MATE Image Viewer"
+msgstr "Eye of MATE ચિત્ર દર્શક"
+
+#: data/eom.desktop.in.in:4
+msgid "Browse and rotate images"
+msgstr "ચિત્રો શોધો અને ફેરવો"
+
+#. Translators: Do NOT translate or transliterate this text (this is an icon
+#. file name)!
+#: data/eom.desktop.in.in:8
+msgid "eom"
+msgstr ""
+
+#. Translators: Search terms to find this application. Do NOT translate or
+#. localize the semicolons! The list MUST also end with a semicolon!
+#: data/eom.desktop.in.in:14
+msgid "image;viewer;JPEG;PNG;TIFF;SVG;MATE;photos;browse;thumbnails;rotate;"
+msgstr ""
+
+#: data/eom-image-properties-dialog.ui:8
+msgid "Image Properties"
+msgstr "ચિત્ર ગુણધર્મો"
+
+#: data/eom-image-properties-dialog.ui:54
+msgid "_Previous"
+msgstr "પહેલાંનું (_P)"
+
+#: data/eom-image-properties-dialog.ui:101
+msgid "_Next"
+msgstr "પછીનું (_N)"
+
+#: data/eom-image-properties-dialog.ui:198
+msgid "Name:"
+msgstr "નામ:"
+
+#: data/eom-image-properties-dialog.ui:217
+msgid "Width:"
+msgstr ""
+
+#: data/eom-image-properties-dialog.ui:235
+msgid "Height:"
+msgstr "ઊંચાઈ:"
+
+#: data/eom-image-properties-dialog.ui:253
+msgid "Type:"
+msgstr "પ્રકાર:"
+
+#: data/eom-image-properties-dialog.ui:271
+msgid "Bytes:"
+msgstr ""
+
+#: data/eom-image-properties-dialog.ui:289
+#: data/eom-image-properties-dialog.ui:614
+msgid "Location:"
+msgstr "સ્થાન:"
+
+#: data/eom-image-properties-dialog.ui:422
+msgid "General"
+msgstr "સામાન્ય"
+
+#: data/eom-image-properties-dialog.ui:455
+msgid "Aperture Value:"
+msgstr ""
+
+#: data/eom-image-properties-dialog.ui:471
+msgid "Exposure Time:"
+msgstr ""
+
+#: data/eom-image-properties-dialog.ui:487
+msgid "Focal Length:"
+msgstr ""
+
+#: data/eom-image-properties-dialog.ui:503
+msgid "Flash:"
+msgstr ""
+
+#: data/eom-image-properties-dialog.ui:519
+msgid "ISO Speed Rating:"
+msgstr ""
+
+#: data/eom-image-properties-dialog.ui:535
+msgid "Metering Mode:"
+msgstr ""
+
+#: data/eom-image-properties-dialog.ui:551
+msgid "Camera Model:"
+msgstr ""
+
+#: data/eom-image-properties-dialog.ui:568
+msgid "Date/Time:"
+msgstr ""
+
+#: data/eom-image-properties-dialog.ui:598
+msgid "Description:"
+msgstr "વર્ણન:"
+
+#: data/eom-image-properties-dialog.ui:630
+msgid "Keywords:"
+msgstr "મુખ્ય શબ્દો:"
+
+#: data/eom-image-properties-dialog.ui:646
+msgid "Author:"
+msgstr "લેખક:"
+
+#: data/eom-image-properties-dialog.ui:662
+msgid "Copyright:"
+msgstr "કોપીરાઇટ:"
+
+#: data/eom-image-properties-dialog.ui:941
+#: data/eom-image-properties-dialog.ui:990 data/metadata-sidebar.ui:409
+msgid "Details"
+msgstr "વિગતો"
+
+#: data/eom-image-properties-dialog.ui:966
+msgid "Metadata"
+msgstr "મેટાડેટા"
+
+#: data/eom-multiple-save-as-dialog.ui:16
+msgid "Save As"
+msgstr "આ રીતે સંગ્રહો"
+
+#: data/eom-multiple-save-as-dialog.ui:101
+msgid "<b>%f:</b> original filename"
+msgstr ""
+
+#: data/eom-multiple-save-as-dialog.ui:119
+msgid "<b>%n:</b> counter"
+msgstr ""
+
+#: data/eom-multiple-save-as-dialog.ui:169
+msgid "Choose a folder"
+msgstr "ફોલ્ડર પસંદ કરો"
+
+#: data/eom-multiple-save-as-dialog.ui:182
+msgid "Destination folder:"
+msgstr "અંતિમ મુકામ ફોલ્ડર:"
+
+#: data/eom-multiple-save-as-dialog.ui:194
+msgid "Filename format:"
+msgstr "ફાઈલનામ બંધારણ:"
+
+#: data/eom-multiple-save-as-dialog.ui:212
+msgid "File Path Specifications"
+msgstr ""
+
+#: data/eom-multiple-save-as-dialog.ui:253
+msgid "Start counter at:"
+msgstr "ગણક અંહિ શરુ કરો:"
+
+#: data/eom-multiple-save-as-dialog.ui:285
+msgid "Replace spaces with underscores"
+msgstr "ખાલી જગ્યાઓને અન્ડરસ્કોરથી બદલો"
+
+#: data/eom-multiple-save-as-dialog.ui:307
+msgid "Options"
+msgstr "વિકલ્પો"
+
+#: data/eom-multiple-save-as-dialog.ui:369
+msgid "Rename from:"
+msgstr "આમાંથી નામ બદલો:"
+
+#: data/eom-multiple-save-as-dialog.ui:381
+msgid "To:"
+msgstr "પ્રતિ:"
+
+#: data/eom-multiple-save-as-dialog.ui:396
+msgid "File Name Preview"
+msgstr ""
+
+#: data/eom-preferences-dialog.ui:16
+msgid "Eye of MATE Preferences"
+msgstr "Eye of MATE ની પસંદગીઓ"
+
+#: data/eom-preferences-dialog.ui:88
+msgid "Image Enhancements"
+msgstr ""
+
+#: data/eom-preferences-dialog.ui:117
+msgid "Smooth images when zoomed-_out"
+msgstr "જ્યારે ચિત્રો નાનામોટા કરવામાં આવે ત્યારે લીસા બનાવો (_o)"
+
+#: data/eom-preferences-dialog.ui:155
+msgid "Smooth images when zoomed-_in"
+msgstr "જ્યારે ચિત્રો નાનામોટા કરવામાં આવે ત્યારે લીસા બનાવો (_i)"
+
+#: data/eom-preferences-dialog.ui:193
+msgid "_Automatic orientation"
+msgstr "આપોઆપ દિશાકરણ (_A)"
+
+#: data/eom-preferences-dialog.ui:231
+msgid "Background"
+msgstr "પાશ્વ ભાગ"
+
+#: data/eom-preferences-dialog.ui:250
+msgid "As custom color:"
+msgstr ""
+
+#: data/eom-preferences-dialog.ui:267 data/org.mate.eom.gschema.xml.in:16
+msgid "Background Color"
+msgstr "પાર્શ્વ રંગ"
+
+#: data/eom-preferences-dialog.ui:300
+msgid "Transparent Parts"
+msgstr ""
+
+#: data/eom-preferences-dialog.ui:335
+msgid "As check _pattern"
+msgstr "ચકાસણી માટેના નમૂના તરીકે (_p)"
+
+#: data/eom-preferences-dialog.ui:356
+msgid "As custom c_olor:"
+msgstr "વૈવિધ્યપૂર્ણ રંગ તરીકે (_o):"
+
+#: data/eom-preferences-dialog.ui:377
+msgid "Color for Transparent Areas"
+msgstr "પારદર્શક વિસ્તાર માટેનો રંગ"
+
+#: data/eom-preferences-dialog.ui:395
+msgid "As _background"
+msgstr "પાશ્વ ભાગ તરીકે (_b)"
+
+#: data/eom-preferences-dialog.ui:437
+msgid "Image View"
+msgstr "ચિત્ર દર્શન"
+
+#: data/eom-preferences-dialog.ui:461
+msgid "Image Zoom"
+msgstr ""
+
+#: data/eom-preferences-dialog.ui:496
+msgid "E_xpand images to fit screen"
+msgstr "ચિત્રોને સ્ક્રીનમાં બંધબેસાડવા માટે વિસ્તૃત કરો (_x)"
+
+#: data/eom-preferences-dialog.ui:541
+msgid "Sequence"
+msgstr ""
+
+#: data/eom-preferences-dialog.ui:583
+msgid "_Switch image after:"
+msgstr "આના પછી ચિત્ર બદલો (_S):"
+
+#: data/eom-preferences-dialog.ui:611
+msgid "seconds"
+msgstr "સેકન્ડો"
+
+#: data/eom-preferences-dialog.ui:628
+msgid "_Random sequence"
+msgstr ""
+
+#: data/eom-preferences-dialog.ui:644
+msgid "_Loop sequence"
+msgstr "લૂપનો ક્રમ (_L)"
+
+#: data/eom-preferences-dialog.ui:688
+msgid "Slideshow"
+msgstr "તકતી પ્રદર્શન"
+
+#: data/eom-preferences-dialog.ui:722
+msgid "Plugins"
+msgstr "પ્લગઈન"
+
+#: data/metadata-sidebar.ui:29 src/eom-print-image-setup.c:896
+msgid "Size"
+msgstr "માપ"
+
+#: data/metadata-sidebar.ui:46
+msgid "Type"
+msgstr "પ્રકાર"
+
+#: data/metadata-sidebar.ui:63
+msgid "File Size"
+msgstr ""
+
+#: data/metadata-sidebar.ui:82
+msgid "Folder"
+msgstr "ફોલ્ડર"
+
+#: data/metadata-sidebar.ui:99
+msgid "Aperture"
+msgstr ""
+
+#: data/metadata-sidebar.ui:116
+msgid "Exposure"
+msgstr ""
+
+#: data/metadata-sidebar.ui:133
+msgid "ISO"
+msgstr ""
+
+#: data/metadata-sidebar.ui:151
+msgid "Metering"
+msgstr ""
+
+#: data/metadata-sidebar.ui:169 src/eom-metadata-details.c:65
+msgid "Camera"
+msgstr "કેમેરા"
+
+#: data/metadata-sidebar.ui:187
+msgid "Date"
+msgstr "તારીખ"
+
+#: data/metadata-sidebar.ui:204
+msgid "Time"
+msgstr "સમય"
+
+#: data/metadata-sidebar.ui:380
+msgid "Focal Length"
+msgstr "કેન્દ્રલંબાઈ"
+
+#: data/org.mate.eom.gschema.xml.in:11
+msgid "Automatic orientation"
+msgstr "આપોઆપ દિશાકરણ"
+
+#: data/org.mate.eom.gschema.xml.in:12
+msgid ""
+"Whether the image should be rotated automatically based on EXIF orientation."
+msgstr "EXIF દિશાના આધારે શું ચિત્ર આપોઆપ ફેરવવામાં આવવું જોઈએ."
+
+#: data/org.mate.eom.gschema.xml.in:17
+msgid ""
+"The color that is used to fill the area behind the image. If the use-"
+"background-color key is not set, the color is determined by the active GTK+ "
+"theme instead."
+msgstr ""
+
+#: data/org.mate.eom.gschema.xml.in:21
+msgid "Use a custom background color"
+msgstr ""
+
+#: data/org.mate.eom.gschema.xml.in:22
+msgid ""
+"If this is active, the color set by the background-color key will be used to"
+" fill the area behind the image. If it is not set, the current GTK+ theme "
+"will determine the fill color."
+msgstr ""
+
+#: data/org.mate.eom.gschema.xml.in:26
+msgid "Interpolate Image"
+msgstr "ચિત્રમાં ભ્રામક ફેરફાર કરો"
+
+#: data/org.mate.eom.gschema.xml.in:27
+msgid ""
+"Whether the image should be interpolated on zoom-out. This leads to better "
+"quality but is somewhat slower than non-interpolated images."
+msgstr ""
+
+#: data/org.mate.eom.gschema.xml.in:31
+msgid "Extrapolate Image"
+msgstr "ચિત્રમાં ભ્રામક ફેરફાર કરો"
+
+#: data/org.mate.eom.gschema.xml.in:32
+msgid ""
+"Whether the image should be extrapolated on zoom-in. This leads to blurry "
+"quality and is somewhat slower than non-extrapolated images."
+msgstr ""
+
+#: data/org.mate.eom.gschema.xml.in:36
+msgid "Transparency indicator"
+msgstr "પારદર્શકતા દર્શક"
+
+#: data/org.mate.eom.gschema.xml.in:37
+msgid ""
+"Determines how transparency should be indicated. Valid values are checked, "
+"color and none. If color is chosen, then the trans-color key determines the "
+"color value used."
+msgstr ""
+
+#: data/org.mate.eom.gschema.xml.in:41
+msgid "Scroll wheel zoom"
+msgstr "વ્હીલ નાનામોટાપણું સરકાવો"
+
+#: data/org.mate.eom.gschema.xml.in:42
+msgid "Whether the scroll wheel should be used for zooming."
+msgstr ""
+
+#: data/org.mate.eom.gschema.xml.in:46
+msgid "Zoom multiplier"
+msgstr "ઝુમ ગુણક"
+
+#: data/org.mate.eom.gschema.xml.in:47
+msgid ""
+"The multiplier to be applied when using the mouse scroll wheel for zooming. "
+"This value defines the zooming step used for each scroll event. For example,"
+" 0.05 results in a 5% zoom increment for each scroll event and 1.00 result "
+"in a 100% zoom increment."
+msgstr ""
+"જ્યારે માઉસ સરક વ્હીલને નાનામોટાપણા માટે વાપરી રહ્યા હતા ત્યારે શું ગુણક "
+"લાગુ પાડવું જોઈએ. આ કિંમત નાનામોટાપણાંના પગલાંઓ વ્યાખ્યાયિત કરે છે દરેક સરક "
+"ઘટના માટે. ઉદાહરણ તરીકે, 0.05 એ 5% નાનામોટાપણાના વધારામાં પરિણમે છે દરેક સરક"
+" ઘટના માટે અને 1.00 એ 100% નાનામોટાપણાના વધારામાં પરિણમે છે."
+
+#: data/org.mate.eom.gschema.xml.in:51
+msgid "Transparency color"
+msgstr "પારદર્શકતા રંગ"
+
+#: data/org.mate.eom.gschema.xml.in:52
+msgid ""
+"If the transparency key has the value COLOR, then this key determines the "
+"color which is used for indicating transparency."
+msgstr ""
+"જો પારદર્શકતા કીનું મૂલ્ય રંગ હશે, તો પારદર્શકતા દર્શાવવા કયો રંગ વપરાય છે "
+"તે આ કી નક્કી કરશે."
+
+#: data/org.mate.eom.gschema.xml.in:58
+msgid "Randomize the image sequence"
+msgstr ""
+
+#: data/org.mate.eom.gschema.xml.in:59
+msgid "Whether the sequence of images should be shown in an random loop."
+msgstr ""
+
+#: data/org.mate.eom.gschema.xml.in:63
+msgid "Loop through the image sequence"
+msgstr "ચિત્રના ક્રમ પ્રમાણે પુનરાવર્તન"
+
+#: data/org.mate.eom.gschema.xml.in:64
+msgid "Whether the sequence of images should be shown in an endless loop."
+msgstr ""
+
+#: data/org.mate.eom.gschema.xml.in:68
+msgid "Allow zoom greater than 100% initially"
+msgstr "શરુઆતમાં નાનુમોટુ કરવાનુ પ્રમાણ ૧૦૦% કરતાં વધુ કરવાની પરવાનગી આપો"
+
+#: data/org.mate.eom.gschema.xml.in:69
+msgid ""
+"If this is set to FALSE small images will not be stretched to fit into the "
+"screen initially."
+msgstr ""
+"જો આ ખોટુ સુયોજિત થયેલ હોય તો નાના ચિત્રો શરુઆતમાં સ્ક્રીનમાં ખેંચીને બેસાડી"
+" શકાય એમ નથી."
+
+#: data/org.mate.eom.gschema.xml.in:73
+msgid "Delay in seconds until showing the next image"
+msgstr "પછીનું ચિત્ર બતાવવામાં આવે ત્યાં સુધી થતો વિલંબ સેકન્ડોમાં"
+
+#: data/org.mate.eom.gschema.xml.in:74
+msgid ""
+"A value greater than 0 determines the seconds an image stays on screen until"
+" the next one is shown automatically. Zero disables the automatic browsing."
+msgstr ""
+"૦ કરતાં મોટી કિંમત સ્ક્રીન પર પછીનુ ચિત્ર આવે ત્યાં સુધી ચિત્ર રહે તેટલી "
+"સેકન્ડો આપોઆપ રીતે નક્કી કરે છે. ૦ આપોઆપ શોધવાનું નિષ્ક્રિય કરે છે."
+
+#: data/org.mate.eom.gschema.xml.in:80
+msgid "Show/Hide the window toolbar."
+msgstr ""
+
+#: data/org.mate.eom.gschema.xml.in:84
+msgid "Show/Hide the window statusbar."
+msgstr ""
+
+#: data/org.mate.eom.gschema.xml.in:88
+msgid "Show/Hide the image collection pane."
+msgstr ""
+
+#: data/org.mate.eom.gschema.xml.in:92
+msgid "Image collection pane position."
+msgstr ""
+
+#: data/org.mate.eom.gschema.xml.in:96
+msgid "Whether the image collection pane should be resizable."
+msgstr ""
+
+#: data/org.mate.eom.gschema.xml.in:100
+msgid "Show/Hide the window side pane."
+msgstr ""
+
+#: data/org.mate.eom.gschema.xml.in:104
+msgid "Show/Hide the image collection pane scroll buttons."
+msgstr ""
+
+#: data/org.mate.eom.gschema.xml.in:108
+msgid "Close main window without asking to save changes."
+msgstr ""
+
+#: data/org.mate.eom.gschema.xml.in:112
+msgid "Trash images without asking"
+msgstr "પૂછ્યા વગર ચિત્રોને કચરાપેટીમાં નાંખો"
+
+#: data/org.mate.eom.gschema.xml.in:113
+msgid ""
+"If activated, Eye of MATE won't ask for confirmation when moving images to "
+"the trash. It will still ask if any of the files cannot be moved to the "
+"trash and would be deleted instead."
+msgstr ""
+
+#: data/org.mate.eom.gschema.xml.in:117
+msgid ""
+"Whether the metadata list in the properties dialog should have its own page."
+msgstr ""
+"ક્યાંતો ગુણધર્મો સંવાદ માં મેટાડેટા યાદી એ તેનાં પોતાનું પાનું હોવુ જોઇએ."
+
+#: data/org.mate.eom.gschema.xml.in:118
+msgid ""
+"If activated, the detailed metadata list in the properties dialog will be "
+"moved to its own page in the dialog. This should make the dialog more usable"
+" on smaller screens, e.g. as used by netbooks. If disabled, the widget will "
+"be embedded on the \"Metadata\" page."
+msgstr ""
+
+#: data/org.mate.eom.gschema.xml.in:122
+msgid "External program to use for editing images"
+msgstr ""
+
+#: data/org.mate.eom.gschema.xml.in:123
+msgid ""
+"The desktop file name (including the \".desktop\") of the application to use"
+" for editing images (when the \"Edit Image\" toolbar button is clicked). Set"
+" to the empty string to disable this feature."
+msgstr ""
+
+#: data/org.mate.eom.gschema.xml.in:127
+msgid ""
+"Whether the file chooser should show the user's pictures folder if no images"
+" are loaded."
+msgstr ""
+
+#: data/org.mate.eom.gschema.xml.in:128
+msgid ""
+"If activated and no image is loaded in the active window, the file chooser "
+"will display the user's pictures folder using the XDG special user "
+"directories. If deactivated or the pictures folder has not been set up, it "
+"will show the current working directory."
+msgstr ""
+
+#: data/org.mate.eom.gschema.xml.in:134
+msgid "Active plugins"
+msgstr "સક્રિય પ્લગઈનો"
+
+#: data/org.mate.eom.gschema.xml.in:135
+msgid ""
+"List of active plugins. It doesn't contain the \"Location\" of the active "
+"plugins. See the .eom-plugin file for obtaining the \"Location\" of a given "
+"plugin."
+msgstr ""
+"સક્રિય પ્લગઈનોની યાદી. તે સક્રિય પ્લગઈનોનું \"સ્થાન\" સમાવતું નથી. આપેલ "
+"પ્લગઈનનું \"સ્થાન\" મેળવવા માટે .eom-plugin ફાઈલ જુઓ."
+
+#: plugins/fullscreen/fullscreen.plugin.desktop.in:5
+msgid "Fullscreen with double-click"
+msgstr "બે-ક્લિક સાથે સંપૂર્ણસ્ક્રીન"
+
+#: plugins/fullscreen/fullscreen.plugin.desktop.in:6
+msgid "view-fullscreen"
+msgstr ""
+
+#: plugins/reload/eom-reload-plugin.c:45
+#: plugins/reload/reload.plugin.desktop.in:5
+msgid "Reload Image"
+msgstr "ચિત્ર પુન:લોડ કરો"
+
+#: plugins/reload/eom-reload-plugin.c:45
+msgid "Reload current image"
+msgstr "હાલના ચિત્રને પુન:લોડ કરો"
+
+#: plugins/reload/reload.plugin.desktop.in:6
+msgid "view-refresh"
+msgstr ""
+
+#: plugins/statusbar-date/statusbar-date.plugin.desktop.in:5
+msgid "Date in statusbar"
+msgstr "સ્થિતિદર્શકપટ્ટીમાં તારીખ"
+
+#: src/eom-close-confirmation-dialog.c:154
+msgid "Close _without Saving"
+msgstr "સંગ્રહ કર્યા વિના બંધ કરો (_w)"
+
+#: src/eom-close-confirmation-dialog.c:187
+msgid "Question"
+msgstr "પ્રશ્ન"
+
+#: src/eom-close-confirmation-dialog.c:366
+msgid "If you don't save, your changes will be lost."
+msgstr ""
+
+#: src/eom-close-confirmation-dialog.c:402
+#, c-format
+msgid "Save changes to image \"%s\" before closing?"
+msgstr ""
+
+#: src/eom-close-confirmation-dialog.c:597
+#, c-format
+msgid "There is %d image with unsaved changes. Save changes before closing?"
+msgid_plural ""
+"There are %d images with unsaved changes. Save changes before closing?"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/eom-close-confirmation-dialog.c:614
+msgid "S_elect the images you want to save:"
+msgstr ""
+
+#: src/eom-close-confirmation-dialog.c:633
+msgid "If you don't save, all your changes will be lost."
+msgstr ""
+
+#: src/eom-file-chooser.c:121
+msgid "File format is unknown or unsupported"
+msgstr "ફાઈલ બંધારણ અજ્ઞાત કે બિનઆધારભૂત છે"
+
+#: src/eom-file-chooser.c:126
+msgid ""
+"Eye of MATE could not determine a supported writable file format based on "
+"the filename."
+msgstr ""
+"Eye of MATE ફાઈલનામ પર આધારિત લખી શકાય તેવું ફાઈલ બંધારણ નક્કી કરી શક્યું "
+"નહિં."
+
+#: src/eom-file-chooser.c:127
+msgid "Please try a different file extension like .png or .jpg."
+msgstr "મહેરબાની કરીને .png અથવા .jpg જેવું અલગ એક્સટેન્સન વાપરી જુઓ."
+
+#: src/eom-file-chooser.c:159
+msgid "All Files"
+msgstr "બધી ફાઈલો"
+
+#: src/eom-file-chooser.c:164
+msgid "All Images"
+msgstr "બધા ચિત્રો"
+
+#: src/eom-file-chooser.c:185
+#, c-format
+msgid "%s (*.%s)"
+msgstr "%s (*.%s)"
+
+#: src/eom-file-chooser.c:281 src/eom-properties-dialog.c:163
+#: src/eom-properties-dialog.c:165 src/eom-thumb-view.c:516
+msgid "pixel"
+msgid_plural "pixels"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/eom-file-chooser.c:451
+msgid "Open Image"
+msgstr ""
+
+#: src/eom-file-chooser.c:459
+msgid "Save Image"
+msgstr "ચિત્ર સંગ્રહો"
+
+#: src/eom-file-chooser.c:467 src/eom-window.c:4009
+msgid "Open Folder"
+msgstr "ફોલ્ડર ખોલો"
+
+#: src/eom-image.c:552
+msgid "Transformation on unloaded image."
+msgstr "નહિં લવાયેલ ઈમેજો પર પરિવહન."
+
+#: src/eom-image.c:580
+msgid "Transformation failed."
+msgstr "રૂપાંતરણ નિષ્ફળ."
+
+#: src/eom-image.c:1054
+msgid "EXIF not supported for this file format."
+msgstr "આ ફાઈલ બંધારણ માટે EXIF આધારભૂત નથી."
+
+#: src/eom-image.c:1203
+msgid "Image loading failed."
+msgstr "ચિત્ર લાવવામાં નિષ્ફળ."
+
+#: src/eom-image.c:1732 src/eom-image.c:1834
+msgid "No image loaded."
+msgstr "કોઈ ચિત્ર લાવી શકાયું નહિ."
+
+#: src/eom-image.c:1742 src/eom-image.c:1846
+msgid "Temporary file creation failed."
+msgstr "કામચલાઉ ફાઈલ બનાવવાનું નિષ્ફળ."
+
+#: src/eom-image-jpeg.c:384
+#, c-format
+msgid "Couldn't create temporary file for saving: %s"
+msgstr "સંગ્રહવા માટે કામચલાઉ ફાઈલ બનાવી શકાઈ નહિ: %s"
+
+#: src/eom-image-jpeg.c:395
+msgid "Couldn't allocate memory for loading JPEG file"
+msgstr "JPEG ફાઈલ લાવવા માટે મેમરી ફાળવી શકાઈ નહિ"
+
+#: src/eom-error-message-area.c:108
+msgid "_Retry"
+msgstr "પુનઃપ્રયાસ કરો (_R)"
+
+#: src/eom-error-message-area.c:151
+#, c-format
+msgid "Could not load image '%s'."
+msgstr "ચિત્ર '%s' લાવી શક્યા નહિં."
+
+#: src/eom-error-message-area.c:193
+#, c-format
+msgid "No images found in '%s'."
+msgstr "'%s' માં કોઈ ચિત્રો મળ્યા નહિં."
+
+#: src/eom-error-message-area.c:200
+msgid "The given locations contain no images."
+msgstr "આપેલ સ્થાનો કોઈ ચિત્રો સમાવતા નથી."
+
+#: src/eom-metadata-details.c:66
+msgid "Image Data"
+msgstr "ચિત્ર માહિતી"
+
+#: src/eom-metadata-details.c:67
+msgid "Image Taking Conditions"
+msgstr "ચિત્ર લેવાની શરતો"
+
+#: src/eom-metadata-details.c:68
+msgid "GPS Data"
+msgstr ""
+
+#: src/eom-metadata-details.c:69
+msgid "Maker Note"
+msgstr "બનાવનાર નોંધ"
+
+#: src/eom-metadata-details.c:70
+msgid "Other"
+msgstr "અન્ય"
+
+#: src/eom-metadata-details.c:72
+msgid "XMP Exif"
+msgstr "XMP Exif"
+
+#: src/eom-metadata-details.c:73
+msgid "XMP IPTC"
+msgstr "XMP IPTC"
+
+#: src/eom-metadata-details.c:74
+msgid "XMP Rights Management"
+msgstr "XMP હકો વ્યવસ્થાપન"
+
+#: src/eom-metadata-details.c:75
+msgid "XMP Other"
+msgstr "XMP અન્ય"
+
+#: src/eom-metadata-details.c:251
+msgid "Tag"
+msgstr "નિશાની"
+
+#: src/eom-metadata-details.c:261
+msgid "Value"
+msgstr "મૂલ્ય"
+
+#: src/eom-metadata-details.c:436
+msgid "North"
+msgstr "ઉત્તર"
+
+#: src/eom-metadata-details.c:439
+msgid "East"
+msgstr "પૂર્વ"
+
+#: src/eom-metadata-details.c:442
+msgid "West"
+msgstr "પશ્ર્ચિમ"
+
+#: src/eom-metadata-details.c:445
+msgid "South"
+msgstr "દક્ષિણ"
+
+#: src/eom-exif-util.c:191 src/eom-exif-util.c:193
+msgid "%a, %d %B %Y  %X"
+msgstr "%a, %d %B %Y  %X"
+
+#: src/eom-exif-util.c:282
+#, c-format
+msgid "%.1f (lens)"
+msgstr "%.1f (lens)"
+
+#: src/eom-exif-util.c:293
+#, c-format
+msgid "%.1f (35mm film)"
+msgstr "%.1f (35mm film)"
+
+#: src/eom-metadata-sidebar.c:153
+#, c-format
+msgid "%i × %i pixel"
+msgid_plural "%i × %i pixels"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/eom-metadata-sidebar.c:164 src/eom-properties-dialog.c:180
+msgid "Unknown"
+msgstr "અજ્ઞાત"
+
+#: src/eom-metadata-sidebar.c:229
+msgid "%a, %d %B %Y"
+msgstr "%a, %d %B %Y"
+
+#: src/eom-metadata-sidebar.c:233
+#, c-format
+msgid "%X"
+msgstr ""
+
+#: src/eom-print.c:371
+msgid "Image Settings"
+msgstr "ચિત્ર સુયોજનો"
+
+#: src/eom-print-image-setup.c:824
+msgid "Image"
+msgstr "ચિત્ર"
+
+#: src/eom-print-image-setup.c:825
+msgid "The image whose printing properties will be set up"
+msgstr ""
+
+#: src/eom-print-image-setup.c:831
+msgid "Page Setup"
+msgstr "પાનાં સુયોજન"
+
+#: src/eom-print-image-setup.c:832
+msgid "The information for the page where the image will be printed"
+msgstr "પાનાં માટેની જાણકારી કે જ્યાં ચિત્ર છાપવામાં આવશે"
+
+#: src/eom-print-image-setup.c:858
+msgid "Position"
+msgstr "સ્થાન"
+
+#: src/eom-print-image-setup.c:862
+msgid "_Left:"
+msgstr "ડાબુ (_L):"
+
+#: src/eom-print-image-setup.c:864
+msgid "_Right:"
+msgstr "જમણુ (_R):"
+
+#: src/eom-print-image-setup.c:865
+msgid "_Top:"
+msgstr "ટોચ (_T):"
+
+#: src/eom-print-image-setup.c:866
+msgid "_Bottom:"
+msgstr "તળિયું (_B):"
+
+#: src/eom-print-image-setup.c:869
+msgid "C_enter:"
+msgstr "કેન્દ્ર (_e):"
+
+#: src/eom-print-image-setup.c:874
+msgid "None"
+msgstr "કંઇ નહી"
+
+#: src/eom-print-image-setup.c:876
+msgid "Horizontal"
+msgstr "આડુ"
+
+#: src/eom-print-image-setup.c:878
+msgid "Vertical"
+msgstr "ઊભું"
+
+#: src/eom-print-image-setup.c:880
+msgid "Both"
+msgstr "બંને"
+
+#: src/eom-print-image-setup.c:899
+msgid "_Width:"
+msgstr "પહોળાઈ (_W):"
+
+#: src/eom-print-image-setup.c:901
+msgid "_Height:"
+msgstr "ઊંચાઈ (_H):"
+
+#: src/eom-print-image-setup.c:904
+msgid "_Scaling:"
+msgstr "ખેંચવાનું (_S):"
+
+#: src/eom-print-image-setup.c:915
+msgid "_Unit:"
+msgstr "એકમ (_U):"
+
+#: src/eom-print-image-setup.c:920
+msgid "Millimeters"
+msgstr "મિલિમીટર"
+
+#: src/eom-print-image-setup.c:922
+msgid "Inches"
+msgstr "ઇંચ"
+
+#: src/eom-print-image-setup.c:950
+msgid "Preview"
+msgstr "પૂર્વદર્શન"
+
+#: src/eom-save-as-dialog-helper.c:161
+msgid "as is"
+msgstr "આ રીતે"
+
+#. Translators: This string is displayed in the statusbar.
+#. * The first token is the image number, the second is total image
+#. * count.
+#. *
+#. * Translate to "%Id" if you want to use localized digits, or
+#. * translate to "%d" otherwise.
+#. *
+#. * Note that translating this doesn't guarantee that you get localized
+#. * digits. That needs support from your system and locale definition
+#. * too.
+#: src/eom-statusbar.c:122
+#, c-format
+msgid "%d / %d"
+msgstr "%d / %d"
+
+#: src/eom-thumb-view.c:544
+msgid "Taken on"
+msgstr "પર લેવાયેલ"
+
+#: src/eom-uri-converter.c:986
+msgid "At least two file names are equal."
+msgstr "ઓછામાં ઓછા બે ફાઈલ નામો સરખા છે."
+
+#: src/eom-util.c:68
+msgid "Could not display help for Eye of MATE"
+msgstr "Eye of MATE માટે મદદ દર્શાવી શક્યા નહિં"
+
+#: src/eom-util.c:116
+msgid " (invalid Unicode)"
+msgstr " (અયોગ્ય યુનિકોડ)"
+
+#. Translators: This is the string displayed in the statusbar
+#. * The tokens are from left to right:
+#. * - image width
+#. * - image height
+#. * - image size in bytes
+#. * - zoom in percent
+#: src/eom-window.c:521
+#, c-format
+msgid "%i × %i pixel  %s    %i%%"
+msgid_plural "%i × %i pixels  %s    %i%%"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/eom-window.c:832
+msgid "_Reload"
+msgstr "પુનઃલાવો (_R)"
+
+#: src/eom-window.c:834 src/eom-window.c:2794
+msgctxt "MessageArea"
+msgid "Hi_de"
+msgstr ""
+
+#: src/eom-window.c:844
+#, c-format
+msgid ""
+"The image \"%s\" has been modified by an external application.\n"
+"Would you like to reload it?"
+msgstr ""
+
+#: src/eom-window.c:1012
+#, c-format
+msgid "Use \"%s\" to open the selected image"
+msgstr "પસંદિત ચિત્ર ખોલવા માટે \"%s\" વાપરો"
+
+#. Translators: This string is displayed in the statusbar
+#. * while saving images. The tokens are from left to right:
+#. * - the original filename
+#. * - the current image's position in the queue
+#. * - the total number of images queued for saving
+#: src/eom-window.c:1176
+#, c-format
+msgid "Saving image \"%s\" (%u/%u)"
+msgstr "ચિત્ર \"%s\" (%u/%u) સંગ્રહી રહ્યા છીએ"
+
+#: src/eom-window.c:1543
+#, c-format
+msgid "Opening image \"%s\""
+msgstr ""
+
+#: src/eom-window.c:1909
+msgid "Leave Fullscreen"
+msgstr "પૂર્ણ સ્ક્રીન છોડો"
+
+#: src/eom-window.c:2050
+msgid "Viewing a slideshow"
+msgstr ""
+
+#: src/eom-window.c:2263
+#, c-format
+msgid ""
+"Error printing file:\n"
+"%s"
+msgstr ""
+"ફાઈલ છાપવામાં ભૂલ:\n"
+"%s"
+
+#: src/eom-window.c:2526
+msgid "Toolbar Editor"
+msgstr "સાધનપટ્ટી સંપાદક"
+
+#: src/eom-window.c:2529
+msgid "_Reset to Default"
+msgstr "મૂળભૂતમાં પુનઃસુયોજીત કરો (_R)"
+
+#: src/eom-window.c:2594
+msgid ""
+"This program is free software; you can redistribute it and/or modify it "
+"under the terms of the GNU General Public License as published by the Free "
+"Software Foundation; either version 2 of the License, or (at your option) "
+"any later version.\n"
+msgstr ""
+"This program is free software; you can redistribute it and/or modify it "
+"under the terms of the GNU General Public License as published by the Free "
+"Software Foundation; either version 2 of the License, or (at your option) "
+"any later version.\n"
+
+#: src/eom-window.c:2598
+msgid ""
+"This program is distributed in the hope that it will be useful, but WITHOUT "
+"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
+"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
+"more details.\n"
+msgstr ""
+"This program is distributed in the hope that it will be useful, but WITHOUT "
+"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
+"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
+"more details.\n"
+
+#: src/eom-window.c:2602
+msgid ""
+"You should have received a copy of the GNU General Public License along with"
+" this program; if not, write to the Free Software Foundation, Inc., 51 "
+"Franklin St, Fifth Floor, Boston, MA 02110-1301, USA."
+msgstr ""
+
+#: src/eom-window.c:2641
+msgid "About Eye of MATE"
+msgstr ""
+
+#: src/eom-window.c:2643
+msgid ""
+"Copyright © 2000-2010 Free Software Foundation, Inc.\n"
+"Copyright © 2011 Perberos\n"
+"Copyright © 2012-2020 MATE developers"
+msgstr ""
+
+#: src/eom-window.c:2646
+msgid "The MATE image viewer."
+msgstr "જીનોમ ચિત્ર દર્શક."
+
+#: src/eom-window.c:2649
+msgid "translator-credits"
+msgstr "અનુવાદક સન્માન"
+
+#: src/eom-window.c:2742 src/eom-window.c:2757
+msgid "Error launching appearance preferences dialog: "
+msgstr ""
+
+#: src/eom-window.c:2792
+msgid "_Open Background Preferences"
+msgstr ""
+
+#: src/eom-window.c:2808
+#, c-format
+msgid ""
+"The image \"%s\" has been set as Desktop Background.\n"
+"Would you like to modify its appearance?"
+msgstr ""
+
+#: src/eom-window.c:3249
+msgid "Saving image locally…"
+msgstr ""
+
+#: src/eom-window.c:3329
+#, c-format
+msgid ""
+"Are you sure you want to move\n"
+"\"%s\" to the trash?"
+msgstr ""
+"શું તમે ખરેખર \"%s\" ને કચરાપેટીમાં ખસેડવા\n"
+"માંગો છો?"
+
+#: src/eom-window.c:3332
+#, c-format
+msgid ""
+"A trash for \"%s\" couldn't be found. Do you want to remove this image "
+"permanently?"
+msgstr ""
+"\"%s\" માટે કચરાપેટી એ શોધી શકાતી નથી. શું તમે કાયમ માટે આ ઇમેજને દૂર કરવા "
+"માંગો છો?"
+
+#: src/eom-window.c:3337
+#, c-format
+msgid ""
+"Are you sure you want to move\n"
+"the %d selected image to the trash?"
+msgid_plural ""
+"Are you sure you want to move\n"
+"the %d selected images to the trash?"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/eom-window.c:3342
+msgid ""
+"Some of the selected images can't be moved to the trash and will be removed "
+"permanently. Are you sure you want to proceed?"
+msgstr ""
+"પસંદ થયેલ કેટલીક ઇમેજો ને કચરાપેટીમાં ખસેડી શકાતી નથી અને કાયમ માટે દૂર કરવી"
+" પડશે. શું તમે ખરેખર તેને આગળ વધારવા માંગો છો?"
+
+#: src/eom-window.c:3359 src/eom-window.c:3855 src/eom-window.c:3882
+msgid "Move to _Trash"
+msgstr "કચરાપેટીમાં ખસેડો (_T)"
+
+#: src/eom-window.c:3361
+msgid "_Do not ask again during this session"
+msgstr "આ સત્ર દરમ્યાન ફરીથી પૂછો નહિં (_D)"
+
+#: src/eom-window.c:3406 src/eom-window.c:3420
+msgid "Couldn't access trash."
+msgstr "કચરાપેટીને વાપરી શક્યા નહિં."
+
+#: src/eom-window.c:3428
+msgid "Couldn't delete file"
+msgstr "ફાઇલ ને કાઢા શકાતી નથી"
+
+#: src/eom-window.c:3530
+#, c-format
+msgid "Error on deleting image %s"
+msgstr "ચિત્ર %s ને કાઢવામાં ભૂલ"
+
+#: src/eom-window.c:3776
+msgid "_Image"
+msgstr "ચિત્ર (_I)"
+
+#: src/eom-window.c:3777
+msgid "_Edit"
+msgstr "ફેરફાર (_E)"
+
+#: src/eom-window.c:3778
+msgid "_View"
+msgstr "જુઓ (_V)"
+
+#: src/eom-window.c:3779
+msgid "_Go"
+msgstr "જાઓ (_G)"
+
+#: src/eom-window.c:3780
+msgid "_Tools"
+msgstr "સાધનો (_T)"
+
+#: src/eom-window.c:3781
+msgid "_Help"
+msgstr "મદદ (_H)"
+
+#: src/eom-window.c:3783
+msgid "_Open…"
+msgstr "ખોલો (_O)..."
+
+#: src/eom-window.c:3784
+msgid "Open a file"
+msgstr "ફાઇલ ખોલો"
+
+#: src/eom-window.c:3786
+msgid "_Close"
+msgstr "બંધ કરો (_C)"
+
+#: src/eom-window.c:3787
+msgid "Close window"
+msgstr "વિન્ડો બંધ કરો"
+
+#: src/eom-window.c:3789
+msgid "T_oolbar"
+msgstr "સાધનપટ્ટી (_o)"
+
+#: src/eom-window.c:3790
+msgid "Edit the application toolbar"
+msgstr "કાર્યક્રમ સાધનપટ્ટીમાં ફેરફાર કરો"
+
+#: src/eom-window.c:3792
+msgid "Prefere_nces"
+msgstr "પ્રાથમિકતાઓ (_n)"
+
+#: src/eom-window.c:3793
+msgid "Preferences for Eye of MATE"
+msgstr "Eye of MATE માટે પસંદગીઓ"
+
+#: src/eom-window.c:3795
+msgid "_Contents"
+msgstr "સમાવિષ્ટો (_C)"
+
+#: src/eom-window.c:3796
+msgid "Help on this application"
+msgstr "આ કાર્યક્રમ પરની મદદ"
+
+#: src/eom-window.c:3798
+msgid "_About"
+msgstr "વિશે (_A)"
+
+#: src/eom-window.c:3799
+msgid "About this application"
+msgstr "કાર્યક્રમ વિશે"
+
+#: src/eom-window.c:3804
+msgid "_Toolbar"
+msgstr "સાધનદર્શક પટ્ટી (_T)"
+
+#: src/eom-window.c:3805
+msgid "Changes the visibility of the toolbar in the current window"
+msgstr "વર્તમાન વિન્ડોમાં સાધનપટ્ટીનો દેખાવ બદલો"
+
+#: src/eom-window.c:3807
+msgid "_Statusbar"
+msgstr "પરિસ્થિતિદર્શક પટ્ટી (_S)"
+
+#: src/eom-window.c:3808
+msgid "Changes the visibility of the statusbar in the current window"
+msgstr "વર્તમાન વિન્ડોમાં સ્થિતિદર્શક પટ્ટીનો દેખાવ બદલો"
+
+#: src/eom-window.c:3810
+msgid "_Image Collection"
+msgstr "ચિત્ર સમૂહ (_I)"
+
+#: src/eom-window.c:3811
+msgid ""
+"Changes the visibility of the image collection pane in the current window"
+msgstr "વર્તમાન વિન્ડોમાં ચિત્ર સમૂહ તકતીની દૃશ્યતા બદલે છે"
+
+#: src/eom-window.c:3813
+msgid "Side _Pane"
+msgstr "બાજુની તકતી (_P)"
+
+#: src/eom-window.c:3814
+msgid "Changes the visibility of the side pane in the current window"
+msgstr "વર્તમાન વિન્ડોમાં બાજુ તકતીની દૃશ્યતા બદલે છે"
+
+#: src/eom-window.c:3819
+msgid "_Save"
+msgstr "સંગ્રહો (_S)"
+
+#: src/eom-window.c:3820
+msgid "Save changes in currently selected images"
+msgstr "વર્તમાનમાં પસંદિત ચિત્રોમાં ફેરફારો સંગ્રહો"
+
+#: src/eom-window.c:3822
+msgid "Open _with"
+msgstr "ની સાથે ખોલો (_w)"
+
+#: src/eom-window.c:3823
+msgid "Open the selected image with a different application"
+msgstr "પસંદિત ચિત્રને અલગ કાર્યક્રમ સાથે ખોલો"
+
+#: src/eom-window.c:3825
+msgid "Save _As…"
+msgstr ""
+
+#: src/eom-window.c:3826
+msgid "Save the selected images with a different name"
+msgstr "પસંદિત ચિત્રોને અલગ નામ સાથે સંગ્રહો"
+
+#: src/eom-window.c:3828
+msgid "Open Containing _Folder"
+msgstr ""
+
+#: src/eom-window.c:3829
+msgid "Show the folder which contains this file in the file manager"
+msgstr ""
+
+#: src/eom-window.c:3831
+msgid "_Print…"
+msgstr "છાપો (_P)..."
+
+#: src/eom-window.c:3832
+msgid "Print the selected image"
+msgstr "પસંદિત ચિત્ર છાપો"
+
+#: src/eom-window.c:3834
+msgid "Prope_rties"
+msgstr "ગુણધર્મો (_r)"
+
+#: src/eom-window.c:3835
+msgid "Show the properties and metadata of the selected image"
+msgstr "પસંદિત ચિત્રના ગુણધર્મો અને મેટાડેટા બતાવો"
+
+#: src/eom-window.c:3837
+msgid "_Undo"
+msgstr "છેલ્લી પ્રક્રિયાને રદ કરો (_U)"
+
+#: src/eom-window.c:3838
+msgid "Undo the last change in the image"
+msgstr "ચિત્રમાં છેલ્લા ફેરફારને રદ કરો"
+
+#: src/eom-window.c:3840
+msgid "Flip _Horizontal"
+msgstr "આડુ કરો (_H)"
+
+#: src/eom-window.c:3841
+msgid "Mirror the image horizontally"
+msgstr "ચિત્રને આડી રીતે મીરર કરો"
+
+#: src/eom-window.c:3843
+msgid "Flip _Vertical"
+msgstr "ઊભુ કરો (_V)"
+
+#: src/eom-window.c:3844
+msgid "Mirror the image vertically"
+msgstr "ચિત્રને ઊભી રીતે મીરર કરો"
+
+#: src/eom-window.c:3846
+msgid "_Rotate Clockwise"
+msgstr "સમઘડી દિશામાં ફેરવો (_R)"
+
+#: src/eom-window.c:3847
+msgid "Rotate the image 90 degrees to the right"
+msgstr "ચિત્રને ૯૦ ડિગ્રી જમણે ફેરવો"
+
+#: src/eom-window.c:3849
+msgid "Rotate Counterc_lockwise"
+msgstr "વિષમઘડી દિશામાં ફેરવો (_l)"
+
+#: src/eom-window.c:3850
+msgid "Rotate the image 90 degrees to the left"
+msgstr "ચિત્રને ૯૦ ડિગ્રી ડાબે ફેરવો"
+
+#: src/eom-window.c:3852
+msgid "Set as _Desktop Background"
+msgstr "ડેસ્કટોપ પાશ્વ ભાગ તરીકે સુયોજિત કરો (_D)"
+
+#: src/eom-window.c:3853
+msgid "Set the selected image as the desktop background"
+msgstr "પસંદિત ચિત્રને ડેસ્કટોપ પાશ્ર્વ ભાગ તરીકે સુયોજીત કરો"
+
+#: src/eom-window.c:3856
+msgid "Move the selected image to the trash folder"
+msgstr "પસંદિત ચિત્રને કચરાપેટી ફોલ્ડરમાં ખસેડો"
+
+#: src/eom-window.c:3858
+msgid "_Copy"
+msgstr "નકલ કરો (_C)"
+
+#: src/eom-window.c:3859
+msgid "Copy the selected image to the clipboard"
+msgstr ""
+
+#: src/eom-window.c:3861 src/eom-window.c:3873 src/eom-window.c:3876
+msgid "_Zoom In"
+msgstr "મોટું કરો (_Z)"
+
+#: src/eom-window.c:3862 src/eom-window.c:3874
+msgid "Enlarge the image"
+msgstr "ચિત્ર મોટું કરો"
+
+#: src/eom-window.c:3864 src/eom-window.c:3879
+msgid "Zoom _Out"
+msgstr "નાનું કરો (_O)"
+
+#: src/eom-window.c:3865 src/eom-window.c:3877 src/eom-window.c:3880
+msgid "Shrink the image"
+msgstr "ચિત્રને સંકોચો"
+
+#: src/eom-window.c:3867
+msgid "_Normal Size"
+msgstr "સામાન્ય માપ (_N)"
+
+#: src/eom-window.c:3868
+msgid "Show the image at its normal size"
+msgstr "ચિત્રને તેના સામાન્ય માપ પ્રમાણે બતાવો"
+
+#: src/eom-window.c:3870
+msgid "_Best Fit"
+msgstr "શ્રેષ્ઠ રીતે બંધબેસતું (_B)"
+
+#: src/eom-window.c:3871
+msgid "Fit the image to the window"
+msgstr "ચિત્રને વિન્ડોમાં બેસાડો"
+
+#: src/eom-window.c:3888
+msgid "_Fullscreen"
+msgstr "પૂર્ણસ્ક્રીન (_F)"
+
+#: src/eom-window.c:3889
+msgid "Show the current image in fullscreen mode"
+msgstr "વર્તમાન ચિત્રને પૂર્ણસ્ક્રીન સ્થિતિમાં બતાવો"
+
+#: src/eom-window.c:3891
+msgid "Pause Slideshow"
+msgstr ""
+
+#: src/eom-window.c:3892
+msgid "Pause or resume the slideshow"
+msgstr ""
+
+#: src/eom-window.c:3897 src/eom-window.c:3912
+msgid "_Previous Image"
+msgstr "પહેલાંનું ચિત્ર (_P)"
+
+#: src/eom-window.c:3898
+msgid "Go to the previous image of the collection"
+msgstr "આગળના ચિત્ર પર જાવ"
+
+#: src/eom-window.c:3900
+msgid "_Next Image"
+msgstr "આગળનું ચિત્ર (_N)"
+
+#: src/eom-window.c:3901
+msgid "Go to the next image of the collection"
+msgstr "આગળના ચિત્ર પર જાવ"
+
+#: src/eom-window.c:3903 src/eom-window.c:3915
+msgid "_First Image"
+msgstr "પ્રથમ ચિત્ર (_F)"
+
+#: src/eom-window.c:3904
+msgid "Go to the first image of the collection"
+msgstr "પ્રથમ ચિત્ર પર જાવ"
+
+#: src/eom-window.c:3906 src/eom-window.c:3918
+msgid "_Last Image"
+msgstr "છેલ્લું ચિત્ર (_L)"
+
+#: src/eom-window.c:3907
+msgid "Go to the last image of the collection"
+msgstr "અંતિમ ચિત્ર પર જાવ"
+
+#: src/eom-window.c:3909
+msgid "_Random Image"
+msgstr ""
+
+#: src/eom-window.c:3910
+msgid "Go to a random image of the collection"
+msgstr ""
+
+#: src/eom-window.c:3924
+msgid "S_lideshow"
+msgstr ""
+
+#: src/eom-window.c:3925
+msgid "Start a slideshow view of the images"
+msgstr "ચિત્રોના તકતીપૂર્વદર્શનનો દેખાવ શરૂ કરો"
+
+#: src/eom-window.c:3995
+msgid "Previous"
+msgstr "પહેલાનું"
+
+#: src/eom-window.c:3999
+msgid "Next"
+msgstr "આગળનું"
+
+#: src/eom-window.c:4003
+msgid "Right"
+msgstr "જમણું"
+
+#: src/eom-window.c:4006
+msgid "Left"
+msgstr "ડાબું"
+
+#: src/eom-window.c:4012
+msgid "In"
+msgstr "અંદર"
+
+#: src/eom-window.c:4015
+msgid "Out"
+msgstr "બહાર"
+
+#: src/eom-window.c:4018
+msgid "Normal"
+msgstr "સામાન્ય"
+
+#: src/eom-window.c:4021
+msgid "Fit"
+msgstr "બંધબેસતું"
+
+#: src/eom-window.c:4024
+msgid "Collection"
+msgstr "સંગ્રહ"
+
+#: src/eom-window.c:4027
+msgctxt "action (to trash)"
+msgid "Trash"
+msgstr "કચરાપેટી"
+
+#: src/eom-window.c:4385
+#, c-format
+msgid "Edit the current image using %s"
+msgstr ""
+
+#: src/eom-window.c:4388
+msgid "Edit Image"
+msgstr ""
+
+#: src/eom-window.c:4612
+msgid "Properties"
+msgstr "ગુણધર્મો"
+
+#: src/main.c:72
+msgid "Open in fullscreen mode"
+msgstr "આખી સ્ક્રીન સ્થિતિમાં ખોલો"
+
+#: src/main.c:73
+msgid "Disable image collection"
+msgstr "ચિત્ર સંગ્રહ નિષ્ક્રિય કરો"
+
+#: src/main.c:74
+msgid "Open in slideshow mode"
+msgstr ""
+
+#: src/main.c:75
+msgid "Start a new instance instead of reusing an existing one"
+msgstr "વર્તમાન ઘટના પુન:વાપરવાને બદલે નવી ઘટનાને શરૂ કરો"
+
+#: src/main.c:77
+msgid "Show the application's version"
+msgstr "કાર્યક્રમની આવૃત્તિ બતાવો"
+
+#: src/main.c:108
+msgid "[FILE…]"
+msgstr "[FILE…]"
+
+#: src/main.c:121
+#, c-format
+msgid "Run '%s --help' to see a full list of available command line options."
+msgstr ""
+"ઉપલ્બધ આદેશ વાક્ય વિકલ્પોની સંપૂર્ણ યાદીને જોવા માટે '%s --help' ને ચલાવો."
