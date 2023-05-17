@@ -793,7 +793,7 @@ jt_read_integer (const char ** strptr, JDIMENSION * result)
 }
 
 
-/* Parse a crop specification (written in X11 geocetry style).
+/* Parse a crop specification (written in X11 geometry style).
  * The routine returns TRUE if the spec string is valid, FALSE if not.
  *
  * The crop spec string should have the format
@@ -803,7 +803,7 @@ jt_read_integer (const char ** strptr, JDIMENSION * result)
  * (A weakness of this style is that it is not possible to omit xoffset
  * while specifying yoffset, since they look alike.)
  *
- * This code is loosely based on XParseGeocetry from the X11 distribution.
+ * This code is loosely based on XParseGeometry from the X11 distribution.
  */
 
 GLOBAL(boolean)
