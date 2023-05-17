@@ -37,15 +37,15 @@
 #include "eoc-list-store.h"
 #include "eoc-debug.h"
 
-#define EOM_THUMB_ERROR eoc_thumb_error_quark ()
+#define EOC_THUMB_ERROR eoc_thumb_error_quark ()
 
 static MateDesktopThumbnailFactory *factory = NULL;
 static GdkPixbuf *frame = NULL;
 
 typedef enum {
-	EOM_THUMB_ERROR_VFS,
-	EOM_THUMB_ERROR_GENERIC,
-	EOM_THUMB_ERROR_UNKNOWN
+	EOC_THUMB_ERROR_VFS,
+	EOC_THUMB_ERROR_GENERIC,
+	EOC_THUMB_ERROR_UNKNOWN
 } EomThumbError;
 
 typedef struct {
@@ -72,8 +72,8 @@ static void
 set_vfs_error (GError **error, GError *ioerror)
 {
 	g_set_error (error,
-		     EOM_THUMB_ERROR,
-		     EOM_THUMB_ERROR_VFS,
+		     EOC_THUMB_ERROR,
+		     EOC_THUMB_ERROR_VFS,
 		     "%s", ioerror ? ioerror->message : "VFS error making a thumbnail");
 }
 
@@ -81,7 +81,7 @@ static void
 set_thumb_error (GError **error, int error_id, const char *string)
 {
 	g_set_error (error,
-		     EOM_THUMB_ERROR,
+		     EOC_THUMB_ERROR,
 		     error_id,
 		     "%s", string);
 }
@@ -484,7 +484,7 @@ eoc_thumbnail_load (EomImage *image, GError **error)
 	if (!data->can_read ||
 	    (data->failed_thumb_exists && mate_desktop_thumbnail_factory_has_valid_failed_thumbnail (factory, data->uri_str, data->mtime))) {
 		eoc_debug_message (DEBUG_THUMBNAIL, "%s: bad permissions or valid failed thumbnail present",data->uri_str);
-		set_thumb_error (error, EOM_THUMB_ERROR_GENERIC, "Thumbnail creation failed");
+		set_thumb_error (error, EOC_THUMB_ERROR_GENERIC, "Thumbnail creation failed");
 		return NULL;
 	}
 
@@ -518,7 +518,7 @@ eoc_thumbnail_load (EomImage *image, GError **error)
 			/* Save a failed thumbnail, to stop further thumbnail attempts */
 			mate_desktop_thumbnail_factory_create_failed_thumbnail (factory, data->uri_str, data->mtime);
 			eoc_debug_message (DEBUG_THUMBNAIL, "%s: failed thumbnail saved",data->uri_str);
-			set_thumb_error (error, EOM_THUMB_ERROR_GENERIC, "Thumbnail creation failed");
+			set_thumb_error (error, EOC_THUMB_ERROR_GENERIC, "Thumbnail creation failed");
 		}
 	}
 

@@ -19,8 +19,8 @@
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-#ifndef _EOM_METADATA_READER_H_
-#define _EOM_METADATA_READER_H_
+#ifndef _EOC_METADATA_READER_H_
+#define _EOC_METADATA_READER_H_
 
 #include <glib-object.h>
 #if HAVE_EXIF
@@ -35,10 +35,10 @@
 
 G_BEGIN_DECLS
 
-#define EOM_TYPE_METADATA_READER	      (eoc_metadata_reader_get_type ())
-#define EOM_METADATA_READER(o)		      (G_TYPE_CHECK_INSTANCE_CAST ((o), EOM_TYPE_METADATA_READER, EomMetadataReader))
-#define EOM_IS_METADATA_READER(o)	      (G_TYPE_CHECK_INSTANCE_TYPE ((o), EOM_TYPE_METADATA_READER))
-#define EOM_METADATA_READER_GET_INTERFACE(o)  (G_TYPE_INSTANCE_GET_INTERFACE ((o), EOM_TYPE_METADATA_READER, EomMetadataReaderInterface))
+#define EOC_TYPE_METADATA_READER	      (eoc_metadata_reader_get_type ())
+#define EOC_METADATA_READER(o)		      (G_TYPE_CHECK_INSTANCE_CAST ((o), EOC_TYPE_METADATA_READER, EomMetadataReader))
+#define EOC_IS_METADATA_READER(o)	      (G_TYPE_CHECK_INSTANCE_TYPE ((o), EOC_TYPE_METADATA_READER))
+#define EOC_METADATA_READER_GET_INTERFACE(o)  (G_TYPE_INSTANCE_GET_INTERFACE ((o), EOC_TYPE_METADATA_READER, EomMetadataReaderInterface))
 
 typedef struct _EomMetadataReader EomMetadataReader;
 typedef struct _EomMetadataReaderInterface EomMetadataReaderInterface;
@@ -64,8 +64,8 @@ struct _EomMetadataReaderInterface {
 };
 
 typedef enum {
-	EOM_METADATA_JPEG,
-	EOM_METADATA_PNG
+	EOC_METADATA_JPEG,
+	EOC_METADATA_PNG
 } EomMetadataFileType;
 
 G_GNUC_INTERNAL
@@ -109,4 +109,4 @@ cmsHPROFILE          eoc_metadata_reader_get_icc_profile (EomMetadataReader *emr
 
 G_END_DECLS
 
-#endif /* _EOM_METADATA_READER_H_ */
+#endif /* _EOC_METADATA_READER_H_ */

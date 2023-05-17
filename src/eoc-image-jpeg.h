@@ -1,5 +1,5 @@
-#ifndef _EOM_IMAGE_JPEG_H_
-#define _EOM_IMAGE_JPEG_H_
+#ifndef _EOC_IMAGE_JPEG_H_
+#define _EOC_IMAGE_JPEG_H_
 
 #if HAVE_JPEG
 
@@ -19,4 +19,4 @@ gboolean eoc_image_jpeg_save_file (EomImage *image, const char *file,
 				   GError **error);
 #endif
 
-#endif /* _EOM_IMAGE_JPEG_H_ */
+#endif /* _EOC_IMAGE_JPEG_H_ */

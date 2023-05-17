@@ -12,15 +12,15 @@ AM_INIT_AUTOMAKE([1.9 foreign no-dist-gzip dist-xz check-news])
 # Support silencing the build output if supported (automake-1.11+)
 m4_ifdef([AM_SILENT_RULES],[AM_SILENT_RULES([yes])])
 
-AC_DEFINE(EOM_MAJOR_VERSION, eoc_major_version, [EOM major version])
-AC_SUBST(EOM_MAJOR_VERSION,  eoc_major_version)
-AC_DEFINE(EOM_MINOR_VERSION, eoc_minor_version, [EOM minor version])
-AC_SUBST(EOM_MINOR_VERSION,  eoc_minor_version)
-AC_DEFINE(EOM_MICRO_VERSION, eoc_micro_version, [EOM micro version])
-AC_SUBST(EOM_MICRO_VERSION,  eoc_micro_version)
+AC_DEFINE(EOC_MAJOR_VERSION, eoc_major_version, [EOC major version])
+AC_SUBST(EOC_MAJOR_VERSION,  eoc_major_version)
+AC_DEFINE(EOC_MINOR_VERSION, eoc_minor_version, [EOC minor version])
+AC_SUBST(EOC_MINOR_VERSION,  eoc_minor_version)
+AC_DEFINE(EOC_MICRO_VERSION, eoc_micro_version, [EOC micro version])
+AC_SUBST(EOC_MICRO_VERSION,  eoc_micro_version)
 
-EOM_API_VERSION=2.20
-AC_SUBST(EOM_API_VERSION)
+EOC_API_VERSION=2.20
+AC_SUBST(EOC_API_VERSION)
 
 AC_CONFIG_HEADERS([config.h])
 
@@ -96,7 +96,7 @@ LIBPEAS_REQUIRED=1.8.0
 MAGICK_REQUIRED=6.2.6
 
 PKG_CHECK_MODULES(GMODULE, gmodule-2.0, [GMODULE_ADD="gmodule-2.0"],[GMODULE_ADD=""])
-EOM_MODULES="gtk+-3.0 >= $GTK_REQUIRED \
+EOC_MODULES="gtk+-3.0 >= $GTK_REQUIRED \
              glib-2.0 >= $GLIB_REQUIRED \
              $GMODULE_ADD \
              gio-2.0 >= $GLIB_REQUIRED \
@@ -150,7 +150,7 @@ if test x$with_libexif != xno; then
 fi
 if test "x$have_exif" = "xyes"; then
   AC_DEFINE(HAVE_EXIF, 1, [EXIF Support.])
-  EOM_MODULES="$EOM_MODULES libexif >= $LIBEXIF_REQUIRED"
+  EOC_MODULES="$EOC_MODULES libexif >= $LIBEXIF_REQUIRED"
 fi
 
 AM_CONDITIONAL([HAVE_EXIF], [test "x$have_exif" = "xyes"])
@@ -166,7 +166,7 @@ if test x$with_cms != xno; then
 fi
 if test "x$have_lcms" = "xyes"; then
   AC_DEFINE(HAVE_LCMS, 1, [Little CMS Support.])
-  EOM_MODULES="$EOM_MODULES lcms2"
+  EOC_MODULES="$EOC_MODULES lcms2"
 fi
 
 AM_CONDITIONAL([HAVE_LCMS], [test "x$have_lcms" = "xyes"])
@@ -181,22 +181,22 @@ if test x$with_xmp != xno; then
 fi
 if test "x$have_exempi" = "xyes"; then
   AC_DEFINE(HAVE_EXEMPI,1, [XMP support.])
-  EOM_MODULES="$EOM_MODULES exempi-2.0 >= $EXEMPI_REQUIRED"
+  EOC_MODULES="$EOC_MODULES exempi-2.0 >= $EXEMPI_REQUIRED"
 fi
 
 AM_CONDITIONAL([HAVE_EXEMPI], [test "x$have_exempi" = "xyes"])
 
 # Build EXIF-related documentation if we really have support for it
 if test "x$have_exif" = "xyes" || test "x$have_exempi" = "xyes"; then
-  EOM_DOC_EXIF_START=""
-  EOM_DOC_EXIF_STOP=""
+  EOC_DOC_EXIF_START=""
+  EOC_DOC_EXIF_STOP=""
 else
-  EOM_DOC_EXIF_START="<!--"
-  EOM_DOC_EXIF_STOP="-->"
+  EOC_DOC_EXIF_START="<!--"
+  EOC_DOC_EXIF_STOP="-->"
 fi
 
-AC_SUBST([EOM_DOC_EXIF_START])
-AC_SUBST([EOM_DOC_EXIF_STOP])
+AC_SUBST([EOC_DOC_EXIF_START])
+AC_SUBST([EOC_DOC_EXIF_STOP])
 
 # ********************
 # Jpeg (semi-optional)
@@ -279,7 +279,7 @@ if test x$with_librsvg != xno; then
 fi
 if test "x$have_rsvg" = "xyes"; then
   AC_DEFINE(HAVE_RSVG, 1, [RSVG Support.])
-  EOM_MODULES="$EOM_MODULES librsvg-2.0 >= $LIBRSVG_REQUIRED"
+  EOC_MODULES="$EOC_MODULES librsvg-2.0 >= $LIBRSVG_REQUIRED"
 else
   AC_WARN([LIBRSVG support disabled, svg files will not scale])
 fi
@@ -338,8 +338,8 @@ if test "x$enable_thumbnailer" != "xno"; then
 		eoc_thumbnailer="eoc-thumbnailer"
 	fi
 
-	EOM_THUMBNAILER="$eoc_thumbnailer"
-	AC_SUBST(EOM_THUMBNAILER)
+	EOC_THUMBNAILER="$eoc_thumbnailer"
+	AC_SUBST(EOC_THUMBNAILER)
 else
 	eoc_thumbnailer="no"
 fi
@@ -348,9 +348,9 @@ fi
 # CFLAGS/LIBS init
 # ****************
 
-PKG_CHECK_MODULES(EOM, $EOM_MODULES)
-AC_SUBST(EOM_CFLAGS)
-AC_SUBST(EOM_LIBS)
+PKG_CHECK_MODULES(EOC, $EOC_MODULES)
+AC_SUBST(EOC_CFLAGS)
+AC_SUBST(EOC_LIBS)
 
 # *******************************************************
 # libX11 (required for TotemScrSaver and Color Profiling)

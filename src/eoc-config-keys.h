@@ -24,51 +24,51 @@
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-#ifndef __EOM_CONFIG_KEYS_H__
-#define __EOM_CONFIG_KEYS_H__
+#ifndef __EOC_CONFIG_KEYS_H__
+#define __EOC_CONFIG_KEYS_H__
 
-#define EOM_CONF_DOMAIN				"org.mate.eoc"
-#define EOM_CONF_FULLSCREEN			EOM_CONF_DOMAIN".full-screen"
-#define EOM_CONF_PLUGINS			EOM_CONF_DOMAIN".plugins"
-#define EOM_CONF_UI				EOM_CONF_DOMAIN".ui"
-#define EOM_CONF_VIEW				EOM_CONF_DOMAIN".view"
+#define EOC_CONF_DOMAIN				"org.mate.eoc"
+#define EOC_CONF_FULLSCREEN			EOC_CONF_DOMAIN".full-screen"
+#define EOC_CONF_PLUGINS			EOC_CONF_DOMAIN".plugins"
+#define EOC_CONF_UI				EOC_CONF_DOMAIN".ui"
+#define EOC_CONF_VIEW				EOC_CONF_DOMAIN".view"
 
-#define EOM_CONF_BACKGROUND_SCHEMA              "org.mate.background"
-#define EOM_CONF_BACKGROUND_FILE                "picture-filename"
+#define EOC_CONF_BACKGROUND_SCHEMA              "org.mate.background"
+#define EOC_CONF_BACKGROUND_FILE                "picture-filename"
 
-#define EOM_CONF_LOCKDOWN_SCHEMA                "org.mate.lockdown"
-#define EOM_CONF_LOCKDOWN_CAN_SAVE              "disable-save-to-disk"
-#define EOM_CONF_LOCKDOWN_CAN_PRINT             "disable-printing"
-#define EOM_CONF_LOCKDOWN_CAN_SETUP_PAGE        "disable-print-setup"
+#define EOC_CONF_LOCKDOWN_SCHEMA                "org.mate.lockdown"
+#define EOC_CONF_LOCKDOWN_CAN_SAVE              "disable-save-to-disk"
+#define EOC_CONF_LOCKDOWN_CAN_PRINT             "disable-printing"
+#define EOC_CONF_LOCKDOWN_CAN_SETUP_PAGE        "disable-print-setup"
 
-#define EOM_CONF_VIEW_BACKGROUND_COLOR          "background-color"
-#define EOM_CONF_VIEW_INTERPOLATE               "interpolate"
-#define EOM_CONF_VIEW_EXTRAPOLATE               "extrapolate"
-#define EOM_CONF_VIEW_SCROLL_WHEEL_ZOOM         "scroll-wheel-zoom"
-#define EOM_CONF_VIEW_ZOOM_MULTIPLIER           "zoom-multiplier"
-#define EOM_CONF_VIEW_AUTOROTATE                "autorotate"
-#define EOM_CONF_VIEW_TRANSPARENCY              "transparency"
-#define EOM_CONF_VIEW_TRANS_COLOR               "trans-color"
-#define EOM_CONF_VIEW_USE_BG_COLOR              "use-background-color"
+#define EOC_CONF_VIEW_BACKGROUND_COLOR          "background-color"
+#define EOC_CONF_VIEW_INTERPOLATE               "interpolate"
+#define EOC_CONF_VIEW_EXTRAPOLATE               "extrapolate"
+#define EOC_CONF_VIEW_SCROLL_WHEEL_ZOOM         "scroll-wheel-zoom"
+#define EOC_CONF_VIEW_ZOOM_MULTIPLIER           "zoom-multiplier"
+#define EOC_CONF_VIEW_AUTOROTATE                "autorotate"
+#define EOC_CONF_VIEW_TRANSPARENCY              "transparency"
+#define EOC_CONF_VIEW_TRANS_COLOR               "trans-color"
+#define EOC_CONF_VIEW_USE_BG_COLOR              "use-background-color"
 
-#define EOM_CONF_FULLSCREEN_RANDOM              "random"
-#define EOM_CONF_FULLSCREEN_LOOP                "loop"
-#define EOM_CONF_FULLSCREEN_UPSCALE             "upscale"
-#define EOM_CONF_FULLSCREEN_SECONDS             "seconds"
+#define EOC_CONF_FULLSCREEN_RANDOM              "random"
+#define EOC_CONF_FULLSCREEN_LOOP                "loop"
+#define EOC_CONF_FULLSCREEN_UPSCALE             "upscale"
+#define EOC_CONF_FULLSCREEN_SECONDS             "seconds"
 
-#define EOM_CONF_UI_TOOLBAR                     "toolbar"
-#define EOM_CONF_UI_STATUSBAR                   "statusbar"
-#define EOM_CONF_UI_IMAGE_COLLECTION            "image-collection"
-#define EOM_CONF_UI_IMAGE_COLLECTION_POSITION   "image-collection-position"
-#define EOM_CONF_UI_IMAGE_COLLECTION_RESIZABLE  "image-collection-resizable"
-#define EOM_CONF_UI_SIDEBAR                     "sidebar"
-#define EOM_CONF_UI_SCROLL_BUTTONS              "scroll-buttons"
-#define EOM_CONF_UI_DISABLE_CLOSE_CONFIRMATION	"disable-close-confirmation"
-#define EOM_CONF_UI_DISABLE_TRASH_CONFIRMATION  "disable-trash-confirmation"
-#define EOM_CONF_UI_FILECHOOSER_XDG_FALLBACK    "filechooser-xdg-fallback"
-#define EOM_CONF_UI_PROPSDIALOG_NETBOOK_MODE    "propsdialog-netbook-mode"
-#define EOM_CONF_UI_EXTERNAL_EDITOR             "external-editor"
+#define EOC_CONF_UI_TOOLBAR                     "toolbar"
+#define EOC_CONF_UI_STATUSBAR                   "statusbar"
+#define EOC_CONF_UI_IMAGE_COLLECTION            "image-collection"
+#define EOC_CONF_UI_IMAGE_COLLECTION_POSITION   "image-collection-position"
+#define EOC_CONF_UI_IMAGE_COLLECTION_RESIZABLE  "image-collection-resizable"
+#define EOC_CONF_UI_SIDEBAR                     "sidebar"
+#define EOC_CONF_UI_SCROLL_BUTTONS              "scroll-buttons"
+#define EOC_CONF_UI_DISABLE_CLOSE_CONFIRMATION	"disable-close-confirmation"
+#define EOC_CONF_UI_DISABLE_TRASH_CONFIRMATION  "disable-trash-confirmation"
+#define EOC_CONF_UI_FILECHOOSER_XDG_FALLBACK    "filechooser-xdg-fallback"
+#define EOC_CONF_UI_PROPSDIALOG_NETBOOK_MODE    "propsdialog-netbook-mode"
+#define EOC_CONF_UI_EXTERNAL_EDITOR             "external-editor"
 
-#define EOM_CONF_PLUGINS_ACTIVE_PLUGINS         "active-plugins"
+#define EOC_CONF_PLUGINS_ACTIVE_PLUGINS         "active-plugins"
 
-#endif /* __EOM_CONFIG_KEYS_H__ */
+#endif /* __EOC_CONFIG_KEYS_H__ */

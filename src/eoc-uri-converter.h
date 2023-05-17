@@ -1,5 +1,5 @@
-#ifndef _EOM_URI_CONVERTER_H_
-#define _EOM_URI_CONVERTER_H_
+#ifndef _EOC_URI_CONVERTER_H_
+#define _EOC_URI_CONVERTER_H_
 
 #include <glib-object.h>
 #include <glib/gi18n.h>
@@ -7,34 +7,34 @@
 
 G_BEGIN_DECLS
 
-#define EOM_TYPE_URI_CONVERTER          (eoc_uri_converter_get_type ())
-#define EOM_URI_CONVERTER(o)            (G_TYPE_CHECK_INSTANCE_CAST ((o), EOM_TYPE_URI_CONVERTER, EomURIConverter))
-#define EOM_URI_CONVERTER_CLASS(k)      (G_TYPE_CHECK_CLASS_CAST((k), EOM_TYPE_URI_CONVERTER, EomURIConverterClass))
-#define EOM_IS_URI_CONVERTER(o)         (G_TYPE_CHECK_INSTANCE_TYPE ((o), EOM_TYPE_URI_CONVERTER))
-#define EOM_IS_URI_CONVERTER_CLASS(k)   (G_TYPE_CHECK_CLASS_TYPE ((k), EOM_TYPE_URI_CONVERTER))
-#define EOM_URI_CONVERTER_GET_CLASS(o)  (G_TYPE_INSTANCE_GET_CLASS ((o), EOM_TYPE_URI_CONVERTER, EomURIConverterClass))
+#define EOC_TYPE_URI_CONVERTER          (eoc_uri_converter_get_type ())
+#define EOC_URI_CONVERTER(o)            (G_TYPE_CHECK_INSTANCE_CAST ((o), EOC_TYPE_URI_CONVERTER, EomURIConverter))
+#define EOC_URI_CONVERTER_CLASS(k)      (G_TYPE_CHECK_CLASS_CAST((k), EOC_TYPE_URI_CONVERTER, EomURIConverterClass))
+#define EOC_IS_URI_CONVERTER(o)         (G_TYPE_CHECK_INSTANCE_TYPE ((o), EOC_TYPE_URI_CONVERTER))
+#define EOC_IS_URI_CONVERTER_CLASS(k)   (G_TYPE_CHECK_CLASS_TYPE ((k), EOC_TYPE_URI_CONVERTER))
+#define EOC_URI_CONVERTER_GET_CLASS(o)  (G_TYPE_INSTANCE_GET_CLASS ((o), EOC_TYPE_URI_CONVERTER, EomURIConverterClass))
 
-#ifndef __EOM_URI_CONVERTER_DECLR__
-#define __EOM_URI_CONVERTER_DECLR__
+#ifndef __EOC_URI_CONVERTER_DECLR__
+#define __EOC_URI_CONVERTER_DECLR__
 typedef struct _EomURIConverter EomURIConverter;
 #endif
 typedef struct _EomURIConverterClass EomURIConverterClass;
 typedef struct _EomURIConverterPrivate EomURIConverterPrivate;
 
 typedef enum {
-	EOM_UC_STRING,
-	EOM_UC_FILENAME,
-	EOM_UC_COUNTER,
-	EOM_UC_COMMENT,
-	EOM_UC_DATE,
-	EOM_UC_TIME,
-	EOM_UC_DAY,
-	EOM_UC_MONTH,
-	EOM_UC_YEAR,
-	EOM_UC_HOUR,
-	EOM_UC_MINUTE,
-	EOM_UC_SECOND,
-	EOM_UC_END
+	EOC_UC_STRING,
+	EOC_UC_FILENAME,
+	EOC_UC_COUNTER,
+	EOC_UC_COMMENT,
+	EOC_UC_DATE,
+	EOC_UC_TIME,
+	EOC_UC_DAY,
+	EOC_UC_MONTH,
+	EOC_UC_YEAR,
+	EOC_UC_HOUR,
+	EOC_UC_MINUTE,
+	EOC_UC_SECOND,
+	EOC_UC_END
 } EomUCType;
 
 typedef struct {
@@ -44,13 +44,13 @@ typedef struct {
 } EomUCInfo;
 
 typedef enum {
-	EOM_UC_ERROR_INVALID_UNICODE,
-	EOM_UC_ERROR_INVALID_CHARACTER,
-	EOM_UC_ERROR_EQUAL_FILENAMES,
-	EOM_UC_ERROR_UNKNOWN
+	EOC_UC_ERROR_INVALID_UNICODE,
+	EOC_UC_ERROR_INVALID_CHARACTER,
+	EOC_UC_ERROR_EQUAL_FILENAMES,
+	EOC_UC_ERROR_UNKNOWN
 } EomUCError;
 
-#define EOM_UC_ERROR eoc_uc_error_quark ()
+#define EOC_UC_ERROR eoc_uc_error_quark ()
 
 
 struct _EomURIConverter {
@@ -104,4 +104,4 @@ void                eoc_uri_converter_print_list (EomURIConverter *conv);
 
 G_END_DECLS
 
-#endif /* _EOM_URI_CONVERTER_H_ */
+#endif /* _EOC_URI_CONVERTER_H_ */

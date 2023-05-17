@@ -1,33 +1,33 @@
-#ifndef _EOM_TRANSFORM_H_
-#define _EOM_TRANSFORM_H_
+#ifndef _EOC_TRANSFORM_H_
+#define _EOC_TRANSFORM_H_
 
 #include <glib-object.h>
 #include <gdk-pixbuf/gdk-pixbuf.h>
 
 G_BEGIN_DECLS
 
-#ifndef __EOM_JOB_DECLR__
-#define __EOM_JOB_DECLR__
+#ifndef __EOC_JOB_DECLR__
+#define __EOC_JOB_DECLR__
 typedef struct _EomJob EomJob;
 #endif
 
 typedef enum {
-	EOM_TRANSFORM_NONE,
-	EOM_TRANSFORM_ROT_90,
-	EOM_TRANSFORM_ROT_180,
-	EOM_TRANSFORM_ROT_270,
-	EOM_TRANSFORM_FLIP_HORIZONTAL,
-	EOM_TRANSFORM_FLIP_VERTICAL,
-	EOM_TRANSFORM_TRANSPOSE,
-	EOM_TRANSFORM_TRANSVERSE
+	EOC_TRANSFORM_NONE,
+	EOC_TRANSFORM_ROT_90,
+	EOC_TRANSFORM_ROT_180,
+	EOC_TRANSFORM_ROT_270,
+	EOC_TRANSFORM_FLIP_HORIZONTAL,
+	EOC_TRANSFORM_FLIP_VERTICAL,
+	EOC_TRANSFORM_TRANSPOSE,
+	EOC_TRANSFORM_TRANSVERSE
 } EomTransformType;
 
-#define EOM_TYPE_TRANSFORM          (eoc_transform_get_type ())
-#define EOM_TRANSFORM(o)            (G_TYPE_CHECK_INSTANCE_CAST ((o), EOM_TYPE_TRANSFORM, EomTransform))
-#define EOM_TRANSFORM_CLASS(k)      (G_TYPE_CHECK_CLASS_CAST((k), EOM_TYPE_TRANSFORM, EomTransformClass))
-#define EOM_IS_TRANSFORM(o)         (G_TYPE_CHECK_INSTANCE_TYPE ((o), EOM_TYPE_TRANSFORM))
-#define EOM_IS_TRANSFORM_CLASS(k)   (G_TYPE_CHECK_CLASS_TYPE ((k), EOM_TYPE_TRANSFORM))
-#define EOM_TRANSFORM_GET_CLASS(o)  (G_TYPE_INSTANCE_GET_CLASS ((o), EOM_TYPE_TRANSFORM, EomTransformClass))
+#define EOC_TYPE_TRANSFORM          (eoc_transform_get_type ())
+#define EOC_TRANSFORM(o)            (G_TYPE_CHECK_INSTANCE_CAST ((o), EOC_TYPE_TRANSFORM, EomTransform))
+#define EOC_TRANSFORM_CLASS(k)      (G_TYPE_CHECK_CLASS_CAST((k), EOC_TYPE_TRANSFORM, EomTransformClass))
+#define EOC_IS_TRANSFORM(o)         (G_TYPE_CHECK_INSTANCE_TYPE ((o), EOC_TYPE_TRANSFORM))
+#define EOC_IS_TRANSFORM_CLASS(k)   (G_TYPE_CHECK_CLASS_TYPE ((k), EOC_TYPE_TRANSFORM))
+#define EOC_TRANSFORM_GET_CLASS(o)  (G_TYPE_INSTANCE_GET_CLASS ((o), EOC_TYPE_TRANSFORM, EomTransformClass))
 
 /* =========================================
 
@@ -58,7 +58,7 @@ gboolean      eoc_transform_is_identity (EomTransform *trans);
 
 EomTransform* eoc_transform_identity_new (void);
 EomTransform* eoc_transform_rotate_new (int degree);
-EomTransform* eoc_transform_flip_new   (EomTransformType type /* only EOM_TRANSFORM_FLIP_* are valid */);
+EomTransform* eoc_transform_flip_new   (EomTransformType type /* only EOC_TRANSFORM_FLIP_* are valid */);
 #if 0
 EomTransform* eoc_transform_scale_new  (double sx, double sy);
 #endif
@@ -70,6 +70,6 @@ gboolean         eoc_transform_get_affine (EomTransform *trans, cairo_matrix_t *
 
 G_END_DECLS
 
-#endif /* _EOM_TRANSFORM_H_ */
+#endif /* _EOC_TRANSFORM_H_ */
 
 

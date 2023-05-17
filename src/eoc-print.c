@@ -33,9 +33,9 @@
 #include <librsvg/rsvg.h>
 #endif
 
-#define EOM_PRINT_SETTINGS_FILE "eoc-print-settings.ini"
-#define EOM_PAGE_SETUP_GROUP "Page Setup"
-#define EOM_PRINT_SETTINGS_GROUP "Print Settings"
+#define EOC_PRINT_SETTINGS_FILE "eoc-print-settings.ini"
+#define EOC_PAGE_SETUP_GROUP "Page Setup"
+#define EOC_PRINT_SETTINGS_GROUP "Print Settings"
 
 typedef struct {
 	EomImage *image;
@@ -167,25 +167,25 @@ eoc_print_draw_page (GtkPrintOperation *operation,
 				}
 
 				switch (eoc_transform_get_transform_type (tf)) {
-					case EOM_TRANSFORM_ROT_90:
+					case EOC_TRANSFORM_ROT_90:
 						surface = cairo_image_surface_create (
 								CAIRO_FORMAT_RGB24, height, width);
 						cairo_rotate (cr, 90.0 * (G_PI/180.0));
 						cairo_translate (cr, 0.0, -width);
 						break;
-					case EOM_TRANSFORM_ROT_180:
+					case EOC_TRANSFORM_ROT_180:
 						surface = cairo_image_surface_create (
 								CAIRO_FORMAT_RGB24, width, height);
 						cairo_rotate (cr, 180.0 * (G_PI/180.0));
 						cairo_translate (cr, -width, -height);
 						break;
-					case EOM_TRANSFORM_ROT_270:
+					case EOC_TRANSFORM_ROT_270:
 						surface = cairo_image_surface_create (
 								CAIRO_FORMAT_RGB24, height, width);
 						cairo_rotate (cr, 270.0 * (G_PI/180.0));
 						cairo_translate (cr, -height, 0.0);
 						break;
-					case EOM_TRANSFORM_FLIP_HORIZONTAL:
+					case EOC_TRANSFORM_FLIP_HORIZONTAL:
 						surface = cairo_image_surface_create (
 								CAIRO_FORMAT_RGB24, width, height);
 						cairo_matrix_init_identity (&mx);
@@ -193,7 +193,7 @@ eoc_print_draw_page (GtkPrintOperation *operation,
 						cairo_transform (cr, &mx2);
 						cairo_translate (cr, -width, 0.0);
 						break;
-					case EOM_TRANSFORM_FLIP_VERTICAL:
+					case EOC_TRANSFORM_FLIP_VERTICAL:
 						surface = cairo_image_surface_create (
 								CAIRO_FORMAT_RGB24, width, height);
 						cairo_matrix_init_identity (&mx);
@@ -201,7 +201,7 @@ eoc_print_draw_page (GtkPrintOperation *operation,
 						cairo_transform (cr, &mx2);
 						cairo_translate (cr, 0.0, -height);
 						break;
-					case EOM_TRANSFORM_TRANSPOSE:
+					case EOC_TRANSFORM_TRANSPOSE:
 						surface = cairo_image_surface_create (
 								CAIRO_FORMAT_RGB24, height, width);
 						cairo_matrix_init_rotate (&mx, 90.0 * (G_PI/180.0));
@@ -210,7 +210,7 @@ eoc_print_draw_page (GtkPrintOperation *operation,
 						cairo_matrix_multiply (&mx2, &mx, &mx2);
 						cairo_transform (cr, &mx2);
 						break;
-					case EOM_TRANSFORM_TRANSVERSE:
+					case EOC_TRANSFORM_TRANSVERSE:
 						surface = cairo_image_surface_create (
 								CAIRO_FORMAT_RGB24, height, width);
 						cairo_matrix_init_rotate (&mx, 90.0 * (G_PI/180.0));
@@ -220,7 +220,7 @@ eoc_print_draw_page (GtkPrintOperation *operation,
 						cairo_transform (cr, &mx2);
 						cairo_translate (cr, -height , -width);
 						break;
-					case EOM_TRANSFORM_NONE:
+					case EOC_TRANSFORM_NONE:
 					default:
 						surface = cairo_image_surface_create (
 								CAIRO_FORMAT_RGB24, width, height);
@@ -287,7 +287,7 @@ eoc_print_custom_widget_apply (GtkPrintOperation *operation,
 
 	data = (EomPrintData *)user_data;
 
-	eoc_print_image_setup_get_options (EOM_PRINT_IMAGE_SETUP (widget),
+	eoc_print_image_setup_get_options (EOC_PRINT_IMAGE_SETUP (widget),
 					   &left_margin, &top_margin,
 					   &scale_factor, &unit);
 
@@ -382,7 +382,7 @@ eoc_print_get_key_file (void)
 	GFile *file;
 	const gchar *dot_dir = eoc_util_dot_dir ();
 
-	filename = g_build_filename (dot_dir, EOM_PRINT_SETTINGS_FILE, NULL);
+	filename = g_build_filename (dot_dir, EOC_PRINT_SETTINGS_FILE, NULL);
 
 	file = g_file_new_for_path (filename);
 	key_file = g_key_file_new ();
@@ -416,8 +416,8 @@ eoc_print_get_page_setup (void)
 
 	key_file = eoc_print_get_key_file ();
 
-	if (key_file && g_key_file_has_group (key_file, EOM_PAGE_SETUP_GROUP)) {
-		page_setup = gtk_page_setup_new_from_key_file (key_file, EOM_PAGE_SETUP_GROUP, &error);
+	if (key_file && g_key_file_has_group (key_file, EOC_PAGE_SETUP_GROUP)) {
+		page_setup = gtk_page_setup_new_from_key_file (key_file, EOC_PAGE_SETUP_GROUP, &error);
 	} else {
 		page_setup = gtk_page_setup_new ();
 	}
@@ -443,7 +443,7 @@ eoc_print_save_key_file (GKeyFile *key_file)
 	GError *error = NULL;
 	const gchar *dot_dir = eoc_util_dot_dir ();
 
-	filename = g_build_filename (dot_dir, EOM_PRINT_SETTINGS_FILE, NULL);
+	filename = g_build_filename (dot_dir, EOC_PRINT_SETTINGS_FILE, NULL);
 
 	data = g_key_file_to_data (key_file, NULL, NULL);
 
@@ -469,7 +469,7 @@ eoc_print_set_page_setup (GtkPageSetup *page_setup)
 		key_file = g_key_file_new ();
 	}
 
-	gtk_page_setup_to_key_file (page_setup, key_file, EOM_PAGE_SETUP_GROUP);
+	gtk_page_setup_to_key_file (page_setup, key_file, EOC_PAGE_SETUP_GROUP);
 	eoc_print_save_key_file (key_file);
 
 	g_key_file_free (key_file);
@@ -484,8 +484,8 @@ eoc_print_get_print_settings (void)
 
 	key_file = eoc_print_get_key_file ();
 
-	if (key_file && g_key_file_has_group (key_file, EOM_PRINT_SETTINGS_GROUP)) {
-		print_settings = gtk_print_settings_new_from_key_file (key_file, EOM_PRINT_SETTINGS_GROUP, &error);
+	if (key_file && g_key_file_has_group (key_file, EOC_PRINT_SETTINGS_GROUP)) {
+		print_settings = gtk_print_settings_new_from_key_file (key_file, EOC_PRINT_SETTINGS_GROUP, &error);
 	} else {
 		print_settings = gtk_print_settings_new ();
 	}
@@ -514,7 +514,7 @@ eoc_print_set_print_settings (GtkPrintSettings *print_settings)
 		key_file = g_key_file_new ();
 	}
 
-	gtk_print_settings_to_key_file (print_settings, key_file, EOM_PRINT_SETTINGS_GROUP);
+	gtk_print_settings_to_key_file (print_settings, key_file, EOC_PRINT_SETTINGS_GROUP);
 	eoc_print_save_key_file (key_file);
 
 	g_key_file_free (key_file);

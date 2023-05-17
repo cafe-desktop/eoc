@@ -1,4 +1,4 @@
-/* Eye Of Mate - EOM Image Exif Details
+/* Eye Of Mate - EOC Image Exif Details
  *
  * Copyright (C) 2006 The Free Software Foundation
  *
@@ -19,8 +19,8 @@
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-#ifndef __EOM_METADATA_DETAILS__
-#define __EOM_METADATA_DETAILS__
+#ifndef __EOC_METADATA_DETAILS__
+#define __EOC_METADATA_DETAILS__
 
 #include <glib-object.h>
 #include <gtk/gtk.h>
@@ -37,12 +37,12 @@ typedef struct _EomMetadataDetails EomMetadataDetails;
 typedef struct _EomMetadataDetailsClass EomMetadataDetailsClass;
 typedef struct _EomMetadataDetailsPrivate EomMetadataDetailsPrivate;
 
-#define EOM_TYPE_METADATA_DETAILS            (eoc_metadata_details_get_type ())
-#define EOM_METADATA_DETAILS(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), EOM_TYPE_METADATA_DETAILS, EomMetadataDetails))
-#define EOM_METADATA_DETAILS_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST((klass), EOM_TYPE_METADATA_DETAILS, EomMetadataDetailsClass))
-#define EOM_IS_METADATA_DETAILS(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), EOM_TYPE_METADATA_DETAILS))
-#define EOM_IS_METADATA_DETAILS_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), EOM_TYPE_METADATA_DETAILS))
-#define EOM_METADATA_DETAILS_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), EOM_TYPE_METADATA_DETAILS, EomMetadataDetailsClass))
+#define EOC_TYPE_METADATA_DETAILS            (eoc_metadata_details_get_type ())
+#define EOC_METADATA_DETAILS(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), EOC_TYPE_METADATA_DETAILS, EomMetadataDetails))
+#define EOC_METADATA_DETAILS_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST((klass), EOC_TYPE_METADATA_DETAILS, EomMetadataDetailsClass))
+#define EOC_IS_METADATA_DETAILS(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), EOC_TYPE_METADATA_DETAILS))
+#define EOC_IS_METADATA_DETAILS_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), EOC_TYPE_METADATA_DETAILS))
+#define EOC_METADATA_DETAILS_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), EOC_TYPE_METADATA_DETAILS, EomMetadataDetailsClass))
 
 struct _EomMetadataDetails {
         GtkTreeView parent;
@@ -73,4 +73,4 @@ void                eoc_metadata_details_xmp_update  (EomMetadataDetails *detail
 
 G_END_DECLS
 
-#endif /* __EOM_METADATA_DETAILS__ */
+#endif /* __EOC_METADATA_DETAILS__ */

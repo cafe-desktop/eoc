@@ -23,8 +23,8 @@
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-#ifndef __EOM_SIDEBAR_H__
-#define __EOM_SIDEBAR_H__
+#ifndef __EOC_SIDEBAR_H__
+#define __EOC_SIDEBAR_H__
 
 #include <gtk/gtk.h>
 
@@ -34,12 +34,12 @@ typedef struct _EomSidebar EomSidebar;
 typedef struct _EomSidebarClass EomSidebarClass;
 typedef struct _EomSidebarPrivate EomSidebarPrivate;
 
-#define EOM_TYPE_SIDEBAR	    (eoc_sidebar_get_type())
-#define EOM_SIDEBAR(obj)	    (G_TYPE_CHECK_INSTANCE_CAST((obj), EOM_TYPE_SIDEBAR, EomSidebar))
-#define EOM_SIDEBAR_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST((klass),  EOM_TYPE_SIDEBAR, EomSidebarClass))
-#define EOM_IS_SIDEBAR(obj)	    (G_TYPE_CHECK_INSTANCE_TYPE((obj), EOM_TYPE_SIDEBAR))
-#define EOM_IS_SIDEBAR_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE((klass),  EOM_TYPE_SIDEBAR))
-#define EOM_SIDEBAR_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS((obj),  EOM_TYPE_SIDEBAR, EomSidebarClass))
+#define EOC_TYPE_SIDEBAR	    (eoc_sidebar_get_type())
+#define EOC_SIDEBAR(obj)	    (G_TYPE_CHECK_INSTANCE_CAST((obj), EOC_TYPE_SIDEBAR, EomSidebar))
+#define EOC_SIDEBAR_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST((klass),  EOC_TYPE_SIDEBAR, EomSidebarClass))
+#define EOC_IS_SIDEBAR(obj)	    (G_TYPE_CHECK_INSTANCE_TYPE((obj), EOC_TYPE_SIDEBAR))
+#define EOC_IS_SIDEBAR_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE((klass),  EOC_TYPE_SIDEBAR))
+#define EOC_SIDEBAR_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS((obj),  EOC_TYPE_SIDEBAR, EomSidebarClass))
 
 struct _EomSidebar {
 	GtkBox base_instance;
@@ -77,6 +77,6 @@ gboolean   eoc_sidebar_is_empty     (EomSidebar  *eoc_sidebar);
 
 G_END_DECLS
 
-#endif /* __EOM_SIDEBAR_H__ */
+#endif /* __EOC_SIDEBAR_H__ */
 
 

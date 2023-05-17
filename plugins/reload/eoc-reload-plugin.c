@@ -18,7 +18,7 @@ G_DEFINE_DYNAMIC_TYPE_EXTENDED (EomReloadPlugin,
                                 eoc_reload_plugin,
                                 PEAS_TYPE_EXTENSION_BASE,
                                 0,
-                                G_IMPLEMENT_INTERFACE_DYNAMIC (EOM_TYPE_WINDOW_ACTIVATABLE,
+                                G_IMPLEMENT_INTERFACE_DYNAMIC (EOC_TYPE_WINDOW_ACTIVATABLE,
                                                                eoc_window_activatable_iface_init))
 
 enum {
@@ -51,12 +51,12 @@ eoc_reload_plugin_set_property (GObject      *object,
                                 const GValue *value,
                                 GParamSpec   *pspec)
 {
-	EomReloadPlugin *plugin = EOM_RELOAD_PLUGIN (object);
+	EomReloadPlugin *plugin = EOC_RELOAD_PLUGIN (object);
 
 	switch (prop_id)
 	{
 	case PROP_WINDOW:
-		plugin->window = EOM_WINDOW (g_value_dup_object (value));
+		plugin->window = EOC_WINDOW (g_value_dup_object (value));
 		break;
 
 	default:
@@ -71,7 +71,7 @@ eoc_reload_plugin_get_property (GObject    *object,
                                 GValue     *value,
                                 GParamSpec *pspec)
 {
-	EomReloadPlugin *plugin = EOM_RELOAD_PLUGIN (object);
+	EomReloadPlugin *plugin = EOC_RELOAD_PLUGIN (object);
 
 	switch (prop_id)
 	{
@@ -94,7 +94,7 @@ eoc_reload_plugin_init (EomReloadPlugin *plugin)
 static void
 eoc_reload_plugin_dispose (GObject *object)
 {
-	EomReloadPlugin *plugin = EOM_RELOAD_PLUGIN (object);
+	EomReloadPlugin *plugin = EOC_RELOAD_PLUGIN (object);
 
 	eoc_debug_message (DEBUG_PLUGINS, "EomReloadPlugin disposing");
 
@@ -109,7 +109,7 @@ eoc_reload_plugin_dispose (GObject *object)
 static void
 eoc_reload_plugin_activate (EomWindowActivatable *activatable)
 {
-	EomReloadPlugin *plugin = EOM_RELOAD_PLUGIN (activatable);
+	EomReloadPlugin *plugin = EOC_RELOAD_PLUGIN (activatable);
 	GtkUIManager *manager;
 
 	eoc_debug (DEBUG_PLUGINS);
@@ -134,7 +134,7 @@ eoc_reload_plugin_activate (EomWindowActivatable *activatable)
 static void
 eoc_reload_plugin_deactivate (EomWindowActivatable *activatable)
 {
-	EomReloadPlugin *plugin = EOM_RELOAD_PLUGIN (activatable);
+	EomReloadPlugin *plugin = EOC_RELOAD_PLUGIN (activatable);
 	GtkUIManager *manager;
 
 	eoc_debug (DEBUG_PLUGINS);
@@ -178,6 +178,6 @@ peas_register_types (PeasObjectModule *module)
 {
 	eoc_reload_plugin_register_type (G_TYPE_MODULE (module));
 	peas_object_module_register_extension_type (module,
-	                                            EOM_TYPE_WINDOW_ACTIVATABLE,
-	                                            EOM_TYPE_RELOAD_PLUGIN);
+	                                            EOC_TYPE_WINDOW_ACTIVATABLE,
+	                                            EOC_TYPE_RELOAD_PLUGIN);
 }

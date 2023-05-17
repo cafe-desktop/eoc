@@ -115,7 +115,7 @@ parent_file_display_name_query_info_cb (GObject *source_object,
 					GAsyncResult *res,
 					gpointer user_data)
 {
-	EomPropertiesDialog *prop_dlg = EOM_PROPERTIES_DIALOG (user_data);
+	EomPropertiesDialog *prop_dlg = EOC_PROPERTIES_DIALOG (user_data);
 	GFile *parent_file = G_FILE (source_object);
 	GFileInfo *file_info;
 	gchar *display_name;
@@ -291,7 +291,7 @@ pd_update_metadata_tab (EomPropertiesDialog *prop_dlg,
 	XmpPtr      xmp_data;
 #endif
 
-	g_return_if_fail (EOM_IS_PROPERTIES_DIALOG (prop_dlg));
+	g_return_if_fail (EOC_IS_PROPERTIES_DIALOG (prop_dlg));
 
 	priv = prop_dlg->priv;
 
@@ -299,16 +299,16 @@ pd_update_metadata_tab (EomPropertiesDialog *prop_dlg,
 
 	if (TRUE
 #if HAVE_EXIF
-	    && !eoc_image_has_data (image, EOM_IMAGE_DATA_EXIF)
+	    && !eoc_image_has_data (image, EOC_IMAGE_DATA_EXIF)
 #endif
 #if HAVE_EXEMPI
-	    && !eoc_image_has_data (image, EOM_IMAGE_DATA_XMP)
+	    && !eoc_image_has_data (image, EOC_IMAGE_DATA_XMP)
 #endif
 	    ) {
-		if (gtk_notebook_get_current_page (notebook) ==	EOM_PROPERTIES_DIALOG_PAGE_EXIF) {
+		if (gtk_notebook_get_current_page (notebook) ==	EOC_PROPERTIES_DIALOG_PAGE_EXIF) {
 			gtk_notebook_prev_page (notebook);
-		} else if (gtk_notebook_get_current_page (notebook) == EOM_PROPERTIES_DIALOG_PAGE_DETAILS) {
-			gtk_notebook_set_current_page (notebook, EOM_PROPERTIES_DIALOG_PAGE_GENERAL);
+		} else if (gtk_notebook_get_current_page (notebook) == EOC_PROPERTIES_DIALOG_PAGE_DETAILS) {
+			gtk_notebook_set_current_page (notebook, EOC_PROPERTIES_DIALOG_PAGE_GENERAL);
 		}
 
 		if (gtk_widget_get_visible (priv->metadata_box)) {
@@ -356,7 +356,7 @@ pd_update_metadata_tab (EomPropertiesDialog *prop_dlg,
 	eoc_exif_util_set_label_text (GTK_LABEL (priv->exif_date_label),
 				      exif_data, EXIF_TAG_DATE_TIME_ORIGINAL);
 
-	eoc_metadata_details_update (EOM_METADATA_DETAILS (priv->metadata_details),
+	eoc_metadata_details_update (EOC_METADATA_DETAILS (priv->metadata_details),
 				 exif_data);
 
 	/* exif_data_unref can handle NULL-values */
@@ -392,7 +392,7 @@ pd_update_metadata_tab (EomPropertiesDialog *prop_dlg,
 				   "rights",
 				   priv->xmp_rights_label);
 
-		eoc_metadata_details_xmp_update (EOM_METADATA_DETAILS (priv->metadata_details), xmp_data);
+		eoc_metadata_details_xmp_update (EOC_METADATA_DETAILS (priv->metadata_details), xmp_data);
 
 		xmp_free (xmp_data);
 	} else {
@@ -443,7 +443,7 @@ pd_exif_details_activated_cb (GtkExpander *expander,
 static void
 pd_folder_button_clicked_cb (GtkButton *button, gpointer data)
 {
-	EomPropertiesDialogPrivate *priv = EOM_PROPERTIES_DIALOG (data)->priv;
+	EomPropertiesDialogPrivate *priv = EOC_PROPERTIES_DIALOG (data)->priv;
 	GtkWindow *window;
 	guint32 timestamp;
 
@@ -474,7 +474,7 @@ eoc_properties_dialog_set_netbook_mode (EomPropertiesDialog *dlg,
 {
 	EomPropertiesDialogPrivate *priv;
 
-	g_return_if_fail (EOM_IS_PROPERTIES_DIALOG (dlg));
+	g_return_if_fail (EOC_IS_PROPERTIES_DIALOG (dlg));
 
 	priv = dlg->priv;
 
@@ -503,7 +503,7 @@ eoc_properties_dialog_set_netbook_mode (EomPropertiesDialog *dlg,
 		g_object_unref (priv->metadata_details_sw);
 		gtk_widget_show_all (priv->metadata_details_expander);
 
-		if (gtk_notebook_get_current_page (GTK_NOTEBOOK (priv->notebook)) == EOM_PROPERTIES_DIALOG_PAGE_DETAILS)
+		if (gtk_notebook_get_current_page (GTK_NOTEBOOK (priv->notebook)) == EOC_PROPERTIES_DIALOG_PAGE_DETAILS)
 			gtk_notebook_prev_page (GTK_NOTEBOOK (priv->notebook));
 		gtk_widget_hide (priv->metadata_details_box);
 	}
@@ -516,7 +516,7 @@ eoc_properties_dialog_set_property (GObject      *object,
 				    const GValue *value,
 				    GParamSpec   *pspec)
 {
-	EomPropertiesDialog *prop_dlg = EOM_PROPERTIES_DIALOG (object);
+	EomPropertiesDialog *prop_dlg = EOC_PROPERTIES_DIALOG (object);
 
 	switch (prop_id) {
 		case PROP_THUMBVIEW:
@@ -539,7 +539,7 @@ eoc_properties_dialog_get_property (GObject    *object,
 				    GValue     *value,
 				    GParamSpec *pspec)
 {
-	EomPropertiesDialog *prop_dlg = EOM_PROPERTIES_DIALOG (object);
+	EomPropertiesDialog *prop_dlg = EOC_PROPERTIES_DIALOG (object);
 
 	switch (prop_id) {
 		case PROP_THUMBVIEW:
@@ -563,9 +563,9 @@ eoc_properties_dialog_dispose (GObject *object)
 	EomPropertiesDialogPrivate *priv;
 
 	g_return_if_fail (object != NULL);
-	g_return_if_fail (EOM_IS_PROPERTIES_DIALOG (object));
+	g_return_if_fail (EOC_IS_PROPERTIES_DIALOG (object));
 
-	prop_dlg = EOM_PROPERTIES_DIALOG (object);
+	prop_dlg = EOC_PROPERTIES_DIALOG (object);
 	priv = prop_dlg->priv;
 
 	if (priv->thumbview) {
@@ -593,7 +593,7 @@ eoc_properties_dialog_class_init (EomPropertiesDialogClass *klass)
 					 g_param_spec_object ("thumbview",
 							      "Thumbview",
 							      "Thumbview",
-							      EOM_TYPE_THUMB_VIEW,
+							      EOC_TYPE_THUMB_VIEW,
 							      G_PARAM_READWRITE |
 							      G_PARAM_CONSTRUCT_ONLY |
 							      G_PARAM_STATIC_NAME |
@@ -785,9 +785,9 @@ eoc_properties_dialog_init (EomPropertiesDialog *prop_dlg)
 	/* Remove pages from back to front. Otherwise the page index
 	 * needs to be adjusted when deleting the next page. */
 	gtk_notebook_remove_page (GTK_NOTEBOOK (priv->notebook),
-				  EOM_PROPERTIES_DIALOG_PAGE_DETAILS);
+				  EOC_PROPERTIES_DIALOG_PAGE_DETAILS);
 	gtk_notebook_remove_page (GTK_NOTEBOOK (priv->notebook),
-				  EOM_PROPERTIES_DIALOG_PAGE_EXIF);
+				  EOC_PROPERTIES_DIALOG_PAGE_EXIF);
 #endif
 }
 
@@ -812,12 +812,12 @@ eoc_properties_dialog_new (GtkWindow    *parent,
 	GObject *prop_dlg;
 
 	g_return_val_if_fail (GTK_IS_WINDOW (parent), NULL);
-	g_return_val_if_fail (EOM_IS_THUMB_VIEW (thumbview), NULL);
+	g_return_val_if_fail (EOC_IS_THUMB_VIEW (thumbview), NULL);
 	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
 	g_return_val_if_fail (GTK_IS_ACTION (next_image_action), NULL);
 	g_return_val_if_fail (GTK_IS_ACTION (previous_image_action), NULL);
 
-	prop_dlg = g_object_new (EOM_TYPE_PROPERTIES_DIALOG,
+	prop_dlg = g_object_new (EOC_TYPE_PROPERTIES_DIALOG,
 	                         "thumbview", thumbview,
 	                         NULL);
 
@@ -825,9 +825,9 @@ eoc_properties_dialog_new (GtkWindow    *parent,
 		gtk_window_set_transient_for (GTK_WINDOW (prop_dlg), parent);
 	}
 
-	gtk_activatable_set_related_action (GTK_ACTIVATABLE (EOM_PROPERTIES_DIALOG (prop_dlg)->priv->next_button), next_image_action);
+	gtk_activatable_set_related_action (GTK_ACTIVATABLE (EOC_PROPERTIES_DIALOG (prop_dlg)->priv->next_button), next_image_action);
 
-	gtk_activatable_set_related_action (GTK_ACTIVATABLE (EOM_PROPERTIES_DIALOG (prop_dlg)->priv->previous_button), previous_image_action);
+	gtk_activatable_set_related_action (GTK_ACTIVATABLE (EOC_PROPERTIES_DIALOG (prop_dlg)->priv->previous_button), previous_image_action);
 	G_GNUC_END_IGNORE_DEPRECATIONS;
 
 	return GTK_WIDGET (prop_dlg);
@@ -837,7 +837,7 @@ void
 eoc_properties_dialog_update (EomPropertiesDialog *prop_dlg,
 			      EomImage            *image)
 {
-	g_return_if_fail (EOM_IS_PROPERTIES_DIALOG (prop_dlg));
+	g_return_if_fail (EOC_IS_PROPERTIES_DIALOG (prop_dlg));
 
 	prop_dlg->priv->update_page = FALSE;
 
@@ -856,7 +856,7 @@ void
 eoc_properties_dialog_set_page (EomPropertiesDialog *prop_dlg,
 			        EomPropertiesDialogPage page)
 {
-	g_return_if_fail (EOM_IS_PROPERTIES_DIALOG (prop_dlg));
+	g_return_if_fail (EOC_IS_PROPERTIES_DIALOG (prop_dlg));
 
 	prop_dlg->priv->current_page = page;
 

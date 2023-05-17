@@ -33,7 +33,7 @@
 #include "eoc-jobs.h"
 
 /* The number of progress updates per transformation */
-#define EOM_TRANSFORM_N_PROG_UPDATES 20
+#define EOC_TRANSFORM_N_PROG_UPDATES 20
 
 struct _EomTransformPrivate {
 	cairo_matrix_t affine;
@@ -45,7 +45,7 @@ typedef struct {
 } EomPoint;
 
 /* Convert degrees into radians */
-#define EOM_DEG_TO_RAD(degree) ((degree) * (G_PI/180.0))
+#define EOC_DEG_TO_RAD(degree) ((degree) * (G_PI/180.0))
 
 G_DEFINE_TYPE_WITH_PRIVATE (EomTransform, eoc_transform, G_TYPE_OBJECT)
 
@@ -158,7 +158,7 @@ eoc_transform_apply (EomTransform *trans, GdkPixbuf *pixbuf, EomJob *job)
 	inverted[4] = -trans->priv->affine.x0 * inverted[0] - trans->priv->affine.y0 * inverted[2];
 	inverted[5] = -trans->priv->affine.x0 * inverted[1] - trans->priv->affine.y0 * inverted[3];
 
-	progress_delta = MAX (1, dest_height / EOM_TRANSFORM_N_PROG_UPDATES);
+	progress_delta = MAX (1, dest_height / EOC_TRANSFORM_N_PROG_UPDATES);
 
 	/*
 	 * for every destination pixel (dx,dy) compute the source pixel (sx, sy)
@@ -240,9 +240,9 @@ eoc_transform_reverse (EomTransform *trans)
 {
 	EomTransform *reverse;
 
-	g_return_val_if_fail (EOM_IS_TRANSFORM (trans), NULL);
+	g_return_val_if_fail (EOC_IS_TRANSFORM (trans), NULL);
 
-	reverse = EOM_TRANSFORM (g_object_new (EOM_TYPE_TRANSFORM, NULL));
+	reverse = EOC_TRANSFORM (g_object_new (EOC_TYPE_TRANSFORM, NULL));
 
 	_eoc_cairo_matrix_copy (&trans->priv->affine, &reverse->priv->affine);
 
@@ -265,10 +265,10 @@ eoc_transform_compose (EomTransform *trans, EomTransform *compose)
 {
 	EomTransform *composition;
 
-	g_return_val_if_fail (EOM_IS_TRANSFORM (trans), NULL);
-	g_return_val_if_fail (EOM_IS_TRANSFORM (compose), NULL);
+	g_return_val_if_fail (EOC_IS_TRANSFORM (trans), NULL);
+	g_return_val_if_fail (EOC_IS_TRANSFORM (compose), NULL);
 
-	composition = EOM_TRANSFORM (g_object_new (EOM_TYPE_TRANSFORM, NULL));
+	composition = EOC_TRANSFORM (g_object_new (EOC_TYPE_TRANSFORM, NULL));
 
 	cairo_matrix_multiply (&composition->priv->affine,
 			       &trans->priv->affine,
@@ -282,7 +282,7 @@ eoc_transform_is_identity (EomTransform *trans)
 {
 	static const cairo_matrix_t identity = { 1, 0, 0, 1, 0, 0 };
 
-	g_return_val_if_fail (EOM_IS_TRANSFORM (trans), FALSE);
+	g_return_val_if_fail (EOC_IS_TRANSFORM (trans), FALSE);
 
 	return _eoc_cairo_matrix_equal (&identity, &trans->priv->affine);
 }
@@ -292,7 +292,7 @@ eoc_transform_identity_new (void)
 {
 	EomTransform *trans;
 
-	trans = EOM_TRANSFORM (g_object_new (EOM_TYPE_TRANSFORM, NULL));
+	trans = EOC_TRANSFORM (g_object_new (EOC_TYPE_TRANSFORM, NULL));
 
 	cairo_matrix_init_identity (&trans->priv->affine);
 
@@ -304,9 +304,9 @@ eoc_transform_rotate_new (int degree)
 {
 	EomTransform *trans;
 
-	trans = EOM_TRANSFORM (g_object_new (EOM_TYPE_TRANSFORM, NULL));
+	trans = EOC_TRANSFORM (g_object_new (EOC_TYPE_TRANSFORM, NULL));
 
-	cairo_matrix_init_rotate (&trans->priv->affine, EOM_DEG_TO_RAD(degree));
+	cairo_matrix_init_rotate (&trans->priv->affine, EOC_DEG_TO_RAD(degree));
 
 	return trans;
 }
@@ -317,12 +317,12 @@ eoc_transform_flip_new   (EomTransformType type)
 	EomTransform *trans;
 	gboolean horiz, vert;
 
-	trans = EOM_TRANSFORM (g_object_new (EOM_TYPE_TRANSFORM, NULL));
+	trans = EOC_TRANSFORM (g_object_new (EOC_TYPE_TRANSFORM, NULL));
 
 	cairo_matrix_init_identity (&trans->priv->affine);
 
-	horiz = (type == EOM_TRANSFORM_FLIP_HORIZONTAL);
-	vert = (type == EOM_TRANSFORM_FLIP_VERTICAL);
+	horiz = (type == EOC_TRANSFORM_FLIP_HORIZONTAL);
+	vert = (type == EOC_TRANSFORM_FLIP_VERTICAL);
 
 	_eoc_cairo_matrix_flip (&trans->priv->affine,
 				&trans->priv->affine,
@@ -338,36 +338,36 @@ eoc_transform_new (EomTransformType type)
 	EomTransform *temp1 = NULL, *temp2 = NULL;
 
 	switch (type) {
-	case EOM_TRANSFORM_NONE:
+	case EOC_TRANSFORM_NONE:
 		trans = eoc_transform_identity_new ();
 		break;
-	case EOM_TRANSFORM_FLIP_HORIZONTAL:
-		trans = eoc_transform_flip_new (EOM_TRANSFORM_FLIP_HORIZONTAL);
+	case EOC_TRANSFORM_FLIP_HORIZONTAL:
+		trans = eoc_transform_flip_new (EOC_TRANSFORM_FLIP_HORIZONTAL);
 		break;
-	case EOM_TRANSFORM_ROT_180:
+	case EOC_TRANSFORM_ROT_180:
 		trans = eoc_transform_rotate_new (180);
 		break;
-	case EOM_TRANSFORM_FLIP_VERTICAL:
-		trans = eoc_transform_flip_new (EOM_TRANSFORM_FLIP_VERTICAL);
+	case EOC_TRANSFORM_FLIP_VERTICAL:
+		trans = eoc_transform_flip_new (EOC_TRANSFORM_FLIP_VERTICAL);
 		break;
-	case EOM_TRANSFORM_TRANSPOSE:
+	case EOC_TRANSFORM_TRANSPOSE:
 		temp1 = eoc_transform_rotate_new (90);
-		temp2 = eoc_transform_flip_new (EOM_TRANSFORM_FLIP_HORIZONTAL);
+		temp2 = eoc_transform_flip_new (EOC_TRANSFORM_FLIP_HORIZONTAL);
 		trans = eoc_transform_compose (temp1, temp2);
 		g_object_unref (temp1);
 		g_object_unref (temp2);
 		break;
-	case EOM_TRANSFORM_ROT_90:
+	case EOC_TRANSFORM_ROT_90:
 		trans = eoc_transform_rotate_new (90);
 		break;
-	case EOM_TRANSFORM_TRANSVERSE:
+	case EOC_TRANSFORM_TRANSVERSE:
 		temp1 = eoc_transform_rotate_new (90);
-		temp2 = eoc_transform_flip_new (EOM_TRANSFORM_FLIP_VERTICAL);
+		temp2 = eoc_transform_flip_new (EOC_TRANSFORM_FLIP_VERTICAL);
 		trans = eoc_transform_compose (temp1, temp2);
 		g_object_unref (temp1);
 		g_object_unref (temp2);
 		break;
-	case EOM_TRANSFORM_ROT_270:
+	case EOC_TRANSFORM_ROT_270:
 		trans = eoc_transform_rotate_new (270);
 		break;
 	default:
@@ -384,60 +384,60 @@ eoc_transform_get_transform_type (EomTransform *trans)
 	cairo_matrix_t affine, a1, a2;
 	EomTransformPrivate *priv;
 
-	g_return_val_if_fail (EOM_IS_TRANSFORM (trans), EOM_TRANSFORM_NONE);
+	g_return_val_if_fail (EOC_IS_TRANSFORM (trans), EOC_TRANSFORM_NONE);
 
 	priv = trans->priv;
 
-	cairo_matrix_init_rotate (&affine, EOM_DEG_TO_RAD(90));
+	cairo_matrix_init_rotate (&affine, EOC_DEG_TO_RAD(90));
 	if (_eoc_cairo_matrix_equal (&affine, &priv->affine)) {
-		return EOM_TRANSFORM_ROT_90;
+		return EOC_TRANSFORM_ROT_90;
 	}
 
-	cairo_matrix_init_rotate (&affine, EOM_DEG_TO_RAD(180));
+	cairo_matrix_init_rotate (&affine, EOC_DEG_TO_RAD(180));
 	if (_eoc_cairo_matrix_equal (&affine, &priv->affine)) {
-		return EOM_TRANSFORM_ROT_180;
+		return EOC_TRANSFORM_ROT_180;
 	}
 
-	cairo_matrix_init_rotate (&affine, EOM_DEG_TO_RAD(270));
+	cairo_matrix_init_rotate (&affine, EOC_DEG_TO_RAD(270));
 	if (_eoc_cairo_matrix_equal (&affine, &priv->affine)) {
-		return EOM_TRANSFORM_ROT_270;
+		return EOC_TRANSFORM_ROT_270;
 	}
 
 	cairo_matrix_init_identity (&affine);
 	_eoc_cairo_matrix_flip (&affine, &affine, TRUE, FALSE);
 	if (_eoc_cairo_matrix_equal (&affine, &priv->affine)) {
-		return EOM_TRANSFORM_FLIP_HORIZONTAL;
+		return EOC_TRANSFORM_FLIP_HORIZONTAL;
 	}
 
 	cairo_matrix_init_identity (&affine);
 	_eoc_cairo_matrix_flip (&affine, &affine, FALSE, TRUE);
 	if (_eoc_cairo_matrix_equal (&affine, &priv->affine)) {
-		return EOM_TRANSFORM_FLIP_VERTICAL;
+		return EOC_TRANSFORM_FLIP_VERTICAL;
 	}
 
-	cairo_matrix_init_rotate (&a1, EOM_DEG_TO_RAD(90));
+	cairo_matrix_init_rotate (&a1, EOC_DEG_TO_RAD(90));
 	cairo_matrix_init_identity (&a2);
 	_eoc_cairo_matrix_flip (&a2, &a2, TRUE, FALSE);
 	cairo_matrix_multiply(&affine, &a1, &a2);
 	if (_eoc_cairo_matrix_equal (&affine, &priv->affine)) {
-		return EOM_TRANSFORM_TRANSPOSE;
+		return EOC_TRANSFORM_TRANSPOSE;
 	}
 
 	/* A transversion is a 180° rotation followed by a transposition */
 	/* Reuse the transposition from the previous step for this. */
-	cairo_matrix_init_rotate (&a1, EOM_DEG_TO_RAD(180));
+	cairo_matrix_init_rotate (&a1, EOC_DEG_TO_RAD(180));
 	cairo_matrix_multiply(&a2, &a1, &affine);
 	if (_eoc_cairo_matrix_equal (&a2, &priv->affine)) {
-		return EOM_TRANSFORM_TRANSVERSE;
+		return EOC_TRANSFORM_TRANSVERSE;
 	}
 
-	return EOM_TRANSFORM_NONE;
+	return EOC_TRANSFORM_NONE;
 }
 
 gboolean
 eoc_transform_get_affine (EomTransform *trans, cairo_matrix_t *affine)
 {
-	g_return_val_if_fail (EOM_IS_TRANSFORM (trans), FALSE);
+	g_return_val_if_fail (EOC_IS_TRANSFORM (trans), FALSE);
 
 	_eoc_cairo_matrix_copy (&trans->priv->affine, affine);
 

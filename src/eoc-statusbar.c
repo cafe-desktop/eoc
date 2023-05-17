@@ -93,7 +93,7 @@ eoc_statusbar_init (EomStatusbar *statusbar)
 GtkWidget *
 eoc_statusbar_new (void)
 {
-	return GTK_WIDGET (g_object_new (EOM_TYPE_STATUSBAR, NULL));
+	return GTK_WIDGET (g_object_new (EOC_TYPE_STATUSBAR, NULL));
 }
 
 void
@@ -103,7 +103,7 @@ eoc_statusbar_set_image_number (EomStatusbar *statusbar,
 {
 	gchar *msg;
 
-	g_return_if_fail (EOM_IS_STATUSBAR (statusbar));
+	g_return_if_fail (EOC_IS_STATUSBAR (statusbar));
 
 	/* Hide number display if values don't make sense */
 	if (G_UNLIKELY (num <= 0 || tot <= 0))
@@ -130,7 +130,7 @@ void
 eoc_statusbar_set_progress (EomStatusbar *statusbar,
 			    gdouble       progress)
 {
-	g_return_if_fail (EOM_IS_STATUSBAR (statusbar));
+	g_return_if_fail (EOC_IS_STATUSBAR (statusbar));
 
 	gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR (statusbar->priv->progressbar),
 				       progress);

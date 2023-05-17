@@ -51,7 +51,7 @@ eoc_window_activatable_default_init (EomWindowActivatableInterface *iface)
 				g_param_spec_object ("window", "Window",
 						     "The EomWindow this "
 						     "instance it attached to",
-						     EOM_TYPE_WINDOW,
+						     EOC_TYPE_WINDOW,
 						     G_PARAM_READWRITE |
 						     G_PARAM_CONSTRUCT_ONLY |
 						     G_PARAM_STATIC_STRINGS));
@@ -64,9 +64,9 @@ eoc_window_activatable_activate (EomWindowActivatable *activatable)
 {
 	EomWindowActivatableInterface *iface;
 
-	g_return_if_fail (EOM_IS_WINDOW_ACTIVATABLE (activatable));
+	g_return_if_fail (EOC_IS_WINDOW_ACTIVATABLE (activatable));
 
-	iface = EOM_WINDOW_ACTIVATABLE_GET_IFACE (activatable);
+	iface = EOC_WINDOW_ACTIVATABLE_GET_IFACE (activatable);
 
 	if (G_LIKELY (iface->activate != NULL))
 		iface->activate (activatable);
@@ -77,9 +77,9 @@ eoc_window_activatable_deactivate (EomWindowActivatable *activatable)
 {
 	EomWindowActivatableInterface *iface;
 
-	g_return_if_fail (EOM_IS_WINDOW_ACTIVATABLE (activatable));
+	g_return_if_fail (EOC_IS_WINDOW_ACTIVATABLE (activatable));
 
-	iface = EOM_WINDOW_ACTIVATABLE_GET_IFACE (activatable);
+	iface = EOC_WINDOW_ACTIVATABLE_GET_IFACE (activatable);
 
 	if (G_LIKELY (iface->deactivate != NULL))
 		iface->deactivate (activatable);

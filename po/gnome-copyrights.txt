@@ -410,7 +410,7 @@
 
 
 ========== fur.po ==========
-# Friulian translation for EOM
+# Friulian translation for EOC
 # Copyright (C) 2008 Free Software Foundation, Inc
 # Andrea Decorte <adecorte@gmail.com>, 2008.
 # 
@@ -668,7 +668,7 @@
 
 
 ========== mg.po ==========
-# Malagasy translation of EOM.
+# Malagasy translation of EOC.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Thierry Randrianiriana <randrianiriana@gmail.com>, 2006.

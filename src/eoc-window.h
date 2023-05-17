@@ -25,8 +25,8 @@
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-#ifndef __EOM_WINDOW_H__
-#define __EOM_WINDOW_H__
+#ifndef __EOC_WINDOW_H__
+#define __EOC_WINDOW_H__
 
 #include "eoc-list-store.h"
 #include "eoc-image.h"
@@ -41,44 +41,44 @@ typedef struct _EomWindow EomWindow;
 typedef struct _EomWindowClass EomWindowClass;
 typedef struct _EomWindowPrivate EomWindowPrivate;
 
-#define EOM_TYPE_WINDOW            (eoc_window_get_type ())
-#define EOM_WINDOW(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), EOM_TYPE_WINDOW, EomWindow))
-#define EOM_WINDOW_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass),  EOM_TYPE_WINDOW, EomWindowClass))
-#define EOM_IS_WINDOW(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), EOM_TYPE_WINDOW))
-#define EOM_IS_WINDOW_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass),  EOM_TYPE_WINDOW))
-#define EOM_WINDOW_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj),  EOM_TYPE_WINDOW, EomWindowClass))
+#define EOC_TYPE_WINDOW            (eoc_window_get_type ())
+#define EOC_WINDOW(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), EOC_TYPE_WINDOW, EomWindow))
+#define EOC_WINDOW_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass),  EOC_TYPE_WINDOW, EomWindowClass))
+#define EOC_IS_WINDOW(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), EOC_TYPE_WINDOW))
+#define EOC_IS_WINDOW_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass),  EOC_TYPE_WINDOW))
+#define EOC_WINDOW_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj),  EOC_TYPE_WINDOW, EomWindowClass))
 
-#define EOM_WINDOW_ERROR           (eoc_window_error_quark ())
+#define EOC_WINDOW_ERROR           (eoc_window_error_quark ())
 
 typedef enum {
-	EOM_WINDOW_MODE_UNKNOWN,
-	EOM_WINDOW_MODE_NORMAL,
-	EOM_WINDOW_MODE_FULLSCREEN,
-	EOM_WINDOW_MODE_SLIDESHOW
+	EOC_WINDOW_MODE_UNKNOWN,
+	EOC_WINDOW_MODE_NORMAL,
+	EOC_WINDOW_MODE_FULLSCREEN,
+	EOC_WINDOW_MODE_SLIDESHOW
 } EomWindowMode;
 
 typedef enum {
-	EOM_WINDOW_COLLECTION_POS_BOTTOM,
-	EOM_WINDOW_COLLECTION_POS_LEFT,
-	EOM_WINDOW_COLLECTION_POS_TOP,
-	EOM_WINDOW_COLLECTION_POS_RIGHT
+	EOC_WINDOW_COLLECTION_POS_BOTTOM,
+	EOC_WINDOW_COLLECTION_POS_LEFT,
+	EOC_WINDOW_COLLECTION_POS_TOP,
+	EOC_WINDOW_COLLECTION_POS_RIGHT
 } EomWindowCollectionPos;
 
 //TODO
 typedef enum {
-	EOM_WINDOW_ERROR_CONTROL_NOT_FOUND,
-	EOM_WINDOW_ERROR_UI_NOT_FOUND,
-	EOM_WINDOW_ERROR_NO_PERSIST_FILE_INTERFACE,
-	EOM_WINDOW_ERROR_IO,
-	EOM_WINDOW_ERROR_TRASH_NOT_FOUND,
-	EOM_WINDOW_ERROR_GENERIC,
-	EOM_WINDOW_ERROR_UNKNOWN
+	EOC_WINDOW_ERROR_CONTROL_NOT_FOUND,
+	EOC_WINDOW_ERROR_UI_NOT_FOUND,
+	EOC_WINDOW_ERROR_NO_PERSIST_FILE_INTERFACE,
+	EOC_WINDOW_ERROR_IO,
+	EOC_WINDOW_ERROR_TRASH_NOT_FOUND,
+	EOC_WINDOW_ERROR_GENERIC,
+	EOC_WINDOW_ERROR_UNKNOWN
 } EomWindowError;
 
 typedef enum {
-	EOM_STARTUP_FULLSCREEN         = 1 << 0,
-	EOM_STARTUP_SLIDE_SHOW         = 1 << 1,
-	EOM_STARTUP_DISABLE_COLLECTION = 1 << 2
+	EOC_STARTUP_FULLSCREEN         = 1 << 0,
+	EOC_STARTUP_SLIDE_SHOW         = 1 << 1,
+	EOC_STARTUP_DISABLE_COLLECTION = 1 << 2
 } EomStartupFlags;
 
 struct _EomWindow {

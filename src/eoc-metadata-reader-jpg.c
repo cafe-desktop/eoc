@@ -53,11 +53,11 @@ typedef enum {
 } EomJpegApp1Type;
 
 
-#define EOM_JPEG_MARKER_START   0xFF
-#define EOM_JPEG_MARKER_SOI     0xD8
-#define EOM_JPEG_MARKER_APP1	0xE1
-#define EOM_JPEG_MARKER_APP2	0xE2
-#define EOM_JPEG_MARKER_APP14	0xED
+#define EOC_JPEG_MARKER_START   0xFF
+#define EOC_JPEG_MARKER_SOI     0xD8
+#define EOC_JPEG_MARKER_APP1	0xE1
+#define EOC_JPEG_MARKER_APP2	0xE2
+#define EOC_JPEG_MARKER_APP14	0xED
 
 #define IS_FINISHED(priv) (priv->state == EMR_READ  && \
                            priv->exif_chunk != NULL && \
@@ -93,7 +93,7 @@ eoc_metadata_reader_jpg_init_emr_iface (gpointer g_iface, gpointer iface_data);
 
 G_DEFINE_TYPE_WITH_CODE (EomMetadataReaderJpg, eoc_metadata_reader_jpg,
 			 G_TYPE_OBJECT,
-			 G_IMPLEMENT_INTERFACE (EOM_TYPE_METADATA_READER,
+			 G_IMPLEMENT_INTERFACE (EOC_TYPE_METADATA_READER,
 			                        eoc_metadata_reader_jpg_init_emr_iface) \
 			                        G_ADD_PRIVATE (EomMetadataReaderJpg))
 
@@ -101,7 +101,7 @@ G_DEFINE_TYPE_WITH_CODE (EomMetadataReaderJpg, eoc_metadata_reader_jpg,
 static void
 eoc_metadata_reader_jpg_dispose (GObject *object)
 {
-	EomMetadataReaderJpg *emr = EOM_METADATA_READER_JPG (object);
+	EomMetadataReaderJpg *emr = EOC_METADATA_READER_JPG (object);
 
 	if (emr->priv->exif_chunk != NULL) {
 		g_free (emr->priv->exif_chunk);
@@ -151,7 +151,7 @@ eoc_metadata_reader_jpg_class_init (EomMetadataReaderJpgClass *klass)
 static gboolean
 eoc_metadata_reader_jpg_finished (EomMetadataReaderJpg *emr)
 {
-	g_return_val_if_fail (EOM_IS_METADATA_READER_JPG (emr), TRUE);
+	g_return_val_if_fail (EOC_IS_METADATA_READER_JPG (emr), TRUE);
 
 	return (emr->priv->state == EMR_FINISHED);
 }
@@ -209,7 +209,7 @@ eoc_metadata_reader_jpg_consume (EomMetadataReaderJpg *emr, const guchar *buf, g
 	EomMetadataReaderState next_state = EMR_READ;
 	guchar *chunk = NULL;
 
-	g_return_if_fail (EOM_IS_METADATA_READER_JPG (emr));
+	g_return_if_fail (EOC_IS_METADATA_READER_JPG (emr));
 
 	priv = emr->priv;
 
@@ -219,7 +219,7 @@ eoc_metadata_reader_jpg_consume (EomMetadataReaderJpg *emr, const guchar *buf, g
 
 		switch (priv->state) {
 		case EMR_READ:
-			if (buf[i] == EOM_JPEG_MARKER_START) {
+			if (buf[i] == EOC_JPEG_MARKER_START) {
 				priv->state = EMR_READ_MARKER;
 			}
 			else {
@@ -256,16 +256,16 @@ eoc_metadata_reader_jpg_consume (EomMetadataReaderJpg *emr, const guchar *buf, g
 
 			if (priv->size == 0) {
 				priv->state = EMR_READ;
-			} else if (priv->last_marker == EOM_JPEG_MARKER_APP1 &&
+			} else if (priv->last_marker == EOC_JPEG_MARKER_APP1 &&
 				   ((priv->exif_chunk == NULL) || (priv->xmp_chunk == NULL)))
 			{
 				priv->state = EMR_READ_APP1;
-			} else if (priv->last_marker == EOM_JPEG_MARKER_APP2 &&
+			} else if (priv->last_marker == EOC_JPEG_MARKER_APP2 &&
 				   priv->icc_chunk == NULL && priv->size > 14)
 			{
 	 			/* Chunk has 14 bytes identification data */
 				priv->state = EMR_READ_ICC;
-			} else if (priv->last_marker == EOM_JPEG_MARKER_APP14 &&
+			} else if (priv->last_marker == EOC_JPEG_MARKER_APP14 &&
 				priv->iptc_chunk == NULL)
 			{
 				priv->state = EMR_READ_IPTC;
@@ -440,7 +440,7 @@ eoc_metadata_reader_jpg_get_exif_chunk (EomMetadataReaderJpg *emr, guchar **data
 {
 	EomMetadataReaderJpgPrivate *priv;
 
-	g_return_if_fail (EOM_IS_METADATA_READER (emr));
+	g_return_if_fail (EOC_IS_METADATA_READER (emr));
 	priv = emr->priv;
 
 	*data = (guchar*) priv->exif_chunk;
@@ -457,7 +457,7 @@ eoc_metadata_reader_jpg_get_exif_data (EomMetadataReaderJpg *emr)
 	EomMetadataReaderJpgPrivate *priv;
 	ExifData *data = NULL;
 
-	g_return_val_if_fail (EOM_IS_METADATA_READER (emr), NULL);
+	g_return_val_if_fail (EOC_IS_METADATA_READER (emr), NULL);
 	priv = emr->priv;
 
 	if (priv->exif_chunk != NULL) {
@@ -472,7 +472,7 @@ eoc_metadata_reader_jpg_get_exif_data (EomMetadataReaderJpg *emr)
 #ifdef HAVE_EXEMPI
 
 /* skip the signature */
-#define EOM_XMP_OFFSET (29)
+#define EOC_XMP_OFFSET (29)
 
 static gpointer
 eoc_metadata_reader_jpg_get_xmp_data (EomMetadataReaderJpg *emr )
@@ -480,13 +480,13 @@ eoc_metadata_reader_jpg_get_xmp_data (EomMetadataReaderJpg *emr )
 	EomMetadataReaderJpgPrivate *priv;
 	XmpPtr xmp = NULL;
 
-	g_return_val_if_fail (EOM_IS_METADATA_READER (emr), NULL);
+	g_return_val_if_fail (EOC_IS_METADATA_READER (emr), NULL);
 
 	priv = emr->priv;
 
 	if (priv->xmp_chunk != NULL) {
-		xmp = xmp_new (priv->xmp_chunk+EOM_XMP_OFFSET,
-			       priv->xmp_len-EOM_XMP_OFFSET);
+		xmp = xmp_new (priv->xmp_chunk+EOC_XMP_OFFSET,
+			       priv->xmp_len-EOC_XMP_OFFSET);
 	}
 
 	return (gpointer)xmp;
@@ -505,7 +505,7 @@ eoc_metadata_reader_jpg_get_icc_profile (EomMetadataReaderJpg *emr)
 	EomMetadataReaderJpgPrivate *priv;
 	cmsHPROFILE profile = NULL;
 
-	g_return_val_if_fail (EOM_IS_METADATA_READER (emr), NULL);
+	g_return_val_if_fail (EOC_IS_METADATA_READER (emr), NULL);
 
 	priv = emr->priv;
 

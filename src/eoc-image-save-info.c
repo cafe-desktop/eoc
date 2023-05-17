@@ -13,7 +13,7 @@ G_DEFINE_TYPE (EomImageSaveInfo, eoc_image_save_info, G_TYPE_OBJECT)
 static void
 eoc_image_save_info_dispose (GObject *object)
 {
-	EomImageSaveInfo *info = EOM_IMAGE_SAVE_INFO (object);
+	EomImageSaveInfo *info = EOC_IMAGE_SAVE_INFO (object);
 
 	if (info->file != NULL) {
 		g_object_unref (info->file);
@@ -83,15 +83,15 @@ eoc_image_save_info_new_from_image (EomImage *image)
 {
 	EomImageSaveInfo *info = NULL;
 
-	g_return_val_if_fail (EOM_IS_IMAGE (image), NULL);
+	g_return_val_if_fail (EOC_IS_IMAGE (image), NULL);
 
-	info = g_object_new (EOM_TYPE_IMAGE_SAVE_INFO, NULL);
+	info = g_object_new (EOC_TYPE_IMAGE_SAVE_INFO, NULL);
 
 	info->file         = eoc_image_get_file (image);
 	info->format       = g_strdup (image->priv->file_type);
 	info->exists       = g_file_query_exists (info->file, NULL);
 	info->local        = is_local_file (info->file);
-        info->has_metadata = eoc_image_has_data (image, EOM_IMAGE_DATA_EXIF);
+        info->has_metadata = eoc_image_has_data (image, EOC_IMAGE_DATA_EXIF);
 	info->modified     = eoc_image_is_modified (image);
 	info->overwrite    = FALSE;
 
@@ -124,7 +124,7 @@ eoc_image_save_info_new_from_file (GFile *file, GdkPixbufFormat *format)
 
 	g_return_val_if_fail (file != NULL, NULL);
 
-	info = g_object_new (EOM_TYPE_IMAGE_SAVE_INFO, NULL);
+	info = g_object_new (EOC_TYPE_IMAGE_SAVE_INFO, NULL);
 
 	info->file = g_object_ref (file);
 	if (format == NULL) {

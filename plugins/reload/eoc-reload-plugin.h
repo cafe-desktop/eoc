@@ -1,5 +1,5 @@
-#ifndef __EOM_RELOAD_PLUGIN_H__
-#define __EOM_RELOAD_PLUGIN_H__
+#ifndef __EOC_RELOAD_PLUGIN_H__
+#define __EOC_RELOAD_PLUGIN_H__
 
 #include <glib.h>
 #include <glib-object.h>
@@ -14,18 +14,18 @@ G_BEGIN_DECLS
 /*
  * Type checking and casting macros
  */
-#define EOM_TYPE_RELOAD_PLUGIN \
+#define EOC_TYPE_RELOAD_PLUGIN \
 	(eoc_reload_plugin_get_type())
-#define EOM_RELOAD_PLUGIN(o) \
-	(G_TYPE_CHECK_INSTANCE_CAST((o), EOM_TYPE_RELOAD_PLUGIN, EomReloadPlugin))
-#define EOM_RELOAD_PLUGIN_CLASS(k) \
-	(G_TYPE_CHECK_CLASS_CAST((k), EOM_TYPE_RELOAD_PLUGIN, EomReloadPluginClass))
-#define EOM_IS_RELOAD_PLUGIN(o) \
-	(G_TYPE_CHECK_INSTANCE_TYPE((o), EOM_TYPE_RELOAD_PLUGIN))
-#define EOM_IS_RELOAD_PLUGIN_CLASS(k) \
-	(G_TYPE_CHECK_CLASS_TYPE((k), EOM_TYPE_RELOAD_PLUGIN))
-#define EOM_RELOAD_PLUGIN_GET_CLASS(o) \
-	(G_TYPE_INSTANCE_GET_CLASS((o), EOM_TYPE_RELOAD_PLUGIN, EomReloadPluginClass))
+#define EOC_RELOAD_PLUGIN(o) \
+	(G_TYPE_CHECK_INSTANCE_CAST((o), EOC_TYPE_RELOAD_PLUGIN, EomReloadPlugin))
+#define EOC_RELOAD_PLUGIN_CLASS(k) \
+	(G_TYPE_CHECK_CLASS_CAST((k), EOC_TYPE_RELOAD_PLUGIN, EomReloadPluginClass))
+#define EOC_IS_RELOAD_PLUGIN(o) \
+	(G_TYPE_CHECK_INSTANCE_TYPE((o), EOC_TYPE_RELOAD_PLUGIN))
+#define EOC_IS_RELOAD_PLUGIN_CLASS(k) \
+	(G_TYPE_CHECK_CLASS_TYPE((k), EOC_TYPE_RELOAD_PLUGIN))
+#define EOC_RELOAD_PLUGIN_GET_CLASS(o) \
+	(G_TYPE_INSTANCE_GET_CLASS((o), EOC_TYPE_RELOAD_PLUGIN, EomReloadPluginClass))
 
 /* Private structure type */
 typedef struct _EomReloadPluginPrivate EomReloadPluginPrivate;
@@ -62,4 +62,4 @@ G_MODULE_EXPORT void peas_register_types (PeasObjectModule *module);
 
 G_END_DECLS
 
-#endif /* __EOM_RELOAD_PLUGIN_H__ */
+#endif /* __EOC_RELOAD_PLUGIN_H__ */

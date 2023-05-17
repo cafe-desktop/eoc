@@ -21,8 +21,8 @@
 
 #include "eoc-image.h"
 
-#ifndef EOM_PRINT_IMAGE_SETUP_H
-#define EOM_PRINT_IMAGE_SETUP_H
+#ifndef EOC_PRINT_IMAGE_SETUP_H
+#define EOC_PRINT_IMAGE_SETUP_H
 
 G_BEGIN_DECLS
 
@@ -30,12 +30,12 @@ typedef struct _EomPrintImageSetup         EomPrintImageSetup;
 typedef struct _EomPrintImageSetupClass    EomPrintImageSetupClass;
 typedef struct _EomPrintImageSetupPrivate   EomPrintImageSetupPrivate;
 
-#define EOM_TYPE_PRINT_IMAGE_SETUP            (eoc_print_image_setup_get_type ())
-#define EOM_PRINT_IMAGE_SETUP(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), EOM_TYPE_PRINT_IMAGE_SETUP, EomPrintImageSetup))
-#define EOM_PRINT_IMAGE_SETUP_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass), EOM_TYPE_PRINT_IMAGE_SETUP, EomPrintImageSetupClass))
-#define EOM_IS_PRINT_IMAGE_SETUP(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), EOM_TYPE_PRINT_IMAGE_SETUP))
-#define EOM_IS_PRINT_IMAGE_SETUP_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), EOM_TYPE_PRINT_IMAGE_SETUP))
-#define EOM_PRINT_IMAGE_SETUP_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), EOM_TYPE_PRINT_IMAGE_SETUP, EomPrintImageSetupClass))
+#define EOC_TYPE_PRINT_IMAGE_SETUP            (eoc_print_image_setup_get_type ())
+#define EOC_PRINT_IMAGE_SETUP(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), EOC_TYPE_PRINT_IMAGE_SETUP, EomPrintImageSetup))
+#define EOC_PRINT_IMAGE_SETUP_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass), EOC_TYPE_PRINT_IMAGE_SETUP, EomPrintImageSetupClass))
+#define EOC_IS_PRINT_IMAGE_SETUP(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), EOC_TYPE_PRINT_IMAGE_SETUP))
+#define EOC_IS_PRINT_IMAGE_SETUP_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), EOC_TYPE_PRINT_IMAGE_SETUP))
+#define EOC_PRINT_IMAGE_SETUP_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), EOC_TYPE_PRINT_IMAGE_SETUP, EomPrintImageSetupClass))
 
 struct _EomPrintImageSetup {
 	GtkGrid parent_instance;
@@ -68,4 +68,4 @@ void              eoc_print_image_setup_update      (GtkPrintOperation *operatio
 
 G_END_DECLS
 
-#endif /* EOM_PRINT_IMAGE_SETUP_H */
+#endif /* EOC_PRINT_IMAGE_SETUP_H */

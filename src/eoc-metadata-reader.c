@@ -36,11 +36,11 @@ eoc_metadata_reader_new (EomMetadataFileType type)
 	EomMetadataReader *emr;
 
 	switch (type) {
-	case EOM_METADATA_JPEG:
-		emr = EOM_METADATA_READER (g_object_new (EOM_TYPE_METADATA_READER_JPG, NULL));
+	case EOC_METADATA_JPEG:
+		emr = EOC_METADATA_READER (g_object_new (EOC_TYPE_METADATA_READER_JPG, NULL));
 		break;
-	case EOM_METADATA_PNG:
-		emr = EOM_METADATA_READER (g_object_new (EOM_TYPE_METADATA_READER_PNG, NULL));
+	case EOC_METADATA_PNG:
+		emr = EOC_METADATA_READER (g_object_new (EOC_TYPE_METADATA_READER_PNG, NULL));
 		break;
 	default:
 		emr = NULL;
@@ -53,16 +53,16 @@ eoc_metadata_reader_new (EomMetadataFileType type)
 gboolean
 eoc_metadata_reader_finished (EomMetadataReader *emr)
 {
-	g_return_val_if_fail (EOM_IS_METADATA_READER (emr), TRUE);
+	g_return_val_if_fail (EOC_IS_METADATA_READER (emr), TRUE);
 
-	return EOM_METADATA_READER_GET_INTERFACE (emr)->finished (emr);
+	return EOC_METADATA_READER_GET_INTERFACE (emr)->finished (emr);
 }
 
 
 void
 eoc_metadata_reader_consume (EomMetadataReader *emr, const guchar *buf, guint len)
 {
-	EOM_METADATA_READER_GET_INTERFACE (emr)->consume (emr, buf, len);
+	EOC_METADATA_READER_GET_INTERFACE (emr)->consume (emr, buf, len);
 }
 
 /* Returns the raw exif data. NOTE: The caller of this function becomes
@@ -73,14 +73,14 @@ eoc_metadata_reader_get_exif_chunk (EomMetadataReader *emr, guchar **data, guint
 {
 	g_return_if_fail (data != NULL && len != NULL);
 
-	EOM_METADATA_READER_GET_INTERFACE (emr)->get_raw_exif (emr, data, len);
+	EOC_METADATA_READER_GET_INTERFACE (emr)->get_raw_exif (emr, data, len);
 }
 
 #ifdef HAVE_EXIF
 ExifData*
 eoc_metadata_reader_get_exif_data (EomMetadataReader *emr)
 {
-	return EOM_METADATA_READER_GET_INTERFACE (emr)->get_exif_data (emr);
+	return EOC_METADATA_READER_GET_INTERFACE (emr)->get_exif_data (emr);
 }
 #endif
 
@@ -88,7 +88,7 @@ eoc_metadata_reader_get_exif_data (EomMetadataReader *emr)
 XmpPtr
 eoc_metadata_reader_get_xmp_data (EomMetadataReader *emr)
 {
-	return EOM_METADATA_READER_GET_INTERFACE (emr)->get_xmp_ptr (emr);
+	return EOC_METADATA_READER_GET_INTERFACE (emr)->get_xmp_ptr (emr);
 }
 #endif
 
@@ -96,7 +96,7 @@ eoc_metadata_reader_get_xmp_data (EomMetadataReader *emr)
 cmsHPROFILE
 eoc_metadata_reader_get_icc_profile (EomMetadataReader *emr)
 {
-	return EOM_METADATA_READER_GET_INTERFACE (emr)->get_icc_profile (emr);
+	return EOC_METADATA_READER_GET_INTERFACE (emr)->get_icc_profile (emr);
 }
 #endif
 

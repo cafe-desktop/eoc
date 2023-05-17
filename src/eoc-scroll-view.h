@@ -1,5 +1,5 @@
-#ifndef _EOM_SCROLL_VIEW_H_
-#define _EOM_SCROLL_VIEW_H_
+#ifndef _EOC_SCROLL_VIEW_H_
+#define _EOC_SCROLL_VIEW_H_
 
 #include <gtk/gtk.h>
 #include "eoc-image.h"
@@ -10,11 +10,11 @@ typedef struct _EomScrollView EomScrollView;
 typedef struct _EomScrollViewClass EomScrollViewClass;
 typedef struct _EomScrollViewPrivate EomScrollViewPrivate;
 
-#define EOM_TYPE_SCROLL_VIEW              (eoc_scroll_view_get_type ())
-#define EOM_SCROLL_VIEW(obj)              (G_TYPE_CHECK_INSTANCE_CAST ((obj), EOM_TYPE_SCROLL_VIEW, EomScrollView))
-#define EOM_SCROLL_VIEW_CLASS(klass)      (G_TYPE_CHECK_CLASS_CAST ((klass), EOM_TYPE_SCROLL_VIEW, EomScrollViewClass))
-#define EOM_IS_SCROLL_VIEW(obj)           (G_TYPE_CHECK_INSTANCE_TYPE ((obj), EOM_TYPE_SCROLL_VIEW))
-#define EOM_IS_SCROLL_VIEW_CLASS(klass)   (G_TYPE_CHECK_CLASS_TYPE ((klass), EOM_TYPE_SCROLL_VIEW))
+#define EOC_TYPE_SCROLL_VIEW              (eoc_scroll_view_get_type ())
+#define EOC_SCROLL_VIEW(obj)              (G_TYPE_CHECK_INSTANCE_CAST ((obj), EOC_TYPE_SCROLL_VIEW, EomScrollView))
+#define EOC_SCROLL_VIEW_CLASS(klass)      (G_TYPE_CHECK_CLASS_CAST ((klass), EOC_TYPE_SCROLL_VIEW, EomScrollViewClass))
+#define EOC_IS_SCROLL_VIEW(obj)           (G_TYPE_CHECK_INSTANCE_TYPE ((obj), EOC_TYPE_SCROLL_VIEW))
+#define EOC_IS_SCROLL_VIEW_CLASS(klass)   (G_TYPE_CHECK_CLASS_TYPE ((klass), EOC_TYPE_SCROLL_VIEW))
 
 
 struct _EomScrollView {
@@ -30,9 +30,9 @@ struct _EomScrollViewClass {
 };
 
 typedef enum {
-	EOM_TRANSP_BACKGROUND,
-	EOM_TRANSP_CHECKED,
-	EOM_TRANSP_COLOR
+	EOC_TRANSP_BACKGROUND,
+	EOC_TRANSP_CHECKED,
+	EOC_TRANSP_COLOR
 } EomTransparencyStyle;
 
 GType    eoc_scroll_view_get_type         (void) G_GNUC_CONST;
@@ -70,6 +70,6 @@ void     eoc_scroll_view_hide_cursor      (EomScrollView *view);
 
 G_END_DECLS
 
-#endif /* _EOM_SCROLL_VIEW_H_ */
+#endif /* _EOC_SCROLL_VIEW_H_ */
 
 

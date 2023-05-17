@@ -92,14 +92,14 @@ eoc_metadata_reader_png_init_emr_iface (gpointer g_iface, gpointer iface_data);
 
 G_DEFINE_TYPE_WITH_CODE (EomMetadataReaderPng, eoc_metadata_reader_png,
 			 G_TYPE_OBJECT,
-			 G_IMPLEMENT_INTERFACE (EOM_TYPE_METADATA_READER,
+			 G_IMPLEMENT_INTERFACE (EOC_TYPE_METADATA_READER,
 			                        eoc_metadata_reader_png_init_emr_iface) \
 			                        G_ADD_PRIVATE(EomMetadataReaderPng))
 
 static void
 eoc_metadata_reader_png_dispose (GObject *object)
 {
-	EomMetadataReaderPng *emr = EOM_METADATA_READER_PNG (object);
+	EomMetadataReaderPng *emr = EOC_METADATA_READER_PNG (object);
 	EomMetadataReaderPngPrivate *priv = emr->priv;
 
 	g_free (priv->xmp_chunk);
@@ -153,7 +153,7 @@ eoc_metadata_reader_png_class_init (EomMetadataReaderPngClass *klass)
 static gboolean
 eoc_metadata_reader_png_finished (EomMetadataReaderPng *emr)
 {
-	g_return_val_if_fail (EOM_IS_METADATA_READER_PNG (emr), TRUE);
+	g_return_val_if_fail (EOC_IS_METADATA_READER_PNG (emr), TRUE);
 
 	return (emr->priv->state == EMR_FINISHED);
 }
@@ -191,7 +191,7 @@ eoc_metadata_reader_png_consume (EomMetadataReaderPng *emr, const guchar *buf, g
 	guint32 chunk_crc;
 	static const gchar PNGMAGIC[8] = "\x89PNG\x0D\x0A\x1a\x0A";
 
-	g_return_if_fail (EOM_IS_METADATA_READER_PNG (emr));
+	g_return_if_fail (EOC_IS_METADATA_READER_PNG (emr));
 
 	priv = emr->priv;
 
@@ -457,7 +457,7 @@ eoc_metadata_reader_png_consume (EomMetadataReaderPng *emr, const guchar *buf, g
 #ifdef HAVE_EXEMPI
 
 /* skip the chunk ID */
-#define EOM_XMP_OFFSET (22)
+#define EOC_XMP_OFFSET (22)
 
 static gpointer
 eoc_metadata_reader_png_get_xmp_data (EomMetadataReaderPng *emr )
@@ -465,13 +465,13 @@ eoc_metadata_reader_png_get_xmp_data (EomMetadataReaderPng *emr )
 	EomMetadataReaderPngPrivate *priv;
 	XmpPtr xmp = NULL;
 
-	g_return_val_if_fail (EOM_IS_METADATA_READER_PNG (emr), NULL);
+	g_return_val_if_fail (EOC_IS_METADATA_READER_PNG (emr), NULL);
 
 	priv = emr->priv;
 
 	if (priv->xmp_chunk != NULL) {
-		xmp = xmp_new (priv->xmp_chunk+EOM_XMP_OFFSET,
-			       priv->xmp_len-EOM_XMP_OFFSET);
+		xmp = xmp_new (priv->xmp_chunk+EOC_XMP_OFFSET,
+			       priv->xmp_len-EOC_XMP_OFFSET);
 	}
 
 	return (gpointer) xmp;
@@ -485,11 +485,11 @@ eoc_metadata_reader_png_get_xmp_data (EomMetadataReaderPng *emr )
 
 /* This is the amount of memory the inflate output buffer gets increased by
  * while decompressing the ICC profile */
-#define EOM_ICC_INFLATE_BUFFER_STEP 1024
+#define EOC_ICC_INFLATE_BUFFER_STEP 1024
 
 /* I haven't seen ICC profiles larger than 1MB yet.
  * A maximum output buffer of 5MB should be enough. */
-#define EOM_ICC_INFLATE_BUFFER_LIMIT (1024*1024*5)
+#define EOC_ICC_INFLATE_BUFFER_LIMIT (1024*1024*5)
 
 /* Apparently an sRGB profile saved in cHRM and gAMA chunks does not compute
  * a profile that exactly matches the built-in sRGB profile and thus could
@@ -522,7 +522,7 @@ eoc_metadata_reader_png_get_icc_profile (EomMetadataReaderPng *emr)
 	EomMetadataReaderPngPrivate *priv;
 	cmsHPROFILE profile = NULL;
 
-	g_return_val_if_fail (EOM_IS_METADATA_READER_PNG (emr), NULL);
+	g_return_val_if_fail (EOC_IS_METADATA_READER_PNG (emr), NULL);
 
 	priv = emr->priv;
 
@@ -553,18 +553,18 @@ eoc_metadata_reader_png_get_icc_profile (EomMetadataReaderPng *emr)
 		}
 
 		/* Prepare output buffer and make zlib aware of it */
-		outbuf = g_malloc (EOM_ICC_INFLATE_BUFFER_STEP);
+		outbuf = g_malloc (EOC_ICC_INFLATE_BUFFER_STEP);
 		zstr.next_out = outbuf;
-		zstr.avail_out = EOM_ICC_INFLATE_BUFFER_STEP;
+		zstr.avail_out = EOC_ICC_INFLATE_BUFFER_STEP;
 
 		do {
 			if (zstr.avail_out == 0) {
 				/* The output buffer was not large enough to
 				 * hold all the decompressed data. Increase its
 				 * size and continue decompression. */
-				gsize new_size = zstr.total_out + EOM_ICC_INFLATE_BUFFER_STEP;
+				gsize new_size = zstr.total_out + EOC_ICC_INFLATE_BUFFER_STEP;
 
-				if (G_UNLIKELY (new_size > EOM_ICC_INFLATE_BUFFER_LIMIT)) {
+				if (G_UNLIKELY (new_size > EOC_ICC_INFLATE_BUFFER_LIMIT)) {
 					/* Enforce a memory limit for the output
 					 * buffer to avoid possible OOM cases */
 					inflateEnd (&zstr);
@@ -573,7 +573,7 @@ eoc_metadata_reader_png_get_icc_profile (EomMetadataReaderPng *emr)
 					return NULL;
 				}
 				outbuf = g_realloc(outbuf, new_size);
-				zstr.avail_out = EOM_ICC_INFLATE_BUFFER_STEP;
+				zstr.avail_out = EOC_ICC_INFLATE_BUFFER_STEP;
 				zstr.next_out = outbuf + zstr.total_out;
 			}
 			z_ret = inflate (&zstr, Z_SYNC_FLUSH);

@@ -21,8 +21,8 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
-#ifndef EOM_METADATA_SIDEBAR_H
-#define EOM_METADATA_SIDEBAR_H
+#ifndef EOC_METADATA_SIDEBAR_H
+#define EOC_METADATA_SIDEBAR_H
 
 #include <glib-object.h>
 #include <gtk/gtk.h>
@@ -31,12 +31,12 @@
 
 G_BEGIN_DECLS
 
-#define EOM_TYPE_METADATA_SIDEBAR          (eoc_metadata_sidebar_get_type ())
-#define EOM_METADATA_SIDEBAR(o)            (G_TYPE_CHECK_INSTANCE_CAST ((o), EOM_TYPE_METADATA_SIDEBAR, EomMetadataSidebar))
-#define EOM_METADATA_SIDEBAR_CLASS(k)      (G_TYPE_CHECK_CLASS_CAST((k), EOM_TYPE_METADATA_SIDEBAR, EomMetadataSidebarClass))
-#define EOM_IS_METADATA_SIDEBAR(o)         (G_TYPE_CHECK_INSTANCE_TYPE ((o), EOM_TYPE_METADATA_SIDEBAR))
-#define EOM_IS_METADATA_SIDEBAR_CLASS(k)   (G_TYPE_CHECK_CLASS_TYPE ((k), EOM_TYPE_METADATA_SIDEBAR))
-#define EOM_METADATA_SIDEBAR_GET_CLASS(o)  (G_TYPE_INSTANCE_GET_CLASS ((o), EOM_TYPE_METADATA_SIDEBAR, EomMetadataSidebarClass))
+#define EOC_TYPE_METADATA_SIDEBAR          (eoc_metadata_sidebar_get_type ())
+#define EOC_METADATA_SIDEBAR(o)            (G_TYPE_CHECK_INSTANCE_CAST ((o), EOC_TYPE_METADATA_SIDEBAR, EomMetadataSidebar))
+#define EOC_METADATA_SIDEBAR_CLASS(k)      (G_TYPE_CHECK_CLASS_CAST((k), EOC_TYPE_METADATA_SIDEBAR, EomMetadataSidebarClass))
+#define EOC_IS_METADATA_SIDEBAR(o)         (G_TYPE_CHECK_INSTANCE_TYPE ((o), EOC_TYPE_METADATA_SIDEBAR))
+#define EOC_IS_METADATA_SIDEBAR_CLASS(k)   (G_TYPE_CHECK_CLASS_TYPE ((k), EOC_TYPE_METADATA_SIDEBAR))
+#define EOC_METADATA_SIDEBAR_GET_CLASS(o)  (G_TYPE_INSTANCE_GET_CLASS ((o), EOC_TYPE_METADATA_SIDEBAR, EomMetadataSidebarClass))
 
 typedef struct _EomMetadataSidebar EomMetadataSidebar;
 typedef struct _EomMetadataSidebarClass EomMetadataSidebarClass;
@@ -58,4 +58,4 @@ GtkWidget* eoc_metadata_sidebar_new (EomWindow *window);
 
 G_END_DECLS
 
-#endif /* EOM_METADATA_SIDEBAR_H */
+#endif /* EOC_METADATA_SIDEBAR_H */

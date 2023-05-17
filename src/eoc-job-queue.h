@@ -22,8 +22,8 @@
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-#ifndef __EOM_JOB_QUEUE_H__
-#define __EOM_JOB_QUEUE_H__
+#ifndef __EOC_JOB_QUEUE_H__
+#define __EOC_JOB_QUEUE_H__
 
 #include "eoc-jobs.h"
 
@@ -39,4 +39,4 @@ gboolean eoc_job_queue_remove_job (EomJob    *job);
 
 G_END_DECLS
 
-#endif /* __EOM_JOB_QUEUE_H__ */
+#endif /* __EOC_JOB_QUEUE_H__ */

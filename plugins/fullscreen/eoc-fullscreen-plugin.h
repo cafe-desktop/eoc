@@ -1,5 +1,5 @@
-#ifndef __EOM_FULLSCREEN_PLUGIN_H__
-#define __EOM_FULLSCREEN_PLUGIN_H__
+#ifndef __EOC_FULLSCREEN_PLUGIN_H__
+#define __EOC_FULLSCREEN_PLUGIN_H__
 
 #include <glib.h>
 #include <glib-object.h>
@@ -14,18 +14,18 @@ G_BEGIN_DECLS
 /*
  * Type checking and casting macros
  */
-#define EOM_TYPE_FULLSCREEN_PLUGIN \
+#define EOC_TYPE_FULLSCREEN_PLUGIN \
 	(eoc_fullscreen_plugin_get_type())
-#define EOM_FULLSCREEN_PLUGIN(o) \
-	(G_TYPE_CHECK_INSTANCE_CAST((o), EOM_TYPE_FULLSCREEN_PLUGIN, EomFullscreenPlugin))
-#define EOM_FULLSCREEN_PLUGIN_CLASS(k) \
-	G_TYPE_CHECK_CLASS_CAST((k), EOM_TYPE_FULLSCREEN_PLUGIN, EomFullscreenPluginClass))
-#define EOM_IS_FULLSCREEN_PLUGIN(o) \
-	(G_TYPE_CHECK_INSTANCE_TYPE((o), EOM_TYPE_FULLSCREEN_PLUGIN))
-#define EOM_IS_FULLSCREEN_PLUGIN_CLASS(k) \
-	(G_TYPE_CHECK_CLASS_TYPE((k), EOM_TYPE_FULLSCREEN_PLUGIN))
-#define EOM_FULLSCREEN_PLUGIN_GET_CLASS(o) \
-	(G_TYPE_INSTANCE_GET_CLASS((o), EOM_TYPE_FULLSCREEN_PLUGIN, EomFullscreenPluginClass))
+#define EOC_FULLSCREEN_PLUGIN(o) \
+	(G_TYPE_CHECK_INSTANCE_CAST((o), EOC_TYPE_FULLSCREEN_PLUGIN, EomFullscreenPlugin))
+#define EOC_FULLSCREEN_PLUGIN_CLASS(k) \
+	G_TYPE_CHECK_CLASS_CAST((k), EOC_TYPE_FULLSCREEN_PLUGIN, EomFullscreenPluginClass))
+#define EOC_IS_FULLSCREEN_PLUGIN(o) \
+	(G_TYPE_CHECK_INSTANCE_TYPE((o), EOC_TYPE_FULLSCREEN_PLUGIN))
+#define EOC_IS_FULLSCREEN_PLUGIN_CLASS(k) \
+	(G_TYPE_CHECK_CLASS_TYPE((k), EOC_TYPE_FULLSCREEN_PLUGIN))
+#define EOC_FULLSCREEN_PLUGIN_GET_CLASS(o) \
+	(G_TYPE_INSTANCE_GET_CLASS((o), EOC_TYPE_FULLSCREEN_PLUGIN, EomFullscreenPluginClass))
 
 /* Private structure type */
 typedef struct _EomFullscreenPluginPrivate EomFullscreenPluginPrivate;
@@ -61,4 +61,4 @@ G_MODULE_EXPORT void peas_register_types (PeasObjectModule *module);
 
 G_END_DECLS
 
-#endif /* __EOM_FULLSCREEN_PLUGIN_H__ */
+#endif /* __EOC_FULLSCREEN_PLUGIN_H__ */

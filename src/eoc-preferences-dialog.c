@@ -1,4 +1,4 @@
-/* Eye Of Mate - EOM Preferences Dialog
+/* Eye Of Mate - EOC Preferences Dialog
  *
  * Copyright (C) 2006 The Free Software Foundation
  *
@@ -117,7 +117,7 @@ pd_transp_radio_toggle_cb (GtkWidget *widget, gpointer data)
 
 	value = g_object_get_data (G_OBJECT (widget), GSETTINGS_OBJECT_VALUE);
 
-	g_settings_set_enum (G_SETTINGS (data), EOM_CONF_VIEW_TRANSPARENCY,
+	g_settings_set_enum (G_SETTINGS (data), EOC_CONF_VIEW_TRANSPARENCY,
 			     GPOINTER_TO_INT (value));
 }
 
@@ -207,8 +207,8 @@ eoc_preferences_dialog_init (EomPreferencesDialog *pref_dlg)
 
 	gtk_widget_init_template (GTK_WIDGET (pref_dlg));
 
-	priv->view_settings = g_settings_new (EOM_CONF_VIEW);
-	priv->fullscreen_settings = g_settings_new (EOM_CONF_FULLSCREEN);
+	priv->view_settings = g_settings_new (EOC_CONF_VIEW);
+	priv->fullscreen_settings = g_settings_new (EOC_CONF_FULLSCREEN);
 
 	g_signal_connect (G_OBJECT (pref_dlg),
 	                  "response",
@@ -216,24 +216,24 @@ eoc_preferences_dialog_init (EomPreferencesDialog *pref_dlg)
 	                  pref_dlg);
 
 	g_settings_bind (priv->view_settings,
-	                 EOM_CONF_VIEW_INTERPOLATE,
+	                 EOC_CONF_VIEW_INTERPOLATE,
 	                 priv->interpolate_check, "active",
 	                 G_SETTINGS_BIND_DEFAULT);
 	g_settings_bind (priv->view_settings,
-	                 EOM_CONF_VIEW_EXTRAPOLATE,
+	                 EOC_CONF_VIEW_EXTRAPOLATE,
 	                 priv->extrapolate_check, "active",
 	                 G_SETTINGS_BIND_DEFAULT);
 	g_settings_bind (priv->view_settings,
-	                 EOM_CONF_VIEW_AUTOROTATE,
+	                 EOC_CONF_VIEW_AUTOROTATE,
 	                 priv->autorotate_check, "active",
 	                 G_SETTINGS_BIND_DEFAULT);
 	g_settings_bind (priv->view_settings,
-	                 EOM_CONF_VIEW_USE_BG_COLOR,
+	                 EOC_CONF_VIEW_USE_BG_COLOR,
 	                 priv->bg_color_check, "active",
 	                 G_SETTINGS_BIND_DEFAULT);
 
 	g_settings_bind_with_mapping (priv->view_settings,
-	                              EOM_CONF_VIEW_BACKGROUND_COLOR,
+	                              EOC_CONF_VIEW_BACKGROUND_COLOR,
 	                              priv->bg_color_button, "rgba",
 	                              G_SETTINGS_BIND_DEFAULT,
 	                              pd_string_to_rgba_mapping,
@@ -241,7 +241,7 @@ eoc_preferences_dialog_init (EomPreferencesDialog *pref_dlg)
 	                              NULL, NULL);
 	g_object_set_data (G_OBJECT (priv->color_radio),
 	                   GSETTINGS_OBJECT_VALUE,
-	                   GINT_TO_POINTER (EOM_TRANSP_COLOR));
+	                   GINT_TO_POINTER (EOC_TRANSP_COLOR));
 
 	g_signal_connect (G_OBJECT (priv->color_radio),
 	                  "toggled",
@@ -250,7 +250,7 @@ eoc_preferences_dialog_init (EomPreferencesDialog *pref_dlg)
 
 	g_object_set_data (G_OBJECT (priv->checkpattern_radio),
 	                   GSETTINGS_OBJECT_VALUE,
-	                   GINT_TO_POINTER (EOM_TRANSP_CHECKED));
+	                   GINT_TO_POINTER (EOC_TRANSP_CHECKED));
 
 	g_signal_connect (G_OBJECT (priv->checkpattern_radio),
 	                  "toggled",
@@ -259,7 +259,7 @@ eoc_preferences_dialog_init (EomPreferencesDialog *pref_dlg)
 
 	g_object_set_data (G_OBJECT (priv->background_radio),
 	                   GSETTINGS_OBJECT_VALUE,
-	                   GINT_TO_POINTER (EOM_TRANSP_BACKGROUND));
+	                   GINT_TO_POINTER (EOC_TRANSP_BACKGROUND));
 
 	g_signal_connect (G_OBJECT (priv->background_radio),
 	                  "toggled",
@@ -267,53 +267,53 @@ eoc_preferences_dialog_init (EomPreferencesDialog *pref_dlg)
 	                  priv->view_settings);
 
 	switch (g_settings_get_enum (priv->view_settings,
-				    EOM_CONF_VIEW_TRANSPARENCY))
+				    EOC_CONF_VIEW_TRANSPARENCY))
 	{
-	case EOM_TRANSP_COLOR:
+	case EOC_TRANSP_COLOR:
 		gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (priv->color_radio), TRUE);
 		break;
-	case EOM_TRANSP_CHECKED:
+	case EOC_TRANSP_CHECKED:
 		gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (priv->checkpattern_radio), TRUE);
 		break;
 	default:
-		// Log a warning and use EOM_TRANSP_BACKGROUND as fallback
+		// Log a warning and use EOC_TRANSP_BACKGROUND as fallback
 		g_warn_if_reached ();
-	case EOM_TRANSP_BACKGROUND:
+	case EOC_TRANSP_BACKGROUND:
 		gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (priv->background_radio), TRUE);
 		break;
 	}
 
 	g_settings_bind_with_mapping (priv->view_settings,
-	                              EOM_CONF_VIEW_TRANS_COLOR,
+	                              EOC_CONF_VIEW_TRANS_COLOR,
 	                              priv->transp_color_button, "rgba",
 	                              G_SETTINGS_BIND_DEFAULT,
 	                              pd_string_to_rgba_mapping,
 	                              pd_rgba_to_string_mapping,
 	                              NULL, NULL);
 
-	g_settings_bind (priv->fullscreen_settings, EOM_CONF_FULLSCREEN_UPSCALE,
+	g_settings_bind (priv->fullscreen_settings, EOC_CONF_FULLSCREEN_UPSCALE,
 	                 priv->upscale_check, "active",
 	                 G_SETTINGS_BIND_DEFAULT);
 
 	g_settings_bind (priv->fullscreen_settings,
-	                 EOM_CONF_FULLSCREEN_LOOP,
+	                 EOC_CONF_FULLSCREEN_LOOP,
 	                 priv->loop_check, "active",
 	                 G_SETTINGS_BIND_DEFAULT);
 
 	g_settings_bind (priv->fullscreen_settings,
-	                 EOM_CONF_FULLSCREEN_RANDOM,
+	                 EOC_CONF_FULLSCREEN_RANDOM,
 	                 priv->random_check, "active",
 	                 G_SETTINGS_BIND_DEFAULT);
 	g_signal_connect (priv->fullscreen_settings,
-	                  "changed::" EOM_CONF_FULLSCREEN_RANDOM,
+	                  "changed::" EOC_CONF_FULLSCREEN_RANDOM,
 	                  G_CALLBACK (random_change_cb),
 	                  priv->loop_check);
 	random_change_cb (priv->fullscreen_settings,
-	                  EOM_CONF_FULLSCREEN_RANDOM,
+	                  EOC_CONF_FULLSCREEN_RANDOM,
 	                  priv->loop_check);
 
 	g_settings_bind (priv->fullscreen_settings,
-	                 EOM_CONF_FULLSCREEN_SECONDS,
+	                 EOC_CONF_FULLSCREEN_SECONDS,
 	                 priv->seconds_spin, "value",
 	                 G_SETTINGS_BIND_DEFAULT);
 
@@ -323,7 +323,7 @@ eoc_preferences_dialog_init (EomPreferencesDialog *pref_dlg)
 GtkWidget *eoc_preferences_dialog_get_instance (GtkWindow *parent)
 {
 	if (instance == NULL) {
-		instance = g_object_new (EOM_TYPE_PREFERENCES_DIALOG,
+		instance = g_object_new (EOC_TYPE_PREFERENCES_DIALOG,
 				 	 NULL);
 	}
 

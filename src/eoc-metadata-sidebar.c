@@ -98,7 +98,7 @@ parent_file_display_name_query_info_cb (GObject *source_object,
                                         GAsyncResult *res,
                                         gpointer user_data)
 {
-	EomMetadataSidebar *sidebar = EOM_METADATA_SIDEBAR (user_data);
+	EomMetadataSidebar *sidebar = EOC_METADATA_SIDEBAR (user_data);
 	GFile *parent_file = G_FILE (source_object);
 	GFileInfo *file_info;
 	gchar *baseuri;
@@ -241,7 +241,7 @@ eoc_metadata_sidebar_update_metadata_section (EomMetadataSidebar *sidebar)
 static void
 eoc_metadata_sidebar_update (EomMetadataSidebar *sidebar)
 {
-	g_return_if_fail (EOM_IS_METADATA_SIDEBAR (sidebar));
+	g_return_if_fail (EOC_IS_METADATA_SIDEBAR (sidebar));
 
 	eoc_metadata_sidebar_update_general_section (sidebar);
 #if HAVE_METADATA
@@ -252,7 +252,7 @@ eoc_metadata_sidebar_update (EomMetadataSidebar *sidebar)
 static void
 _thumbnail_changed_cb (EomImage *image, gpointer user_data)
 {
-	eoc_metadata_sidebar_update (EOM_METADATA_SIDEBAR (user_data));
+	eoc_metadata_sidebar_update (EOC_METADATA_SIDEBAR (user_data));
 }
 
 static void
@@ -292,12 +292,12 @@ _notify_image_cb (GObject *gobject, GParamSpec *pspec, gpointer user_data)
 {
 	EomImage *image;
 
-	g_return_if_fail (EOM_IS_METADATA_SIDEBAR (user_data));
-	g_return_if_fail (EOM_IS_SCROLL_VIEW (gobject));
+	g_return_if_fail (EOC_IS_METADATA_SIDEBAR (user_data));
+	g_return_if_fail (EOC_IS_SCROLL_VIEW (gobject));
 
-	image = eoc_scroll_view_get_image (EOM_SCROLL_VIEW (gobject));
+	image = eoc_scroll_view_get_image (EOC_SCROLL_VIEW (gobject));
 
-	eoc_metadata_sidebar_set_image (EOM_METADATA_SIDEBAR (user_data),
+	eoc_metadata_sidebar_set_image (EOC_METADATA_SIDEBAR (user_data),
 					image);
 
 	if (image)
@@ -307,7 +307,7 @@ _notify_image_cb (GObject *gobject, GParamSpec *pspec, gpointer user_data)
 static void
 _folder_label_clicked_cb (GtkLabel *label, const gchar *uri, gpointer user_data)
 {
-	EomMetadataSidebarPrivate *priv = EOM_METADATA_SIDEBAR(user_data)->priv;
+	EomMetadataSidebarPrivate *priv = EOC_METADATA_SIDEBAR(user_data)->priv;
 	EomImage *img;
 	GtkWidget *toplevel;
 	GtkWindow *window;
@@ -333,16 +333,16 @@ _folder_label_clicked_cb (GtkLabel *label, const gchar *uri, gpointer user_data)
 static void
 _details_button_clicked_cb (GtkButton *button, gpointer user_data)
 {
-	EomMetadataSidebarPrivate *priv = EOM_METADATA_SIDEBAR(user_data)->priv;
+	EomMetadataSidebarPrivate *priv = EOC_METADATA_SIDEBAR(user_data)->priv;
 	GtkWidget *dlg;
 
 	g_return_if_fail (priv->parent_window != NULL);
 
 	dlg = eoc_window_get_properties_dialog (
-					EOM_WINDOW (priv->parent_window));
+					EOC_WINDOW (priv->parent_window));
 	g_return_if_fail (dlg != NULL);
-	eoc_properties_dialog_set_page (EOM_PROPERTIES_DIALOG (dlg),
-					EOM_PROPERTIES_DIALOG_PAGE_DETAILS);
+	eoc_properties_dialog_set_page (EOC_PROPERTIES_DIALOG (dlg),
+					EOC_PROPERTIES_DIALOG_PAGE_DETAILS);
 	gtk_widget_show (dlg);
 }
 #endif /* HAVE_METADATA */
@@ -354,7 +354,7 @@ eoc_metadata_sidebar_set_parent_window (EomMetadataSidebar *sidebar,
 	EomMetadataSidebarPrivate *priv;
 	GtkWidget *view;
 
-	g_return_if_fail (EOM_IS_METADATA_SIDEBAR (sidebar));
+	g_return_if_fail (EOC_IS_METADATA_SIDEBAR (sidebar));
 	priv = sidebar->priv;
 	g_return_if_fail (priv->parent_window == NULL);
 
@@ -405,9 +405,9 @@ eoc_metadata_sidebar_get_property (GObject *object, guint property_id,
 {
 	EomMetadataSidebar *sidebar;
 
-	g_return_if_fail (EOM_IS_METADATA_SIDEBAR (object));
+	g_return_if_fail (EOC_IS_METADATA_SIDEBAR (object));
 
-	sidebar = EOM_METADATA_SIDEBAR (object);
+	sidebar = EOC_METADATA_SIDEBAR (object);
 
 	switch (property_id) {
 	case PROP_IMAGE:
@@ -429,9 +429,9 @@ eoc_metadata_sidebar_set_property (GObject *object, guint property_id,
 {
 	EomMetadataSidebar *sidebar;
 
-	g_return_if_fail (EOM_IS_METADATA_SIDEBAR (object));
+	g_return_if_fail (EOC_IS_METADATA_SIDEBAR (object));
 
-	sidebar = EOM_METADATA_SIDEBAR (object);
+	sidebar = EOC_METADATA_SIDEBAR (object);
 
 	switch (property_id) {
 	case PROP_IMAGE:
@@ -464,12 +464,12 @@ eoc_metadata_sidebar_class_init (EomMetadataSidebarClass *klass)
 	g_object_class_install_property (
 		g_obj_class, PROP_PARENT_WINDOW,
 		g_param_spec_object ("parent-window", NULL, NULL,
-				     EOM_TYPE_WINDOW, G_PARAM_READWRITE
+				     EOC_TYPE_WINDOW, G_PARAM_READWRITE
 				     | G_PARAM_CONSTRUCT_ONLY
 				     | G_PARAM_STATIC_STRINGS));
 	g_object_class_install_property (
 		g_obj_class, PROP_IMAGE,
-		g_param_spec_object ("image", NULL, NULL, EOM_TYPE_IMAGE,
+		g_param_spec_object ("image", NULL, NULL, EOC_TYPE_IMAGE,
 				     G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS)
 				    );
 
@@ -529,7 +529,7 @@ eoc_metadata_sidebar_class_init (EomMetadataSidebarClass *klass)
 GtkWidget*
 eoc_metadata_sidebar_new (EomWindow *window)
 {
-	return gtk_widget_new (EOM_TYPE_METADATA_SIDEBAR,
+	return gtk_widget_new (EOC_TYPE_METADATA_SIDEBAR,
 			       "hadjustment", NULL,
 			       "vadjustment", NULL,
 			       "hscrollbar-policy", GTK_POLICY_NEVER,

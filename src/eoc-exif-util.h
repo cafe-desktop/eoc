@@ -24,8 +24,8 @@
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-#ifndef __EOM_EXIF_UTIL_H__
-#define __EOM_EXIF_UTIL_H__
+#ifndef __EOC_EXIF_UTIL_H__
+#define __EOC_EXIF_UTIL_H__
 
 #include <glib.h>
 #include <glib-object.h>
@@ -34,7 +34,7 @@
 
 G_BEGIN_DECLS
 
-#define EOM_TYPE_EXIF_DATA eoc_exif_data_get_type()
+#define EOC_TYPE_EXIF_DATA eoc_exif_data_get_type()
 
 gchar       *eoc_exif_util_format_date           (const gchar *date);
 void         eoc_exif_util_format_datetime_label (GtkLabel *label,
@@ -59,4 +59,4 @@ void         eoc_exif_data_free                  (ExifData *data);
 
 G_END_DECLS
 
-#endif /* __EOM_EXIF_UTIL_H__ */
+#endif /* __EOC_EXIF_UTIL_H__ */

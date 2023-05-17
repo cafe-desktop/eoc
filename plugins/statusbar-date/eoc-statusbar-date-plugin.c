@@ -1,4 +1,4 @@
-/* Statusbar Date -- Shows the EXIF date in EOM's statusbar
+/* Statusbar Date -- Shows the EXIF date in EOC's statusbar
  *
  * Copyright (C) 2008 The Free Software Foundation
  *
@@ -42,7 +42,7 @@ G_DEFINE_DYNAMIC_TYPE_EXTENDED (EomStatusbarDatePlugin,
                                 eoc_statusbar_date_plugin,
                                 PEAS_TYPE_EXTENSION_BASE,
                                 0,
-                                G_IMPLEMENT_INTERFACE_DYNAMIC (EOM_TYPE_WINDOW_ACTIVATABLE,
+                                G_IMPLEMENT_INTERFACE_DYNAMIC (EOC_TYPE_WINDOW_ACTIVATABLE,
                                                                eoc_window_activatable_iface_init))
 
 enum {
@@ -68,9 +68,9 @@ statusbar_set_date (GtkStatusbar *statusbar,
 
 	gtk_statusbar_pop (statusbar, 0);
 
-	if (!eoc_image_has_data (image, EOM_IMAGE_DATA_EXIF))
+	if (!eoc_image_has_data (image, EOC_IMAGE_DATA_EXIF))
 	{
-		if (!eoc_image_load (image, EOM_IMAGE_DATA_EXIF, NULL, NULL))
+		if (!eoc_image_load (image, EOC_IMAGE_DATA_EXIF, NULL, NULL))
 		{
 			gtk_widget_hide (GTK_WIDGET (statusbar));
 		}
@@ -109,12 +109,12 @@ eoc_statusbar_date_plugin_set_property (GObject      *object,
                                         const GValue *value,
                                         GParamSpec   *pspec)
 {
-	EomStatusbarDatePlugin *plugin = EOM_STATUSBAR_DATE_PLUGIN (object);
+	EomStatusbarDatePlugin *plugin = EOC_STATUSBAR_DATE_PLUGIN (object);
 
 	switch (prop_id)
 	{
 	case PROP_WINDOW:
-		plugin->window = EOM_WINDOW (g_value_dup_object (value));
+		plugin->window = EOC_WINDOW (g_value_dup_object (value));
 		break;
 
 	default:
@@ -129,7 +129,7 @@ eoc_statusbar_date_plugin_get_property (GObject    *object,
                                         GValue     *value,
                                         GParamSpec *pspec)
 {
-	EomStatusbarDatePlugin *plugin = EOM_STATUSBAR_DATE_PLUGIN (object);
+	EomStatusbarDatePlugin *plugin = EOC_STATUSBAR_DATE_PLUGIN (object);
 
 	switch (prop_id)
 	{
@@ -152,7 +152,7 @@ eoc_statusbar_date_plugin_init (EomStatusbarDatePlugin *plugin)
 static void
 eoc_statusbar_date_plugin_dispose (GObject *object)
 {
-	EomStatusbarDatePlugin *plugin = EOM_STATUSBAR_DATE_PLUGIN (object);
+	EomStatusbarDatePlugin *plugin = EOC_STATUSBAR_DATE_PLUGIN (object);
 
 	eoc_debug_message (DEBUG_PLUGINS, "EomStatusbarDatePlugin disposing");
 
@@ -167,7 +167,7 @@ eoc_statusbar_date_plugin_dispose (GObject *object)
 static void
 eoc_statusbar_date_plugin_activate (EomWindowActivatable *activatable)
 {
-	EomStatusbarDatePlugin *plugin = EOM_STATUSBAR_DATE_PLUGIN (activatable);
+	EomStatusbarDatePlugin *plugin = EOC_STATUSBAR_DATE_PLUGIN (activatable);
 	EomWindow *window = plugin->window;
 	GtkWidget *statusbar = eoc_window_get_statusbar (window);
 	GtkWidget *thumbview = eoc_window_get_thumb_view (window);
@@ -184,13 +184,13 @@ eoc_statusbar_date_plugin_activate (EomWindowActivatable *activatable)
 	                                            G_CALLBACK (selection_changed_cb), plugin);
 
 	statusbar_set_date (GTK_STATUSBAR (plugin->statusbar_date),
-	                    EOM_THUMB_VIEW (eoc_window_get_thumb_view (window)));
+	                    EOC_THUMB_VIEW (eoc_window_get_thumb_view (window)));
 }
 
 static void
 eoc_statusbar_date_plugin_deactivate (EomWindowActivatable *activatable)
 {
-	EomStatusbarDatePlugin *plugin = EOM_STATUSBAR_DATE_PLUGIN (activatable);
+	EomStatusbarDatePlugin *plugin = EOC_STATUSBAR_DATE_PLUGIN (activatable);
 	EomWindow *window = plugin->window;
 	GtkWidget *statusbar = eoc_window_get_statusbar (window);
 	GtkWidget *view = eoc_window_get_thumb_view (window);
@@ -230,6 +230,6 @@ peas_register_types (PeasObjectModule *module)
 {
 	eoc_statusbar_date_plugin_register_type (G_TYPE_MODULE (module));
 	peas_object_module_register_extension_type (module,
-	                                            EOM_TYPE_WINDOW_ACTIVATABLE,
-	                                            EOM_TYPE_STATUSBAR_DATE_PLUGIN);
+	                                            EOC_TYPE_WINDOW_ACTIVATABLE,
+	                                            EOC_TYPE_STATUSBAR_DATE_PLUGIN);
 }

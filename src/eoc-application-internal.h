@@ -22,8 +22,8 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-#ifndef __EOM_APPLICATION_INTERNAL_H__
-#define __EOM_APPLICATION_INTERNAL_H__
+#ifndef __EOC_APPLICATION_INTERNAL_H__
+#define __EOC_APPLICATION_INTERNAL_H__
 
 #include <glib.h>
 #include <glib-object.h>
@@ -56,5 +56,5 @@ void              eoc_application_reset_toolbars_model (EomApplication *app);
 
 G_END_DECLS
 
-#endif /* __EOM_APPLICATION_INTERNAL_H__ */
+#endif /* __EOC_APPLICATION_INTERNAL_H__ */
 

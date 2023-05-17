@@ -22,8 +22,8 @@
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-#ifndef _EOM_THUMBNAIL_H_
-#define _EOM_THUMBNAIL_H_
+#ifndef _EOC_THUMBNAIL_H_
+#define _EOC_THUMBNAIL_H_
 
 #include <gdk-pixbuf/gdk-pixbuf.h>
 #include "eoc-image.h"
@@ -40,9 +40,9 @@ GdkPixbuf*    eoc_thumbnail_add_frame   (GdkPixbuf *thumbnail);
 GdkPixbuf*    eoc_thumbnail_load        (EomImage *image,
 					 GError **error);
 
-#define EOM_THUMBNAIL_ORIGINAL_WIDTH  "eoc-thumbnail-orig-width"
-#define EOM_THUMBNAIL_ORIGINAL_HEIGHT "eoc-thumbnail-orig-height"
+#define EOC_THUMBNAIL_ORIGINAL_WIDTH  "eoc-thumbnail-orig-width"
+#define EOC_THUMBNAIL_ORIGINAL_HEIGHT "eoc-thumbnail-orig-height"
 
 G_END_DECLS
 
-#endif /* _EOM_THUMBNAIL_H_ */
+#endif /* _EOC_THUMBNAIL_H_ */

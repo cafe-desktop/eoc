@@ -70,7 +70,7 @@ G_DEFINE_TYPE_WITH_PRIVATE (EomSidebar, eoc_sidebar, GTK_TYPE_BOX)
 static void
 eoc_sidebar_destroy (GtkWidget *object)
 {
-	EomSidebar *eoc_sidebar = EOM_SIDEBAR (object);
+	EomSidebar *eoc_sidebar = EOC_SIDEBAR (object);
 
 	if (eoc_sidebar->priv->menu) {
 		gtk_menu_detach (GTK_MENU (eoc_sidebar->priv->menu));
@@ -146,7 +146,7 @@ eoc_sidebar_set_property (GObject     *object,
 		         const GValue *value,
 		         GParamSpec   *pspec)
 {
-	EomSidebar *sidebar = EOM_SIDEBAR (object);
+	EomSidebar *sidebar = EOC_SIDEBAR (object);
 
 	switch (prop_id) {
 	case PROP_CURRENT_PAGE:
@@ -163,7 +163,7 @@ eoc_sidebar_get_property (GObject    *object,
 		          GValue     *value,
 		          GParamSpec *pspec)
 {
-	EomSidebar *sidebar = EOM_SIDEBAR (object);
+	EomSidebar *sidebar = EOC_SIDEBAR (object);
 
 	switch (prop_id) {
 	case PROP_CURRENT_PAGE:
@@ -197,7 +197,7 @@ eoc_sidebar_class_init (EomSidebarClass *eoc_sidebar_class)
 
 	signals[SIGNAL_PAGE_ADDED] =
 		g_signal_new ("page-added",
-			      EOM_TYPE_SIDEBAR,
+			      EOC_TYPE_SIDEBAR,
 			      G_SIGNAL_RUN_FIRST,
 			      G_STRUCT_OFFSET (EomSidebarClass, page_added),
 			      NULL, NULL,
@@ -208,7 +208,7 @@ eoc_sidebar_class_init (EomSidebarClass *eoc_sidebar_class)
 
 	signals[SIGNAL_PAGE_REMOVED] =
 		g_signal_new ("page-removed",
-			      EOM_TYPE_SIDEBAR,
+			      EOC_TYPE_SIDEBAR,
 			      G_SIGNAL_RUN_FIRST,
 			      G_STRUCT_OFFSET (EomSidebarClass, page_removed),
 			      NULL, NULL,
@@ -223,7 +223,7 @@ eoc_sidebar_select_button_press_cb (GtkWidget      *widget,
 				    GdkEventButton *event,
 				    gpointer        user_data)
 {
-	EomSidebar *eoc_sidebar = EOM_SIDEBAR (user_data);
+	EomSidebar *eoc_sidebar = EOC_SIDEBAR (user_data);
 
 	if (event->button == 1) {
 		GtkRequisition requisition;
@@ -258,7 +258,7 @@ eoc_sidebar_select_button_key_press_cb (GtkWidget   *widget,
 				        GdkEventKey *event,
 				        gpointer     user_data)
 {
-	EomSidebar *eoc_sidebar = EOM_SIDEBAR (user_data);
+	EomSidebar *eoc_sidebar = EOC_SIDEBAR (user_data);
 
 	if (event->keyval == GDK_KEY_space ||
 	    event->keyval == GDK_KEY_KP_Space ||
@@ -282,7 +282,7 @@ static void
 eoc_sidebar_close_clicked_cb (GtkWidget *widget,
  			      gpointer   user_data)
 {
-	EomSidebar *eoc_sidebar = EOM_SIDEBAR (user_data);
+	EomSidebar *eoc_sidebar = EOC_SIDEBAR (user_data);
 
 	gtk_widget_hide (GTK_WIDGET (eoc_sidebar));
 }
@@ -302,7 +302,7 @@ static void
 eoc_sidebar_menu_detach_cb (GtkWidget *widget,
 			   GtkMenu   *menu)
 {
-	EomSidebar *eoc_sidebar = EOM_SIDEBAR (widget);
+	EomSidebar *eoc_sidebar = EOC_SIDEBAR (widget);
 
 	eoc_sidebar->priv->menu = NULL;
 }
@@ -311,7 +311,7 @@ static void
 eoc_sidebar_menu_item_activate_cb (GtkWidget *widget,
 				   gpointer   user_data)
 {
-	EomSidebar *eoc_sidebar = EOM_SIDEBAR (user_data);
+	EomSidebar *eoc_sidebar = EOC_SIDEBAR (user_data);
 	GtkTreeIter iter;
 	GtkWidget *menu_item, *item;
 	gboolean valid;
@@ -455,7 +455,7 @@ eoc_sidebar_new (void)
 {
 	GtkWidget *eoc_sidebar;
 
-	eoc_sidebar = g_object_new (EOM_TYPE_SIDEBAR,
+	eoc_sidebar = g_object_new (EOC_TYPE_SIDEBAR,
 	                            "orientation", GTK_ORIENTATION_VERTICAL,
 	                            NULL);
 
@@ -472,7 +472,7 @@ eoc_sidebar_add_page (EomSidebar   *eoc_sidebar,
 	gchar *label_title;
 	gint index;
 
-	g_return_if_fail (EOM_IS_SIDEBAR (eoc_sidebar));
+	g_return_if_fail (EOC_IS_SIDEBAR (eoc_sidebar));
 	g_return_if_fail (GTK_IS_WIDGET (main_widget));
 
 	index = gtk_notebook_append_page (GTK_NOTEBOOK (eoc_sidebar->priv->notebook),
@@ -533,7 +533,7 @@ eoc_sidebar_remove_page (EomSidebar *eoc_sidebar, GtkWidget *main_widget)
 	gboolean valid;
 	gint index;
 
-	g_return_if_fail (EOM_IS_SIDEBAR (eoc_sidebar));
+	g_return_if_fail (EOC_IS_SIDEBAR (eoc_sidebar));
 	g_return_if_fail (GTK_IS_WIDGET (main_widget));
 
 	valid = gtk_tree_model_get_iter_first (eoc_sidebar->priv->page_model, &iter);
@@ -575,7 +575,7 @@ eoc_sidebar_remove_page (EomSidebar *eoc_sidebar, GtkWidget *main_widget)
 gint
 eoc_sidebar_get_n_pages (EomSidebar *eoc_sidebar)
 {
-	g_return_val_if_fail (EOM_IS_SIDEBAR (eoc_sidebar), TRUE);
+	g_return_val_if_fail (EOC_IS_SIDEBAR (eoc_sidebar), TRUE);
 
 	return gtk_tree_model_iter_n_children (
 		GTK_TREE_MODEL (eoc_sidebar->priv->page_model), NULL);
@@ -584,7 +584,7 @@ eoc_sidebar_get_n_pages (EomSidebar *eoc_sidebar)
 gboolean
 eoc_sidebar_is_empty (EomSidebar *eoc_sidebar)
 {
-	g_return_val_if_fail (EOM_IS_SIDEBAR (eoc_sidebar), TRUE);
+	g_return_val_if_fail (EOC_IS_SIDEBAR (eoc_sidebar), TRUE);
 
 	return gtk_tree_model_iter_n_children (
 		GTK_TREE_MODEL (eoc_sidebar->priv->page_model), NULL) == 0;
