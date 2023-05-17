@@ -29,12 +29,12 @@
 
 G_BEGIN_DECLS
 
-struct _EomImagePrivate {
+struct _EocImagePrivate {
 	GFile            *file;
 
-	EomImageStatus    status;
-	EomImageStatus    prev_status;
-	EomImageMetadataStatus metadata_status;
+	EocImageStatus    status;
+	EocImageStatus    prev_status;
+	EocImageMetadataStatus metadata_status;
 
 	gboolean          is_playing;
 	GdkPixbufAnimation     *anim;
@@ -88,8 +88,8 @@ struct _EomImagePrivate {
 
 	GSList           *undo_stack;
 
-	EomTransform     *trans;
-	EomTransform     *trans_autorotate;
+	EocTransform     *trans;
+	EocTransform     *trans_autorotate;
 };
 
 G_END_DECLS

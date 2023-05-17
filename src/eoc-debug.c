@@ -40,7 +40,7 @@ static GTimer *timer = NULL;
 static gdouble last = 0.0;
 #endif
 
-static EomDebug debug = EOC_DEBUG_NO_DEBUG;
+static EocDebug debug = EOC_DEBUG_NO_DEBUG;
 
 void
 eoc_debug_init (void)
@@ -98,7 +98,7 @@ out:
 }
 
 void
-eoc_debug_message (EomDebug   section,
+eoc_debug_message (EocDebug   section,
 		   const gchar      *file,
 		   gint              line,
 		   const gchar      *function,
@@ -135,7 +135,7 @@ eoc_debug_message (EomDebug   section,
 	}
 }
 
-void eoc_debug (EomDebug  section,
+void eoc_debug (EocDebug  section,
 		  const gchar       *file,
 		  gint               line,
 		  const gchar       *function)

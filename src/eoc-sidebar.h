@@ -30,30 +30,30 @@
 
 G_BEGIN_DECLS
 
-typedef struct _EomSidebar EomSidebar;
-typedef struct _EomSidebarClass EomSidebarClass;
-typedef struct _EomSidebarPrivate EomSidebarPrivate;
+typedef struct _EocSidebar EocSidebar;
+typedef struct _EocSidebarClass EocSidebarClass;
+typedef struct _EocSidebarPrivate EocSidebarPrivate;
 
 #define EOC_TYPE_SIDEBAR	    (eoc_sidebar_get_type())
-#define EOC_SIDEBAR(obj)	    (G_TYPE_CHECK_INSTANCE_CAST((obj), EOC_TYPE_SIDEBAR, EomSidebar))
-#define EOC_SIDEBAR_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST((klass),  EOC_TYPE_SIDEBAR, EomSidebarClass))
+#define EOC_SIDEBAR(obj)	    (G_TYPE_CHECK_INSTANCE_CAST((obj), EOC_TYPE_SIDEBAR, EocSidebar))
+#define EOC_SIDEBAR_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST((klass),  EOC_TYPE_SIDEBAR, EocSidebarClass))
 #define EOC_IS_SIDEBAR(obj)	    (G_TYPE_CHECK_INSTANCE_TYPE((obj), EOC_TYPE_SIDEBAR))
 #define EOC_IS_SIDEBAR_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE((klass),  EOC_TYPE_SIDEBAR))
-#define EOC_SIDEBAR_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS((obj),  EOC_TYPE_SIDEBAR, EomSidebarClass))
+#define EOC_SIDEBAR_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS((obj),  EOC_TYPE_SIDEBAR, EocSidebarClass))
 
-struct _EomSidebar {
+struct _EocSidebar {
 	GtkBox base_instance;
 
-	EomSidebarPrivate *priv;
+	EocSidebarPrivate *priv;
 };
 
-struct _EomSidebarClass {
+struct _EocSidebarClass {
 	GtkBoxClass base_class;
 
-	void (* page_added)   (EomSidebar *eoc_sidebar,
+	void (* page_added)   (EocSidebar *eoc_sidebar,
 			       GtkWidget  *main_widget);
 
-	void (* page_removed) (EomSidebar *eoc_sidebar,
+	void (* page_removed) (EocSidebar *eoc_sidebar,
 			       GtkWidget  *main_widget);
 };
 
@@ -61,19 +61,19 @@ GType      eoc_sidebar_get_type     (void);
 
 GtkWidget *eoc_sidebar_new          (void);
 
-void       eoc_sidebar_add_page     (EomSidebar  *eoc_sidebar,
+void       eoc_sidebar_add_page     (EocSidebar  *eoc_sidebar,
 				     const gchar *title,
 				     GtkWidget   *main_widget);
 
-void       eoc_sidebar_remove_page  (EomSidebar  *eoc_sidebar,
+void       eoc_sidebar_remove_page  (EocSidebar  *eoc_sidebar,
 				     GtkWidget   *main_widget);
 
-void       eoc_sidebar_set_page     (EomSidebar  *eoc_sidebar,
+void       eoc_sidebar_set_page     (EocSidebar  *eoc_sidebar,
 				     GtkWidget   *main_widget);
 
-gint       eoc_sidebar_get_n_pages  (EomSidebar  *eoc_sidebar);
+gint       eoc_sidebar_get_n_pages  (EocSidebar  *eoc_sidebar);
 
-gboolean   eoc_sidebar_is_empty     (EomSidebar  *eoc_sidebar);
+gboolean   eoc_sidebar_is_empty     (EocSidebar  *eoc_sidebar);
 
 G_END_DECLS
 

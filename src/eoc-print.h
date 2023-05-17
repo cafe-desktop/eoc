@@ -28,7 +28,7 @@
 G_BEGIN_DECLS
 
 G_GNUC_INTERNAL
-GtkPrintOperation*    eoc_print_operation_new (EomImage *image,
+GtkPrintOperation*    eoc_print_operation_new (EocImage *image,
 					       GtkPrintSettings *print_settings,
 					       GtkPageSetup *page_setup);
 

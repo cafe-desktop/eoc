@@ -28,12 +28,12 @@
 #include "eoc-metadata-reader-png.h"
 #include "eoc-debug.h"
 
-G_DEFINE_INTERFACE (EomMetadataReader, eoc_metadata_reader, G_TYPE_INVALID)
+G_DEFINE_INTERFACE (EocMetadataReader, eoc_metadata_reader, G_TYPE_INVALID)
 
-EomMetadataReader*
-eoc_metadata_reader_new (EomMetadataFileType type)
+EocMetadataReader*
+eoc_metadata_reader_new (EocMetadataFileType type)
 {
-	EomMetadataReader *emr;
+	EocMetadataReader *emr;
 
 	switch (type) {
 	case EOC_METADATA_JPEG:
@@ -51,7 +51,7 @@ eoc_metadata_reader_new (EomMetadataFileType type)
 }
 
 gboolean
-eoc_metadata_reader_finished (EomMetadataReader *emr)
+eoc_metadata_reader_finished (EocMetadataReader *emr)
 {
 	g_return_val_if_fail (EOC_IS_METADATA_READER (emr), TRUE);
 
@@ -60,7 +60,7 @@ eoc_metadata_reader_finished (EomMetadataReader *emr)
 
 
 void
-eoc_metadata_reader_consume (EomMetadataReader *emr, const guchar *buf, guint len)
+eoc_metadata_reader_consume (EocMetadataReader *emr, const guchar *buf, guint len)
 {
 	EOC_METADATA_READER_GET_INTERFACE (emr)->consume (emr, buf, len);
 }
@@ -69,7 +69,7 @@ eoc_metadata_reader_consume (EomMetadataReader *emr, const guchar *buf, guint le
  * the new owner of this piece of memory and is responsible for freeing it!
  */
 void
-eoc_metadata_reader_get_exif_chunk (EomMetadataReader *emr, guchar **data, guint *len)
+eoc_metadata_reader_get_exif_chunk (EocMetadataReader *emr, guchar **data, guint *len)
 {
 	g_return_if_fail (data != NULL && len != NULL);
 
@@ -78,7 +78,7 @@ eoc_metadata_reader_get_exif_chunk (EomMetadataReader *emr, guchar **data, guint
 
 #ifdef HAVE_EXIF
 ExifData*
-eoc_metadata_reader_get_exif_data (EomMetadataReader *emr)
+eoc_metadata_reader_get_exif_data (EocMetadataReader *emr)
 {
 	return EOC_METADATA_READER_GET_INTERFACE (emr)->get_exif_data (emr);
 }
@@ -86,7 +86,7 @@ eoc_metadata_reader_get_exif_data (EomMetadataReader *emr)
 
 #ifdef HAVE_EXEMPI
 XmpPtr
-eoc_metadata_reader_get_xmp_data (EomMetadataReader *emr)
+eoc_metadata_reader_get_xmp_data (EocMetadataReader *emr)
 {
 	return EOC_METADATA_READER_GET_INTERFACE (emr)->get_xmp_ptr (emr);
 }
@@ -94,7 +94,7 @@ eoc_metadata_reader_get_xmp_data (EomMetadataReader *emr)
 
 #if defined(HAVE_LCMS) && defined(GDK_WINDOWING_X11)
 cmsHPROFILE
-eoc_metadata_reader_get_icc_profile (EomMetadataReader *emr)
+eoc_metadata_reader_get_icc_profile (EocMetadataReader *emr)
 {
 	return EOC_METADATA_READER_GET_INTERFACE (emr)->get_icc_profile (emr);
 }
@@ -103,7 +103,7 @@ eoc_metadata_reader_get_icc_profile (EomMetadataReader *emr)
 /* Default vfunc that simply clears the output if not overriden by the
    implementing class. This mimics the old behavour of get_exif_chunk(). */
 static void
-_eoc_metadata_reader_default_get_raw_exif (EomMetadataReader *emr,
+_eoc_metadata_reader_default_get_raw_exif (EocMetadataReader *emr,
 					   guchar **data, guint *length)
 {
 	g_return_if_fail (data != NULL && length != NULL);
@@ -114,12 +114,12 @@ _eoc_metadata_reader_default_get_raw_exif (EomMetadataReader *emr,
 /* Default vfunc that simply returns NULL if not overriden by the implementing
    class. Mimics the old fallback behaviour of the getter functions. */
 static gpointer
-_eoc_metadata_reader_default_get_null (EomMetadataReader *emr)
+_eoc_metadata_reader_default_get_null (EocMetadataReader *emr)
 {
 	return NULL;
 }
 static void
-eoc_metadata_reader_default_init (EomMetadataReaderInterface *iface)
+eoc_metadata_reader_default_init (EocMetadataReaderInterface *iface)
 {
 	/* consume and finished are required to be implemented */
 	/* Not-implemented funcs return NULL by default */

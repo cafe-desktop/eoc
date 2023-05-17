@@ -33,24 +33,24 @@
 
 G_BEGIN_DECLS
 
-typedef struct _EomMetadataDetails EomMetadataDetails;
-typedef struct _EomMetadataDetailsClass EomMetadataDetailsClass;
-typedef struct _EomMetadataDetailsPrivate EomMetadataDetailsPrivate;
+typedef struct _EocMetadataDetails EocMetadataDetails;
+typedef struct _EocMetadataDetailsClass EocMetadataDetailsClass;
+typedef struct _EocMetadataDetailsPrivate EocMetadataDetailsPrivate;
 
 #define EOC_TYPE_METADATA_DETAILS            (eoc_metadata_details_get_type ())
-#define EOC_METADATA_DETAILS(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), EOC_TYPE_METADATA_DETAILS, EomMetadataDetails))
-#define EOC_METADATA_DETAILS_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST((klass), EOC_TYPE_METADATA_DETAILS, EomMetadataDetailsClass))
+#define EOC_METADATA_DETAILS(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), EOC_TYPE_METADATA_DETAILS, EocMetadataDetails))
+#define EOC_METADATA_DETAILS_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST((klass), EOC_TYPE_METADATA_DETAILS, EocMetadataDetailsClass))
 #define EOC_IS_METADATA_DETAILS(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), EOC_TYPE_METADATA_DETAILS))
 #define EOC_IS_METADATA_DETAILS_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), EOC_TYPE_METADATA_DETAILS))
-#define EOC_METADATA_DETAILS_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), EOC_TYPE_METADATA_DETAILS, EomMetadataDetailsClass))
+#define EOC_METADATA_DETAILS_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), EOC_TYPE_METADATA_DETAILS, EocMetadataDetailsClass))
 
-struct _EomMetadataDetails {
+struct _EocMetadataDetails {
         GtkTreeView parent;
 
-	EomMetadataDetailsPrivate *priv;
+	EocMetadataDetailsPrivate *priv;
 };
 
-struct _EomMetadataDetailsClass {
+struct _EocMetadataDetailsClass {
 	GtkTreeViewClass parent_class;
 };
 
@@ -62,12 +62,12 @@ GtkWidget          *eoc_metadata_details_new         (void);
 
 #if HAVE_EXIF
 G_GNUC_INTERNAL
-void                eoc_metadata_details_update      (EomMetadataDetails *details,
+void                eoc_metadata_details_update      (EocMetadataDetails *details,
                                                       ExifData       *data);
 #endif
 #if HAVE_EXEMPI
 G_GNUC_INTERNAL
-void                eoc_metadata_details_xmp_update  (EomMetadataDetails *details,
+void                eoc_metadata_details_xmp_update  (EocMetadataDetails *details,
                                                       XmpPtr          xmp_data);
 #endif
 

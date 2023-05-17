@@ -33,23 +33,23 @@
 #include <glib-object.h>
 #include "eoc-application.h"
 
-G_DEFINE_INTERFACE(EomApplicationActivatable, eoc_application_activatable, G_TYPE_OBJECT)
+G_DEFINE_INTERFACE(EocApplicationActivatable, eoc_application_activatable, G_TYPE_OBJECT)
 
 void
-eoc_application_activatable_default_init (EomApplicationActivatableInterface *iface)
+eoc_application_activatable_default_init (EocApplicationActivatableInterface *iface)
 {
 	static gboolean initialized = FALSE;
 
 	if (!initialized) {
 		/**
-         * EomApplicationActivatable:app:
+         * EocApplicationActivatable:app:
 		 *
-         * This is the #EomApplication this #EomApplicationActivatable instance
+         * This is the #EocApplication this #EocApplicationActivatable instance
 		 * should be attached to.
 		 */
 		g_object_interface_install_property (iface,
                 g_param_spec_object ("app", "Application",
-                             "The EomApplication this instance it attached to",
+                             "The EocApplication this instance it attached to",
                              EOC_TYPE_APPLICATION,
 						     G_PARAM_READWRITE |
 						     G_PARAM_CONSTRUCT_ONLY |
@@ -59,9 +59,9 @@ eoc_application_activatable_default_init (EomApplicationActivatableInterface *if
 }
 
 void
-eoc_application_activatable_activate (EomApplicationActivatable *activatable)
+eoc_application_activatable_activate (EocApplicationActivatable *activatable)
 {
-    EomApplicationActivatableInterface *iface;
+    EocApplicationActivatableInterface *iface;
 
     g_return_if_fail (EOC_IS_APPLICATION_ACTIVATABLE (activatable));
 
@@ -72,9 +72,9 @@ eoc_application_activatable_activate (EomApplicationActivatable *activatable)
 }
 
 void
-eoc_application_activatable_deactivate (EomApplicationActivatable *activatable)
+eoc_application_activatable_deactivate (EocApplicationActivatable *activatable)
 {
-    EomApplicationActivatableInterface *iface;
+    EocApplicationActivatableInterface *iface;
 
     g_return_if_fail (EOC_IS_APPLICATION_ACTIVATABLE (activatable));
 

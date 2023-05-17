@@ -34,36 +34,36 @@ G_BEGIN_DECLS
 #define EOC_TYPE_APPLICATION_ACTIVATABLE (eoc_application_activatable_get_type ())
 #define EOC_APPLICATION_ACTIVATABLE(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), \
                                           EOC_TYPE_APPLICATION_ACTIVATABLE, \
-                                          EomApplicationActivatable))
+                                          EocApplicationActivatable))
 #define EOC_APPLICATION_ACTIVATABLE_IFACE(obj) \
                                           (G_TYPE_CHECK_CLASS_CAST ((obj), \
                                            EOC_TYPE_APPLICATION_ACTIVATABLE, \
-                                           EomApplicationActivatableInterface))
+                                           EocApplicationActivatableInterface))
 #define EOC_IS_APPLICATION_ACTIVATABLE(obj) \
                                           (G_TYPE_CHECK_INSTANCE_TYPE ((obj), \
                                            EOC_TYPE_APPLICATION_ACTIVATABLE))
 #define EOC_APPLICATION_ACTIVATABLE_GET_IFACE(obj) \
                                         (G_TYPE_INSTANCE_GET_INTERFACE ((obj), \
                                          EOC_TYPE_APPLICATION_ACTIVATABLE, \
-                                         EomApplicationActivatableInterface))
+                                         EocApplicationActivatableInterface))
 
-typedef struct _EomApplicationActivatable		EomApplicationActivatable;
-typedef struct _EomApplicationActivatableInterface	EomApplicationActivatableInterface;
+typedef struct _EocApplicationActivatable		EocApplicationActivatable;
+typedef struct _EocApplicationActivatableInterface	EocApplicationActivatableInterface;
 
-struct _EomApplicationActivatableInterface
+struct _EocApplicationActivatableInterface
 {
 	GTypeInterface g_iface;
 
 	/* vfuncs */
 
-    void	(*activate)	(EomApplicationActivatable *activatable);
-    void	(*deactivate)	(EomApplicationActivatable *activatable);
+    void	(*activate)	(EocApplicationActivatable *activatable);
+    void	(*deactivate)	(EocApplicationActivatable *activatable);
 };
 
 GType	eoc_application_activatable_get_type     (void) G_GNUC_CONST;
 
-void	eoc_application_activatable_activate     (EomApplicationActivatable *activatable);
-void	eoc_application_activatable_deactivate   (EomApplicationActivatable *activatable);
+void	eoc_application_activatable_activate     (EocApplicationActivatable *activatable);
+void	eoc_application_activatable_deactivate   (EocApplicationActivatable *activatable);
 
 G_END_DECLS
 #endif /* __EOC_APPLICATION_ACTIVATABLE_H__ */

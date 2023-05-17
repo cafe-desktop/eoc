@@ -30,49 +30,49 @@
 
 G_BEGIN_DECLS
 
-typedef struct _EomThumbNav EomThumbNav;
-typedef struct _EomThumbNavClass EomThumbNavClass;
-typedef struct _EomThumbNavPrivate EomThumbNavPrivate;
+typedef struct _EocThumbNav EocThumbNav;
+typedef struct _EocThumbNavClass EocThumbNavClass;
+typedef struct _EocThumbNavPrivate EocThumbNavPrivate;
 
 #define EOC_TYPE_THUMB_NAV            (eoc_thumb_nav_get_type ())
-#define EOC_THUMB_NAV(obj)            (G_TYPE_CHECK_INSTANCE_CAST((obj), EOC_TYPE_THUMB_NAV, EomThumbNav))
-#define EOC_THUMB_NAV_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST((klass),  EOC_TYPE_THUMB_NAV, EomThumbNavClass))
+#define EOC_THUMB_NAV(obj)            (G_TYPE_CHECK_INSTANCE_CAST((obj), EOC_TYPE_THUMB_NAV, EocThumbNav))
+#define EOC_THUMB_NAV_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST((klass),  EOC_TYPE_THUMB_NAV, EocThumbNavClass))
 #define EOC_IS_THUMB_NAV(obj)         (G_TYPE_CHECK_INSTANCE_TYPE((obj), EOC_TYPE_THUMB_NAV))
 #define EOC_IS_THUMB_NAV_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE((klass),  EOC_TYPE_THUMB_NAV))
-#define EOC_THUMB_NAV_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS((obj),  EOC_TYPE_THUMB_NAV, EomThumbNavClass))
+#define EOC_THUMB_NAV_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS((obj),  EOC_TYPE_THUMB_NAV, EocThumbNavClass))
 
 typedef enum {
 	EOC_THUMB_NAV_MODE_ONE_ROW,
 	EOC_THUMB_NAV_MODE_ONE_COLUMN,
 	EOC_THUMB_NAV_MODE_MULTIPLE_ROWS,
 	EOC_THUMB_NAV_MODE_MULTIPLE_COLUMNS
-} EomThumbNavMode;
+} EocThumbNavMode;
 
-struct _EomThumbNav {
+struct _EocThumbNav {
 	GtkBox base_instance;
 
-	EomThumbNavPrivate *priv;
+	EocThumbNavPrivate *priv;
 };
 
-struct _EomThumbNavClass {
+struct _EocThumbNavClass {
 	GtkBoxClass parent_class;
 };
 
 GType	         eoc_thumb_nav_get_type          (void) G_GNUC_CONST;
 
 GtkWidget       *eoc_thumb_nav_new               (GtkWidget         *thumbview,
-						  EomThumbNavMode    mode,
+						  EocThumbNavMode    mode,
 	             			          gboolean           show_buttons);
 
-gboolean         eoc_thumb_nav_get_show_buttons  (EomThumbNav       *nav);
+gboolean         eoc_thumb_nav_get_show_buttons  (EocThumbNav       *nav);
 
-void             eoc_thumb_nav_set_show_buttons  (EomThumbNav       *nav,
+void             eoc_thumb_nav_set_show_buttons  (EocThumbNav       *nav,
                                                   gboolean           show_buttons);
 
-EomThumbNavMode  eoc_thumb_nav_get_mode          (EomThumbNav       *nav);
+EocThumbNavMode  eoc_thumb_nav_get_mode          (EocThumbNav       *nav);
 
-void             eoc_thumb_nav_set_mode          (EomThumbNav       *nav,
-                                                  EomThumbNavMode    mode);
+void             eoc_thumb_nav_set_mode          (EocThumbNav       *nav,
+                                                  EocThumbNavMode    mode);
 
 G_END_DECLS
 

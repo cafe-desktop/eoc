@@ -38,28 +38,28 @@ G_BEGIN_DECLS
 #define EOC_TYPE_STATUSBAR_DATE_PLUGIN \
 	(eoc_statusbar_date_plugin_get_type())
 #define EOC_STATUSBAR_DATE_PLUGIN(o) \
-	(G_TYPE_CHECK_INSTANCE_CAST((o), EOC_TYPE_STATUSBAR_DATE_PLUGIN, EomStatusbarDatePlugin))
+	(G_TYPE_CHECK_INSTANCE_CAST((o), EOC_TYPE_STATUSBAR_DATE_PLUGIN, EocStatusbarDatePlugin))
 #define EOC_STATUSBAR_DATE_PLUGIN_CLASS(k) \
-	G_TYPE_CHECK_CLASS_CAST((k), EOC_TYPE_STATUSBAR_DATE_PLUGIN, EomStatusbarDatePluginClass))
+	G_TYPE_CHECK_CLASS_CAST((k), EOC_TYPE_STATUSBAR_DATE_PLUGIN, EocStatusbarDatePluginClass))
 #define EOC_IS_STATUSBAR_DATE_PLUGIN(o) \
 	(G_TYPE_CHECK_INSTANCE_TYPE((o), EOC_TYPE_STATUSBAR_DATE_PLUGIN))
 #define EOC_IS_STATUSBAR_DATE_PLUGIN_CLASS(k) \
 	(G_TYPE_CHECK_CLASS_TYPE((k), EOC_TYPE_STATUSBAR_DATE_PLUGIN))
 #define EOC_STATUSBAR_DATE_PLUGIN_GET_CLASS(o) \
-	(G_TYPE_INSTANCE_GET_CLASS((o), EOC_TYPE_STATUSBAR_DATE_PLUGIN, EomStatusbarDatePluginClass))
+	(G_TYPE_INSTANCE_GET_CLASS((o), EOC_TYPE_STATUSBAR_DATE_PLUGIN, EocStatusbarDatePluginClass))
 
 /* Private structure type */
-typedef struct _EomStatusbarDatePluginPrivate EomStatusbarDatePluginPrivate;
+typedef struct _EocStatusbarDatePluginPrivate EocStatusbarDatePluginPrivate;
 
 /*
  * Main object structure
  */
-typedef struct _EomStatusbarDatePlugin EomStatusbarDatePlugin;
+typedef struct _EocStatusbarDatePlugin EocStatusbarDatePlugin;
 
-struct _EomStatusbarDatePlugin {
+struct _EocStatusbarDatePlugin {
 	PeasExtensionBase parent_instance;
 
-	EomWindow *window;
+	EocWindow *window;
 	GtkWidget *statusbar_date;
 	gulong signal_id;
 };
@@ -67,9 +67,9 @@ struct _EomStatusbarDatePlugin {
 /*
  * Class definition
  */
-typedef struct _EomStatusbarDatePluginClass	EomStatusbarDatePluginClass;
+typedef struct _EocStatusbarDatePluginClass	EocStatusbarDatePluginClass;
 
-struct _EomStatusbarDatePluginClass {
+struct _EocStatusbarDatePluginClass {
 	PeasExtensionBaseClass parent_class;
 };
 

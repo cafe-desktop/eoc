@@ -14,8 +14,8 @@
  * target is a jpeg image too).
  */
 G_GNUC_INTERNAL
-gboolean eoc_image_jpeg_save_file (EomImage *image, const char *file,
-				   EomImageSaveInfo *source, EomImageSaveInfo *target,
+gboolean eoc_image_jpeg_save_file (EocImage *image, const char *file,
+				   EocImageSaveInfo *source, EocImageSaveInfo *target,
 				   GError **error);
 #endif
 

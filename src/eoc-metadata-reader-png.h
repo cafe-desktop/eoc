@@ -4,7 +4,7 @@
  *
  * Author: Felix Riemann <friemann@svn.gnome.org>
  *
- * Based on the old EomMetadataReader code.
+ * Based on the old EocMetadataReader code.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -27,23 +27,23 @@
 G_BEGIN_DECLS
 
 #define EOC_TYPE_METADATA_READER_PNG		(eoc_metadata_reader_png_get_type ())
-#define EOC_METADATA_READER_PNG(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), EOC_TYPE_METADATA_READER_PNG, EomMetadataReaderPng))
-#define EOC_METADATA_READER_PNG_CLASS(k)	(G_TYPE_CHECK_CLASS_CAST((k), EOC_TYPE_METADATA_READER_PNG, EomMetadataReaderPngClass))
+#define EOC_METADATA_READER_PNG(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), EOC_TYPE_METADATA_READER_PNG, EocMetadataReaderPng))
+#define EOC_METADATA_READER_PNG_CLASS(k)	(G_TYPE_CHECK_CLASS_CAST((k), EOC_TYPE_METADATA_READER_PNG, EocMetadataReaderPngClass))
 #define EOC_IS_METADATA_READER_PNG(o)		(G_TYPE_CHECK_INSTANCE_TYPE ((o), EOC_TYPE_METADATA_READER_PNG))
 #define EOC_IS_METADATA_READER_PNG_CLASS(k)	(G_TYPE_CHECK_CLASS_TYPE ((k), EOC_TYPE_METADATA_READER_PNG))
-#define EOC_METADATA_READER_PNG_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), EOC_TYPE_METADATA_READER_PNG, EomMetadataReaderPngClass))
+#define EOC_METADATA_READER_PNG_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), EOC_TYPE_METADATA_READER_PNG, EocMetadataReaderPngClass))
 
-typedef struct _EomMetadataReaderPng EomMetadataReaderPng;
-typedef struct _EomMetadataReaderPngClass EomMetadataReaderPngClass;
-typedef struct _EomMetadataReaderPngPrivate EomMetadataReaderPngPrivate;
+typedef struct _EocMetadataReaderPng EocMetadataReaderPng;
+typedef struct _EocMetadataReaderPngClass EocMetadataReaderPngClass;
+typedef struct _EocMetadataReaderPngPrivate EocMetadataReaderPngPrivate;
 
-struct _EomMetadataReaderPng {
+struct _EocMetadataReaderPng {
 	GObject parent;
 
-	EomMetadataReaderPngPrivate *priv;
+	EocMetadataReaderPngPrivate *priv;
 };
 
-struct _EomMetadataReaderPngClass {
+struct _EocMetadataReaderPngClass {
 	GObjectClass parent_klass;
 };
 

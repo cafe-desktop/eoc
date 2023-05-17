@@ -45,8 +45,8 @@ enum
 	PROP_MODE
 };
 
-struct _EomThumbNavPrivate {
-	EomThumbNavMode   mode;
+struct _EocThumbNavPrivate {
+	EocThumbNavMode   mode;
 
 	gboolean          show_buttons;
 	gboolean          scroll_dir;
@@ -60,12 +60,12 @@ struct _EomThumbNavPrivate {
 	GtkAdjustment    *adj;
 };
 
-G_DEFINE_TYPE_WITH_PRIVATE (EomThumbNav, eoc_thumb_nav, GTK_TYPE_BOX);
+G_DEFINE_TYPE_WITH_PRIVATE (EocThumbNav, eoc_thumb_nav, GTK_TYPE_BOX);
 
 static gboolean
 eoc_thumb_nav_scroll_event (GtkWidget *widget, GdkEventScroll *event, gpointer user_data)
 {
-	EomThumbNav *nav = EOC_THUMB_NAV (user_data);
+	EocThumbNav *nav = EOC_THUMB_NAV (user_data);
 	gint inc = EOC_THUMB_NAV_SCROLL_INC * 3;
 
 	if (nav->priv->mode != EOC_THUMB_NAV_MODE_ONE_ROW)
@@ -114,8 +114,8 @@ eoc_thumb_nav_scroll_event (GtkWidget *widget, GdkEventScroll *event, gpointer u
 static void
 eoc_thumb_nav_adj_changed (GtkAdjustment *adj, gpointer user_data)
 {
-	EomThumbNav *nav;
-	EomThumbNavPrivate *priv;
+	EocThumbNav *nav;
+	EocThumbNavPrivate *priv;
 	gboolean ltr;
 
 	nav = EOC_THUMB_NAV (user_data);
@@ -131,8 +131,8 @@ eoc_thumb_nav_adj_changed (GtkAdjustment *adj, gpointer user_data)
 static void
 eoc_thumb_nav_adj_value_changed (GtkAdjustment *adj, gpointer user_data)
 {
-	EomThumbNav *nav;
-	EomThumbNavPrivate *priv;
+	EocThumbNav *nav;
+	EocThumbNavPrivate *priv;
 	gboolean ltr;
 
 	nav = EOC_THUMB_NAV (user_data);
@@ -151,7 +151,7 @@ eoc_thumb_nav_adj_value_changed (GtkAdjustment *adj, gpointer user_data)
 static gboolean
 eoc_thumb_nav_scroll_step (gpointer user_data)
 {
-	EomThumbNav *nav = EOC_THUMB_NAV (user_data);
+	EocThumbNav *nav = EOC_THUMB_NAV (user_data);
 	GtkAdjustment *adj = nav->priv->adj;
 	gint delta;
 
@@ -188,7 +188,7 @@ eoc_thumb_nav_scroll_step (gpointer user_data)
 }
 
 static void
-eoc_thumb_nav_button_clicked (GtkButton *button, EomThumbNav *nav)
+eoc_thumb_nav_button_clicked (GtkButton *button, EocThumbNav *nav)
 {
 	nav->priv->scroll_pos = 0;
 
@@ -200,7 +200,7 @@ eoc_thumb_nav_button_clicked (GtkButton *button, EomThumbNav *nav)
 }
 
 static void
-eoc_thumb_nav_start_scroll (GtkButton *button, EomThumbNav *nav)
+eoc_thumb_nav_start_scroll (GtkButton *button, EocThumbNav *nav)
 {
 	nav->priv->scroll_dir = gtk_widget_get_direction (GTK_WIDGET (button)) == GTK_TEXT_DIR_LTR ?
 		GTK_WIDGET (button) == nav->priv->button_right :
@@ -212,7 +212,7 @@ eoc_thumb_nav_start_scroll (GtkButton *button, EomThumbNav *nav)
 }
 
 static void
-eoc_thumb_nav_stop_scroll (GtkButton *button, EomThumbNav *nav)
+eoc_thumb_nav_stop_scroll (GtkButton *button, EocThumbNav *nav)
 {
 	if (nav->priv->scroll_id > 0) {
 		g_source_remove (nav->priv->scroll_id);
@@ -227,7 +227,7 @@ eoc_thumb_nav_get_property (GObject    *object,
 			    GValue     *value,
 			    GParamSpec *pspec)
 {
-	EomThumbNav *nav = EOC_THUMB_NAV (object);
+	EocThumbNav *nav = EOC_THUMB_NAV (object);
 
 	switch (property_id)
 	{
@@ -253,7 +253,7 @@ eoc_thumb_nav_set_property (GObject      *object,
 			    const GValue *value,
 			    GParamSpec   *pspec)
 {
-	EomThumbNav *nav = EOC_THUMB_NAV (object);
+	EocThumbNav *nav = EOC_THUMB_NAV (object);
 
 	switch (property_id)
 	{
@@ -280,7 +280,7 @@ eoc_thumb_nav_constructor (GType type,
 			   GObjectConstructParam *construct_params)
 {
 	GObject *object;
-	EomThumbNavPrivate *priv;
+	EocThumbNavPrivate *priv;
 
 	object = G_OBJECT_CLASS (eoc_thumb_nav_parent_class)->constructor
 			(type, n_construct_properties, construct_params);
@@ -296,7 +296,7 @@ eoc_thumb_nav_constructor (GType type,
 }
 
 static void
-eoc_thumb_nav_class_init (EomThumbNavClass *class)
+eoc_thumb_nav_class_init (EocThumbNavClass *class)
 {
 	GObjectClass *g_object_class = (GObjectClass *) class;
 
@@ -334,9 +334,9 @@ eoc_thumb_nav_class_init (EomThumbNavClass *class)
 }
 
 static void
-eoc_thumb_nav_init (EomThumbNav *nav)
+eoc_thumb_nav_init (EocThumbNav *nav)
 {
-	EomThumbNavPrivate *priv;
+	EocThumbNavPrivate *priv;
 	GtkWidget *arrow;
 
 	gtk_orientable_set_orientation (GTK_ORIENTABLE (nav),
@@ -436,17 +436,17 @@ eoc_thumb_nav_init (EomThumbNav *nav)
 
 /**
  * eoc_thumb_nav_new:
- * @thumbview: an #EomThumbView to embed in the navigation widget.
+ * @thumbview: an #EocThumbView to embed in the navigation widget.
  * @mode: The navigation mode.
  * @show_buttons: Whether to show the navigation buttons.
  *
  * Creates a new thumbnail navigation widget.
  *
- * Returns: a new #EomThumbNav object.
+ * Returns: a new #EocThumbNav object.
  **/
 GtkWidget *
 eoc_thumb_nav_new (GtkWidget       *thumbview,
-		   EomThumbNavMode  mode,
+		   EocThumbNavMode  mode,
 		   gboolean         show_buttons)
 {
 	GObject *nav;
@@ -464,7 +464,7 @@ eoc_thumb_nav_new (GtkWidget       *thumbview,
 
 /**
  * eoc_thumb_nav_get_show_buttons:
- * @nav: an #EomThumbNav.
+ * @nav: an #EocThumbNav.
  *
  * Gets whether the navigation buttons are visible.
  *
@@ -472,7 +472,7 @@ eoc_thumb_nav_new (GtkWidget       *thumbview,
  * %FALSE otherwise.
  **/
 gboolean
-eoc_thumb_nav_get_show_buttons (EomThumbNav *nav)
+eoc_thumb_nav_get_show_buttons (EocThumbNav *nav)
 {
 	g_return_val_if_fail (EOC_IS_THUMB_NAV (nav), FALSE);
 
@@ -481,14 +481,14 @@ eoc_thumb_nav_get_show_buttons (EomThumbNav *nav)
 
 /**
  * eoc_thumb_nav_set_show_buttons:
- * @nav: an #EomThumbNav.
+ * @nav: an #EocThumbNav.
  * @show_buttons: %TRUE to show the buttons, %FALSE to hide them.
  *
  * Sets whether the navigation buttons to the left and right of the
  * widget should be visible.
  **/
 void
-eoc_thumb_nav_set_show_buttons (EomThumbNav *nav, gboolean show_buttons)
+eoc_thumb_nav_set_show_buttons (EocThumbNav *nav, gboolean show_buttons)
 {
 	g_return_if_fail (EOC_IS_THUMB_NAV (nav));
 	g_return_if_fail (nav->priv->button_left  != NULL);
@@ -508,14 +508,14 @@ eoc_thumb_nav_set_show_buttons (EomThumbNav *nav, gboolean show_buttons)
 
 /**
  * eoc_thumb_nav_get_mode:
- * @nav: an #EomThumbNav.
+ * @nav: an #EocThumbNav.
  *
  * Gets the navigation mode in @nav.
  *
- * Returns: A value in #EomThumbNavMode.
+ * Returns: A value in #EocThumbNavMode.
  **/
-EomThumbNavMode
-eoc_thumb_nav_get_mode (EomThumbNav *nav)
+EocThumbNavMode
+eoc_thumb_nav_get_mode (EocThumbNav *nav)
 {
 	g_return_val_if_fail (EOC_IS_THUMB_NAV (nav), FALSE);
 
@@ -524,15 +524,15 @@ eoc_thumb_nav_get_mode (EomThumbNav *nav)
 
 /**
  * eoc_thumb_nav_set_mode:
- * @nav: An #EomThumbNav.
- * @mode: One of #EomThumbNavMode.
+ * @nav: An #EocThumbNav.
+ * @mode: One of #EocThumbNavMode.
  *
- * Sets the navigation mode in @nav. See #EomThumbNavMode for details.
+ * Sets the navigation mode in @nav. See #EocThumbNavMode for details.
  **/
 void
-eoc_thumb_nav_set_mode (EomThumbNav *nav, EomThumbNavMode mode)
+eoc_thumb_nav_set_mode (EocThumbNav *nav, EocThumbNavMode mode)
 {
-	EomThumbNavPrivate *priv;
+	EocThumbNavPrivate *priv;
 
 	g_return_if_fail (EOC_IS_THUMB_NAV (nav));
 

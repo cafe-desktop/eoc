@@ -24,7 +24,7 @@
   * thumbnail: Remove use of mate-desktop-thumbnail helper
   * Update copyright to 2020
   * enable wayland support
-  * EomPrintPreview: Fix preview thumbnail on HiDPI displays
+  * EocPrintPreview: Fix preview thumbnail on HiDPI displays
 
 ### eoc 1.23.1
 
@@ -47,10 +47,10 @@
   * egg-toolbar-editor: suppress GtkAction warnings
   * egg-editable-toolbar: suppress GtkAction warnings
   * Allow color correcting images with alpha channel
-  * EomMetadataReaderPng: Use built-in SRGB profile for matching cHRM/gAMA
-  * EomMetadataReaderPNG: Only build profile from cHRM if gAMA is present
+  * EocMetadataReaderPng: Use built-in SRGB profile for matching cHRM/gAMA
+  * EocMetadataReaderPNG: Only build profile from cHRM if gAMA is present
   * Assume sRGB if no display profile is set
-  * EomImage: Check GdkPixbuf for an ICC profile before falling back to sRGB
+  * EocImage: Check GdkPixbuf for an ICC profile before falling back to sRGB
   * Assume sRGB when image doesn't have an ICC profile attached
   * Remove trailing whitespaces
 
@@ -90,7 +90,7 @@
   * Update eoc_start_window.png
   * tx: add eoc help to transifex config
   * Reduce the number of g_file_query_info calls at start-up
-  * EomImage: Remove unused constructor
+  * EocImage: Remove unused constructor
   * fix a memory leak
 
 ### eoc 1.21.2
@@ -98,80 +98,80 @@
   * docs: remove eoc-dialog.xml reference to fix distcheck
   * Translations update
   * tx: update source file
-  * EomMetadataSidebar: Make header include guard actually work
-  * EomWindow: Switch keyboard shortcuts for sidebar and gallery
+  * EocMetadataSidebar: Make header include guard actually work
+  * EocWindow: Switch keyboard shortcuts for sidebar and gallery
   * Tweak sidebar ui
-  * EomPropertiesDialog: Use standard::display-name when showing the parent
-  * EomMetadataSidebar: Use standard::display-name when showing the parent
+  * EocPropertiesDialog: Use standard::display-name when showing the parent
+  * EocMetadataSidebar: Use standard::display-name when showing the parent
   * Fix GResource dependency calculation for out-of-tree builds
   * Make sure the libpeas-gtk dependency isn't optimized away
-  * Remove EomDialog helper class
-  * EomPreferencesDialog: Convert to GtkBuilder template
-  * EomThumbnail: Load thumbnail frame from a GResource
-  * Load EomMultipleSaveAsDialog from GResource
+  * Remove EocDialog helper class
+  * EocPreferencesDialog: Convert to GtkBuilder template
+  * EocThumbnail: Load thumbnail frame from a GResource
+  * Load EocMultipleSaveAsDialog from GResource
   * eoc-window: fix deprecated GtkStock usage
   * Fix build without XMP support
   * Load eoc-image-properties-dialog.ui with a gresource
   * properties-dialog: Port to gtk_show_uri_on_window
-  * EomPropertiesDialog: Convert to GtkBuilder template
-  * EomPropertiesDialog: Remove unused private members
+  * EocPropertiesDialog: Convert to GtkBuilder template
+  * EocPropertiesDialog: Remove unused private members
   * Fix metadata sidebar with libexif disabled
   * Fix API docs build without libexif
-  * EomMetadataSidebar: fix --without-libexif build
-  * EomMetadataSidebar: Clear folder label if no image is set
-  * EomSidebar: Increase margin at the sides of the sidebar
-  * EomSidebar: Center and reformat page selector
-  * EomMetadataSidebar: Fix leaked strings
+  * EocMetadataSidebar: fix --without-libexif build
+  * EocMetadataSidebar: Clear folder label if no image is set
+  * EocSidebar: Increase margin at the sides of the sidebar
+  * EocSidebar: Center and reformat page selector
+  * EocMetadataSidebar: Fix leaked strings
   * metadata-sidebar: add the details button again
   * EogMetadataSidebar: Try to unclutter and improve the sidebar's look
   * GResource: free css_file
   * Initial GResource migration
   * Starting with eoc.css and eoc-ui.xml
-  * EomExifUtil: Fix build with newer GCC
-  * EomExifUtil: Fix build with older GCCs
-  * EomExifUtil: Allow freeform formatting of date strings
-  * EomMetadataDetails: Improve fractional GPS coordinates support
-  * EomPropertiesDialog: Separate Exif/XMP-specific widgets from generic ones
-  * EomMetadataDetails: Don't install header file
-  * EomExifDetails: Rename to EomMetadataDetails
+  * EocExifUtil: Fix build with newer GCC
+  * EocExifUtil: Fix build with older GCCs
+  * EocExifUtil: Allow freeform formatting of date strings
+  * EocMetadataDetails: Improve fractional GPS coordinates support
+  * EocPropertiesDialog: Separate Exif/XMP-specific widgets from generic ones
+  * EocMetadataDetails: Don't install header file
+  * EocExifDetails: Rename to EocMetadataDetails
   * Drop eoc_close_confirmation_dialog_set_sensitive
   * scroll-view: Remove a gdk_window_process_updates call
   * util: Port to gtk_show_uri_on_window
-  * EomImage: Make sure to emit size-prepared after applying orientation
-  * EomImage: Fix too early size-prepared emission
-  * EomImage: Slight optimization of private data structure
+  * EocImage: Make sure to emit size-prepared after applying orientation
+  * EocImage: Fix too early size-prepared emission
+  * EocImage: Slight optimization of private data structure
   * drop forgotten gtkrc file
   * css: drop obsolete old css language
 
 ### eoc 1.21.1
 
-  * EomWindow: silence a introspection warning
+  * EocWindow: silence a introspection warning
   * Convert to G_DEFINE_TYPE_WITH_PRIVATE
-  * EomApplication: Make most members private
+  * EocApplication: Make most members private
   * Add new plugin hook for per-application plugins
-  * Make EomWindow a GtkApplicationWindow
+  * Make EocWindow a GtkApplicationWindow
   * sidebar: show complete directory in button tooltip
   * properties-dialog: show complete directory in button tooltip
   * Make the URI-label in the properties dialog a button showing the folder
   * exif-details: make value column selectable
-  * EomExifDetails: Take Exif IFD into account when creating hash keys
+  * EocExifDetails: Take Exif IFD into account when creating hash keys
   * Place GPS Exif tags into their own subcategory
   * Reformat Exif tags for GPS position to be better understandable
   * Make sure GPS Exif tags are named and ordered correctly
   * Use GdkPixbuf's "orientation" feature as fallback for autorotation
   * EogScrollView: Implement simple two-pass filtering
-  * EomScrollView: Use better downscaling filter
-  * Remove unneeded finalize() from EomListStore
-  * Update plugins to use EomWindowActivatable interface
-  * Add our own activatable interface to EomWindow
+  * EocScrollView: Use better downscaling filter
+  * Remove unneeded finalize() from EocListStore
+  * Update plugins to use EocWindowActivatable interface
+  * Add our own activatable interface to EocWindow
   * Replace gdk_spawn_command_line_on_screen()
   * sidebar: replace deprecated gtk_misc_set_alignment
-  * EomWindow: Simplify metadata sidebar title
-  * EomSidebar: Set orientation property via g_object_new
+  * EocWindow: Simplify metadata sidebar title
+  * EocSidebar: Set orientation property via g_object_new
   * Replace remaining uses of margin-left and margin-right properties
-  * EomMetadataSidebar: Allow filename to be wrapped at char boundaries
+  * EocMetadataSidebar: Allow filename to be wrapped at char boundaries
   * sidebar: fix a deprecation
-  * EomMetadataSidebar: Fix deprecation warning with newer GTK+
+  * EocMetadataSidebar: Fix deprecation warning with newer GTK+
   * MetadataSidebar: Add a tooltip to the folder button
   * MetadataSidebar: Change layout of the data values
   * Make metadata values in MetadataSidebar selectable
@@ -184,9 +184,9 @@
   * Remove leftover DBus service description file
   * Remove spurious g_object_unref
   * reload: ensure that pending updates to UI are complete
-  * Port EomApplication to GtkApplication
-  * Make the displayed EomImage a property of EomScrollView
-  * EomPropertiesDialog: Make details view expand vertically
+  * Port EocApplication to GtkApplication
+  * Make the displayed EocImage a property of EocScrollView
+  * EocPropertiesDialog: Make details view expand vertically
   * Enable more Drag&Drop actions when eoc is drag source
   * Use new DBus API to show the current image in the file browser
   * Add an "Open containing folder" command
@@ -227,33 +227,33 @@
 
 ### eoc 1.19.0
 
-  * EomThumbView: Replace deprecated gtk_menu_popup function
+  * EocThumbView: Replace deprecated gtk_menu_popup function
   * multiple-save-as-dialog.ui: avoid deprecated widgets
   * error-message: replace usage of GtkStock
   * A bunch of instrospection warning fixes
-  * EomScrollView: fix override_background deprecated call
-  * EomPropertiesDialog: Fix deprecation warnings
-  * EomThumbNav: Fix deprecated function warning
-  * EomScrollView: Replace deprecated gtk_menu_popup function
-  * EomScrollView: Switch from GtkDeviceManager to GdkSeat
+  * EocScrollView: fix override_background deprecated call
+  * EocPropertiesDialog: Fix deprecation warnings
+  * EocThumbNav: Fix deprecated function warning
+  * EocScrollView: Replace deprecated gtk_menu_popup function
+  * EocScrollView: Switch from GtkDeviceManager to GdkSeat
   * fix typo in function annotation
   * use different css files for < gtk+=3.20
   * Translations update
-  * EomWindow: Set file open dialog transient for its parent window
+  * EocWindow: Set file open dialog transient for its parent window
   * update copyright year to 2017
   * settings: use rgb color definition as defaults
   * UI: avoid using deprecaded widgets
-  * EomCloseConfirmationDialog: set max width chars for primary label
-  * EomCloseConfirmationDialog: Fix size request for the image list
+  * EocCloseConfirmationDialog: set max width chars for primary label
+  * EocCloseConfirmationDialog: Fix size request for the image list
   * Printing paper orientation should default based on image dimensions
   * Avoid recompressing JPEGs as PNG when printing
-  * EomFileChooser: Use MateThumbnailFactory to create preview image
-  * EomPropertiesDialog: Allow RGBA for transparent background color
+  * EocFileChooser: Use MateThumbnailFactory to create preview image
+  * EocPropertiesDialog: Allow RGBA for transparent background color
   * preferences-ui: drop usage of MateColorButton
-  * EomScrollView: Switch to GdkRGBA for background and transparent colors
-  * EomPrintPreview: Avoid unnecessary color parsing
+  * EocScrollView: Switch to GdkRGBA for background and transparent colors
+  * EocPrintPreview: Avoid unnecessary color parsing
   * Fix a few GtkStock deprecations
-  * EomCloseConfirmationDialog: replace deprecated GTK_STOCK_DIALOG_WARNING
+  * EocCloseConfirmationDialog: replace deprecated GTK_STOCK_DIALOG_WARNING
   * toolbar-editor: avoid deprecated GtkAlignment
   * Bring eoc-image.c's SVG handling up to date, properly recognize svgz filetypes
   * eoc_uri_converter: GList leak fix
@@ -331,8 +331,8 @@
 
 ### eoc 1.10.4
 
-  * EomScrollView: clip all types of images to the visible image area
-  * EomScrollView: enable double buffering
+  * EocScrollView: clip all types of images to the visible image area
+  * EocScrollView: enable double buffering
   * Bump GLib/GIO required version to 2.36
   * Drop useless dependency on mate-icon-theme
   * Fix build with libexif when prefix is not /usr

@@ -34,35 +34,35 @@ G_BEGIN_DECLS
 #define EOC_TYPE_WINDOW_ACTIVATABLE	(eoc_window_activatable_get_type ())
 #define EOC_WINDOW_ACTIVATABLE(obj) 	(G_TYPE_CHECK_INSTANCE_CAST ((obj), \
 					 EOC_TYPE_WINDOW_ACTIVATABLE, \
-					 EomWindowActivatable))
+					 EocWindowActivatable))
 #define EOC_WINDOW_ACTIVATABLE_IFACE(obj) \
 					(G_TYPE_CHECK_CLASS_CAST ((obj), \
 					 EOC_TYPE_WINDOW_ACTIVATABLE, \
-					 EomWindowActivatableInterface))
+					 EocWindowActivatableInterface))
 #define EOC_IS_WINDOW_ACTIVATABLE(obj)	(G_TYPE_CHECK_INSTANCE_TYPE ((obj), \
 					 EOC_TYPE_WINDOW_ACTIVATABLE))
 #define EOC_WINDOW_ACTIVATABLE_GET_IFACE(obj) \
 					(G_TYPE_INSTANCE_GET_INTERFACE ((obj), \
 					 EOC_TYPE_WINDOW_ACTIVATABLE, \
-					 EomWindowActivatableInterface))
+					 EocWindowActivatableInterface))
 
-typedef struct _EomWindowActivatable		EomWindowActivatable;
-typedef struct _EomWindowActivatableInterface	EomWindowActivatableInterface;
+typedef struct _EocWindowActivatable		EocWindowActivatable;
+typedef struct _EocWindowActivatableInterface	EocWindowActivatableInterface;
 
-struct _EomWindowActivatableInterface
+struct _EocWindowActivatableInterface
 {
 	GTypeInterface g_iface;
 
 	/* vfuncs */
 
-	void	(*activate)	(EomWindowActivatable *activatable);
-	void	(*deactivate)	(EomWindowActivatable *activatable);
+	void	(*activate)	(EocWindowActivatable *activatable);
+	void	(*deactivate)	(EocWindowActivatable *activatable);
 };
 
 GType	eoc_window_activatable_get_type	(void) G_GNUC_CONST;
 
-void	eoc_window_activatable_activate	    (EomWindowActivatable *activatable);
-void	eoc_window_activatable_deactivate   (EomWindowActivatable *activatable);
+void	eoc_window_activatable_activate	    (EocWindowActivatable *activatable);
+void	eoc_window_activatable_deactivate   (EocWindowActivatable *activatable);
 
 G_END_DECLS
 #endif /* __EOC_WINDOW_ACTIVATABLE_H__ */

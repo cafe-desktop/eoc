@@ -33,9 +33,9 @@ G_BEGIN_DECLS
 
 void     eoc_job_queue_init       (void);
 
-void     eoc_job_queue_add_job    (EomJob    *job);
+void     eoc_job_queue_add_job    (EocJob    *job);
 
-gboolean eoc_job_queue_remove_job (EomJob    *job);
+gboolean eoc_job_queue_remove_job (EocJob    *job);
 
 G_END_DECLS
 

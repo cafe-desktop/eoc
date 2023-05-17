@@ -50,10 +50,10 @@
 #define GPOINTER_TO_BOOLEAN(i) ((gboolean) ((GPOINTER_TO_INT (i) == 2) ? TRUE : FALSE))
 #endif
 
-typedef ExifData EomExifData;
+typedef ExifData EocExifData;
 
-/* Define EomExifData type */
-G_DEFINE_BOXED_TYPE(EomExifData, eoc_exif_data, eoc_exif_data_copy, eoc_exif_data_free)
+/* Define EocExifData type */
+G_DEFINE_BOXED_TYPE(EocExifData, eoc_exif_data, eoc_exif_data_copy, eoc_exif_data_free)
 
 #ifdef HAVE_STRPTIME
 static gpointer
@@ -197,7 +197,7 @@ eoc_exif_util_format_date (const gchar *date)
 
 void
 eoc_exif_util_set_label_text (GtkLabel *label,
-			      EomExifData *exif_data,
+			      EocExifData *exif_data,
 			      gint tag_id)
 {
 	gchar exif_buffer[512];
@@ -221,7 +221,7 @@ eoc_exif_util_set_label_text (GtkLabel *label,
 }
 
 void
-eoc_exif_util_format_datetime_label (GtkLabel *label, EomExifData *exif_data,
+eoc_exif_util_format_datetime_label (GtkLabel *label, EocExifData *exif_data,
                                      gint tag_id, const gchar *format)
 {
 	gchar exif_buffer[512];
@@ -249,7 +249,7 @@ eoc_exif_util_format_datetime_label (GtkLabel *label, EomExifData *exif_data,
 
 void
 eoc_exif_util_set_focal_length_label_text (GtkLabel *label,
-					   EomExifData *exif_data)
+					   EocExifData *exif_data)
 {
 	ExifEntry *entry = NULL, *entry35mm = NULL;
 	ExifByteOrder byte_order;
@@ -327,7 +327,7 @@ eoc_exif_util_set_focal_length_label_text (GtkLabel *label,
  * Returns: a pointer to @buffer.
  */
 const gchar *
-eoc_exif_data_get_value (EomExifData *exif_data, gint tag_id, gchar *buffer, guint buf_size)
+eoc_exif_data_get_value (EocExifData *exif_data, gint tag_id, gchar *buffer, guint buf_size)
 {
 	ExifEntry *exif_entry;
 	const gchar *exif_value;
@@ -341,8 +341,8 @@ eoc_exif_data_get_value (EomExifData *exif_data, gint tag_id, gchar *buffer, gui
 	return exif_value;
 }
 
-EomExifData *
-eoc_exif_data_copy (EomExifData *data)
+EocExifData *
+eoc_exif_data_copy (EocExifData *data)
 {
 	exif_data_ref (data);
 
@@ -350,7 +350,7 @@ eoc_exif_data_copy (EomExifData *data)
 }
 
 void
-eoc_exif_data_free (EomExifData *data)
+eoc_exif_data_free (EocExifData *data)
 {
 	exif_data_unref (data);
 }

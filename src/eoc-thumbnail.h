@@ -37,7 +37,7 @@ GdkPixbuf*    eoc_thumbnail_fit_to_size (GdkPixbuf *thumbnail,
 
 GdkPixbuf*    eoc_thumbnail_add_frame   (GdkPixbuf *thumbnail);
 
-GdkPixbuf*    eoc_thumbnail_load        (EomImage *image,
+GdkPixbuf*    eoc_thumbnail_load        (EocImage *image,
 					 GError **error);
 
 #define EOC_THUMBNAIL_ORIGINAL_WIDTH  "eoc-thumbnail-orig-width"

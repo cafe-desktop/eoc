@@ -32,31 +32,31 @@
 G_BEGIN_DECLS
 
 #define EOC_TYPE_CLIPBOARD_HANDLER          (eoc_clipboard_handler_get_type ())
-#define EOC_CLIPBOARD_HANDLER(o)            (G_TYPE_CHECK_INSTANCE_CAST ((o), EOC_TYPE_CLIPBOARD_HANDLER, EomClipboardHandler))
-#define EOC_CLIPBOARD_HANDLER_CLASS(k)      (G_TYPE_CHECK_CLASS_CAST((k), EOC_TYPE_CLIPBOARD_HANDLER, EomClipboardHandlerClass))
+#define EOC_CLIPBOARD_HANDLER(o)            (G_TYPE_CHECK_INSTANCE_CAST ((o), EOC_TYPE_CLIPBOARD_HANDLER, EocClipboardHandler))
+#define EOC_CLIPBOARD_HANDLER_CLASS(k)      (G_TYPE_CHECK_CLASS_CAST((k), EOC_TYPE_CLIPBOARD_HANDLER, EocClipboardHandlerClass))
 #define EOC_IS_CLIPBOARD_HANDLER(o)         (G_TYPE_CHECK_INSTANCE_TYPE ((o), EOC_TYPE_CLIPBOARD_HANDLER))
 #define EOC_IS_CLIPBOARD_HANDLER_CLASS(k)   (G_TYPE_CHECK_CLASS_TYPE ((k), EOC_TYPE_CLIPBOARD_HANDLER))
-#define EOC_CLIPBOARD_HANDLER_GET_CLASS(o)  (G_TYPE_INSTANCE_GET_CLASS ((o), EOC_TYPE_CLIPBOARD_HANDLER, EomClipboardHandlerClass))
+#define EOC_CLIPBOARD_HANDLER_GET_CLASS(o)  (G_TYPE_INSTANCE_GET_CLASS ((o), EOC_TYPE_CLIPBOARD_HANDLER, EocClipboardHandlerClass))
 
-typedef struct _EomClipboardHandler EomClipboardHandler;
-typedef struct _EomClipboardHandlerClass EomClipboardHandlerClass;
-typedef struct _EomClipboardHandlerPrivate EomClipboardHandlerPrivate;
+typedef struct _EocClipboardHandler EocClipboardHandler;
+typedef struct _EocClipboardHandlerClass EocClipboardHandlerClass;
+typedef struct _EocClipboardHandlerPrivate EocClipboardHandlerPrivate;
 
-struct _EomClipboardHandler {
+struct _EocClipboardHandler {
 	GObject parent;
 
-	EomClipboardHandlerPrivate *priv;
+	EocClipboardHandlerPrivate *priv;
 };
 
-struct _EomClipboardHandlerClass {
+struct _EocClipboardHandlerClass {
 	GObjectClass parent_klass;
 };
 
 GType eoc_clipboard_handler_get_type (void) G_GNUC_CONST;
 
-EomClipboardHandler* eoc_clipboard_handler_new (EomImage *img);
+EocClipboardHandler* eoc_clipboard_handler_new (EocImage *img);
 
-void eoc_clipboard_handler_copy_to_clipboard (EomClipboardHandler *handler,
+void eoc_clipboard_handler_copy_to_clipboard (EocClipboardHandler *handler,
 					      GtkClipboard *clipboard);
 
 G_END_DECLS

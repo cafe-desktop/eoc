@@ -36,7 +36,7 @@ static GQueue *save_queue = NULL;
 static GQueue *copy_queue = NULL;
 
 static gboolean
-remove_job_from_queue (GQueue *queue, EomJob *job)
+remove_job_from_queue (GQueue *queue, EocJob *job)
 {
 	GList *list;
 
@@ -53,7 +53,7 @@ remove_job_from_queue (GQueue *queue, EomJob *job)
 }
 
 static void
-add_job_to_queue_locked (GQueue *queue, EomJob  *job)
+add_job_to_queue_locked (GQueue *queue, EocJob  *job)
 {
 	g_object_ref (job);
 	g_queue_push_tail (queue, job);
@@ -69,7 +69,7 @@ notify_finished (GObject *job)
 }
 
 static void
-handle_job (EomJob *job)
+handle_job (EocJob *job)
 {
 	g_object_ref (G_OBJECT (job));
 
@@ -93,32 +93,32 @@ no_jobs_available_unlocked (void)
 		g_queue_is_empty (copy_queue);
 }
 
-static EomJob *
+static EocJob *
 search_for_jobs_unlocked (void)
 {
-	EomJob *job;
+	EocJob *job;
 
-	job = (EomJob *) g_queue_pop_head (load_queue);
+	job = (EocJob *) g_queue_pop_head (load_queue);
 	if (job)
 		return job;
 
-	job = (EomJob *) g_queue_pop_head (transform_queue);
+	job = (EocJob *) g_queue_pop_head (transform_queue);
 	if (job)
 		return job;
 
-	job = (EomJob *) g_queue_pop_head (thumbnail_queue);
+	job = (EocJob *) g_queue_pop_head (thumbnail_queue);
 	if (job)
 		return job;
 
-	job = (EomJob *) g_queue_pop_head (model_queue);
+	job = (EocJob *) g_queue_pop_head (model_queue);
 	if (job)
 		return job;
 
-	job = (EomJob *) g_queue_pop_head (save_queue);
+	job = (EocJob *) g_queue_pop_head (save_queue);
 	if (job)
 		return job;
 
-	job = (EomJob *) g_queue_pop_head (copy_queue);
+	job = (EocJob *) g_queue_pop_head (copy_queue);
 	if (job)
 		return job;
 
@@ -129,7 +129,7 @@ static gpointer
 eoc_render_thread (gpointer data)
 {
 	while (TRUE) {
-		EomJob *job;
+		EocJob *job;
 
 		g_mutex_lock (&eoc_queue_mutex);
 
@@ -164,11 +164,11 @@ eoc_job_queue_init (void)
 	save_queue = g_queue_new ();
 	copy_queue = g_queue_new ();
 
-	g_thread_new ("EomJobQueue", eoc_render_thread, NULL);
+	g_thread_new ("EocJobQueue", eoc_render_thread, NULL);
 }
 
 static GQueue *
-find_queue (EomJob *job)
+find_queue (EocJob *job)
 {
 	if (EOC_IS_JOB_THUMBNAIL (job)) {
 		return thumbnail_queue;
@@ -190,7 +190,7 @@ find_queue (EomJob *job)
 }
 
 void
-eoc_job_queue_add_job (EomJob *job)
+eoc_job_queue_add_job (EocJob *job)
 {
 	GQueue *queue;
 
@@ -206,7 +206,7 @@ eoc_job_queue_add_job (EomJob *job)
 }
 
 gboolean
-eoc_job_queue_remove_job (EomJob *job)
+eoc_job_queue_remove_job (EocJob *job)
 {
 	gboolean retval = FALSE;
 

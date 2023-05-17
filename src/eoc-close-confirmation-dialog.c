@@ -57,7 +57,7 @@ enum
 	N_COLUMNS
 };
 
-struct _EomCloseConfirmationDialogPrivate
+struct _EocCloseConfirmationDialogPrivate
 {
 	GList       *unsaved_images;
 
@@ -73,9 +73,9 @@ struct _EomCloseConfirmationDialogPrivate
 
 #define IMAGE_COLUMN_HEIGHT 40
 
-G_DEFINE_TYPE_WITH_PRIVATE (EomCloseConfirmationDialog, eoc_close_confirmation_dialog, GTK_TYPE_DIALOG)
+G_DEFINE_TYPE_WITH_PRIVATE (EocCloseConfirmationDialog, eoc_close_confirmation_dialog, GTK_TYPE_DIALOG)
 
-static void 	 set_unsaved_image 		(EomCloseConfirmationDialog *dlg,
+static void 	 set_unsaved_image 		(EocCloseConfirmationDialog *dlg,
 						 const GList                  *list);
 
 static GList 	*get_selected_imgs 		(GtkTreeModel                 *store);
@@ -115,11 +115,11 @@ get_nothumb_pixbuf (void)
  *  before the user ones
  */
 static void
-response_cb (EomCloseConfirmationDialog *dlg,
+response_cb (EocCloseConfirmationDialog *dlg,
              gint                        response_id,
              gpointer                    data)
 {
-	EomCloseConfirmationDialogPrivate *priv;
+	EocCloseConfirmationDialogPrivate *priv;
 
 	g_return_if_fail (EOC_IS_CLOSE_CONFIRMATION_DIALOG (dlg));
 
@@ -148,7 +148,7 @@ response_cb (EomCloseConfirmationDialog *dlg,
 }
 
 static void
-add_buttons (EomCloseConfirmationDialog *dlg)
+add_buttons (EocCloseConfirmationDialog *dlg)
 {
 	gtk_dialog_add_button (GTK_DIALOG (dlg),
 			       _("Close _without Saving"),
@@ -166,7 +166,7 @@ add_buttons (EomCloseConfirmationDialog *dlg)
 }
 
 static void
-eoc_close_confirmation_dialog_init (EomCloseConfirmationDialog *dlg)
+eoc_close_confirmation_dialog_init (EocCloseConfirmationDialog *dlg)
 {
 	AtkObject *atk_obj;
 
@@ -195,7 +195,7 @@ eoc_close_confirmation_dialog_init (EomCloseConfirmationDialog *dlg)
 static void
 eoc_close_confirmation_dialog_finalize (GObject *object)
 {
-	EomCloseConfirmationDialogPrivate *priv;
+	EocCloseConfirmationDialogPrivate *priv;
 
 	priv = EOC_CLOSE_CONFIRMATION_DIALOG (object)->priv;
 
@@ -215,7 +215,7 @@ eoc_close_confirmation_dialog_set_property (GObject      *object,
 					      const GValue *value,
 					      GParamSpec   *pspec)
 {
-	EomCloseConfirmationDialog *dlg;
+	EocCloseConfirmationDialog *dlg;
 
 	dlg = EOC_CLOSE_CONFIRMATION_DIALOG (object);
 
@@ -237,7 +237,7 @@ eoc_close_confirmation_dialog_get_property (GObject    *object,
 					      GValue     *value,
 					      GParamSpec *pspec)
 {
-	EomCloseConfirmationDialogPrivate *priv;
+	EocCloseConfirmationDialogPrivate *priv;
 
 	priv = EOC_CLOSE_CONFIRMATION_DIALOG (object)->priv;
 
@@ -254,7 +254,7 @@ eoc_close_confirmation_dialog_get_property (GObject    *object,
 }
 
 static void
-eoc_close_confirmation_dialog_class_init (EomCloseConfirmationDialogClass *klass)
+eoc_close_confirmation_dialog_class_init (EocCloseConfirmationDialogClass *klass)
 {
 	GObjectClass *gobject_class = G_OBJECT_CLASS (klass);
 
@@ -284,7 +284,7 @@ get_selected_imgs (GtkTreeModel *store)
 	while (valid)
 	{
 		gboolean to_save;
-		EomImage *img;
+		EocImage *img;
 
 		gtk_tree_model_get (store, &iter,
 				    SAVE_COLUMN, &to_save,
@@ -302,7 +302,7 @@ get_selected_imgs (GtkTreeModel *store)
 }
 
 GList *
-eoc_close_confirmation_dialog_get_selected_images (EomCloseConfirmationDialog *dlg)
+eoc_close_confirmation_dialog_get_selected_images (EocCloseConfirmationDialog *dlg)
 {
 	g_return_val_if_fail (EOC_IS_CLOSE_CONFIRMATION_DIALOG (dlg), NULL);
 
@@ -342,7 +342,7 @@ eoc_close_confirmation_dialog_new (GtkWindow *parent,
 
 GtkWidget *
 eoc_close_confirmation_dialog_new_single (GtkWindow     *parent,
-					  EomImage	*image)
+					  EocImage	*image)
 {
 	GtkWidget *dlg;
 	GList *unsaved_images;
@@ -359,7 +359,7 @@ eoc_close_confirmation_dialog_new_single (GtkWindow     *parent,
 }
 
 static gchar *
-get_text_secondary_label (EomImage *image)
+get_text_secondary_label (EocImage *image)
 {
 	gchar *secondary_msg;
 
@@ -369,14 +369,14 @@ get_text_secondary_label (EomImage *image)
 }
 
 static void
-build_single_img_dialog (EomCloseConfirmationDialog *dlg)
+build_single_img_dialog (EocCloseConfirmationDialog *dlg)
 {
 	GtkWidget     *hbox;
 	GtkWidget     *vbox;
 	GtkWidget     *primary_label;
 	GtkWidget     *secondary_label;
 	GtkWidget     *image;
-	EomImage      *img;
+	EocImage      *img;
 	const gchar   *image_name;
 	gchar         *str;
 	gchar         *markup_str;
@@ -447,7 +447,7 @@ populate_model (GtkTreeModel *store, GList *imgs)
 
 	while (imgs != NULL)
 	{
-		EomImage *img;
+		EocImage *img;
 		const gchar *name;
 		GdkPixbuf *buf = NULL;
 		GdkPixbuf *buf_scaled = NULL;
@@ -498,7 +498,7 @@ save_toggled (GtkCellRendererToggle *renderer, gchar *path_str, GtkTreeModel *st
 }
 
 static GtkWidget *
-create_treeview (EomCloseConfirmationDialogPrivate *priv)
+create_treeview (EocCloseConfirmationDialogPrivate *priv)
 {
 	GtkListStore *store;
 	GtkWidget *treeview;
@@ -554,9 +554,9 @@ create_treeview (EomCloseConfirmationDialogPrivate *priv)
 }
 
 static void
-build_multiple_imgs_dialog (EomCloseConfirmationDialog *dlg)
+build_multiple_imgs_dialog (EocCloseConfirmationDialog *dlg)
 {
-	EomCloseConfirmationDialogPrivate *priv;
+	EocCloseConfirmationDialogPrivate *priv;
 	GtkWidget *hbox;
 	GtkWidget *image;
 	GtkWidget *vbox;
@@ -646,10 +646,10 @@ build_multiple_imgs_dialog (EomCloseConfirmationDialog *dlg)
 }
 
 static void
-set_unsaved_image (EomCloseConfirmationDialog *dlg,
+set_unsaved_image (EocCloseConfirmationDialog *dlg,
 		   const GList                *list)
 {
-	EomCloseConfirmationDialogPrivate *priv;
+	EocCloseConfirmationDialogPrivate *priv;
 
 	g_return_if_fail (list != NULL);
 
@@ -669,7 +669,7 @@ set_unsaved_image (EomCloseConfirmationDialog *dlg,
 }
 
 const GList *
-eoc_close_confirmation_dialog_get_unsaved_images (EomCloseConfirmationDialog *dlg)
+eoc_close_confirmation_dialog_get_unsaved_images (EocCloseConfirmationDialog *dlg)
 {
 	g_return_val_if_fail (EOC_IS_CLOSE_CONFIRMATION_DIALOG (dlg), NULL);
 

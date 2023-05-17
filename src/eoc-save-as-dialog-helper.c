@@ -19,7 +19,7 @@ typedef struct {
 
 	guint      idle_id;
 	gint       n_images;
-	EomImage  *image;
+	EocImage  *image;
 	gint       nth_image;
 } SaveAsData;
 
@@ -258,10 +258,10 @@ eoc_save_as_dialog_new (GtkWindow *main, GList *images, GFile *base_file)
 	return dlg;
 }
 
-EomURIConverter*
+EocURIConverter*
 eoc_save_as_dialog_get_converter (GtkWidget *dlg)
 {
-	EomURIConverter *conv;
+	EocURIConverter *conv;
 
 	SaveAsData *data;
 	const char *format_str;

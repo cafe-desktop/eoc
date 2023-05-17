@@ -9,20 +9,20 @@ G_BEGIN_DECLS
 
 #ifndef __EOC_IMAGE_DECLR__
 #define __EOC_IMAGE_DECLR__
-typedef struct _EomImage EomImage;
+typedef struct _EocImage EocImage;
 #endif
 
 #define EOC_TYPE_IMAGE_SAVE_INFO            (eoc_image_save_info_get_type ())
-#define EOC_IMAGE_SAVE_INFO(o)         (G_TYPE_CHECK_INSTANCE_CAST ((o), EOC_TYPE_IMAGE_SAVE_INFO, EomImageSaveInfo))
-#define EOC_IMAGE_SAVE_INFO_CLASS(k)   (G_TYPE_CHECK_CLASS_CAST((k), EOC_TYPE_IMAGE_SAVE_INFO, EomImageSaveInfoClass))
+#define EOC_IMAGE_SAVE_INFO(o)         (G_TYPE_CHECK_INSTANCE_CAST ((o), EOC_TYPE_IMAGE_SAVE_INFO, EocImageSaveInfo))
+#define EOC_IMAGE_SAVE_INFO_CLASS(k)   (G_TYPE_CHECK_CLASS_CAST((k), EOC_TYPE_IMAGE_SAVE_INFO, EocImageSaveInfoClass))
 #define EOC_IS_IMAGE_SAVE_INFO(o)         (G_TYPE_CHECK_INSTANCE_TYPE ((o), EOC_TYPE_IMAGE_SAVE_INFO))
 #define EOC_IS_IMAGE_SAVE_INFO_CLASS(k)   (G_TYPE_CHECK_CLASS_TYPE ((k), EOC_TYPE_IMAGE_SAVE_INFO))
-#define EOC_IMAGE_SAVE_INFO_GET_CLASS(o)  (G_TYPE_INSTANCE_GET_CLASS ((o), EOC_TYPE_IMAGE_SAVE_INFO, EomImageSaveInfoClass))
+#define EOC_IMAGE_SAVE_INFO_GET_CLASS(o)  (G_TYPE_INSTANCE_GET_CLASS ((o), EOC_TYPE_IMAGE_SAVE_INFO, EocImageSaveInfoClass))
 
-typedef struct _EomImageSaveInfo EomImageSaveInfo;
-typedef struct _EomImageSaveInfoClass EomImageSaveInfoClass;
+typedef struct _EocImageSaveInfo EocImageSaveInfo;
+typedef struct _EocImageSaveInfoClass EocImageSaveInfoClass;
 
-struct _EomImageSaveInfo {
+struct _EocImageSaveInfo {
 	GObject parent;
 
 	GFile       *file;
@@ -36,7 +36,7 @@ struct _EomImageSaveInfo {
 	float        jpeg_quality; /* valid range: [0.0 ... 1.0] */
 };
 
-struct _EomImageSaveInfoClass {
+struct _EocImageSaveInfoClass {
 	GObjectClass parent_klass;
 };
 
@@ -44,12 +44,12 @@ struct _EomImageSaveInfoClass {
 
 GType             eoc_image_save_info_get_type         (void) G_GNUC_CONST;
 
-EomImageSaveInfo *eoc_image_save_info_new_from_image   (EomImage        *image);
+EocImageSaveInfo *eoc_image_save_info_new_from_image   (EocImage        *image);
 
-EomImageSaveInfo *eoc_image_save_info_new_from_uri     (const char      *uri,
+EocImageSaveInfo *eoc_image_save_info_new_from_uri     (const char      *uri,
 						       GdkPixbufFormat  *format);
 
-EomImageSaveInfo *eoc_image_save_info_new_from_file    (GFile           *file,
+EocImageSaveInfo *eoc_image_save_info_new_from_file    (GFile           *file,
 						       GdkPixbufFormat  *format);
 
 G_END_DECLS

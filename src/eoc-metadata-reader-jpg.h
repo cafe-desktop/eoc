@@ -4,7 +4,7 @@
  *
  * Author: Felix Riemann <friemann@svn.gnome.org>
  *
- * Based on the original EomMetadataReader code.
+ * Based on the original EocMetadataReader code.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -27,23 +27,23 @@
 G_BEGIN_DECLS
 
 #define EOC_TYPE_METADATA_READER_JPG		(eoc_metadata_reader_jpg_get_type ())
-#define EOC_METADATA_READER_JPG(o)         	(G_TYPE_CHECK_INSTANCE_CAST ((o),EOC_TYPE_METADATA_READER_JPG, EomMetadataReaderJpg))
-#define EOC_METADATA_READER_JPG_CLASS(k)   	(G_TYPE_CHECK_CLASS_CAST((k), EOC_TYPE_METADATA_READER_JPG, EomMetadataReaderJpgClass))
+#define EOC_METADATA_READER_JPG(o)         	(G_TYPE_CHECK_INSTANCE_CAST ((o),EOC_TYPE_METADATA_READER_JPG, EocMetadataReaderJpg))
+#define EOC_METADATA_READER_JPG_CLASS(k)   	(G_TYPE_CHECK_CLASS_CAST((k), EOC_TYPE_METADATA_READER_JPG, EocMetadataReaderJpgClass))
 #define EOC_IS_METADATA_READER_JPG(o)      	(G_TYPE_CHECK_INSTANCE_TYPE ((o), EOC_TYPE_METADATA_READER_JPG))
 #define EOC_IS_METADATA_READER_JPG_CLASS(k)   	(G_TYPE_CHECK_CLASS_TYPE ((k), EOC_TYPE_METADATA_READER_JPG))
-#define EOC_METADATA_READER_JPG_GET_CLASS(o)  	(G_TYPE_INSTANCE_GET_CLASS ((o), EOC_TYPE_METADATA_READER_JPG, EomMetadataReaderJpgClass))
+#define EOC_METADATA_READER_JPG_GET_CLASS(o)  	(G_TYPE_INSTANCE_GET_CLASS ((o), EOC_TYPE_METADATA_READER_JPG, EocMetadataReaderJpgClass))
 
-typedef struct _EomMetadataReaderJpg EomMetadataReaderJpg;
-typedef struct _EomMetadataReaderJpgClass EomMetadataReaderJpgClass;
-typedef struct _EomMetadataReaderJpgPrivate EomMetadataReaderJpgPrivate;
+typedef struct _EocMetadataReaderJpg EocMetadataReaderJpg;
+typedef struct _EocMetadataReaderJpgClass EocMetadataReaderJpgClass;
+typedef struct _EocMetadataReaderJpgPrivate EocMetadataReaderJpgPrivate;
 
-struct _EomMetadataReaderJpg {
+struct _EocMetadataReaderJpg {
 	GObject parent;
 
-	EomMetadataReaderJpgPrivate *priv;
+	EocMetadataReaderJpgPrivate *priv;
 };
 
-struct _EomMetadataReaderJpgClass {
+struct _EocMetadataReaderJpgClass {
 	GObjectClass parent_klass;
 };
 

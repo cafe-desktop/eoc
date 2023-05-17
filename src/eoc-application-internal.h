@@ -37,22 +37,22 @@
 
 G_BEGIN_DECLS
 
-struct _EomApplicationPrivate {
+struct _EocApplicationPrivate {
 	EggToolbarsModel *toolbars_model;
 	gchar            *toolbars_file;
-	EomPluginEngine  *plugin_engine;
+	EocPluginEngine  *plugin_engine;
 
-	EomStartupFlags   flags;
+	EocStartupFlags   flags;
 
 	PeasExtensionSet *extensions;
 };
 
 
-EggToolbarsModel *eoc_application_get_toolbars_model  (EomApplication *application);
+EggToolbarsModel *eoc_application_get_toolbars_model  (EocApplication *application);
 
-void              eoc_application_save_toolbars_model (EomApplication *application);
+void              eoc_application_save_toolbars_model (EocApplication *application);
 
-void              eoc_application_reset_toolbars_model (EomApplication *app);
+void              eoc_application_reset_toolbars_model (EocApplication *app);
 
 G_END_DECLS
 

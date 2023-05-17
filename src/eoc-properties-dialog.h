@@ -31,48 +31,48 @@
 
 G_BEGIN_DECLS
 
-typedef struct _EomPropertiesDialog EomPropertiesDialog;
-typedef struct _EomPropertiesDialogClass EomPropertiesDialogClass;
-typedef struct _EomPropertiesDialogPrivate EomPropertiesDialogPrivate;
+typedef struct _EocPropertiesDialog EocPropertiesDialog;
+typedef struct _EocPropertiesDialogClass EocPropertiesDialogClass;
+typedef struct _EocPropertiesDialogPrivate EocPropertiesDialogPrivate;
 
 #define EOC_TYPE_PROPERTIES_DIALOG            (eoc_properties_dialog_get_type ())
-#define EOC_PROPERTIES_DIALOG(obj)            (G_TYPE_CHECK_INSTANCE_CAST((obj), EOC_TYPE_PROPERTIES_DIALOG, EomPropertiesDialog))
-#define EOC_PROPERTIES_DIALOG_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST((klass),  EOC_TYPE_PROPERTIES_DIALOG, EomPropertiesDialogClass))
+#define EOC_PROPERTIES_DIALOG(obj)            (G_TYPE_CHECK_INSTANCE_CAST((obj), EOC_TYPE_PROPERTIES_DIALOG, EocPropertiesDialog))
+#define EOC_PROPERTIES_DIALOG_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST((klass),  EOC_TYPE_PROPERTIES_DIALOG, EocPropertiesDialogClass))
 #define EOC_IS_PROPERTIES_DIALOG(obj)         (G_TYPE_CHECK_INSTANCE_TYPE((obj), EOC_TYPE_PROPERTIES_DIALOG))
 #define EOC_IS_PROPERTIES_DIALOG_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE((klass),  EOC_TYPE_PROPERTIES_DIALOG))
-#define EOC_PROPERTIES_DIALOG_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS((obj),  EOC_TYPE_PROPERTIES_DIALOG, EomPropertiesDialogClass))
+#define EOC_PROPERTIES_DIALOG_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS((obj),  EOC_TYPE_PROPERTIES_DIALOG, EocPropertiesDialogClass))
 
 typedef enum {
 	EOC_PROPERTIES_DIALOG_PAGE_GENERAL = 0,
 	EOC_PROPERTIES_DIALOG_PAGE_EXIF,
 	EOC_PROPERTIES_DIALOG_PAGE_DETAILS,
 	EOC_PROPERTIES_DIALOG_N_PAGES
-} EomPropertiesDialogPage;
+} EocPropertiesDialogPage;
 
-struct _EomPropertiesDialog {
+struct _EocPropertiesDialog {
 	GtkDialog dialog;
 
-	EomPropertiesDialogPrivate *priv;
+	EocPropertiesDialogPrivate *priv;
 };
 
-struct _EomPropertiesDialogClass {
+struct _EocPropertiesDialogClass {
 	GtkDialogClass parent_class;
 };
 
 GType	    eoc_properties_dialog_get_type	(void) G_GNUC_CONST;
 
 GtkWidget   *eoc_properties_dialog_new	  	(GtkWindow               *parent,
-                                             EomThumbView            *thumbview,
+                                             EocThumbView            *thumbview,
                                              GtkAction               *next_image_action,
                                              GtkAction               *previous_image_action);
 
-void	    eoc_properties_dialog_update  	(EomPropertiesDialog     *prop,
-						 EomImage                *image);
+void	    eoc_properties_dialog_update  	(EocPropertiesDialog     *prop,
+						 EocImage                *image);
 
-void	    eoc_properties_dialog_set_page  	(EomPropertiesDialog     *prop,
-						 EomPropertiesDialogPage  page);
+void	    eoc_properties_dialog_set_page  	(EocPropertiesDialog     *prop,
+						 EocPropertiesDialogPage  page);
 
-void	    eoc_properties_dialog_set_netbook_mode (EomPropertiesDialog *dlg,
+void	    eoc_properties_dialog_set_netbook_mode (EocPropertiesDialog *dlg,
 						    gboolean enable);
 G_END_DECLS
 

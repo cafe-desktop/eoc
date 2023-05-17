@@ -54,7 +54,7 @@ enum {
 
 static guint signals[SIGNAL_LAST] = { 0 };
 
-struct _EomSidebarPrivate {
+struct _EocSidebarPrivate {
 	GtkWidget *notebook;
 	GtkWidget *select_button;
 	GtkWidget *menu;
@@ -65,12 +65,12 @@ struct _EomSidebarPrivate {
 	GtkTreeModel *page_model;
 };
 
-G_DEFINE_TYPE_WITH_PRIVATE (EomSidebar, eoc_sidebar, GTK_TYPE_BOX)
+G_DEFINE_TYPE_WITH_PRIVATE (EocSidebar, eoc_sidebar, GTK_TYPE_BOX)
 
 static void
 eoc_sidebar_destroy (GtkWidget *object)
 {
-	EomSidebar *eoc_sidebar = EOC_SIDEBAR (object);
+	EocSidebar *eoc_sidebar = EOC_SIDEBAR (object);
 
 	if (eoc_sidebar->priv->menu) {
 		gtk_menu_detach (GTK_MENU (eoc_sidebar->priv->menu));
@@ -86,7 +86,7 @@ eoc_sidebar_destroy (GtkWidget *object)
 }
 
 static void
-eoc_sidebar_select_page (EomSidebar *eoc_sidebar, GtkTreeIter *iter)
+eoc_sidebar_select_page (EocSidebar *eoc_sidebar, GtkTreeIter *iter)
 {
 	gchar *title;
 	gint index;
@@ -103,7 +103,7 @@ eoc_sidebar_select_page (EomSidebar *eoc_sidebar, GtkTreeIter *iter)
 }
 
 void
-eoc_sidebar_set_page (EomSidebar   *eoc_sidebar,
+eoc_sidebar_set_page (EocSidebar   *eoc_sidebar,
 		     GtkWidget   *main_widget)
 {
 	GtkTreeIter iter;
@@ -132,7 +132,7 @@ eoc_sidebar_set_page (EomSidebar   *eoc_sidebar,
 }
 
 static GtkWidget *
-eoc_sidebar_get_current_page (EomSidebar *sidebar)
+eoc_sidebar_get_current_page (EocSidebar *sidebar)
 {
 	GtkNotebook *notebook = GTK_NOTEBOOK (sidebar->priv->notebook);
 
@@ -146,7 +146,7 @@ eoc_sidebar_set_property (GObject     *object,
 		         const GValue *value,
 		         GParamSpec   *pspec)
 {
-	EomSidebar *sidebar = EOC_SIDEBAR (object);
+	EocSidebar *sidebar = EOC_SIDEBAR (object);
 
 	switch (prop_id) {
 	case PROP_CURRENT_PAGE:
@@ -163,7 +163,7 @@ eoc_sidebar_get_property (GObject    *object,
 		          GValue     *value,
 		          GParamSpec *pspec)
 {
-	EomSidebar *sidebar = EOC_SIDEBAR (object);
+	EocSidebar *sidebar = EOC_SIDEBAR (object);
 
 	switch (prop_id) {
 	case PROP_CURRENT_PAGE:
@@ -175,7 +175,7 @@ eoc_sidebar_get_property (GObject    *object,
 }
 
 static void
-eoc_sidebar_class_init (EomSidebarClass *eoc_sidebar_class)
+eoc_sidebar_class_init (EocSidebarClass *eoc_sidebar_class)
 {
 	GObjectClass *g_object_class;
 	GtkWidgetClass *widget_class;
@@ -199,7 +199,7 @@ eoc_sidebar_class_init (EomSidebarClass *eoc_sidebar_class)
 		g_signal_new ("page-added",
 			      EOC_TYPE_SIDEBAR,
 			      G_SIGNAL_RUN_FIRST,
-			      G_STRUCT_OFFSET (EomSidebarClass, page_added),
+			      G_STRUCT_OFFSET (EocSidebarClass, page_added),
 			      NULL, NULL,
 			      g_cclosure_marshal_VOID__OBJECT,
 			      G_TYPE_NONE,
@@ -210,7 +210,7 @@ eoc_sidebar_class_init (EomSidebarClass *eoc_sidebar_class)
 		g_signal_new ("page-removed",
 			      EOC_TYPE_SIDEBAR,
 			      G_SIGNAL_RUN_FIRST,
-			      G_STRUCT_OFFSET (EomSidebarClass, page_removed),
+			      G_STRUCT_OFFSET (EocSidebarClass, page_removed),
 			      NULL, NULL,
 			      g_cclosure_marshal_VOID__OBJECT,
 			      G_TYPE_NONE,
@@ -223,7 +223,7 @@ eoc_sidebar_select_button_press_cb (GtkWidget      *widget,
 				    GdkEventButton *event,
 				    gpointer        user_data)
 {
-	EomSidebar *eoc_sidebar = EOC_SIDEBAR (user_data);
+	EocSidebar *eoc_sidebar = EOC_SIDEBAR (user_data);
 
 	if (event->button == 1) {
 		GtkRequisition requisition;
@@ -258,7 +258,7 @@ eoc_sidebar_select_button_key_press_cb (GtkWidget   *widget,
 				        GdkEventKey *event,
 				        gpointer     user_data)
 {
-	EomSidebar *eoc_sidebar = EOC_SIDEBAR (user_data);
+	EocSidebar *eoc_sidebar = EOC_SIDEBAR (user_data);
 
 	if (event->keyval == GDK_KEY_space ||
 	    event->keyval == GDK_KEY_KP_Space ||
@@ -282,7 +282,7 @@ static void
 eoc_sidebar_close_clicked_cb (GtkWidget *widget,
  			      gpointer   user_data)
 {
-	EomSidebar *eoc_sidebar = EOC_SIDEBAR (user_data);
+	EocSidebar *eoc_sidebar = EOC_SIDEBAR (user_data);
 
 	gtk_widget_hide (GTK_WIDGET (eoc_sidebar));
 }
@@ -302,7 +302,7 @@ static void
 eoc_sidebar_menu_detach_cb (GtkWidget *widget,
 			   GtkMenu   *menu)
 {
-	EomSidebar *eoc_sidebar = EOC_SIDEBAR (widget);
+	EocSidebar *eoc_sidebar = EOC_SIDEBAR (widget);
 
 	eoc_sidebar->priv->menu = NULL;
 }
@@ -311,7 +311,7 @@ static void
 eoc_sidebar_menu_item_activate_cb (GtkWidget *widget,
 				   gpointer   user_data)
 {
-	EomSidebar *eoc_sidebar = EOC_SIDEBAR (user_data);
+	EocSidebar *eoc_sidebar = EOC_SIDEBAR (user_data);
 	GtkTreeIter iter;
 	GtkWidget *menu_item, *item;
 	gboolean valid;
@@ -338,9 +338,9 @@ eoc_sidebar_menu_item_activate_cb (GtkWidget *widget,
 }
 
 static void
-eoc_sidebar_update_arrow_visibility (EomSidebar *sidebar)
+eoc_sidebar_update_arrow_visibility (EocSidebar *sidebar)
 {
-	EomSidebarPrivate *priv = sidebar->priv;
+	EocSidebarPrivate *priv = sidebar->priv;
 	const gint n_pages = eoc_sidebar_get_n_pages (sidebar);
 
 	gtk_widget_set_visible (GTK_WIDGET (priv->arrow),
@@ -348,7 +348,7 @@ eoc_sidebar_update_arrow_visibility (EomSidebar *sidebar)
 }
 
 static void
-eoc_sidebar_init (EomSidebar *eoc_sidebar)
+eoc_sidebar_init (EocSidebar *eoc_sidebar)
 {
 	GtkWidget *hbox;
 	GtkWidget *close_button;
@@ -463,7 +463,7 @@ eoc_sidebar_new (void)
 }
 
 void
-eoc_sidebar_add_page (EomSidebar   *eoc_sidebar,
+eoc_sidebar_add_page (EocSidebar   *eoc_sidebar,
 		      const gchar  *title,
 		      GtkWidget    *main_widget)
 {
@@ -526,7 +526,7 @@ eoc_sidebar_add_page (EomSidebar   *eoc_sidebar,
 }
 
 void
-eoc_sidebar_remove_page (EomSidebar *eoc_sidebar, GtkWidget *main_widget)
+eoc_sidebar_remove_page (EocSidebar *eoc_sidebar, GtkWidget *main_widget)
 {
 	GtkTreeIter iter;
 	GtkWidget *widget, *menu_item;
@@ -573,7 +573,7 @@ eoc_sidebar_remove_page (EomSidebar *eoc_sidebar, GtkWidget *main_widget)
 }
 
 gint
-eoc_sidebar_get_n_pages (EomSidebar *eoc_sidebar)
+eoc_sidebar_get_n_pages (EocSidebar *eoc_sidebar)
 {
 	g_return_val_if_fail (EOC_IS_SIDEBAR (eoc_sidebar), TRUE);
 
@@ -582,7 +582,7 @@ eoc_sidebar_get_n_pages (EomSidebar *eoc_sidebar)
 }
 
 gboolean
-eoc_sidebar_is_empty (EomSidebar *eoc_sidebar)
+eoc_sidebar_is_empty (EocSidebar *eoc_sidebar)
 {
 	g_return_val_if_fail (EOC_IS_SIDEBAR (eoc_sidebar), TRUE);
 

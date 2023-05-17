@@ -1,12 +1,12 @@
 <SECTION>
 <FILE>eoc-image</FILE>
-EomImageData
+EocImageData
 EOC_IMAGE_DATA_ALL
-EomImageError
+EocImageError
 EOC_IMAGE_ERROR
-EomImageStatus
-<TITLE>EomImage</TITLE>
-EomImage
+EocImageStatus
+<TITLE>EocImage</TITLE>
+EocImage
 eoc_image_error_quark
 eoc_image_new
 eoc_image_new_file
@@ -58,8 +58,8 @@ EOC_IMAGE_GET_CLASS
 
 <SECTION>
 <FILE>eoc-preferences-dialog</FILE>
-<TITLE>EomPreferencesDialog</TITLE>
-EomPreferencesDialog
+<TITLE>EocPreferencesDialog</TITLE>
+EocPreferencesDialog
 eoc_preferences_dialog_get_instance
 <SUBSECTION Standard>
 EOC_PREFERENCES_DIALOG
@@ -74,9 +74,9 @@ EOC_PREFERENCES_DIALOG_GET_CLASS
 <SECTION>
 <FILE>eoc-list-store</FILE>
 EOC_LIST_STORE_THUMB_SIZE
-EomListStoreColumn
-<TITLE>EomListStore</TITLE>
-EomListStore
+EocListStoreColumn
+<TITLE>EocListStore</TITLE>
+EocListStore
 eoc_list_store_new
 eoc_list_store_new_from_glist
 eoc_list_store_append_image
@@ -102,8 +102,8 @@ EOC_LIST_STORE_GET_CLASS
 
 <SECTION>
 <FILE>eoc-print-preview</FILE>
-<TITLE>EomPrintPreview</TITLE>
-EomPrintPreview
+<TITLE>EocPrintPreview</TITLE>
+EocPrintPreview
 eoc_print_preview_new
 eoc_print_preview_new_with_pixbuf
 eoc_print_preview_set_page_margins
@@ -122,9 +122,9 @@ EOC_IS_PRINT_PREVIEW_CLASS
 
 <SECTION>
 <FILE>eoc-transform</FILE>
-EomTransformType
-<TITLE>EomTransform</TITLE>
-EomTransform
+EocTransformType
+<TITLE>EocTransform</TITLE>
+EocTransform
 eoc_transform_apply
 eoc_transform_reverse
 eoc_transform_compose
@@ -148,8 +148,8 @@ EOC_TRANSFORM_GET_CLASS
 
 <SECTION>
 <FILE>eoc-file-chooser</FILE>
-<TITLE>EomFileChooser</TITLE>
-EomFileChooser
+<TITLE>EocFileChooser</TITLE>
+EocFileChooser
 eoc_file_chooser_new
 eoc_file_chooser_get_format
 <SUBSECTION Standard>
@@ -165,9 +165,9 @@ EOC_FILE_CHOOSER_GET_CLASS
 <SECTION>
 <FILE>eoc-metadata-reader</FILE>
 EOC_METADATA_READER_GET_INTERFACE
-EomMetadataReader
-EomMetadataReaderInterface
-EomMetadataFileType
+EocMetadataReader
+EocMetadataReaderInterface
+EocMetadataFileType
 eoc_metadata_reader_new
 eoc_metadata_reader_consume
 eoc_metadata_reader_finished
@@ -186,9 +186,9 @@ eoc_metadata_reader_get_type
 
 <SECTION>
 <FILE>eoc-properties-dialog</FILE>
-EomPropertiesDialogPage
-<TITLE>EomPropertiesDialog</TITLE>
-EomPropertiesDialog
+EocPropertiesDialogPage
+<TITLE>EocPropertiesDialog</TITLE>
+EocPropertiesDialog
 eoc_properties_dialog_new
 eoc_properties_dialog_update
 eoc_properties_dialog_set_page
@@ -232,23 +232,23 @@ EOC_JOB_SAVE_AS_CLASS
 EOC_IS_JOB_SAVE_AS
 EOC_JOB_COPY
 EOC_JOB_COPY_CLASS
-<TITLE>EomJob</TITLE>
-EomJob
-<TITLE>EomJobThumbnail</TITLE>
-EomJobThumbnail
-<TITLE>EomJobLoad</TITLE>
-EomJobLoad
-<TITLE>EomJobModel</TITLE>
-EomJobModel
-<TITLE>EomJobTransform</TITLE>
-EomJobTransform
-EomJobSaveResponse
-<TITLE>EomJobSave</TITLE>
-EomJobSave
-<TITLE>EomJobSaveAs</TITLE>
-EomJobSaveAs
-<TITLE>EomJobCopy</TITLE>
-EomJobCopy
+<TITLE>EocJob</TITLE>
+EocJob
+<TITLE>EocJobThumbnail</TITLE>
+EocJobThumbnail
+<TITLE>EocJobLoad</TITLE>
+EocJobLoad
+<TITLE>EocJobModel</TITLE>
+EocJobModel
+<TITLE>EocJobTransform</TITLE>
+EocJobTransform
+EocJobSaveResponse
+<TITLE>EocJobSave</TITLE>
+EocJobSave
+<TITLE>EocJobSaveAs</TITLE>
+EocJobSaveAs
+<TITLE>EocJobCopy</TITLE>
+EocJobCopy
 eoc_job_finished
 eoc_job_run
 eoc_job_set_progress
@@ -276,9 +276,9 @@ EOC_JOB_CLASS
 
 <SECTION>
 <FILE>eoc-thumb-nav</FILE>
-EomThumbNavMode
-<TITLE>EomThumbNav</TITLE>
-EomThumbNav
+EocThumbNavMode
+<TITLE>EocThumbNav</TITLE>
+EocThumbNav
 eoc_thumb_nav_new
 eoc_thumb_nav_get_show_buttons
 eoc_thumb_nav_set_show_buttons
@@ -296,8 +296,8 @@ EOC_THUMB_NAV_GET_CLASS
 
 <SECTION>
 <FILE>eoc-metadata-reader-png</FILE>
-<TITLE>EomMetadataReaderPng</TITLE>
-EomMetadataReaderPng
+<TITLE>EocMetadataReaderPng</TITLE>
+EocMetadataReaderPng
 <SUBSECTION Standard>
 EOC_METADATA_READER_PNG
 EOC_IS_METADATA_READER_PNG
@@ -310,12 +310,12 @@ EOC_METADATA_READER_PNG_GET_CLASS
 
 <SECTION>
 <FILE>eoc-uri-converter</FILE>
-EomUCType
-EomUCInfo
-EomUCError
+EocUCType
+EocUCInfo
+EocUCError
 EOC_UC_ERROR
-<TITLE>EomURIConverter</TITLE>
-EomURIConverter
+<TITLE>EocURIConverter</TITLE>
+EocURIConverter
 eoc_uc_error_quark
 eoc_uri_converter_new
 eoc_uri_converter_check
@@ -335,8 +335,8 @@ EOC_URI_CONVERTER_GET_CLASS
 
 <SECTION>
 <FILE>eoc-print-image-setup</FILE>
-<TITLE>EomPrintImageSetup</TITLE>
-EomPrintImageSetup
+<TITLE>EocPrintImageSetup</TITLE>
+EocPrintImageSetup
 eoc_print_image_setup_new
 eoc_print_image_setup_get_options
 eoc_print_image_setup_update
@@ -352,9 +352,9 @@ EOC_PRINT_IMAGE_SETUP_GET_CLASS
 
 <SECTION>
 <FILE>eoc-thumb-view</FILE>
-EomThumbViewSelectionChange
-<TITLE>EomThumbView</TITLE>
-EomThumbView
+EocThumbViewSelectionChange
+<TITLE>EocThumbView</TITLE>
+EocThumbView
 eoc_thumb_view_new
 eoc_thumb_view_set_model
 eoc_thumb_view_set_item_height
@@ -377,8 +377,8 @@ EOC_THUMB_VIEW_GET_CLASS
 <SECTION>
 <FILE>eoc-application</FILE>
 EOC_APP
-<TITLE>EomApplication</TITLE>
-EomApplication
+<TITLE>EocApplication</TITLE>
+EocApplication
 eoc_application_get_instance
 eoc_application_register_service
 eoc_application_shutdown
@@ -404,9 +404,9 @@ EOC_APPLICATION_GET_CLASS
 
 <SECTION>
 <FILE>eoc-scroll-view</FILE>
-<TITLE>EomScrollView</TITLE>
-EomScrollView
-EomTransparencyStyle
+<TITLE>EocScrollView</TITLE>
+EocScrollView
+EocTransparencyStyle
 eoc_scroll_view_new
 eoc_scroll_view_set_image
 eoc_scroll_view_set_scroll_wheel_zoom
@@ -442,11 +442,11 @@ EOC_IS_SCROLL_VIEW_CLASS
 <SECTION>
 <FILE>eoc-window</FILE>
 EOC_WINDOW_ERROR
-EomWindowMode
-EomWindowError
-EomStartupFlags
-<TITLE>EomWindow</TITLE>
-EomWindow
+EocWindowMode
+EocWindowError
+EocStartupFlags
+<TITLE>EocWindow</TITLE>
+EocWindow
 eoc_window_new
 eoc_window_get_mode
 eoc_window_set_mode
@@ -473,8 +473,8 @@ EOC_WINDOW_GET_CLASS
 
 <SECTION>
 <FILE>eoc-statusbar</FILE>
-<TITLE>EomStatusbar</TITLE>
-EomStatusbar
+<TITLE>EocStatusbar</TITLE>
+EocStatusbar
 eoc_statusbar_new
 eoc_statusbar_set_image_number
 eoc_statusbar_set_progress
@@ -490,8 +490,8 @@ EOC_STATUSBAR_GET_CLASS
 
 <SECTION>
 <FILE>eoc-exif-details</FILE>
-<TITLE>EomExifDetails</TITLE>
-EomExifDetails
+<TITLE>EocExifDetails</TITLE>
+EocExifDetails
 eoc_exif_details_new
 eoc_exif_details_update
 eoc_exif_details_xmp_update
@@ -507,8 +507,8 @@ EOC_EXIF_DETAILS_GET_CLASS
 
 <SECTION>
 <FILE>eoc-metadata-reader-jpg</FILE>
-<TITLE>EomMetadataReaderJpg</TITLE>
-EomMetadataReaderJpg
+<TITLE>EocMetadataReaderJpg</TITLE>
+EocMetadataReaderJpg
 <SUBSECTION Standard>
 EOC_METADATA_READER_JPG
 EOC_IS_METADATA_READER_JPG
@@ -521,8 +521,8 @@ EOC_METADATA_READER_JPG_GET_CLASS
 
 <SECTION>
 <FILE>eoc-image-save-info</FILE>
-<TITLE>EomImageSaveInfo</TITLE>
-EomImageSaveInfo
+<TITLE>EocImageSaveInfo</TITLE>
+EocImageSaveInfo
 EOC_FILE_FORMAT_JPEG
 eoc_image_save_info_new_from_image
 eoc_image_save_info_new_from_uri
@@ -539,8 +539,8 @@ EOC_IMAGE_SAVE_INFO_GET_CLASS
 
 <SECTION>
 <FILE>eoc-sidebar</FILE>
-<TITLE>EomSidebar</TITLE>
-EomSidebar
+<TITLE>EocSidebar</TITLE>
+EocSidebar
 eoc_sidebar_new
 eoc_sidebar_add_page
 eoc_sidebar_remove_page
@@ -569,7 +569,7 @@ EOC_THUMBNAIL_ORIGINAL_HEIGHT
 
 <SECTION>
 <FILE>eoc-debug</FILE>
-EomDebug
+EocDebug
 DEBUG_WINDOW
 DEBUG_VIEW
 DEBUG_JOBS
@@ -597,7 +597,7 @@ eoc_job_queue_remove_job
 <SECTION>
 <FILE>eoc-exif-util</FILE>
 eoc_exif_util_format_date
-EomExifData
+EocExifData
 eoc_exif_data_copy
 eoc_exif_data_free
 eoc_exif_data_get_value
@@ -619,7 +619,7 @@ zoom_fit_scale
 
 <SECTION>
 <FILE>eoc-plugin-engine</FILE>
-EomPluginEngine
+EocPluginEngine
 eoc_plugin_engine_new
 <SUBSECTION Standard>
 EOC_PLUGIN_ENGINE
@@ -724,7 +724,7 @@ eoc_util_filename_get_extension
 
 <SECTION>
 <FILE>eoc-clipboard-handler</FILE>
-EomClipboardHandler
+EocClipboardHandler
 eoc_clipboard_handler_new
 eoc_clipboard_handler_copy_to_clipboard
 <SUBSECTION Standard>

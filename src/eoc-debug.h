@@ -44,7 +44,7 @@ typedef enum {
 	EOC_DEBUG_PRINTING     = 1 << 9,
 	EOC_DEBUG_LCMS         = 1 << 10,
 	EOC_DEBUG_PLUGINS      = 1 << 11
-} EomDebug;
+} EocDebug;
 
 #define	DEBUG_WINDOW		EOC_DEBUG_WINDOW,      __FILE__, __LINE__, G_STRFUNC
 #define	DEBUG_VIEW		EOC_DEBUG_VIEW,        __FILE__, __LINE__, G_STRFUNC
@@ -61,12 +61,12 @@ typedef enum {
 
 void   eoc_debug_init        (void);
 
-void   eoc_debug             (EomDebug    section,
+void   eoc_debug             (EocDebug    section,
           	              const gchar       *file,
           	              gint               line,
           	              const gchar       *function);
 
-void   eoc_debug_message     (EomDebug    section,
+void   eoc_debug_message     (EocDebug    section,
 			      const gchar       *file,
 			      gint               line,
 			      const gchar       *function,

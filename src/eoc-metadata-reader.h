@@ -36,75 +36,75 @@
 G_BEGIN_DECLS
 
 #define EOC_TYPE_METADATA_READER	      (eoc_metadata_reader_get_type ())
-#define EOC_METADATA_READER(o)		      (G_TYPE_CHECK_INSTANCE_CAST ((o), EOC_TYPE_METADATA_READER, EomMetadataReader))
+#define EOC_METADATA_READER(o)		      (G_TYPE_CHECK_INSTANCE_CAST ((o), EOC_TYPE_METADATA_READER, EocMetadataReader))
 #define EOC_IS_METADATA_READER(o)	      (G_TYPE_CHECK_INSTANCE_TYPE ((o), EOC_TYPE_METADATA_READER))
-#define EOC_METADATA_READER_GET_INTERFACE(o)  (G_TYPE_INSTANCE_GET_INTERFACE ((o), EOC_TYPE_METADATA_READER, EomMetadataReaderInterface))
+#define EOC_METADATA_READER_GET_INTERFACE(o)  (G_TYPE_INSTANCE_GET_INTERFACE ((o), EOC_TYPE_METADATA_READER, EocMetadataReaderInterface))
 
-typedef struct _EomMetadataReader EomMetadataReader;
-typedef struct _EomMetadataReaderInterface EomMetadataReaderInterface;
+typedef struct _EocMetadataReader EocMetadataReader;
+typedef struct _EocMetadataReaderInterface EocMetadataReaderInterface;
 
-struct _EomMetadataReaderInterface {
+struct _EocMetadataReaderInterface {
 	GTypeInterface parent;
 
-	void		(*consume)		(EomMetadataReader *self,
+	void		(*consume)		(EocMetadataReader *self,
 						 const guchar *buf,
 						 guint len);
 
-	gboolean	(*finished)		(EomMetadataReader *self);
+	gboolean	(*finished)		(EocMetadataReader *self);
 
-	void		(*get_raw_exif)		(EomMetadataReader *self,
+	void		(*get_raw_exif)		(EocMetadataReader *self,
 						 guchar **data,
 						 guint *len);
 
-	gpointer	(*get_exif_data)	(EomMetadataReader *self);
+	gpointer	(*get_exif_data)	(EocMetadataReader *self);
 
-	gpointer	(*get_icc_profile)	(EomMetadataReader *self);
+	gpointer	(*get_icc_profile)	(EocMetadataReader *self);
 
-	gpointer	(*get_xmp_ptr)		(EomMetadataReader *self);
+	gpointer	(*get_xmp_ptr)		(EocMetadataReader *self);
 };
 
 typedef enum {
 	EOC_METADATA_JPEG,
 	EOC_METADATA_PNG
-} EomMetadataFileType;
+} EocMetadataFileType;
 
 G_GNUC_INTERNAL
 GType                eoc_metadata_reader_get_type	(void) G_GNUC_CONST;
 
 G_GNUC_INTERNAL
-EomMetadataReader*   eoc_metadata_reader_new 		(EomMetadataFileType type);
+EocMetadataReader*   eoc_metadata_reader_new 		(EocMetadataFileType type);
 
 G_GNUC_INTERNAL
-void                 eoc_metadata_reader_consume	(EomMetadataReader *emr,
+void                 eoc_metadata_reader_consume	(EocMetadataReader *emr,
 							 const guchar *buf,
 							 guint len);
 
 G_GNUC_INTERNAL
-gboolean             eoc_metadata_reader_finished	(EomMetadataReader *emr);
+gboolean             eoc_metadata_reader_finished	(EocMetadataReader *emr);
 
 G_GNUC_INTERNAL
-void                 eoc_metadata_reader_get_exif_chunk (EomMetadataReader *emr,
+void                 eoc_metadata_reader_get_exif_chunk (EocMetadataReader *emr,
 							 guchar **data,
 							 guint *len);
 
 #ifdef HAVE_EXIF
 G_GNUC_INTERNAL
-ExifData*            eoc_metadata_reader_get_exif_data	(EomMetadataReader *emr);
+ExifData*            eoc_metadata_reader_get_exif_data	(EocMetadataReader *emr);
 #endif
 
 #ifdef HAVE_EXEMPI
 G_GNUC_INTERNAL
-XmpPtr	     	     eoc_metadata_reader_get_xmp_data	(EomMetadataReader *emr);
+XmpPtr	     	     eoc_metadata_reader_get_xmp_data	(EocMetadataReader *emr);
 #endif
 
 #if 0
-gpointer             eoc_metadata_reader_get_iptc_chunk	(EomMetadataReader *emr);
-IptcData*            eoc_metadata_reader_get_iptc_data	(EomMetadataReader *emr);
+gpointer             eoc_metadata_reader_get_iptc_chunk	(EocMetadataReader *emr);
+IptcData*            eoc_metadata_reader_get_iptc_data	(EocMetadataReader *emr);
 #endif
 
 #ifdef HAVE_LCMS
 G_GNUC_INTERNAL
-cmsHPROFILE          eoc_metadata_reader_get_icc_profile (EomMetadataReader *emr);
+cmsHPROFILE          eoc_metadata_reader_get_icc_profile (EocMetadataReader *emr);
 #endif
 
 G_END_DECLS

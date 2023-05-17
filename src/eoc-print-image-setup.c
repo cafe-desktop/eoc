@@ -41,14 +41,14 @@
  * @Title: Printing Custom Widget
  * @Short_Description: a custom widget to setup image prints.
  * @Stability_Level: Internal
- * @See_Also: #EomPrintPreview
+ * @See_Also: #EocPrintPreview
  *
  * This widget is to be used as the custom widget in a #GtkPrintUnixDialog in
  * EOC. Through it, you can set the position and scaling of a image
  * interactively.
  */
 
-struct _EomPrintImageSetupPrivate {
+struct _EocPrintImageSetupPrivate {
 	GtkWidget *left;
 	GtkWidget *right;
 	GtkWidget *top;
@@ -64,7 +64,7 @@ struct _EomPrintImageSetupPrivate {
 
 	GtkUnit current_unit;
 
-	EomImage *image;
+	EocImage *image;
 	GtkPageSetup *page_setup;
 
 	GtkWidget *preview;
@@ -109,12 +109,12 @@ static void on_bottom_value_changed (GtkSpinButton *spinbutton, gpointer user_da
 static void on_width_value_changed  (GtkSpinButton *spinbutton, gpointer user_data);
 static void on_height_value_changed (GtkSpinButton *spinbutton, gpointer user_data);
 
-G_DEFINE_TYPE_WITH_PRIVATE (EomPrintImageSetup, eoc_print_image_setup, GTK_TYPE_GRID);
+G_DEFINE_TYPE_WITH_PRIVATE (EocPrintImageSetup, eoc_print_image_setup, GTK_TYPE_GRID);
 
 static void
-block_handlers (EomPrintImageSetup *setup)
+block_handlers (EocPrintImageSetup *setup)
 {
-	EomPrintImageSetupPrivate *priv = setup->priv;
+	EocPrintImageSetupPrivate *priv = setup->priv;
 
 	g_signal_handlers_block_by_func (priv->left, on_left_value_changed, setup);
 	g_signal_handlers_block_by_func (priv->right, on_right_value_changed, setup);
@@ -125,9 +125,9 @@ block_handlers (EomPrintImageSetup *setup)
 }
 
 static void
-unblock_handlers (EomPrintImageSetup *setup)
+unblock_handlers (EocPrintImageSetup *setup)
 {
-	EomPrintImageSetupPrivate *priv = setup->priv;
+	EocPrintImageSetupPrivate *priv = setup->priv;
 
 	g_signal_handlers_unblock_by_func (priv->left, on_left_value_changed, setup);
 	g_signal_handlers_unblock_by_func (priv->right, on_right_value_changed, setup);
@@ -138,7 +138,7 @@ unblock_handlers (EomPrintImageSetup *setup)
 }
 
 static gdouble
-get_scale_to_px_factor (EomPrintImageSetup *setup)
+get_scale_to_px_factor (EocPrintImageSetup *setup)
 {
 	gdouble factor = 0.;
 
@@ -157,9 +157,9 @@ get_scale_to_px_factor (EomPrintImageSetup *setup)
 }
 
 static gdouble
-get_max_percentage (EomPrintImageSetup *setup)
+get_max_percentage (EocPrintImageSetup *setup)
 {
-	EomPrintImageSetupPrivate *priv = setup->priv;
+	EocPrintImageSetupPrivate *priv = setup->priv;
 	gdouble p_width, p_height;
 	gdouble width, height;
 	gint pix_width, pix_height;
@@ -200,8 +200,8 @@ static void
 on_center_changed (GtkComboBox *combobox,
 		   gpointer user_data)
 {
-	EomPrintImageSetup *setup;
-	EomPrintImageSetupPrivate *priv;
+	EocPrintImageSetup *setup;
+	EocPrintImageSetupPrivate *priv;
 	gint active;
 
 	setup = EOC_PRINT_IMAGE_SETUP (user_data);
@@ -245,13 +245,13 @@ on_center_changed (GtkComboBox *combobox,
 }
 
 static void
-update_image_pos_ranges (EomPrintImageSetup *setup,
+update_image_pos_ranges (EocPrintImageSetup *setup,
 			 gdouble page_width,
 			 gdouble page_height,
 			 gdouble width,
 			 gdouble height)
 {
-	EomPrintImageSetupPrivate *priv;
+	EocPrintImageSetupPrivate *priv;
 
 	priv = setup->priv;
 
@@ -274,10 +274,10 @@ on_scale_changed (GtkRange     *range,
 	gint pix_width, pix_height;
 	gdouble left, right, top, bottom;
 	gdouble page_width, page_height;
-	EomPrintImageSetupPrivate *priv;
-	EomPrintImageSetup *setup;
+	EocPrintImageSetupPrivate *priv;
+	EocPrintImageSetup *setup;
 	gdouble factor;
-	EomImage *image;
+	EocImage *image;
 
 	setup = EOC_PRINT_IMAGE_SETUP (user_data);
 	priv = setup->priv;
@@ -326,14 +326,14 @@ on_scale_format_value (GtkScale *scale,
 }
 
 static void
-position_values_changed (EomPrintImageSetup *setup,
+position_values_changed (EocPrintImageSetup *setup,
 			 GtkWidget *w_changed,
 			 GtkWidget *w_to_update,
 			 GtkWidget *w_size,
 			 gdouble total_size,
 			 gint change)
 {
-	EomPrintImageSetupPrivate *priv;
+	EocPrintImageSetupPrivate *priv;
 	gdouble changed, to_update, size;
 	gdouble pos;
 
@@ -367,8 +367,8 @@ static void
 on_left_value_changed (GtkSpinButton *spinbutton,
 		       gpointer       user_data)
 {
-	EomPrintImageSetup *setup;
-	EomPrintImageSetupPrivate *priv;
+	EocPrintImageSetup *setup;
+	EocPrintImageSetupPrivate *priv;
 
 	setup = EOC_PRINT_IMAGE_SETUP (user_data);
 	priv = setup->priv;
@@ -384,7 +384,7 @@ static void
 on_right_value_changed (GtkSpinButton *spinbutton,
 			gpointer       user_data)
 {
-	EomPrintImageSetupPrivate *priv;
+	EocPrintImageSetupPrivate *priv;
 
 	priv = EOC_PRINT_IMAGE_SETUP (user_data)->priv;
 
@@ -399,7 +399,7 @@ static void
 on_top_value_changed (GtkSpinButton *spinbutton,
 		      gpointer       user_data)
 {
-	EomPrintImageSetupPrivate *priv;
+	EocPrintImageSetupPrivate *priv;
 
 	priv = EOC_PRINT_IMAGE_SETUP (user_data)->priv;
 
@@ -414,7 +414,7 @@ static void
 on_bottom_value_changed (GtkSpinButton *spinbutton,
 			 gpointer       user_data)
 {
-	EomPrintImageSetupPrivate *priv;
+	EocPrintImageSetupPrivate *priv;
 
 	priv = EOC_PRINT_IMAGE_SETUP (user_data)->priv;
 
@@ -426,7 +426,7 @@ on_bottom_value_changed (GtkSpinButton *spinbutton,
 }
 
 static void
-size_changed (EomPrintImageSetup *setup,
+size_changed (EocPrintImageSetup *setup,
 	      GtkWidget *w_size_x,
 	      GtkWidget *w_size_y,
 	      GtkWidget *w_margin_x_1,
@@ -437,7 +437,7 @@ size_changed (EomPrintImageSetup *setup,
 	      gdouble page_size_y,
 	      gint change)
 {
-	EomPrintImageSetupPrivate *priv;
+	EocPrintImageSetupPrivate *priv;
 	gdouble margin_x_1, margin_x_2;
 	gdouble margin_y_1, margin_y_2;
 	gdouble orig_size_x = -1, orig_size_y = -1, scale;
@@ -497,7 +497,7 @@ static void
 on_width_value_changed (GtkSpinButton *spinbutton,
 			gpointer       user_data)
 {
-	EomPrintImageSetupPrivate *priv = EOC_PRINT_IMAGE_SETUP (user_data)->priv;
+	EocPrintImageSetupPrivate *priv = EOC_PRINT_IMAGE_SETUP (user_data)->priv;
 
 	size_changed (EOC_PRINT_IMAGE_SETUP (user_data),
 		      priv->width, priv->height,
@@ -514,7 +514,7 @@ static void
 on_height_value_changed (GtkSpinButton *spinbutton,
 			 gpointer       user_data)
 {
-	EomPrintImageSetupPrivate *priv = EOC_PRINT_IMAGE_SETUP (user_data)->priv;
+	EocPrintImageSetupPrivate *priv = EOC_PRINT_IMAGE_SETUP (user_data)->priv;
 
 	size_changed (EOC_PRINT_IMAGE_SETUP (user_data),
 		      priv->height, priv->width,
@@ -550,10 +550,10 @@ change_unit (GtkSpinButton *spinbutton,
 }
 
 static void
-set_scale_unit (EomPrintImageSetup *setup,
+set_scale_unit (EocPrintImageSetup *setup,
 		GtkUnit unit)
 {
-	EomPrintImageSetupPrivate *priv = setup->priv;
+	EocPrintImageSetupPrivate *priv = setup->priv;
 	gdouble factor;
 	gdouble step, page;
 	gint digits;
@@ -613,10 +613,10 @@ on_unit_changed (GtkComboBox *combobox,
 }
 
 static void
-on_preview_image_moved (EomPrintPreview *preview,
+on_preview_image_moved (EocPrintPreview *preview,
 			gpointer user_data)
 {
-	EomPrintImageSetupPrivate *priv = EOC_PRINT_IMAGE_SETUP (user_data)->priv;
+	EocPrintImageSetupPrivate *priv = EOC_PRINT_IMAGE_SETUP (user_data)->priv;
 	gdouble x, y;
 
 	eoc_print_preview_get_image_position (preview, &x, &y);
@@ -683,8 +683,8 @@ eoc_print_image_setup_set_property (GObject      *object,
 				    const GValue *value,
 				    GParamSpec   *pspec)
 {
-	EomPrintImageSetup *setup = EOC_PRINT_IMAGE_SETUP (object);
-	EomPrintImageSetupPrivate *priv = setup->priv;
+	EocPrintImageSetup *setup = EOC_PRINT_IMAGE_SETUP (object);
+	EocPrintImageSetupPrivate *priv = setup->priv;
 	GdkPixbuf *pixbuf;
 
 	switch (prop_id) {
@@ -714,8 +714,8 @@ eoc_print_image_setup_get_property (GObject    *object,
 				    GValue     *value,
 				    GParamSpec *pspec)
 {
-	EomPrintImageSetup *setup = EOC_PRINT_IMAGE_SETUP (object);
-	EomPrintImageSetupPrivate *priv = setup->priv;
+	EocPrintImageSetup *setup = EOC_PRINT_IMAGE_SETUP (object);
+	EocPrintImageSetupPrivate *priv = setup->priv;
 
 	switch (prop_id) {
 	case PROP_IMAGE:
@@ -730,11 +730,11 @@ eoc_print_image_setup_get_property (GObject    *object,
 }
 
 static void
-set_initial_values (EomPrintImageSetup *setup)
+set_initial_values (EocPrintImageSetup *setup)
 {
-	EomPrintImageSetupPrivate *priv;
+	EocPrintImageSetupPrivate *priv;
 	GtkPageSetup *page_setup;
-	EomImage *image;
+	EocImage *image;
 	gdouble page_width, page_height;
 	gint pix_width, pix_height;
 	gdouble factor;
@@ -785,9 +785,9 @@ set_initial_values (EomPrintImageSetup *setup)
 }
 
 static void
-connect_signals (EomPrintImageSetup *setup)
+connect_signals (EocPrintImageSetup *setup)
 {
-	EomPrintImageSetupPrivate *priv;
+	EocPrintImageSetupPrivate *priv;
 
 	priv = setup->priv;
 
@@ -812,7 +812,7 @@ connect_signals (EomPrintImageSetup *setup)
 }
 
 static void
-eoc_print_image_setup_class_init (EomPrintImageSetupClass *class)
+eoc_print_image_setup_class_init (EocPrintImageSetupClass *class)
 {
 	GObjectClass *object_class = (GObjectClass *)class;
 
@@ -835,14 +835,14 @@ eoc_print_image_setup_class_init (EomPrintImageSetupClass *class)
 }
 
 static void
-eoc_print_image_setup_init (EomPrintImageSetup *setup)
+eoc_print_image_setup_init (EocPrintImageSetup *setup)
 {
 	GtkWidget *frame;
 	GtkWidget *grid;
 	GtkWidget *label;
 	GtkWidget *hscale;
 	GtkWidget *combobox;
-	EomPrintImageSetupPrivate *priv;
+	EocPrintImageSetupPrivate *priv;
 
 #ifdef HAVE__NL_MEASUREMENT_MEASUREMENT
 	gchar *locale_scale = NULL;
@@ -957,18 +957,18 @@ eoc_print_image_setup_init (EomPrintImageSetup *setup)
 
 /**
  * eoc_print_image_setup_new:
- * @image: the #EomImage to print
+ * @image: the #EocImage to print
  * @page_setup: a #GtkPageSetup specifying the page where
  * the image will be print
  *
- * Creates a new #EomPrintImageSetup widget, to be used as a custom
+ * Creates a new #EocPrintImageSetup widget, to be used as a custom
  * widget in a #GtkPrintUnixDialog. This widgets allows to set
  * the image position and scale in a page.
  *
- * Returns: a new #EomPrintImageSetup
+ * Returns: a new #EocPrintImageSetup
  **/
 GtkWidget *
-eoc_print_image_setup_new (EomImage *image, GtkPageSetup *page_setup)
+eoc_print_image_setup_new (EocImage *image, GtkPageSetup *page_setup)
 {
 	GtkWidget *setup;
 	GtkWidget *preview;
@@ -995,22 +995,22 @@ eoc_print_image_setup_new (EomImage *image, GtkPageSetup *page_setup)
 
 /**
  * eoc_print_image_setup_get_options:
- * @setup: a #EomPrintImageSetup
+ * @setup: a #EocPrintImageSetup
  * @left: a pointer where to store the image's left position
  * @top: a pointer where to store the image's top position
  * @scale: a pointer where to store the image's scale
  * @unit: a pointer where to store the #GtkUnit used by the @left and @top values.
  *
- * Gets the options set by the #EomPrintImageSetup.
+ * Gets the options set by the #EocPrintImageSetup.
  **/
 void
-eoc_print_image_setup_get_options (EomPrintImageSetup *setup,
+eoc_print_image_setup_get_options (EocPrintImageSetup *setup,
 				   gdouble *left,
 				   gdouble *top,
 				   gdouble *scale,
 				   GtkUnit *unit)
 {
-	EomPrintImageSetupPrivate *priv;
+	EocPrintImageSetupPrivate *priv;
 
 	g_return_if_fail (EOC_IS_PRINT_IMAGE_SETUP (setup));
 
@@ -1032,7 +1032,7 @@ eoc_print_image_setup_update (GtkPrintOperation *operation,
 	GtkWidget *preview;
 	gdouble    pos_x;
 	gdouble    pos_y;
-	EomPrintImageSetup *setup;
+	EocPrintImageSetup *setup;
 
 	setup = EOC_PRINT_IMAGE_SETUP (custom_widget);
 

@@ -48,7 +48,7 @@
 
 #define EOC_CSS_FILE_PATH EOC_DATA_DIR G_DIR_SEPARATOR_S "eoc.css"
 
-static EomStartupFlags flags;
+static EocStartupFlags flags;
 
 static gboolean fullscreen = FALSE;
 static gboolean slide_show = FALSE;
@@ -140,7 +140,7 @@ main (int argc, char **argv)
 	eoc_job_queue_init ();
 	eoc_thumbnail_init ();
 
-	/* Load special style properties for EomThumbView's scrollbar */
+	/* Load special style properties for EocThumbView's scrollbar */
 	css_file = g_file_new_for_uri ("resource:///org/mate/eoc/ui/eoc.css");
 	provider = gtk_css_provider_new ();
 	if (G_UNLIKELY (!gtk_css_provider_load_from_file(provider,

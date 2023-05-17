@@ -30,24 +30,24 @@
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
 
-struct _EomStatusbarPrivate
+struct _EocStatusbarPrivate
 {
 	GtkWidget *progressbar;
 	GtkWidget *img_num_label;
 };
 
-G_DEFINE_TYPE_WITH_PRIVATE (EomStatusbar, eoc_statusbar, GTK_TYPE_STATUSBAR)
+G_DEFINE_TYPE_WITH_PRIVATE (EocStatusbar, eoc_statusbar, GTK_TYPE_STATUSBAR)
 
 static void
-eoc_statusbar_class_init (EomStatusbarClass *klass)
+eoc_statusbar_class_init (EocStatusbarClass *klass)
 {
     /* empty */
 }
 
 static void
-eoc_statusbar_init (EomStatusbar *statusbar)
+eoc_statusbar_init (EocStatusbar *statusbar)
 {
-	EomStatusbarPrivate *priv;
+	EocStatusbarPrivate *priv;
 	GtkWidget *vbox;
 
 	statusbar->priv = eoc_statusbar_get_instance_private (statusbar);
@@ -97,7 +97,7 @@ eoc_statusbar_new (void)
 }
 
 void
-eoc_statusbar_set_image_number (EomStatusbar *statusbar,
+eoc_statusbar_set_image_number (EocStatusbar *statusbar,
                                 gint          num,
 				gint          tot)
 {
@@ -127,7 +127,7 @@ eoc_statusbar_set_image_number (EomStatusbar *statusbar,
 }
 
 void
-eoc_statusbar_set_progress (EomStatusbar *statusbar,
+eoc_statusbar_set_progress (EocStatusbar *statusbar,
 			    gdouble       progress)
 {
 	g_return_if_fail (EOC_IS_STATUSBAR (statusbar));

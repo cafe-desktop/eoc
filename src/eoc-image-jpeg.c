@@ -63,7 +63,7 @@ typedef enum {
 	EOC_SAVE_NONE,
 	EOC_SAVE_JPEG_AS_JPEG,
 	EOC_SAVE_ANY_AS_JPEG
-} EomJpegSaveMethod;
+} EocJpegSaveMethod;
 
 /* error handler data */
 struct error_handler_data {
@@ -112,11 +112,11 @@ output_message_handler (j_common_ptr cinfo)
 }
 
 static void
-init_transform_info (EomImage *image, jpeg_transform_info *info)
+init_transform_info (EocImage *image, jpeg_transform_info *info)
 {
-	EomImagePrivate *priv;
-	EomTransform *composition = NULL;
-	EomTransformType transformation;
+	EocImagePrivate *priv;
+	EocTransform *composition = NULL;
+	EocTransformType transformation;
 	JXFORM_CODE trans_code = JXFORM_NONE;
 
 	g_return_if_fail (EOC_IS_IMAGE (image));
@@ -160,7 +160,7 @@ init_transform_info (EomImage *image, jpeg_transform_info *info)
 			trans_code = JXFORM_TRANSVERSE;
 			break;
 		default:
-			g_warning("EomTransformType not supported!");
+			g_warning("EocTransformType not supported!");
 			/* Fallthrough intended here. */
 		case EOC_TRANSFORM_NONE:
 			trans_code = JXFORM_NONE;
@@ -179,8 +179,8 @@ init_transform_info (EomImage *image, jpeg_transform_info *info)
 }
 
 static gboolean
-_save_jpeg_as_jpeg (EomImage *image, const char *file, EomImageSaveInfo *source,
-		    EomImageSaveInfo *target, GError **error)
+_save_jpeg_as_jpeg (EocImage *image, const char *file, EocImageSaveInfo *source,
+		    EocImageSaveInfo *target, GError **error)
 {
 	struct jpeg_decompress_struct  srcinfo;
 	struct jpeg_compress_struct    dstinfo;
@@ -190,7 +190,7 @@ _save_jpeg_as_jpeg (EomImage *image, const char *file, EomImageSaveInfo *source,
 	jvirt_barray_ptr              *dst_coef_arrays;
 	FILE                          *output_file;
 	FILE                          *input_file;
-	EomImagePrivate               *priv;
+	EocImagePrivate               *priv;
 	gchar                          *infile_uri;
 
 	g_return_val_if_fail (EOC_IS_IMAGE (image), FALSE);
@@ -344,10 +344,10 @@ _save_jpeg_as_jpeg (EomImage *image, const char *file, EomImageSaveInfo *source,
 }
 
 static gboolean
-_save_any_as_jpeg (EomImage *image, const char *file, EomImageSaveInfo *source,
-		   EomImageSaveInfo *target, GError **error)
+_save_any_as_jpeg (EocImage *image, const char *file, EocImageSaveInfo *source,
+		   EocImageSaveInfo *target, GError **error)
 {
-	EomImagePrivate *priv;
+	EocImagePrivate *priv;
 	GdkPixbuf *pixbuf;
 	struct jpeg_compress_struct cinfo;
 	guchar *buf = NULL;
@@ -478,11 +478,11 @@ _save_any_as_jpeg (EomImage *image, const char *file, EomImageSaveInfo *source,
 }
 
 gboolean
-eoc_image_jpeg_save_file (EomImage *image, const char *file,
-			  EomImageSaveInfo *source, EomImageSaveInfo *target,
+eoc_image_jpeg_save_file (EocImage *image, const char *file,
+			  EocImageSaveInfo *source, EocImageSaveInfo *target,
 			  GError **error)
 {
-	EomJpegSaveMethod method = EOC_SAVE_NONE;
+	EocJpegSaveMethod method = EOC_SAVE_NONE;
 	gboolean source_is_jpeg = FALSE;
 	gboolean target_is_jpeg = FALSE;
         gboolean result;

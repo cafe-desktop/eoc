@@ -4,7 +4,7 @@
  *
  * Author: Felix Riemann <friemann@svn.gnome.org>
  *
- * Based on the old EomMetadataReader code.
+ * Based on the old EocMetadataReader code.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -50,15 +50,15 @@ typedef enum {
 	EMR_READ_CHRM,
 	EMR_READ_GAMA,
 	EMR_FINISHED
-} EomMetadataReaderPngState;
+} EocMetadataReaderPngState;
 
 #if 0
 #define IS_FINISHED(priv) (priv->icc_chunk  != NULL && \
                            priv->xmp_chunk  != NULL)
 #endif
 
-struct _EomMetadataReaderPngPrivate {
-	EomMetadataReaderPngState  state;
+struct _EocMetadataReaderPngPrivate {
+	EocMetadataReaderPngState  state;
 
 	/* data fields */
 	guint32  icc_len;
@@ -90,17 +90,17 @@ struct _EomMetadataReaderPngPrivate {
 static void
 eoc_metadata_reader_png_init_emr_iface (gpointer g_iface, gpointer iface_data);
 
-G_DEFINE_TYPE_WITH_CODE (EomMetadataReaderPng, eoc_metadata_reader_png,
+G_DEFINE_TYPE_WITH_CODE (EocMetadataReaderPng, eoc_metadata_reader_png,
 			 G_TYPE_OBJECT,
 			 G_IMPLEMENT_INTERFACE (EOC_TYPE_METADATA_READER,
 			                        eoc_metadata_reader_png_init_emr_iface) \
-			                        G_ADD_PRIVATE(EomMetadataReaderPng))
+			                        G_ADD_PRIVATE(EocMetadataReaderPng))
 
 static void
 eoc_metadata_reader_png_dispose (GObject *object)
 {
-	EomMetadataReaderPng *emr = EOC_METADATA_READER_PNG (object);
-	EomMetadataReaderPngPrivate *priv = emr->priv;
+	EocMetadataReaderPng *emr = EOC_METADATA_READER_PNG (object);
+	EocMetadataReaderPngPrivate *priv = emr->priv;
 
 	g_free (priv->xmp_chunk);
 	priv->xmp_chunk = NULL;
@@ -121,9 +121,9 @@ eoc_metadata_reader_png_dispose (GObject *object)
 }
 
 static void
-eoc_metadata_reader_png_init (EomMetadataReaderPng *emr)
+eoc_metadata_reader_png_init (EocMetadataReaderPng *emr)
 {
-	EomMetadataReaderPngPrivate *priv;
+	EocMetadataReaderPngPrivate *priv;
 
 	priv = emr->priv =  eoc_metadata_reader_png_get_instance_private (emr);
 	priv->icc_chunk = NULL;
@@ -143,7 +143,7 @@ eoc_metadata_reader_png_init (EomMetadataReaderPng *emr)
 }
 
 static void
-eoc_metadata_reader_png_class_init (EomMetadataReaderPngClass *klass)
+eoc_metadata_reader_png_class_init (EocMetadataReaderPngClass *klass)
 {
 	GObjectClass *object_class = (GObjectClass*) klass;
 
@@ -151,7 +151,7 @@ eoc_metadata_reader_png_class_init (EomMetadataReaderPngClass *klass)
 }
 
 static gboolean
-eoc_metadata_reader_png_finished (EomMetadataReaderPng *emr)
+eoc_metadata_reader_png_finished (EocMetadataReaderPng *emr)
 {
 	g_return_val_if_fail (EOC_IS_METADATA_READER_PNG (emr), TRUE);
 
@@ -160,12 +160,12 @@ eoc_metadata_reader_png_finished (EomMetadataReaderPng *emr)
 
 
 static void
-eoc_metadata_reader_png_get_next_block (EomMetadataReaderPngPrivate* priv,
+eoc_metadata_reader_png_get_next_block (EocMetadataReaderPngPrivate* priv,
 				    	guchar *chunk,
 					int* i,
 					const guchar *buf,
 					int len,
-					EomMetadataReaderPngState state)
+					EocMetadataReaderPngState state)
 {
 	if (*i + priv->size < len) {
 		/* read data in one block */
@@ -184,9 +184,9 @@ eoc_metadata_reader_png_get_next_block (EomMetadataReaderPngPrivate* priv,
 }
 
 static void
-eoc_metadata_reader_png_consume (EomMetadataReaderPng *emr, const guchar *buf, guint len)
+eoc_metadata_reader_png_consume (EocMetadataReaderPng *emr, const guchar *buf, guint len)
 {
-	EomMetadataReaderPngPrivate *priv;
+	EocMetadataReaderPngPrivate *priv;
  	int i;
 	guint32 chunk_crc;
 	static const gchar PNGMAGIC[8] = "\x89PNG\x0D\x0A\x1a\x0A";
@@ -460,9 +460,9 @@ eoc_metadata_reader_png_consume (EomMetadataReaderPng *emr, const guchar *buf, g
 #define EOC_XMP_OFFSET (22)
 
 static gpointer
-eoc_metadata_reader_png_get_xmp_data (EomMetadataReaderPng *emr )
+eoc_metadata_reader_png_get_xmp_data (EocMetadataReaderPng *emr )
 {
-	EomMetadataReaderPngPrivate *priv;
+	EocMetadataReaderPngPrivate *priv;
 	XmpPtr xmp = NULL;
 
 	g_return_val_if_fail (EOC_IS_METADATA_READER_PNG (emr), NULL);
@@ -517,9 +517,9 @@ _chrm_matches_srgb(const cmsCIExyY       *whitepoint,
 }
 
 static gpointer
-eoc_metadata_reader_png_get_icc_profile (EomMetadataReaderPng *emr)
+eoc_metadata_reader_png_get_icc_profile (EocMetadataReaderPng *emr)
 {
-	EomMetadataReaderPngPrivate *priv;
+	EocMetadataReaderPngPrivate *priv;
 	cmsHPROFILE profile = NULL;
 
 	g_return_val_if_fail (EOC_IS_METADATA_READER_PNG (emr), NULL);
@@ -658,24 +658,24 @@ eoc_metadata_reader_png_get_icc_profile (EomMetadataReaderPng *emr)
 static void
 eoc_metadata_reader_png_init_emr_iface (gpointer g_iface, gpointer iface_data)
 {
-	EomMetadataReaderInterface *iface;
+	EocMetadataReaderInterface *iface;
 
-	iface = (EomMetadataReaderInterface*) g_iface;
+	iface = (EocMetadataReaderInterface*) g_iface;
 
 	iface->consume =
-		(void (*) (EomMetadataReader *self, const guchar *buf, guint len))
+		(void (*) (EocMetadataReader *self, const guchar *buf, guint len))
 			eoc_metadata_reader_png_consume;
 	iface->finished =
-		(gboolean (*) (EomMetadataReader *self))
+		(gboolean (*) (EocMetadataReader *self))
 			eoc_metadata_reader_png_finished;
 #if defined(HAVE_LCMS) && defined(GDK_WINDOWING_X11)
 	iface->get_icc_profile =
-		(cmsHPROFILE (*) (EomMetadataReader *self))
+		(cmsHPROFILE (*) (EocMetadataReader *self))
 			eoc_metadata_reader_png_get_icc_profile;
 #endif
 #ifdef HAVE_EXEMPI
 	iface->get_xmp_ptr =
-		(gpointer (*) (EomMetadataReader *self))
+		(gpointer (*) (EocMetadataReader *self))
 			eoc_metadata_reader_png_get_xmp_data;
 #endif
 }

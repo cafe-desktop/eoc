@@ -41,7 +41,7 @@ static char *last_dir[] = { NULL, NULL, NULL, NULL };
 
 #define FILE_FORMAT_KEY "file-format"
 
-struct _EomFileChooserPrivate
+struct _EocFileChooserPrivate
 {
 	MateDesktopThumbnailFactory *thumb_factory;
 
@@ -51,12 +51,12 @@ struct _EomFileChooserPrivate
 	GtkWidget *creator_label;
 };
 
-G_DEFINE_TYPE_WITH_PRIVATE (EomFileChooser, eoc_file_chooser, GTK_TYPE_FILE_CHOOSER_DIALOG)
+G_DEFINE_TYPE_WITH_PRIVATE (EocFileChooser, eoc_file_chooser, GTK_TYPE_FILE_CHOOSER_DIALOG)
 
 static void
 eoc_file_chooser_finalize (GObject *object)
 {
-	EomFileChooserPrivate *priv;
+	EocFileChooserPrivate *priv;
 
 	priv = EOC_FILE_CHOOSER (object)->priv;
 
@@ -67,7 +67,7 @@ eoc_file_chooser_finalize (GObject *object)
 }
 
 static void
-eoc_file_chooser_class_init (EomFileChooserClass *klass)
+eoc_file_chooser_class_init (EocFileChooserClass *klass)
 {
 	GObjectClass *object_class = (GObjectClass *) klass;
 
@@ -75,7 +75,7 @@ eoc_file_chooser_class_init (EomFileChooserClass *klass)
 }
 
 static void
-eoc_file_chooser_init (EomFileChooser *chooser)
+eoc_file_chooser_init (EocFileChooser *chooser)
 {
 	chooser->priv = eoc_file_chooser_get_instance_private (chooser);
 }
@@ -136,7 +136,7 @@ save_response_cb (GtkDialog *dlg, gint id, gpointer data)
 }
 
 static void
-eoc_file_chooser_add_filter (EomFileChooser *chooser)
+eoc_file_chooser_add_filter (EocFileChooser *chooser)
 {
 	GSList *it;
 	GSList *formats;
@@ -242,9 +242,9 @@ set_preview_label (GtkWidget *label, const char *str)
  * further information according to the thumbnail spec.
  */
 static void
-set_preview_pixbuf (EomFileChooser *chooser, GdkPixbuf *pixbuf, goffset size)
+set_preview_pixbuf (EocFileChooser *chooser, GdkPixbuf *pixbuf, goffset size)
 {
-	EomFileChooserPrivate *priv;
+	EocFileChooserPrivate *priv;
 	int bytes;
 	int pixels;
 	const char *bytes_str;
@@ -312,7 +312,7 @@ set_preview_pixbuf (EomFileChooser *chooser, GdkPixbuf *pixbuf, goffset size)
 static void
 update_preview_cb (GtkFileChooser *file_chooser, gpointer data)
 {
-	EomFileChooserPrivate *priv;
+	EocFileChooserPrivate *priv;
 	char *uri;
 	char *thumb_path = NULL;
 	GFile *file;
@@ -398,7 +398,7 @@ update_preview_cb (GtkFileChooser *file_chooser, gpointer data)
 static void
 eoc_file_chooser_add_preview (GtkWidget *widget)
 {
-	EomFileChooserPrivate *priv;
+	EocFileChooserPrivate *priv;
 	GtkWidget *vbox;
 
 	priv = EOC_FILE_CHOOSER (widget)->priv;
@@ -494,7 +494,7 @@ eoc_file_chooser_new (GtkFileChooserAction action)
 }
 
 GdkPixbufFormat *
-eoc_file_chooser_get_format (EomFileChooser *chooser)
+eoc_file_chooser_get_format (EocFileChooser *chooser)
 {
 	GtkFileFilter *filter;
 	GdkPixbufFormat* format;
