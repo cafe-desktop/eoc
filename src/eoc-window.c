@@ -1234,7 +1234,7 @@ eoc_window_obtain_desired_size (EocImage  *image,
 	screen = gtk_window_get_screen (GTK_WINDOW (window));
 	display = gdk_screen_get_display (screen);
 
-	gdk_monitor_get_geocetry (gdk_display_get_monitor_at_window (display,
+	gdk_monitor_get_geometry (gdk_display_get_monitor_at_window (display,
 								     gtk_widget_get_window (GTK_WIDGET (window))),
 				  &monitor);
 
@@ -1701,7 +1701,7 @@ eoc_window_update_fullscreen_popup (EocWindow *window)
 	screen = gtk_widget_get_screen (GTK_WIDGET (window));
 	display = gdk_screen_get_display (screen);
 
-	gdk_monitor_get_geocetry (gdk_display_get_monitor_at_window (display,
+	gdk_monitor_get_geometry (gdk_display_get_monitor_at_window (display,
 								     gtk_widget_get_window (GTK_WIDGET (window))),
 				  &screen_rect);
 
@@ -4691,7 +4691,7 @@ eoc_window_construct_ui (EocWindow *window)
 static void
 eoc_window_init (EocWindow *window)
 {
-	GdkGeocetry hints;
+	GdkGeometry hints;
 	GdkScreen *screen;
 	EocWindowPrivate *priv;
 
@@ -4730,7 +4730,7 @@ eoc_window_init (EocWindow *window)
 	window->priv->slideshow_switch_source = NULL;
 	window->priv->fullscreen_idle_inhibit_cookie = 0;
 
-	gtk_window_set_geocetry_hints (GTK_WINDOW (window),
+	gtk_window_set_geometry_hints (GTK_WINDOW (window),
 				       GTK_WIDGET (window),
 				       &hints,
 				       GDK_HINT_MIN_SIZE);
