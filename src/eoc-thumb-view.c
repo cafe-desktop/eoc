@@ -45,13 +45,13 @@ enum {
 
 #define EOC_THUMB_VIEW_SPACING 0
 
-static EomImage* eoc_thumb_view_get_image_from_path (EomThumbView      *thumbview,
+static EocImage* eoc_thumb_view_get_image_from_path (EocThumbView      *thumbview,
 						     GtkTreePath       *path);
 
-static void      eoc_thumb_view_popup_menu          (EomThumbView      *widget,
+static void      eoc_thumb_view_popup_menu          (EocThumbView      *widget,
 						     GdkEventButton    *event);
 
-static void      eoc_thumb_view_update_columns (EomThumbView *view);
+static void      eoc_thumb_view_update_columns (EocThumbView *view);
 
 static gboolean
 thumbview_on_query_tooltip_cb (GtkWidget  *widget,
@@ -73,7 +73,7 @@ thumbview_on_drag_data_get_cb (GtkWidget        *widget,
 			       guint             time,
 			       gpointer          user_data);
 
-struct _EomThumbViewPrivate {
+struct _EocThumbViewPrivate {
 	gint start_thumb; /* the first visible thumbnail */
 	gint end_thumb;   /* the last visible thumbnail  */
 	GtkWidget *menu;  /* a contextual menu for thumbnails */
@@ -86,16 +86,16 @@ struct _EomThumbViewPrivate {
 	gulong image_removed_id;
 };
 
-G_DEFINE_TYPE_WITH_CODE (EomThumbView, eoc_thumb_view, GTK_TYPE_ICON_VIEW,
+G_DEFINE_TYPE_WITH_CODE (EocThumbView, eoc_thumb_view, GTK_TYPE_ICON_VIEW,
 			 G_IMPLEMENT_INTERFACE (GTK_TYPE_ORIENTABLE, NULL) \
-			 G_ADD_PRIVATE (EomThumbView));
+			 G_ADD_PRIVATE (EocThumbView));
 
 /* Drag 'n Drop */
 
 static void
 eoc_thumb_view_constructed (GObject *object)
 {
-	EomThumbView *thumbview;
+	EocThumbView *thumbview;
 
 	if (G_OBJECT_CLASS (eoc_thumb_view_parent_class)->constructed)
 		G_OBJECT_CLASS (eoc_thumb_view_parent_class)->constructed (object);
@@ -158,7 +158,7 @@ eoc_thumb_view_constructed (GObject *object)
 static void
 eoc_thumb_view_dispose (GObject *object)
 {
-	EomThumbViewPrivate *priv = EOC_THUMB_VIEW (object)->priv;
+	EocThumbViewPrivate *priv = EOC_THUMB_VIEW (object)->priv;
 	GtkTreeModel *model;
 
 	if (priv->visible_range_changed_id != 0) {
@@ -187,7 +187,7 @@ eoc_thumb_view_get_property (GObject    *object,
 			     GValue     *value,
 			     GParamSpec *pspec)
 {
-	EomThumbView *view = EOC_THUMB_VIEW (object);
+	EocThumbView *view = EOC_THUMB_VIEW (object);
 
 	switch (prop_id)
 	{
@@ -207,7 +207,7 @@ eoc_thumb_view_set_property (GObject      *object,
 			     const GValue *value,
 			     GParamSpec   *pspec)
 {
-	EomThumbView *view = EOC_THUMB_VIEW (object);
+	EocThumbView *view = EOC_THUMB_VIEW (object);
 
 	switch (prop_id)
 	{
@@ -222,7 +222,7 @@ eoc_thumb_view_set_property (GObject      *object,
 }
 
 static void
-eoc_thumb_view_class_init (EomThumbViewClass *class)
+eoc_thumb_view_class_init (EocThumbViewClass *class)
 {
 	GObjectClass *gobject_class = G_OBJECT_CLASS (class);
 
@@ -236,13 +236,13 @@ eoc_thumb_view_class_init (EomThumbViewClass *class)
 }
 
 static void
-eoc_thumb_view_clear_range (EomThumbView *thumbview,
+eoc_thumb_view_clear_range (EocThumbView *thumbview,
 			    const gint start_thumb,
 			    const gint end_thumb)
 {
 	GtkTreePath *path;
 	GtkTreeIter iter;
-	EomListStore *store = EOC_LIST_STORE (gtk_icon_view_get_model (GTK_ICON_VIEW (thumbview)));
+	EocListStore *store = EOC_LIST_STORE (gtk_icon_view_get_model (GTK_ICON_VIEW (thumbview)));
 	gint thumb = start_thumb;
 	gboolean result;
 
@@ -258,13 +258,13 @@ eoc_thumb_view_clear_range (EomThumbView *thumbview,
 }
 
 static void
-eoc_thumb_view_add_range (EomThumbView *thumbview,
+eoc_thumb_view_add_range (EocThumbView *thumbview,
 			  const gint start_thumb,
 			  const gint end_thumb)
 {
 	GtkTreePath *path;
 	GtkTreeIter iter;
-	EomListStore *store = EOC_LIST_STORE (gtk_icon_view_get_model (GTK_ICON_VIEW (thumbview)));
+	EocListStore *store = EOC_LIST_STORE (gtk_icon_view_get_model (GTK_ICON_VIEW (thumbview)));
 	gint thumb = start_thumb;
 	gboolean result;
 
@@ -280,11 +280,11 @@ eoc_thumb_view_add_range (EomThumbView *thumbview,
 }
 
 static void
-eoc_thumb_view_update_visible_range (EomThumbView *thumbview,
+eoc_thumb_view_update_visible_range (EocThumbView *thumbview,
 				     const gint start_thumb,
 				     const gint end_thumb)
 {
-	EomThumbViewPrivate *priv = thumbview->priv;
+	EocThumbViewPrivate *priv = thumbview->priv;
 	int old_start_thumb, old_end_thumb;
 
 	old_start_thumb= priv->start_thumb;
@@ -308,7 +308,7 @@ eoc_thumb_view_update_visible_range (EomThumbView *thumbview,
 }
 
 static gboolean
-visible_range_changed_cb (EomThumbView *thumbview)
+visible_range_changed_cb (EocThumbView *thumbview)
 {
 	GtkTreePath *path1, *path2;
 
@@ -336,7 +336,7 @@ visible_range_changed_cb (EomThumbView *thumbview)
 }
 
 static void
-eoc_thumb_view_visible_range_changed (EomThumbView *thumbview)
+eoc_thumb_view_visible_range_changed (EocThumbView *thumbview)
 {
 	if (thumbview->priv->visible_range_changed_id == 0) {
 		g_idle_add ((GSourceFunc)visible_range_changed_cb, thumbview);
@@ -345,14 +345,14 @@ eoc_thumb_view_visible_range_changed (EomThumbView *thumbview)
 }
 
 static void
-thumbview_on_visible_range_changed_cb (EomThumbView *thumbview,
+thumbview_on_visible_range_changed_cb (EocThumbView *thumbview,
 				       gpointer user_data)
 {
 	eoc_thumb_view_visible_range_changed (thumbview);
 }
 
 static void
-thumbview_on_adjustment_changed_cb (EomThumbView *thumbview,
+thumbview_on_adjustment_changed_cb (EocThumbView *thumbview,
 				    gpointer user_data)
 {
 	eoc_thumb_view_visible_range_changed (thumbview);
@@ -363,7 +363,7 @@ thumbview_on_parent_set_cb (GtkWidget *widget,
 			    GtkWidget *old_parent,
 			    gpointer   user_data)
 {
-	EomThumbView *thumbview = EOC_THUMB_VIEW (widget);
+	EocThumbView *thumbview = EOC_THUMB_VIEW (widget);
 	GtkScrolledWindow *sw;
 	GtkAdjustment *hadjustment;
 	GtkAdjustment *vadjustment;
@@ -442,7 +442,7 @@ thumbview_on_drag_data_get_cb (GtkWidget        *widget,
 {
 	GList *list;
 	GList *node;
-	EomImage *image;
+	EocImage *image;
 	GFile *file;
 	gchar **uris = NULL;
 	gint i = 0, n_images;
@@ -467,7 +467,7 @@ thumbview_on_drag_data_get_cb (GtkWidget        *widget,
 }
 
 static gchar *
-thumbview_get_tooltip_string (EomImage *image)
+thumbview_get_tooltip_string (EocImage *image)
 {
 	gchar *bytes;
 	char *type_str;
@@ -562,7 +562,7 @@ thumbview_get_tooltip_string (EomImage *image)
 }
 
 static void
-on_data_loaded_cb (EomJob *job, gpointer data)
+on_data_loaded_cb (EocJob *job, gpointer data)
 {
 	if (!job->error) {
 		gtk_tooltip_trigger_tooltip_query (gdk_display_get_default());
@@ -578,9 +578,9 @@ thumbview_on_query_tooltip_cb (GtkWidget  *widget,
 			       gpointer    user_data)
 {
 	GtkTreePath *path;
-	EomImage *image;
+	EocImage *image;
 	gchar *tooltip_string;
-	EomImageData data = 0;
+	EocImageData data = 0;
 
 	if (!gtk_icon_view_get_tooltip_context (GTK_ICON_VIEW (widget),
 						&x, &y, keyboard_mode,
@@ -606,7 +606,7 @@ thumbview_on_query_tooltip_cb (GtkWidget  *widget,
 	}
 
 	if (data) {
-		EomJob *job;
+		EocJob *job;
 
 		job = eoc_job_load_new (image, data);
 		g_signal_connect (G_OBJECT (job), "finished",
@@ -632,7 +632,7 @@ thumbview_on_query_tooltip_cb (GtkWidget  *widget,
 }
 
 static void
-eoc_thumb_view_init (EomThumbView *thumbview)
+eoc_thumb_view_init (EocThumbView *thumbview)
 {
 	thumbview->priv = eoc_thumb_view_get_instance_private (thumbview);
 
@@ -644,14 +644,14 @@ eoc_thumb_view_init (EomThumbView *thumbview)
 /**
  * eoc_thumb_view_new:
  *
- * Creates a new #EomThumbView object.
+ * Creates a new #EocThumbView object.
  *
- * Returns: a newly created #EomThumbView.
+ * Returns: a newly created #EocThumbView.
  **/
 GtkWidget *
 eoc_thumb_view_new (void)
 {
-	EomThumbView *thumbview;
+	EocThumbView *thumbview;
 
 	thumbview = g_object_new (EOC_TYPE_THUMB_VIEW, NULL);
 
@@ -659,9 +659,9 @@ eoc_thumb_view_new (void)
 }
 
 static void
-eoc_thumb_view_update_columns (EomThumbView *view)
+eoc_thumb_view_update_columns (EocThumbView *view)
 {
-	EomThumbViewPrivate *priv;
+	EocThumbViewPrivate *priv;
 
 	g_return_if_fail (EOC_IS_THUMB_VIEW (view));
 
@@ -676,9 +676,9 @@ static void
 eoc_thumb_view_row_inserted_cb (GtkTreeModel    *tree_model,
                                 GtkTreePath     *path,
                                 GtkTreeIter     *iter,
-                                EomThumbView    *view)
+                                EocThumbView    *view)
 {
-	EomThumbViewPrivate *priv = view->priv;
+	EocThumbViewPrivate *priv = view->priv;
 
 	priv->n_images++;
 	eoc_thumb_view_update_columns (view);
@@ -687,9 +687,9 @@ eoc_thumb_view_row_inserted_cb (GtkTreeModel    *tree_model,
 static void
 eoc_thumb_view_row_deleted_cb (GtkTreeModel    *tree_model,
                                GtkTreePath     *path,
-                               EomThumbView    *view)
+                               EocThumbView    *view)
 {
-	EomThumbViewPrivate *priv = view->priv;
+	EocThumbViewPrivate *priv = view->priv;
 
 	priv->n_images--;
 	eoc_thumb_view_update_columns (view);
@@ -697,18 +697,18 @@ eoc_thumb_view_row_deleted_cb (GtkTreeModel    *tree_model,
 
 /**
  * eoc_thumb_view_set_model:
- * @thumbview: A #EomThumbView.
- * @store: A #EomListStore.
+ * @thumbview: A #EocThumbView.
+ * @store: A #EocListStore.
  *
- * Sets the #EomListStore to be used with @thumbview. If an initial image
+ * Sets the #EocListStore to be used with @thumbview. If an initial image
  * was set during @store creation, its thumbnail will be selected and visible.
  *
  **/
 void
-eoc_thumb_view_set_model (EomThumbView *thumbview, EomListStore *store)
+eoc_thumb_view_set_model (EocThumbView *thumbview, EocListStore *store)
 {
 	gint index;
-	EomThumbViewPrivate *priv;
+	EocThumbViewPrivate *priv;
 	GtkTreeModel *existing;
 
 	g_return_if_fail (EOC_IS_THUMB_VIEW (thumbview));
@@ -758,14 +758,14 @@ eoc_thumb_view_set_model (EomThumbView *thumbview, EomListStore *store)
 
 /**
  * eoc_thumb_view_set_item_height:
- * @thumbview: A #EomThumbView.
+ * @thumbview: A #EocThumbView.
  * @height: The desired height.
  *
  * Sets the height of each thumbnail in @thumbview.
  *
  **/
 void
-eoc_thumb_view_set_item_height (EomThumbView *thumbview, gint height)
+eoc_thumb_view_set_item_height (EocThumbView *thumbview, gint height)
 {
 	g_return_if_fail (EOC_IS_THUMB_VIEW (thumbview));
 
@@ -785,14 +785,14 @@ eoc_thumb_view_get_n_selected_helper (GtkIconView *thumbview,
 
 /**
  * eoc_thumb_view_get_n_selected:
- * @thumbview: An #EomThumbView.
+ * @thumbview: An #EocThumbView.
  *
  * Gets the number of images that are currently selected in @thumbview.
  *
  * Returns: the number of selected images in @thumbview.
  **/
 guint
-eoc_thumb_view_get_n_selected (EomThumbView *thumbview)
+eoc_thumb_view_get_n_selected (EocThumbView *thumbview)
 {
 	guint count = 0;
 	gtk_icon_view_selected_foreach (GTK_ICON_VIEW (thumbview),
@@ -803,20 +803,20 @@ eoc_thumb_view_get_n_selected (EomThumbView *thumbview)
 
 /**
  * eoc_thumb_view_get_image_from_path:
- * @thumbview: A #EomThumbView.
- * @path: A #GtkTreePath pointing to a #EomImage in the model for @thumbview.
+ * @thumbview: A #EocThumbView.
+ * @path: A #GtkTreePath pointing to a #EocImage in the model for @thumbview.
  *
- * Gets the #EomImage stored in @thumbview's #EomListStore at the position indicated
+ * Gets the #EocImage stored in @thumbview's #EocListStore at the position indicated
  * by @path.
  *
- * Returns: (transfer full): A #EomImage.
+ * Returns: (transfer full): A #EocImage.
  **/
-static EomImage *
-eoc_thumb_view_get_image_from_path (EomThumbView *thumbview, GtkTreePath *path)
+static EocImage *
+eoc_thumb_view_get_image_from_path (EocThumbView *thumbview, GtkTreePath *path)
 {
 	GtkTreeModel *model;
 	GtkTreeIter iter;
-	EomImage *image;
+	EocImage *image;
 
 	model = gtk_icon_view_get_model (GTK_ICON_VIEW (thumbview));
 	gtk_tree_model_get_iter (model, &iter, path);
@@ -830,21 +830,21 @@ eoc_thumb_view_get_image_from_path (EomThumbView *thumbview, GtkTreePath *path)
 
 /**
  * eoc_thumb_view_get_first_selected_image:
- * @thumbview: A #EomThumbView.
+ * @thumbview: A #EocThumbView.
  *
- * Returns the first selected image. Note that the returned #EomImage
+ * Returns the first selected image. Note that the returned #EocImage
  * is not ensured to be really the first selected image in @thumbview, but
  * generally, it will be.
  *
- * Returns: (transfer full): A #EomImage.
+ * Returns: (transfer full): A #EocImage.
  **/
-EomImage *
-eoc_thumb_view_get_first_selected_image (EomThumbView *thumbview)
+EocImage *
+eoc_thumb_view_get_first_selected_image (EocThumbView *thumbview)
 {
 	/* The returned list is not sorted! We need to find the
 	   smaller tree path value => tricky and expensive. Do we really need this?
 	*/
-	EomImage *image;
+	EocImage *image;
 	GtkTreePath *path;
 	GList *list = gtk_icon_view_get_selected_items (GTK_ICON_VIEW (thumbview));
 
@@ -864,15 +864,15 @@ eoc_thumb_view_get_first_selected_image (EomThumbView *thumbview)
 
 /**
  * eoc_thumb_view_get_selected_images:
- * @thumbview: A #EomThumbView.
+ * @thumbview: A #EocThumbView.
  *
  * Gets a list with the currently selected images. Note that a new reference is
  * hold for each image and the list must be freed with g_list_free().
  *
- * Returns: (element-type EomImage) (transfer full): A newly allocated list of #EomImage's.
+ * Returns: (element-type EocImage) (transfer full): A newly allocated list of #EocImage's.
  **/
 GList *
-eoc_thumb_view_get_selected_images (EomThumbView *thumbview)
+eoc_thumb_view_get_selected_images (EocThumbView *thumbview)
 {
 	GList *l, *item;
 	GList *list = NULL;
@@ -895,7 +895,7 @@ eoc_thumb_view_get_selected_images (EomThumbView *thumbview)
 
 /**
  * eoc_thumb_view_set_current_image:
- * @thumbview: A #EomThumbView.
+ * @thumbview: A #EocThumbView.
  * @image: The image to be selected.
  * @deselect_other: Whether to deselect currently selected images.
  *
@@ -905,11 +905,11 @@ eoc_thumb_view_get_selected_images (EomThumbView *thumbview)
  *
  **/
 void
-eoc_thumb_view_set_current_image (EomThumbView *thumbview, EomImage *image,
+eoc_thumb_view_set_current_image (EocThumbView *thumbview, EocImage *image,
 				  gboolean deselect_other)
 {
 	GtkTreePath *path;
-	EomListStore *store;
+	EocListStore *store;
 	gint pos;
 
 	store = EOC_LIST_STORE (gtk_icon_view_get_model (GTK_ICON_VIEW (thumbview)));
@@ -933,21 +933,21 @@ eoc_thumb_view_set_current_image (EomThumbView *thumbview, EomImage *image,
 
 /**
  * eoc_thumb_view_select_single:
- * @thumbview: A #EomThumbView.
- * @change: A #EomThumbViewSelectionChange, describing the
+ * @thumbview: A #EocThumbView.
+ * @change: A #EocThumbViewSelectionChange, describing the
  * desired selection change.
  *
  * Changes the current selection according to a single movement
- * described by #EomThumbViewSelectionChange. If there are no
+ * described by #EocThumbViewSelectionChange. If there are no
  * thumbnails currently selected, one is selected according to the
- * natural selection according to the #EomThumbViewSelectionChange
+ * natural selection according to the #EocThumbViewSelectionChange
  * used, p.g., when %EOC_THUMB_VIEW_SELECT_RIGHT is the selected change,
  * the first thumbnail will be selected.
  *
  **/
 void
-eoc_thumb_view_select_single (EomThumbView *thumbview,
-			      EomThumbViewSelectionChange change)
+eoc_thumb_view_select_single (EocThumbView *thumbview,
+			      EocThumbViewSelectionChange change)
 {
   	GtkTreePath *path = NULL;
 	GtkTreeModel *model;
@@ -1029,7 +1029,7 @@ eoc_thumb_view_select_single (EomThumbView *thumbview,
 
 /**
  * eoc_thumb_view_set_thumbnail_popup:
- * @thumbview: An #EomThumbView.
+ * @thumbview: An #EocThumbView.
  * @menu: A #GtkMenu.
  *
  * Set the contextual menu to be used with the thumbnails in the
@@ -1037,7 +1037,7 @@ eoc_thumb_view_select_single (EomThumbView *thumbview,
  *
  **/
 void
-eoc_thumb_view_set_thumbnail_popup (EomThumbView *thumbview,
+eoc_thumb_view_set_thumbnail_popup (EocThumbView *thumbview,
 				    GtkMenu      *menu)
 {
 	g_return_if_fail (EOC_IS_THUMB_VIEW (thumbview));
@@ -1056,7 +1056,7 @@ eoc_thumb_view_set_thumbnail_popup (EomThumbView *thumbview,
 
 
 static void
-eoc_thumb_view_popup_menu (EomThumbView *thumbview, GdkEventButton *event)
+eoc_thumb_view_popup_menu (EocThumbView *thumbview, GdkEventButton *event)
 {
 	g_return_if_fail (event != NULL);
 

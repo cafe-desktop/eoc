@@ -32,19 +32,19 @@ G_BEGIN_DECLS
 
 #ifndef __EOC_IMAGE_DECLR__
 #define __EOC_IMAGE_DECLR__
-  typedef struct _EomImage EomImage;
+  typedef struct _EocImage EocImage;
 #endif
 
-typedef struct _EomListStore EomListStore;
-typedef struct _EomListStoreClass EomListStoreClass;
-typedef struct _EomListStorePrivate EomListStorePrivate;
+typedef struct _EocListStore EocListStore;
+typedef struct _EocListStoreClass EocListStoreClass;
+typedef struct _EocListStorePrivate EocListStorePrivate;
 
 #define EOC_TYPE_LIST_STORE            eoc_list_store_get_type()
-#define EOC_LIST_STORE(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), EOC_TYPE_LIST_STORE, EomListStore))
-#define EOC_LIST_STORE_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass),  EOC_TYPE_LIST_STORE, EomListStoreClass))
+#define EOC_LIST_STORE(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), EOC_TYPE_LIST_STORE, EocListStore))
+#define EOC_LIST_STORE_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass),  EOC_TYPE_LIST_STORE, EocListStoreClass))
 #define EOC_IS_LIST_STORE(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), EOC_TYPE_LIST_STORE))
 #define EOC_IS_LIST_STORE_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass),  EOC_TYPE_LIST_STORE))
-#define EOC_LIST_STORE_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj),  EOC_TYPE_LIST_STORE, EomListStoreClass))
+#define EOC_LIST_STORE_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj),  EOC_TYPE_LIST_STORE, EocListStoreClass))
 
 #define EOC_LIST_STORE_THUMB_SIZE 90
 
@@ -54,14 +54,14 @@ typedef enum {
 	EOC_LIST_STORE_EOC_IMAGE,
 	EOC_LIST_STORE_EOC_JOB,
 	EOC_LIST_STORE_NUM_COLUMNS
-} EomListStoreColumn;
+} EocListStoreColumn;
 
-struct _EomListStore {
+struct _EocListStore {
         GtkListStore parent;
-	EomListStorePrivate *priv;
+	EocListStorePrivate *priv;
 };
 
-struct _EomListStoreClass {
+struct _EocListStoreClass {
         GtkListStoreClass parent_class;
 
 	/* Padding for future expansion */
@@ -77,35 +77,35 @@ GtkListStore   *eoc_list_store_new 		     (void);
 
 GtkListStore   *eoc_list_store_new_from_glist 	     (GList *list);
 
-void            eoc_list_store_append_image 	     (EomListStore *store,
-						      EomImage     *image);
+void            eoc_list_store_append_image 	     (EocListStore *store,
+						      EocImage     *image);
 
-void            eoc_list_store_add_files 	     (EomListStore *store,
+void            eoc_list_store_add_files 	     (EocListStore *store,
 						      GList        *file_list);
 
-void            eoc_list_store_remove_image 	     (EomListStore *store,
-						      EomImage     *image);
+void            eoc_list_store_remove_image 	     (EocListStore *store,
+						      EocImage     *image);
 
-gint            eoc_list_store_get_pos_by_image      (EomListStore *store,
-						      EomImage     *image);
+gint            eoc_list_store_get_pos_by_image      (EocListStore *store,
+						      EocImage     *image);
 
-EomImage       *eoc_list_store_get_image_by_pos      (EomListStore *store,
+EocImage       *eoc_list_store_get_image_by_pos      (EocListStore *store,
 						      gint   pos);
 
-gint            eoc_list_store_get_pos_by_iter 	     (EomListStore *store,
+gint            eoc_list_store_get_pos_by_iter 	     (EocListStore *store,
 						      GtkTreeIter  *iter);
 
-gint            eoc_list_store_length                (EomListStore *store);
+gint            eoc_list_store_length                (EocListStore *store);
 
-gint            eoc_list_store_get_initial_pos 	     (EomListStore *store);
+gint            eoc_list_store_get_initial_pos 	     (EocListStore *store);
 
-void            eoc_list_store_thumbnail_set         (EomListStore *store,
+void            eoc_list_store_thumbnail_set         (EocListStore *store,
 						      GtkTreeIter *iter);
 
-void            eoc_list_store_thumbnail_unset       (EomListStore *store,
+void            eoc_list_store_thumbnail_unset       (EocListStore *store,
 						      GtkTreeIter *iter);
 
-void            eoc_list_store_thumbnail_refresh     (EomListStore *store,
+void            eoc_list_store_thumbnail_refresh     (EocListStore *store,
 						      GtkTreeIter *iter);
 
 G_END_DECLS

@@ -28,15 +28,15 @@
 G_BEGIN_DECLS
 
 #define EOC_TYPE_THUMB_VIEW            (eoc_thumb_view_get_type ())
-#define EOC_THUMB_VIEW(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), EOC_TYPE_THUMB_VIEW, EomThumbView))
-#define EOC_THUMB_VIEW_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass),  EOC_TYPE_THUMB_VIEW, EomThumbViewClass))
+#define EOC_THUMB_VIEW(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), EOC_TYPE_THUMB_VIEW, EocThumbView))
+#define EOC_THUMB_VIEW_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass),  EOC_TYPE_THUMB_VIEW, EocThumbViewClass))
 #define EOC_IS_THUMB_VIEW(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), EOC_TYPE_THUMB_VIEW))
 #define EOC_IS_THUMB_VIEW_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass),  EOC_TYPE_THUMB_VIEW))
-#define EOC_THUMB_VIEW_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj),  EOC_TYPE_THUMB_VIEW, EomThumbViewClass))
+#define EOC_THUMB_VIEW_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj),  EOC_TYPE_THUMB_VIEW, EocThumbViewClass))
 
-typedef struct _EomThumbView EomThumbView;
-typedef struct _EomThumbViewClass EomThumbViewClass;
-typedef struct _EomThumbViewPrivate EomThumbViewPrivate;
+typedef struct _EocThumbView EocThumbView;
+typedef struct _EocThumbViewClass EocThumbViewClass;
+typedef struct _EocThumbViewPrivate EocThumbViewPrivate;
 
 typedef enum {
 	EOC_THUMB_VIEW_SELECT_CURRENT = 0,
@@ -45,14 +45,14 @@ typedef enum {
 	EOC_THUMB_VIEW_SELECT_FIRST,
 	EOC_THUMB_VIEW_SELECT_LAST,
 	EOC_THUMB_VIEW_SELECT_RANDOM
-} EomThumbViewSelectionChange;
+} EocThumbViewSelectionChange;
 
-struct _EomThumbView {
+struct _EocThumbView {
 	GtkIconView icon_view;
-	EomThumbViewPrivate *priv;
+	EocThumbViewPrivate *priv;
 };
 
-struct _EomThumbViewClass {
+struct _EocThumbViewClass {
 	 GtkIconViewClass icon_view_class;
 };
 
@@ -60,26 +60,26 @@ GType       eoc_thumb_view_get_type 		    (void) G_GNUC_CONST;
 
 GtkWidget  *eoc_thumb_view_new 			    (void);
 
-void	    eoc_thumb_view_set_model 		    (EomThumbView *thumbview,
-						     EomListStore *store);
+void	    eoc_thumb_view_set_model 		    (EocThumbView *thumbview,
+						     EocListStore *store);
 
-void        eoc_thumb_view_set_item_height          (EomThumbView *thumbview,
+void        eoc_thumb_view_set_item_height          (EocThumbView *thumbview,
 						     gint          height);
 
-guint	    eoc_thumb_view_get_n_selected 	    (EomThumbView *thumbview);
+guint	    eoc_thumb_view_get_n_selected 	    (EocThumbView *thumbview);
 
-EomImage   *eoc_thumb_view_get_first_selected_image (EomThumbView *thumbview);
+EocImage   *eoc_thumb_view_get_first_selected_image (EocThumbView *thumbview);
 
-GList      *eoc_thumb_view_get_selected_images 	    (EomThumbView *thumbview);
+GList      *eoc_thumb_view_get_selected_images 	    (EocThumbView *thumbview);
 
-void        eoc_thumb_view_select_single 	    (EomThumbView *thumbview,
-						     EomThumbViewSelectionChange change);
+void        eoc_thumb_view_select_single 	    (EocThumbView *thumbview,
+						     EocThumbViewSelectionChange change);
 
-void        eoc_thumb_view_set_current_image	    (EomThumbView *thumbview,
-						     EomImage     *image,
+void        eoc_thumb_view_set_current_image	    (EocThumbView *thumbview,
+						     EocImage     *image,
 						     gboolean     deselect_other);
 
-void        eoc_thumb_view_set_thumbnail_popup      (EomThumbView *thumbview,
+void        eoc_thumb_view_set_thumbnail_popup      (EocThumbView *thumbview,
 						     GtkMenu      *menu);
 
 G_END_DECLS

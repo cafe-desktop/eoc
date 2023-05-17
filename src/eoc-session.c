@@ -32,7 +32,7 @@
 #include "eoc-application.h"
 
 void
-eoc_session_init (EomApplication *application)
+eoc_session_init (EocApplication *application)
 {
 	g_return_if_fail (EOC_IS_APPLICATION (application));
 

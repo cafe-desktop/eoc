@@ -8,12 +8,12 @@
 #include "eoc-pixbuf-util.h"
 #include "eoc-image.h"
 
-G_DEFINE_TYPE (EomImageSaveInfo, eoc_image_save_info, G_TYPE_OBJECT)
+G_DEFINE_TYPE (EocImageSaveInfo, eoc_image_save_info, G_TYPE_OBJECT)
 
 static void
 eoc_image_save_info_dispose (GObject *object)
 {
-	EomImageSaveInfo *info = EOC_IMAGE_SAVE_INFO (object);
+	EocImageSaveInfo *info = EOC_IMAGE_SAVE_INFO (object);
 
 	if (info->file != NULL) {
 		g_object_unref (info->file);
@@ -29,13 +29,13 @@ eoc_image_save_info_dispose (GObject *object)
 }
 
 static void
-eoc_image_save_info_init (EomImageSaveInfo *obj)
+eoc_image_save_info_init (EocImageSaveInfo *obj)
 {
 
 }
 
 static void
-eoc_image_save_info_class_init (EomImageSaveInfoClass *klass)
+eoc_image_save_info_class_init (EocImageSaveInfoClass *klass)
 {
 	GObjectClass *object_class = (GObjectClass*) klass;
 
@@ -78,10 +78,10 @@ get_save_file_type_by_file (GFile *file)
 	return type;
 }
 
-EomImageSaveInfo*
-eoc_image_save_info_new_from_image (EomImage *image)
+EocImageSaveInfo*
+eoc_image_save_info_new_from_image (EocImage *image)
 {
-	EomImageSaveInfo *info = NULL;
+	EocImageSaveInfo *info = NULL;
 
 	g_return_val_if_fail (EOC_IS_IMAGE (image), NULL);
 
@@ -100,11 +100,11 @@ eoc_image_save_info_new_from_image (EomImage *image)
 	return info;
 }
 
-EomImageSaveInfo*
+EocImageSaveInfo*
 eoc_image_save_info_new_from_uri (const char *txt_uri, GdkPixbufFormat *format)
 {
 	GFile *file;
-	EomImageSaveInfo *info;
+	EocImageSaveInfo *info;
 
 	g_return_val_if_fail (txt_uri != NULL, NULL);
 
@@ -117,10 +117,10 @@ eoc_image_save_info_new_from_uri (const char *txt_uri, GdkPixbufFormat *format)
 	return info;
 }
 
-EomImageSaveInfo*
+EocImageSaveInfo*
 eoc_image_save_info_new_from_file (GFile *file, GdkPixbufFormat *format)
 {
-	EomImageSaveInfo *info;
+	EocImageSaveInfo *info;
 
 	g_return_val_if_fail (file != NULL, NULL);
 

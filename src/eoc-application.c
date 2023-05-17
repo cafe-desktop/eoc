@@ -46,7 +46,7 @@
 static void eoc_application_load_accelerators (void);
 static void eoc_application_save_accelerators (void);
 
-G_DEFINE_TYPE_WITH_PRIVATE (EomApplication, eoc_application, GTK_TYPE_APPLICATION);
+G_DEFINE_TYPE_WITH_PRIVATE (EocApplication, eoc_application, GTK_TYPE_APPLICATION);
 
 static void
 eoc_application_activate (GApplication *application)
@@ -77,8 +77,8 @@ eoc_application_open (GApplication *application,
 static void
 eoc_application_finalize (GObject *object)
 {
-	EomApplication *application = EOC_APPLICATION (object);
-	EomApplicationPrivate *priv = application->priv;
+	EocApplication *application = EOC_APPLICATION (object);
+	EocApplicationPrivate *priv = application->priv;
 
 	if (priv->toolbars_model) {
 		g_object_unref (priv->toolbars_model);
@@ -100,7 +100,7 @@ static void
 eoc_application_add_platform_data (GApplication *application,
 				   GVariantBuilder *builder)
 {
-	EomApplication *app = EOC_APPLICATION (application);
+	EocApplication *app = EOC_APPLICATION (application);
 
 	G_APPLICATION_CLASS (eoc_application_parent_class)->add_platform_data (application,
 									       builder);
@@ -133,7 +133,7 @@ eoc_application_before_emit (GApplication *application,
 }
 
 static void
-eoc_application_class_init (EomApplicationClass *eoc_application_class)
+eoc_application_class_init (EocApplicationClass *eoc_application_class)
 {
 	GApplicationClass *application_class;
 	GObjectClass *object_class;
@@ -153,7 +153,7 @@ static void
 on_extension_added (PeasExtensionSet *set,
                     PeasPluginInfo   *info,
                     PeasExtension    *exten,
-                    EomApplication   *app)
+                    EocApplication   *app)
 {
 	eoc_application_activatable_activate (EOC_APPLICATION_ACTIVATABLE (exten));
 }
@@ -162,15 +162,15 @@ static void
 on_extension_removed (PeasExtensionSet *set,
                       PeasPluginInfo   *info,
                       PeasExtension    *exten,
-                      EomApplication   *app)
+                      EocApplication   *app)
 {
 	eoc_application_activatable_deactivate (EOC_APPLICATION_ACTIVATABLE (exten));
 }
 
 static void
-eoc_application_init (EomApplication *eoc_application)
+eoc_application_init (EocApplication *eoc_application)
 {
-	EomApplicationPrivate *priv;
+	EocApplicationPrivate *priv;
 	const gchar *dot_dir = eoc_util_dot_dir ();
 
 	eoc_session_init (eoc_application);
@@ -216,15 +216,15 @@ eoc_application_init (EomApplication *eoc_application)
 /**
  * eoc_application_get_instance:
  *
- * Returns a singleton instance of #EomApplication currently running.
+ * Returns a singleton instance of #EocApplication currently running.
  * If not running yet, it will create one.
  *
- * Returns: (transfer none): a running #EomApplication.
+ * Returns: (transfer none): a running #EocApplication.
  **/
-EomApplication *
+EocApplication *
 eoc_application_get_instance (void)
 {
-	static EomApplication *instance;
+	static EocApplication *instance;
 
 	if (!instance) {
 		instance = EOC_APPLICATION (g_object_new (EOC_TYPE_APPLICATION,
@@ -236,10 +236,10 @@ eoc_application_get_instance (void)
 	return instance;
 }
 
-static EomWindow *
-eoc_application_get_empty_window (EomApplication *application)
+static EocWindow *
+eoc_application_get_empty_window (EocApplication *application)
 {
-	EomWindow *empty_window = NULL;
+	EocWindow *empty_window = NULL;
 	GList *windows;
 	GList *l;
 
@@ -248,7 +248,7 @@ eoc_application_get_empty_window (EomApplication *application)
 	windows = gtk_application_get_windows (GTK_APPLICATION (application));
 
 	for (l = windows; l != NULL; l = l->next) {
-		EomWindow *window = EOC_WINDOW (l->data);
+		EocWindow *window = EOC_WINDOW (l->data);
 
 		if (eoc_window_is_empty (window)) {
 			empty_window = window;
@@ -261,22 +261,22 @@ eoc_application_get_empty_window (EomApplication *application)
 
 /**
  * eoc_application_open_window:
- * @application: An #EomApplication.
+ * @application: An #EocApplication.
  * @timestamp: The timestamp of the user interaction which triggered this call
  * (see gtk_window_present_with_time()).
- * @flags: A set of #EomStartupFlags influencing a new windows' state.
+ * @flags: A set of #EocStartupFlags influencing a new windows' state.
  * @error: Return location for a #GError, or NULL to ignore errors.
  *
- * Opens and presents an empty #EomWindow to the user. If there is
+ * Opens and presents an empty #EocWindow to the user. If there is
  * an empty window already open, this will be used. Otherwise, a
  * new one will be instantiated.
  *
  * Returns: %FALSE if @application is invalid, %TRUE otherwise
  **/
 gboolean
-eoc_application_open_window (EomApplication  *application,
+eoc_application_open_window (EocApplication  *application,
 			     guint32         timestamp,
-			     EomStartupFlags flags,
+			     EocStartupFlags flags,
 			     GError        **error)
 {
 	GtkWidget *new_window = NULL;
@@ -295,10 +295,10 @@ eoc_application_open_window (EomApplication  *application,
 	return TRUE;
 }
 
-static EomWindow *
-eoc_application_get_file_window (EomApplication *application, GFile *file)
+static EocWindow *
+eoc_application_get_file_window (EocApplication *application, GFile *file)
 {
-	EomWindow *file_window = NULL;
+	EocWindow *file_window = NULL;
 	GList *windows;
 	GList *l;
 
@@ -309,10 +309,10 @@ eoc_application_get_file_window (EomApplication *application, GFile *file)
 
 	for (l = windows; l != NULL; l = l->next) {
 		if (EOC_IS_WINDOW (l->data)) {
-			EomWindow *window = EOC_WINDOW (l->data);
+			EocWindow *window = EOC_WINDOW (l->data);
 
 			if (!eoc_window_is_empty (window)) {
-				EomImage *image = eoc_window_get_image (window);
+				EocImage *image = eoc_window_get_image (window);
 				GFile *window_file;
 
 				window_file = eoc_image_get_file (image);
@@ -330,7 +330,7 @@ eoc_application_get_file_window (EomApplication *application, GFile *file)
 }
 
 static void
-eoc_application_show_window (EomWindow *window, gpointer user_data)
+eoc_application_show_window (EocWindow *window, gpointer user_data)
 {
 	if (!gtk_widget_get_realized (GTK_WIDGET (window)))
 		gtk_widget_realize (GTK_WIDGET (window));
@@ -341,27 +341,27 @@ eoc_application_show_window (EomWindow *window, gpointer user_data)
 
 /**
  * eoc_application_open_file_list:
- * @application: An #EomApplication.
+ * @application: An #EocApplication.
  * @file_list: (element-type GFile): A list of #GFile<!-- -->s
  * @timestamp: The timestamp of the user interaction which triggered this call
  * (see gtk_window_present_with_time()).
- * @flags: A set of #EomStartupFlags influencing a new windows' state.
+ * @flags: A set of #EocStartupFlags influencing a new windows' state.
  * @error: Return location for a #GError, or NULL to ignore errors.
  *
- * Opens a list of files in a #EomWindow. If an #EomWindow displaying the first
+ * Opens a list of files in a #EocWindow. If an #EocWindow displaying the first
  * image in the list is already open, this will be used. Otherwise, an empty
- * #EomWindow is used, either already existing or newly created.
+ * #EocWindow is used, either already existing or newly created.
  *
  * Returns: Currently always %TRUE.
  **/
 gboolean
-eoc_application_open_file_list (EomApplication  *application,
+eoc_application_open_file_list (EocApplication  *application,
 				GSList          *file_list,
 				guint           timestamp,
-				EomStartupFlags flags,
+				EocStartupFlags flags,
 				GError         **error)
 {
-	EomWindow *new_window = NULL;
+	EocWindow *new_window = NULL;
 
 	if (file_list != NULL)
 		new_window = eoc_application_get_file_window (application,
@@ -391,11 +391,11 @@ eoc_application_open_file_list (EomApplication  *application,
 
 /**
  * eoc_application_open_uri_list:
- * @application: An #EomApplication.
+ * @application: An #EocApplication.
  * @uri_list: (element-type utf8): A list of URIs.
  * @timestamp: The timestamp of the user interaction which triggered this call
  * (see gtk_window_present_with_time()).
- * @flags: A set of #EomStartupFlags influencing a new windows' state.
+ * @flags: A set of #EocStartupFlags influencing a new windows' state.
  * @error: Return location for a #GError, or NULL to ignore errors.
  *
  * Opens a list of images, from a list of URIs. See
@@ -404,10 +404,10 @@ eoc_application_open_file_list (EomApplication  *application,
  * Returns: Currently always %TRUE.
  **/
 gboolean
-eoc_application_open_uri_list (EomApplication  *application,
+eoc_application_open_uri_list (EocApplication  *application,
  			       GSList          *uri_list,
  			       guint           timestamp,
- 			       EomStartupFlags flags,
+ 			       EocStartupFlags flags,
  			       GError         **error)
 {
  	GSList *file_list = NULL;
@@ -425,11 +425,11 @@ eoc_application_open_uri_list (EomApplication  *application,
 
 /**
  * eoc_application_open_uris:
- * @application: an #EomApplication
+ * @application: an #EocApplication
  * @uris:  A #GList of URI strings.
  * @timestamp: The timestamp of the user interaction which triggered this call
  * (see gtk_window_present_with_time()).
- * @flags: A set of #EomStartupFlags influencing a new windows' state.
+ * @flags: A set of #EocStartupFlags influencing a new windows' state.
  * @error: Return location for a #GError, or NULL to ignore errors.
  *
  * Opens a list of images, from a list of URI strings. See
@@ -438,10 +438,10 @@ eoc_application_open_uri_list (EomApplication  *application,
  * Returns: Currently always %TRUE.
  **/
 gboolean
-eoc_application_open_uris (EomApplication  *application,
+eoc_application_open_uris (EocApplication  *application,
  			   gchar          **uris,
  			   guint           timestamp,
- 			   EomStartupFlags flags,
+ 			   EocStartupFlags flags,
  			   GError        **error)
 {
  	GSList *file_list = NULL;
@@ -454,14 +454,14 @@ eoc_application_open_uris (EomApplication  *application,
 
 /**
  * eoc_application_get_toolbars_model:
- * @application: An #EomApplication.
+ * @application: An #EocApplication.
  *
- * Retrieves the #EggToolbarsModel for the toolbar in #EomApplication.
+ * Retrieves the #EggToolbarsModel for the toolbar in #EocApplication.
  *
  * Returns: (transfer none): An #EggToolbarsModel.
  **/
 EggToolbarsModel *
-eoc_application_get_toolbars_model (EomApplication *application)
+eoc_application_get_toolbars_model (EocApplication *application)
 {
 	g_return_val_if_fail (EOC_IS_APPLICATION (application), NULL);
 
@@ -470,12 +470,12 @@ eoc_application_get_toolbars_model (EomApplication *application)
 
 /**
  * eoc_application_save_toolbars_model:
- * @application: An #EomApplication.
+ * @application: An #EocApplication.
  *
- * Causes the saving of the model of the toolbar in #EomApplication to a file.
+ * Causes the saving of the model of the toolbar in #EocApplication to a file.
  **/
 void
-eoc_application_save_toolbars_model (EomApplication *application)
+eoc_application_save_toolbars_model (EocApplication *application)
 {
 	if (G_LIKELY(application->priv->toolbars_file != NULL))
         	egg_toolbars_model_save_toolbars (application->priv->toolbars_model,
@@ -485,14 +485,14 @@ eoc_application_save_toolbars_model (EomApplication *application)
 
 /**
  * eoc_application_reset_toolbars_model:
- * @app: an #EomApplication
+ * @app: an #EocApplication
  *
  * Restores the toolbars model to the defaults.
  **/
 void
-eoc_application_reset_toolbars_model (EomApplication *app)
+eoc_application_reset_toolbars_model (EocApplication *app)
 {
-	EomApplicationPrivate *priv;
+	EocApplicationPrivate *priv;
 	g_return_if_fail (EOC_IS_APPLICATION (app));
 
 	priv = app->priv;

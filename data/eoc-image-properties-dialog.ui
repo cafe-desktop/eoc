@@ -2,7 +2,7 @@
 <!-- Generated with glade 3.22.1 -->
 <interface>
   <requires lib="gtk+" version="3.22"/>
-  <template class="EomPropertiesDialog" parent="GtkDialog">
+  <template class="EocPropertiesDialog" parent="GtkDialog">
     <property name="can_focus">False</property>
     <property name="border_width">5</property>
     <property name="title" translatable="yes">Image Properties</property>
@@ -144,7 +144,7 @@
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="border_width">5</property>
-            <signal name="switch-page" handler="eoc_properties_dialog_page_switch" object="EomPropertiesDialog" swapped="no"/>
+            <signal name="switch-page" handler="eoc_properties_dialog_page_switch" object="EocPropertiesDialog" swapped="no"/>
             <child>
               <object class="GtkBox" id="general_box">
                 <property name="visible">True</property>
@@ -391,7 +391,7 @@
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
-                            <signal name="clicked" handler="pd_folder_button_clicked_cb" object="EomPropertiesDialog" swapped="no"/>
+                            <signal name="clicked" handler="pd_folder_button_clicked_cb" object="EocPropertiesDialog" swapped="no"/>
                           </object>
                           <packing>
                             <property name="expand">False</property>
@@ -942,7 +942,7 @@
                         <attributes>
                           <attribute name="weight" value="bold"/>
                         </attributes>
-                        <signal name="notify::expanded" handler="pd_exif_details_activated_cb" object="EomPropertiesDialog" after="yes" swapped="no"/>
+                        <signal name="notify::expanded" handler="pd_exif_details_activated_cb" object="EocPropertiesDialog" after="yes" swapped="no"/>
                       </object>
                     </child>
                   </object>

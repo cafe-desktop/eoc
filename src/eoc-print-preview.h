@@ -24,23 +24,23 @@
 
 G_BEGIN_DECLS
 
-typedef struct _EomPrintPreview EomPrintPreview;
-typedef struct _EomPrintPreviewClass EomPrintPreviewClass;
-typedef struct _EomPrintPreviewPrivate EomPrintPreviewPrivate;
+typedef struct _EocPrintPreview EocPrintPreview;
+typedef struct _EocPrintPreviewClass EocPrintPreviewClass;
+typedef struct _EocPrintPreviewPrivate EocPrintPreviewPrivate;
 
 #define EOC_TYPE_PRINT_PREVIEW            (eoc_print_preview_get_type ())
-#define EOC_PRINT_PREVIEW(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), EOC_TYPE_PRINT_PREVIEW, EomPrintPreview))
-#define EOC_PRINT_PREVIEW_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass), EOC_TYPE_PRINT_PREVIEW, EomPrintPreviewClass))
+#define EOC_PRINT_PREVIEW(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), EOC_TYPE_PRINT_PREVIEW, EocPrintPreview))
+#define EOC_PRINT_PREVIEW_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass), EOC_TYPE_PRINT_PREVIEW, EocPrintPreviewClass))
 #define EOC_IS_PRINT_PREVIEW(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), EOC_TYPE_PRINT_PREVIEW))
 #define EOC_IS_PRINT_PREVIEW_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), EOC_TYPE_PRINT_PREVIEW))
 
-struct _EomPrintPreview {
+struct _EocPrintPreview {
 	GtkAspectFrame aspect_frame;
 
-	EomPrintPreviewPrivate *priv;
+	EocPrintPreviewPrivate *priv;
 };
 
-struct _EomPrintPreviewClass {
+struct _EocPrintPreviewClass {
 	GtkAspectFrameClass parent_class;
 
 };
@@ -55,28 +55,28 @@ G_GNUC_INTERNAL
 GtkWidget   *eoc_print_preview_new_with_pixbuf     (GdkPixbuf       *pixbuf);
 
 G_GNUC_INTERNAL
-void         eoc_print_preview_set_page_margins    (EomPrintPreview *preview,
+void         eoc_print_preview_set_page_margins    (EocPrintPreview *preview,
 						    gfloat          l_margin,
 						    gfloat          r_margin,
 						    gfloat          t_margin,
 						    gfloat          b_margin);
 
 G_GNUC_INTERNAL
-void         eoc_print_preview_set_from_page_setup (EomPrintPreview *preview,
+void         eoc_print_preview_set_from_page_setup (EocPrintPreview *preview,
 						    GtkPageSetup    *setup);
 
 G_GNUC_INTERNAL
-void         eoc_print_preview_get_image_position  (EomPrintPreview *preview,
+void         eoc_print_preview_get_image_position  (EocPrintPreview *preview,
 						    gdouble         *x,
 						    gdouble         *y);
 
 G_GNUC_INTERNAL
-void         eoc_print_preview_set_image_position  (EomPrintPreview *preview,
+void         eoc_print_preview_set_image_position  (EocPrintPreview *preview,
 						    gdouble          x,
 						    gdouble          y);
 
 G_GNUC_INTERNAL
-void         eoc_print_preview_set_scale           (EomPrintPreview *preview,
+void         eoc_print_preview_set_scale           (EocPrintPreview *preview,
 						    gfloat           scale);
 
 G_END_DECLS

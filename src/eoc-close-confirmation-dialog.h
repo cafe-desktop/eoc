@@ -33,25 +33,25 @@
 #include <eoc-image.h>
 
 #define EOC_TYPE_CLOSE_CONFIRMATION_DIALOG		(eoc_close_confirmation_dialog_get_type ())
-#define EOC_CLOSE_CONFIRMATION_DIALOG(obj)		(G_TYPE_CHECK_INSTANCE_CAST ((obj), EOC_TYPE_CLOSE_CONFIRMATION_DIALOG, EomCloseConfirmationDialog))
-#define EOC_CLOSE_CONFIRMATION_DIALOG_CLASS(klass)	(G_TYPE_CHECK_CLASS_CAST ((klass), EOC_TYPE_CLOSE_CONFIRMATION_DIALOG, EomCloseConfirmationDialogClass))
+#define EOC_CLOSE_CONFIRMATION_DIALOG(obj)		(G_TYPE_CHECK_INSTANCE_CAST ((obj), EOC_TYPE_CLOSE_CONFIRMATION_DIALOG, EocCloseConfirmationDialog))
+#define EOC_CLOSE_CONFIRMATION_DIALOG_CLASS(klass)	(G_TYPE_CHECK_CLASS_CAST ((klass), EOC_TYPE_CLOSE_CONFIRMATION_DIALOG, EocCloseConfirmationDialogClass))
 #define EOC_IS_CLOSE_CONFIRMATION_DIALOG(obj)		(G_TYPE_CHECK_INSTANCE_TYPE ((obj), EOC_TYPE_CLOSE_CONFIRMATION_DIALOG))
 #define EOC_IS_CLOSE_CONFIRMATION_DIALOG_CLASS(klass)	(G_TYPE_CHECK_CLASS_TYPE ((klass), EOC_TYPE_CLOSE_CONFIRMATION_DIALOG))
-#define EOC_CLOSE_CONFIRMATION_DIALOG_GET_CLASS(obj)	(G_TYPE_INSTANCE_GET_CLASS ((obj),EOC_TYPE_CLOSE_CONFIRMATION_DIALOG, EomCloseConfirmationDialogClass))
+#define EOC_CLOSE_CONFIRMATION_DIALOG_GET_CLASS(obj)	(G_TYPE_INSTANCE_GET_CLASS ((obj),EOC_TYPE_CLOSE_CONFIRMATION_DIALOG, EocCloseConfirmationDialogClass))
 
-typedef struct _EomCloseConfirmationDialog 		EomCloseConfirmationDialog;
-typedef struct _EomCloseConfirmationDialogClass 	EomCloseConfirmationDialogClass;
-typedef struct _EomCloseConfirmationDialogPrivate 	EomCloseConfirmationDialogPrivate;
+typedef struct _EocCloseConfirmationDialog 		EocCloseConfirmationDialog;
+typedef struct _EocCloseConfirmationDialogClass 	EocCloseConfirmationDialogClass;
+typedef struct _EocCloseConfirmationDialogPrivate 	EocCloseConfirmationDialogPrivate;
 
-struct _EomCloseConfirmationDialog
+struct _EocCloseConfirmationDialog
 {
 	GtkDialog parent;
 
 	/*< private > */
-	EomCloseConfirmationDialogPrivate *priv;
+	EocCloseConfirmationDialogPrivate *priv;
 };
 
-struct _EomCloseConfirmationDialogClass
+struct _EocCloseConfirmationDialogClass
 {
 	GtkDialogClass parent_class;
 };
@@ -64,13 +64,13 @@ GtkWidget	*eoc_close_confirmation_dialog_new			(GtkWindow     *parent,
 									 GList         *unsaved_documents);
 G_GNUC_INTERNAL
 GtkWidget 	*eoc_close_confirmation_dialog_new_single 		(GtkWindow     *parent,
-									 EomImage      *image);
+									 EocImage      *image);
 
 G_GNUC_INTERNAL
-const GList	*eoc_close_confirmation_dialog_get_unsaved_images	(EomCloseConfirmationDialog *dlg);
+const GList	*eoc_close_confirmation_dialog_get_unsaved_images	(EocCloseConfirmationDialog *dlg);
 
 G_GNUC_INTERNAL
-GList		*eoc_close_confirmation_dialog_get_selected_images	(EomCloseConfirmationDialog *dlg);
+GList		*eoc_close_confirmation_dialog_get_selected_images	(EocCloseConfirmationDialog *dlg);
 
 #endif /* __EOC_CLOSE_CONFIRMATION_DIALOG_H__ */
 

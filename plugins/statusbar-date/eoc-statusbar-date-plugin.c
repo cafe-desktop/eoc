@@ -36,9 +36,9 @@
 #include <eoc-window.h>
 #include <eoc-window-activatable.h>
 
-static void eoc_window_activatable_iface_init (EomWindowActivatableInterface *iface);
+static void eoc_window_activatable_iface_init (EocWindowActivatableInterface *iface);
 
-G_DEFINE_DYNAMIC_TYPE_EXTENDED (EomStatusbarDatePlugin,
+G_DEFINE_DYNAMIC_TYPE_EXTENDED (EocStatusbarDatePlugin,
                                 eoc_statusbar_date_plugin,
                                 PEAS_TYPE_EXTENSION_BASE,
                                 0,
@@ -52,9 +52,9 @@ enum {
 
 static void
 statusbar_set_date (GtkStatusbar *statusbar,
-                    EomThumbView *view)
+                    EocThumbView *view)
 {
-	EomImage *image;
+	EocImage *image;
 	gchar *date = NULL;
 	gchar time_buffer[32];
 	ExifData *exif_data;
@@ -97,8 +97,8 @@ statusbar_set_date (GtkStatusbar *statusbar,
 }
 
 static void
-selection_changed_cb (EomThumbView           *view,
-                      EomStatusbarDatePlugin *plugin)
+selection_changed_cb (EocThumbView           *view,
+                      EocStatusbarDatePlugin *plugin)
 {
 	statusbar_set_date (GTK_STATUSBAR (plugin->statusbar_date), view);
 }
@@ -109,7 +109,7 @@ eoc_statusbar_date_plugin_set_property (GObject      *object,
                                         const GValue *value,
                                         GParamSpec   *pspec)
 {
-	EomStatusbarDatePlugin *plugin = EOC_STATUSBAR_DATE_PLUGIN (object);
+	EocStatusbarDatePlugin *plugin = EOC_STATUSBAR_DATE_PLUGIN (object);
 
 	switch (prop_id)
 	{
@@ -129,7 +129,7 @@ eoc_statusbar_date_plugin_get_property (GObject    *object,
                                         GValue     *value,
                                         GParamSpec *pspec)
 {
-	EomStatusbarDatePlugin *plugin = EOC_STATUSBAR_DATE_PLUGIN (object);
+	EocStatusbarDatePlugin *plugin = EOC_STATUSBAR_DATE_PLUGIN (object);
 
 	switch (prop_id)
 	{
@@ -144,17 +144,17 @@ eoc_statusbar_date_plugin_get_property (GObject    *object,
 }
 
 static void
-eoc_statusbar_date_plugin_init (EomStatusbarDatePlugin *plugin)
+eoc_statusbar_date_plugin_init (EocStatusbarDatePlugin *plugin)
 {
-	eoc_debug_message (DEBUG_PLUGINS, "EomStatusbarDatePlugin initializing");
+	eoc_debug_message (DEBUG_PLUGINS, "EocStatusbarDatePlugin initializing");
 }
 
 static void
 eoc_statusbar_date_plugin_dispose (GObject *object)
 {
-	EomStatusbarDatePlugin *plugin = EOC_STATUSBAR_DATE_PLUGIN (object);
+	EocStatusbarDatePlugin *plugin = EOC_STATUSBAR_DATE_PLUGIN (object);
 
-	eoc_debug_message (DEBUG_PLUGINS, "EomStatusbarDatePlugin disposing");
+	eoc_debug_message (DEBUG_PLUGINS, "EocStatusbarDatePlugin disposing");
 
 	if (plugin->window != NULL) {
 		g_object_unref (plugin->window);
@@ -165,10 +165,10 @@ eoc_statusbar_date_plugin_dispose (GObject *object)
 }
 
 static void
-eoc_statusbar_date_plugin_activate (EomWindowActivatable *activatable)
+eoc_statusbar_date_plugin_activate (EocWindowActivatable *activatable)
 {
-	EomStatusbarDatePlugin *plugin = EOC_STATUSBAR_DATE_PLUGIN (activatable);
-	EomWindow *window = plugin->window;
+	EocStatusbarDatePlugin *plugin = EOC_STATUSBAR_DATE_PLUGIN (activatable);
+	EocWindow *window = plugin->window;
 	GtkWidget *statusbar = eoc_window_get_statusbar (window);
 	GtkWidget *thumbview = eoc_window_get_thumb_view (window);
 
@@ -188,10 +188,10 @@ eoc_statusbar_date_plugin_activate (EomWindowActivatable *activatable)
 }
 
 static void
-eoc_statusbar_date_plugin_deactivate (EomWindowActivatable *activatable)
+eoc_statusbar_date_plugin_deactivate (EocWindowActivatable *activatable)
 {
-	EomStatusbarDatePlugin *plugin = EOC_STATUSBAR_DATE_PLUGIN (activatable);
-	EomWindow *window = plugin->window;
+	EocStatusbarDatePlugin *plugin = EOC_STATUSBAR_DATE_PLUGIN (activatable);
+	EocWindow *window = plugin->window;
 	GtkWidget *statusbar = eoc_window_get_statusbar (window);
 	GtkWidget *view = eoc_window_get_thumb_view (window);
 
@@ -201,7 +201,7 @@ eoc_statusbar_date_plugin_deactivate (EomWindowActivatable *activatable)
 }
 
 static void
-eoc_statusbar_date_plugin_class_init (EomStatusbarDatePluginClass *klass)
+eoc_statusbar_date_plugin_class_init (EocStatusbarDatePluginClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
 
@@ -213,13 +213,13 @@ eoc_statusbar_date_plugin_class_init (EomStatusbarDatePluginClass *klass)
 }
 
 static void
-eoc_statusbar_date_plugin_class_finalize (EomStatusbarDatePluginClass *klass)
+eoc_statusbar_date_plugin_class_finalize (EocStatusbarDatePluginClass *klass)
 {
 	/* dummy function - used by G_DEFINE_DYNAMIC_TYPE_EXTENDED */
 }
 
 static void
-eoc_window_activatable_iface_init (EomWindowActivatableInterface *iface)
+eoc_window_activatable_iface_init (EocWindowActivatableInterface *iface)
 {
 	iface->activate = eoc_statusbar_date_plugin_activate;
 	iface->deactivate = eoc_statusbar_date_plugin_deactivate;

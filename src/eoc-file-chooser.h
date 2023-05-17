@@ -24,25 +24,25 @@
 G_BEGIN_DECLS
 
 #define EOC_TYPE_FILE_CHOOSER          (eoc_file_chooser_get_type ())
-#define EOC_FILE_CHOOSER(o)            (G_TYPE_CHECK_INSTANCE_CAST ((o), EOC_TYPE_FILE_CHOOSER, EomFileChooser))
-#define EOC_FILE_CHOOSER_CLASS(k)      (G_TYPE_CHECK_CLASS_CAST((k), EOC_TYPE_FILE_CHOOSER, EomFileChooserClass))
+#define EOC_FILE_CHOOSER(o)            (G_TYPE_CHECK_INSTANCE_CAST ((o), EOC_TYPE_FILE_CHOOSER, EocFileChooser))
+#define EOC_FILE_CHOOSER_CLASS(k)      (G_TYPE_CHECK_CLASS_CAST((k), EOC_TYPE_FILE_CHOOSER, EocFileChooserClass))
 
 #define EOC_IS_FILE_CHOOSER(o)         (G_TYPE_CHECK_INSTANCE_TYPE ((o), EOC_TYPE_FILE_CHOOSER))
 #define EOC_IS_FILE_CHOOSER_CLASS(k)   (G_TYPE_CHECK_CLASS_TYPE ((k), EOC_TYPE_FILE_CHOOSER))
-#define EOC_FILE_CHOOSER_GET_CLASS(o)  (G_TYPE_INSTANCE_GET_CLASS ((o), EOC_TYPE_FILE_CHOOSER, EomFileChooserClass))
+#define EOC_FILE_CHOOSER_GET_CLASS(o)  (G_TYPE_INSTANCE_GET_CLASS ((o), EOC_TYPE_FILE_CHOOSER, EocFileChooserClass))
 
-typedef struct _EomFileChooser         EomFileChooser;
-typedef struct _EomFileChooserClass    EomFileChooserClass;
-typedef struct _EomFileChooserPrivate  EomFileChooserPrivate;
+typedef struct _EocFileChooser         EocFileChooser;
+typedef struct _EocFileChooserClass    EocFileChooserClass;
+typedef struct _EocFileChooserPrivate  EocFileChooserPrivate;
 
-struct _EomFileChooser
+struct _EocFileChooser
 {
 	GtkFileChooserDialog  parent;
 
-	EomFileChooserPrivate *priv;
+	EocFileChooserPrivate *priv;
 };
 
-struct _EomFileChooserClass
+struct _EocFileChooserClass
 {
 	GtkFileChooserDialogClass  parent_class;
 };
@@ -52,7 +52,7 @@ GType		 eoc_file_chooser_get_type	(void) G_GNUC_CONST;
 
 GtkWidget	*eoc_file_chooser_new		(GtkFileChooserAction action);
 
-GdkPixbufFormat	*eoc_file_chooser_get_format	(EomFileChooser *chooser);
+GdkPixbufFormat	*eoc_file_chooser_get_format	(EocFileChooser *chooser);
 
 
 G_END_DECLS

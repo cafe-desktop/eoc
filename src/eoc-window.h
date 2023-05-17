@@ -37,16 +37,16 @@
 
 G_BEGIN_DECLS
 
-typedef struct _EomWindow EomWindow;
-typedef struct _EomWindowClass EomWindowClass;
-typedef struct _EomWindowPrivate EomWindowPrivate;
+typedef struct _EocWindow EocWindow;
+typedef struct _EocWindowClass EocWindowClass;
+typedef struct _EocWindowPrivate EocWindowPrivate;
 
 #define EOC_TYPE_WINDOW            (eoc_window_get_type ())
-#define EOC_WINDOW(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), EOC_TYPE_WINDOW, EomWindow))
-#define EOC_WINDOW_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass),  EOC_TYPE_WINDOW, EomWindowClass))
+#define EOC_WINDOW(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), EOC_TYPE_WINDOW, EocWindow))
+#define EOC_WINDOW_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass),  EOC_TYPE_WINDOW, EocWindowClass))
 #define EOC_IS_WINDOW(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), EOC_TYPE_WINDOW))
 #define EOC_IS_WINDOW_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass),  EOC_TYPE_WINDOW))
-#define EOC_WINDOW_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj),  EOC_TYPE_WINDOW, EomWindowClass))
+#define EOC_WINDOW_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj),  EOC_TYPE_WINDOW, EocWindowClass))
 
 #define EOC_WINDOW_ERROR           (eoc_window_error_quark ())
 
@@ -55,14 +55,14 @@ typedef enum {
 	EOC_WINDOW_MODE_NORMAL,
 	EOC_WINDOW_MODE_FULLSCREEN,
 	EOC_WINDOW_MODE_SLIDESHOW
-} EomWindowMode;
+} EocWindowMode;
 
 typedef enum {
 	EOC_WINDOW_COLLECTION_POS_BOTTOM,
 	EOC_WINDOW_COLLECTION_POS_LEFT,
 	EOC_WINDOW_COLLECTION_POS_TOP,
 	EOC_WINDOW_COLLECTION_POS_RIGHT
-} EomWindowCollectionPos;
+} EocWindowCollectionPos;
 
 //TODO
 typedef enum {
@@ -73,58 +73,58 @@ typedef enum {
 	EOC_WINDOW_ERROR_TRASH_NOT_FOUND,
 	EOC_WINDOW_ERROR_GENERIC,
 	EOC_WINDOW_ERROR_UNKNOWN
-} EomWindowError;
+} EocWindowError;
 
 typedef enum {
 	EOC_STARTUP_FULLSCREEN         = 1 << 0,
 	EOC_STARTUP_SLIDE_SHOW         = 1 << 1,
 	EOC_STARTUP_DISABLE_COLLECTION = 1 << 2
-} EomStartupFlags;
+} EocStartupFlags;
 
-struct _EomWindow {
+struct _EocWindow {
 	GtkApplicationWindow win;
 
-	EomWindowPrivate *priv;
+	EocWindowPrivate *priv;
 };
 
-struct _EomWindowClass {
+struct _EocWindowClass {
 	GtkApplicationWindowClass parent_class;
 
-	void (* prepared) (EomWindow *window);
+	void (* prepared) (EocWindow *window);
 };
 
 GType         eoc_window_get_type  	(void) G_GNUC_CONST;
 
-GtkWidget    *eoc_window_new		(EomStartupFlags  flags);
+GtkWidget    *eoc_window_new		(EocStartupFlags  flags);
 
-EomWindowMode eoc_window_get_mode       (EomWindow       *window);
+EocWindowMode eoc_window_get_mode       (EocWindow       *window);
 
-void          eoc_window_set_mode       (EomWindow       *window,
-					 EomWindowMode    mode);
+void          eoc_window_set_mode       (EocWindow       *window,
+					 EocWindowMode    mode);
 
-GtkUIManager *eoc_window_get_ui_manager (EomWindow       *window);
+GtkUIManager *eoc_window_get_ui_manager (EocWindow       *window);
 
-EomListStore *eoc_window_get_store      (EomWindow       *window);
+EocListStore *eoc_window_get_store      (EocWindow       *window);
 
-GtkWidget    *eoc_window_get_view       (EomWindow       *window);
+GtkWidget    *eoc_window_get_view       (EocWindow       *window);
 
-GtkWidget    *eoc_window_get_sidebar    (EomWindow       *window);
+GtkWidget    *eoc_window_get_sidebar    (EocWindow       *window);
 
-GtkWidget    *eoc_window_get_thumb_view (EomWindow       *window);
+GtkWidget    *eoc_window_get_thumb_view (EocWindow       *window);
 
-GtkWidget    *eoc_window_get_thumb_nav  (EomWindow       *window);
+GtkWidget    *eoc_window_get_thumb_nav  (EocWindow       *window);
 
-GtkWidget    *eoc_window_get_statusbar  (EomWindow       *window);
+GtkWidget    *eoc_window_get_statusbar  (EocWindow       *window);
 
-EomImage     *eoc_window_get_image      (EomWindow       *window);
+EocImage     *eoc_window_get_image      (EocWindow       *window);
 
-void          eoc_window_open_file_list	(EomWindow       *window,
+void          eoc_window_open_file_list	(EocWindow       *window,
 					 GSList          *file_list);
 
-gboolean      eoc_window_is_empty 	(EomWindow       *window);
+gboolean      eoc_window_is_empty 	(EocWindow       *window);
 
-void          eoc_window_reload_image (EomWindow *window);
-GtkWidget    *eoc_window_get_properties_dialog (EomWindow *window);
+void          eoc_window_reload_image (EocWindow *window);
+GtkWidget    *eoc_window_get_properties_dialog (EocWindow *window);
 G_END_DECLS
 
 #endif

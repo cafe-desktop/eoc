@@ -33,23 +33,23 @@
 #include <glib-object.h>
 #include "eoc-window.h"
 
-G_DEFINE_INTERFACE(EomWindowActivatable, eoc_window_activatable, G_TYPE_OBJECT)
+G_DEFINE_INTERFACE(EocWindowActivatable, eoc_window_activatable, G_TYPE_OBJECT)
 
 void
-eoc_window_activatable_default_init (EomWindowActivatableInterface *iface)
+eoc_window_activatable_default_init (EocWindowActivatableInterface *iface)
 {
 	static gboolean initialized = FALSE;
 
 	if (!initialized) {
 		/**
-		 * EomWindowActivatable:window:
+		 * EocWindowActivatable:window:
 		 *
-		 * This is the #EomWindow this #EomWindowActivatable instance
+		 * This is the #EocWindow this #EocWindowActivatable instance
 		 * should be attached to.
 		 */
 		g_object_interface_install_property (iface,
 				g_param_spec_object ("window", "Window",
-						     "The EomWindow this "
+						     "The EocWindow this "
 						     "instance it attached to",
 						     EOC_TYPE_WINDOW,
 						     G_PARAM_READWRITE |
@@ -60,9 +60,9 @@ eoc_window_activatable_default_init (EomWindowActivatableInterface *iface)
 }
 
 void
-eoc_window_activatable_activate (EomWindowActivatable *activatable)
+eoc_window_activatable_activate (EocWindowActivatable *activatable)
 {
-	EomWindowActivatableInterface *iface;
+	EocWindowActivatableInterface *iface;
 
 	g_return_if_fail (EOC_IS_WINDOW_ACTIVATABLE (activatable));
 
@@ -73,9 +73,9 @@ eoc_window_activatable_activate (EomWindowActivatable *activatable)
 }
 
 void
-eoc_window_activatable_deactivate (EomWindowActivatable *activatable)
+eoc_window_activatable_deactivate (EocWindowActivatable *activatable)
 {
-	EomWindowActivatableInterface *iface;
+	EocWindowActivatableInterface *iface;
 
 	g_return_if_fail (EOC_IS_WINDOW_ACTIVATABLE (activatable));
 

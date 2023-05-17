@@ -210,16 +210,16 @@ CLEANFILES = $(BUILT_SOURCES)
 
 if HAVE_INTROSPECTION
 -include $(INTROSPECTION_MAKEFILE)
-INTROSPECTION_GIRS = Eom-1.0.gir
+INTROSPECTION_GIRS = Eoc-1.0.gir
 INTROSPECTION_SCANNER_ARGS = -I$(top_srcdir) --warn-all $(libeoc_la_CPPFLAGS)
 
-Eom-1.0.gir: eoc
-Eom_1_0_gir_INCLUDES = Gtk-3.0
-Eom_1_0_gir_FILES = $(INST_H_FILES) $(libeoc_c_files) $(BUILT_SOURCES)
-Eom_1_0_gir_VERSION = 1.0
-Eom_1_0_gir_PROGRAM = $(builddir)/eoc
-Eom_1_0_gir_NAMESPACE = Eom
-Eom_1_0_gir_CFLAGS = $(EOC_CFLAGS)
+Eoc-1.0.gir: eoc
+Eoc_1_0_gir_INCLUDES = Gtk-3.0
+Eoc_1_0_gir_FILES = $(INST_H_FILES) $(libeoc_c_files) $(BUILT_SOURCES)
+Eoc_1_0_gir_VERSION = 1.0
+Eoc_1_0_gir_PROGRAM = $(builddir)/eoc
+Eoc_1_0_gir_NAMESPACE = Eoc
+Eoc_1_0_gir_CFLAGS = $(EOC_CFLAGS)
 girdir = $(datadir)/gir-1.0
 gir_DATA = $(INTROSPECTION_GIRS)
 

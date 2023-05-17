@@ -38,85 +38,85 @@ G_BEGIN_DECLS
 
 #ifndef __EOC_IMAGE_DECLR__
 #define __EOC_IMAGE_DECLR__
-  typedef struct _EomImage EomImage;
+  typedef struct _EocImage EocImage;
 #endif
 
 #ifndef __EOC_URI_CONVERTER_DECLR__
 #define __EOC_URI_CONVERTER_DECLR__
-typedef struct _EomURIConverter EomURIConverter;
+typedef struct _EocURIConverter EocURIConverter;
 #endif
 
 #ifndef __EOC_JOB_DECLR__
 #define __EOC_JOB_DECLR__
-typedef struct _EomJob EomJob;
+typedef struct _EocJob EocJob;
 #endif
-typedef struct _EomJobClass EomJobClass;
+typedef struct _EocJobClass EocJobClass;
 
-typedef struct _EomJobThumbnail EomJobThumbnail;
-typedef struct _EomJobThumbnailClass EomJobThumbnailClass;
+typedef struct _EocJobThumbnail EocJobThumbnail;
+typedef struct _EocJobThumbnailClass EocJobThumbnailClass;
 
-typedef struct _EomJobLoad EomJobLoad;
-typedef struct _EomJobLoadClass EomJobLoadClass;
+typedef struct _EocJobLoad EocJobLoad;
+typedef struct _EocJobLoadClass EocJobLoadClass;
 
-typedef struct _EomJobModel EomJobModel;
-typedef struct _EomJobModelClass EomJobModelClass;
+typedef struct _EocJobModel EocJobModel;
+typedef struct _EocJobModelClass EocJobModelClass;
 
-typedef struct _EomJobTransform EomJobTransform;
-typedef struct _EomJobTransformClass EomJobTransformClass;
+typedef struct _EocJobTransform EocJobTransform;
+typedef struct _EocJobTransformClass EocJobTransformClass;
 
-typedef struct _EomJobSave EomJobSave;
-typedef struct _EomJobSaveClass EomJobSaveClass;
+typedef struct _EocJobSave EocJobSave;
+typedef struct _EocJobSaveClass EocJobSaveClass;
 
-typedef struct _EomJobSaveAs EomJobSaveAs;
-typedef struct _EomJobSaveAsClass EomJobSaveAsClass;
+typedef struct _EocJobSaveAs EocJobSaveAs;
+typedef struct _EocJobSaveAsClass EocJobSaveAsClass;
 
-typedef struct _EomJobCopy EomJobCopy;
-typedef struct _EomJobCopyClass EomJobCopyClass;
+typedef struct _EocJobCopy EocJobCopy;
+typedef struct _EocJobCopyClass EocJobCopyClass;
 
 #define EOC_TYPE_JOB		       (eoc_job_get_type())
-#define EOC_JOB(obj)		       (G_TYPE_CHECK_INSTANCE_CAST((obj), EOC_TYPE_JOB, EomJob))
-#define EOC_JOB_CLASS(klass)	       (G_TYPE_CHECK_CLASS_CAST((klass),  EOC_TYPE_JOB, EomJobClass))
+#define EOC_JOB(obj)		       (G_TYPE_CHECK_INSTANCE_CAST((obj), EOC_TYPE_JOB, EocJob))
+#define EOC_JOB_CLASS(klass)	       (G_TYPE_CHECK_CLASS_CAST((klass),  EOC_TYPE_JOB, EocJobClass))
 #define EOC_IS_JOB(obj)	               (G_TYPE_CHECK_INSTANCE_TYPE((obj), EOC_TYPE_JOB))
-#define EOC_JOB_GET_CLASS(obj)         (G_TYPE_INSTANCE_GET_CLASS ((obj), EOC_TYPE_JOB, EomJobClass))
+#define EOC_JOB_GET_CLASS(obj)         (G_TYPE_INSTANCE_GET_CLASS ((obj), EOC_TYPE_JOB, EocJobClass))
 
 #define EOC_TYPE_JOB_THUMBNAIL	       (eoc_job_thumbnail_get_type())
-#define EOC_JOB_THUMBNAIL(obj)	       (G_TYPE_CHECK_INSTANCE_CAST((obj), EOC_TYPE_JOB_THUMBNAIL, EomJobThumbnail))
-#define EOC_JOB_THUMBNAIL_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST((klass),  EOC_TYPE_JOB_THUMBNAIL, EomJobThumbnailClass))
+#define EOC_JOB_THUMBNAIL(obj)	       (G_TYPE_CHECK_INSTANCE_CAST((obj), EOC_TYPE_JOB_THUMBNAIL, EocJobThumbnail))
+#define EOC_JOB_THUMBNAIL_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST((klass),  EOC_TYPE_JOB_THUMBNAIL, EocJobThumbnailClass))
 #define EOC_IS_JOB_THUMBNAIL(obj)      (G_TYPE_CHECK_INSTANCE_TYPE((obj), EOC_TYPE_JOB_THUMBNAIL))
 
 #define EOC_TYPE_JOB_LOAD	       (eoc_job_load_get_type())
-#define EOC_JOB_LOAD(obj)	       (G_TYPE_CHECK_INSTANCE_CAST((obj), EOC_TYPE_JOB_LOAD, EomJobLoad))
-#define EOC_JOB_LOAD_CLASS(klass)      (G_TYPE_CHECK_CLASS_CAST((klass),  EOC_TYPE_JOB_LOAD, EomJobLoadClass))
+#define EOC_JOB_LOAD(obj)	       (G_TYPE_CHECK_INSTANCE_CAST((obj), EOC_TYPE_JOB_LOAD, EocJobLoad))
+#define EOC_JOB_LOAD_CLASS(klass)      (G_TYPE_CHECK_CLASS_CAST((klass),  EOC_TYPE_JOB_LOAD, EocJobLoadClass))
 #define EOC_IS_JOB_LOAD(obj)	       (G_TYPE_CHECK_INSTANCE_TYPE((obj), EOC_TYPE_JOB_LOAD))
 
 #define EOC_TYPE_JOB_MODEL	       (eoc_job_model_get_type())
-#define EOC_JOB_MODEL(obj)	       (G_TYPE_CHECK_INSTANCE_CAST((obj), EOC_TYPE_JOB_MODEL, EomJobModel))
-#define EOC_JOB_MODEL_CLASS(klass)     (G_TYPE_CHECK_CLASS_CAST((klass),  EOC_TYPE_JOB_MODEL, EomJobModelClass))
+#define EOC_JOB_MODEL(obj)	       (G_TYPE_CHECK_INSTANCE_CAST((obj), EOC_TYPE_JOB_MODEL, EocJobModel))
+#define EOC_JOB_MODEL_CLASS(klass)     (G_TYPE_CHECK_CLASS_CAST((klass),  EOC_TYPE_JOB_MODEL, EocJobModelClass))
 #define EOC_IS_JOB_MODEL(obj)          (G_TYPE_CHECK_INSTANCE_TYPE((obj), EOC_TYPE_JOB_MODEL))
 
 #define EOC_TYPE_JOB_TRANSFORM	       (eoc_job_transform_get_type())
-#define EOC_JOB_TRANSFORM(obj)	       (G_TYPE_CHECK_INSTANCE_CAST((obj), EOC_TYPE_JOB_TRANSFORM, EomJobTransform))
-#define EOC_JOB_TRANSFORM_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST((klass),  EOC_TYPE_JOB_TRANSFORM, EomJobTransformClass))
+#define EOC_JOB_TRANSFORM(obj)	       (G_TYPE_CHECK_INSTANCE_CAST((obj), EOC_TYPE_JOB_TRANSFORM, EocJobTransform))
+#define EOC_JOB_TRANSFORM_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST((klass),  EOC_TYPE_JOB_TRANSFORM, EocJobTransformClass))
 #define EOC_IS_JOB_TRANSFORM(obj)      (G_TYPE_CHECK_INSTANCE_TYPE((obj), EOC_TYPE_JOB_TRANSFORM))
 
 #define EOC_TYPE_JOB_SAVE              (eoc_job_save_get_type())
-#define EOC_JOB_SAVE(obj)              (G_TYPE_CHECK_INSTANCE_CAST((obj), EOC_TYPE_JOB_SAVE, EomJobSave))
-#define EOC_JOB_SAVE_CLASS(klass)      (G_TYPE_CHECK_CLASS_CAST((klass), EOC_TYPE_JOB_SAVE, EomJobSaveClass))
+#define EOC_JOB_SAVE(obj)              (G_TYPE_CHECK_INSTANCE_CAST((obj), EOC_TYPE_JOB_SAVE, EocJobSave))
+#define EOC_JOB_SAVE_CLASS(klass)      (G_TYPE_CHECK_CLASS_CAST((klass), EOC_TYPE_JOB_SAVE, EocJobSaveClass))
 #define EOC_IS_JOB_SAVE(obj)           (G_TYPE_CHECK_INSTANCE_TYPE((obj), EOC_TYPE_JOB_SAVE))
-#define EOC_JOB_SAVE_GET_CLASS(obj)    (G_TYPE_INSTANCE_GET_CLASS ((obj), EOC_TYPE_JOB_SAVE, EomJobSaveClass))
+#define EOC_JOB_SAVE_GET_CLASS(obj)    (G_TYPE_INSTANCE_GET_CLASS ((obj), EOC_TYPE_JOB_SAVE, EocJobSaveClass))
 
 #define EOC_TYPE_JOB_SAVE_AS           (eoc_job_save_as_get_type())
-#define EOC_JOB_SAVE_AS(obj)           (G_TYPE_CHECK_INSTANCE_CAST((obj), EOC_TYPE_JOB_SAVE_AS, EomJobSaveAs))
-#define EOC_JOB_SAVE_AS_CLASS(klass)   (G_TYPE_CHECK_CLASS_CAST((klass), EOC_TYPE_JOB_SAVE_AS, EomJobSaveAsClass))
+#define EOC_JOB_SAVE_AS(obj)           (G_TYPE_CHECK_INSTANCE_CAST((obj), EOC_TYPE_JOB_SAVE_AS, EocJobSaveAs))
+#define EOC_JOB_SAVE_AS_CLASS(klass)   (G_TYPE_CHECK_CLASS_CAST((klass), EOC_TYPE_JOB_SAVE_AS, EocJobSaveAsClass))
 #define EOC_IS_JOB_SAVE_AS(obj)        (G_TYPE_CHECK_INSTANCE_TYPE((obj), EOC_TYPE_JOB_SAVE_AS))
 
 #define EOC_TYPE_JOB_COPY	       (eoc_job_copy_get_type())
-#define EOC_JOB_COPY(obj)	       (G_TYPE_CHECK_INSTANCE_CAST((obj), EOC_TYPE_JOB_COPY, EomJobCopy))
-#define EOC_JOB_COPY_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST((klass),  EOC_TYPE_JOB_COPY, EomJobCopyClass))
+#define EOC_JOB_COPY(obj)	       (G_TYPE_CHECK_INSTANCE_CAST((obj), EOC_TYPE_JOB_COPY, EocJobCopy))
+#define EOC_JOB_COPY_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST((klass),  EOC_TYPE_JOB_COPY, EocJobCopyClass))
 #define EOC_IS_JOB_COPY(obj)      (G_TYPE_CHECK_INSTANCE_TYPE((obj), EOC_TYPE_JOB_COPY))
 
 
-struct _EomJob
+struct _EocJob
 {
 	GObject  parent;
 
@@ -126,61 +126,61 @@ struct _EomJob
 	gboolean  finished;
 };
 
-struct _EomJobClass
+struct _EocJobClass
 {
 	GObjectClass parent_class;
 
-	void    (* finished) (EomJob *job);
-	void    (* progress) (EomJob *job, float progress);
-	void    (*run)       (EomJob *job);
+	void    (* finished) (EocJob *job);
+	void    (* progress) (EocJob *job, float progress);
+	void    (*run)       (EocJob *job);
 };
 
-struct _EomJobThumbnail
+struct _EocJobThumbnail
 {
-	EomJob       parent;
-	EomImage    *image;
+	EocJob       parent;
+	EocImage    *image;
 	GdkPixbuf   *thumbnail;
 };
 
-struct _EomJobThumbnailClass
+struct _EocJobThumbnailClass
 {
-	EomJobClass parent_class;
+	EocJobClass parent_class;
 };
 
-struct _EomJobLoad
+struct _EocJobLoad
 {
-	EomJob        parent;
-	EomImage     *image;
-	EomImageData  data;
+	EocJob        parent;
+	EocImage     *image;
+	EocImageData  data;
 };
 
-struct _EomJobLoadClass
+struct _EocJobLoadClass
 {
-	EomJobClass parent_class;
+	EocJobClass parent_class;
 };
 
-struct _EomJobModel
+struct _EocJobModel
 {
-	EomJob        parent;
-	EomListStore *store;
+	EocJob        parent;
+	EocListStore *store;
 	GSList       *file_list;
 };
 
-struct _EomJobModelClass
+struct _EocJobModelClass
 {
-        EomJobClass parent_class;
+        EocJobClass parent_class;
 };
 
-struct _EomJobTransform
+struct _EocJobTransform
 {
-	EomJob        parent;
+	EocJob        parent;
 	GList        *images;
-	EomTransform *trans;
+	EocTransform *trans;
 };
 
-struct _EomJobTransformClass
+struct _EocJobTransformClass
 {
-        EomJobClass parent_class;
+        EocJobClass parent_class;
 };
 
 typedef enum {
@@ -190,84 +190,84 @@ typedef enum {
 	EOC_SAVE_RESPONSE_OVERWRITE,
 	EOC_SAVE_RESPONSE_CANCEL,
 	EOC_SAVE_RESPONSE_LAST
-} EomJobSaveResponse;
+} EocJobSaveResponse;
 
-struct _EomJobSave
+struct _EocJobSave
 {
-	EomJob    parent;
+	EocJob    parent;
 	GList	 *images;
 	guint      current_pos;
-	EomImage *current_image;
+	EocImage *current_image;
 };
 
-struct _EomJobSaveClass
+struct _EocJobSaveClass
 {
-	EomJobClass parent_class;
+	EocJobClass parent_class;
 };
 
-struct _EomJobSaveAs
+struct _EocJobSaveAs
 {
-	EomJobSave       parent;
-	EomURIConverter *converter;
+	EocJobSave       parent;
+	EocURIConverter *converter;
 	GFile           *file;
 };
 
-struct _EomJobSaveAsClass
+struct _EocJobSaveAsClass
 {
-	EomJobSaveClass parent;
+	EocJobSaveClass parent;
 };
 
-struct _EomJobCopy
+struct _EocJobCopy
 {
-	EomJob parent;
+	EocJob parent;
 	GList *images;
 	guint current_pos;
 	gchar *dest;
 };
 
-struct _EomJobCopyClass
+struct _EocJobCopyClass
 {
-	EomJobClass parent_class;
+	EocJobClass parent_class;
 };
 
 /* base job class */
 GType           eoc_job_get_type           (void) G_GNUC_CONST;
-void            eoc_job_finished           (EomJob          *job);
-void            eoc_job_run                (EomJob          *job);
-void            eoc_job_set_progress       (EomJob          *job,
+void            eoc_job_finished           (EocJob          *job);
+void            eoc_job_run                (EocJob          *job);
+void            eoc_job_set_progress       (EocJob          *job,
 					    float            progress);
 
-/* EomJobThumbnail */
+/* EocJobThumbnail */
 GType           eoc_job_thumbnail_get_type (void) G_GNUC_CONST;
-EomJob         *eoc_job_thumbnail_new      (EomImage     *image);
+EocJob         *eoc_job_thumbnail_new      (EocImage     *image);
 
-/* EomJobLoad */
+/* EocJobLoad */
 GType           eoc_job_load_get_type      (void) G_GNUC_CONST;
-EomJob 	       *eoc_job_load_new 	   (EomImage        *image,
-					    EomImageData     data);
+EocJob 	       *eoc_job_load_new 	   (EocImage        *image,
+					    EocImageData     data);
 
-/* EomJobModel */
+/* EocJobModel */
 GType 		eoc_job_model_get_type     (void) G_GNUC_CONST;
-EomJob 	       *eoc_job_model_new          (GSList          *file_list);
+EocJob 	       *eoc_job_model_new          (GSList          *file_list);
 
-/* EomJobTransform */
+/* EocJobTransform */
 GType 		eoc_job_transform_get_type (void) G_GNUC_CONST;
-EomJob 	       *eoc_job_transform_new      (GList           *images,
-					    EomTransform    *trans);
+EocJob 	       *eoc_job_transform_new      (GList           *images,
+					    EocTransform    *trans);
 
-/* EomJobSave */
+/* EocJobSave */
 GType		eoc_job_save_get_type      (void) G_GNUC_CONST;
-EomJob         *eoc_job_save_new           (GList           *images);
+EocJob         *eoc_job_save_new           (GList           *images);
 
-/* EomJobSaveAs */
+/* EocJobSaveAs */
 GType		eoc_job_save_as_get_type   (void) G_GNUC_CONST;
-EomJob         *eoc_job_save_as_new        (GList           *images,
-					    EomURIConverter *converter,
+EocJob         *eoc_job_save_as_new        (GList           *images,
+					    EocURIConverter *converter,
 					    GFile           *file);
 
-/* EomJobCopy */
+/* EocJobCopy */
 GType          eoc_job_copy_get_type      (void) G_GNUC_CONST;
-EomJob        *eoc_job_copy_new           (GList            *images,
+EocJob        *eoc_job_copy_new           (GList            *images,
 					   const gchar      *dest);
 
 G_END_DECLS

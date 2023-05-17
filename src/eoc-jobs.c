@@ -34,16 +34,16 @@
 #include <gdk-pixbuf/gdk-pixbuf.h>
 
 #define EOC_JOB_GET_PRIVATE(object) \
-	(G_TYPE_INSTANCE_GET_PRIVATE ((object), EOC_TYPE_JOB, EomJobPrivate))
+	(G_TYPE_INSTANCE_GET_PRIVATE ((object), EOC_TYPE_JOB, EocJobPrivate))
 
-G_DEFINE_TYPE (EomJob, eoc_job, G_TYPE_OBJECT);
-G_DEFINE_TYPE (EomJobThumbnail, eoc_job_thumbnail, EOC_TYPE_JOB);
-G_DEFINE_TYPE (EomJobLoad, eoc_job_load, EOC_TYPE_JOB);
-G_DEFINE_TYPE (EomJobModel, eoc_job_model, EOC_TYPE_JOB);
-G_DEFINE_TYPE (EomJobTransform, eoc_job_transform, EOC_TYPE_JOB);
-G_DEFINE_TYPE (EomJobSave, eoc_job_save, EOC_TYPE_JOB);
-G_DEFINE_TYPE (EomJobSaveAs, eoc_job_save_as, EOC_TYPE_JOB_SAVE);
-G_DEFINE_TYPE (EomJobCopy, eoc_job_copy, EOC_TYPE_JOB);
+G_DEFINE_TYPE (EocJob, eoc_job, G_TYPE_OBJECT);
+G_DEFINE_TYPE (EocJobThumbnail, eoc_job_thumbnail, EOC_TYPE_JOB);
+G_DEFINE_TYPE (EocJobLoad, eoc_job_load, EOC_TYPE_JOB);
+G_DEFINE_TYPE (EocJobModel, eoc_job_model, EOC_TYPE_JOB);
+G_DEFINE_TYPE (EocJobTransform, eoc_job_transform, EOC_TYPE_JOB);
+G_DEFINE_TYPE (EocJobSave, eoc_job_save, EOC_TYPE_JOB);
+G_DEFINE_TYPE (EocJobSaveAs, eoc_job_save_as, EOC_TYPE_JOB_SAVE);
+G_DEFINE_TYPE (EocJobCopy, eoc_job_copy, EOC_TYPE_JOB);
 
 enum
 {
@@ -54,15 +54,15 @@ enum
 
 static guint job_signals[SIGNAL_LAST_SIGNAL] = { 0 };
 
-static void eoc_job_copy_run      (EomJob *ejob);
-static void eoc_job_load_run 	  (EomJob *ejob);
-static void eoc_job_model_run     (EomJob *ejob);
-static void eoc_job_save_run      (EomJob *job);
-static void eoc_job_save_as_run   (EomJob *job);
-static void eoc_job_thumbnail_run (EomJob *ejob);
-static void eoc_job_transform_run (EomJob *ejob);
+static void eoc_job_copy_run      (EocJob *ejob);
+static void eoc_job_load_run 	  (EocJob *ejob);
+static void eoc_job_model_run     (EocJob *ejob);
+static void eoc_job_save_run      (EocJob *job);
+static void eoc_job_save_as_run   (EocJob *job);
+static void eoc_job_thumbnail_run (EocJob *ejob);
+static void eoc_job_transform_run (EocJob *ejob);
 
-static void eoc_job_init (EomJob *job)
+static void eoc_job_init (EocJob *job)
 {
 	/* NOTE: We need to allocate the mutex here so the ABI stays the same when it used to use g_mutex_new */
 	job->mutex = g_malloc (sizeof (GMutex));
@@ -73,7 +73,7 @@ static void eoc_job_init (EomJob *job)
 static void
 eoc_job_dispose (GObject *object)
 {
-	EomJob *job;
+	EocJob *job;
 
 	job = EOC_JOB (object);
 
@@ -91,14 +91,14 @@ eoc_job_dispose (GObject *object)
 }
 
 static void
-eoc_job_run_default (EomJob *job)
+eoc_job_run_default (EocJob *job)
 {
 	g_critical ("Class \"%s\" does not implement the required run action",
 		    G_OBJECT_CLASS_NAME (G_OBJECT_GET_CLASS (job)));
 }
 
 static void
-eoc_job_class_init (EomJobClass *class)
+eoc_job_class_init (EocJobClass *class)
 {
 	GObjectClass *oclass;
 
@@ -112,7 +112,7 @@ eoc_job_class_init (EomJobClass *class)
 		g_signal_new ("finished",
 			      EOC_TYPE_JOB,
 			      G_SIGNAL_RUN_LAST,
-			      G_STRUCT_OFFSET (EomJobClass, finished),
+			      G_STRUCT_OFFSET (EocJobClass, finished),
 			      NULL, NULL,
 			      g_cclosure_marshal_VOID__VOID,
 			      G_TYPE_NONE, 0);
@@ -121,7 +121,7 @@ eoc_job_class_init (EomJobClass *class)
 		g_signal_new ("progress",
 			      EOC_TYPE_JOB,
 			      G_SIGNAL_RUN_LAST,
-			      G_STRUCT_OFFSET (EomJobClass, progress),
+			      G_STRUCT_OFFSET (EocJobClass, progress),
 			      NULL, NULL,
 			      g_cclosure_marshal_VOID__FLOAT,
 			      G_TYPE_NONE, 1,
@@ -129,7 +129,7 @@ eoc_job_class_init (EomJobClass *class)
 }
 
 void
-eoc_job_finished (EomJob *job)
+eoc_job_finished (EocJob *job)
 {
 	g_return_if_fail (EOC_IS_JOB (job));
 
@@ -141,12 +141,12 @@ eoc_job_finished (EomJob *job)
  * @job: the job to execute.
  *
  * Executes the job passed as @job. Usually there is no need to call this
- * on your own. Jobs should be executed by using the EomJobQueue.
+ * on your own. Jobs should be executed by using the EocJobQueue.
  **/
 void
-eoc_job_run (EomJob *job)
+eoc_job_run (EocJob *job)
 {
-	EomJobClass *class;
+	EocJobClass *class;
 
 	g_return_if_fail (EOC_IS_JOB (job));
 
@@ -159,7 +159,7 @@ eoc_job_run (EomJob *job)
 static gboolean
 notify_progress (gpointer data)
 {
-	EomJob *job = EOC_JOB (data);
+	EocJob *job = EOC_JOB (data);
 
 	g_signal_emit (job, job_signals[SIGNAL_PROGRESS], 0, job->progress);
 
@@ -167,7 +167,7 @@ notify_progress (gpointer data)
 }
 
 void
-eoc_job_set_progress (EomJob *job, float progress)
+eoc_job_set_progress (EocJob *job, float progress)
 {
 	g_return_if_fail (EOC_IS_JOB (job));
 	g_return_if_fail (progress >= 0.0 && progress <= 1.0);
@@ -179,12 +179,12 @@ eoc_job_set_progress (EomJob *job, float progress)
 	g_idle_add (notify_progress, job);
 }
 
-static void eoc_job_thumbnail_init (EomJobThumbnail *job) { /* Do Nothing */ }
+static void eoc_job_thumbnail_init (EocJobThumbnail *job) { /* Do Nothing */ }
 
 static void
 eoc_job_thumbnail_dispose (GObject *object)
 {
-	EomJobThumbnail *job;
+	EocJobThumbnail *job;
 
 	job = EOC_JOB_THUMBNAIL (object);
 
@@ -202,7 +202,7 @@ eoc_job_thumbnail_dispose (GObject *object)
 }
 
 static void
-eoc_job_thumbnail_class_init (EomJobThumbnailClass *class)
+eoc_job_thumbnail_class_init (EocJobThumbnailClass *class)
 {
 	GObjectClass *oclass;
 
@@ -213,10 +213,10 @@ eoc_job_thumbnail_class_init (EomJobThumbnailClass *class)
 	EOC_JOB_CLASS (class)->run = eoc_job_thumbnail_run;
 }
 
-EomJob *
-eoc_job_thumbnail_new (EomImage *image)
+EocJob *
+eoc_job_thumbnail_new (EocImage *image)
 {
-	EomJobThumbnail *job;
+	EocJobThumbnail *job;
 
 	job = g_object_new (EOC_TYPE_JOB_THUMBNAIL, NULL);
 
@@ -228,12 +228,12 @@ eoc_job_thumbnail_new (EomImage *image)
 }
 
 static void
-eoc_job_thumbnail_run (EomJob *ejob)
+eoc_job_thumbnail_run (EocJob *ejob)
 {
 	gchar *orig_width, *orig_height;
 	gint width, height;
 	GdkPixbuf *pixbuf;
-	EomJobThumbnail *job;
+	EocJobThumbnail *job;
 
 	g_return_if_fail (EOC_IS_JOB_THUMBNAIL (ejob));
 
@@ -282,12 +282,12 @@ eoc_job_thumbnail_run (EomJob *ejob)
 	ejob->finished = TRUE;
 }
 
-static void eoc_job_load_init (EomJobLoad *job) { /* Do Nothing */ }
+static void eoc_job_load_init (EocJobLoad *job) { /* Do Nothing */ }
 
 static void
 eoc_job_load_dispose (GObject *object)
 {
-	EomJobLoad *job;
+	EocJobLoad *job;
 
 	job = EOC_JOB_LOAD (object);
 
@@ -300,7 +300,7 @@ eoc_job_load_dispose (GObject *object)
 }
 
 static void
-eoc_job_load_class_init (EomJobLoadClass *class)
+eoc_job_load_class_init (EocJobLoadClass *class)
 {
 	GObjectClass *oclass;
 
@@ -310,10 +310,10 @@ eoc_job_load_class_init (EomJobLoadClass *class)
 	EOC_JOB_CLASS (class)->run = eoc_job_load_run;
 }
 
-EomJob *
-eoc_job_load_new (EomImage *image, EomImageData data)
+EocJob *
+eoc_job_load_new (EocImage *image, EocImageData data)
 {
-	EomJobLoad *job;
+	EocJobLoad *job;
 
 	job = g_object_new (EOC_TYPE_JOB_LOAD, NULL);
 
@@ -326,7 +326,7 @@ eoc_job_load_new (EomImage *image, EomImageData data)
 }
 
 static void
-eoc_job_load_run (EomJob *job)
+eoc_job_load_run (EocJob *job)
 {
 	g_return_if_fail (EOC_IS_JOB_LOAD (job));
 
@@ -343,10 +343,10 @@ eoc_job_load_run (EomJob *job)
 	job->finished = TRUE;
 }
 
-static void eoc_job_model_init (EomJobModel *job) { /* Do Nothing */ }
+static void eoc_job_model_init (EocJobModel *job) { /* Do Nothing */ }
 
 static void
-eoc_job_model_class_init (EomJobModelClass *class)
+eoc_job_model_class_init (EocJobModelClass *class)
 {
 	EOC_JOB_CLASS (class)->run = eoc_job_model_run;
 }
@@ -355,15 +355,15 @@ eoc_job_model_class_init (EomJobModelClass *class)
  * eoc_job_model_new:
  * @file_list: (element-type GFile): a #GFile list
  *
- * Creates a new #EomJob model.
+ * Creates a new #EocJob model.
  *
- * Returns: A #EomJob.
+ * Returns: A #EocJob.
  */
 
-EomJob *
+EocJob *
 eoc_job_model_new (GSList *file_list)
 {
-	EomJobModel *job;
+	EocJobModel *job;
 
 	job = g_object_new (EOC_TYPE_JOB_MODEL, NULL);
 
@@ -427,11 +427,11 @@ filter_files (GSList *files, GList **file_list, GList **error_list)
 }
 
 static void
-eoc_job_model_run (EomJob *ejob)
+eoc_job_model_run (EocJob *ejob)
 {
 	GList *filtered_list = NULL;
 	GList *error_list = NULL;
-	EomJobModel *job;
+	EocJobModel *job;
 
 	g_return_if_fail (EOC_IS_JOB_MODEL (ejob));
 
@@ -452,12 +452,12 @@ eoc_job_model_run (EomJob *ejob)
 	ejob->finished = TRUE;
 }
 
-static void eoc_job_transform_init (EomJobTransform *job) { /* Do Nothing */ }
+static void eoc_job_transform_init (EocJobTransform *job) { /* Do Nothing */ }
 
 static void
 eoc_job_transform_dispose (GObject *object)
 {
-	EomJobTransform *job;
+	EocJobTransform *job;
 
 	job = EOC_JOB_TRANSFORM (object);
 
@@ -473,7 +473,7 @@ eoc_job_transform_dispose (GObject *object)
 }
 
 static void
-eoc_job_transform_class_init (EomJobTransformClass *class)
+eoc_job_transform_class_init (EocJobTransformClass *class)
 {
 	GObjectClass *oclass;
 
@@ -486,18 +486,18 @@ eoc_job_transform_class_init (EomJobTransformClass *class)
 
 /**
  * eoc_job_transform_new:
- * @images: (element-type EomImage) (transfer full): a #EomImage list
- * @trans: a #EomTransform
+ * @images: (element-type EocImage) (transfer full): a #EocImage list
+ * @trans: a #EocTransform
  *
- * Create a new #EomJob for image transformation.
+ * Create a new #EocJob for image transformation.
  *
- * Returns: A #EomJob.
+ * Returns: A #EocJob.
  */
 
-EomJob *
-eoc_job_transform_new (GList *images, EomTransform *trans)
+EocJob *
+eoc_job_transform_new (GList *images, EocTransform *trans)
 {
-	EomJobTransform *job;
+	EocJobTransform *job;
 
 	job = g_object_new (EOC_TYPE_JOB_TRANSFORM, NULL);
 
@@ -524,9 +524,9 @@ eoc_job_transform_image_modified (gpointer data)
 }
 
 void
-eoc_job_transform_run (EomJob *ejob)
+eoc_job_transform_run (EocJob *ejob)
 {
-	EomJobTransform *job;
+	EocJobTransform *job;
 	GList *it;
 
 	g_return_if_fail (EOC_IS_JOB_TRANSFORM (ejob));
@@ -539,7 +539,7 @@ eoc_job_transform_run (EomJob *ejob)
 	}
 
 	for (it = job->images; it != NULL; it = it->next) {
-		EomImage *image = EOC_IMAGE (it->data);
+		EocImage *image = EOC_IMAGE (it->data);
 
 		if (job->trans == NULL) {
 			eoc_image_undo (image);
@@ -556,12 +556,12 @@ eoc_job_transform_run (EomJob *ejob)
 	ejob->finished = TRUE;
 }
 
-static void eoc_job_save_init (EomJobSave *job) { /* do nothing */ }
+static void eoc_job_save_init (EocJobSave *job) { /* do nothing */ }
 
 static void
 eoc_job_save_dispose (GObject *object)
 {
-	EomJobSave *job;
+	EocJobSave *job;
 
 	job = EOC_JOB_SAVE (object);
 
@@ -575,7 +575,7 @@ eoc_job_save_dispose (GObject *object)
 }
 
 static void
-eoc_job_save_class_init (EomJobSaveClass *class)
+eoc_job_save_class_init (EocJobSaveClass *class)
 {
 	G_OBJECT_CLASS (class)->dispose = eoc_job_save_dispose;
 	EOC_JOB_CLASS (class)->run = eoc_job_save_run;
@@ -583,17 +583,17 @@ eoc_job_save_class_init (EomJobSaveClass *class)
 
 /**
  * eoc_job_save_new:
- * @images: (element-type EomImage) (transfer full): a #EomImage list
+ * @images: (element-type EocImage) (transfer full): a #EocImage list
  *
- * Creates a new #EomJob for image saving.
+ * Creates a new #EocJob for image saving.
  *
- * Returns: A #EomJob.
+ * Returns: A #EocJob.
  */
 
-EomJob *
+EocJob *
 eoc_job_save_new (GList *images)
 {
-	EomJobSave *job;
+	EocJobSave *job;
 
 	job = g_object_new (EOC_TYPE_JOB_SAVE, NULL);
 
@@ -604,9 +604,9 @@ eoc_job_save_new (GList *images)
 }
 
 static void
-save_progress_handler (EomImage *image, gfloat progress, gpointer data)
+save_progress_handler (EocImage *image, gfloat progress, gpointer data)
 {
-	EomJobSave *job = EOC_JOB_SAVE (data);
+	EocJobSave *job = EOC_JOB_SAVE (data);
 	guint n_images = g_list_length (job->images);
 	gfloat job_progress;
 
@@ -616,9 +616,9 @@ save_progress_handler (EomImage *image, gfloat progress, gpointer data)
 }
 
 static void
-eoc_job_save_run (EomJob *ejob)
+eoc_job_save_run (EocJob *ejob)
 {
-	EomJobSave *job;
+	EocJobSave *job;
 	GList *it;
 
 	g_return_if_fail (EOC_IS_JOB_SAVE (ejob));
@@ -628,8 +628,8 @@ eoc_job_save_run (EomJob *ejob)
 	job->current_pos = 0;
 
 	for (it = job->images; it != NULL; it = it->next, job->current_pos++) {
-		EomImage *image = EOC_IMAGE (it->data);
-		EomImageSaveInfo *save_info = NULL;
+		EocImage *image = EOC_IMAGE (it->data);
+		EocImageSaveInfo *save_info = NULL;
 		gulong handler_id = 0;
 		gboolean success = FALSE;
 
@@ -639,7 +639,7 @@ eoc_job_save_run (EomJob *ejob)
 		eoc_image_data_ref (image);
 
 		if (!eoc_image_has_data (image, EOC_IMAGE_DATA_ALL)) {
-			EomImageMetadataStatus m_status;
+			EocImageMetadataStatus m_status;
 			gint data2load = 0;
 
 			m_status = eoc_image_get_metadata_status (image);
@@ -684,11 +684,11 @@ eoc_job_save_run (EomJob *ejob)
 	ejob->finished = TRUE;
 }
 
-static void eoc_job_save_as_init (EomJobSaveAs *job) { /* do nothing */ }
+static void eoc_job_save_as_init (EocJobSaveAs *job) { /* do nothing */ }
 
 static void eoc_job_save_as_dispose (GObject *object)
 {
-	EomJobSaveAs *job = EOC_JOB_SAVE_AS (object);
+	EocJobSaveAs *job = EOC_JOB_SAVE_AS (object);
 
 	if (job->converter != NULL) {
 		g_object_unref (job->converter);
@@ -704,7 +704,7 @@ static void eoc_job_save_as_dispose (GObject *object)
 }
 
 static void
-eoc_job_save_as_class_init (EomJobSaveAsClass *class)
+eoc_job_save_as_class_init (EocJobSaveAsClass *class)
 {
 	G_OBJECT_CLASS (class)->dispose = eoc_job_save_as_dispose;
 	EOC_JOB_CLASS (class)->run = eoc_job_save_as_run;
@@ -712,19 +712,19 @@ eoc_job_save_as_class_init (EomJobSaveAsClass *class)
 
 /**
  * eoc_job_save_as_new:
- * @images: (element-type EomImage) (transfer full): a #EomImage list
+ * @images: (element-type EocImage) (transfer full): a #EocImage list
  * @converter: a URI converter
  * file: a #GFile
  *
- * Creates a new #EomJob for save as.
+ * Creates a new #EocJob for save as.
  *
- * Returns: A #EomJob.
+ * Returns: A #EocJob.
  */
 
-EomJob *
-eoc_job_save_as_new (GList *images, EomURIConverter *converter, GFile *file)
+EocJob *
+eoc_job_save_as_new (GList *images, EocURIConverter *converter, GFile *file)
 {
-	EomJobSaveAs *job;
+	EocJobSaveAs *job;
 
 	g_assert (converter != NULL || g_list_length (images) == 1);
 
@@ -739,10 +739,10 @@ eoc_job_save_as_new (GList *images, EomURIConverter *converter, GFile *file)
 }
 
 static void
-eoc_job_save_as_run (EomJob *ejob)
+eoc_job_save_as_run (EocJob *ejob)
 {
-	EomJobSave *job;
-	EomJobSaveAs *saveas_job;
+	EocJobSave *job;
+	EocJobSaveAs *saveas_job;
 	GList *it;
 	guint n_images;
 
@@ -758,8 +758,8 @@ eoc_job_save_as_run (EomJob *ejob)
 
 	for (it = job->images; it != NULL; it = it->next, job->current_pos++) {
 		GdkPixbufFormat *format;
-		EomImageSaveInfo *src_info, *dest_info;
-		EomImage *image = EOC_IMAGE (it->data);
+		EocImageSaveInfo *src_info, *dest_info;
+		EocImage *image = EOC_IMAGE (it->data);
 		gboolean success = FALSE;
 		gulong handler_id = 0;
 
@@ -768,7 +768,7 @@ eoc_job_save_as_run (EomJob *ejob)
 		eoc_image_data_ref (image);
 
 		if (!eoc_image_has_data (image, EOC_IMAGE_DATA_ALL)) {
-			EomImageMetadataStatus m_status;
+			EocImageMetadataStatus m_status;
 			gint data2load = 0;
 
 			m_status = eoc_image_get_metadata_status (image);
@@ -848,12 +848,12 @@ eoc_job_save_as_run (EomJob *ejob)
 	ejob->finished = TRUE;
 }
 
-static void eoc_job_copy_init (EomJobCopy *job) { /* do nothing */};
+static void eoc_job_copy_init (EocJobCopy *job) { /* do nothing */};
 
 static void
 eoc_job_copy_dispose (GObject *object)
 {
-	EomJobCopy *job = EOC_JOB_COPY (object);
+	EocJobCopy *job = EOC_JOB_COPY (object);
 
 	if (job->dest) {
 		g_free (job->dest);
@@ -864,7 +864,7 @@ eoc_job_copy_dispose (GObject *object)
 }
 
 static void
-eoc_job_copy_class_init (EomJobCopyClass *class)
+eoc_job_copy_class_init (EocJobCopyClass *class)
 {
 	G_OBJECT_CLASS (class)->dispose = eoc_job_copy_dispose;
 	EOC_JOB_CLASS (class)->run = eoc_job_copy_run;
@@ -872,18 +872,18 @@ eoc_job_copy_class_init (EomJobCopyClass *class)
 
 /**
  * eoc_job_copy_new:
- * @images: (element-type EomImage) (transfer full): a #EomImage list
+ * @images: (element-type EocImage) (transfer full): a #EocImage list
  * @dest: destination path for the copy
  *
- * Creates a new #EomJob.
+ * Creates a new #EocJob.
  *
- * Returns: A #EomJob.
+ * Returns: A #EocJob.
  */
 
-EomJob *
+EocJob *
 eoc_job_copy_new (GList *images, const gchar *dest)
 {
-	EomJobCopy *job;
+	EocJobCopy *job;
 
 	g_assert (images != NULL && dest != NULL);
 
@@ -902,7 +902,7 @@ eoc_job_copy_progress_callback (goffset current_num_bytes,
 {
 	gfloat job_progress;
 	guint n_images;
-	EomJobCopy *job;
+	EocJobCopy *job;
 
 	job = EOC_JOB_COPY (user_data);
 	n_images = g_list_length (job->images);
@@ -913,9 +913,9 @@ eoc_job_copy_progress_callback (goffset current_num_bytes,
 }
 
 void
-eoc_job_copy_run (EomJob *ejob)
+eoc_job_copy_run (EocJob *ejob)
 {
-	EomJobCopy *job;
+	EocJobCopy *job;
 	GList *it;
 	GFile *src, *dest;
 	gchar *filename, *dest_filename;

@@ -38,12 +38,12 @@
 #define EOC_PRINT_SETTINGS_GROUP "Print Settings"
 
 typedef struct {
-	EomImage *image;
+	EocImage *image;
 	gdouble left_margin;
 	gdouble top_margin;
 	gdouble scale_factor;
 	GtkUnit unit;
-} EomPrintData;
+} EocPrintData;
 
 /* art_affine_flip modified to work with cairo_matrix_t */
 static void
@@ -80,12 +80,12 @@ eoc_print_draw_page (GtkPrintOperation *operation,
 	gdouble scale_factor;
 	gdouble p_width, p_height;
 	gint width, height;
-	EomPrintData *data;
+	EocPrintData *data;
 	GtkPageSetup *page_setup;
 
 	eoc_debug (DEBUG_PRINTING);
 
-	data = (EomPrintData *) user_data;
+	data = (EocPrintData *) user_data;
 
 	scale_factor = data->scale_factor/100;
 
@@ -145,8 +145,8 @@ eoc_print_draw_page (GtkPrintOperation *operation,
 		file = eoc_image_get_file (data->image);
 		if (g_file_load_contents (file, NULL, &img_data, &data_len, NULL, NULL))
 		{
-			EomTransform *tf = eoc_image_get_transform (data->image);
-			EomTransform *auto_tf = eoc_image_get_autorotate_transform (data->image);
+			EocTransform *tf = eoc_image_get_transform (data->image);
+			EocTransform *auto_tf = eoc_image_get_autorotate_transform (data->image);
 			cairo_matrix_t mx, mx2;
 
 			if (!tf && auto_tf) {
@@ -260,11 +260,11 @@ eoc_print_create_custom_widget (GtkPrintOperation *operation,
 				       gpointer user_data)
 {
 	GtkPageSetup *page_setup;
-	EomPrintData *data;
+	EocPrintData *data;
 
 	eoc_debug (DEBUG_PRINTING);
 
-	data = (EomPrintData *)user_data;
+	data = (EocPrintData *)user_data;
 
 	page_setup = gtk_print_operation_get_default_page_setup (operation);
 
@@ -279,13 +279,13 @@ eoc_print_custom_widget_apply (GtkPrintOperation *operation,
 			       GtkWidget         *widget,
 			       gpointer           user_data)
 {
-	EomPrintData *data;
+	EocPrintData *data;
 	gdouble left_margin, top_margin, scale_factor;
 	GtkUnit unit;
 
 	eoc_debug (DEBUG_PRINTING);
 
-	data = (EomPrintData *)user_data;
+	data = (EocPrintData *)user_data;
 
 	eoc_print_image_setup_get_options (EOC_PRINT_IMAGE_SETUP (widget),
 					   &left_margin, &top_margin,
@@ -302,28 +302,28 @@ eoc_print_end_print (GtkPrintOperation *operation,
 		     GtkPrintContext   *context,
 		     gpointer           user_data)
 {
-	EomPrintData *data = (EomPrintData*) user_data;
+	EocPrintData *data = (EocPrintData*) user_data;
 
 	eoc_debug (DEBUG_PRINTING);
 
 	g_object_unref (data->image);
-	g_slice_free (EomPrintData, data);
+	g_slice_free (EocPrintData, data);
 }
 
 GtkPrintOperation *
-eoc_print_operation_new (EomImage *image,
+eoc_print_operation_new (EocImage *image,
 			 GtkPrintSettings *print_settings,
 			 GtkPageSetup *page_setup)
 {
 	GtkPrintOperation *print;
-	EomPrintData *data;
+	EocPrintData *data;
 	gint width, height;
 
 	eoc_debug (DEBUG_PRINTING);
 
 	print = gtk_print_operation_new ();
 
-	data = g_slice_new0 (EomPrintData);
+	data = g_slice_new0 (EocPrintData);
 
 	data->left_margin = 0;
 	data->top_margin = 0;

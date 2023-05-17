@@ -194,7 +194,7 @@ static ExifTagCategory exif_tag_category_map[] = {
 #define MODEL_COLUMN_ATTRIBUTE 0
 #define MODEL_COLUMN_VALUE     1
 
-struct _EomMetadataDetailsPrivate {
+struct _EocMetadataDetailsPrivate {
     GtkTreeModel *model;
 
     GHashTable   *id_path_hash;
@@ -203,14 +203,14 @@ struct _EomMetadataDetailsPrivate {
 
 static char*  set_row_data (GtkTreeStore *store, char *path, char *parent, const char *attribute, const char *value);
 
-static void eoc_metadata_details_reset (EomMetadataDetails *exif_details);
+static void eoc_metadata_details_reset (EocMetadataDetails *exif_details);
 
-G_DEFINE_TYPE_WITH_PRIVATE (EomMetadataDetails, eoc_metadata_details, GTK_TYPE_TREE_VIEW)
+G_DEFINE_TYPE_WITH_PRIVATE (EocMetadataDetails, eoc_metadata_details, GTK_TYPE_TREE_VIEW)
 
 static void
 eoc_metadata_details_dispose (GObject *object)
 {
-    EomMetadataDetailsPrivate *priv;
+    EocMetadataDetailsPrivate *priv;
 
     priv = EOC_METADATA_DETAILS (object)->priv;
 
@@ -232,9 +232,9 @@ eoc_metadata_details_dispose (GObject *object)
 }
 
 static void
-eoc_metadata_details_init (EomMetadataDetails *details)
+eoc_metadata_details_init (EocMetadataDetails *details)
 {
-    EomMetadataDetailsPrivate *priv;
+    EocMetadataDetailsPrivate *priv;
     GtkTreeViewColumn *column;
     GtkCellRenderer *cell;
 
@@ -270,7 +270,7 @@ eoc_metadata_details_init (EomMetadataDetails *details)
 }
 
 static void
-eoc_metadata_details_class_init (EomMetadataDetailsClass *klass)
+eoc_metadata_details_class_init (EocMetadataDetailsClass *klass)
 {
     GObjectClass *object_class = (GObjectClass*) klass;
 
@@ -462,8 +462,8 @@ static void
 exif_entry_cb (ExifEntry *entry, gpointer data)
 {
     GtkTreeStore *store;
-    EomMetadataDetails *view;
-    EomMetadataDetailsPrivate *priv;
+    EocMetadataDetails *view;
+    EocMetadataDetailsPrivate *priv;
     MetadataCategory cat;
     ExifIfd ifd = exif_entry_get_ifd (entry);
     char *path;
@@ -552,9 +552,9 @@ eoc_metadata_details_new (void)
 }
 
 static void
-eoc_metadata_details_reset (EomMetadataDetails *details)
+eoc_metadata_details_reset (EocMetadataDetails *details)
 {
-    EomMetadataDetailsPrivate *priv = details->priv;
+    EocMetadataDetailsPrivate *priv = details->priv;
     int i;
 
     gtk_tree_store_clear (GTK_TREE_STORE (priv->model));
@@ -577,7 +577,7 @@ eoc_metadata_details_reset (EomMetadataDetails *details)
 
 #ifdef HAVE_EXIF
 void
-eoc_metadata_details_update (EomMetadataDetails *details, ExifData *data)
+eoc_metadata_details_update (EocMetadataDetails *details, ExifData *data)
 {
     g_return_if_fail (EOC_IS_METADATA_DETAILS (details));
 
@@ -624,11 +624,11 @@ get_xmp_category (XmpStringPtr schema)
 }
 
 static void
-xmp_entry_insert (EomMetadataDetails *view, XmpStringPtr xmp_schema,
+xmp_entry_insert (EocMetadataDetails *view, XmpStringPtr xmp_schema,
                   XmpStringPtr xmp_path, XmpStringPtr xmp_prop)
 {
     GtkTreeStore *store;
-    EomMetadataDetailsPrivate *priv;
+    EocMetadataDetailsPrivate *priv;
     MetadataCategory cat;
     char *path;
     gchar *key;
@@ -661,7 +661,7 @@ xmp_entry_insert (EomMetadataDetails *view, XmpStringPtr xmp_schema,
 }
 
 void
-eoc_metadata_details_xmp_update (EomMetadataDetails *view, XmpPtr data)
+eoc_metadata_details_xmp_update (EocMetadataDetails *view, XmpPtr data)
 {
     g_return_if_fail (EOC_IS_METADATA_DETAILS (view));
 

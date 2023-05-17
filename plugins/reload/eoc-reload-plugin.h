@@ -17,28 +17,28 @@ G_BEGIN_DECLS
 #define EOC_TYPE_RELOAD_PLUGIN \
 	(eoc_reload_plugin_get_type())
 #define EOC_RELOAD_PLUGIN(o) \
-	(G_TYPE_CHECK_INSTANCE_CAST((o), EOC_TYPE_RELOAD_PLUGIN, EomReloadPlugin))
+	(G_TYPE_CHECK_INSTANCE_CAST((o), EOC_TYPE_RELOAD_PLUGIN, EocReloadPlugin))
 #define EOC_RELOAD_PLUGIN_CLASS(k) \
-	(G_TYPE_CHECK_CLASS_CAST((k), EOC_TYPE_RELOAD_PLUGIN, EomReloadPluginClass))
+	(G_TYPE_CHECK_CLASS_CAST((k), EOC_TYPE_RELOAD_PLUGIN, EocReloadPluginClass))
 #define EOC_IS_RELOAD_PLUGIN(o) \
 	(G_TYPE_CHECK_INSTANCE_TYPE((o), EOC_TYPE_RELOAD_PLUGIN))
 #define EOC_IS_RELOAD_PLUGIN_CLASS(k) \
 	(G_TYPE_CHECK_CLASS_TYPE((k), EOC_TYPE_RELOAD_PLUGIN))
 #define EOC_RELOAD_PLUGIN_GET_CLASS(o) \
-	(G_TYPE_INSTANCE_GET_CLASS((o), EOC_TYPE_RELOAD_PLUGIN, EomReloadPluginClass))
+	(G_TYPE_INSTANCE_GET_CLASS((o), EOC_TYPE_RELOAD_PLUGIN, EocReloadPluginClass))
 
 /* Private structure type */
-typedef struct _EomReloadPluginPrivate EomReloadPluginPrivate;
+typedef struct _EocReloadPluginPrivate EocReloadPluginPrivate;
 
 /*
  * Main object structure
  */
-typedef struct _EomReloadPlugin EomReloadPlugin;
+typedef struct _EocReloadPlugin EocReloadPlugin;
 
-struct _EomReloadPlugin {
+struct _EocReloadPlugin {
 	PeasExtensionBase parent_instance;
 
-	EomWindow *window;
+	EocWindow *window;
 	GtkActionGroup *ui_action_group;
 	guint ui_id;
 };
@@ -46,9 +46,9 @@ struct _EomReloadPlugin {
 /*
  * Class definition
  */
-typedef struct _EomReloadPluginClass EomReloadPluginClass;
+typedef struct _EocReloadPluginClass EocReloadPluginClass;
 
-struct _EomReloadPluginClass {
+struct _EocReloadPluginClass {
 	PeasExtensionBaseClass parent_class;
 };
 

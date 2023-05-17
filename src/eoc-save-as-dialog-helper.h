@@ -12,7 +12,7 @@ G_GNUC_INTERNAL
 GtkWidget*    eoc_save_as_dialog_new       (GtkWindow *main, GList *images, GFile *base_file);
 
 G_GNUC_INTERNAL
-EomURIConverter* eoc_save_as_dialog_get_converter (GtkWidget *dlg);
+EocURIConverter* eoc_save_as_dialog_get_converter (GtkWidget *dlg);
 
 
 G_END_DECLS

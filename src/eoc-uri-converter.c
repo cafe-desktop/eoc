@@ -19,15 +19,15 @@ enum {
 };
 
 typedef struct {
-	EomUCType  type;
+	EocUCType  type;
 	union {
 		char    *string;  /* if type == EOC_UC_STRING */
 		gulong  counter;  /* if type == EOC_UC_COUNTER */
 	} data;
-} EomUCToken;
+} EocUCToken;
 
 
-struct _EomURIConverterPrivate {
+struct _EocURIConverterPrivate {
 	GFile           *base_file;
 	GList           *token_list;
 	char            *suffix;
@@ -51,25 +51,25 @@ static void eoc_uri_converter_get_property (GObject    *object,
 					    GValue     *value,
 					    GParamSpec *pspec);
 
-G_DEFINE_TYPE_WITH_PRIVATE (EomURIConverter, eoc_uri_converter, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (EocURIConverter, eoc_uri_converter, G_TYPE_OBJECT)
 
 static void
 free_token (gpointer data)
 {
-	EomUCToken *token = (EomUCToken*) data;
+	EocUCToken *token = (EocUCToken*) data;
 
 	if (token->type == EOC_UC_STRING) {
 		g_free (token->data.string);
 	}
 
-	g_slice_free (EomUCToken, token);
+	g_slice_free (EocUCToken, token);
 }
 
 static void
 eoc_uri_converter_dispose (GObject *object)
 {
-	EomURIConverter *instance = EOC_URI_CONVERTER (object);
-	EomURIConverterPrivate *priv;
+	EocURIConverter *instance = EOC_URI_CONVERTER (object);
+	EocURIConverterPrivate *priv;
 
 	priv = instance->priv;
 
@@ -94,9 +94,9 @@ eoc_uri_converter_dispose (GObject *object)
 }
 
 static void
-eoc_uri_converter_init (EomURIConverter *conv)
+eoc_uri_converter_init (EocURIConverter *conv)
 {
-	EomURIConverterPrivate *priv;
+	EocURIConverterPrivate *priv;
 
 	priv = conv->priv = eoc_uri_converter_get_instance_private (conv);
 
@@ -108,7 +108,7 @@ eoc_uri_converter_init (EomURIConverter *conv)
 }
 
 static void
-eoc_uri_converter_class_init (EomURIConverterClass *klass)
+eoc_uri_converter_class_init (EocURIConverterClass *klass)
 {
 	GObjectClass *object_class = (GObjectClass*) klass;
 
@@ -177,8 +177,8 @@ eoc_uri_converter_set_property (GObject      *object,
                                 const GValue *value,
                                 GParamSpec   *pspec)
 {
-	EomURIConverter *conv;
-	EomURIConverterPrivate *priv;
+	EocURIConverter *conv;
+	EocURIConverterPrivate *priv;
 
         g_return_if_fail (EOC_IS_URI_CONVERTER (object));
 
@@ -229,8 +229,8 @@ eoc_uri_converter_get_property (GObject    *object,
                                 GValue     *value,
                                 GParamSpec *pspec)
 {
-	EomURIConverter *conv;
-	EomURIConverterPrivate *priv;
+	EocURIConverter *conv;
+	EocURIConverterPrivate *priv;
 
         g_return_if_fail (EOC_IS_URI_CONVERTER (object));
 
@@ -267,13 +267,13 @@ enum {
 	PARSER_TOKEN
 };
 
-static EomUCToken*
+static EocUCToken*
 create_token_string (const char *string, int substr_start, int substr_len)
 {
 	char *start_byte;
 	char *end_byte;
 	int n_bytes;
-	EomUCToken *token;
+	EocUCToken *token;
 
 	if (string == NULL) return NULL;
 	if (substr_len <= 0) return NULL;
@@ -284,7 +284,7 @@ create_token_string (const char *string, int substr_start, int substr_len)
 	/* FIXME: is this right? */
 	n_bytes = end_byte - start_byte;
 
-	token = g_slice_new0 (EomUCToken);
+	token = g_slice_new0 (EocUCToken);
 	token->type = EOC_UC_STRING;
 	token->data.string = g_new0 (char, n_bytes);
 	token->data.string = g_utf8_strncpy (token->data.string, start_byte, substr_len);
@@ -292,33 +292,33 @@ create_token_string (const char *string, int substr_start, int substr_len)
 	return token;
 }
 
-static EomUCToken*
+static EocUCToken*
 create_token_counter (int start_counter)
 {
-	EomUCToken *token;
+	EocUCToken *token;
 
-	token = g_slice_new0 (EomUCToken);
+	token = g_slice_new0 (EocUCToken);
 	token->type = EOC_UC_COUNTER;
 	token->data.counter = 0;
 
 	return token;
 }
 
-static EomUCToken*
-create_token_other (EomUCType type)
+static EocUCToken*
+create_token_other (EocUCType type)
 {
-	EomUCToken *token;
+	EocUCToken *token;
 
-	token = g_slice_new0 (EomUCToken);
+	token = g_slice_new0 (EocUCToken);
 	token->type = type;
 
 	return token;
 }
 
 static GList*
-eoc_uri_converter_parse_string (EomURIConverter *conv, const char *string)
+eoc_uri_converter_parse_string (EocURIConverter *conv, const char *string)
 {
-	EomURIConverterPrivate *priv;
+	EocURIConverterPrivate *priv;
 	GList *list = NULL;
 	gulong len;
 	int i;
@@ -327,7 +327,7 @@ eoc_uri_converter_parse_string (EomURIConverter *conv, const char *string)
 	int substr_len = 0;
 	gunichar c;
 	const char *s;
-	EomUCToken *token;
+	EocUCToken *token;
 
 	g_return_val_if_fail (EOC_IS_URI_CONVERTER (conv), NULL);
 
@@ -371,7 +371,7 @@ eoc_uri_converter_parse_string (EomURIConverter *conv, const char *string)
 			break;
 
 		case PARSER_TOKEN: {
-			EomUCType type = EOC_UC_END;
+			EocUCType type = EOC_UC_END;
 
 			if (c == 'f') {
 				type = EOC_UC_FILENAME;
@@ -436,9 +436,9 @@ eoc_uri_converter_parse_string (EomURIConverter *conv, const char *string)
 }
 
 void
-eoc_uri_converter_print_list (EomURIConverter *conv)
+eoc_uri_converter_print_list (EocURIConverter *conv)
 {
-	EomURIConverterPrivate *priv;
+	EocURIConverterPrivate *priv;
 	GList *it;
 
 	g_return_if_fail (EOC_URI_CONVERTER (conv));
@@ -446,10 +446,10 @@ eoc_uri_converter_print_list (EomURIConverter *conv)
 	priv = conv->priv;
 
 	for (it = priv->token_list; it != NULL; it = it->next) {
-		EomUCToken *token;
+		EocUCToken *token;
 		char *str;
 
-		token = (EomUCToken*) it->data;
+		token = (EocUCToken*) it->data;
 
 		switch (token->type) {
 		case EOC_UC_STRING:
@@ -502,10 +502,10 @@ eoc_uri_converter_print_list (EomURIConverter *conv)
 }
 
 
-EomURIConverter*
+EocURIConverter*
 eoc_uri_converter_new (GFile *base_file, GdkPixbufFormat *img_format, const char *format_str)
 {
-	EomURIConverter *conv;
+	EocURIConverter *conv;
 
 	g_return_val_if_fail (format_str != NULL, NULL);
 
@@ -524,10 +524,10 @@ eoc_uri_converter_new (GFile *base_file, GdkPixbufFormat *img_format, const char
 }
 
 static GFile*
-get_file_directory (EomURIConverter *conv, EomImage *image)
+get_file_directory (EocURIConverter *conv, EocImage *image)
 {
 	GFile *file = NULL;
-	EomURIConverterPrivate *priv;
+	EocURIConverterPrivate *priv;
 
 	g_return_val_if_fail (EOC_IS_URI_CONVERTER (conv), NULL);
 	g_return_val_if_fail (EOC_IS_IMAGE (image), NULL);
@@ -582,7 +582,7 @@ split_filename (GFile *file, char **name, char **suffix)
 }
 
 static GString*
-append_filename (GString *str, EomImage *img)
+append_filename (GString *str, EocImage *img)
 {
 	/* appends the name of the original file without
 	   filetype suffix */
@@ -605,9 +605,9 @@ append_filename (GString *str, EomImage *img)
 }
 
 static GString*
-append_counter (GString *str, gulong counter,  EomURIConverter *conv)
+append_counter (GString *str, gulong counter,  EocURIConverter *conv)
 {
-	EomURIConverterPrivate *priv;
+	EocURIConverterPrivate *priv;
 
 	priv = conv->priv;
 
@@ -618,11 +618,11 @@ append_counter (GString *str, gulong counter,  EomURIConverter *conv)
 
 
 static void
-build_absolute_file (EomURIConverter *conv, EomImage *image, GString *str,  /* input  */
+build_absolute_file (EocURIConverter *conv, EocImage *image, GString *str,  /* input  */
 		     GFile **file, GdkPixbufFormat **format)                /* output */
 {
 	GFile *dir_file;
-	EomURIConverterPrivate *priv;
+	EocURIConverterPrivate *priv;
 
 	*file = NULL;
 	if (format != NULL)
@@ -714,15 +714,15 @@ replace_remove_chars (GString *str, gboolean convert_spaces, gunichar space_char
 }
 
 /*
- * This function converts the uri of the EomImage object, according to the
- * EomUCToken list. The absolute uri (converted filename appended to base uri)
+ * This function converts the uri of the EocImage object, according to the
+ * EocUCToken list. The absolute uri (converted filename appended to base uri)
  * is returned in uri and the image format will be in the format pointer.
  */
 gboolean
-eoc_uri_converter_do (EomURIConverter *conv, EomImage *image,
+eoc_uri_converter_do (EocURIConverter *conv, EocImage *image,
 		      GFile **file, GdkPixbufFormat **format, GError **error)
 {
-	EomURIConverterPrivate *priv;
+	EocURIConverterPrivate *priv;
 	GList *it;
 	GString *str;
 	GString *repl_str;
@@ -738,7 +738,7 @@ eoc_uri_converter_do (EomURIConverter *conv, EomImage *image,
 	str = g_string_new ("");
 
 	for (it = priv->token_list; it != NULL; it = it->next) {
-		EomUCToken *token = (EomUCToken*) it->data;
+		EocUCToken *token = (EocUCToken*) it->data;
 
 		switch (token->type) {
 		case EOC_UC_STRING:
@@ -808,7 +808,7 @@ eoc_uri_converter_do (EomURIConverter *conv, EomImage *image,
 
 
 char*
-eoc_uri_converter_preview (const char *format_str, EomImage *img, GdkPixbufFormat *format,
+eoc_uri_converter_preview (const char *format_str, EocImage *img, GdkPixbufFormat *format,
 			   gulong counter, guint n_images,
 			   gboolean convert_spaces, gunichar space_char)
 {
@@ -931,7 +931,7 @@ eoc_uri_converter_preview (const char *format_str, EomImage *img, GdkPixbufForma
 }
 
 gboolean
-eoc_uri_converter_requires_exif (EomURIConverter *converter)
+eoc_uri_converter_requires_exif (EocURIConverter *converter)
 {
 	g_return_val_if_fail (EOC_IS_URI_CONVERTER (converter), FALSE);
 
@@ -940,13 +940,13 @@ eoc_uri_converter_requires_exif (EomURIConverter *converter)
 
 /**
  * eoc_uri_converter_check:
- * @converter: a #EomURIConverter
+ * @converter: a #EocURIConverter
  * @img_list: (element-type GFile): a #Gfile list
  * @error: a #GError location to store the error occurring, or NULL to ignore
  */
 
 gboolean
-eoc_uri_converter_check (EomURIConverter *converter, GList *img_list, GError **error)
+eoc_uri_converter_check (EocURIConverter *converter, GList *img_list, GError **error)
 {
 	GList *it;
 	GList *file_list = NULL;

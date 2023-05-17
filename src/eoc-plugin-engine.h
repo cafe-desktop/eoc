@@ -30,29 +30,29 @@
 
 G_BEGIN_DECLS
 
-typedef struct _EomPluginEngine EomPluginEngine;
-typedef struct _EomPluginEngineClass EomPluginEngineClass;
-typedef struct _EomPluginEnginePrivate EomPluginEnginePrivate;
+typedef struct _EocPluginEngine EocPluginEngine;
+typedef struct _EocPluginEngineClass EocPluginEngineClass;
+typedef struct _EocPluginEnginePrivate EocPluginEnginePrivate;
 
 #define EOC_TYPE_PLUGIN_ENGINE            eoc_plugin_engine_get_type()
-#define EOC_PLUGIN_ENGINE(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), EOC_TYPE_PLUGIN_ENGINE, EomPluginEngine))
-#define EOC_PLUGIN_ENGINE_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass), EOC_TYPE_PLUGIN_ENGINE, EomPluginEngineClass))
+#define EOC_PLUGIN_ENGINE(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), EOC_TYPE_PLUGIN_ENGINE, EocPluginEngine))
+#define EOC_PLUGIN_ENGINE_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass), EOC_TYPE_PLUGIN_ENGINE, EocPluginEngineClass))
 #define EOC_IS_PLUGIN_ENGINE(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), EOC_TYPE_PLUGIN_ENGINE))
 #define EOC_IS_PLUGIN_ENGINE_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), EOC_TYPE_PLUGIN_ENGINE))
-#define EOC_PLUGIN_ENGINE_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), EOC_TYPE_PLUGIN_ENGINE, EomPluginEngineClass))
+#define EOC_PLUGIN_ENGINE_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), EOC_TYPE_PLUGIN_ENGINE, EocPluginEngineClass))
 
-struct _EomPluginEngine {
+struct _EocPluginEngine {
 	PeasEngine parent;
-	EomPluginEnginePrivate *priv;
+	EocPluginEnginePrivate *priv;
 };
 
-struct _EomPluginEngineClass {
+struct _EocPluginEngineClass {
 	PeasEngineClass parent_class;
 };
 
 GType eoc_plugin_engine_get_type (void) G_GNUC_CONST;
 
-EomPluginEngine* eoc_plugin_engine_new (void);
+EocPluginEngine* eoc_plugin_engine_new (void);
 
 G_END_DECLS
 

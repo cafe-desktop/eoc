@@ -29,25 +29,25 @@
 
 G_BEGIN_DECLS
 
-typedef struct _EomStatusbar        EomStatusbar;
-typedef struct _EomStatusbarPrivate EomStatusbarPrivate;
-typedef struct _EomStatusbarClass   EomStatusbarClass;
+typedef struct _EocStatusbar        EocStatusbar;
+typedef struct _EocStatusbarPrivate EocStatusbarPrivate;
+typedef struct _EocStatusbarClass   EocStatusbarClass;
 
 #define EOC_TYPE_STATUSBAR            (eoc_statusbar_get_type ())
-#define EOC_STATUSBAR(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), EOC_TYPE_STATUSBAR, EomStatusbar))
-#define EOC_STATUSBAR_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST((klass),   EOC_TYPE_STATUSBAR, EomStatusbarClass))
+#define EOC_STATUSBAR(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), EOC_TYPE_STATUSBAR, EocStatusbar))
+#define EOC_STATUSBAR_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST((klass),   EOC_TYPE_STATUSBAR, EocStatusbarClass))
 #define EOC_IS_STATUSBAR(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), EOC_TYPE_STATUSBAR))
 #define EOC_IS_STATUSBAR_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass),  EOC_TYPE_STATUSBAR))
-#define EOC_STATUSBAR_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj),  EOC_TYPE_STATUSBAR, EomStatusbarClass))
+#define EOC_STATUSBAR_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj),  EOC_TYPE_STATUSBAR, EocStatusbarClass))
 
-struct _EomStatusbar
+struct _EocStatusbar
 {
         GtkStatusbar parent;
 
-        EomStatusbarPrivate *priv;
+        EocStatusbarPrivate *priv;
 };
 
-struct _EomStatusbarClass
+struct _EocStatusbarClass
 {
         GtkStatusbarClass parent_class;
 };
@@ -56,11 +56,11 @@ GType		 eoc_statusbar_get_type			(void) G_GNUC_CONST;
 
 GtkWidget	*eoc_statusbar_new			(void);
 
-void		 eoc_statusbar_set_image_number		(EomStatusbar   *statusbar,
+void		 eoc_statusbar_set_image_number		(EocStatusbar   *statusbar,
 							 gint           num,
 							 gint           tot);
 
-void		 eoc_statusbar_set_progress		(EomStatusbar   *statusbar,
+void		 eoc_statusbar_set_progress		(EocStatusbar   *statusbar,
 							 gdouble        progress);
 
 G_END_DECLS

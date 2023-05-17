@@ -57,11 +57,11 @@ enum {
         PROP_NETBOOK_MODE
 };
 
-struct _EomPropertiesDialogPrivate {
-	EomThumbView   *thumbview;
+struct _EocPropertiesDialogPrivate {
+	EocThumbView   *thumbview;
 
 	gboolean        update_page;
-	EomPropertiesDialogPage current_page;
+	EocPropertiesDialogPage current_page;
 
 	GtkWidget      *notebook;
 	GtkWidget      *close_button;
@@ -108,14 +108,14 @@ struct _EomPropertiesDialogPrivate {
 	gboolean        netbook_mode;
 };
 
-G_DEFINE_TYPE_WITH_PRIVATE (EomPropertiesDialog, eoc_properties_dialog, GTK_TYPE_DIALOG);
+G_DEFINE_TYPE_WITH_PRIVATE (EocPropertiesDialog, eoc_properties_dialog, GTK_TYPE_DIALOG);
 
 static void
 parent_file_display_name_query_info_cb (GObject *source_object,
 					GAsyncResult *res,
 					gpointer user_data)
 {
-	EomPropertiesDialog *prop_dlg = EOC_PROPERTIES_DIALOG (user_data);
+	EocPropertiesDialog *prop_dlg = EOC_PROPERTIES_DIALOG (user_data);
 	GFile *parent_file = G_FILE (source_object);
 	GFileInfo *file_info;
 	gchar *display_name;
@@ -138,8 +138,8 @@ parent_file_display_name_query_info_cb (GObject *source_object,
 }
 
 static void
-pd_update_general_tab (EomPropertiesDialog *prop_dlg,
-		       EomImage            *image)
+pd_update_general_tab (EocPropertiesDialog *prop_dlg,
+		       EocImage            *image)
 {
 	gchar *bytes_str, *dir_str_long;
 	gchar *width_str, *height_str;
@@ -279,10 +279,10 @@ eoc_xmp_set_label (XmpPtr xmp,
 
 #if HAVE_METADATA
 static void
-pd_update_metadata_tab (EomPropertiesDialog *prop_dlg,
-			EomImage            *image)
+pd_update_metadata_tab (EocPropertiesDialog *prop_dlg,
+			EocImage            *image)
 {
-	EomPropertiesDialogPrivate *priv;
+	EocPropertiesDialogPrivate *priv;
 	GtkNotebook *notebook;
 #if HAVE_EXIF
 	ExifData    *exif_data;
@@ -443,7 +443,7 @@ pd_exif_details_activated_cb (GtkExpander *expander,
 static void
 pd_folder_button_clicked_cb (GtkButton *button, gpointer data)
 {
-	EomPropertiesDialogPrivate *priv = EOC_PROPERTIES_DIALOG (data)->priv;
+	EocPropertiesDialogPrivate *priv = EOC_PROPERTIES_DIALOG (data)->priv;
 	GtkWindow *window;
 	guint32 timestamp;
 
@@ -460,7 +460,7 @@ static gboolean
 eoc_properties_dialog_page_switch (GtkNotebook     *notebook,
 				   gpointer         page,
 				   guint            page_index,
-				   EomPropertiesDialog *prop_dlg)
+				   EocPropertiesDialog *prop_dlg)
 {
 	if (prop_dlg->priv->update_page)
 		prop_dlg->priv->current_page = page_index;
@@ -469,10 +469,10 @@ eoc_properties_dialog_page_switch (GtkNotebook     *notebook,
 }
 
 void
-eoc_properties_dialog_set_netbook_mode (EomPropertiesDialog *dlg,
+eoc_properties_dialog_set_netbook_mode (EocPropertiesDialog *dlg,
 					gboolean enable)
 {
-	EomPropertiesDialogPrivate *priv;
+	EocPropertiesDialogPrivate *priv;
 
 	g_return_if_fail (EOC_IS_PROPERTIES_DIALOG (dlg));
 
@@ -516,7 +516,7 @@ eoc_properties_dialog_set_property (GObject      *object,
 				    const GValue *value,
 				    GParamSpec   *pspec)
 {
-	EomPropertiesDialog *prop_dlg = EOC_PROPERTIES_DIALOG (object);
+	EocPropertiesDialog *prop_dlg = EOC_PROPERTIES_DIALOG (object);
 
 	switch (prop_id) {
 		case PROP_THUMBVIEW:
@@ -539,7 +539,7 @@ eoc_properties_dialog_get_property (GObject    *object,
 				    GValue     *value,
 				    GParamSpec *pspec)
 {
-	EomPropertiesDialog *prop_dlg = EOC_PROPERTIES_DIALOG (object);
+	EocPropertiesDialog *prop_dlg = EOC_PROPERTIES_DIALOG (object);
 
 	switch (prop_id) {
 		case PROP_THUMBVIEW:
@@ -559,8 +559,8 @@ eoc_properties_dialog_get_property (GObject    *object,
 static void
 eoc_properties_dialog_dispose (GObject *object)
 {
-	EomPropertiesDialog *prop_dlg;
-	EomPropertiesDialogPrivate *priv;
+	EocPropertiesDialog *prop_dlg;
+	EocPropertiesDialogPrivate *priv;
 
 	g_return_if_fail (object != NULL);
 	g_return_if_fail (EOC_IS_PROPERTIES_DIALOG (object));
@@ -580,7 +580,7 @@ eoc_properties_dialog_dispose (GObject *object)
 }
 
 static void
-eoc_properties_dialog_class_init (EomPropertiesDialogClass *klass)
+eoc_properties_dialog_class_init (EocPropertiesDialogClass *klass)
 {
 	GObjectClass *g_object_class = (GObjectClass *) klass;
 
@@ -613,101 +613,101 @@ eoc_properties_dialog_class_init (EomPropertiesDialogClass *klass)
 	                                             "/org/mate/eoc/ui/eoc-image-properties-dialog.ui");
 
 	gtk_widget_class_bind_template_child_private(wklass,
-						     EomPropertiesDialog,
+						     EocPropertiesDialog,
 						     notebook);
 	gtk_widget_class_bind_template_child_private(wklass,
-						     EomPropertiesDialog,
+						     EocPropertiesDialog,
 						     previous_button);
 	gtk_widget_class_bind_template_child_private(wklass,
-						     EomPropertiesDialog,
+						     EocPropertiesDialog,
 						     next_button);
 	gtk_widget_class_bind_template_child_private(wklass,
-						     EomPropertiesDialog,
+						     EocPropertiesDialog,
 						     close_button);
 	gtk_widget_class_bind_template_child_private(wklass,
-						     EomPropertiesDialog,
+						     EocPropertiesDialog,
 						     thumbnail_image);
 	gtk_widget_class_bind_template_child_private(wklass,
-						     EomPropertiesDialog,
+						     EocPropertiesDialog,
 						     general_box);
 	gtk_widget_class_bind_template_child_private(wklass,
-						     EomPropertiesDialog,
+						     EocPropertiesDialog,
 						     name_label);
 	gtk_widget_class_bind_template_child_private(wklass,
-						     EomPropertiesDialog,
+						     EocPropertiesDialog,
 						     width_label);
 	gtk_widget_class_bind_template_child_private(wklass,
-						     EomPropertiesDialog,
+						     EocPropertiesDialog,
 						     height_label);
 	gtk_widget_class_bind_template_child_private(wklass,
-						     EomPropertiesDialog,
+						     EocPropertiesDialog,
 						     type_label);
 	gtk_widget_class_bind_template_child_private(wklass,
-						     EomPropertiesDialog,
+						     EocPropertiesDialog,
 						     bytes_label);
 	gtk_widget_class_bind_template_child_private(wklass,
-						     EomPropertiesDialog,
+						     EocPropertiesDialog,
 						     folder_button);
 
 #if HAVE_EXIF
 	gtk_widget_class_bind_template_child_private(wklass,
-						     EomPropertiesDialog,
+						     EocPropertiesDialog,
 						     exif_aperture_label);
 	gtk_widget_class_bind_template_child_private(wklass,
-						     EomPropertiesDialog,
+						     EocPropertiesDialog,
 						     exif_exposure_label);
 	gtk_widget_class_bind_template_child_private(wklass,
-						     EomPropertiesDialog,
+						     EocPropertiesDialog,
 						     exif_focal_label);
 	gtk_widget_class_bind_template_child_private(wklass,
-						     EomPropertiesDialog,
+						     EocPropertiesDialog,
 						     exif_flash_label);
 	gtk_widget_class_bind_template_child_private(wklass,
-						     EomPropertiesDialog,
+						     EocPropertiesDialog,
 						     exif_iso_label);
 	gtk_widget_class_bind_template_child_private(wklass,
-						     EomPropertiesDialog,
+						     EocPropertiesDialog,
 						     exif_metering_label);
 	gtk_widget_class_bind_template_child_private(wklass,
-						     EomPropertiesDialog,
+						     EocPropertiesDialog,
 						     exif_model_label);
 	gtk_widget_class_bind_template_child_private(wklass,
-						     EomPropertiesDialog,
+						     EocPropertiesDialog,
 						     exif_date_label);
 #endif
 #if HAVE_EXEMPI
 	gtk_widget_class_bind_template_child_private(wklass,
-						     EomPropertiesDialog,
+						     EocPropertiesDialog,
 						     xmp_location_label);
 	gtk_widget_class_bind_template_child_private(wklass,
-						     EomPropertiesDialog,
+						     EocPropertiesDialog,
 						     xmp_description_label);
 	gtk_widget_class_bind_template_child_private(wklass,
-						     EomPropertiesDialog,
+						     EocPropertiesDialog,
 						     xmp_keywords_label);
 	gtk_widget_class_bind_template_child_private(wklass,
-						     EomPropertiesDialog,
+						     EocPropertiesDialog,
 						     xmp_creator_label);
 	gtk_widget_class_bind_template_child_private(wklass,
-						     EomPropertiesDialog,
+						     EocPropertiesDialog,
 						     xmp_rights_label);
 #else
 	gtk_widget_class_bind_template_child_private(wklass,
-						     EomPropertiesDialog,
+						     EocPropertiesDialog,
 						     xmp_box);
 	gtk_widget_class_bind_template_child_private(wklass,
-						     EomPropertiesDialog,
+						     EocPropertiesDialog,
 						     xmp_box_label);
 #endif
 #ifdef HAVE_METADATA
 	gtk_widget_class_bind_template_child_private(wklass,
-						     EomPropertiesDialog,
+						     EocPropertiesDialog,
 						     metadata_box);
 	gtk_widget_class_bind_template_child_private(wklass,
-						     EomPropertiesDialog,
+						     EocPropertiesDialog,
 						     metadata_details_expander);
 	gtk_widget_class_bind_template_child_private(wklass,
-						     EomPropertiesDialog,
+						     EocPropertiesDialog,
 						     metadata_details_box);
 
 	gtk_widget_class_bind_template_callback(wklass,
@@ -720,9 +720,9 @@ eoc_properties_dialog_class_init (EomPropertiesDialogClass *klass)
 }
 
 static void
-eoc_properties_dialog_init (EomPropertiesDialog *prop_dlg)
+eoc_properties_dialog_init (EocPropertiesDialog *prop_dlg)
 {
-	EomPropertiesDialogPrivate *priv;
+	EocPropertiesDialogPrivate *priv;
 #if HAVE_METADATA
 	GtkWidget *sw;
 #endif
@@ -800,12 +800,12 @@ eoc_properties_dialog_init (EomPropertiesDialog *prop_dlg)
  *
  *
  *
- * Returns: (transfer full) (type EomPropertiesDialog): a new #EomPropertiesDialog
+ * Returns: (transfer full) (type EocPropertiesDialog): a new #EocPropertiesDialog
  **/
 
 GtkWidget *
 eoc_properties_dialog_new (GtkWindow    *parent,
-			   EomThumbView *thumbview,
+			   EocThumbView *thumbview,
 			   GtkAction    *next_image_action,
 			   GtkAction    *previous_image_action)
 {
@@ -834,8 +834,8 @@ eoc_properties_dialog_new (GtkWindow    *parent,
 }
 
 void
-eoc_properties_dialog_update (EomPropertiesDialog *prop_dlg,
-			      EomImage            *image)
+eoc_properties_dialog_update (EocPropertiesDialog *prop_dlg,
+			      EocImage            *image)
 {
 	g_return_if_fail (EOC_IS_PROPERTIES_DIALOG (prop_dlg));
 
@@ -853,8 +853,8 @@ eoc_properties_dialog_update (EomPropertiesDialog *prop_dlg,
 }
 
 void
-eoc_properties_dialog_set_page (EomPropertiesDialog *prop_dlg,
-			        EomPropertiesDialogPage page)
+eoc_properties_dialog_set_page (EocPropertiesDialog *prop_dlg,
+			        EocPropertiesDialogPage page)
 {
 	g_return_if_fail (EOC_IS_PROPERTIES_DIALOG (prop_dlg));
 

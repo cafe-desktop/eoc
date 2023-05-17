@@ -32,29 +32,29 @@
 G_BEGIN_DECLS
 
 #define EOC_TYPE_METADATA_SIDEBAR          (eoc_metadata_sidebar_get_type ())
-#define EOC_METADATA_SIDEBAR(o)            (G_TYPE_CHECK_INSTANCE_CAST ((o), EOC_TYPE_METADATA_SIDEBAR, EomMetadataSidebar))
-#define EOC_METADATA_SIDEBAR_CLASS(k)      (G_TYPE_CHECK_CLASS_CAST((k), EOC_TYPE_METADATA_SIDEBAR, EomMetadataSidebarClass))
+#define EOC_METADATA_SIDEBAR(o)            (G_TYPE_CHECK_INSTANCE_CAST ((o), EOC_TYPE_METADATA_SIDEBAR, EocMetadataSidebar))
+#define EOC_METADATA_SIDEBAR_CLASS(k)      (G_TYPE_CHECK_CLASS_CAST((k), EOC_TYPE_METADATA_SIDEBAR, EocMetadataSidebarClass))
 #define EOC_IS_METADATA_SIDEBAR(o)         (G_TYPE_CHECK_INSTANCE_TYPE ((o), EOC_TYPE_METADATA_SIDEBAR))
 #define EOC_IS_METADATA_SIDEBAR_CLASS(k)   (G_TYPE_CHECK_CLASS_TYPE ((k), EOC_TYPE_METADATA_SIDEBAR))
-#define EOC_METADATA_SIDEBAR_GET_CLASS(o)  (G_TYPE_INSTANCE_GET_CLASS ((o), EOC_TYPE_METADATA_SIDEBAR, EomMetadataSidebarClass))
+#define EOC_METADATA_SIDEBAR_GET_CLASS(o)  (G_TYPE_INSTANCE_GET_CLASS ((o), EOC_TYPE_METADATA_SIDEBAR, EocMetadataSidebarClass))
 
-typedef struct _EomMetadataSidebar EomMetadataSidebar;
-typedef struct _EomMetadataSidebarClass EomMetadataSidebarClass;
-typedef struct _EomMetadataSidebarPrivate EomMetadataSidebarPrivate;
+typedef struct _EocMetadataSidebar EocMetadataSidebar;
+typedef struct _EocMetadataSidebarClass EocMetadataSidebarClass;
+typedef struct _EocMetadataSidebarPrivate EocMetadataSidebarPrivate;
 
-struct _EomMetadataSidebar {
+struct _EocMetadataSidebar {
 	GtkScrolledWindow parent;
 
-	EomMetadataSidebarPrivate *priv;
+	EocMetadataSidebarPrivate *priv;
 };
 
-struct _EomMetadataSidebarClass {
+struct _EocMetadataSidebarClass {
 	GtkScrolledWindowClass parent_klass;
 };
 
 GType eoc_metadata_sidebar_get_type (void) G_GNUC_CONST;
 
-GtkWidget* eoc_metadata_sidebar_new (EomWindow *window);
+GtkWidget* eoc_metadata_sidebar_new (EocWindow *window);
 
 G_END_DECLS
 

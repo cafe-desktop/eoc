@@ -30,9 +30,9 @@
 #include <string.h>
 
 #define EOC_LIST_STORE_GET_PRIVATE(object) \
-	(G_TYPE_INSTANCE_GET_PRIVATE ((object), EOC_TYPE_LIST_STORE, EomListStorePrivate))
+	(G_TYPE_INSTANCE_GET_PRIVATE ((object), EOC_TYPE_LIST_STORE, EocListStorePrivate))
 
-struct _EomListStorePrivate {
+struct _EocListStorePrivate {
 	GList *monitors;          /* Monitors for the directories */
 	gint initial_image;       /* The image that should be selected firstly by the view. */
 	GdkPixbuf *busy_image;    /* Loading image icon */
@@ -40,7 +40,7 @@ struct _EomListStorePrivate {
 	GMutex mutex;            /* Mutex for saving the jobs in the model */
 };
 
-G_DEFINE_TYPE_WITH_PRIVATE (EomListStore, eoc_list_store, GTK_TYPE_LIST_STORE);
+G_DEFINE_TYPE_WITH_PRIVATE (EocListStore, eoc_list_store, GTK_TYPE_LIST_STORE);
 
 static void
 foreach_monitors_free (gpointer data, gpointer user_data)
@@ -51,7 +51,7 @@ foreach_monitors_free (gpointer data, gpointer user_data)
 static void
 eoc_list_store_dispose (GObject *object)
 {
-	EomListStore *store = EOC_LIST_STORE (object);
+	EocListStore *store = EOC_LIST_STORE (object);
 
 	g_list_foreach (store->priv->monitors,
 			foreach_monitors_free, NULL);
@@ -76,7 +76,7 @@ eoc_list_store_dispose (GObject *object)
 }
 
 static void
-eoc_list_store_class_init (EomListStoreClass *klass)
+eoc_list_store_class_init (EocListStoreClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
 
@@ -95,7 +95,7 @@ eoc_list_store_compare_func (GtkTreeModel *model,
 {
 	gint r_value;
 
-	EomImage *image_a, *image_b;
+	EocImage *image_a, *image_b;
 
 	gtk_tree_model_get (model, a,
 			    EOC_LIST_STORE_EOC_IMAGE, &image_a,
@@ -138,7 +138,7 @@ eoc_list_store_get_icon (const gchar *icon_name)
 }
 
 static void
-eoc_list_store_init (EomListStore *self)
+eoc_list_store_init (EocListStore *self)
 {
 	GType types[EOC_LIST_STORE_NUM_COLUMNS];
 
@@ -172,9 +172,9 @@ eoc_list_store_init (EomListStore *self)
 /**
  * eoc_list_store_new:
  *
- * Creates a new and empty #EomListStore.
+ * Creates a new and empty #EocListStore.
  *
- * Returns: a newly created #EomListStore.
+ * Returns: a newly created #EocListStore.
  **/
 GtkListStore*
 eoc_list_store_new (void)
@@ -187,12 +187,12 @@ eoc_list_store_new (void)
    then sets @iter_found to a #GtkTreeIter pointing to the file.
  */
 static gboolean
-is_file_in_list_store (EomListStore *store,
+is_file_in_list_store (EocListStore *store,
 		       const gchar *info_uri,
 		       GtkTreeIter *iter_found)
 {
 	gboolean found = FALSE;
-	EomImage *image;
+	EocImage *image;
 	GFile *file;
 	gchar *str;
 	GtkTreeIter iter;
@@ -228,7 +228,7 @@ is_file_in_list_store (EomListStore *store,
 }
 
 static gboolean
-is_file_in_list_store_file (EomListStore *store,
+is_file_in_list_store_file (EocListStore *store,
 			   GFile *file,
 			   GtkTreeIter *iter_found)
 {
@@ -245,11 +245,11 @@ is_file_in_list_store_file (EomListStore *store,
 }
 
 static void
-eoc_job_thumbnail_cb (EomJobThumbnail *job, gpointer data)
+eoc_job_thumbnail_cb (EocJobThumbnail *job, gpointer data)
 {
-	EomListStore *store;
+	EocListStore *store;
 	GtkTreeIter iter;
-	EomImage *image;
+	EocImage *image;
 	GdkPixbuf *thumbnail;
 	GFile *file;
 
@@ -287,7 +287,7 @@ eoc_job_thumbnail_cb (EomJobThumbnail *job, gpointer data)
 }
 
 static void
-on_image_changed (EomImage *image, EomListStore *store)
+on_image_changed (EocImage *image, EocListStore *store)
 {
 	GtkTreePath *path;
 	GtkTreeIter iter;
@@ -303,15 +303,15 @@ on_image_changed (EomImage *image, EomListStore *store)
 
 /**
  * eoc_list_store_remove:
- * @store: An #EomListStore.
+ * @store: An #EocListStore.
  * @iter: A #GtkTreeIter.
  *
  * Removes the image pointed by @iter from @store.
  **/
 static void
-eoc_list_store_remove (EomListStore *store, GtkTreeIter *iter)
+eoc_list_store_remove (EocListStore *store, GtkTreeIter *iter)
 {
-	EomImage *image;
+	EocImage *image;
 
 	gtk_tree_model_get (GTK_TREE_MODEL (store), iter,
 			    EOC_LIST_STORE_EOC_IMAGE, &image,
@@ -325,16 +325,16 @@ eoc_list_store_remove (EomListStore *store, GtkTreeIter *iter)
 
 /**
  * eoc_list_store_append_image:
- * @store: An #EomListStore.
- * @image: An #EomImage.
+ * @store: An #EocListStore.
+ * @image: An #EocImage.
  *
- * Adds an #EomImage to @store. The thumbnail of the image is not
+ * Adds an #EocImage to @store. The thumbnail of the image is not
  * loaded and will only be loaded if the thumbnail is made visible
  * or eoc_list_store_set_thumbnail() is called.
  *
  **/
 void
-eoc_list_store_append_image (EomListStore *store, EomImage *image)
+eoc_list_store_append_image (EocListStore *store, EocImage *image)
 {
 	GtkTreeIter iter;
 
@@ -351,11 +351,11 @@ eoc_list_store_append_image (EomListStore *store, EomImage *image)
 }
 
 static void
-eoc_list_store_append_image_from_file (EomListStore *store,
+eoc_list_store_append_image_from_file (EocListStore *store,
 				       GFile *file,
 				       const gchar *caption)
 {
-	EomImage *image;
+	EocImage *image;
 
 	g_return_if_fail (EOC_IS_LIST_STORE (store));
 
@@ -369,12 +369,12 @@ file_monitor_changed_cb (GFileMonitor *monitor,
 			 GFile *file,
 			 GFile *other_file,
 			 GFileMonitorEvent event,
-			 EomListStore *store)
+			 EocListStore *store)
 {
 	const char *mimetype;
 	GFileInfo *file_info;
 	GtkTreeIter iter;
-	EomImage *image;
+	EocImage *image;
 
 	switch (event) {
 	case G_FILE_MONITOR_EVENT_CHANGES_DONE_HINT:
@@ -410,7 +410,7 @@ file_monitor_changed_cb (GFileMonitor *monitor,
 		break;
 	case G_FILE_MONITOR_EVENT_DELETED:
 		if (is_file_in_list_store_file (store, file, &iter)) {
-			EomImage *image;
+			EocImage *image;
 
 			gtk_tree_model_get (GTK_TREE_MODEL (store), &iter,
 					    EOC_LIST_STORE_EOC_IMAGE, &image,
@@ -466,7 +466,7 @@ file_monitor_changed_cb (GFileMonitor *monitor,
 static void
 directory_visit (GFile *directory,
 		 GFileInfo *children_info,
-		 EomListStore *store)
+		 EocListStore *store)
 {
 	GFile *child;
 	gboolean load_uri = FALSE;
@@ -492,7 +492,7 @@ directory_visit (GFile *directory,
 }
 
 static void
-eoc_list_store_append_directory (EomListStore *store,
+eoc_list_store_append_directory (EocListStore *store,
 				 GFile *file,
 				 GFileType file_type)
 {
@@ -532,7 +532,7 @@ eoc_list_store_append_directory (EomListStore *store,
 
 /**
  * eoc_list_store_add_files:
- * @store: An #EomListStore.
+ * @store: An #EocListStore.
  * @file_list: (element-type GFile): A %NULL-terminated list of #GFile's.
  *
  * Adds a list of #GFile's to @store. The given list
@@ -545,7 +545,7 @@ eoc_list_store_append_directory (EomListStore *store,
  *
  **/
 void
-eoc_list_store_add_files (EomListStore *store, GList *file_list)
+eoc_list_store_add_files (EocListStore *store, GList *file_list)
 {
 	GList *it;
 	GFileInfo *file_info;
@@ -644,13 +644,13 @@ eoc_list_store_add_files (EomListStore *store, GList *file_list)
 
 /**
  * eoc_list_store_remove_image:
- * @store: An #EomListStore.
- * @image: An #EomImage.
+ * @store: An #EocListStore.
+ * @image: An #EocImage.
  *
  * Removes @image from @store.
  **/
 void
-eoc_list_store_remove_image (EomListStore *store, EomImage *image)
+eoc_list_store_remove_image (EocListStore *store, EocImage *image)
 {
 	GtkTreeIter iter;
 	GFile *file;
@@ -668,12 +668,12 @@ eoc_list_store_remove_image (EomListStore *store, EomImage *image)
 
 /**
  * eoc_list_store_new_from_glist:
- * @list: (element-type EomImage): a %NULL-terminated list of #EomImage's.
+ * @list: (element-type EocImage): a %NULL-terminated list of #EocImage's.
  *
- * Creates a new #EomListStore from a list of #EomImage's.
+ * Creates a new #EocListStore from a list of #EocImage's.
  * The given list must be %NULL-terminated.
  *
- * Returns: a new #EomListStore.
+ * Returns: a new #EocListStore.
  **/
 GtkListStore *
 eoc_list_store_new_from_glist (GList *list)
@@ -692,8 +692,8 @@ eoc_list_store_new_from_glist (GList *list)
 
 /**
  * eoc_list_store_get_pos_by_image:
- * @store: An #EomListStore.
- * @image: An #EomImage.
+ * @store: An #EocListStore.
+ * @image: An #EocImage.
  *
  * Gets the position where @image is stored in @store. If @image
  * is not stored in @store, -1 is returned.
@@ -701,7 +701,7 @@ eoc_list_store_new_from_glist (GList *list)
  * Returns: the position of @image in @store or -1 if not found.
  **/
 gint
-eoc_list_store_get_pos_by_image (EomListStore *store, EomImage *image)
+eoc_list_store_get_pos_by_image (EocListStore *store, EocImage *image)
 {
 	GtkTreeIter iter;
 	gint pos = -1;
@@ -722,19 +722,19 @@ eoc_list_store_get_pos_by_image (EomListStore *store, EomImage *image)
 
 /**
  * eoc_list_store_get_image_by_pos:
- * @store: An #EomListStore.
- * @pos: the position of the required #EomImage.
+ * @store: An #EocListStore.
+ * @pos: the position of the required #EocImage.
  *
- * Gets the #EomImage in the position @pos of @store. If there is
+ * Gets the #EocImage in the position @pos of @store. If there is
  * no image at position @pos, %NULL is returned.
  *
- * Returns: (transfer full): the #EomImage in position @pos or %NULL.
+ * Returns: (transfer full): the #EocImage in position @pos or %NULL.
  *
  **/
-EomImage *
-eoc_list_store_get_image_by_pos (EomListStore *store, gint pos)
+EocImage *
+eoc_list_store_get_image_by_pos (EocListStore *store, gint pos)
 {
-	EomImage *image = NULL;
+	EocImage *image = NULL;
 	GtkTreeIter iter;
 
 	g_return_val_if_fail (EOC_IS_LIST_STORE (store), NULL);
@@ -750,7 +750,7 @@ eoc_list_store_get_image_by_pos (EomListStore *store, gint pos)
 
 /**
  * eoc_list_store_get_pos_by_iter:
- * @store: An #EomListStore.
+ * @store: An #EocListStore.
  * @iter: A #GtkTreeIter pointing to an image in @store.
  *
  * Gets the position of the image pointed by @iter.
@@ -758,7 +758,7 @@ eoc_list_store_get_image_by_pos (EomListStore *store, gint pos)
  * Returns: The position of the image pointed by @iter.
  **/
 gint
-eoc_list_store_get_pos_by_iter (EomListStore *store,
+eoc_list_store_get_pos_by_iter (EocListStore *store,
 				GtkTreeIter *iter)
 {
 	gint *indices;
@@ -775,14 +775,14 @@ eoc_list_store_get_pos_by_iter (EomListStore *store,
 
 /**
  * eoc_list_store_length:
- * @store: An #EomListStore.
+ * @store: An #EocListStore.
  *
  * Returns the number of images in the store.
  *
  * Returns: The number of images in @store.
  **/
 gint
-eoc_list_store_length (EomListStore *store)
+eoc_list_store_length (EocListStore *store)
 {
 	g_return_val_if_fail (EOC_IS_LIST_STORE (store), -1);
 
@@ -791,16 +791,16 @@ eoc_list_store_length (EomListStore *store)
 
 /**
  * eoc_list_store_get_initial_pos:
- * @store: An #EomListStore.
+ * @store: An #EocListStore.
  *
- * Gets the position of the #EomImage that should be loaded first.
+ * Gets the position of the #EocImage that should be loaded first.
  * If not set, it returns -1.
  *
  * Returns: the position of the image to be loaded first or -1.
  *
  **/
 gint
-eoc_list_store_get_initial_pos (EomListStore *store)
+eoc_list_store_get_initial_pos (EocListStore *store)
 {
 	g_return_val_if_fail (EOC_IS_LIST_STORE (store), -1);
 
@@ -808,10 +808,10 @@ eoc_list_store_get_initial_pos (EomListStore *store)
 }
 
 static void
-eoc_list_store_remove_thumbnail_job (EomListStore *store,
+eoc_list_store_remove_thumbnail_job (EocListStore *store,
 				     GtkTreeIter *iter)
 {
-	EomJob *job;
+	EocJob *job;
 
 	gtk_tree_model_get (GTK_TREE_MODEL (store), iter,
 			    EOC_LIST_STORE_EOC_JOB, &job,
@@ -830,10 +830,10 @@ eoc_list_store_remove_thumbnail_job (EomListStore *store,
 }
 
 static void
-eoc_list_store_add_thumbnail_job (EomListStore *store, GtkTreeIter *iter)
+eoc_list_store_add_thumbnail_job (EocListStore *store, GtkTreeIter *iter)
 {
-	EomImage *image;
-	EomJob *job;
+	EocImage *image;
+	EocJob *job;
 
 	gtk_tree_model_get (GTK_TREE_MODEL (store), iter,
 			    EOC_LIST_STORE_EOC_IMAGE, &image,
@@ -864,14 +864,14 @@ eoc_list_store_add_thumbnail_job (EomListStore *store, GtkTreeIter *iter)
 
 /**
  * eoc_list_store_thumbnail_set:
- * @store: An #EomListStore.
+ * @store: An #EocListStore.
  * @iter: A #GtkTreeIter pointing to an image in @store.
  *
  * Sets the thumbnail for the image pointed by @iter.
  *
  **/
 void
-eoc_list_store_thumbnail_set (EomListStore *store,
+eoc_list_store_thumbnail_set (EocListStore *store,
 			      GtkTreeIter *iter)
 {
 	gboolean thumb_set = FALSE;
@@ -889,7 +889,7 @@ eoc_list_store_thumbnail_set (EomListStore *store,
 
 /**
  * eoc_list_store_thumbnail_unset:
- * @store: An #EomListStore.
+ * @store: An #EocListStore.
  * @iter: A #GtkTreeIter pointing to an image in @store.
  *
  * Unsets the thumbnail for the image pointed by @iter, changing
@@ -897,10 +897,10 @@ eoc_list_store_thumbnail_set (EomListStore *store,
  *
  **/
 void
-eoc_list_store_thumbnail_unset (EomListStore *store,
+eoc_list_store_thumbnail_unset (EocListStore *store,
 				GtkTreeIter *iter)
 {
-	EomImage *image;
+	EocImage *image;
 
 	eoc_list_store_remove_thumbnail_job (store, iter);
 
@@ -918,14 +918,14 @@ eoc_list_store_thumbnail_unset (EomListStore *store,
 
 /**
  * eoc_list_store_thumbnail_refresh:
- * @store: An #EomListStore.
+ * @store: An #EocListStore.
  * @iter: A #GtkTreeIter pointing to an image in @store.
  *
  * Refreshes the thumbnail for the image pointed by @iter.
  *
  **/
 void
-eoc_list_store_thumbnail_refresh (EomListStore *store,
+eoc_list_store_thumbnail_refresh (EocListStore *store,
 				  GtkTreeIter *iter)
 {
 	eoc_list_store_remove_thumbnail_job (store, iter);

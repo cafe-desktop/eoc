@@ -38,16 +38,16 @@
 
 #define USER_EOC_PLUGINS_LOCATION "plugins/"
 
-struct _EomPluginEnginePrivate {
+struct _EocPluginEnginePrivate {
 	GSettings *plugins_settings;
 };
 
-G_DEFINE_TYPE_WITH_PRIVATE (EomPluginEngine, eoc_plugin_engine, PEAS_TYPE_ENGINE)
+G_DEFINE_TYPE_WITH_PRIVATE (EocPluginEngine, eoc_plugin_engine, PEAS_TYPE_ENGINE)
 
 static void
 eoc_plugin_engine_dispose (GObject *object)
 {
-	EomPluginEngine *engine = EOC_PLUGIN_ENGINE (object);
+	EocPluginEngine *engine = EOC_PLUGIN_ENGINE (object);
 
 	if (engine->priv->plugins_settings != NULL)
 	{
@@ -59,7 +59,7 @@ eoc_plugin_engine_dispose (GObject *object)
 }
 
 static void
-eoc_plugin_engine_class_init (EomPluginEngineClass *klass)
+eoc_plugin_engine_class_init (EocPluginEngineClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
 
@@ -67,7 +67,7 @@ eoc_plugin_engine_class_init (EomPluginEngineClass *klass)
 }
 
 static void
-eoc_plugin_engine_init (EomPluginEngine *engine)
+eoc_plugin_engine_init (EocPluginEngine *engine)
 {
 	eoc_debug (DEBUG_PLUGINS);
 
@@ -76,10 +76,10 @@ eoc_plugin_engine_init (EomPluginEngine *engine)
 	engine->priv->plugins_settings = g_settings_new (EOC_CONF_PLUGINS);
 }
 
-EomPluginEngine *
+EocPluginEngine *
 eoc_plugin_engine_new (void)
 {
-	EomPluginEngine *engine;
+	EocPluginEngine *engine;
 	gchar *user_plugin_path;
 	gchar *private_path;
 	GError *error = NULL;
@@ -104,10 +104,10 @@ eoc_plugin_engine_new (void)
 	}
 
 	if (g_irepository_require_private (g_irepository_get_default (),
-	                                   private_path, "Eom", "1.0", 0,
+	                                   private_path, "Eoc", "1.0", 0,
 	                                   &error) == NULL)
 	{
-		g_warning ("Error loading Eom typelib: %s\n",
+		g_warning ("Error loading Eoc typelib: %s\n",
 		           error->message);
 		g_clear_error (&error);
 	}

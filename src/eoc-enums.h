@@ -27,7 +27,7 @@ typedef enum {
 	EOC_IMAGE_DATA_DIMENSION = 1 << 1,
 	EOC_IMAGE_DATA_EXIF      = 1 << 2,
 	EOC_IMAGE_DATA_XMP       = 1 << 3
-} EomImageData;
+} EocImageData;
 
 #define EOC_IMAGE_DATA_ALL  (EOC_IMAGE_DATA_IMAGE |     \
 			     EOC_IMAGE_DATA_DIMENSION | \

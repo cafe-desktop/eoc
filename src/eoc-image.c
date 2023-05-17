@@ -70,7 +70,7 @@
 #include <librsvg/rsvg.h>
 #endif
 
-G_DEFINE_TYPE_WITH_PRIVATE (EomImage, eoc_image, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (EocImage, eoc_image, G_TYPE_OBJECT)
 
 enum {
 	SIGNAL_CHANGED,
@@ -89,9 +89,9 @@ static GList *supported_mime_types = NULL;
 #define EOC_IMAGE_READ_BUFFER_SIZE 65535
 
 static void
-eoc_image_free_mem_private (EomImage *image)
+eoc_image_free_mem_private (EocImage *image)
 {
-	EomImagePrivate *priv;
+	EocImagePrivate *priv;
 
 	priv = image->priv;
 
@@ -160,7 +160,7 @@ eoc_image_free_mem_private (EomImage *image)
 static void
 eoc_image_dispose (GObject *object)
 {
-	EomImagePrivate *priv;
+	EocImagePrivate *priv;
 
 	priv = EOC_IMAGE (object)->priv;
 
@@ -208,7 +208,7 @@ eoc_image_dispose (GObject *object)
 }
 
 static void
-eoc_image_class_init (EomImageClass *klass)
+eoc_image_class_init (EocImageClass *klass)
 {
 	GObjectClass *object_class = (GObjectClass*) klass;
 
@@ -218,7 +218,7 @@ eoc_image_class_init (EomImageClass *klass)
 		g_signal_new ("size-prepared",
 			      EOC_TYPE_IMAGE,
 			      G_SIGNAL_RUN_LAST,
-			      G_STRUCT_OFFSET (EomImageClass, size_prepared),
+			      G_STRUCT_OFFSET (EocImageClass, size_prepared),
 			      NULL, NULL,
 			      eoc_marshal_VOID__INT_INT,
 			      G_TYPE_NONE, 2,
@@ -229,7 +229,7 @@ eoc_image_class_init (EomImageClass *klass)
 		g_signal_new ("changed",
 			      EOC_TYPE_IMAGE,
 			      G_SIGNAL_RUN_LAST,
-			      G_STRUCT_OFFSET (EomImageClass, changed),
+			      G_STRUCT_OFFSET (EocImageClass, changed),
 			      NULL, NULL,
 			      g_cclosure_marshal_VOID__VOID,
 			      G_TYPE_NONE, 0);
@@ -238,7 +238,7 @@ eoc_image_class_init (EomImageClass *klass)
 		g_signal_new ("thumbnail-changed",
 			      EOC_TYPE_IMAGE,
 			      G_SIGNAL_RUN_LAST,
-			      G_STRUCT_OFFSET (EomImageClass, thumbnail_changed),
+			      G_STRUCT_OFFSET (EocImageClass, thumbnail_changed),
 			      NULL, NULL,
 			      g_cclosure_marshal_VOID__VOID,
 			      G_TYPE_NONE, 0);
@@ -247,13 +247,13 @@ eoc_image_class_init (EomImageClass *klass)
 		g_signal_new ("save-progress",
 			      EOC_TYPE_IMAGE,
 			      G_SIGNAL_RUN_LAST,
-			      G_STRUCT_OFFSET (EomImageClass, save_progress),
+			      G_STRUCT_OFFSET (EocImageClass, save_progress),
 			      NULL, NULL,
 			      g_cclosure_marshal_VOID__FLOAT,
 			      G_TYPE_NONE, 1,
 			      G_TYPE_FLOAT);
  	/**
- 	 * EomImage::next-frame:
+ 	 * EocImage::next-frame:
   	 * @img: the object which received the signal.
 	 * @delay: number of milliseconds the current frame will be displayed.
 	 *
@@ -264,7 +264,7 @@ eoc_image_class_init (EomImageClass *klass)
 		g_signal_new ("next-frame",
 			      EOC_TYPE_IMAGE,
 			      G_SIGNAL_RUN_LAST,
-			      G_STRUCT_OFFSET (EomImageClass, next_frame),
+			      G_STRUCT_OFFSET (EocImageClass, next_frame),
 			      NULL, NULL,
 			      g_cclosure_marshal_VOID__INT,
 			      G_TYPE_NONE, 1,
@@ -273,14 +273,14 @@ eoc_image_class_init (EomImageClass *klass)
 	signals[SIGNAL_FILE_CHANGED] = g_signal_new ("file-changed",
 						     EOC_TYPE_IMAGE,
 						     G_SIGNAL_RUN_LAST,
-						     G_STRUCT_OFFSET (EomImageClass, file_changed),
+						     G_STRUCT_OFFSET (EocImageClass, file_changed),
 						     NULL, NULL,
 						     g_cclosure_marshal_VOID__VOID,
 						     G_TYPE_NONE, 0);
 }
 
 static void
-eoc_image_init (EomImage *img)
+eoc_image_init (EocImage *img)
 {
 	img->priv = eoc_image_get_instance_private (img);
 
@@ -317,10 +317,10 @@ eoc_image_init (EomImage *img)
 #endif
 }
 
-EomImage *
+EocImage *
 eoc_image_new_file (GFile *file, const gchar *caption)
 {
-	EomImage *img;
+	EocImage *img;
 
 	img = EOC_IMAGE (g_object_new (EOC_TYPE_IMAGE, NULL));
 
@@ -343,10 +343,10 @@ eoc_image_error_quark (void)
 }
 
 static void
-eoc_image_update_exif_data (EomImage *image)
+eoc_image_update_exif_data (EocImage *image)
 {
 #ifdef HAVE_EXIF
-	EomImagePrivate *priv;
+	EocImagePrivate *priv;
 	ExifEntry *entry;
 	ExifByteOrder bo;
 
@@ -398,12 +398,12 @@ eoc_image_update_exif_data (EomImage *image)
 }
 
 static void
-eoc_image_real_transform (EomImage     *img,
-			  EomTransform *trans,
+eoc_image_real_transform (EocImage     *img,
+			  EocTransform *trans,
 			  gboolean      is_undo,
-			  EomJob       *job)
+			  EocJob       *job)
 {
-	EomImagePrivate *priv;
+	EocImagePrivate *priv;
 	GdkPixbuf *transformed;
 	gboolean modified = FALSE;
 
@@ -442,7 +442,7 @@ eoc_image_real_transform (EomImage     *img,
 		g_object_ref (trans);
 		priv->trans = trans;
 	} else {
-		EomTransform *composition;
+		EocTransform *composition;
 
 		composition = eoc_transform_compose (priv->trans, trans);
 
@@ -458,7 +458,7 @@ eoc_image_real_transform (EomImage     *img,
 }
 
 static gboolean
-do_emit_size_prepared_signal (EomImage *img)
+do_emit_size_prepared_signal (EocImage *img)
 {
 	g_signal_emit (img, signals[SIGNAL_SIZE_PREPARED], 0,
 		       img->priv->width, img->priv->height);
@@ -466,7 +466,7 @@ do_emit_size_prepared_signal (EomImage *img)
 }
 
 static void
-eoc_image_emit_size_prepared (EomImage *img)
+eoc_image_emit_size_prepared (EocImage *img)
 {
 	g_idle_add_full (G_PRIORITY_DEFAULT_IDLE,
 	                (GSourceFunc) do_emit_size_prepared_signal,
@@ -479,7 +479,7 @@ eoc_image_size_prepared (GdkPixbufLoader *loader,
 			 gint             height,
 			 gpointer         data)
 {
-	EomImage *img;
+	EocImage *img;
 
 	eoc_debug (DEBUG_IMAGE_LOAD);
 
@@ -500,10 +500,10 @@ eoc_image_size_prepared (GdkPixbufLoader *loader,
 		eoc_image_emit_size_prepared (img);
 }
 
-static EomMetadataReader*
-check_for_metadata_img_format (EomImage *img, guchar *buffer, guint bytes_read)
+static EocMetadataReader*
+check_for_metadata_img_format (EocImage *img, guchar *buffer, guint bytes_read)
 {
-	EomMetadataReader *md_reader = NULL;
+	EocMetadataReader *md_reader = NULL;
 
 	eoc_debug_message (DEBUG_IMAGE_DATA, "Check image format for jpeg: %x%x - length: %i",
 			   buffer[0], buffer[1], bytes_read);
@@ -523,7 +523,7 @@ check_for_metadata_img_format (EomImage *img, guchar *buffer, guint bytes_read)
 }
 
 static gboolean
-eoc_image_needs_transformation (EomImage *img)
+eoc_image_needs_transformation (EocImage *img)
 {
 	g_return_val_if_fail (EOC_IS_IMAGE (img), FALSE);
 
@@ -531,11 +531,11 @@ eoc_image_needs_transformation (EomImage *img)
 }
 
 static gboolean
-eoc_image_apply_transformations (EomImage *img, GError **error)
+eoc_image_apply_transformations (EocImage *img, GError **error)
 {
 	GdkPixbuf *transformed = NULL;
-	EomTransform *composition = NULL;
-	EomImagePrivate *priv;
+	EocTransform *composition = NULL;
+	EocImagePrivate *priv;
 
 	g_return_val_if_fail (EOC_IS_IMAGE (img), FALSE);
 
@@ -586,7 +586,7 @@ eoc_image_apply_transformations (EomImage *img, GError **error)
 }
 
 static void
-eoc_image_get_file_info (EomImage *img,
+eoc_image_get_file_info (EocImage *img,
 			 goffset *bytes,
 			 gchar **mime_type,
 			 GError **error)
@@ -621,9 +621,9 @@ eoc_image_get_file_info (EomImage *img,
 
 #if defined(HAVE_LCMS) && defined(GDK_WINDOWING_X11)
 void
-eoc_image_apply_display_profile (EomImage *img, cmsHPROFILE screen)
+eoc_image_apply_display_profile (EocImage *img, cmsHPROFILE screen)
 {
-	EomImagePrivate *priv;
+	EocImagePrivate *priv;
 	cmsHTRANSFORM transform;
 	gint row, width, rows, stride;
 	guchar *p;
@@ -700,9 +700,9 @@ eoc_image_apply_display_profile (EomImage *img, cmsHPROFILE screen)
 }
 
 static void
-eoc_image_set_icc_data (EomImage *img, EomMetadataReader *md_reader)
+eoc_image_set_icc_data (EocImage *img, EocMetadataReader *md_reader)
 {
-	EomImagePrivate *priv = img->priv;
+	EocImagePrivate *priv = img->priv;
 
 	priv->profile = eoc_metadata_reader_get_icc_profile (md_reader);
 
@@ -711,9 +711,9 @@ eoc_image_set_icc_data (EomImage *img, EomMetadataReader *md_reader)
 #endif
 
 static void
-eoc_image_set_orientation (EomImage *img)
+eoc_image_set_orientation (EocImage *img)
 {
-	EomImagePrivate *priv;
+	EocImagePrivate *priv;
 #ifdef HAVE_EXIF
 	ExifData* exif;
 #endif
@@ -767,9 +767,9 @@ eoc_image_set_orientation (EomImage *img)
 }
 
 static void
-eoc_image_real_autorotate (EomImage *img)
+eoc_image_real_autorotate (EocImage *img)
 {
-	static const EomTransformType lookup[8] = {EOC_TRANSFORM_NONE,
+	static const EocTransformType lookup[8] = {EOC_TRANSFORM_NONE,
 					     EOC_TRANSFORM_FLIP_HORIZONTAL,
 					     EOC_TRANSFORM_ROT_180,
 					     EOC_TRANSFORM_FLIP_VERTICAL,
@@ -777,8 +777,8 @@ eoc_image_real_autorotate (EomImage *img)
 					     EOC_TRANSFORM_ROT_90,
 					     EOC_TRANSFORM_TRANSVERSE,
 					     EOC_TRANSFORM_ROT_270};
-	EomImagePrivate *priv;
-	EomTransformType type;
+	EocImagePrivate *priv;
+	EocTransformType type;
 
 	g_return_if_fail (EOC_IS_IMAGE (img));
 
@@ -796,7 +796,7 @@ eoc_image_real_autorotate (EomImage *img)
 }
 
 void
-eoc_image_autorotate (EomImage *img)
+eoc_image_autorotate (EocImage *img)
 {
 	g_return_if_fail (EOC_IS_IMAGE (img));
 
@@ -806,9 +806,9 @@ eoc_image_autorotate (EomImage *img)
 
 #ifdef HAVE_EXEMPI
 static void
-eoc_image_set_xmp_data (EomImage *img, EomMetadataReader *md_reader)
+eoc_image_set_xmp_data (EocImage *img, EocMetadataReader *md_reader)
 {
-	EomImagePrivate *priv;
+	EocImagePrivate *priv;
 
 	g_return_if_fail (EOC_IS_IMAGE (img));
 
@@ -822,9 +822,9 @@ eoc_image_set_xmp_data (EomImage *img, EomMetadataReader *md_reader)
 #endif
 
 static void
-eoc_image_set_exif_data (EomImage *img, EomMetadataReader *md_reader)
+eoc_image_set_exif_data (EocImage *img, EocMetadataReader *md_reader)
 {
-	EomImagePrivate *priv;
+	EocImagePrivate *priv;
 
 	g_return_if_fail (EOC_IS_IMAGE (img));
 
@@ -866,7 +866,7 @@ eoc_image_set_exif_data (EomImage *img, EomMetadataReader *md_reader)
  * Returns FALSE if this information is not found.
  **/
 static gboolean
-eoc_image_get_dimension_from_thumbnail (EomImage *image,
+eoc_image_get_dimension_from_thumbnail (EocImage *image,
 			                gint     *width,
 			                gint     *height)
 {
@@ -882,14 +882,14 @@ eoc_image_get_dimension_from_thumbnail (EomImage *image,
 }
 
 static gboolean
-eoc_image_real_load (EomImage *img,
+eoc_image_real_load (EocImage *img,
 		     guint     data2read,
-		     EomJob   *job,
+		     EocJob   *job,
 		     GError  **error)
 {
-	EomImagePrivate *priv;
+	EocImagePrivate *priv;
 	GFileInputStream *input_stream;
-	EomMetadataReader *md_reader = NULL;
+	EocMetadataReader *md_reader = NULL;
 	GdkPixbufFormat *format;
 	gchar *mime_type;
 	GdkPixbufLoader *loader = NULL;
@@ -1207,9 +1207,9 @@ eoc_image_real_load (EomImage *img,
 }
 
 gboolean
-eoc_image_has_data (EomImage *img, EomImageData req_data)
+eoc_image_has_data (EocImage *img, EocImageData req_data)
 {
-	EomImagePrivate *priv;
+	EocImagePrivate *priv;
 	gboolean has_data = TRUE;
 
 	g_return_val_if_fail (EOC_IS_IMAGE (img), FALSE);
@@ -1251,9 +1251,9 @@ eoc_image_has_data (EomImage *img, EomImageData req_data)
 }
 
 gboolean
-eoc_image_load (EomImage *img, EomImageData data2read, EomJob *job, GError **error)
+eoc_image_load (EocImage *img, EocImageData data2read, EocJob *job, GError **error)
 {
-	EomImagePrivate *priv;
+	EocImagePrivate *priv;
 	gboolean success = FALSE;
 
 	eoc_debug (DEBUG_IMAGE_LOAD);
@@ -1299,9 +1299,9 @@ eoc_image_load (EomImage *img, EomImageData data2read, EomJob *job, GError **err
 }
 
 void
-eoc_image_set_thumbnail (EomImage *img, GdkPixbuf *thumbnail)
+eoc_image_set_thumbnail (EocImage *img, GdkPixbuf *thumbnail)
 {
-	EomImagePrivate *priv;
+	EocImagePrivate *priv;
 
 	g_return_if_fail (EOC_IS_IMAGE (img));
 	g_return_if_fail (GDK_IS_PIXBUF (thumbnail) || thumbnail == NULL);
@@ -1330,14 +1330,14 @@ eoc_image_set_thumbnail (EomImage *img, GdkPixbuf *thumbnail)
 
 /**
  * eoc_image_get_pixbuf:
- * @img: a #EomImage
+ * @img: a #EocImage
  *
  * Gets the #GdkPixbuf of the image
  *
  * Returns: (transfer full): a #GdkPixbuf
  **/
 GdkPixbuf *
-eoc_image_get_pixbuf (EomImage *img)
+eoc_image_get_pixbuf (EocImage *img)
 {
 	GdkPixbuf *image = NULL;
 
@@ -1356,7 +1356,7 @@ eoc_image_get_pixbuf (EomImage *img)
 
 #if defined(HAVE_LCMS) && defined(GDK_WINDOWING_X11)
 cmsHPROFILE
-eoc_image_get_profile (EomImage *img)
+eoc_image_get_profile (EocImage *img)
 {
 	g_return_val_if_fail (EOC_IS_IMAGE (img), NULL);
 
@@ -1366,14 +1366,14 @@ eoc_image_get_profile (EomImage *img)
 
 /**
  * eoc_image_get_thumbnail:
- * @img: a #EomImage
+ * @img: a #EocImage
  *
  * Gets the thumbnail pixbuf for @img
  *
  * Returns: (transfer full): a #GdkPixbuf with a thumbnail
  **/
 GdkPixbuf *
-eoc_image_get_thumbnail (EomImage *img)
+eoc_image_get_thumbnail (EocImage *img)
 {
 	g_return_val_if_fail (EOC_IS_IMAGE (img), NULL);
 
@@ -1385,9 +1385,9 @@ eoc_image_get_thumbnail (EomImage *img)
 }
 
 void
-eoc_image_get_size (EomImage *img, int *width, int *height)
+eoc_image_get_size (EocImage *img, int *width, int *height)
 {
-	EomImagePrivate *priv;
+	EocImagePrivate *priv;
 
 	g_return_if_fail (EOC_IS_IMAGE (img));
 
@@ -1398,17 +1398,17 @@ eoc_image_get_size (EomImage *img, int *width, int *height)
 }
 
 void
-eoc_image_transform (EomImage *img, EomTransform *trans, EomJob *job)
+eoc_image_transform (EocImage *img, EocTransform *trans, EocJob *job)
 {
 	eoc_image_real_transform (img, trans, FALSE, job);
 }
 
 void
-eoc_image_undo (EomImage *img)
+eoc_image_undo (EocImage *img)
 {
-	EomImagePrivate *priv;
-	EomTransform *trans;
-	EomTransform *inverse;
+	EocImagePrivate *priv;
+	EocTransform *trans;
+	EocTransform *inverse;
 
 	g_return_if_fail (EOC_IS_IMAGE (img));
 
@@ -1460,7 +1460,7 @@ transfer_progress_cb (goffset cur_bytes,
 		      goffset total_bytes,
 		      gpointer user_data)
 {
-	EomImage *image = EOC_IMAGE (user_data);
+	EocImage *image = EOC_IMAGE (user_data);
 
 	if (cur_bytes > 0) {
 		g_signal_emit (G_OBJECT(image),
@@ -1575,7 +1575,7 @@ tmp_file_restore_unix_attributes (GFile *temp_file,
 }
 
 static gboolean
-tmp_file_move_to_uri (EomImage *image,
+tmp_file_move_to_uri (EocImage *image,
 		      GFile *tmpfile,
 		      GFile *file,
 		      gboolean overwrite,
@@ -1641,9 +1641,9 @@ tmp_file_delete (GFile *tmpfile)
 }
 
 static void
-eoc_image_reset_modifications (EomImage *image)
+eoc_image_reset_modifications (EocImage *image)
 {
-	EomImagePrivate *priv;
+	EocImagePrivate *priv;
 
 	g_return_if_fail (EOC_IS_IMAGE (image));
 
@@ -1667,9 +1667,9 @@ eoc_image_reset_modifications (EomImage *image)
 }
 
 static void
-eoc_image_link_with_target (EomImage *image, EomImageSaveInfo *target)
+eoc_image_link_with_target (EocImage *image, EocImageSaveInfo *target)
 {
-	EomImagePrivate *priv;
+	EocImagePrivate *priv;
 
 	g_return_if_fail (EOC_IS_IMAGE (image));
 	g_return_if_fail (EOC_IS_IMAGE_SAVE_INFO (target));
@@ -1702,10 +1702,10 @@ eoc_image_link_with_target (EomImage *image, EomImageSaveInfo *target)
 }
 
 gboolean
-eoc_image_save_by_info (EomImage *img, EomImageSaveInfo *source, GError **error)
+eoc_image_save_by_info (EocImage *img, EocImageSaveInfo *source, GError **error)
 {
-	EomImagePrivate *priv;
-	EomImageStatus prev_status;
+	EocImagePrivate *priv;
+	EocImageStatus prev_status;
 	gboolean success = FALSE;
 	GFile *tmp_file;
 	char *tmp_file_path;
@@ -1778,7 +1778,7 @@ eoc_image_save_by_info (EomImage *img, EomImageSaveInfo *source, GError **error)
 }
 
 static gboolean
-eoc_image_copy_file (EomImage *image, EomImageSaveInfo *source, EomImageSaveInfo *target, GError **error)
+eoc_image_copy_file (EocImage *image, EocImageSaveInfo *source, EocImageSaveInfo *target, GError **error)
 {
 	gboolean result;
 	GError *ioerror = NULL;
@@ -1812,9 +1812,9 @@ eoc_image_copy_file (EomImage *image, EomImageSaveInfo *source, EomImageSaveInfo
 }
 
 gboolean
-eoc_image_save_as_by_info (EomImage *img, EomImageSaveInfo *source, EomImageSaveInfo *target, GError **error)
+eoc_image_save_as_by_info (EocImage *img, EocImageSaveInfo *source, EocImageSaveInfo *target, GError **error)
 {
-	EomImagePrivate *priv;
+	EocImagePrivate *priv;
 	gboolean success = FALSE;
 	char *tmp_file_path;
 	GFile *tmp_file;
@@ -1918,9 +1918,9 @@ have_broken_filenames (void)
  * Author: Darin Adler <darin@bentspoon.com>
  */
 const gchar*
-eoc_image_get_caption (EomImage *img)
+eoc_image_get_caption (EocImage *img)
 {
-	EomImagePrivate *priv;
+	EocImagePrivate *priv;
 	char *name;
 	char *utf8_name;
 	char *scheme;
@@ -1992,9 +1992,9 @@ eoc_image_get_caption (EomImage *img)
 }
 
 const gchar*
-eoc_image_get_collate_key (EomImage *img)
+eoc_image_get_collate_key (EocImage *img)
 {
-	EomImagePrivate *priv;
+	EocImagePrivate *priv;
 
 	g_return_val_if_fail (EOC_IS_IMAGE (img), NULL);
 
@@ -2012,9 +2012,9 @@ eoc_image_get_collate_key (EomImage *img)
 }
 
 void
-eoc_image_cancel_load (EomImage *img)
+eoc_image_cancel_load (EocImage *img)
 {
-	EomImagePrivate *priv;
+	EocImagePrivate *priv;
 
 	g_return_if_fail (EOC_IS_IMAGE (img));
 
@@ -2031,9 +2031,9 @@ eoc_image_cancel_load (EomImage *img)
 
 #ifdef HAVE_EXIF
 ExifData *
-eoc_image_get_exif_info (EomImage *img)
+eoc_image_get_exif_info (EocImage *img)
 {
-	EomImagePrivate *priv;
+	EocImagePrivate *priv;
 	ExifData *data = NULL;
 
 	g_return_val_if_fail (EOC_IS_IMAGE (img), NULL);
@@ -2053,7 +2053,7 @@ eoc_image_get_exif_info (EomImage *img)
 
 /**
  * eoc_image_get_xmp_info:
- * @img: a #EomImage
+ * @img: a #EocImage
  *
  * Gets the XMP info for @img or NULL if compiled without
  * libexempi support.
@@ -2061,14 +2061,14 @@ eoc_image_get_exif_info (EomImage *img)
  * Returns: (transfer full): the xmp data
  **/
 gpointer
-eoc_image_get_xmp_info (EomImage *img)
+eoc_image_get_xmp_info (EocImage *img)
 {
  	gpointer data = NULL;
 
  	g_return_val_if_fail (EOC_IS_IMAGE (img), NULL);
 
 #ifdef HAVE_EXEMPI
-	EomImagePrivate *priv;
+	EocImagePrivate *priv;
  	priv = img->priv;
 
 	g_mutex_lock (&priv->status_mutex);
@@ -2082,14 +2082,14 @@ eoc_image_get_xmp_info (EomImage *img)
 
 /**
  * eoc_image_get_file:
- * @img: a #EomImage
+ * @img: a #EocImage
  *
  * Gets the #GFile associated with @img
  *
  * Returns: (transfer full): a #GFile
  **/
 GFile *
-eoc_image_get_file (EomImage *img)
+eoc_image_get_file (EocImage *img)
 {
 	g_return_val_if_fail (EOC_IS_IMAGE (img), NULL);
 
@@ -2097,7 +2097,7 @@ eoc_image_get_file (EomImage *img)
 }
 
 gboolean
-eoc_image_is_modified (EomImage *img)
+eoc_image_is_modified (EocImage *img)
 {
 	g_return_val_if_fail (EOC_IS_IMAGE (img), FALSE);
 
@@ -2105,7 +2105,7 @@ eoc_image_is_modified (EomImage *img)
 }
 
 goffset
-eoc_image_get_bytes (EomImage *img)
+eoc_image_get_bytes (EocImage *img)
 {
 	g_return_val_if_fail (EOC_IS_IMAGE (img), 0);
 
@@ -2113,7 +2113,7 @@ eoc_image_get_bytes (EomImage *img)
 }
 
 void
-eoc_image_modified (EomImage *img)
+eoc_image_modified (EocImage *img)
 {
 	g_return_if_fail (EOC_IS_IMAGE (img));
 
@@ -2121,9 +2121,9 @@ eoc_image_modified (EomImage *img)
 }
 
 gchar*
-eoc_image_get_uri_for_display (EomImage *img)
+eoc_image_get_uri_for_display (EocImage *img)
 {
-	EomImagePrivate *priv;
+	EocImagePrivate *priv;
 	gchar *uri_str = NULL;
 	gchar *str = NULL;
 
@@ -2143,8 +2143,8 @@ eoc_image_get_uri_for_display (EomImage *img)
 	return str;
 }
 
-EomImageStatus
-eoc_image_get_status (EomImage *img)
+EocImageStatus
+eoc_image_get_status (EocImage *img)
 {
 	g_return_val_if_fail (EOC_IS_IMAGE (img), EOC_IMAGE_STATUS_UNKNOWN);
 
@@ -2153,15 +2153,15 @@ eoc_image_get_status (EomImage *img)
 
 /**
  * eoc_image_get_metadata_status:
- * @img: a #EomImage
+ * @img: a #EocImage
  *
  * Returns the current status of the image metadata, that is,
  * whether the metadata has not been read yet, is ready, or not available at all.
  *
- * Returns: one of #EomImageMetadataStatus
+ * Returns: one of #EocImageMetadataStatus
  **/
-EomImageMetadataStatus
-eoc_image_get_metadata_status (EomImage *img)
+EocImageMetadataStatus
+eoc_image_get_metadata_status (EocImage *img)
 {
 	g_return_val_if_fail (EOC_IS_IMAGE (img), EOC_IMAGE_METADATA_NOT_AVAILABLE);
 
@@ -2169,7 +2169,7 @@ eoc_image_get_metadata_status (EomImage *img)
 }
 
 void
-eoc_image_data_ref (EomImage *img)
+eoc_image_data_ref (EocImage *img)
 {
 	g_return_if_fail (EOC_IS_IMAGE (img));
 
@@ -2180,7 +2180,7 @@ eoc_image_data_ref (EomImage *img)
 }
 
 void
-eoc_image_data_unref (EomImage *img)
+eoc_image_data_unref (EocImage *img)
 {
 	g_return_if_fail (EOC_IS_IMAGE (img));
 
@@ -2270,9 +2270,9 @@ eoc_image_is_supported_mime_type (const char *mime_type)
 }
 
 static gboolean
-eoc_image_iter_advance (EomImage *img)
+eoc_image_iter_advance (EocImage *img)
 {
-	EomImagePrivate *priv;
+	EocImagePrivate *priv;
  	gboolean new_frame;
 
 	g_return_val_if_fail (EOC_IS_IMAGE (img), FALSE);
@@ -2304,7 +2304,7 @@ eoc_image_iter_advance (EomImage *img)
 
 /**
  * eoc_image_is_animation:
- * @img: a #EomImage
+ * @img: a #EocImage
  *
  * Checks whether a given image is animated.
  *
@@ -2312,7 +2312,7 @@ eoc_image_iter_advance (EomImage *img)
  *
  **/
 gboolean
-eoc_image_is_animation (EomImage *img)
+eoc_image_is_animation (EocImage *img)
 {
 	g_return_val_if_fail (EOC_IS_IMAGE (img), FALSE);
 	return img->priv->anim != NULL;
@@ -2321,8 +2321,8 @@ eoc_image_is_animation (EomImage *img)
 static gboolean
 private_timeout (gpointer data)
 {
-	EomImage *img = EOC_IMAGE (data);
-	EomImagePrivate *priv = img->priv;
+	EocImage *img = EOC_IMAGE (data);
+	EocImagePrivate *priv = img->priv;
 
 	if (eoc_image_is_animation (img) &&
 	    !g_source_is_destroyed (g_main_current_source ()) &&
@@ -2337,16 +2337,16 @@ private_timeout (gpointer data)
 
 /**
  * eoc_image_start_animation:
- * @img: a #EomImage
+ * @img: a #EocImage
  *
  * Starts playing an animated image.
  *
  * Returns: %TRUE on success, %FALSE if @img is already playing or isn't an animated image.
  **/
 gboolean
-eoc_image_start_animation (EomImage *img)
+eoc_image_start_animation (EocImage *img)
 {
-	EomImagePrivate *priv;
+	EocImagePrivate *priv;
 
 	g_return_val_if_fail (EOC_IS_IMAGE (img), FALSE);
 	priv = img->priv;
@@ -2366,7 +2366,7 @@ eoc_image_start_animation (EomImage *img)
 
 #ifdef HAVE_RSVG
 gboolean
-eoc_image_is_svg (EomImage *img)
+eoc_image_is_svg (EocImage *img)
 {
 	g_return_val_if_fail (EOC_IS_IMAGE (img), FALSE);
 
@@ -2374,7 +2374,7 @@ eoc_image_is_svg (EomImage *img)
 }
 
 RsvgHandle *
-eoc_image_get_svg (EomImage *img)
+eoc_image_get_svg (EocImage *img)
 {
 	g_return_val_if_fail (EOC_IS_IMAGE (img), NULL);
 
@@ -2385,15 +2385,15 @@ eoc_image_get_svg (EomImage *img)
 
 /**
  * eoc_image_get_transform:
- * @img: a #EomImage
+ * @img: a #EocImage
  *
  * Get @img transform.
  *
- * Returns: (transfer none): A #EomTransform.
+ * Returns: (transfer none): A #EocTransform.
  */
 
-EomTransform *
-eoc_image_get_transform (EomImage *img)
+EocTransform *
+eoc_image_get_transform (EocImage *img)
 {
 	g_return_val_if_fail (EOC_IS_IMAGE (img), NULL);
 
@@ -2402,15 +2402,15 @@ eoc_image_get_transform (EomImage *img)
 
 /**
  * eoc_image_get_autorotate_transform:
- * @img: a #EomImage
+ * @img: a #EocImage
  *
  * Get @img autorotate transform.
  *
- * Returns: (transfer none): A #EomTransform.
+ * Returns: (transfer none): A #EocTransform.
  */
 
-EomTransform*
-eoc_image_get_autorotate_transform (EomImage *img)
+EocTransform*
+eoc_image_get_autorotate_transform (EocImage *img)
 {
 	g_return_val_if_fail (EOC_IS_IMAGE (img), NULL);
 
@@ -2419,13 +2419,13 @@ eoc_image_get_autorotate_transform (EomImage *img)
 
 /**
  * eoc_image_file_changed:
- * @img: a #EomImage
+ * @img: a #EocImage
  *
  * Marks the image files contents as changed. Also, emits
- * EomImage::file-changed signal
+ * EocImage::file-changed signal
  **/
 void
-eoc_image_file_changed (EomImage *img)
+eoc_image_file_changed (EocImage *img)
 {
 	g_return_if_fail (EOC_IS_IMAGE (img));
 
@@ -2434,7 +2434,7 @@ eoc_image_file_changed (EomImage *img)
 }
 
 gboolean
-eoc_image_is_file_changed (EomImage *img)
+eoc_image_is_file_changed (EocImage *img)
 {
 	g_return_val_if_fail (EOC_IS_IMAGE (img), TRUE);
 
@@ -2442,7 +2442,7 @@ eoc_image_is_file_changed (EomImage *img)
 }
 
 gboolean
-eoc_image_is_jpeg (EomImage *img)
+eoc_image_is_jpeg (EocImage *img)
 {
 	g_return_val_if_fail (EOC_IS_IMAGE (img), FALSE);
 

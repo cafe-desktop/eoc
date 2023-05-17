@@ -17,37 +17,37 @@ G_BEGIN_DECLS
 #define EOC_TYPE_FULLSCREEN_PLUGIN \
 	(eoc_fullscreen_plugin_get_type())
 #define EOC_FULLSCREEN_PLUGIN(o) \
-	(G_TYPE_CHECK_INSTANCE_CAST((o), EOC_TYPE_FULLSCREEN_PLUGIN, EomFullscreenPlugin))
+	(G_TYPE_CHECK_INSTANCE_CAST((o), EOC_TYPE_FULLSCREEN_PLUGIN, EocFullscreenPlugin))
 #define EOC_FULLSCREEN_PLUGIN_CLASS(k) \
-	G_TYPE_CHECK_CLASS_CAST((k), EOC_TYPE_FULLSCREEN_PLUGIN, EomFullscreenPluginClass))
+	G_TYPE_CHECK_CLASS_CAST((k), EOC_TYPE_FULLSCREEN_PLUGIN, EocFullscreenPluginClass))
 #define EOC_IS_FULLSCREEN_PLUGIN(o) \
 	(G_TYPE_CHECK_INSTANCE_TYPE((o), EOC_TYPE_FULLSCREEN_PLUGIN))
 #define EOC_IS_FULLSCREEN_PLUGIN_CLASS(k) \
 	(G_TYPE_CHECK_CLASS_TYPE((k), EOC_TYPE_FULLSCREEN_PLUGIN))
 #define EOC_FULLSCREEN_PLUGIN_GET_CLASS(o) \
-	(G_TYPE_INSTANCE_GET_CLASS((o), EOC_TYPE_FULLSCREEN_PLUGIN, EomFullscreenPluginClass))
+	(G_TYPE_INSTANCE_GET_CLASS((o), EOC_TYPE_FULLSCREEN_PLUGIN, EocFullscreenPluginClass))
 
 /* Private structure type */
-typedef struct _EomFullscreenPluginPrivate EomFullscreenPluginPrivate;
+typedef struct _EocFullscreenPluginPrivate EocFullscreenPluginPrivate;
 
 /*
  * Main object structure
  */
-typedef struct _EomFullscreenPlugin EomFullscreenPlugin;
+typedef struct _EocFullscreenPlugin EocFullscreenPlugin;
 
-struct _EomFullscreenPlugin {
+struct _EocFullscreenPlugin {
 	PeasExtensionBase parent_instance;
 
-	EomWindow *window;
+	EocWindow *window;
 	gulong signal_id;
 };
 
 /*
  * Class definition
  */
-typedef struct _EomFullscreenPluginClass EomFullscreenPluginClass;
+typedef struct _EocFullscreenPluginClass EocFullscreenPluginClass;
 
-struct _EomFullscreenPluginClass {
+struct _EocFullscreenPluginClass {
 	PeasExtensionBaseClass parent_class;
 };
 

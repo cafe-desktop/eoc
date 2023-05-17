@@ -31,7 +31,7 @@
       <summary>Extrapolate Image</summary>
       <description>Whether the image should be extrapolated on zoom-in. This leads to blurry quality and is somewhat slower than non-extrapolated images.</description>
     </key>
-    <key name="transparency" enum="org.mate.eoc.EomTransparencyStyle">
+    <key name="transparency" enum="org.mate.eoc.EocTransparencyStyle">
       <default>'checked'</default>
       <summary>Transparency indicator</summary>
       <description>Determines how transparency should be indicated. Valid values are checked, color and none. If color is chosen, then the trans-color key determines the color value used.</description>
@@ -87,7 +87,7 @@
       <default>false</default>
       <summary>Show/Hide the image collection pane.</summary>
     </key>
-    <key name="image-collection-position" enum="org.mate.eoc.EomWindowCollectionPos">
+    <key name="image-collection-position" enum="org.mate.eoc.EocWindowCollectionPos">
       <default>'bottom'</default>
       <summary>Image collection pane position.</summary>
     </key>

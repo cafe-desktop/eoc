@@ -12,9 +12,9 @@
 #include <eoc-window.h>
 #include <eoc-window-activatable.h>
 
-static void eoc_window_activatable_iface_init (EomWindowActivatableInterface *iface);
+static void eoc_window_activatable_iface_init (EocWindowActivatableInterface *iface);
 
-G_DEFINE_DYNAMIC_TYPE_EXTENDED (EomReloadPlugin,
+G_DEFINE_DYNAMIC_TYPE_EXTENDED (EocReloadPlugin,
                                 eoc_reload_plugin,
                                 PEAS_TYPE_EXTENSION_BASE,
                                 0,
@@ -28,21 +28,21 @@ enum {
 
 static void
 reload_cb (GtkAction *action,
-           EomWindow *window)
+           EocWindow *window)
 {
 	eoc_window_reload_image (window);
 }
 
 static const gchar* const ui_definition = "<ui><menubar name=\"MainMenu\">"
 	"<menu name=\"ToolsMenu\" action=\"Tools\"><separator/>"
-	"<menuitem name=\"EomPluginReload\" action=\"EomPluginRunReload\"/>"
+	"<menuitem name=\"EocPluginReload\" action=\"EocPluginRunReload\"/>"
 	"<separator/></menu></menubar>"
 	"<popup name=\"ViewPopup\"><separator/>"
-	"<menuitem action=\"EomPluginRunReload\"/><separator/>"
+	"<menuitem action=\"EocPluginRunReload\"/><separator/>"
 	"</popup></ui>";
 
 static const GtkActionEntry action_entries[] = {
-	{ "EomPluginRunReload", "view-refresh", N_("Reload Image"), "R", N_("Reload current image"), G_CALLBACK (reload_cb) }
+	{ "EocPluginRunReload", "view-refresh", N_("Reload Image"), "R", N_("Reload current image"), G_CALLBACK (reload_cb) }
 };
 
 static void
@@ -51,7 +51,7 @@ eoc_reload_plugin_set_property (GObject      *object,
                                 const GValue *value,
                                 GParamSpec   *pspec)
 {
-	EomReloadPlugin *plugin = EOC_RELOAD_PLUGIN (object);
+	EocReloadPlugin *plugin = EOC_RELOAD_PLUGIN (object);
 
 	switch (prop_id)
 	{
@@ -71,7 +71,7 @@ eoc_reload_plugin_get_property (GObject    *object,
                                 GValue     *value,
                                 GParamSpec *pspec)
 {
-	EomReloadPlugin *plugin = EOC_RELOAD_PLUGIN (object);
+	EocReloadPlugin *plugin = EOC_RELOAD_PLUGIN (object);
 
 	switch (prop_id)
 	{
@@ -86,17 +86,17 @@ eoc_reload_plugin_get_property (GObject    *object,
 }
 
 static void
-eoc_reload_plugin_init (EomReloadPlugin *plugin)
+eoc_reload_plugin_init (EocReloadPlugin *plugin)
 {
-	eoc_debug_message (DEBUG_PLUGINS, "EomReloadPlugin initializing");
+	eoc_debug_message (DEBUG_PLUGINS, "EocReloadPlugin initializing");
 }
 
 static void
 eoc_reload_plugin_dispose (GObject *object)
 {
-	EomReloadPlugin *plugin = EOC_RELOAD_PLUGIN (object);
+	EocReloadPlugin *plugin = EOC_RELOAD_PLUGIN (object);
 
-	eoc_debug_message (DEBUG_PLUGINS, "EomReloadPlugin disposing");
+	eoc_debug_message (DEBUG_PLUGINS, "EocReloadPlugin disposing");
 
 	if (plugin->window != NULL) {
 		g_object_unref (plugin->window);
@@ -107,9 +107,9 @@ eoc_reload_plugin_dispose (GObject *object)
 }
 
 static void
-eoc_reload_plugin_activate (EomWindowActivatable *activatable)
+eoc_reload_plugin_activate (EocWindowActivatable *activatable)
 {
-	EomReloadPlugin *plugin = EOC_RELOAD_PLUGIN (activatable);
+	EocReloadPlugin *plugin = EOC_RELOAD_PLUGIN (activatable);
 	GtkUIManager *manager;
 
 	eoc_debug (DEBUG_PLUGINS);
@@ -117,7 +117,7 @@ eoc_reload_plugin_activate (EomWindowActivatable *activatable)
 	manager = eoc_window_get_ui_manager (plugin->window);
 
 	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
-	plugin->ui_action_group = gtk_action_group_new ("EomReloadPluginActions");
+	plugin->ui_action_group = gtk_action_group_new ("EocReloadPluginActions");
 
 	gtk_action_group_set_translation_domain (plugin->ui_action_group, GETTEXT_PACKAGE);
 
@@ -132,9 +132,9 @@ eoc_reload_plugin_activate (EomWindowActivatable *activatable)
 }
 
 static void
-eoc_reload_plugin_deactivate (EomWindowActivatable *activatable)
+eoc_reload_plugin_deactivate (EocWindowActivatable *activatable)
 {
-	EomReloadPlugin *plugin = EOC_RELOAD_PLUGIN (activatable);
+	EocReloadPlugin *plugin = EOC_RELOAD_PLUGIN (activatable);
 	GtkUIManager *manager;
 
 	eoc_debug (DEBUG_PLUGINS);
@@ -149,7 +149,7 @@ eoc_reload_plugin_deactivate (EomWindowActivatable *activatable)
 }
 
 static void
-eoc_reload_plugin_class_init (EomReloadPluginClass *klass)
+eoc_reload_plugin_class_init (EocReloadPluginClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
 
@@ -161,13 +161,13 @@ eoc_reload_plugin_class_init (EomReloadPluginClass *klass)
 }
 
 static void
-eoc_reload_plugin_class_finalize (EomReloadPluginClass *klass)
+eoc_reload_plugin_class_finalize (EocReloadPluginClass *klass)
 {
 	/* dummy function - used by G_DEFINE_DYNAMIC_TYPE_EXTENDED */
 }
 
 static void
-eoc_window_activatable_iface_init (EomWindowActivatableInterface *iface)
+eoc_window_activatable_iface_init (EocWindowActivatableInterface *iface)
 {
 	iface->activate = eoc_reload_plugin_activate;
 	iface->deactivate = eoc_reload_plugin_deactivate;

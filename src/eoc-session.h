@@ -33,7 +33,7 @@
 G_BEGIN_DECLS
 
 G_GNUC_INTERNAL
-void 		eoc_session_init 		(EomApplication *application);
+void 		eoc_session_init 		(EocApplication *application);
 
 G_GNUC_INTERNAL
 gboolean 	eoc_session_is_restored 	(void);

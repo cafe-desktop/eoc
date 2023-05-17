@@ -41,7 +41,7 @@
 #define GSETTINGS_OBJECT_KEY		"GSETTINGS_KEY"
 #define GSETTINGS_OBJECT_VALUE		"GSETTINGS_VALUE"
 
-struct _EomPreferencesDialogPrivate {
+struct _EocPreferencesDialogPrivate {
 	GSettings    *view_settings;
 	GSettings    *ui_settings;
 	GSettings    *fullscreen_settings;
@@ -66,7 +66,7 @@ struct _EomPreferencesDialogPrivate {
 
 static GObject *instance = NULL;
 
-G_DEFINE_TYPE_WITH_PRIVATE (EomPreferencesDialog, eoc_preferences_dialog, GTK_TYPE_DIALOG);
+G_DEFINE_TYPE_WITH_PRIVATE (EocPreferencesDialog, eoc_preferences_dialog, GTK_TYPE_DIALOG);
 
 static gboolean
 pd_string_to_rgba_mapping (GValue   *value,
@@ -141,7 +141,7 @@ eoc_preferences_response_cb (GtkDialog *dlg, gint res_id, gpointer data)
 }
 
 static void
-eoc_preferences_dialog_class_init (EomPreferencesDialogClass *klass)
+eoc_preferences_dialog_class_init (EocPreferencesDialogClass *klass)
 {
 	GtkWidgetClass *widget_class = (GtkWidgetClass*) klass;
 
@@ -152,55 +152,55 @@ eoc_preferences_dialog_class_init (EomPreferencesDialogClass *klass)
 	gtk_widget_class_set_template_from_resource (widget_class,
 	                                             "/org/mate/eoc/ui/eoc-preferences-dialog.ui");
 	gtk_widget_class_bind_template_child_private (widget_class,
-	                                              EomPreferencesDialog,
+	                                              EocPreferencesDialog,
 	                                              interpolate_check);
 	gtk_widget_class_bind_template_child_private (widget_class,
-	                                              EomPreferencesDialog,
+	                                              EocPreferencesDialog,
 	                                              extrapolate_check);
 	gtk_widget_class_bind_template_child_private (widget_class,
-	                                              EomPreferencesDialog,
+	                                              EocPreferencesDialog,
 	                                              autorotate_check);
 	gtk_widget_class_bind_template_child_private (widget_class,
-	                                              EomPreferencesDialog,
+	                                              EocPreferencesDialog,
 	                                              bg_color_check);
 	gtk_widget_class_bind_template_child_private (widget_class,
-	                                              EomPreferencesDialog,
+	                                              EocPreferencesDialog,
 	                                              bg_color_button);
 	gtk_widget_class_bind_template_child_private (widget_class,
-	                                              EomPreferencesDialog,
+	                                              EocPreferencesDialog,
 	                                              color_radio);
 	gtk_widget_class_bind_template_child_private (widget_class,
-	                                              EomPreferencesDialog,
+	                                              EocPreferencesDialog,
 	                                              checkpattern_radio);
 	gtk_widget_class_bind_template_child_private (widget_class,
-	                                              EomPreferencesDialog,
+	                                              EocPreferencesDialog,
 	                                              background_radio);
 	gtk_widget_class_bind_template_child_private (widget_class,
-	                                              EomPreferencesDialog,
+	                                              EocPreferencesDialog,
 	                                              transp_color_button);
 
 	gtk_widget_class_bind_template_child_private (widget_class,
-	                                              EomPreferencesDialog,
+	                                              EocPreferencesDialog,
 	                                              upscale_check);
 	gtk_widget_class_bind_template_child_private (widget_class,
-	                                              EomPreferencesDialog,
+	                                              EocPreferencesDialog,
 	                                              random_check);
 	gtk_widget_class_bind_template_child_private (widget_class,
-	                                              EomPreferencesDialog,
+	                                              EocPreferencesDialog,
 	                                              loop_check);
 	gtk_widget_class_bind_template_child_private (widget_class,
-	                                              EomPreferencesDialog,
+	                                              EocPreferencesDialog,
 	                                              seconds_spin);
 
 	gtk_widget_class_bind_template_child_private (widget_class,
-	                                              EomPreferencesDialog,
+	                                              EocPreferencesDialog,
 	                                              plugin_manager);
 }
 
 static void
-eoc_preferences_dialog_init (EomPreferencesDialog *pref_dlg)
+eoc_preferences_dialog_init (EocPreferencesDialog *pref_dlg)
 {
-	EomPreferencesDialogPrivate *priv;
+	EocPreferencesDialogPrivate *priv;
 
 	pref_dlg->priv = eoc_preferences_dialog_get_instance_private (pref_dlg);
 	priv = pref_dlg->priv;

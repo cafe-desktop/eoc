@@ -61,7 +61,7 @@ typedef enum {
 	EOC_SCROLL_VIEW_CURSOR_NORMAL,
 	EOC_SCROLL_VIEW_CURSOR_HIDDEN,
 	EOC_SCROLL_VIEW_CURSOR_DRAG
-} EomScrollViewCursor;
+} EocScrollViewCursor;
 
 /* Drag 'n Drop */
 static GtkTargetEntry target_table[] = {
@@ -81,8 +81,8 @@ enum {
 	PROP_ZOOM_MULTIPLIER
 };
 
-/* Private part of the EomScrollView structure */
-struct _EomScrollViewPrivate {
+/* Private part of the EocScrollView structure */
+struct _EocScrollViewPrivate {
 	/* some widgets we rely on */
 	GtkWidget *display;
 	GtkAdjustment *hadj;
@@ -92,7 +92,7 @@ struct _EomScrollViewPrivate {
 	GtkWidget *menu;
 
 	/* actual image */
-	EomImage *image;
+	EocImage *image;
 	guint image_changed_id;
 	guint frame_changed_id;
 	GdkPixbuf *pixbuf;
@@ -137,11 +137,11 @@ struct _EomScrollViewPrivate {
 	guint dragging : 1;
 
 	/* how to indicate transparency in images */
-	EomTransparencyStyle transp_style;
+	EocTransparencyStyle transp_style;
 	GdkRGBA transp_color;
 
 	/* the type of the cursor we are currently showing */
-	EomScrollViewCursor cursor;
+	EocScrollViewCursor cursor;
 
 	gboolean  use_bg_color;
 	GdkRGBA *background_color;
@@ -154,10 +154,10 @@ struct _EomScrollViewPrivate {
 	gboolean force_unfiltered;
 };
 
-static void scroll_by (EomScrollView *view, int xofs, int yofs);
-static void set_zoom_fit (EomScrollView *view);
-/* static void request_paint_area (EomScrollView *view, GdkRectangle *area); */
-static void set_minimum_zoom_factor (EomScrollView *view);
+static void scroll_by (EocScrollView *view, int xofs, int yofs);
+static void set_zoom_fit (EocScrollView *view);
+/* static void request_paint_area (EocScrollView *view, GdkRectangle *area); */
+static void set_minimum_zoom_factor (EocScrollView *view);
 static void view_on_drag_begin_cb (GtkWidget *widget, GdkDragContext *context,
 				   gpointer user_data);
 static void view_on_drag_data_get_cb (GtkWidget *widget,
@@ -167,7 +167,7 @@ static void view_on_drag_data_get_cb (GtkWidget *widget,
 
 static gboolean _eoc_gdk_rgba_equal0 (const GdkRGBA *a, const GdkRGBA *b);
 
-G_DEFINE_TYPE_WITH_PRIVATE (EomScrollView, eoc_scroll_view, GTK_TYPE_GRID)
+G_DEFINE_TYPE_WITH_PRIVATE (EocScrollView, eoc_scroll_view, GTK_TYPE_GRID)
 
 /*===================================
     widget size changing handler &
@@ -175,7 +175,7 @@ G_DEFINE_TYPE_WITH_PRIVATE (EomScrollView, eoc_scroll_view, GTK_TYPE_GRID)
   ---------------------------------*/
 
 static cairo_surface_t *
-create_surface_from_pixbuf (EomScrollView *view, GdkPixbuf *pixbuf)
+create_surface_from_pixbuf (EocScrollView *view, GdkPixbuf *pixbuf)
 {
 	cairo_surface_t *surface;
 
@@ -186,11 +186,11 @@ create_surface_from_pixbuf (EomScrollView *view, GdkPixbuf *pixbuf)
 	return surface;
 }
 
-/* Disconnects from the EomImage and removes references to it */
+/* Disconnects from the EocImage and removes references to it */
 static void
-free_image_resources (EomScrollView *view)
+free_image_resources (EocScrollView *view)
 {
-	EomScrollViewPrivate *priv;
+	EocScrollViewPrivate *priv;
 
 	priv = view->priv;
 
@@ -222,9 +222,9 @@ free_image_resources (EomScrollView *view)
 
 /* Computes the size in pixels of the scaled image */
 static void
-compute_scaled_size (EomScrollView *view, double zoom, int *width, int *height)
+compute_scaled_size (EocScrollView *view, double zoom, int *width, int *height)
 {
-	EomScrollViewPrivate *priv;
+	EocScrollViewPrivate *priv;
 
 	priv = view->priv;
 
@@ -239,13 +239,13 @@ compute_scaled_size (EomScrollView *view, double zoom, int *width, int *height)
  * centered on the view.
  */
 static void
-compute_center_zoom_offsets (EomScrollView *view,
+compute_center_zoom_offsets (EocScrollView *view,
 			     double old_zoom, double new_zoom,
 			     int width, int height,
 			     double zoom_x_anchor, double zoom_y_anchor,
 			     int *xofs, int *yofs)
 {
-	EomScrollViewPrivate *priv;
+	EocScrollViewPrivate *priv;
 	int old_scaled_width, old_scaled_height;
 	int new_scaled_width, new_scaled_height;
 	double view_cx, view_cy;
@@ -287,9 +287,9 @@ compute_center_zoom_offsets (EomScrollView *view,
 
 /* Sets the scrollbar values based on the current scrolling offset */
 static void
-update_scrollbar_values (EomScrollView *view)
+update_scrollbar_values (EocScrollView *view)
 {
-	EomScrollViewPrivate *priv;
+	EocScrollViewPrivate *priv;
 	int scaled_width, scaled_height;
 	gdouble page_size,page_increment,step_increment;
 	gdouble lower, upper;
@@ -353,7 +353,7 @@ update_scrollbar_values (EomScrollView *view)
 }
 
 static void
-eoc_scroll_view_set_cursor (EomScrollView *view, EomScrollViewCursor new_cursor)
+eoc_scroll_view_set_cursor (EocScrollView *view, EocScrollViewCursor new_cursor)
 {
 	GdkCursor *cursor = NULL;
 	GdkDisplay *display;
@@ -390,9 +390,9 @@ eoc_scroll_view_set_cursor (EomScrollView *view, EomScrollViewCursor new_cursor)
  * specified allocation, or the current allocation if NULL is specified.
  */
 static void
-check_scrollbar_visibility (EomScrollView *view, GtkAllocation *alloc)
+check_scrollbar_visibility (EocScrollView *view, GtkAllocation *alloc)
 {
-	EomScrollViewPrivate *priv;
+	EocScrollViewPrivate *priv;
 	int bar_height;
 	int bar_width;
 	int img_width;
@@ -459,9 +459,9 @@ check_scrollbar_visibility (EomScrollView *view, GtkAllocation *alloc)
 
 /* Returns whether the image is zoomed in */
 static gboolean
-is_zoomed_in (EomScrollView *view)
+is_zoomed_in (EocScrollView *view)
 {
-	EomScrollViewPrivate *priv;
+	EocScrollViewPrivate *priv;
 
 	priv = view->priv;
 	return priv->zoom - 1.0 > DOUBLE_EQUAL_MAX_DIFF;
@@ -469,9 +469,9 @@ is_zoomed_in (EomScrollView *view)
 
 /* Returns whether the image is zoomed out */
 static gboolean
-is_zoomed_out (EomScrollView *view)
+is_zoomed_out (EocScrollView *view)
 {
-	EomScrollViewPrivate *priv;
+	EocScrollViewPrivate *priv;
 
 	priv = view->priv;
 	return DOUBLE_EQUAL_MAX_DIFF + priv->zoom - 1.0 < 0.0;
@@ -481,9 +481,9 @@ is_zoomed_out (EomScrollView *view)
  * the actual visible area.
  */
 static gboolean
-is_image_movable (EomScrollView *view)
+is_image_movable (EocScrollView *view)
 {
-	EomScrollViewPrivate *priv;
+	EocScrollViewPrivate *priv;
 
 	priv = view->priv;
 
@@ -495,9 +495,9 @@ is_image_movable (EomScrollView *view)
   ---------------------------------*/
 
 static void
-get_transparency_params (EomScrollView *view, int *size, GdkRGBA *color1, GdkRGBA *color2)
+get_transparency_params (EocScrollView *view, int *size, GdkRGBA *color1, GdkRGBA *color2)
 {
-	EomScrollViewPrivate *priv;
+	EocScrollViewPrivate *priv;
 
 	priv = view->priv;
 
@@ -527,7 +527,7 @@ get_transparency_params (EomScrollView *view, int *size, GdkRGBA *color1, GdkRGB
 }
 
 static cairo_surface_t *
-create_background_surface (EomScrollView *view)
+create_background_surface (EocScrollView *view)
 {
 	int check_size;
 	GdkRGBA check_1;
@@ -567,9 +567,9 @@ create_background_surface (EomScrollView *view)
 
 /* Scrolls the view to the specified offsets.  */
 static void
-scroll_to (EomScrollView *view, int x, int y, gboolean change_adjustments)
+scroll_to (EocScrollView *view, int x, int y, gboolean change_adjustments)
 {
-	EomScrollViewPrivate *priv;
+	EocScrollViewPrivate *priv;
 	GtkAllocation allocation;
 	int xofs, yofs;
 	GdkWindow *window;
@@ -637,9 +637,9 @@ scroll_to (EomScrollView *view, int x, int y, gboolean change_adjustments)
  * about their new values.
  */
 static void
-scroll_by (EomScrollView *view, int xofs, int yofs)
+scroll_by (EocScrollView *view, int xofs, int yofs)
 {
-	EomScrollViewPrivate *priv;
+	EocScrollViewPrivate *priv;
 
 	priv = view->priv;
 
@@ -651,8 +651,8 @@ scroll_by (EomScrollView *view, int xofs, int yofs)
 static void
 adjustment_changed_cb (GtkAdjustment *adj, gpointer data)
 {
-	EomScrollView *view;
-	EomScrollViewPrivate *priv;
+	EocScrollView *view;
+	EocScrollViewPrivate *priv;
 
 	view = EOC_SCROLL_VIEW (data);
 	priv = view->priv;
@@ -664,9 +664,9 @@ adjustment_changed_cb (GtkAdjustment *adj, gpointer data)
 
 /* Drags the image to the specified position */
 static void
-drag_to (EomScrollView *view, int x, int y)
+drag_to (EocScrollView *view, int x, int y)
 {
-	EomScrollViewPrivate *priv;
+	EocScrollViewPrivate *priv;
 	int dx, dy;
 
 	priv = view->priv;
@@ -681,7 +681,7 @@ drag_to (EomScrollView *view, int x, int y)
 }
 
 static void
-set_minimum_zoom_factor (EomScrollView *view)
+set_minimum_zoom_factor (EocScrollView *view)
 {
 	g_return_if_fail (EOC_IS_SCROLL_VIEW (view));
 
@@ -707,10 +707,10 @@ set_minimum_zoom_factor (EomScrollView *view)
  * is %FALSE, then the center point of the image view will be used.
  **/
 static void
-set_zoom (EomScrollView *view, double zoom,
+set_zoom (EocScrollView *view, double zoom,
 	  gboolean have_anchor, int anchorx, int anchory)
 {
-	EomScrollViewPrivate *priv;
+	EocScrollViewPrivate *priv;
 	GtkAllocation allocation;
 	int xofs, yofs;
 	double x_rel, y_rel;
@@ -771,9 +771,9 @@ set_zoom (EomScrollView *view, double zoom,
 
 /* Zooms the image to fit the available allocation */
 static void
-set_zoom_fit (EomScrollView *view)
+set_zoom_fit (EocScrollView *view)
 {
-	EomScrollViewPrivate *priv;
+	EocScrollViewPrivate *priv;
 	GtkAllocation allocation;
 	double new_zoom;
 
@@ -816,8 +816,8 @@ set_zoom_fit (EomScrollView *view)
 static gboolean
 display_key_press_event (GtkWidget *widget, GdkEventKey *event, gpointer data)
 {
-	EomScrollView *view;
-	EomScrollViewPrivate *priv;
+	EocScrollView *view;
+	EocScrollViewPrivate *priv;
 	GtkAllocation allocation;
 	gboolean do_zoom;
 	double zoom;
@@ -834,7 +834,7 @@ display_key_press_event (GtkWidget *widget, GdkEventKey *event, gpointer data)
 
 	gtk_widget_get_allocation (GTK_WIDGET (priv->display), &allocation);
 
-	/* EomScrollView doesn't handle/have any Alt+Key combos */
+	/* EocScrollView doesn't handle/have any Alt+Key combos */
 	if (event->state & GDK_MOD1_MASK) {
 		return FALSE;
 	}
@@ -932,8 +932,8 @@ display_key_press_event (GtkWidget *widget, GdkEventKey *event, gpointer data)
 static gboolean
 eoc_scroll_view_button_press_event (GtkWidget *widget, GdkEventButton *event, gpointer data)
 {
-	EomScrollView *view;
-	EomScrollViewPrivate *priv;
+	EocScrollView *view;
+	EocScrollViewPrivate *priv;
 
 	view = EOC_SCROLL_VIEW (data);
 	priv = view->priv;
@@ -974,8 +974,8 @@ eoc_scroll_view_button_press_event (GtkWidget *widget, GdkEventButton *event, gp
 static gboolean
 eoc_scroll_view_button_release_event (GtkWidget *widget, GdkEventButton *event, gpointer data)
 {
-	EomScrollView *view;
-	EomScrollViewPrivate *priv;
+	EocScrollView *view;
+	EocScrollViewPrivate *priv;
 
 	view = EOC_SCROLL_VIEW (data);
 	priv = view->priv;
@@ -1007,8 +1007,8 @@ eoc_scroll_view_button_release_event (GtkWidget *widget, GdkEventButton *event, 
 static gboolean
 eoc_scroll_view_scroll_event (GtkWidget *widget, GdkEventScroll *event, gpointer data)
 {
-	EomScrollView *view;
-	EomScrollViewPrivate *priv;
+	EocScrollView *view;
+	EocScrollViewPrivate *priv;
 	double zoom_factor;
 	int xofs, yofs;
 
@@ -1075,8 +1075,8 @@ eoc_scroll_view_scroll_event (GtkWidget *widget, GdkEventScroll *event, gpointer
 static gboolean
 eoc_scroll_view_motion_event (GtkWidget *widget, GdkEventMotion *event, gpointer data)
 {
-	EomScrollView *view;
-	EomScrollViewPrivate *priv;
+	EocScrollView *view;
+	EocScrollViewPrivate *priv;
 	gint x, y;
 	GdkModifierType mods;
 
@@ -1100,8 +1100,8 @@ eoc_scroll_view_motion_event (GtkWidget *widget, GdkEventMotion *event, gpointer
 static void
 display_map_event (GtkWidget *widget, GdkEvent *event, gpointer data)
 {
-	EomScrollView *view;
-	EomScrollViewPrivate *priv;
+	EocScrollView *view;
+	EocScrollViewPrivate *priv;
 
 	view = EOC_SCROLL_VIEW (data);
 	priv = view->priv;
@@ -1116,7 +1116,7 @@ display_map_event (GtkWidget *widget, GdkEvent *event, gpointer data)
 static void
 eoc_scroll_view_size_allocate (GtkWidget *widget, GtkAllocation *alloc)
 {
-	EomScrollView *view;
+	EocScrollView *view;
 
 	view = EOC_SCROLL_VIEW (widget);
 	check_scrollbar_visibility (view, alloc);
@@ -1128,8 +1128,8 @@ eoc_scroll_view_size_allocate (GtkWidget *widget, GtkAllocation *alloc)
 static void
 display_size_change (GtkWidget *widget, GdkEventConfigure *event, gpointer data)
 {
-	EomScrollView *view;
-	EomScrollViewPrivate *priv;
+	EocScrollView *view;
+	EocScrollViewPrivate *priv;
 
 	view = EOC_SCROLL_VIEW (data);
 	priv = view->priv;
@@ -1183,7 +1183,7 @@ eoc_scroll_view_focus_out_event (GtkWidget     *widget,
 
 static gboolean _hq_redraw_cb (gpointer user_data)
 {
-	EomScrollViewPrivate *priv = EOC_SCROLL_VIEW (user_data)->priv;
+	EocScrollViewPrivate *priv = EOC_SCROLL_VIEW (user_data)->priv;
 
 	priv->force_unfiltered = FALSE;
 	gtk_widget_queue_draw (GTK_WIDGET (priv->display));
@@ -1193,9 +1193,9 @@ static gboolean _hq_redraw_cb (gpointer user_data)
 }
 
 static void
-_clear_hq_redraw_timeout (EomScrollView *view)
+_clear_hq_redraw_timeout (EocScrollView *view)
 {
-	EomScrollViewPrivate *priv = view->priv;
+	EocScrollViewPrivate *priv = view->priv;
 
 	if (priv->hq_redraw_timeout_source != NULL) {
 		g_source_unref (priv->hq_redraw_timeout_source);
@@ -1206,7 +1206,7 @@ _clear_hq_redraw_timeout (EomScrollView *view)
 }
 
 static void
-_set_hq_redraw_timeout (EomScrollView *view)
+_set_hq_redraw_timeout (EocScrollView *view)
 {
 	GSource *source;
 
@@ -1224,8 +1224,8 @@ static gboolean
 display_draw (GtkWidget *widget, cairo_t *cr, gpointer data)
 {
 	const GdkRGBA *background_color = NULL;
-	EomScrollView *view;
-	EomScrollViewPrivate *priv;
+	EocScrollView *view;
+	EocScrollViewPrivate *priv;
 	GtkAllocation allocation;
 	int scaled_width, scaled_height;
 	int xofs, yofs;
@@ -1299,7 +1299,7 @@ display_draw (GtkWidget *widget, cairo_t *cr, gpointer data)
 #ifdef HAVE_RSVG
 	if (eoc_image_is_svg (view->priv->image)) {
 		cairo_matrix_t matrix, translate, scale, original;
-		EomTransform *transform = eoc_image_get_transform (priv->image);
+		EocTransform *transform = eoc_image_get_transform (priv->image);
 		cairo_matrix_init_identity (&matrix);
 		if (transform) {
 			cairo_matrix_t affine;
@@ -1384,9 +1384,9 @@ display_draw (GtkWidget *widget, cairo_t *cr, gpointer data)
 /* Use when the pixbuf in the view is changed, to keep a
    reference to it and create its cairo surface. */
 static void
-update_pixbuf (EomScrollView *view, GdkPixbuf *pixbuf)
+update_pixbuf (EocScrollView *view, GdkPixbuf *pixbuf)
 {
-	EomScrollViewPrivate *priv;
+	EocScrollViewPrivate *priv;
 
 	priv = view->priv;
 
@@ -1404,9 +1404,9 @@ update_pixbuf (EomScrollView *view, GdkPixbuf *pixbuf)
 }
 
 static void
-image_changed_cb (EomImage *img, gpointer data)
+image_changed_cb (EocImage *img, gpointer data)
 {
-	EomScrollViewPrivate *priv;
+	EocScrollViewPrivate *priv;
 
 	priv = EOC_SCROLL_VIEW (data)->priv;
 
@@ -1423,22 +1423,22 @@ image_changed_cb (EomImage *img, gpointer data)
   ---------------------------------*/
 
 void
-eoc_scroll_view_hide_cursor (EomScrollView *view)
+eoc_scroll_view_hide_cursor (EocScrollView *view)
 {
        eoc_scroll_view_set_cursor (view, EOC_SCROLL_VIEW_CURSOR_HIDDEN);
 }
 
 void
-eoc_scroll_view_show_cursor (EomScrollView *view)
+eoc_scroll_view_show_cursor (EocScrollView *view)
 {
        eoc_scroll_view_set_cursor (view, EOC_SCROLL_VIEW_CURSOR_NORMAL);
 }
 
 /* general properties */
 void
-eoc_scroll_view_set_zoom_upscale (EomScrollView *view, gboolean upscale)
+eoc_scroll_view_set_zoom_upscale (EocScrollView *view, gboolean upscale)
 {
-	EomScrollViewPrivate *priv;
+	EocScrollViewPrivate *priv;
 
 	g_return_if_fail (EOC_IS_SCROLL_VIEW (view));
 
@@ -1455,9 +1455,9 @@ eoc_scroll_view_set_zoom_upscale (EomScrollView *view, gboolean upscale)
 }
 
 void
-eoc_scroll_view_set_antialiasing_in (EomScrollView *view, gboolean state)
+eoc_scroll_view_set_antialiasing_in (EocScrollView *view, gboolean state)
 {
-	EomScrollViewPrivate *priv;
+	EocScrollViewPrivate *priv;
 	cairo_filter_t new_interp_type;
 
 	g_return_if_fail (EOC_IS_SCROLL_VIEW (view));
@@ -1474,9 +1474,9 @@ eoc_scroll_view_set_antialiasing_in (EomScrollView *view, gboolean state)
 }
 
 void
-eoc_scroll_view_set_antialiasing_out (EomScrollView *view, gboolean state)
+eoc_scroll_view_set_antialiasing_out (EocScrollView *view, gboolean state)
 {
-	EomScrollViewPrivate *priv;
+	EocScrollViewPrivate *priv;
 	cairo_filter_t new_interp_type;
 
 	g_return_if_fail (EOC_IS_SCROLL_VIEW (view));
@@ -1494,9 +1494,9 @@ eoc_scroll_view_set_antialiasing_out (EomScrollView *view, gboolean state)
 }
 
 static void
-_transp_background_changed (EomScrollView *view)
+_transp_background_changed (EocScrollView *view)
 {
-	EomScrollViewPrivate *priv = view->priv;
+	EocScrollViewPrivate *priv = view->priv;
 
 	if (priv->pixbuf != NULL && gdk_pixbuf_get_has_alpha (priv->pixbuf)) {
 		if (priv->background_surface) {
@@ -1510,9 +1510,9 @@ _transp_background_changed (EomScrollView *view)
 }
 
 void
-eoc_scroll_view_set_transparency_color (EomScrollView *view, GdkRGBA *color)
+eoc_scroll_view_set_transparency_color (EocScrollView *view, GdkRGBA *color)
 {
-	EomScrollViewPrivate *priv;
+	EocScrollViewPrivate *priv;
 
 	g_return_if_fail (EOC_IS_SCROLL_VIEW (view));
 
@@ -1528,10 +1528,10 @@ eoc_scroll_view_set_transparency_color (EomScrollView *view, GdkRGBA *color)
 }
 
 void
-eoc_scroll_view_set_transparency (EomScrollView        *view,
-				  EomTransparencyStyle  style)
+eoc_scroll_view_set_transparency (EocScrollView        *view,
+				  EocTransparencyStyle  style)
 {
-	EomScrollViewPrivate *priv;
+	EocScrollViewPrivate *priv;
 
 	g_return_if_fail (EOC_IS_SCROLL_VIEW (view));
 
@@ -1555,9 +1555,9 @@ static double preferred_zoom_levels[] = {
 static const gint n_zoom_levels = (sizeof (preferred_zoom_levels) / sizeof (double));
 
 void
-eoc_scroll_view_zoom_in (EomScrollView *view, gboolean smooth)
+eoc_scroll_view_zoom_in (EocScrollView *view, gboolean smooth)
 {
-	EomScrollViewPrivate *priv;
+	EocScrollViewPrivate *priv;
 	double zoom;
 
 	g_return_if_fail (EOC_IS_SCROLL_VIEW (view));
@@ -1591,9 +1591,9 @@ eoc_scroll_view_zoom_in (EomScrollView *view, gboolean smooth)
 }
 
 void
-eoc_scroll_view_zoom_out (EomScrollView *view, gboolean smooth)
+eoc_scroll_view_zoom_out (EocScrollView *view, gboolean smooth)
 {
-	EomScrollViewPrivate *priv;
+	EocScrollViewPrivate *priv;
 	double zoom;
 
 	g_return_if_fail (EOC_IS_SCROLL_VIEW (view));
@@ -1625,7 +1625,7 @@ eoc_scroll_view_zoom_out (EomScrollView *view, gboolean smooth)
 }
 
 void
-eoc_scroll_view_zoom_fit (EomScrollView *view)
+eoc_scroll_view_zoom_fit (EocScrollView *view)
 {
 	g_return_if_fail (EOC_IS_SCROLL_VIEW (view));
 
@@ -1635,7 +1635,7 @@ eoc_scroll_view_zoom_fit (EomScrollView *view)
 }
 
 void
-eoc_scroll_view_set_zoom (EomScrollView *view, double zoom)
+eoc_scroll_view_set_zoom (EocScrollView *view, double zoom)
 {
 	g_return_if_fail (EOC_IS_SCROLL_VIEW (view));
 
@@ -1643,7 +1643,7 @@ eoc_scroll_view_set_zoom (EomScrollView *view, double zoom)
 }
 
 double
-eoc_scroll_view_get_zoom (EomScrollView *view)
+eoc_scroll_view_get_zoom (EocScrollView *view)
 {
 	g_return_val_if_fail (EOC_IS_SCROLL_VIEW (view), 0.0);
 
@@ -1651,7 +1651,7 @@ eoc_scroll_view_get_zoom (EomScrollView *view)
 }
 
 gboolean
-eoc_scroll_view_get_zoom_is_min (EomScrollView *view)
+eoc_scroll_view_get_zoom_is_min (EocScrollView *view)
 {
 	g_return_val_if_fail (EOC_IS_SCROLL_VIEW (view), FALSE);
 
@@ -1662,7 +1662,7 @@ eoc_scroll_view_get_zoom_is_min (EomScrollView *view)
 }
 
 gboolean
-eoc_scroll_view_get_zoom_is_max (EomScrollView *view)
+eoc_scroll_view_get_zoom_is_max (EocScrollView *view)
 {
 	g_return_val_if_fail (EOC_IS_SCROLL_VIEW (view), FALSE);
 
@@ -1670,10 +1670,10 @@ eoc_scroll_view_get_zoom_is_max (EomScrollView *view)
 }
 
 static void
-display_next_frame_cb (EomImage *image, gint delay, gpointer data)
+display_next_frame_cb (EocImage *image, gint delay, gpointer data)
 {
- 	EomScrollViewPrivate *priv;
-	EomScrollView *view;
+ 	EocScrollViewPrivate *priv;
+	EocScrollView *view;
 
 	if (!EOC_IS_SCROLL_VIEW (data))
 		return;
@@ -1686,9 +1686,9 @@ display_next_frame_cb (EomImage *image, gint delay, gpointer data)
 }
 
 void
-eoc_scroll_view_set_image (EomScrollView *view, EomImage *image)
+eoc_scroll_view_set_image (EocScrollView *view, EocImage *image)
 {
-	EomScrollViewPrivate *priv;
+	EocScrollViewPrivate *priv;
 
 	g_return_if_fail (EOC_IS_SCROLL_VIEW (view));
 
@@ -1731,16 +1731,16 @@ eoc_scroll_view_set_image (EomScrollView *view, EomImage *image)
 
 /**
  * eoc_scroll_view_get_image:
- * @view: An #EomScrollView.
+ * @view: An #EocScrollView.
  *
- * Gets the the currently displayed #EomImage.
+ * Gets the the currently displayed #EocImage.
  *
- * Returns: (transfer full): An #EomImage.
+ * Returns: (transfer full): An #EocImage.
  **/
-EomImage*
-eoc_scroll_view_get_image (EomScrollView *view)
+EocImage*
+eoc_scroll_view_get_image (EocScrollView *view)
 {
-	EomImage *img;
+	EocImage *img;
 
 	g_return_val_if_fail (EOC_IS_SCROLL_VIEW (view), NULL);
 
@@ -1753,7 +1753,7 @@ eoc_scroll_view_get_image (EomScrollView *view)
 }
 
 gboolean
-eoc_scroll_view_scrollbars_visible (EomScrollView *view)
+eoc_scroll_view_scrollbars_visible (EocScrollView *view)
 {
 	if (!gtk_widget_get_visible (GTK_WIDGET (view->priv->hbar)) &&
 	    !gtk_widget_get_visible (GTK_WIDGET (view->priv->vbar)))
@@ -1804,10 +1804,10 @@ sv_rgba_to_string_mapping (const GValue       *value,
 }
 
 static void
-eoc_scroll_view_init (EomScrollView *view)
+eoc_scroll_view_init (EocScrollView *view)
 {
 	GSettings *settings;
-	EomScrollViewPrivate *priv;
+	EocScrollViewPrivate *priv;
 
 	priv = view->priv = eoc_scroll_view_get_instance_private (view);
 	settings = g_settings_new (EOC_CONF_VIEW);
@@ -1925,8 +1925,8 @@ eoc_scroll_view_init (EomScrollView *view)
 static void
 eoc_scroll_view_dispose (GObject *object)
 {
-	EomScrollView *view;
-	EomScrollViewPrivate *priv;
+	EocScrollView *view;
+	EocScrollViewPrivate *priv;
 
 	g_return_if_fail (EOC_IS_SCROLL_VIEW (object));
 
@@ -1964,8 +1964,8 @@ static void
 eoc_scroll_view_get_property (GObject *object, guint property_id,
 			      GValue *value, GParamSpec *pspec)
 {
-	EomScrollView *view;
-	EomScrollViewPrivate *priv;
+	EocScrollView *view;
+	EocScrollViewPrivate *priv;
 
 	g_return_if_fail (EOC_IS_SCROLL_VIEW (object));
 
@@ -2013,7 +2013,7 @@ static void
 eoc_scroll_view_set_property (GObject *object, guint property_id,
 			      const GValue *value, GParamSpec *pspec)
 {
-	EomScrollView *view;
+	EocScrollView *view;
 
 	g_return_if_fail (EOC_IS_SCROLL_VIEW (object));
 
@@ -2057,7 +2057,7 @@ eoc_scroll_view_set_property (GObject *object, guint property_id,
 
 
 static void
-eoc_scroll_view_class_init (EomScrollViewClass *klass)
+eoc_scroll_view_class_init (EocScrollViewClass *klass)
 {
 	GObjectClass *gobject_class;
 	GtkWidgetClass *widget_class;
@@ -2080,7 +2080,7 @@ eoc_scroll_view_class_init (EomScrollViewClass *klass)
 				      G_PARAM_READWRITE | G_PARAM_STATIC_NAME));
 
 	/**
-	 * EomScrollView:background-color:
+	 * EocScrollView:background-color:
 	 *
 	 * This is the default background color used for painting the background
 	 * of the image view. If set to %NULL the color is determined by the
@@ -2098,7 +2098,7 @@ eoc_scroll_view_class_init (EomScrollViewClass *klass)
 				      G_PARAM_READWRITE | G_PARAM_STATIC_NAME));
 
 	/**
-	 * EomScrollView:zoom-multiplier:
+	 * EocScrollView:zoom-multiplier:
 	 *
 	 * The current zoom factor is multiplied with this value + 1.0 when
 	 * scrolling with the scrollwheel to determine the next zoom factor.
@@ -2110,7 +2110,7 @@ eoc_scroll_view_class_init (EomScrollViewClass *klass)
 				     G_PARAM_READWRITE | G_PARAM_STATIC_NAME));
 
 	/**
-	 * EomScrollView:scrollwheel-zoom:
+	 * EocScrollView:scrollwheel-zoom:
 	 *
 	 * If %TRUE the scrollwheel will zoom the view, otherwise it will be
 	 * used for scrolling a zoomed image.
@@ -2121,9 +2121,9 @@ eoc_scroll_view_class_init (EomScrollViewClass *klass)
 		G_PARAM_READWRITE | G_PARAM_STATIC_NAME));
 
 	/**
-	 * EomScrollView:image:
+	 * EocScrollView:image:
 	 *
-	 * This is the currently display #EomImage.
+	 * This is the currently display #EocImage.
 	 */
 	g_object_class_install_property (
 		gobject_class, PROP_IMAGE,
@@ -2131,7 +2131,7 @@ eoc_scroll_view_class_init (EomScrollViewClass *klass)
 				     G_PARAM_READWRITE | G_PARAM_STATIC_NAME));
 
 	/**
-	 * EomScrollView:transparency-color:
+	 * EocScrollView:transparency-color:
 	 *
 	 * This is the color used to fill the transparent parts of an image
 	 * if :transparency-style is set to use a custom color.
@@ -2143,7 +2143,7 @@ eoc_scroll_view_class_init (EomScrollViewClass *klass)
 				    G_PARAM_WRITABLE | G_PARAM_STATIC_NAME));
 
 	/**
-	 * EomScrollView:transparency-style:
+	 * EocScrollView:transparency-style:
 	 *
 	 * Determines how to fill the shown image's transparent areas.
 	 */
@@ -2158,7 +2158,7 @@ eoc_scroll_view_class_init (EomScrollViewClass *klass)
 		g_signal_new ("zoom_changed",
 			      EOC_TYPE_SCROLL_VIEW,
 			      G_SIGNAL_RUN_LAST,
-			      G_STRUCT_OFFSET (EomScrollViewClass, zoom_changed),
+			      G_STRUCT_OFFSET (EocScrollViewClass, zoom_changed),
 			      NULL, NULL,
 			      eoc_marshal_VOID__DOUBLE,
 			      G_TYPE_NONE, 1,
@@ -2172,8 +2172,8 @@ view_on_drag_begin_cb (GtkWidget        *widget,
 		       GdkDragContext   *context,
 		       gpointer          user_data)
 {
-	EomScrollView *view;
-	EomImage *image;
+	EocScrollView *view;
+	EocImage *image;
 	GdkPixbuf *thumbnail;
 	gint width, height;
 
@@ -2198,8 +2198,8 @@ view_on_drag_data_get_cb (GtkWidget        *widget,
 			  guint             time,
 			  gpointer          user_data)
 {
-	EomScrollView *view;
-	EomImage *image;
+	EocScrollView *view;
+	EocImage *image;
 	gchar *uris[2];
 	GFile *file;
 
@@ -2236,7 +2236,7 @@ static gboolean
 view_on_button_press_event_cb (GtkWidget *widget, GdkEventButton *event,
 			       gpointer user_data)
 {
-    EomScrollView *view = EOC_SCROLL_VIEW (widget);
+    EocScrollView *view = EOC_SCROLL_VIEW (widget);
 
     /* Ignore double-clicks and triple-clicks */
     if (event->button == 3 && event->type == GDK_BUTTON_PRESS)
@@ -2251,7 +2251,7 @@ view_on_button_press_event_cb (GtkWidget *widget, GdkEventButton *event,
 }
 
 void
-eoc_scroll_view_set_popup (EomScrollView *view,
+eoc_scroll_view_set_popup (EocScrollView *view,
 			   GtkMenu *menu)
 {
 	g_return_if_fail (EOC_IS_SCROLL_VIEW (view));
@@ -2293,9 +2293,9 @@ _eoc_replace_gdk_rgba (GdkRGBA **dest, const GdkRGBA *src)
 }
 
 static void
-_eoc_scroll_view_update_bg_color (EomScrollView *view)
+_eoc_scroll_view_update_bg_color (EocScrollView *view)
 {
-	EomScrollViewPrivate *priv = view->priv;
+	EocScrollViewPrivate *priv = view->priv;
 
 	if (priv->transp_style == EOC_TRANSP_BACKGROUND
 	    && priv->background_surface != NULL) {
@@ -2309,7 +2309,7 @@ _eoc_scroll_view_update_bg_color (EomScrollView *view)
 }
 
 void
-eoc_scroll_view_set_background_color (EomScrollView *view,
+eoc_scroll_view_set_background_color (EocScrollView *view,
 				      const GdkRGBA *color)
 {
 	g_return_if_fail (EOC_IS_SCROLL_VIEW (view));
@@ -2319,7 +2319,7 @@ eoc_scroll_view_set_background_color (EomScrollView *view,
 }
 
 void
-eoc_scroll_view_override_bg_color (EomScrollView *view,
+eoc_scroll_view_override_bg_color (EocScrollView *view,
 				   const GdkRGBA *color)
 {
 	g_return_if_fail (EOC_IS_SCROLL_VIEW (view));
@@ -2329,9 +2329,9 @@ eoc_scroll_view_override_bg_color (EomScrollView *view,
 }
 
 void
-eoc_scroll_view_set_use_bg_color (EomScrollView *view, gboolean use)
+eoc_scroll_view_set_use_bg_color (EocScrollView *view, gboolean use)
 {
-	EomScrollViewPrivate *priv;
+	EocScrollViewPrivate *priv;
 
 	g_return_if_fail (EOC_IS_SCROLL_VIEW (view));
 
@@ -2347,7 +2347,7 @@ eoc_scroll_view_set_use_bg_color (EomScrollView *view, gboolean use)
 }
 
 void
-eoc_scroll_view_set_scroll_wheel_zoom (EomScrollView *view,
+eoc_scroll_view_set_scroll_wheel_zoom (EocScrollView *view,
 				       gboolean       scroll_wheel_zoom)
 {
 	g_return_if_fail (EOC_IS_SCROLL_VIEW (view));
@@ -2359,7 +2359,7 @@ eoc_scroll_view_set_scroll_wheel_zoom (EomScrollView *view,
 }
 
 void
-eoc_scroll_view_set_zoom_multiplier (EomScrollView *view,
+eoc_scroll_view_set_zoom_multiplier (EocScrollView *view,
 				     gdouble        zoom_multiplier)
 {
 	g_return_if_fail (EOC_IS_SCROLL_VIEW (view));

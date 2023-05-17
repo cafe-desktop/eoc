@@ -46,7 +46,7 @@ typedef enum {
 	EOC_THUMB_ERROR_VFS,
 	EOC_THUMB_ERROR_GENERIC,
 	EOC_THUMB_ERROR_UNKNOWN
-} EomThumbError;
+} EocThumbError;
 
 typedef struct {
 	char    *uri_str;
@@ -56,7 +56,7 @@ typedef struct {
 	gboolean thumb_exists;
 	gboolean failed_thumb_exists;
 	gboolean can_read;
-} EomThumbData;
+} EocThumbData;
 
 static GQuark
 eoc_thumb_error_quark (void)
@@ -87,7 +87,7 @@ set_thumb_error (GError **error, int error_id, const char *string)
 }
 
 static GdkPixbuf*
-get_valid_thumbnail (EomThumbData *data, GError **error)
+get_valid_thumbnail (EocThumbData *data, GError **error)
 {
 	GdkPixbuf *thumb = NULL;
 
@@ -108,7 +108,7 @@ get_valid_thumbnail (EomThumbData *data, GError **error)
 }
 
 static GdkPixbuf *
-create_thumbnail_from_pixbuf (EomThumbData *data,
+create_thumbnail_from_pixbuf (EocThumbData *data,
 			      GdkPixbuf *pixbuf,
 			      GError **error)
 {
@@ -132,7 +132,7 @@ create_thumbnail_from_pixbuf (EomThumbData *data,
 }
 
 static void
-eoc_thumb_data_free (EomThumbData *data)
+eoc_thumb_data_free (EocThumbData *data)
 {
 	if (data == NULL)
 		return;
@@ -141,20 +141,20 @@ eoc_thumb_data_free (EomThumbData *data)
 	g_free (data->mime_type);
 	g_free (data->uri_str);
 
-	g_slice_free (EomThumbData, data);
+	g_slice_free (EocThumbData, data);
 }
 
-static EomThumbData*
+static EocThumbData*
 eoc_thumb_data_new (GFile *file, GError **error)
 {
-	EomThumbData *data;
+	EocThumbData *data;
 	GFileInfo *file_info;
 	GError *ioerror = NULL;
 
 	g_return_val_if_fail (file != NULL, NULL);
 	g_return_val_if_fail (error != NULL && *error == NULL, NULL);
 
-	data = g_slice_new0 (EomThumbData);
+	data = g_slice_new0 (EocThumbData);
 
 	data->uri_str    = g_file_get_uri (file);
 	data->thumb_path = mate_desktop_thumbnail_path_for_uri (data->uri_str, MATE_DESKTOP_THUMBNAIL_SIZE_NORMAL);
@@ -454,7 +454,7 @@ eoc_thumbnail_fit_to_size (GdkPixbuf *thumbnail, gint dimension)
 
 /**
  * eoc_thumbnail_load:
- * @image: a #EomImage
+ * @image: a #EocImage
  * @error: location to store the error ocurring or %NULL to ignore
  *
  * Loads the thumbnail for @image. In case of error, %NULL is returned
@@ -464,11 +464,11 @@ eoc_thumbnail_fit_to_size (GdkPixbuf *thumbnail, gint dimension)
  * @image or %NULL in case of error.
  **/
 GdkPixbuf*
-eoc_thumbnail_load (EomImage *image, GError **error)
+eoc_thumbnail_load (EocImage *image, GError **error)
 {
 	GdkPixbuf *thumb = NULL;
 	GFile *file;
-	EomThumbData *data;
+	EocThumbData *data;
 	GdkPixbuf *pixbuf = NULL;
 
 	g_return_val_if_fail (image != NULL, NULL);

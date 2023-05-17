@@ -26,7 +26,7 @@
 #include "eoc-image.h"
 #include "eoc-print-preview.h"
 
-struct _EomPrintPreviewPrivate {
+struct _EocPrintPreviewPrivate {
 	GtkWidget *area;
 	GdkPixbuf *image;
 	GdkPixbuf *image_scaled;
@@ -91,14 +91,14 @@ enum {
 	PROP_PAGE_BOTTOM_MARGIN
 };
 
-G_DEFINE_TYPE_WITH_PRIVATE (EomPrintPreview, eoc_print_preview, GTK_TYPE_ASPECT_FRAME)
+G_DEFINE_TYPE_WITH_PRIVATE (EocPrintPreview, eoc_print_preview, GTK_TYPE_ASPECT_FRAME)
 
-static void eoc_print_preview_draw (EomPrintPreview *preview, cairo_t *cr);
+static void eoc_print_preview_draw (EocPrintPreview *preview, cairo_t *cr);
 static void eoc_print_preview_finalize (GObject *object);
-static void update_relative_sizes (EomPrintPreview *preview);
-static void create_surface (EomPrintPreview *preview);
-static void create_image_scaled (EomPrintPreview *preview);
-static gboolean create_surface_when_idle (EomPrintPreview *preview);
+static void update_relative_sizes (EocPrintPreview *preview);
+static void create_surface (EocPrintPreview *preview);
+static void create_image_scaled (EocPrintPreview *preview);
+static gboolean create_surface_when_idle (EocPrintPreview *preview);
 
 static void
 eoc_print_preview_get_property (GObject    *object,
@@ -106,7 +106,7 @@ eoc_print_preview_get_property (GObject    *object,
 				GValue     *value,
 				GParamSpec *pspec)
 {
-	EomPrintPreviewPrivate *priv = EOC_PRINT_PREVIEW (object)->priv;
+	EocPrintPreviewPrivate *priv = EOC_PRINT_PREVIEW (object)->priv;
 
 	switch (prop_id) {
 	case PROP_IMAGE:
@@ -150,7 +150,7 @@ eoc_print_preview_set_property (GObject      *object,
 				const GValue *value,
 				GParamSpec   *pspec)
 {
-	EomPrintPreviewPrivate *priv = EOC_PRINT_PREVIEW (object)->priv;
+	EocPrintPreviewPrivate *priv = EOC_PRINT_PREVIEW (object)->priv;
 	gboolean paper_size_changed = FALSE;
 
 	switch (prop_id) {
@@ -212,7 +212,7 @@ eoc_print_preview_set_property (GObject      *object,
 }
 
 static void
-eoc_print_preview_class_init (EomPrintPreviewClass *klass)
+eoc_print_preview_class_init (EocPrintPreviewClass *klass)
 {
 	GObjectClass *gobject_class;
 
@@ -223,7 +223,7 @@ eoc_print_preview_class_init (EomPrintPreviewClass *klass)
 	gobject_class->finalize     = eoc_print_preview_finalize;
 
 /**
- * EomPrintPreview:image:
+ * EocPrintPreview:image:
  *
  * The "image" property defines the image that is previewed
  * in the widget.
@@ -237,7 +237,7 @@ eoc_print_preview_class_init (EomPrintPreviewClass *klass)
 							      G_PARAM_READWRITE));
 
 /**
- * EomPrintPreview:image-x-align:
+ * EocPrintPreview:image-x-align:
  *
  * The "image-x-align" property defines the horizontal alignment
  * of the image in the widget.
@@ -253,7 +253,7 @@ eoc_print_preview_class_init (EomPrintPreviewClass *klass)
 							      G_PARAM_READWRITE));
 
 /**
- * EomPrintPreview:image-y-align:
+ * EocPrintPreview:image-y-align:
  *
  * The "image-y-align" property defines the horizontal alignment
  * of the image in the widget.
@@ -269,7 +269,7 @@ eoc_print_preview_class_init (EomPrintPreviewClass *klass)
 							      G_PARAM_READWRITE));
 
 /**
- * EomPrintPreview:image-scale:
+ * EocPrintPreview:image-scale:
  *
  * The "image-scale" property defines the scaling of the image
  * that the user wants for the printing.
@@ -285,7 +285,7 @@ eoc_print_preview_class_init (EomPrintPreviewClass *klass)
 							      G_PARAM_READWRITE));
 
 /**
- * EomPrintPreview:paper-width:
+ * EocPrintPreview:paper-width:
  *
  * The width of the previewed paper, in inches.
  */
@@ -300,7 +300,7 @@ eoc_print_preview_class_init (EomPrintPreviewClass *klass)
 							     G_PARAM_READWRITE));
 
 /**
- * EomPrintPreview:paper-height:
+ * EocPrintPreview:paper-height:
  *
  * The height of the previewed paper, in inches.
  */
@@ -315,7 +315,7 @@ eoc_print_preview_class_init (EomPrintPreviewClass *klass)
 							      G_PARAM_READWRITE));
 
 /**
- * EomPrintPreview:page-left-margin:
+ * EocPrintPreview:page-left-margin:
  *
  * The size of the page's left margin, in inches.
  */
@@ -330,7 +330,7 @@ eoc_print_preview_class_init (EomPrintPreviewClass *klass)
 							     G_PARAM_READWRITE));
 
 /**
- * EomPrintPreview:page-right-margin:
+ * EocPrintPreview:page-right-margin:
  *
  * The size of the page's right margin, in inches.
  */
@@ -344,7 +344,7 @@ eoc_print_preview_class_init (EomPrintPreviewClass *klass)
 							      0.25,
 							      G_PARAM_READWRITE));
 /**
- * EomPrintPreview:page-top-margin:
+ * EocPrintPreview:page-top-margin:
  *
  * The size of the page's top margin, in inches.
  */
@@ -359,7 +359,7 @@ eoc_print_preview_class_init (EomPrintPreviewClass *klass)
 							      G_PARAM_READWRITE));
 
 /**
- * EomPrintPreview:page-bottom-margin:
+ * EocPrintPreview:page-bottom-margin:
  *
  * The size of the page's bottom margin, in inches.
  */
@@ -374,10 +374,10 @@ eoc_print_preview_class_init (EomPrintPreviewClass *klass)
 							      G_PARAM_READWRITE));
 
 /**
- * EomPrintPreview::image-moved:
+ * EocPrintPreview::image-moved:
  * @preview: the object which received the signal
  *
- * The #EomPrintPreview::image-moved signal is emitted when the position
+ * The #EocPrintPreview::image-moved signal is emitted when the position
  * of the image is changed.
  */
 	preview_signals [SIGNAL_IMAGE_MOVED] =
@@ -391,7 +391,7 @@ eoc_print_preview_class_init (EomPrintPreviewClass *klass)
 static void
 eoc_print_preview_finalize (GObject *object)
 {
-	EomPrintPreviewPrivate *priv;
+	EocPrintPreviewPrivate *priv;
 
 	priv = EOC_PRINT_PREVIEW (object)->priv;
 
@@ -414,9 +414,9 @@ eoc_print_preview_finalize (GObject *object)
 }
 
 static void
-eoc_print_preview_init (EomPrintPreview *preview)
+eoc_print_preview_init (EocPrintPreview *preview)
 {
-	EomPrintPreviewPrivate *priv;
+	EocPrintPreviewPrivate *priv;
 	gfloat ratio;
 
 	priv = preview->priv = eoc_print_preview_get_instance_private (preview);
@@ -468,15 +468,15 @@ static void size_allocate_cb (GtkWidget *widget, GtkAllocation *allocation, gpoi
  * eoc_print_preview_new_with_pixbuf:
  * @pixbuf: a #GdkPixbuf
  *
- * Creates a new #EomPrintPreview widget, and sets the #GdkPixbuf to preview
+ * Creates a new #EocPrintPreview widget, and sets the #GdkPixbuf to preview
  * on it.
  *
- * Returns: A new #EomPrintPreview widget.
+ * Returns: A new #EocPrintPreview widget.
  **/
 GtkWidget *
 eoc_print_preview_new_with_pixbuf (GdkPixbuf *pixbuf)
 {
-	EomPrintPreview *preview;
+	EocPrintPreview *preview;
 
 	g_return_val_if_fail (GDK_IS_PIXBUF (pixbuf), NULL);
 
@@ -492,16 +492,16 @@ eoc_print_preview_new_with_pixbuf (GdkPixbuf *pixbuf)
 /**
  * eoc_print_preview_new:
  *
- * Creates a new #EomPrintPreview widget, setting it to the default values,
- * and leaving the page empty. You still need to set the #EomPrintPreview:image
+ * Creates a new #EocPrintPreview widget, setting it to the default values,
+ * and leaving the page empty. You still need to set the #EocPrintPreview:image
  * property to make it useful.
  *
- * Returns: A new and empty #EomPrintPreview widget.
+ * Returns: A new and empty #EocPrintPreview widget.
  **/
 GtkWidget *
 eoc_print_preview_new (void)
 {
-	EomPrintPreview *preview;
+	EocPrintPreview *preview;
 	GtkWidget *area;
 
 	preview = g_object_new (EOC_TYPE_PRINT_PREVIEW, NULL);
@@ -562,7 +562,7 @@ draw_cb (GtkDrawingArea *drawing_area,
 
 /**
  * get_current_image_coordinates:
- * @preview: an #EomPrintPreview
+ * @preview: an #EocPrintPreview
  * @x0: A pointer where to store the x coordinate.
  * @y0: A pointer where to store the y coordinate.
  *
@@ -570,10 +570,10 @@ draw_cb (GtkDrawingArea *drawing_area,
  * with the properties of the given @preview widget.
  **/
 static void
-get_current_image_coordinates (EomPrintPreview *preview,
+get_current_image_coordinates (EocPrintPreview *preview,
 			       gint *x0, gint *y0)
 {
-	EomPrintPreviewPrivate *priv;
+	EocPrintPreviewPrivate *priv;
 	GtkAllocation allocation;
 
 	priv = preview->priv;
@@ -585,7 +585,7 @@ get_current_image_coordinates (EomPrintPreview *preview,
 
 /**
  * press_inside_image_area:
- * @preview: an #EomPrintPreview
+ * @preview: an #EocPrintPreview
  * @x: the points x coordinate
  * @y: the points y coordinate
  *
@@ -595,11 +595,11 @@ get_current_image_coordinates (EomPrintPreview *preview,
  * %FALSE otherwise.
  **/
 static gboolean
-press_inside_image_area (EomPrintPreview *preview,
+press_inside_image_area (EocPrintPreview *preview,
 			 guint x,
 			 guint y)
 {
-	EomPrintPreviewPrivate *priv;
+	EocPrintPreviewPrivate *priv;
 	gint x0, y0;
 
 	priv = preview->priv;
@@ -613,9 +613,9 @@ press_inside_image_area (EomPrintPreview *preview,
 }
 
 static void
-create_image_scaled (EomPrintPreview *preview)
+create_image_scaled (EocPrintPreview *preview)
 {
-	EomPrintPreviewPrivate *priv = preview->priv;
+	EocPrintPreviewPrivate *priv = preview->priv;
 
 	if (!priv->image_scaled) {
 		gint i_width, i_height;
@@ -643,7 +643,7 @@ create_image_scaled (EomPrintPreview *preview)
 }
 
 static GdkPixbuf *
-create_preview_buffer (EomPrintPreview *preview)
+create_preview_buffer (EocPrintPreview *preview)
 {
 	GdkPixbuf *pixbuf;
 	gint width, height, widget_scale;
@@ -683,9 +683,9 @@ create_preview_buffer (EomPrintPreview *preview)
 }
 
 static void
-create_surface (EomPrintPreview *preview)
+create_surface (EocPrintPreview *preview)
 {
-	EomPrintPreviewPrivate *priv = preview->priv;
+	EocPrintPreviewPrivate *priv = preview->priv;
 	GdkPixbuf *pixbuf;
 
 	if (priv->surface) {
@@ -704,7 +704,7 @@ create_surface (EomPrintPreview *preview)
 }
 
 static gboolean
-create_surface_when_idle (EomPrintPreview *preview)
+create_surface_when_idle (EocPrintPreview *preview)
 {
 	create_surface (preview);
 
@@ -716,7 +716,7 @@ button_press_event_cb (GtkWidget *widget,
 		       GdkEventButton *event,
 		       gpointer user_data)
 {
-	EomPrintPreview *preview = EOC_PRINT_PREVIEW (user_data);
+	EocPrintPreview *preview = EOC_PRINT_PREVIEW (user_data);
 
 	preview->priv->cursorx = event->x;
 	preview->priv->cursory = event->y;
@@ -741,7 +741,7 @@ button_release_event_cb (GtkWidget *widget,
 			 GdkEventButton *event,
 			 gpointer user_data)
 {
-	EomPrintPreview *preview = EOC_PRINT_PREVIEW (user_data);
+	EocPrintPreview *preview = EOC_PRINT_PREVIEW (user_data);
 
 	switch (event->button) {
 	case 1:
@@ -809,7 +809,7 @@ motion_notify_event_cb (GtkWidget      *widget,
 			GdkEventMotion *event,
 			gpointer        user_data)
 {
-	EomPrintPreviewPrivate *priv = EOC_PRINT_PREVIEW (user_data)->priv;
+	EocPrintPreviewPrivate *priv = EOC_PRINT_PREVIEW (user_data)->priv;
 	gdouble dx, dy;
 	GtkAllocation allocation;
 
@@ -869,7 +869,7 @@ size_allocate_cb (GtkWidget *widget,
 		  GtkAllocation *allocation,
 		  gpointer user_data)
 {
-	EomPrintPreview *preview;
+	EocPrintPreview *preview;
 
 	preview = EOC_PRINT_PREVIEW (user_data);
 	update_relative_sizes (preview);
@@ -885,9 +885,9 @@ size_allocate_cb (GtkWidget *widget,
 }
 
 static void
-eoc_print_preview_draw (EomPrintPreview *preview, cairo_t *cr)
+eoc_print_preview_draw (EocPrintPreview *preview, cairo_t *cr)
 {
-	EomPrintPreviewPrivate *priv;
+	EocPrintPreviewPrivate *priv;
 	GtkWidget *area;
 	GtkAllocation allocation;
 	gint x0, y0;
@@ -957,9 +957,9 @@ eoc_print_preview_draw (EomPrintPreview *preview, cairo_t *cr)
 }
 
 static void
-update_relative_sizes (EomPrintPreview *preview)
+update_relative_sizes (EocPrintPreview *preview)
 {
-	EomPrintPreviewPrivate *priv;
+	EocPrintPreviewPrivate *priv;
 	GtkAllocation allocation;
 	gint i_width, i_height;
 
@@ -987,7 +987,7 @@ update_relative_sizes (EomPrintPreview *preview)
 
 /**
  * eoc_print_preview_set_page_margins:
- * @preview: a #EomPrintPreview
+ * @preview: a #EocPrintPreview
  * @l_margin: Left margin.
  * @r_margin: Right margin.
  * @t_margin: Top margin.
@@ -996,7 +996,7 @@ update_relative_sizes (EomPrintPreview *preview)
  * Manually set the margins, in inches.
  **/
 void
-eoc_print_preview_set_page_margins (EomPrintPreview *preview,
+eoc_print_preview_set_page_margins (EocPrintPreview *preview,
 				    gfloat l_margin,
 				    gfloat r_margin,
 				    gfloat t_margin,
@@ -1014,14 +1014,14 @@ eoc_print_preview_set_page_margins (EomPrintPreview *preview,
 
 /**
  * eoc_print_preview_set_from_page_setup:
- * @preview: a #EomPrintPreview
+ * @preview: a #EocPrintPreview
  * @setup: a #GtkPageSetup to set the properties from
  *
  * Sets up the page properties from a #GtkPageSetup. Useful when using the
  * widget with the GtkPrint API.
  **/
 void
-eoc_print_preview_set_from_page_setup (EomPrintPreview *preview,
+eoc_print_preview_set_from_page_setup (EocPrintPreview *preview,
 				       GtkPageSetup *setup)
 {
 	g_return_if_fail (EOC_IS_PRINT_PREVIEW (preview));
@@ -1040,7 +1040,7 @@ eoc_print_preview_set_from_page_setup (EomPrintPreview *preview,
 
 /**
  * eoc_print_preview_get_image_position:
- * @preview: a #EomPrintPreview
+ * @preview: a #EocPrintPreview
  * @x: a pointer to a #gdouble, or %NULL to ignore it
  * @y: a pointer to a #gdouble, or %NULL to ignore it
  *
@@ -1048,11 +1048,11 @@ eoc_print_preview_set_from_page_setup (EomPrintPreview *preview,
  * (0, 0) position is the intersection between the left and top margins.
  **/
 void
-eoc_print_preview_get_image_position (EomPrintPreview *preview,
+eoc_print_preview_get_image_position (EocPrintPreview *preview,
 				      gdouble *x,
 				      gdouble *y)
 {
-	EomPrintPreviewPrivate *priv;
+	EocPrintPreviewPrivate *priv;
 	gdouble width, height;
 
 	g_return_if_fail (EOC_IS_PRINT_PREVIEW (preview));
@@ -1071,7 +1071,7 @@ eoc_print_preview_get_image_position (EomPrintPreview *preview,
 
 /**
  * eoc_print_preview_set_image_position:
- * @preview: a #EomPrintPreview
+ * @preview: a #EocPrintPreview
  * @x: The X coordinate, in inches, or -1 to ignore it.
  * @y: The Y coordinate, in inches, or -1 to ignore it.
  *
@@ -1079,11 +1079,11 @@ eoc_print_preview_get_image_position (EomPrintPreview *preview,
  * only want to set the other.
  **/
 void
-eoc_print_preview_set_image_position (EomPrintPreview *preview,
+eoc_print_preview_set_image_position (EocPrintPreview *preview,
 				      gdouble x,
 				      gdouble y)
 {
-	EomPrintPreviewPrivate *priv;
+	EocPrintPreviewPrivate *priv;
 	gfloat x_align, y_align;
 	gdouble width, height;
 
@@ -1106,13 +1106,13 @@ eoc_print_preview_set_image_position (EomPrintPreview *preview,
 
 /**
  * eoc_print_preview_set_scale:
- * @preview: a #EomPrintPreview
+ * @preview: a #EocPrintPreview
  * @scale: a scale value, between 0 and 1.
  *
  * Sets the scale for the image.
  **/
 void
-eoc_print_preview_set_scale (EomPrintPreview *preview,
+eoc_print_preview_set_scale (EocPrintPreview *preview,
 			     gfloat           scale)
 {
 	g_return_if_fail (EOC_IS_PRINT_PREVIEW (preview));

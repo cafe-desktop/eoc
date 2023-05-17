@@ -26,24 +26,24 @@
 
 G_BEGIN_DECLS
 
-typedef struct _EomPrintImageSetup         EomPrintImageSetup;
-typedef struct _EomPrintImageSetupClass    EomPrintImageSetupClass;
-typedef struct _EomPrintImageSetupPrivate   EomPrintImageSetupPrivate;
+typedef struct _EocPrintImageSetup         EocPrintImageSetup;
+typedef struct _EocPrintImageSetupClass    EocPrintImageSetupClass;
+typedef struct _EocPrintImageSetupPrivate   EocPrintImageSetupPrivate;
 
 #define EOC_TYPE_PRINT_IMAGE_SETUP            (eoc_print_image_setup_get_type ())
-#define EOC_PRINT_IMAGE_SETUP(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), EOC_TYPE_PRINT_IMAGE_SETUP, EomPrintImageSetup))
-#define EOC_PRINT_IMAGE_SETUP_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass), EOC_TYPE_PRINT_IMAGE_SETUP, EomPrintImageSetupClass))
+#define EOC_PRINT_IMAGE_SETUP(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), EOC_TYPE_PRINT_IMAGE_SETUP, EocPrintImageSetup))
+#define EOC_PRINT_IMAGE_SETUP_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass), EOC_TYPE_PRINT_IMAGE_SETUP, EocPrintImageSetupClass))
 #define EOC_IS_PRINT_IMAGE_SETUP(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), EOC_TYPE_PRINT_IMAGE_SETUP))
 #define EOC_IS_PRINT_IMAGE_SETUP_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), EOC_TYPE_PRINT_IMAGE_SETUP))
-#define EOC_PRINT_IMAGE_SETUP_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), EOC_TYPE_PRINT_IMAGE_SETUP, EomPrintImageSetupClass))
+#define EOC_PRINT_IMAGE_SETUP_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), EOC_TYPE_PRINT_IMAGE_SETUP, EocPrintImageSetupClass))
 
-struct _EomPrintImageSetup {
+struct _EocPrintImageSetup {
 	GtkGrid parent_instance;
 
-	EomPrintImageSetupPrivate *priv;
+	EocPrintImageSetupPrivate *priv;
 };
 
-struct _EomPrintImageSetupClass {
+struct _EocPrintImageSetupClass {
 	GtkGridClass parent_class;
 };
 
@@ -51,11 +51,11 @@ G_GNUC_INTERNAL
 GType		  eoc_print_image_setup_get_type    (void) G_GNUC_CONST;
 
 G_GNUC_INTERNAL
-GtkWidget        *eoc_print_image_setup_new         (EomImage     *image,
+GtkWidget        *eoc_print_image_setup_new         (EocImage     *image,
 						     GtkPageSetup *page_setup);
 
 G_GNUC_INTERNAL
-void              eoc_print_image_setup_get_options (EomPrintImageSetup *setup,
+void              eoc_print_image_setup_get_options (EocPrintImageSetup *setup,
 						     gdouble            *left,
 						     gdouble            *top,
 						     gdouble            *scale,
