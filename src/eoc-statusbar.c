@@ -24,7 +24,7 @@
 #include "config.h"
 #endif
 
-#include "eom-statusbar.h"
+#include "eoc-statusbar.h"
 
 #include <string.h>
 #include <glib/gi18n.h>
@@ -36,21 +36,21 @@ struct _EomStatusbarPrivate
 	GtkWidget *img_num_label;
 };
 
-G_DEFINE_TYPE_WITH_PRIVATE (EomStatusbar, eom_statusbar, GTK_TYPE_STATUSBAR)
+G_DEFINE_TYPE_WITH_PRIVATE (EomStatusbar, eoc_statusbar, GTK_TYPE_STATUSBAR)
 
 static void
-eom_statusbar_class_init (EomStatusbarClass *klass)
+eoc_statusbar_class_init (EomStatusbarClass *klass)
 {
     /* empty */
 }
 
 static void
-eom_statusbar_init (EomStatusbar *statusbar)
+eoc_statusbar_init (EomStatusbar *statusbar)
 {
 	EomStatusbarPrivate *priv;
 	GtkWidget *vbox;
 
-	statusbar->priv = eom_statusbar_get_instance_private (statusbar);
+	statusbar->priv = eoc_statusbar_get_instance_private (statusbar);
 	priv = statusbar->priv;
 
 	gtk_widget_set_margin_top (GTK_WIDGET (statusbar), 0);
@@ -91,13 +91,13 @@ eom_statusbar_init (EomStatusbar *statusbar)
 }
 
 GtkWidget *
-eom_statusbar_new (void)
+eoc_statusbar_new (void)
 {
 	return GTK_WIDGET (g_object_new (EOM_TYPE_STATUSBAR, NULL));
 }
 
 void
-eom_statusbar_set_image_number (EomStatusbar *statusbar,
+eoc_statusbar_set_image_number (EomStatusbar *statusbar,
                                 gint          num,
 				gint          tot)
 {
@@ -127,7 +127,7 @@ eom_statusbar_set_image_number (EomStatusbar *statusbar,
 }
 
 void
-eom_statusbar_set_progress (EomStatusbar *statusbar,
+eoc_statusbar_set_progress (EomStatusbar *statusbar,
 			    gdouble       progress)
 {
 	g_return_if_fail (EOM_IS_STATUSBAR (statusbar));

@@ -1,6 +1,6 @@
 AUTOMAKE_OPTIONS = subdir-objects
 
-pluginsdir = $(libdir)/eom/plugins
+pluginsdir = $(libdir)/eoc/plugins
 
 AM_CPPFLAGS = \
 	-I$(top_srcdir)/src 				\
@@ -20,15 +20,15 @@ plugins_in_files = \
 
 # Fullscreen plugin
 fullscreen_libfullscreen_la_SOURCES = \
-	fullscreen/eom-fullscreen-plugin.h  \
-	fullscreen/eom-fullscreen-plugin.c
+	fullscreen/eoc-fullscreen-plugin.h  \
+	fullscreen/eoc-fullscreen-plugin.c
 
 fullscreen_libfullscreen_la_LIBADD = $(EOM_LIBS)
 
 # Reload plugin
 reload_libreload_la_SOURCES = \
-	reload/eom-reload-plugin.h  \
-	reload/eom-reload-plugin.c
+	reload/eoc-reload-plugin.h  \
+	reload/eoc-reload-plugin.c
 
 reload_libreload_la_LIBADD = $(EOM_LIBS)
 
@@ -37,8 +37,8 @@ if HAVE_EXIF
 plugins_LTLIBRARIES += statusbar-date/libstatusbar-date.la
 
 statusbar_date_libstatusbar_date_la_SOURCES = \
-	statusbar-date/eom-statusbar-date-plugin.h  \
-	statusbar-date/eom-statusbar-date-plugin.c
+	statusbar-date/eoc-statusbar-date-plugin.h  \
+	statusbar-date/eoc-statusbar-date-plugin.c
 
 statusbar_date_libstatusbar_date_la_LIBADD = $(EOM_LIBS)
 plugins_in_files += statusbar-date/statusbar-date.plugin.desktop.in

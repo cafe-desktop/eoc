@@ -1,6 +1,6 @@
 /*
- * eom-application-activatable.c
- * This file is part of eom
+ * eoc-application-activatable.c
+ * This file is part of eoc
  *
  * Author: Felix Riemann <friemann@gnome.org>
  *
@@ -28,15 +28,15 @@
 #include "config.h"
 #endif
 
-#include "eom-application-activatable.h"
+#include "eoc-application-activatable.h"
 
 #include <glib-object.h>
-#include "eom-application.h"
+#include "eoc-application.h"
 
-G_DEFINE_INTERFACE(EomApplicationActivatable, eom_application_activatable, G_TYPE_OBJECT)
+G_DEFINE_INTERFACE(EomApplicationActivatable, eoc_application_activatable, G_TYPE_OBJECT)
 
 void
-eom_application_activatable_default_init (EomApplicationActivatableInterface *iface)
+eoc_application_activatable_default_init (EomApplicationActivatableInterface *iface)
 {
 	static gboolean initialized = FALSE;
 
@@ -59,7 +59,7 @@ eom_application_activatable_default_init (EomApplicationActivatableInterface *if
 }
 
 void
-eom_application_activatable_activate (EomApplicationActivatable *activatable)
+eoc_application_activatable_activate (EomApplicationActivatable *activatable)
 {
     EomApplicationActivatableInterface *iface;
 
@@ -72,7 +72,7 @@ eom_application_activatable_activate (EomApplicationActivatable *activatable)
 }
 
 void
-eom_application_activatable_deactivate (EomApplicationActivatable *activatable)
+eoc_application_activatable_deactivate (EomApplicationActivatable *activatable)
 {
     EomApplicationActivatableInterface *iface;
 

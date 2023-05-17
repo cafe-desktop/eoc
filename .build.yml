@@ -4,7 +4,7 @@
 requires:
   debian:
     # Useful URL: https://github.com/mate-desktop/debian-packages
-    # Useful URL: https://salsa.debian.org/debian-mate-team/eom
+    # Useful URL: https://salsa.debian.org/debian-mate-team/eoc
     - aptitude
     - autopoint
     - clang
@@ -45,4 +45,4 @@ build_scripts:
   - ./after-build
 
 after_scripts:
-  - if [ -f "gen-index" ]; then ./gen-index -l 20 -i https://github.com/mate-desktop/eom/raw/master/data/icons/16x16/apps/eom.png; fi
+  - if [ -f "gen-index" ]; then ./gen-index -l 20 -i https://github.com/mate-desktop/eoc/raw/master/data/icons/16x16/apps/eoc.png; fi

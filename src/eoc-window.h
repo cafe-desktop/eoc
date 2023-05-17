@@ -28,8 +28,8 @@
 #ifndef __EOM_WINDOW_H__
 #define __EOM_WINDOW_H__
 
-#include "eom-list-store.h"
-#include "eom-image.h"
+#include "eoc-list-store.h"
+#include "eoc-image.h"
 
 #include <glib.h>
 #include <glib-object.h>
@@ -41,14 +41,14 @@ typedef struct _EomWindow EomWindow;
 typedef struct _EomWindowClass EomWindowClass;
 typedef struct _EomWindowPrivate EomWindowPrivate;
 
-#define EOM_TYPE_WINDOW            (eom_window_get_type ())
+#define EOM_TYPE_WINDOW            (eoc_window_get_type ())
 #define EOM_WINDOW(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), EOM_TYPE_WINDOW, EomWindow))
 #define EOM_WINDOW_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass),  EOM_TYPE_WINDOW, EomWindowClass))
 #define EOM_IS_WINDOW(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), EOM_TYPE_WINDOW))
 #define EOM_IS_WINDOW_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass),  EOM_TYPE_WINDOW))
 #define EOM_WINDOW_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj),  EOM_TYPE_WINDOW, EomWindowClass))
 
-#define EOM_WINDOW_ERROR           (eom_window_error_quark ())
+#define EOM_WINDOW_ERROR           (eoc_window_error_quark ())
 
 typedef enum {
 	EOM_WINDOW_MODE_UNKNOWN,
@@ -93,38 +93,38 @@ struct _EomWindowClass {
 	void (* prepared) (EomWindow *window);
 };
 
-GType         eom_window_get_type  	(void) G_GNUC_CONST;
+GType         eoc_window_get_type  	(void) G_GNUC_CONST;
 
-GtkWidget    *eom_window_new		(EomStartupFlags  flags);
+GtkWidget    *eoc_window_new		(EomStartupFlags  flags);
 
-EomWindowMode eom_window_get_mode       (EomWindow       *window);
+EomWindowMode eoc_window_get_mode       (EomWindow       *window);
 
-void          eom_window_set_mode       (EomWindow       *window,
+void          eoc_window_set_mode       (EomWindow       *window,
 					 EomWindowMode    mode);
 
-GtkUIManager *eom_window_get_ui_manager (EomWindow       *window);
+GtkUIManager *eoc_window_get_ui_manager (EomWindow       *window);
 
-EomListStore *eom_window_get_store      (EomWindow       *window);
+EomListStore *eoc_window_get_store      (EomWindow       *window);
 
-GtkWidget    *eom_window_get_view       (EomWindow       *window);
+GtkWidget    *eoc_window_get_view       (EomWindow       *window);
 
-GtkWidget    *eom_window_get_sidebar    (EomWindow       *window);
+GtkWidget    *eoc_window_get_sidebar    (EomWindow       *window);
 
-GtkWidget    *eom_window_get_thumb_view (EomWindow       *window);
+GtkWidget    *eoc_window_get_thumb_view (EomWindow       *window);
 
-GtkWidget    *eom_window_get_thumb_nav  (EomWindow       *window);
+GtkWidget    *eoc_window_get_thumb_nav  (EomWindow       *window);
 
-GtkWidget    *eom_window_get_statusbar  (EomWindow       *window);
+GtkWidget    *eoc_window_get_statusbar  (EomWindow       *window);
 
-EomImage     *eom_window_get_image      (EomWindow       *window);
+EomImage     *eoc_window_get_image      (EomWindow       *window);
 
-void          eom_window_open_file_list	(EomWindow       *window,
+void          eoc_window_open_file_list	(EomWindow       *window,
 					 GSList          *file_list);
 
-gboolean      eom_window_is_empty 	(EomWindow       *window);
+gboolean      eoc_window_is_empty 	(EomWindow       *window);
 
-void          eom_window_reload_image (EomWindow *window);
-GtkWidget    *eom_window_get_properties_dialog (EomWindow *window);
+void          eoc_window_reload_image (EomWindow *window);
+GtkWidget    *eoc_window_get_properties_dialog (EomWindow *window);
 G_END_DECLS
 
 #endif

@@ -59,14 +59,14 @@ typedef enum {
 #define	DEBUG_LCMS 		EOM_DEBUG_LCMS,        __FILE__, __LINE__, G_STRFUNC
 #define	DEBUG_PLUGINS 		EOM_DEBUG_PLUGINS,     __FILE__, __LINE__, G_STRFUNC
 
-void   eom_debug_init        (void);
+void   eoc_debug_init        (void);
 
-void   eom_debug             (EomDebug    section,
+void   eoc_debug             (EomDebug    section,
           	              const gchar       *file,
           	              gint               line,
           	              const gchar       *function);
 
-void   eom_debug_message     (EomDebug    section,
+void   eoc_debug_message     (EomDebug    section,
 			      const gchar       *file,
 			      gint               line,
 			      const gchar       *function,

@@ -22,8 +22,8 @@
 #ifndef __EOM_PREFERENCES_DIALOG_H__
 #define __EOM_PREFERENCES_DIALOG_H__
 
-#include "eom-image.h"
-#include "eom-thumb-view.h"
+#include "eoc-image.h"
+#include "eoc-thumb-view.h"
 
 #include <glib.h>
 #include <glib-object.h>
@@ -36,7 +36,7 @@ typedef struct _EomPreferencesDialog EomPreferencesDialog;
 typedef struct _EomPreferencesDialogClass EomPreferencesDialogClass;
 typedef struct _EomPreferencesDialogPrivate EomPreferencesDialogPrivate;
 
-#define EOM_TYPE_PREFERENCES_DIALOG            (eom_preferences_dialog_get_type ())
+#define EOM_TYPE_PREFERENCES_DIALOG            (eoc_preferences_dialog_get_type ())
 #define EOM_PREFERENCES_DIALOG(obj)            (G_TYPE_CHECK_INSTANCE_CAST((obj), EOM_TYPE_PREFERENCES_DIALOG, EomPreferencesDialog))
 #define EOM_PREFERENCES_DIALOG_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST((klass),  EOM_TYPE_PREFERENCES_DIALOG, EomPreferencesDialogClass))
 #define EOM_IS_PREFERENCES_DIALOG(obj)         (G_TYPE_CHECK_INSTANCE_TYPE((obj), EOM_TYPE_PREFERENCES_DIALOG))
@@ -54,10 +54,10 @@ struct _EomPreferencesDialogClass {
 };
 
 G_GNUC_INTERNAL
-GType	    eom_preferences_dialog_get_type	  (void) G_GNUC_CONST;
+GType	    eoc_preferences_dialog_get_type	  (void) G_GNUC_CONST;
 
 G_GNUC_INTERNAL
-GtkWidget    *eom_preferences_dialog_get_instance	  (GtkWindow   *parent);
+GtkWidget    *eoc_preferences_dialog_get_instance	  (GtkWindow   *parent);
 
 G_END_DECLS
 

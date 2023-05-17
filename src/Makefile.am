@@ -1,137 +1,137 @@
 if ENABLE_JPEG
-jpeg_LIB = $(top_builddir)/jpegutils/libeom-jpegutils.la
+jpeg_LIB = $(top_builddir)/jpegutils/libeoc-jpegutils.la
 endif
 
 toolbar_LIB = $(top_builddir)/cut-n-paste/toolbar-editor/libtoolbareditor.la
 
-noinst_LTLIBRARIES = libeom.la
+noinst_LTLIBRARIES = libeoc.la
 
-bin_PROGRAMS = eom
+bin_PROGRAMS = eoc
 
-headerdir = $(prefix)/include/eom-@EOM_API_VERSION@/eom
+headerdir = $(prefix)/include/eoc-@EOM_API_VERSION@/eoc
 header_DATA = $(INST_H_FILES)
 
 MARSHAL_OUTPUT = 	\
-	eom-marshal.h	\
-	eom-marshal.c
+	eoc-marshal.h	\
+	eoc-marshal.c
 
 NOINST_H_FILES =			\
-	eom-application-internal.h	\
-	eom-session.h			\
-	eom-util.h			\
-	eom-pixbuf-util.h		\
-	eom-preferences-dialog.h	\
-	eom-config-keys.h		\
-	eom-image-jpeg.h		\
-	eom-image-private.h		\
-	eom-metadata-sidebar.h		\
-	eom-uri-converter.h		\
-	eom-metadata-reader.h		\
-	eom-metadata-reader-jpg.h	\
-	eom-metadata-reader-png.h	\
-	eom-save-as-dialog-helper.h	\
-	eom-print-image-setup.h         \
-	eom-print-preview.h             \
-	eom-print.h			\
-	eom-plugin-engine.h             \
-	eom-close-confirmation-dialog.h	\
+	eoc-application-internal.h	\
+	eoc-session.h			\
+	eoc-util.h			\
+	eoc-pixbuf-util.h		\
+	eoc-preferences-dialog.h	\
+	eoc-config-keys.h		\
+	eoc-image-jpeg.h		\
+	eoc-image-private.h		\
+	eoc-metadata-sidebar.h		\
+	eoc-uri-converter.h		\
+	eoc-metadata-reader.h		\
+	eoc-metadata-reader-jpg.h	\
+	eoc-metadata-reader-png.h	\
+	eoc-save-as-dialog-helper.h	\
+	eoc-print-image-setup.h         \
+	eoc-print-preview.h             \
+	eoc-print.h			\
+	eoc-plugin-engine.h             \
+	eoc-close-confirmation-dialog.h	\
 	zoom.h
 
 INST_H_FILES =				\
-	eom-application.h		\
-	eom-application-activatable.h	\
-	eom-debug.h			\
-	eom-window.h			\
-	eom-window-activatable.h	\
-	eom-sidebar.h			\
-	eom-properties-dialog.h		\
-	eom-error-message-area.h	\
-	eom-file-chooser.h		\
-	eom-statusbar.h			\
-	eom-thumb-nav.h			\
-	eom-transform.h			\
-	eom-image.h			\
-	eom-enums.h			\
-	eom-image-save-info.h		\
-	eom-scroll-view.h		\
-	eom-thumb-view.h		\
-	eom-list-store.h		\
-	eom-thumbnail.h			\
-	eom-job-queue.h			\
-	eom-clipboard-handler.h		\
-	eom-jobs.h
+	eoc-application.h		\
+	eoc-application-activatable.h	\
+	eoc-debug.h			\
+	eoc-window.h			\
+	eoc-window-activatable.h	\
+	eoc-sidebar.h			\
+	eoc-properties-dialog.h		\
+	eoc-error-message-area.h	\
+	eoc-file-chooser.h		\
+	eoc-statusbar.h			\
+	eoc-thumb-nav.h			\
+	eoc-transform.h			\
+	eoc-image.h			\
+	eoc-enums.h			\
+	eoc-image-save-info.h		\
+	eoc-scroll-view.h		\
+	eoc-thumb-view.h		\
+	eoc-list-store.h		\
+	eoc-thumbnail.h			\
+	eoc-job-queue.h			\
+	eoc-clipboard-handler.h		\
+	eoc-jobs.h
 
-libeom_c_files =			\
-	eom-application.c		\
-	eom-application-activatable.c	\
-	eom-session.c			\
-	eom-debug.c			\
-	eom-util.c			\
-	eom-pixbuf-util.c		\
-	eom-window.c			\
-	eom-window-activatable.c	\
-	eom-sidebar.c			\
-	eom-preferences-dialog.c	\
-	eom-properties-dialog.c		\
-	eom-error-message-area.c	\
-	eom-file-chooser.c		\
-	eom-statusbar.c			\
-	eom-thumb-nav.c			\
-	eom-transform.c			\
-	eom-image.c			\
-	eom-image-jpeg.c		\
-	eom-image-save-info.c		\
-	eom-scroll-view.c		\
-	eom-thumb-view.c		\
-	eom-list-store.c		\
-	eom-metadata-sidebar.c	\
-	eom-thumbnail.c			\
-	eom-job-queue.c			\
-	eom-jobs.c			\
-	eom-uri-converter.c		\
-	eom-metadata-reader.c		\
-	eom-metadata-reader-jpg.c	\
-	eom-metadata-reader-png.c	\
-	eom-save-as-dialog-helper.c	\
-	eom-print-image-setup.c         \
-	eom-print-preview.c           	\
-	eom-print.c			\
-	eom-close-confirmation-dialog.c \
-	eom-plugin-engine.c            	\
-	eom-clipboard-handler.c		\
+libeoc_c_files =			\
+	eoc-application.c		\
+	eoc-application-activatable.c	\
+	eoc-session.c			\
+	eoc-debug.c			\
+	eoc-util.c			\
+	eoc-pixbuf-util.c		\
+	eoc-window.c			\
+	eoc-window-activatable.c	\
+	eoc-sidebar.c			\
+	eoc-preferences-dialog.c	\
+	eoc-properties-dialog.c		\
+	eoc-error-message-area.c	\
+	eoc-file-chooser.c		\
+	eoc-statusbar.c			\
+	eoc-thumb-nav.c			\
+	eoc-transform.c			\
+	eoc-image.c			\
+	eoc-image-jpeg.c		\
+	eoc-image-save-info.c		\
+	eoc-scroll-view.c		\
+	eoc-thumb-view.c		\
+	eoc-list-store.c		\
+	eoc-metadata-sidebar.c	\
+	eoc-thumbnail.c			\
+	eoc-job-queue.c			\
+	eoc-jobs.c			\
+	eoc-uri-converter.c		\
+	eoc-metadata-reader.c		\
+	eoc-metadata-reader-jpg.c	\
+	eoc-metadata-reader-png.c	\
+	eoc-save-as-dialog-helper.c	\
+	eoc-print-image-setup.c         \
+	eoc-print-preview.c           	\
+	eoc-print.c			\
+	eoc-close-confirmation-dialog.c \
+	eoc-plugin-engine.c            	\
+	eoc-clipboard-handler.c		\
 	zoom.c
 
-libeom_la_SOURCES =			\
-	$(libeom_c_files)		\
+libeoc_la_SOURCES =			\
+	$(libeoc_c_files)		\
 	$(BUILT_SOURCES)		\
 	$(NOINST_H_FILES)		\
 	$(INST_H_FILES)
 
 if HAVE_EXIF
 INST_H_FILES +=				\
-	eom-exif-util.h
+	eoc-exif-util.h
 
 NOINST_H_FILES +=			\
-	eom-metadata-details.h
+	eoc-metadata-details.h
 
-libeom_c_files +=			\
-	eom-metadata-details.c  \
-	eom-exif-util.c
+libeoc_c_files +=			\
+	eoc-metadata-details.c  \
+	eoc-exif-util.c
 endif
 
 if HAVE_EXEMPI
-# We need to make sure eom-metadata-details.h
+# We need to make sure eoc-metadata-details.h
 # is only listed once in INST_H_FILES
 # or the build will break with automake-1.11
 if !HAVE_EXIF
 NOINST_H_FILES +=				\
-	eom-metadata-details.h
+	eoc-metadata-details.h
 endif !HAVE_EXIF
-libeom_la_SOURCES +=			\
-	eom-metadata-details.c
+libeoc_la_SOURCES +=			\
+	eoc-metadata-details.c
 endif HAVE_EXEMPI
 
-libeom_la_CPPFLAGS =						\
+libeoc_la_CPPFLAGS =						\
 	-I$(srcdir)						\
 	-I$(top_srcdir)						\
 	-I$(top_srcdir)/jpegutils				\
@@ -139,37 +139,37 @@ libeom_la_CPPFLAGS =						\
 	-DG_LOG_DOMAIN=\"EOM\"					\
 	-DEOM_DATA_DIR=\""$(pkgdatadir)"\"			\
 	-DEOM_LOCALE_DIR=\""$(datadir)/locale"\"		\
-	-DEOM_PLUGIN_DIR=\""$(libdir)/eom/plugins"\"		\
+	-DEOM_PLUGIN_DIR=\""$(libdir)/eoc/plugins"\"		\
 	-DLIBDIR=\""$(libdir)"\"
 
-libeom_la_CFLAGS =						\
+libeoc_la_CFLAGS =						\
 	$(EOM_CFLAGS)						\
 	$(WARN_CFLAGS)
 
-libeom_la_LIBADD = \
+libeoc_la_LIBADD = \
 	$(EOM_LIBS)
 
 if HAVE_LCMS
-libeom_la_CFLAGS += 	\
+libeoc_la_CFLAGS += 	\
 	$(X11_CFLAGS)
 
-libeom_la_LIBADD += \
+libeoc_la_LIBADD += \
 	$(X11_LIBS)
 endif
 
-eom_SOURCES = \
+eoc_SOURCES = \
 	main.c \
-	eom-resources.c
+	eoc-resources.c
 
-eom_CFLAGS = 							\
+eoc_CFLAGS = 							\
 	-I$(top_srcdir)/cut-n-paste/toolbar-editor		\
 	$(EOM_CFLAGS)						\
 	-DEOM_DATA_DIR=\""$(pkgdatadir)"\"			\
 	-DEOM_LOCALE_DIR=\""$(datadir)/locale"\"		\
 	$(INTROSPECTION_CFLAGS)
 
-eom_LDADD = 				\
-	libeom.la			\
+eoc_LDADD = 				\
+	libeoc.la			\
 	$(EOM_LIBS)			\
 	$(LIBJPEG)			\
 	$(toolbar_LIB)			\
@@ -177,47 +177,47 @@ eom_LDADD = 				\
 	$(INTROSPECTION_LIBS)
 
 BUILT_SOURCES = 			\
-	eom-enum-types.c		\
-	eom-enum-types.h		\
-	eom-resources.c			\
+	eoc-enum-types.c		\
+	eoc-enum-types.h		\
+	eoc-resources.c			\
 	$(MARSHAL_OUTPUT)
 
-eom_resources_deps = $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(top_srcdir)/data --generate-dependencies $(top_srcdir)/src/eom.gresource.xml)
+eoc_resources_deps = $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(top_srcdir)/data --generate-dependencies $(top_srcdir)/src/eoc.gresource.xml)
 
-eom-resources.c: $(top_srcdir)/src/eom.gresource.xml $(eom_resources_deps)
+eoc-resources.c: $(top_srcdir)/src/eoc.gresource.xml $(eoc_resources_deps)
 	$(AM_V_GEN) $(GLIB_COMPILE_RESOURCES) "$<" --target=$@ \
-         --sourcedir=$(top_srcdir)/data --c-name _eom --generate-source
+         --sourcedir=$(top_srcdir)/data --c-name _eoc --generate-source
 
-eom-enum-types.h: eom-enum-types.h.template $(INST_H_FILES) $(GLIB_MKENUMS)
-	$(AM_V_GEN)(cd $(srcdir) && $(GLIB_MKENUMS) --template eom-enum-types.h.template $(INST_H_FILES)) > $@
+eoc-enum-types.h: eoc-enum-types.h.template $(INST_H_FILES) $(GLIB_MKENUMS)
+	$(AM_V_GEN)(cd $(srcdir) && $(GLIB_MKENUMS) --template eoc-enum-types.h.template $(INST_H_FILES)) > $@
 
-eom-enum-types.c: eom-enum-types.c.template $(INST_H_FILES) $(GLIB_MKENUMS)
-	$(AM_V_GEN)(cd $(srcdir) && $(GLIB_MKENUMS) --template eom-enum-types.c.template $(INST_H_FILES)) > $@
+eoc-enum-types.c: eoc-enum-types.c.template $(INST_H_FILES) $(GLIB_MKENUMS)
+	$(AM_V_GEN)(cd $(srcdir) && $(GLIB_MKENUMS) --template eoc-enum-types.c.template $(INST_H_FILES)) > $@
 
-eom-marshal.h: eom-marshal.list $(GLIB_GENMARSHAL)
-	$(AM_V_GEN)$(GLIB_GENMARSHAL) $< --header --internal --prefix=eom_marshal > $@
+eoc-marshal.h: eoc-marshal.list $(GLIB_GENMARSHAL)
+	$(AM_V_GEN)$(GLIB_GENMARSHAL) $< --header --internal --prefix=eoc_marshal > $@
 
-eom-marshal.c: eom-marshal.list $(GLIB_GENMARSHAL)
-	$(AM_V_GEN)$(GLIB_GENMARSHAL) $< --body --header --prefix=eom_marshal > $@
+eoc-marshal.c: eoc-marshal.list $(GLIB_GENMARSHAL)
+	$(AM_V_GEN)$(GLIB_GENMARSHAL) $< --body --header --prefix=eoc_marshal > $@
 
 EXTRA_DIST = 				\
-	eom.gresource.xml		\
-	eom-enum-types.h.template	\
-	eom-enum-types.c.template	\
-	eom-marshal.list
+	eoc.gresource.xml		\
+	eoc-enum-types.h.template	\
+	eoc-enum-types.c.template	\
+	eoc-marshal.list
 
 CLEANFILES = $(BUILT_SOURCES)
 
 if HAVE_INTROSPECTION
 -include $(INTROSPECTION_MAKEFILE)
 INTROSPECTION_GIRS = Eom-1.0.gir
-INTROSPECTION_SCANNER_ARGS = -I$(top_srcdir) --warn-all $(libeom_la_CPPFLAGS)
+INTROSPECTION_SCANNER_ARGS = -I$(top_srcdir) --warn-all $(libeoc_la_CPPFLAGS)
 
-Eom-1.0.gir: eom
+Eom-1.0.gir: eoc
 Eom_1_0_gir_INCLUDES = Gtk-3.0
-Eom_1_0_gir_FILES = $(INST_H_FILES) $(libeom_c_files) $(BUILT_SOURCES)
+Eom_1_0_gir_FILES = $(INST_H_FILES) $(libeoc_c_files) $(BUILT_SOURCES)
 Eom_1_0_gir_VERSION = 1.0
-Eom_1_0_gir_PROGRAM = $(builddir)/eom
+Eom_1_0_gir_PROGRAM = $(builddir)/eoc
 Eom_1_0_gir_NAMESPACE = Eom
 Eom_1_0_gir_CFLAGS = $(EOM_CFLAGS)
 girdir = $(datadir)/gir-1.0

@@ -26,13 +26,13 @@
 #include "config.h"
 #endif
 
-#include "eom-image.h"
-#include "eom-session.h"
-#include "eom-window.h"
-#include "eom-application.h"
-#include "eom-application-activatable.h"
-#include "eom-application-internal.h"
-#include "eom-util.h"
+#include "eoc-image.h"
+#include "eoc-session.h"
+#include "eoc-window.h"
+#include "eoc-application.h"
+#include "eoc-application-activatable.h"
+#include "eoc-application-internal.h"
+#include "eoc-util.h"
 
 #include <string.h>
 #include <glib.h>
@@ -41,24 +41,24 @@
 #include <gtk/gtk.h>
 #include <gdk/gdkx.h>
 
-#define APPLICATION_SERVICE_NAME "org.mate.eom.ApplicationService"
+#define APPLICATION_SERVICE_NAME "org.mate.eoc.ApplicationService"
 
-static void eom_application_load_accelerators (void);
-static void eom_application_save_accelerators (void);
+static void eoc_application_load_accelerators (void);
+static void eoc_application_save_accelerators (void);
 
-G_DEFINE_TYPE_WITH_PRIVATE (EomApplication, eom_application, GTK_TYPE_APPLICATION);
+G_DEFINE_TYPE_WITH_PRIVATE (EomApplication, eoc_application, GTK_TYPE_APPLICATION);
 
 static void
-eom_application_activate (GApplication *application)
+eoc_application_activate (GApplication *application)
 {
-	eom_application_open_window (EOM_APPLICATION (application),
+	eoc_application_open_window (EOM_APPLICATION (application),
 				     GDK_CURRENT_TIME,
 				     EOM_APPLICATION (application)->priv->flags,
 				     NULL);
 }
 
 static void
-eom_application_open (GApplication *application,
+eoc_application_open (GApplication *application,
 		      GFile       **files,
 		      gint          n_files,
 		      const gchar  *hint)
@@ -68,14 +68,14 @@ eom_application_open (GApplication *application,
 	while (n_files--)
 		list = g_slist_prepend (list, files[n_files]);
 
-	eom_application_open_file_list (EOM_APPLICATION (application),
+	eoc_application_open_file_list (EOM_APPLICATION (application),
 					list, GDK_CURRENT_TIME,
 					EOM_APPLICATION (application)->priv->flags,
 					NULL);
 }
 
 static void
-eom_application_finalize (GObject *object)
+eoc_application_finalize (GObject *object)
 {
 	EomApplication *application = EOM_APPLICATION (object);
 	EomApplicationPrivate *priv = application->priv;
@@ -93,27 +93,27 @@ eom_application_finalize (GObject *object)
 		g_object_unref (priv->plugin_engine);
 		priv->plugin_engine = NULL;
 	}
-	eom_application_save_accelerators ();
+	eoc_application_save_accelerators ();
 }
 
 static void
-eom_application_add_platform_data (GApplication *application,
+eoc_application_add_platform_data (GApplication *application,
 				   GVariantBuilder *builder)
 {
 	EomApplication *app = EOM_APPLICATION (application);
 
-	G_APPLICATION_CLASS (eom_application_parent_class)->add_platform_data (application,
+	G_APPLICATION_CLASS (eoc_application_parent_class)->add_platform_data (application,
 									       builder);
 
 	if (app->priv->flags) {
 		g_variant_builder_add (builder, "{sv}",
-				       "eom-application-startup-flags",
+				       "eoc-application-startup-flags",
 				       g_variant_new_byte (app->priv->flags));
 	}
 }
 
 static void
-eom_application_before_emit (GApplication *application,
+eoc_application_before_emit (GApplication *application,
 			     GVariant *platform_data)
 {
 	GVariantIter iter;
@@ -123,30 +123,30 @@ eom_application_before_emit (GApplication *application,
 	EOM_APPLICATION (application)->priv->flags = 0;
 	g_variant_iter_init (&iter, platform_data);
 	while (g_variant_iter_loop (&iter, "{&sv}", &key, &value)) {
-		if (strcmp (key, "eom-application-startup-flags") == 0) {
+		if (strcmp (key, "eoc-application-startup-flags") == 0) {
 			EOM_APPLICATION (application)->priv->flags = g_variant_get_byte (value);
 		}
 	}
 
-	G_APPLICATION_CLASS (eom_application_parent_class)->before_emit (application,
+	G_APPLICATION_CLASS (eoc_application_parent_class)->before_emit (application,
 									 platform_data);
 }
 
 static void
-eom_application_class_init (EomApplicationClass *eom_application_class)
+eoc_application_class_init (EomApplicationClass *eoc_application_class)
 {
 	GApplicationClass *application_class;
 	GObjectClass *object_class;
 
-	application_class = (GApplicationClass *) eom_application_class;
-	object_class = (GObjectClass *) eom_application_class;
+	application_class = (GApplicationClass *) eoc_application_class;
+	object_class = (GObjectClass *) eoc_application_class;
 
-	object_class->finalize = eom_application_finalize;
+	object_class->finalize = eoc_application_finalize;
 
-	application_class->activate = eom_application_activate;
-	application_class->open = eom_application_open;
-	application_class->add_platform_data = eom_application_add_platform_data;
-	application_class->before_emit = eom_application_before_emit;
+	application_class->activate = eoc_application_activate;
+	application_class->open = eoc_application_open;
+	application_class->add_platform_data = eoc_application_add_platform_data;
+	application_class->before_emit = eoc_application_before_emit;
 }
 
 static void
@@ -155,7 +155,7 @@ on_extension_added (PeasExtensionSet *set,
                     PeasExtension    *exten,
                     EomApplication   *app)
 {
-	eom_application_activatable_activate (EOM_APPLICATION_ACTIVATABLE (exten));
+	eoc_application_activatable_activate (EOM_APPLICATION_ACTIVATABLE (exten));
 }
 
 static void
@@ -164,57 +164,57 @@ on_extension_removed (PeasExtensionSet *set,
                       PeasExtension    *exten,
                       EomApplication   *app)
 {
-	eom_application_activatable_deactivate (EOM_APPLICATION_ACTIVATABLE (exten));
+	eoc_application_activatable_deactivate (EOM_APPLICATION_ACTIVATABLE (exten));
 }
 
 static void
-eom_application_init (EomApplication *eom_application)
+eoc_application_init (EomApplication *eoc_application)
 {
 	EomApplicationPrivate *priv;
-	const gchar *dot_dir = eom_util_dot_dir ();
+	const gchar *dot_dir = eoc_util_dot_dir ();
 
-	eom_session_init (eom_application);
+	eoc_session_init (eoc_application);
 
-	eom_application->priv = eom_application_get_instance_private (eom_application);
-	priv = eom_application->priv;
+	eoc_application->priv = eoc_application_get_instance_private (eoc_application);
+	priv = eoc_application->priv;
 
 	priv->toolbars_model = egg_toolbars_model_new ();
-	priv->plugin_engine = eom_plugin_engine_new ();
+	priv->plugin_engine = eoc_plugin_engine_new ();
 	priv->flags = 0;
 
 	egg_toolbars_model_load_names (priv->toolbars_model,
-				       EOM_DATA_DIR "/eom-toolbar.xml");
+				       EOM_DATA_DIR "/eoc-toolbar.xml");
 
 	if (G_LIKELY (dot_dir != NULL))
 		priv->toolbars_file = g_build_filename
-			(dot_dir, "eom_toolbar.xml", NULL);
+			(dot_dir, "eoc_toolbar.xml", NULL);
 
 	if (!dot_dir || !egg_toolbars_model_load_toolbars (priv->toolbars_model,
 					       priv->toolbars_file)) {
 
 		egg_toolbars_model_load_toolbars (priv->toolbars_model,
-						  EOM_DATA_DIR "/eom-toolbar.xml");
+						  EOM_DATA_DIR "/eoc-toolbar.xml");
 	}
 
 	egg_toolbars_model_set_flags (priv->toolbars_model, 0,
 				      EGG_TB_MODEL_NOT_REMOVABLE);
 
-	eom_application_load_accelerators ();
+	eoc_application_load_accelerators ();
 
 	priv->extensions = peas_extension_set_new (
 	                           PEAS_ENGINE (priv->plugin_engine),
 	                           EOM_TYPE_APPLICATION_ACTIVATABLE,
-	                           "app",  EOM_APPLICATION (eom_application),
+	                           "app",  EOM_APPLICATION (eoc_application),
 	                           NULL);
 	peas_extension_set_call (priv->extensions, "activate");
 	g_signal_connect (priv->extensions, "extension-added",
-	                  G_CALLBACK (on_extension_added), eom_application);
+	                  G_CALLBACK (on_extension_added), eoc_application);
 	g_signal_connect (priv->extensions, "extension-removed",
-	                  G_CALLBACK (on_extension_removed), eom_application);
+	                  G_CALLBACK (on_extension_removed), eoc_application);
 }
 
 /**
- * eom_application_get_instance:
+ * eoc_application_get_instance:
  *
  * Returns a singleton instance of #EomApplication currently running.
  * If not running yet, it will create one.
@@ -222,7 +222,7 @@ eom_application_init (EomApplication *eom_application)
  * Returns: (transfer none): a running #EomApplication.
  **/
 EomApplication *
-eom_application_get_instance (void)
+eoc_application_get_instance (void)
 {
 	static EomApplication *instance;
 
@@ -237,7 +237,7 @@ eom_application_get_instance (void)
 }
 
 static EomWindow *
-eom_application_get_empty_window (EomApplication *application)
+eoc_application_get_empty_window (EomApplication *application)
 {
 	EomWindow *empty_window = NULL;
 	GList *windows;
@@ -250,7 +250,7 @@ eom_application_get_empty_window (EomApplication *application)
 	for (l = windows; l != NULL; l = l->next) {
 		EomWindow *window = EOM_WINDOW (l->data);
 
-		if (eom_window_is_empty (window)) {
+		if (eoc_window_is_empty (window)) {
 			empty_window = window;
 			break;
 		}
@@ -260,7 +260,7 @@ eom_application_get_empty_window (EomApplication *application)
 }
 
 /**
- * eom_application_open_window:
+ * eoc_application_open_window:
  * @application: An #EomApplication.
  * @timestamp: The timestamp of the user interaction which triggered this call
  * (see gtk_window_present_with_time()).
@@ -274,17 +274,17 @@ eom_application_get_empty_window (EomApplication *application)
  * Returns: %FALSE if @application is invalid, %TRUE otherwise
  **/
 gboolean
-eom_application_open_window (EomApplication  *application,
+eoc_application_open_window (EomApplication  *application,
 			     guint32         timestamp,
 			     EomStartupFlags flags,
 			     GError        **error)
 {
 	GtkWidget *new_window = NULL;
 
-	new_window = GTK_WIDGET (eom_application_get_empty_window (application));
+	new_window = GTK_WIDGET (eoc_application_get_empty_window (application));
 
 	if (new_window == NULL) {
-		new_window = eom_window_new (flags);
+		new_window = eoc_window_new (flags);
 	}
 
 	g_return_val_if_fail (EOM_IS_APPLICATION (application), FALSE);
@@ -296,7 +296,7 @@ eom_application_open_window (EomApplication  *application,
 }
 
 static EomWindow *
-eom_application_get_file_window (EomApplication *application, GFile *file)
+eoc_application_get_file_window (EomApplication *application, GFile *file)
 {
 	EomWindow *file_window = NULL;
 	GList *windows;
@@ -311,11 +311,11 @@ eom_application_get_file_window (EomApplication *application, GFile *file)
 		if (EOM_IS_WINDOW (l->data)) {
 			EomWindow *window = EOM_WINDOW (l->data);
 
-			if (!eom_window_is_empty (window)) {
-				EomImage *image = eom_window_get_image (window);
+			if (!eoc_window_is_empty (window)) {
+				EomImage *image = eoc_window_get_image (window);
 				GFile *window_file;
 
-				window_file = eom_image_get_file (image);
+				window_file = eoc_image_get_file (image);
 				if (g_file_equal (window_file, file)) {
 					file_window = window;
 					break;
@@ -330,7 +330,7 @@ eom_application_get_file_window (EomApplication *application, GFile *file)
 }
 
 static void
-eom_application_show_window (EomWindow *window, gpointer user_data)
+eoc_application_show_window (EomWindow *window, gpointer user_data)
 {
 	if (!gtk_widget_get_realized (GTK_WIDGET (window)))
 		gtk_widget_realize (GTK_WIDGET (window));
@@ -340,7 +340,7 @@ eom_application_show_window (EomWindow *window, gpointer user_data)
 }
 
 /**
- * eom_application_open_file_list:
+ * eoc_application_open_file_list:
  * @application: An #EomApplication.
  * @file_list: (element-type GFile): A list of #GFile<!-- -->s
  * @timestamp: The timestamp of the user interaction which triggered this call
@@ -355,7 +355,7 @@ eom_application_show_window (EomWindow *window, gpointer user_data)
  * Returns: Currently always %TRUE.
  **/
 gboolean
-eom_application_open_file_list (EomApplication  *application,
+eoc_application_open_file_list (EomApplication  *application,
 				GSList          *file_list,
 				guint           timestamp,
 				EomStartupFlags flags,
@@ -364,7 +364,7 @@ eom_application_open_file_list (EomApplication  *application,
 	EomWindow *new_window = NULL;
 
 	if (file_list != NULL)
-		new_window = eom_application_get_file_window (application,
+		new_window = eoc_application_get_file_window (application,
 							      (GFile *) file_list->data);
 
 	if (new_window != NULL) {
@@ -373,24 +373,24 @@ eom_application_open_file_list (EomApplication  *application,
 		return TRUE;
 	}
 
-	new_window = eom_application_get_empty_window (application);
+	new_window = eoc_application_get_empty_window (application);
 
 	if (new_window == NULL) {
-		new_window = EOM_WINDOW (eom_window_new (flags));
+		new_window = EOM_WINDOW (eoc_window_new (flags));
 	}
 
 	g_signal_connect (new_window,
 			  "prepared",
-			  G_CALLBACK (eom_application_show_window),
+			  G_CALLBACK (eoc_application_show_window),
 			  GUINT_TO_POINTER (timestamp));
 
-	eom_window_open_file_list (new_window, file_list);
+	eoc_window_open_file_list (new_window, file_list);
 
 	return TRUE;
 }
 
 /**
- * eom_application_open_uri_list:
+ * eoc_application_open_uri_list:
  * @application: An #EomApplication.
  * @uri_list: (element-type utf8): A list of URIs.
  * @timestamp: The timestamp of the user interaction which triggered this call
@@ -399,12 +399,12 @@ eom_application_open_file_list (EomApplication  *application,
  * @error: Return location for a #GError, or NULL to ignore errors.
  *
  * Opens a list of images, from a list of URIs. See
- * eom_application_open_file_list() for details.
+ * eoc_application_open_file_list() for details.
  *
  * Returns: Currently always %TRUE.
  **/
 gboolean
-eom_application_open_uri_list (EomApplication  *application,
+eoc_application_open_uri_list (EomApplication  *application,
  			       GSList          *uri_list,
  			       guint           timestamp,
  			       EomStartupFlags flags,
@@ -414,9 +414,9 @@ eom_application_open_uri_list (EomApplication  *application,
 
  	g_return_val_if_fail (EOM_IS_APPLICATION (application), FALSE);
 
- 	file_list = eom_util_string_list_to_file_list (uri_list);
+ 	file_list = eoc_util_string_list_to_file_list (uri_list);
 
- 	return eom_application_open_file_list (application,
+ 	return eoc_application_open_file_list (application,
 					       file_list,
 					       timestamp,
 					       flags,
@@ -424,7 +424,7 @@ eom_application_open_uri_list (EomApplication  *application,
 }
 
 /**
- * eom_application_open_uris:
+ * eoc_application_open_uris:
  * @application: an #EomApplication
  * @uris:  A #GList of URI strings.
  * @timestamp: The timestamp of the user interaction which triggered this call
@@ -433,12 +433,12 @@ eom_application_open_uri_list (EomApplication  *application,
  * @error: Return location for a #GError, or NULL to ignore errors.
  *
  * Opens a list of images, from a list of URI strings. See
- * eom_application_open_file_list() for details.
+ * eoc_application_open_file_list() for details.
  *
  * Returns: Currently always %TRUE.
  **/
 gboolean
-eom_application_open_uris (EomApplication  *application,
+eoc_application_open_uris (EomApplication  *application,
  			   gchar          **uris,
  			   guint           timestamp,
  			   EomStartupFlags flags,
@@ -446,14 +446,14 @@ eom_application_open_uris (EomApplication  *application,
 {
  	GSList *file_list = NULL;
 
- 	file_list = eom_util_strings_to_file_list (uris);
+ 	file_list = eoc_util_strings_to_file_list (uris);
 
- 	return eom_application_open_file_list (application, file_list, timestamp,
+ 	return eoc_application_open_file_list (application, file_list, timestamp,
 						    flags, error);
 }
 
 /**
- * eom_application_get_toolbars_model:
+ * eoc_application_get_toolbars_model:
  * @application: An #EomApplication.
  *
  * Retrieves the #EggToolbarsModel for the toolbar in #EomApplication.
@@ -461,7 +461,7 @@ eom_application_open_uris (EomApplication  *application,
  * Returns: (transfer none): An #EggToolbarsModel.
  **/
 EggToolbarsModel *
-eom_application_get_toolbars_model (EomApplication *application)
+eoc_application_get_toolbars_model (EomApplication *application)
 {
 	g_return_val_if_fail (EOM_IS_APPLICATION (application), NULL);
 
@@ -469,13 +469,13 @@ eom_application_get_toolbars_model (EomApplication *application)
 }
 
 /**
- * eom_application_save_toolbars_model:
+ * eoc_application_save_toolbars_model:
  * @application: An #EomApplication.
  *
  * Causes the saving of the model of the toolbar in #EomApplication to a file.
  **/
 void
-eom_application_save_toolbars_model (EomApplication *application)
+eoc_application_save_toolbars_model (EomApplication *application)
 {
 	if (G_LIKELY(application->priv->toolbars_file != NULL))
         	egg_toolbars_model_save_toolbars (application->priv->toolbars_model,
@@ -484,13 +484,13 @@ eom_application_save_toolbars_model (EomApplication *application)
 }
 
 /**
- * eom_application_reset_toolbars_model:
+ * eoc_application_reset_toolbars_model:
  * @app: an #EomApplication
  *
  * Restores the toolbars model to the defaults.
  **/
 void
-eom_application_reset_toolbars_model (EomApplication *app)
+eoc_application_reset_toolbars_model (EomApplication *app)
 {
 	EomApplicationPrivate *priv;
 	g_return_if_fail (EOM_IS_APPLICATION (app));
@@ -502,17 +502,17 @@ eom_application_reset_toolbars_model (EomApplication *app)
 	priv->toolbars_model = egg_toolbars_model_new ();
 
 	egg_toolbars_model_load_names (priv->toolbars_model,
-				       EOM_DATA_DIR "/eom-toolbar.xml");
+				       EOM_DATA_DIR "/eoc-toolbar.xml");
 	egg_toolbars_model_load_toolbars (priv->toolbars_model,
-					  EOM_DATA_DIR "/eom-toolbar.xml");
+					  EOM_DATA_DIR "/eoc-toolbar.xml");
 	egg_toolbars_model_set_flags (priv->toolbars_model, 0,
 				      EGG_TB_MODEL_NOT_REMOVABLE);
 }
 
 static void
-eom_application_load_accelerators (void)
+eoc_application_load_accelerators (void)
 {
-		gchar* accelfile = g_build_filename(g_get_user_config_dir(), "mate", "accels", "eom", NULL);
+		gchar* accelfile = g_build_filename(g_get_user_config_dir(), "mate", "accels", "eoc", NULL);
 
 	/* gtk_accel_map_load does nothing if the file does not exist */
 	gtk_accel_map_load (accelfile);
@@ -520,9 +520,9 @@ eom_application_load_accelerators (void)
 }
 
 static void
-eom_application_save_accelerators (void)
+eoc_application_save_accelerators (void)
 {
-		gchar* accelfile = g_build_filename(g_get_user_config_dir(), "mate", "accels", "eom", NULL);
+		gchar* accelfile = g_build_filename(g_get_user_config_dir(), "mate", "accels", "eoc", NULL);
 
 	gtk_accel_map_save (accelfile);
 	g_free (accelfile);

@@ -192,7 +192,7 @@ msgstr ""
 #. (itstool) path: listitem/para
 #: C/index.docbook:243
 msgid ""
-"Run <command>eom</command> at the prompt in a terminal such as <application"
+"Run <command>eoc</command> at the prompt in a terminal such as <application"
 ">mate-terminal</application>, or from the <application>Run "
 "Application</application> dialog."
 msgstr ""
@@ -551,7 +551,7 @@ msgstr ""
 #. (itstool) path: listitem/para
 #: C/index.docbook:435
 msgid ""
-"Open one of the images in the folder (see <xref linkend=\"eom-open-"
+"Open one of the images in the folder (see <xref linkend=\"eoc-open-"
 "image\"/>)."
 msgstr ""
 
@@ -583,7 +583,7 @@ msgid ""
 " or press <keycap>F5</keycap>. To return to the collection view, press the "
 "<keycap>Esc</keycap> key, or "
 "<keycombo><keycap>Ctrl</keycap><keycap>W</keycap></keycombo>. For more "
-"information about how to customize the slide show, see <xref linkend=\"eom-"
+"information about how to customize the slide show, see <xref linkend=\"eoc-"
 "prefs-slideshow\"/>."
 msgstr ""
 
@@ -722,7 +722,7 @@ msgid ""
 "by pressing <keycap>P</keycap>. To stop the slideshow, press the "
 "<keycap>Esc</keycap> or <keycap>F5</keycap> key, or "
 "<keycombo><keycap>Ctrl</keycap><keycap>W</keycap></keycombo>. For more "
-"information about how to customize the slide show, see <xref linkend=\"eom-"
+"information about how to customize the slide show, see <xref linkend=\"eoc-"
 "prefs-slideshow\"/>."
 msgstr ""
 
@@ -736,7 +736,7 @@ msgstr ""
 msgid ""
 "All image manipulations apply to all selected images at once. The "
 "modifications are done in memory and alter the original files on disk only "
-"when the images are saved with the save function (see <xref linkend=\"eom-"
+"when the images are saved with the save function (see <xref linkend=\"eoc-"
 "save-image\"/>)."
 msgstr ""
 
@@ -1060,7 +1060,7 @@ msgstr ""
 msgid ""
 "Maybe you don't want your image centered or want it scaled down even "
 "further. To do that you need to open the <guilabel>Print</guilabel> dialog "
-"(see <xref linkend=\"eom-print-image\"/>) and then select the "
+"(see <xref linkend=\"eoc-print-image\"/>) and then select the "
 "<guilabel>Image Settings</guilabel> tab which offers you the following "
 "options:"
 msgstr ""
@@ -1182,7 +1182,7 @@ msgstr ""
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:718
-msgid "Open the toolbar editor (see <xref linkend=\"eom-toolbareditor-use\"/>)."
+msgid "Open the toolbar editor (see <xref linkend=\"eoc-toolbareditor-use\"/>)."
 msgstr ""
 
 #. (itstool) path: listitem/para
@@ -1238,7 +1238,7 @@ msgid ""
 "portraits are automatically rotated upright. Note that this function "
 "requires a correctly set orientation tag in the image's metadata and thus "
 "does not work with all images. The rotation is not saved until you save the "
-"rotated image (see <xref linkend=\"eom-save-rename\"/>)."
+"rotated image (see <xref linkend=\"eoc-save-rename\"/>)."
 msgstr ""
 
 #. (itstool) path: varlistentry/term
@@ -1326,7 +1326,7 @@ msgid ""
 "Use the <guilabel>Switch image after ... seconds</guilabel> spin box to "
 "specify how long each image is displayed during the slide show. If you set "
 "this value to zero, the auto advance function is disabled and only manual "
-"browsing is available (see <xref linkend=\"eom-fullscreen\"/>)."
+"browsing is available (see <xref linkend=\"eoc-fullscreen\"/>)."
 msgstr ""
 
 #. (itstool) path: legalnotice/para

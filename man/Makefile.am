@@ -1,5 +1,5 @@
 man_MANS = \
-	eom.1
+	eoc.1
 
 EXTRA_DIST = $(man_MANS)
 

@@ -4,8 +4,8 @@
 #if HAVE_JPEG
 
 #include <glib.h>
-#include "eom-image.h"
-#include "eom-image-save-info.h"
+#include "eoc-image.h"
+#include "eoc-image-save-info.h"
 
 /* Saves a source jpeg file in an arbitrary format (as specified by
  * target). The target pointer may be NULL, in which case the output
@@ -14,7 +14,7 @@
  * target is a jpeg image too).
  */
 G_GNUC_INTERNAL
-gboolean eom_image_jpeg_save_file (EomImage *image, const char *file,
+gboolean eoc_image_jpeg_save_file (EomImage *image, const char *file,
 				   EomImageSaveInfo *source, EomImageSaveInfo *target,
 				   GError **error);
 #endif

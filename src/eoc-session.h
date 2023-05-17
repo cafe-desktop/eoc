@@ -26,20 +26,20 @@
 #ifndef __EOM_SESSION_H__
 #define __EOM_SESSION_H__
 
-#include "eom-application.h"
+#include "eoc-application.h"
 
 #include <glib.h>
 
 G_BEGIN_DECLS
 
 G_GNUC_INTERNAL
-void 		eom_session_init 		(EomApplication *application);
+void 		eoc_session_init 		(EomApplication *application);
 
 G_GNUC_INTERNAL
-gboolean 	eom_session_is_restored 	(void);
+gboolean 	eoc_session_is_restored 	(void);
 
 G_GNUC_INTERNAL
-gboolean 	eom_session_load 		(void);
+gboolean 	eoc_session_load 		(void);
 
 G_END_DECLS
 

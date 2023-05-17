@@ -1,6 +1,6 @@
 SUBDIRS = pixmaps icons
 
-DESKTOP_IN_FILES= eom.desktop.in.in
+DESKTOP_IN_FILES= eoc.desktop.in.in
 DESKTOP_FILES= $(DESKTOP_IN_FILES:.desktop.in.in=.desktop)
 
 desktopdir = $(datadir)/applications
@@ -9,34 +9,34 @@ $(desktop_DATA): $(DESKTOP_IN_FILES)
 	$(AM_V_GEN) $(MSGFMT) --desktop --keyword= --keyword=Name --keyword=Comment --keyword=Keywords --template $< -d $(top_srcdir)/po -o $@
 
 appdatadir = $(datadir)/metainfo
-appdata_in_files = eom.appdata.xml.in
+appdata_in_files = eoc.appdata.xml.in
 appdata_DATA = $(appdata_in_files:.xml.in=.xml)
 $(appdata_DATA): $(appdata_in_files)
 	$(AM_V_GEN) $(MSGFMT) --xml --template $< -d $(top_srcdir)/po -o $@
 
-gsettings_ENUM_NAMESPACE = org.mate.eom
-gsettings_ENUM_FILES = $(top_srcdir)/src/eom-scroll-view.h	\
-                       $(top_srcdir)/src/eom-window.h
+gsettings_ENUM_NAMESPACE = org.mate.eoc
+gsettings_ENUM_FILES = $(top_srcdir)/src/eoc-scroll-view.h	\
+                       $(top_srcdir)/src/eoc-window.h
 
-gsettings_SCHEMAS = org.mate.eom.gschema.xml
+gsettings_SCHEMAS = org.mate.eoc.gschema.xml
 @GSETTINGS_RULES@
 
 uidir = $(pkgdatadir)
 ui_DATA = \
-	eom-toolbar.xml
+	eoc-toolbar.xml
 
 pkgconfigdir = $(libdir)/pkgconfig
-pkgconfig_DATA = eom.pc
+pkgconfig_DATA = eoc.pc
 
 EXTRA_DIST = \
 	$(ui_DATA) \
-	eom.css			\
-	eom-image-properties-dialog.ui	\
-	eom-multiple-save-as-dialog.ui	\
-	eom-preferences-dialog.ui \
-	eom-ui.xml		\
+	eoc.css			\
+	eoc-image-properties-dialog.ui	\
+	eoc-multiple-save-as-dialog.ui	\
+	eoc-preferences-dialog.ui \
+	eoc-ui.xml		\
 	metadata-sidebar.ui	\
-	eom.about		\
+	eoc.about		\
 	$(DESKTOP_IN_FILES) \
 	$(appdata_in_files)
 

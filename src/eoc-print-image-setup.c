@@ -33,8 +33,8 @@
 #include <langinfo.h>
 #endif
 
-#include "eom-print-image-setup.h"
-#include "eom-print-preview.h"
+#include "eoc-print-image-setup.h"
+#include "eoc-print-preview.h"
 
 /**
  * SECTION:
@@ -98,8 +98,8 @@ enum {
 #define FACTOR_MM_TO_INCH 0.03937007874015748
 #define FACTOR_MM_TO_PIXEL 2.834645669
 
-static void eom_print_image_setup_set_property (GObject *object, guint prop_id, const GValue *value, GParamSpec *pspec);
-static void eom_print_image_setup_get_property (GObject *object, guint prop_id, GValue *value, GParamSpec *pspec);
+static void eoc_print_image_setup_set_property (GObject *object, guint prop_id, const GValue *value, GParamSpec *pspec);
+static void eoc_print_image_setup_get_property (GObject *object, guint prop_id, GValue *value, GParamSpec *pspec);
 
 static void on_left_value_changed   (GtkSpinButton *spinbutton, gpointer user_data);
 static void on_right_value_changed  (GtkSpinButton *spinbutton, gpointer user_data);
@@ -109,7 +109,7 @@ static void on_bottom_value_changed (GtkSpinButton *spinbutton, gpointer user_da
 static void on_width_value_changed  (GtkSpinButton *spinbutton, gpointer user_data);
 static void on_height_value_changed (GtkSpinButton *spinbutton, gpointer user_data);
 
-G_DEFINE_TYPE_WITH_PRIVATE (EomPrintImageSetup, eom_print_image_setup, GTK_TYPE_GRID);
+G_DEFINE_TYPE_WITH_PRIVATE (EomPrintImageSetup, eoc_print_image_setup, GTK_TYPE_GRID);
 
 static void
 block_handlers (EomPrintImageSetup *setup)
@@ -168,7 +168,7 @@ get_max_percentage (EomPrintImageSetup *setup)
 	p_width = gtk_page_setup_get_page_width (priv->page_setup, GTK_UNIT_INCH);
 	p_height = gtk_page_setup_get_page_height (priv->page_setup, GTK_UNIT_INCH);
 
-	eom_image_get_size (priv->image, &pix_width, &pix_height);
+	eoc_image_get_size (priv->image, &pix_width, &pix_height);
 
 	width  = (gdouble)pix_width/FACTOR_INCH_TO_PIXEL;
 	height = (gdouble)pix_height/FACTOR_INCH_TO_PIXEL;
@@ -285,7 +285,7 @@ on_scale_changed (GtkRange     *range,
 	gtk_combo_box_set_active (GTK_COMBO_BOX (priv->center), CENTER_NONE);
 
 	image = priv->image;
-	eom_image_get_size (image, &pix_width, &pix_height);
+	eoc_image_get_size (image, &pix_width, &pix_height);
 
 	factor = get_scale_to_px_factor (setup);
 
@@ -297,7 +297,7 @@ on_scale_changed (GtkRange     *range,
 
 	scale = CLAMP (0.01*gtk_range_get_value (range), 0, get_max_percentage (setup));
 
- 	eom_print_preview_set_scale (EOM_PRINT_PREVIEW (priv->preview), scale);
+ 	eoc_print_preview_set_scale (EOM_PRINT_PREVIEW (priv->preview), scale);
 
 	width  *= scale;
 	height *= scale;
@@ -351,14 +351,14 @@ position_values_changed (EomPrintImageSetup *setup,
 		if (setup->priv->current_unit == GTK_UNIT_MM) {
 			pos *= FACTOR_MM_TO_INCH;
 		}
- 		eom_print_preview_set_image_position (EOM_PRINT_PREVIEW (priv->preview), pos, -1);
+ 		eoc_print_preview_set_image_position (EOM_PRINT_PREVIEW (priv->preview), pos, -1);
 		break;
 	case CHANGE_VERT:
 		pos = gtk_spin_button_get_value (GTK_SPIN_BUTTON (setup->priv->top));
 		if (setup->priv->current_unit == GTK_UNIT_MM) {
 			pos *= FACTOR_MM_TO_INCH;
 		}
-		eom_print_preview_set_image_position (EOM_PRINT_PREVIEW (priv->preview), -1, pos);
+		eoc_print_preview_set_image_position (EOM_PRINT_PREVIEW (priv->preview), -1, pos);
 		break;
 	}
 }
@@ -451,7 +451,7 @@ size_changed (EomPrintImageSetup *setup,
 	margin_x_1 = gtk_spin_button_get_value (GTK_SPIN_BUTTON (w_margin_x_1));
 	margin_y_1 = gtk_spin_button_get_value (GTK_SPIN_BUTTON (w_margin_y_1));
 
-	eom_image_get_size (priv->image, &pix_width, &pix_height);
+	eoc_image_get_size (priv->image, &pix_width, &pix_height);
 
 	factor = get_scale_to_px_factor (setup);
 
@@ -473,7 +473,7 @@ size_changed (EomPrintImageSetup *setup,
 	margin_x_2 = page_size_x - margin_x_1 - size_x;
 	margin_y_2 = page_size_y - margin_y_1 - size_y;
 
- 	eom_print_preview_set_scale (EOM_PRINT_PREVIEW (priv->preview), scale);
+ 	eoc_print_preview_set_scale (EOM_PRINT_PREVIEW (priv->preview), scale);
 
 	switch (change) {
 	case CHANGE_HORIZ:
@@ -619,7 +619,7 @@ on_preview_image_moved (EomPrintPreview *preview,
 	EomPrintImageSetupPrivate *priv = EOM_PRINT_IMAGE_SETUP (user_data)->priv;
 	gdouble x, y;
 
-	eom_print_preview_get_image_position (preview, &x, &y);
+	eoc_print_preview_get_image_position (preview, &x, &y);
 
 	if (priv->current_unit == GTK_UNIT_MM) {
 		x *= FACTOR_INCH_TO_MM;
@@ -678,7 +678,7 @@ grid_attach_spin_button_with_label (GtkWidget *grid,
 }
 
 static void
-eom_print_image_setup_set_property (GObject      *object,
+eoc_print_image_setup_set_property (GObject      *object,
 				    guint         prop_id,
 				    const GValue *value,
 				    GParamSpec   *pspec)
@@ -694,7 +694,7 @@ eom_print_image_setup_set_property (GObject      *object,
 		}
 		priv->image = EOM_IMAGE (g_value_dup_object (value));
 		if (EOM_IS_IMAGE (priv->image)) {
-			pixbuf = eom_image_get_pixbuf (priv->image);
+			pixbuf = eoc_image_get_pixbuf (priv->image);
 			g_object_set (priv->preview, "image",
 				      pixbuf, NULL);
 			g_object_unref (pixbuf);
@@ -709,7 +709,7 @@ eom_print_image_setup_set_property (GObject      *object,
 }
 
 static void
-eom_print_image_setup_get_property (GObject    *object,
+eoc_print_image_setup_get_property (GObject    *object,
 				    guint       prop_id,
 				    GValue     *value,
 				    GParamSpec *pspec)
@@ -747,7 +747,7 @@ set_initial_values (EomPrintImageSetup *setup)
 
 	factor = get_scale_to_px_factor (setup);
 
-	eom_image_get_size (image, &pix_width, &pix_height);
+	eoc_image_get_size (image, &pix_width, &pix_height);
 	width = (gdouble)pix_width/factor;
 	height = (gdouble)pix_height/factor;
 
@@ -760,7 +760,7 @@ set_initial_values (EomPrintImageSetup *setup)
 	gtk_range_set_increments (GTK_RANGE (priv->scaling), max_perc, 10*max_perc);
 	gtk_range_set_value (GTK_RANGE (priv->scaling), 100*max_perc);
 
-	eom_print_preview_set_scale (EOM_PRINT_PREVIEW (priv->preview), max_perc);
+	eoc_print_preview_set_scale (EOM_PRINT_PREVIEW (priv->preview), max_perc);
 	gtk_spin_button_set_range (GTK_SPIN_BUTTON (priv->width), 0, width);
 	gtk_spin_button_set_range (GTK_SPIN_BUTTON (priv->height), 0, height);
 	gtk_spin_button_set_value (GTK_SPIN_BUTTON (priv->width), width);
@@ -812,12 +812,12 @@ connect_signals (EomPrintImageSetup *setup)
 }
 
 static void
-eom_print_image_setup_class_init (EomPrintImageSetupClass *class)
+eoc_print_image_setup_class_init (EomPrintImageSetupClass *class)
 {
 	GObjectClass *object_class = (GObjectClass *)class;
 
-	object_class->set_property = eom_print_image_setup_set_property;
-	object_class->get_property = eom_print_image_setup_get_property;
+	object_class->set_property = eoc_print_image_setup_set_property;
+	object_class->get_property = eoc_print_image_setup_get_property;
 
 	g_object_class_install_property (object_class, PROP_IMAGE,
 					 g_param_spec_object ("image",
@@ -835,7 +835,7 @@ eom_print_image_setup_class_init (EomPrintImageSetupClass *class)
 }
 
 static void
-eom_print_image_setup_init (EomPrintImageSetup *setup)
+eoc_print_image_setup_init (EomPrintImageSetup *setup)
 {
 	GtkWidget *frame;
 	GtkWidget *grid;
@@ -848,7 +848,7 @@ eom_print_image_setup_init (EomPrintImageSetup *setup)
 	gchar *locale_scale = NULL;
 #endif
 
-	priv = setup->priv = eom_print_image_setup_get_instance_private (setup);
+	priv = setup->priv = eoc_print_image_setup_get_instance_private (setup);
 
 	priv->image = NULL;
 
@@ -942,7 +942,7 @@ eom_print_image_setup_init (EomPrintImageSetup *setup)
 	g_signal_connect (G_OBJECT (combobox), "changed",
 			  G_CALLBACK (on_unit_changed), setup);
 
-	priv->preview = eom_print_preview_new ();
+	priv->preview = eoc_print_preview_new ();
 
 	/* FIXME: This shouldn't be set by hand */
 	gtk_widget_set_size_request (priv->preview, 250, 250);
@@ -956,7 +956,7 @@ eom_print_image_setup_init (EomPrintImageSetup *setup)
 
 
 /**
- * eom_print_image_setup_new:
+ * eoc_print_image_setup_new:
  * @image: the #EomImage to print
  * @page_setup: a #GtkPageSetup specifying the page where
  * the image will be print
@@ -968,7 +968,7 @@ eom_print_image_setup_init (EomPrintImageSetup *setup)
  * Returns: a new #EomPrintImageSetup
  **/
 GtkWidget *
-eom_print_image_setup_new (EomImage *image, GtkPageSetup *page_setup)
+eoc_print_image_setup_new (EomImage *image, GtkPageSetup *page_setup)
 {
 	GtkWidget *setup;
 	GtkWidget *preview;
@@ -985,7 +985,7 @@ eom_print_image_setup_new (EomImage *image, GtkPageSetup *page_setup)
 	set_initial_values (EOM_PRINT_IMAGE_SETUP (setup));
 
 	preview = EOM_PRINT_IMAGE_SETUP (setup)->priv->preview;
-	eom_print_preview_set_from_page_setup (EOM_PRINT_PREVIEW (preview),
+	eoc_print_preview_set_from_page_setup (EOM_PRINT_PREVIEW (preview),
 					       page_setup);
 
 	connect_signals (EOM_PRINT_IMAGE_SETUP (setup));
@@ -994,7 +994,7 @@ eom_print_image_setup_new (EomImage *image, GtkPageSetup *page_setup)
 }
 
 /**
- * eom_print_image_setup_get_options:
+ * eoc_print_image_setup_get_options:
  * @setup: a #EomPrintImageSetup
  * @left: a pointer where to store the image's left position
  * @top: a pointer where to store the image's top position
@@ -1004,7 +1004,7 @@ eom_print_image_setup_new (EomImage *image, GtkPageSetup *page_setup)
  * Gets the options set by the #EomPrintImageSetup.
  **/
 void
-eom_print_image_setup_get_options (EomPrintImageSetup *setup,
+eoc_print_image_setup_get_options (EomPrintImageSetup *setup,
 				   gdouble *left,
 				   gdouble *top,
 				   gdouble *scale,
@@ -1023,7 +1023,7 @@ eom_print_image_setup_get_options (EomPrintImageSetup *setup,
 }
 
 void
-eom_print_image_setup_update (GtkPrintOperation *operation,
+eoc_print_image_setup_update (GtkPrintOperation *operation,
 			      GtkWidget         *custom_widget,
 			      GtkPageSetup      *page_setup,
 			      GtkPrintSettings  *print_settings,
@@ -1041,7 +1041,7 @@ eom_print_image_setup_update (GtkPrintOperation *operation,
 	set_initial_values (EOM_PRINT_IMAGE_SETUP (setup));
 
 	preview = EOM_PRINT_IMAGE_SETUP (setup)->priv->preview;
-	eom_print_preview_set_from_page_setup (EOM_PRINT_PREVIEW (preview),
+	eoc_print_preview_set_from_page_setup (EOM_PRINT_PREVIEW (preview),
 					       setup->priv->page_setup);
 
 	pos_x = gtk_spin_button_get_value (GTK_SPIN_BUTTON (setup->priv->left));
@@ -1050,5 +1050,5 @@ eom_print_image_setup_update (GtkPrintOperation *operation,
 		pos_x *= FACTOR_MM_TO_INCH;
 		pos_y *= FACTOR_MM_TO_INCH;
 	}
-	eom_print_preview_set_image_position (EOM_PRINT_PREVIEW (setup->priv->preview), pos_x, pos_y);
+	eoc_print_preview_set_image_position (EOM_PRINT_PREVIEW (setup->priv->preview), pos_x, pos_y);
 }

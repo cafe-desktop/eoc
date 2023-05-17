@@ -19,7 +19,7 @@
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-#include "eom-image.h"
+#include "eoc-image.h"
 
 #ifndef EOM_PRINT_IMAGE_SETUP_H
 #define EOM_PRINT_IMAGE_SETUP_H
@@ -30,7 +30,7 @@ typedef struct _EomPrintImageSetup         EomPrintImageSetup;
 typedef struct _EomPrintImageSetupClass    EomPrintImageSetupClass;
 typedef struct _EomPrintImageSetupPrivate   EomPrintImageSetupPrivate;
 
-#define EOM_TYPE_PRINT_IMAGE_SETUP            (eom_print_image_setup_get_type ())
+#define EOM_TYPE_PRINT_IMAGE_SETUP            (eoc_print_image_setup_get_type ())
 #define EOM_PRINT_IMAGE_SETUP(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), EOM_TYPE_PRINT_IMAGE_SETUP, EomPrintImageSetup))
 #define EOM_PRINT_IMAGE_SETUP_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass), EOM_TYPE_PRINT_IMAGE_SETUP, EomPrintImageSetupClass))
 #define EOM_IS_PRINT_IMAGE_SETUP(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), EOM_TYPE_PRINT_IMAGE_SETUP))
@@ -48,19 +48,19 @@ struct _EomPrintImageSetupClass {
 };
 
 G_GNUC_INTERNAL
-GType		  eom_print_image_setup_get_type    (void) G_GNUC_CONST;
+GType		  eoc_print_image_setup_get_type    (void) G_GNUC_CONST;
 
 G_GNUC_INTERNAL
-GtkWidget        *eom_print_image_setup_new         (EomImage     *image,
+GtkWidget        *eoc_print_image_setup_new         (EomImage     *image,
 						     GtkPageSetup *page_setup);
 
 G_GNUC_INTERNAL
-void              eom_print_image_setup_get_options (EomPrintImageSetup *setup,
+void              eoc_print_image_setup_get_options (EomPrintImageSetup *setup,
 						     gdouble            *left,
 						     gdouble            *top,
 						     gdouble            *scale,
 						     GtkUnit            *unit);
-void              eom_print_image_setup_update      (GtkPrintOperation *operation,
+void              eoc_print_image_setup_update      (GtkPrintOperation *operation,
 						     GtkWidget         *custom_widget,
 						     GtkPageSetup      *page_setup,
 						     GtkPrintSettings  *print_settings,

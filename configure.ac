@@ -1,23 +1,23 @@
 AC_PREREQ(2.59)
 AC_CONFIG_MACRO_DIR([m4])
 
-m4_define(eom_major_version, 1)
-m4_define(eom_minor_version, 24)
-m4_define(eom_micro_version, 1)
-m4_define(eom_version, eom_major_version.eom_minor_version.eom_micro_version)
+m4_define(eoc_major_version, 1)
+m4_define(eoc_minor_version, 24)
+m4_define(eoc_micro_version, 1)
+m4_define(eoc_version, eoc_major_version.eoc_minor_version.eoc_micro_version)
 
-AC_INIT([eom], eom_version, [http://www.mate-desktop.org], [eom])
+AC_INIT([eoc], eoc_version, [http://www.mate-desktop.org], [eoc])
 AM_INIT_AUTOMAKE([1.9 foreign no-dist-gzip dist-xz check-news])
 
 # Support silencing the build output if supported (automake-1.11+)
 m4_ifdef([AM_SILENT_RULES],[AM_SILENT_RULES([yes])])
 
-AC_DEFINE(EOM_MAJOR_VERSION, eom_major_version, [EOM major version])
-AC_SUBST(EOM_MAJOR_VERSION,  eom_major_version)
-AC_DEFINE(EOM_MINOR_VERSION, eom_minor_version, [EOM minor version])
-AC_SUBST(EOM_MINOR_VERSION,  eom_minor_version)
-AC_DEFINE(EOM_MICRO_VERSION, eom_micro_version, [EOM micro version])
-AC_SUBST(EOM_MICRO_VERSION,  eom_micro_version)
+AC_DEFINE(EOM_MAJOR_VERSION, eoc_major_version, [EOM major version])
+AC_SUBST(EOM_MAJOR_VERSION,  eoc_major_version)
+AC_DEFINE(EOM_MINOR_VERSION, eoc_minor_version, [EOM minor version])
+AC_SUBST(EOM_MINOR_VERSION,  eoc_minor_version)
+AC_DEFINE(EOM_MICRO_VERSION, eoc_micro_version, [EOM micro version])
+AC_SUBST(EOM_MICRO_VERSION,  eoc_micro_version)
 
 EOM_API_VERSION=2.20
 AC_SUBST(EOM_API_VERSION)
@@ -310,7 +310,7 @@ if test "x$enable_thumbnailer" != "xno"; then
 		if test -z "$GDK_PIXBUF_THUMBNAILER"; then
 			AC_MSG_ERROR([gdk-pixbuf-thumbnailer not found])
 		fi
-		eom_thumbnailer="$GDK_PIXBUF_THUMBNAILER"
+		eoc_thumbnailer="$GDK_PIXBUF_THUMBNAILER"
 	else
 		PKG_CHECK_MODULES(GLIB, glib-2.0 >= $GLIB_REQUIRED)
 		PKG_CHECK_MODULES(GIO, gio-2.0 >= $GLIB_REQUIRED)
@@ -335,13 +335,13 @@ if test "x$enable_thumbnailer" != "xno"; then
 
 		THUMBNAILER_LIBS="$LIBS $GLIB_LIBS $GIO_LIBS $MAGICK_LIBS"
 		AC_SUBST(THUMBNAILER_LIBS)
-		eom_thumbnailer="eom-thumbnailer"
+		eoc_thumbnailer="eoc-thumbnailer"
 	fi
 
-	EOM_THUMBNAILER="$eom_thumbnailer"
+	EOM_THUMBNAILER="$eoc_thumbnailer"
 	AC_SUBST(EOM_THUMBNAILER)
 else
-	eom_thumbnailer="no"
+	eoc_thumbnailer="no"
 fi
 
 # ****************
@@ -393,18 +393,18 @@ cut-n-paste/toolbar-editor/Makefile
 help/Makefile
 po/Makefile.in
 data/Makefile
-data/eom.pc
-data/eom.desktop.in
-data/org.mate.eom.gschema.xml
+data/eoc.pc
+data/eoc.desktop.in
+data/org.mate.eoc.gschema.xml
 data/pixmaps/Makefile
 data/icons/Makefile
 doc/Makefile
 doc/reference/Makefile
 doc/reference/version.xml
-doc/reference/eom-docs.sgml
+doc/reference/eoc-docs.sgml
 plugins/Makefile
 thumbnailer/Makefile
-thumbnailer/eom-thumbnailer.thumbnailer
+thumbnailer/eoc-thumbnailer.thumbnailer
 ])
 
 AC_OUTPUT
@@ -422,5 +422,5 @@ Configure summary:
 	RSVG support ...............:  ${have_rsvg}
 	Colour management support ..:  ${have_lcms}
 	GObject Introspection.......:  ${have_introspection}
-	Thumbnailer.................:  ${eom_thumbnailer}
+	Thumbnailer.................:  ${eoc_thumbnailer}
 "

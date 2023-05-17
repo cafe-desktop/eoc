@@ -30,13 +30,13 @@
 #include <girepository.h>
 #endif
 
-#include "eom-session.h"
-#include "eom-debug.h"
-#include "eom-thumbnail.h"
-#include "eom-job-queue.h"
-#include "eom-application.h"
-#include "eom-application-internal.h"
-#include "eom-util.h"
+#include "eoc-session.h"
+#include "eoc-debug.h"
+#include "eoc-thumbnail.h"
+#include "eoc-job-queue.h"
+#include "eoc-application.h"
+#include "eoc-application-internal.h"
+#include "eoc-util.h"
 
 #include <string.h>
 #include <stdlib.h>
@@ -46,7 +46,7 @@
 #include <exempi/xmp.h>
 #endif
 
-#define EOM_CSS_FILE_PATH EOM_DATA_DIR G_DIR_SEPARATOR_S "eom.css"
+#define EOM_CSS_FILE_PATH EOM_DATA_DIR G_DIR_SEPARATOR_S "eoc.css"
 
 static EomStartupFlags flags;
 
@@ -117,7 +117,7 @@ main (int argc, char **argv)
 	if (!g_option_context_parse (ctx, &argc, &argv, &error)) {
 		gchar *help_msg;
 
-		/* I18N: The '%s' is replaced with eom's command name. */
+		/* I18N: The '%s' is replaced with eoc's command name. */
 		help_msg = g_strdup_printf (_("Run '%s --help' to see a full "
 					      "list of available command line "
 					      "options."), argv[0]);
@@ -136,12 +136,12 @@ main (int argc, char **argv)
 #ifdef HAVE_EXEMPI
  	xmp_init();
 #endif
-	eom_debug_init ();
-	eom_job_queue_init ();
-	eom_thumbnail_init ();
+	eoc_debug_init ();
+	eoc_job_queue_init ();
+	eoc_thumbnail_init ();
 
 	/* Load special style properties for EomThumbView's scrollbar */
-	css_file = g_file_new_for_uri ("resource:///org/mate/eom/ui/eom.css");
+	css_file = g_file_new_for_uri ("resource:///org/mate/eoc/ui/eoc.css");
 	provider = gtk_css_provider_new ();
 	if (G_UNLIKELY (!gtk_css_provider_load_from_file(provider,
 	                                                 css_file,
@@ -162,7 +162,7 @@ main (int argc, char **argv)
 	gtk_icon_theme_append_search_path (gtk_icon_theme_get_default (),
                                            EOM_DATA_DIR G_DIR_SEPARATOR_S "icons");
 
-	gtk_window_set_default_icon_name ("eom");
+	gtk_window_set_default_icon_name ("eoc");
 	g_set_application_name (_("Eye of MATE Image Viewer"));
 
 	EOM_APP->priv->flags = flags;

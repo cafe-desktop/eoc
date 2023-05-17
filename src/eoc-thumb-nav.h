@@ -22,7 +22,7 @@
 #ifndef __EOM_THUMB_NAV_H__
 #define __EOM_THUMB_NAV_H__
 
-#include "eom-thumb-view.h"
+#include "eoc-thumb-view.h"
 
 #include <gtk/gtk.h>
 #include <glib.h>
@@ -34,7 +34,7 @@ typedef struct _EomThumbNav EomThumbNav;
 typedef struct _EomThumbNavClass EomThumbNavClass;
 typedef struct _EomThumbNavPrivate EomThumbNavPrivate;
 
-#define EOM_TYPE_THUMB_NAV            (eom_thumb_nav_get_type ())
+#define EOM_TYPE_THUMB_NAV            (eoc_thumb_nav_get_type ())
 #define EOM_THUMB_NAV(obj)            (G_TYPE_CHECK_INSTANCE_CAST((obj), EOM_TYPE_THUMB_NAV, EomThumbNav))
 #define EOM_THUMB_NAV_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST((klass),  EOM_TYPE_THUMB_NAV, EomThumbNavClass))
 #define EOM_IS_THUMB_NAV(obj)         (G_TYPE_CHECK_INSTANCE_TYPE((obj), EOM_TYPE_THUMB_NAV))
@@ -58,20 +58,20 @@ struct _EomThumbNavClass {
 	GtkBoxClass parent_class;
 };
 
-GType	         eom_thumb_nav_get_type          (void) G_GNUC_CONST;
+GType	         eoc_thumb_nav_get_type          (void) G_GNUC_CONST;
 
-GtkWidget       *eom_thumb_nav_new               (GtkWidget         *thumbview,
+GtkWidget       *eoc_thumb_nav_new               (GtkWidget         *thumbview,
 						  EomThumbNavMode    mode,
 	             			          gboolean           show_buttons);
 
-gboolean         eom_thumb_nav_get_show_buttons  (EomThumbNav       *nav);
+gboolean         eoc_thumb_nav_get_show_buttons  (EomThumbNav       *nav);
 
-void             eom_thumb_nav_set_show_buttons  (EomThumbNav       *nav,
+void             eoc_thumb_nav_set_show_buttons  (EomThumbNav       *nav,
                                                   gboolean           show_buttons);
 
-EomThumbNavMode  eom_thumb_nav_get_mode          (EomThumbNav       *nav);
+EomThumbNavMode  eoc_thumb_nav_get_mode          (EomThumbNav       *nav);
 
-void             eom_thumb_nav_set_mode          (EomThumbNav       *nav,
+void             eoc_thumb_nav_set_mode          (EomThumbNav       *nav,
                                                   EomThumbNavMode    mode);
 
 G_END_DECLS

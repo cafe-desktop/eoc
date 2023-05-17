@@ -23,8 +23,8 @@
 #include "config.h"
 #endif
 
-#include "eom-thumb-nav.h"
-#include "eom-thumb-view.h"
+#include "eoc-thumb-nav.h"
+#include "eoc-thumb-view.h"
 
 #include <glib.h>
 #include <glib/gi18n.h>
@@ -60,10 +60,10 @@ struct _EomThumbNavPrivate {
 	GtkAdjustment    *adj;
 };
 
-G_DEFINE_TYPE_WITH_PRIVATE (EomThumbNav, eom_thumb_nav, GTK_TYPE_BOX);
+G_DEFINE_TYPE_WITH_PRIVATE (EomThumbNav, eoc_thumb_nav, GTK_TYPE_BOX);
 
 static gboolean
-eom_thumb_nav_scroll_event (GtkWidget *widget, GdkEventScroll *event, gpointer user_data)
+eoc_thumb_nav_scroll_event (GtkWidget *widget, GdkEventScroll *event, gpointer user_data)
 {
 	EomThumbNav *nav = EOM_THUMB_NAV (user_data);
 	gint inc = EOM_THUMB_NAV_SCROLL_INC * 3;
@@ -112,14 +112,14 @@ eom_thumb_nav_scroll_event (GtkWidget *widget, GdkEventScroll *event, gpointer u
 }
 
 static void
-eom_thumb_nav_adj_changed (GtkAdjustment *adj, gpointer user_data)
+eoc_thumb_nav_adj_changed (GtkAdjustment *adj, gpointer user_data)
 {
 	EomThumbNav *nav;
 	EomThumbNavPrivate *priv;
 	gboolean ltr;
 
 	nav = EOM_THUMB_NAV (user_data);
-	priv = eom_thumb_nav_get_instance_private (nav);
+	priv = eoc_thumb_nav_get_instance_private (nav);
 	ltr = gtk_widget_get_direction (priv->sw) == GTK_TEXT_DIR_LTR;
 
 	gtk_widget_set_sensitive (ltr ? priv->button_right : priv->button_left,
@@ -129,14 +129,14 @@ eom_thumb_nav_adj_changed (GtkAdjustment *adj, gpointer user_data)
 }
 
 static void
-eom_thumb_nav_adj_value_changed (GtkAdjustment *adj, gpointer user_data)
+eoc_thumb_nav_adj_value_changed (GtkAdjustment *adj, gpointer user_data)
 {
 	EomThumbNav *nav;
 	EomThumbNavPrivate *priv;
 	gboolean ltr;
 
 	nav = EOM_THUMB_NAV (user_data);
-	priv = eom_thumb_nav_get_instance_private (nav);
+	priv = eoc_thumb_nav_get_instance_private (nav);
 	ltr = gtk_widget_get_direction (priv->sw) == GTK_TEXT_DIR_LTR;
 
 	gtk_widget_set_sensitive (ltr ? priv->button_left : priv->button_right,
@@ -149,7 +149,7 @@ eom_thumb_nav_adj_value_changed (GtkAdjustment *adj, gpointer user_data)
 }
 
 static gboolean
-eom_thumb_nav_scroll_step (gpointer user_data)
+eoc_thumb_nav_scroll_step (gpointer user_data)
 {
 	EomThumbNav *nav = EOM_THUMB_NAV (user_data);
 	GtkAdjustment *adj = nav->priv->adj;
@@ -188,7 +188,7 @@ eom_thumb_nav_scroll_step (gpointer user_data)
 }
 
 static void
-eom_thumb_nav_button_clicked (GtkButton *button, EomThumbNav *nav)
+eoc_thumb_nav_button_clicked (GtkButton *button, EomThumbNav *nav)
 {
 	nav->priv->scroll_pos = 0;
 
@@ -196,23 +196,23 @@ eom_thumb_nav_button_clicked (GtkButton *button, EomThumbNav *nav)
 		GTK_WIDGET (button) == nav->priv->button_right :
 		GTK_WIDGET (button) == nav->priv->button_left;
 
-	eom_thumb_nav_scroll_step (nav);
+	eoc_thumb_nav_scroll_step (nav);
 }
 
 static void
-eom_thumb_nav_start_scroll (GtkButton *button, EomThumbNav *nav)
+eoc_thumb_nav_start_scroll (GtkButton *button, EomThumbNav *nav)
 {
 	nav->priv->scroll_dir = gtk_widget_get_direction (GTK_WIDGET (button)) == GTK_TEXT_DIR_LTR ?
 		GTK_WIDGET (button) == nav->priv->button_right :
 		GTK_WIDGET (button) == nav->priv->button_left;
 
 	nav->priv->scroll_id = g_timeout_add (EOM_THUMB_NAV_SCROLL_TIMEOUT,
-					      eom_thumb_nav_scroll_step,
+					      eoc_thumb_nav_scroll_step,
 					      nav);
 }
 
 static void
-eom_thumb_nav_stop_scroll (GtkButton *button, EomThumbNav *nav)
+eoc_thumb_nav_stop_scroll (GtkButton *button, EomThumbNav *nav)
 {
 	if (nav->priv->scroll_id > 0) {
 		g_source_remove (nav->priv->scroll_id);
@@ -222,7 +222,7 @@ eom_thumb_nav_stop_scroll (GtkButton *button, EomThumbNav *nav)
 }
 
 static void
-eom_thumb_nav_get_property (GObject    *object,
+eoc_thumb_nav_get_property (GObject    *object,
 			    guint       property_id,
 			    GValue     *value,
 			    GParamSpec *pspec)
@@ -233,7 +233,7 @@ eom_thumb_nav_get_property (GObject    *object,
 	{
 	case PROP_SHOW_BUTTONS:
 		g_value_set_boolean (value,
-			eom_thumb_nav_get_show_buttons (nav));
+			eoc_thumb_nav_get_show_buttons (nav));
 		break;
 
 	case PROP_THUMB_VIEW:
@@ -242,13 +242,13 @@ eom_thumb_nav_get_property (GObject    *object,
 
 	case PROP_MODE:
 		g_value_set_int (value,
-			eom_thumb_nav_get_mode (nav));
+			eoc_thumb_nav_get_mode (nav));
 		break;
 	}
 }
 
 static void
-eom_thumb_nav_set_property (GObject      *object,
+eoc_thumb_nav_set_property (GObject      *object,
 			    guint         property_id,
 			    const GValue *value,
 			    GParamSpec   *pspec)
@@ -258,7 +258,7 @@ eom_thumb_nav_set_property (GObject      *object,
 	switch (property_id)
 	{
 	case PROP_SHOW_BUTTONS:
-		eom_thumb_nav_set_show_buttons (nav,
+		eoc_thumb_nav_set_show_buttons (nav,
 			g_value_get_boolean (value));
 		break;
 
@@ -268,21 +268,21 @@ eom_thumb_nav_set_property (GObject      *object,
 		break;
 
 	case PROP_MODE:
-		eom_thumb_nav_set_mode (nav,
+		eoc_thumb_nav_set_mode (nav,
 			g_value_get_int (value));
 		break;
 	}
 }
 
 static GObject *
-eom_thumb_nav_constructor (GType type,
+eoc_thumb_nav_constructor (GType type,
 			   guint n_construct_properties,
 			   GObjectConstructParam *construct_params)
 {
 	GObject *object;
 	EomThumbNavPrivate *priv;
 
-	object = G_OBJECT_CLASS (eom_thumb_nav_parent_class)->constructor
+	object = G_OBJECT_CLASS (eoc_thumb_nav_parent_class)->constructor
 			(type, n_construct_properties, construct_params);
 
 	priv = EOM_THUMB_NAV (object)->priv;
@@ -296,13 +296,13 @@ eom_thumb_nav_constructor (GType type,
 }
 
 static void
-eom_thumb_nav_class_init (EomThumbNavClass *class)
+eoc_thumb_nav_class_init (EomThumbNavClass *class)
 {
 	GObjectClass *g_object_class = (GObjectClass *) class;
 
-	g_object_class->constructor  = eom_thumb_nav_constructor;
-	g_object_class->get_property = eom_thumb_nav_get_property;
-	g_object_class->set_property = eom_thumb_nav_set_property;
+	g_object_class->constructor  = eoc_thumb_nav_constructor;
+	g_object_class->get_property = eoc_thumb_nav_get_property;
+	g_object_class->set_property = eoc_thumb_nav_set_property;
 
 	g_object_class_install_property (g_object_class,
 	                                 PROP_SHOW_BUTTONS,
@@ -334,7 +334,7 @@ eom_thumb_nav_class_init (EomThumbNavClass *class)
 }
 
 static void
-eom_thumb_nav_init (EomThumbNav *nav)
+eoc_thumb_nav_init (EomThumbNav *nav)
 {
 	EomThumbNavPrivate *priv;
 	GtkWidget *arrow;
@@ -342,7 +342,7 @@ eom_thumb_nav_init (EomThumbNav *nav)
 	gtk_orientable_set_orientation (GTK_ORIENTABLE (nav),
 					GTK_ORIENTATION_HORIZONTAL);
 
-	nav->priv = eom_thumb_nav_get_instance_private (nav);
+	nav->priv = eoc_thumb_nav_get_instance_private (nav);
 
 	priv = nav->priv;
 
@@ -362,22 +362,22 @@ eom_thumb_nav_init (EomThumbNav *nav)
 
 	g_signal_connect (priv->button_left,
 			  "clicked",
-			  G_CALLBACK (eom_thumb_nav_button_clicked),
+			  G_CALLBACK (eoc_thumb_nav_button_clicked),
 			  nav);
 
 	g_signal_connect (priv->button_left,
 			  "pressed",
-			  G_CALLBACK (eom_thumb_nav_start_scroll),
+			  G_CALLBACK (eoc_thumb_nav_start_scroll),
 			  nav);
 
 	g_signal_connect (priv->button_left,
 			  "released",
-			  G_CALLBACK (eom_thumb_nav_stop_scroll),
+			  G_CALLBACK (eoc_thumb_nav_stop_scroll),
 			  nav);
 
 	priv->sw = gtk_scrolled_window_new (NULL, NULL);
 
-	gtk_widget_set_name (gtk_scrolled_window_get_hscrollbar (GTK_SCROLLED_WINDOW (priv->sw)), "eom-image-collection-scrollbar");
+	gtk_widget_set_name (gtk_scrolled_window_get_hscrollbar (GTK_SCROLLED_WINDOW (priv->sw)), "eoc-image-collection-scrollbar");
 
 	gtk_scrolled_window_set_shadow_type (GTK_SCROLLED_WINDOW (priv->sw),
 					     GTK_SHADOW_IN);
@@ -388,19 +388,19 @@ eom_thumb_nav_init (EomThumbNav *nav)
 
 	g_signal_connect (priv->sw,
 			  "scroll-event",
-			  G_CALLBACK (eom_thumb_nav_scroll_event),
+			  G_CALLBACK (eoc_thumb_nav_scroll_event),
 			  nav);
 
 	priv->adj = gtk_scrolled_window_get_hadjustment (GTK_SCROLLED_WINDOW (priv->sw));
 
 	g_signal_connect (priv->adj,
 			  "changed",
-			  G_CALLBACK (eom_thumb_nav_adj_changed),
+			  G_CALLBACK (eoc_thumb_nav_adj_changed),
 			  nav);
 
 	g_signal_connect (priv->adj,
 			  "value-changed",
-			  G_CALLBACK (eom_thumb_nav_adj_value_changed),
+			  G_CALLBACK (eoc_thumb_nav_adj_value_changed),
 			  nav);
 
 	gtk_box_pack_start (GTK_BOX (nav), priv->sw, TRUE, TRUE, 0);
@@ -417,25 +417,25 @@ eom_thumb_nav_init (EomThumbNav *nav)
 
 	g_signal_connect (priv->button_right,
 			  "clicked",
-			  G_CALLBACK (eom_thumb_nav_button_clicked),
+			  G_CALLBACK (eoc_thumb_nav_button_clicked),
 			  nav);
 
 	g_signal_connect (priv->button_right,
 			  "pressed",
-			  G_CALLBACK (eom_thumb_nav_start_scroll),
+			  G_CALLBACK (eoc_thumb_nav_start_scroll),
 			  nav);
 
 	g_signal_connect (priv->button_right,
 			  "released",
-			  G_CALLBACK (eom_thumb_nav_stop_scroll),
+			  G_CALLBACK (eoc_thumb_nav_stop_scroll),
 			  nav);
 
 	/* Update nav button states */
-	eom_thumb_nav_adj_value_changed (priv->adj, nav);
+	eoc_thumb_nav_adj_value_changed (priv->adj, nav);
 }
 
 /**
- * eom_thumb_nav_new:
+ * eoc_thumb_nav_new:
  * @thumbview: an #EomThumbView to embed in the navigation widget.
  * @mode: The navigation mode.
  * @show_buttons: Whether to show the navigation buttons.
@@ -445,7 +445,7 @@ eom_thumb_nav_init (EomThumbNav *nav)
  * Returns: a new #EomThumbNav object.
  **/
 GtkWidget *
-eom_thumb_nav_new (GtkWidget       *thumbview,
+eoc_thumb_nav_new (GtkWidget       *thumbview,
 		   EomThumbNavMode  mode,
 		   gboolean         show_buttons)
 {
@@ -463,7 +463,7 @@ eom_thumb_nav_new (GtkWidget       *thumbview,
 }
 
 /**
- * eom_thumb_nav_get_show_buttons:
+ * eoc_thumb_nav_get_show_buttons:
  * @nav: an #EomThumbNav.
  *
  * Gets whether the navigation buttons are visible.
@@ -472,7 +472,7 @@ eom_thumb_nav_new (GtkWidget       *thumbview,
  * %FALSE otherwise.
  **/
 gboolean
-eom_thumb_nav_get_show_buttons (EomThumbNav *nav)
+eoc_thumb_nav_get_show_buttons (EomThumbNav *nav)
 {
 	g_return_val_if_fail (EOM_IS_THUMB_NAV (nav), FALSE);
 
@@ -480,7 +480,7 @@ eom_thumb_nav_get_show_buttons (EomThumbNav *nav)
 }
 
 /**
- * eom_thumb_nav_set_show_buttons:
+ * eoc_thumb_nav_set_show_buttons:
  * @nav: an #EomThumbNav.
  * @show_buttons: %TRUE to show the buttons, %FALSE to hide them.
  *
@@ -488,7 +488,7 @@ eom_thumb_nav_get_show_buttons (EomThumbNav *nav)
  * widget should be visible.
  **/
 void
-eom_thumb_nav_set_show_buttons (EomThumbNav *nav, gboolean show_buttons)
+eoc_thumb_nav_set_show_buttons (EomThumbNav *nav, gboolean show_buttons)
 {
 	g_return_if_fail (EOM_IS_THUMB_NAV (nav));
 	g_return_if_fail (nav->priv->button_left  != NULL);
@@ -507,7 +507,7 @@ eom_thumb_nav_set_show_buttons (EomThumbNav *nav, gboolean show_buttons)
 }
 
 /**
- * eom_thumb_nav_get_mode:
+ * eoc_thumb_nav_get_mode:
  * @nav: an #EomThumbNav.
  *
  * Gets the navigation mode in @nav.
@@ -515,7 +515,7 @@ eom_thumb_nav_set_show_buttons (EomThumbNav *nav, gboolean show_buttons)
  * Returns: A value in #EomThumbNavMode.
  **/
 EomThumbNavMode
-eom_thumb_nav_get_mode (EomThumbNav *nav)
+eoc_thumb_nav_get_mode (EomThumbNav *nav)
 {
 	g_return_val_if_fail (EOM_IS_THUMB_NAV (nav), FALSE);
 
@@ -523,14 +523,14 @@ eom_thumb_nav_get_mode (EomThumbNav *nav)
 }
 
 /**
- * eom_thumb_nav_set_mode:
+ * eoc_thumb_nav_set_mode:
  * @nav: An #EomThumbNav.
  * @mode: One of #EomThumbNavMode.
  *
  * Sets the navigation mode in @nav. See #EomThumbNavMode for details.
  **/
 void
-eom_thumb_nav_set_mode (EomThumbNav *nav, EomThumbNavMode mode)
+eoc_thumb_nav_set_mode (EomThumbNav *nav, EomThumbNavMode mode)
 {
 	EomThumbNavPrivate *priv;
 
@@ -547,14 +547,14 @@ eom_thumb_nav_set_mode (EomThumbNav *nav, EomThumbNavMode mode)
 		                                GTK_ORIENTATION_HORIZONTAL);
 
 		gtk_widget_set_size_request (priv->thumbview, -1, -1);
-		eom_thumb_view_set_item_height (EOM_THUMB_VIEW (priv->thumbview),
+		eoc_thumb_view_set_item_height (EOM_THUMB_VIEW (priv->thumbview),
 						115);
 
 		gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (priv->sw),
 						GTK_POLICY_AUTOMATIC,
 						GTK_POLICY_NEVER);
 
-		eom_thumb_nav_set_show_buttons (nav, priv->show_buttons);
+		eoc_thumb_nav_set_show_buttons (nav, priv->show_buttons);
 
 		break;
 
@@ -563,7 +563,7 @@ eom_thumb_nav_set_mode (EomThumbNav *nav, EomThumbNavMode mode)
 		                                GTK_ORIENTATION_VERTICAL);
 
 		gtk_widget_set_size_request (priv->thumbview, -1, -1);
-		eom_thumb_view_set_item_height (EOM_THUMB_VIEW (priv->thumbview),
+		eoc_thumb_view_set_item_height (EOM_THUMB_VIEW (priv->thumbview),
 						-1);
 
 		gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (priv->sw),
@@ -580,7 +580,7 @@ eom_thumb_nav_set_mode (EomThumbNav *nav, EomThumbNavMode mode)
 		                                GTK_ORIENTATION_VERTICAL);
 
 		gtk_widget_set_size_request (priv->thumbview, -1, 220);
-		eom_thumb_view_set_item_height (EOM_THUMB_VIEW (priv->thumbview),
+		eoc_thumb_view_set_item_height (EOM_THUMB_VIEW (priv->thumbview),
 						-1);
 
 		gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (priv->sw),
@@ -597,7 +597,7 @@ eom_thumb_nav_set_mode (EomThumbNav *nav, EomThumbNavMode mode)
 		                                GTK_ORIENTATION_VERTICAL);
 
 		gtk_widget_set_size_request (priv->thumbview, 230, -1);
-		eom_thumb_view_set_item_height (EOM_THUMB_VIEW (priv->thumbview),
+		eoc_thumb_view_set_item_height (EOM_THUMB_VIEW (priv->thumbview),
 						-1);
 
 		gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (priv->sw),

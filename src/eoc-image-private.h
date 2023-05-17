@@ -22,7 +22,7 @@
 #ifndef __EOM_IMAGE_PRIVATE_H__
 #define __EOM_IMAGE_PRIVATE_H__
 
-#include "eom-image.h"
+#include "eoc-image.h"
 #ifdef HAVE_RSVG
 #include <librsvg/rsvg.h>
 #endif

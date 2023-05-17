@@ -26,7 +26,7 @@
 
 G_BEGIN_DECLS
 
-#define EOM_TYPE_METADATA_READER_JPG		(eom_metadata_reader_jpg_get_type ())
+#define EOM_TYPE_METADATA_READER_JPG		(eoc_metadata_reader_jpg_get_type ())
 #define EOM_METADATA_READER_JPG(o)         	(G_TYPE_CHECK_INSTANCE_CAST ((o),EOM_TYPE_METADATA_READER_JPG, EomMetadataReaderJpg))
 #define EOM_METADATA_READER_JPG_CLASS(k)   	(G_TYPE_CHECK_CLASS_CAST((k), EOM_TYPE_METADATA_READER_JPG, EomMetadataReaderJpgClass))
 #define EOM_IS_METADATA_READER_JPG(o)      	(G_TYPE_CHECK_INSTANCE_TYPE ((o), EOM_TYPE_METADATA_READER_JPG))
@@ -48,7 +48,7 @@ struct _EomMetadataReaderJpgClass {
 };
 
 G_GNUC_INTERNAL
-GType		      eom_metadata_reader_jpg_get_type	(void) G_GNUC_CONST;
+GType		      eoc_metadata_reader_jpg_get_type	(void) G_GNUC_CONST;
 
 G_END_DECLS
 

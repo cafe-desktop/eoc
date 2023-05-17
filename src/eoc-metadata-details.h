@@ -37,7 +37,7 @@ typedef struct _EomMetadataDetails EomMetadataDetails;
 typedef struct _EomMetadataDetailsClass EomMetadataDetailsClass;
 typedef struct _EomMetadataDetailsPrivate EomMetadataDetailsPrivate;
 
-#define EOM_TYPE_METADATA_DETAILS            (eom_metadata_details_get_type ())
+#define EOM_TYPE_METADATA_DETAILS            (eoc_metadata_details_get_type ())
 #define EOM_METADATA_DETAILS(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), EOM_TYPE_METADATA_DETAILS, EomMetadataDetails))
 #define EOM_METADATA_DETAILS_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST((klass), EOM_TYPE_METADATA_DETAILS, EomMetadataDetailsClass))
 #define EOM_IS_METADATA_DETAILS(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), EOM_TYPE_METADATA_DETAILS))
@@ -55,19 +55,19 @@ struct _EomMetadataDetailsClass {
 };
 
 G_GNUC_INTERNAL
-GType               eom_metadata_details_get_type    (void) G_GNUC_CONST;
+GType               eoc_metadata_details_get_type    (void) G_GNUC_CONST;
 
 G_GNUC_INTERNAL
-GtkWidget          *eom_metadata_details_new         (void);
+GtkWidget          *eoc_metadata_details_new         (void);
 
 #if HAVE_EXIF
 G_GNUC_INTERNAL
-void                eom_metadata_details_update      (EomMetadataDetails *details,
+void                eoc_metadata_details_update      (EomMetadataDetails *details,
                                                       ExifData       *data);
 #endif
 #if HAVE_EXEMPI
 G_GNUC_INTERNAL
-void                eom_metadata_details_xmp_update  (EomMetadataDetails *details,
+void                eoc_metadata_details_xmp_update  (EomMetadataDetails *details,
                                                       XmpPtr          xmp_data);
 #endif
 

@@ -9,7 +9,7 @@ AUTOMAKE_OPTIONS = 1.6
 # of using the various options.
 
 # The name of the module, e.g. 'glib'.
-DOC_MODULE=eom
+DOC_MODULE=eoc
 
 # The top-level SGML file. You can change this if you want to.
 DOC_MAIN_SGML_FILE=$(DOC_MODULE)-docs.sgml
@@ -48,16 +48,16 @@ CFILE_GLOB=$(top_srcdir)/src/*.c
 # Header files to ignore when scanning.
 # e.g. IGNORE_HFILES=gtkdebug.h gtkintl.h
 IGNORE_HFILES= \
-	eom-image-private.h \
-	eom-image-jpeg.h \
-	eom-marshal.h \
-	eom-application-service.h \
-	eom-enum-types.h
+	eoc-image-private.h \
+	eoc-image-jpeg.h \
+	eoc-marshal.h \
+	eoc-application-service.h \
+	eoc-enum-types.h
 
 if !HAVE_EXIF
 IGNORE_HFILES +=			\
-	eom-exif-util.h			\
-	eom-metadata-details.h
+	eoc-exif-util.h			\
+	eoc-metadata-details.h
 endif
 
 # Images to copy into HTML directory.
@@ -88,11 +88,11 @@ AM_CPPFLAGS= \
 	$(EOM_CFLAGS)
 
 if ENABLE_JPEG
-jpeg_LIB = $(top_builddir)/jpegutils/libeom-jpegutils.la
+jpeg_LIB = $(top_builddir)/jpegutils/libeoc-jpegutils.la
 endif
 
 GTKDOC_LIBS=\
-	$(top_builddir)/src/libeom.la 	\
+	$(top_builddir)/src/libeoc.la 	\
 	$(top_builddir)/cut-n-paste/toolbar-editor/libtoolbareditor.la \
 	$(BINDING_LIBS)			\
 	$(LIBJPEG)			\

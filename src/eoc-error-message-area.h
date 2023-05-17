@@ -29,9 +29,9 @@
 #include <gtk/gtk.h>
 #include <gio/gio.h>
 
-GtkWidget   *eom_image_load_error_message_area_new   (const gchar       *caption,
+GtkWidget   *eoc_image_load_error_message_area_new   (const gchar       *caption,
 						      const GError      *error);
 
-GtkWidget   *eom_no_images_error_message_area_new    (GFile *file);
+GtkWidget   *eoc_no_images_error_message_area_new    (GFile *file);
 
 #endif /* __EOM_ERROR_MESSAGE_AREA__ */

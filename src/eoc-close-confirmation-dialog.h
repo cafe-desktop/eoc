@@ -1,6 +1,6 @@
 /*
- * eom-close-confirmation-dialog.h
- * This file is part of eom
+ * eoc-close-confirmation-dialog.h
+ * This file is part of eoc
  *
  * Author: Marcus Carlson <marcus@mejlamej.nu>
  *
@@ -30,9 +30,9 @@
 #include <glib.h>
 #include <gtk/gtk.h>
 
-#include <eom-image.h>
+#include <eoc-image.h>
 
-#define EOM_TYPE_CLOSE_CONFIRMATION_DIALOG		(eom_close_confirmation_dialog_get_type ())
+#define EOM_TYPE_CLOSE_CONFIRMATION_DIALOG		(eoc_close_confirmation_dialog_get_type ())
 #define EOM_CLOSE_CONFIRMATION_DIALOG(obj)		(G_TYPE_CHECK_INSTANCE_CAST ((obj), EOM_TYPE_CLOSE_CONFIRMATION_DIALOG, EomCloseConfirmationDialog))
 #define EOM_CLOSE_CONFIRMATION_DIALOG_CLASS(klass)	(G_TYPE_CHECK_CLASS_CAST ((klass), EOM_TYPE_CLOSE_CONFIRMATION_DIALOG, EomCloseConfirmationDialogClass))
 #define EOM_IS_CLOSE_CONFIRMATION_DIALOG(obj)		(G_TYPE_CHECK_INSTANCE_TYPE ((obj), EOM_TYPE_CLOSE_CONFIRMATION_DIALOG))
@@ -57,20 +57,20 @@ struct _EomCloseConfirmationDialogClass
 };
 
 G_GNUC_INTERNAL
-GType 		 eom_close_confirmation_dialog_get_type		(void) G_GNUC_CONST;
+GType 		 eoc_close_confirmation_dialog_get_type		(void) G_GNUC_CONST;
 
 G_GNUC_INTERNAL
-GtkWidget	*eom_close_confirmation_dialog_new			(GtkWindow     *parent,
+GtkWidget	*eoc_close_confirmation_dialog_new			(GtkWindow     *parent,
 									 GList         *unsaved_documents);
 G_GNUC_INTERNAL
-GtkWidget 	*eom_close_confirmation_dialog_new_single 		(GtkWindow     *parent,
+GtkWidget 	*eoc_close_confirmation_dialog_new_single 		(GtkWindow     *parent,
 									 EomImage      *image);
 
 G_GNUC_INTERNAL
-const GList	*eom_close_confirmation_dialog_get_unsaved_images	(EomCloseConfirmationDialog *dlg);
+const GList	*eoc_close_confirmation_dialog_get_unsaved_images	(EomCloseConfirmationDialog *dlg);
 
 G_GNUC_INTERNAL
-GList		*eom_close_confirmation_dialog_get_selected_images	(EomCloseConfirmationDialog *dlg);
+GList		*eoc_close_confirmation_dialog_get_selected_images	(EomCloseConfirmationDialog *dlg);
 
 #endif /* __EOM_CLOSE_CONFIRMATION_DIALOG_H__ */
 

@@ -31,7 +31,7 @@
 
 #include <stdio.h>
 
-#include "eom-debug.h"
+#include "eoc-debug.h"
 
 #define ENABLE_PROFILING
 
@@ -43,7 +43,7 @@ static gdouble last = 0.0;
 static EomDebug debug = EOM_DEBUG_NO_DEBUG;
 
 void
-eom_debug_init (void)
+eoc_debug_init (void)
 {
 	if (g_getenv ("EOM_DEBUG") != NULL)
 	{
@@ -98,7 +98,7 @@ out:
 }
 
 void
-eom_debug_message (EomDebug   section,
+eoc_debug_message (EomDebug   section,
 		   const gchar      *file,
 		   gint              line,
 		   const gchar      *function,
@@ -135,7 +135,7 @@ eom_debug_message (EomDebug   section,
 	}
 }
 
-void eom_debug (EomDebug  section,
+void eoc_debug (EomDebug  section,
 		  const gchar       *file,
 		  gint               line,
 		  const gchar       *function)

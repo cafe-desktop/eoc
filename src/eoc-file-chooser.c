@@ -19,9 +19,9 @@
 #include "config.h"
 #endif
 
-#include "eom-file-chooser.h"
-#include "eom-config-keys.h"
-#include "eom-pixbuf-util.h"
+#include "eoc-file-chooser.h"
+#include "eoc-config-keys.h"
+#include "eoc-pixbuf-util.h"
 
 #include <stdlib.h>
 
@@ -51,10 +51,10 @@ struct _EomFileChooserPrivate
 	GtkWidget *creator_label;
 };
 
-G_DEFINE_TYPE_WITH_PRIVATE (EomFileChooser, eom_file_chooser, GTK_TYPE_FILE_CHOOSER_DIALOG)
+G_DEFINE_TYPE_WITH_PRIVATE (EomFileChooser, eoc_file_chooser, GTK_TYPE_FILE_CHOOSER_DIALOG)
 
 static void
-eom_file_chooser_finalize (GObject *object)
+eoc_file_chooser_finalize (GObject *object)
 {
 	EomFileChooserPrivate *priv;
 
@@ -63,21 +63,21 @@ eom_file_chooser_finalize (GObject *object)
 	if (priv->thumb_factory != NULL)
 		g_object_unref (priv->thumb_factory);
 
-	(* G_OBJECT_CLASS (eom_file_chooser_parent_class)->finalize) (object);
+	(* G_OBJECT_CLASS (eoc_file_chooser_parent_class)->finalize) (object);
 }
 
 static void
-eom_file_chooser_class_init (EomFileChooserClass *klass)
+eoc_file_chooser_class_init (EomFileChooserClass *klass)
 {
 	GObjectClass *object_class = (GObjectClass *) klass;
 
-	object_class->finalize = eom_file_chooser_finalize;
+	object_class->finalize = eoc_file_chooser_finalize;
 }
 
 static void
-eom_file_chooser_init (EomFileChooser *chooser)
+eoc_file_chooser_init (EomFileChooser *chooser)
 {
-	chooser->priv = eom_file_chooser_get_instance_private (chooser);
+	chooser->priv = eoc_file_chooser_get_instance_private (chooser);
 }
 
 static void
@@ -107,7 +107,7 @@ save_response_cb (GtkDialog *dlg, gint id, gpointer data)
 		return;
 
 	file = gtk_file_chooser_get_file (GTK_FILE_CHOOSER (dlg));
-	format = eom_pixbuf_get_format (file);
+	format = eoc_pixbuf_get_format (file);
 	g_object_unref (file);
 
 	if (!format || !gdk_pixbuf_format_is_writable (format)) {
@@ -136,7 +136,7 @@ save_response_cb (GtkDialog *dlg, gint id, gpointer data)
 }
 
 static void
-eom_file_chooser_add_filter (EomFileChooser *chooser)
+eoc_file_chooser_add_filter (EomFileChooser *chooser)
 {
 	GSList *it;
 	GSList *formats;
@@ -164,7 +164,7 @@ eom_file_chooser_add_filter (EomFileChooser *chooser)
 	gtk_file_filter_set_name (all_img_filter, _("All Images"));
 
 	if (action == GTK_FILE_CHOOSER_ACTION_SAVE) {
-		formats = eom_pixbuf_get_savable_formats ();
+		formats = eoc_pixbuf_get_savable_formats ();
 	}
 	else {
 		formats = gdk_pixbuf_get_formats ();
@@ -206,7 +206,7 @@ eom_file_chooser_add_filter (EomFileChooser *chooser)
 		g_strfreev (pattern);
 
 		/* attach GdkPixbufFormat to filter, see also
-		 * eom_file_chooser_get_format. */
+		 * eoc_file_chooser_get_format. */
 		g_object_set_data (G_OBJECT (filter),
 				   FILE_FORMAT_KEY,
 				   format);
@@ -396,7 +396,7 @@ update_preview_cb (GtkFileChooser *file_chooser, gpointer data)
 }
 
 static void
-eom_file_chooser_add_preview (GtkWidget *widget)
+eoc_file_chooser_add_preview (GtkWidget *widget)
 {
 	EomFileChooserPrivate *priv;
 	GtkWidget *vbox;
@@ -431,7 +431,7 @@ eom_file_chooser_add_preview (GtkWidget *widget)
 }
 
 GtkWidget *
-eom_file_chooser_new (GtkFileChooserAction action)
+eoc_file_chooser_new (GtkFileChooserAction action)
 {
 	GtkWidget *chooser;
 	gchar *title = NULL;
@@ -472,8 +472,8 @@ eom_file_chooser_new (GtkFileChooserAction action)
 	}
 
 	if (action != GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER) {
-		eom_file_chooser_add_filter (EOM_FILE_CHOOSER (chooser));
-		eom_file_chooser_add_preview (chooser);
+		eoc_file_chooser_add_filter (EOM_FILE_CHOOSER (chooser));
+		eoc_file_chooser_add_preview (chooser);
 	}
 
 	if (last_dir[action] != NULL) {
@@ -494,7 +494,7 @@ eom_file_chooser_new (GtkFileChooserAction action)
 }
 
 GdkPixbufFormat *
-eom_file_chooser_get_format (EomFileChooser *chooser)
+eoc_file_chooser_get_format (EomFileChooser *chooser)
 {
 	GtkFileFilter *filter;
 	GdkPixbufFormat* format;

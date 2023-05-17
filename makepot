@@ -1,6 +1,6 @@
 #! /bin/sh
 
-PACKAGE=eom;
+PACKAGE=eoc;
 
 # normal translations
 make -C po $PACKAGE.pot && mv po/$PACKAGE.pot .

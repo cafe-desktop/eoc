@@ -30,7 +30,7 @@
 
 #include <libpeas/peas-extension-set.h>
 #include <gtk/gtk.h>
-#include "eom-window.h"
+#include "eoc-window.h"
 
 G_BEGIN_DECLS
 
@@ -38,14 +38,14 @@ typedef struct _EomApplication EomApplication;
 typedef struct _EomApplicationClass EomApplicationClass;
 typedef struct _EomApplicationPrivate EomApplicationPrivate;
 
-#define EOM_TYPE_APPLICATION            (eom_application_get_type ())
+#define EOM_TYPE_APPLICATION            (eoc_application_get_type ())
 #define EOM_APPLICATION(obj)            (G_TYPE_CHECK_INSTANCE_CAST((obj), EOM_TYPE_APPLICATION, EomApplication))
 #define EOM_APPLICATION_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST((klass),  EOM_TYPE_APPLICATION, EomApplicationClass))
 #define EOM_IS_APPLICATION(obj)         (G_TYPE_CHECK_INSTANCE_TYPE((obj), EOM_TYPE_APPLICATION))
 #define EOM_IS_APPLICATION_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE((klass),  EOM_TYPE_APPLICATION))
 #define EOM_APPLICATION_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS((obj),  EOM_TYPE_APPLICATION, EomApplicationClass))
 
-#define EOM_APP				(eom_application_get_instance ())
+#define EOM_APP				(eoc_application_get_instance ())
 
 struct _EomApplication {
 	GtkApplication base_instance;
@@ -57,28 +57,28 @@ struct _EomApplicationClass {
 	GtkApplicationClass parent_class;
 };
 
-GType	          eom_application_get_type	      (void) G_GNUC_CONST;
+GType	          eoc_application_get_type	      (void) G_GNUC_CONST;
 
-EomApplication   *eom_application_get_instance        (void);
+EomApplication   *eoc_application_get_instance        (void);
 
-gboolean          eom_application_open_window         (EomApplication   *application,
+gboolean          eoc_application_open_window         (EomApplication   *application,
 						       guint             timestamp,
 						       EomStartupFlags   flags,
 						       GError          **error);
 
-gboolean          eom_application_open_uri_list      (EomApplication   *application,
+gboolean          eoc_application_open_uri_list      (EomApplication   *application,
 						      GSList           *uri_list,
 						      guint             timestamp,
 						      EomStartupFlags   flags,
 						      GError          **error);
 
-gboolean          eom_application_open_file_list     (EomApplication  *application,
+gboolean          eoc_application_open_file_list     (EomApplication  *application,
 						      GSList          *file_list,
 						      guint           timestamp,
 						      EomStartupFlags flags,
 						      GError         **error);
 
-gboolean          eom_application_open_uris           (EomApplication *application,
+gboolean          eoc_application_open_uris           (EomApplication *application,
 						       gchar         **uris,
 						       guint           timestamp,
 						       EomStartupFlags flags,

@@ -3,10 +3,10 @@
 #endif
 
 #include <string.h>
-#include "eom-pixbuf-util.h"
+#include "eoc-pixbuf-util.h"
 
 GSList*
-eom_pixbuf_get_savable_formats (void)
+eoc_pixbuf_get_savable_formats (void)
 {
 	GSList *list;
 	GSList *write_list = NULL;
@@ -30,7 +30,7 @@ eom_pixbuf_get_savable_formats (void)
 }
 
 GdkPixbufFormat*
-eom_pixbuf_get_format_by_suffix (const char *suffix)
+eoc_pixbuf_get_format_by_suffix (const char *suffix)
 {
 	GSList *list;
 	GSList *it;
@@ -65,7 +65,7 @@ eom_pixbuf_get_format_by_suffix (const char *suffix)
 }
 
 char*
-eom_pixbuf_get_common_suffix (GdkPixbufFormat *format)
+eoc_pixbuf_get_common_suffix (GdkPixbufFormat *format)
 {
 	char **extensions;
 	int i;
@@ -115,7 +115,7 @@ get_suffix_from_basename (const char *basename)
 }
 
 GdkPixbufFormat *
-eom_pixbuf_get_format (GFile *file)
+eoc_pixbuf_get_format (GFile *file)
 {
 	GdkPixbufFormat *format;
 	char *path, *basename, *suffix;
@@ -125,7 +125,7 @@ eom_pixbuf_get_format (GFile *file)
 	basename = g_path_get_basename (path);
 	suffix = get_suffix_from_basename (basename);
 
-	format = eom_pixbuf_get_format_by_suffix (suffix);
+	format = eoc_pixbuf_get_format_by_suffix (suffix);
 
 	g_free (path);
 	g_free (basename);

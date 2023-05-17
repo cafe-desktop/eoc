@@ -23,7 +23,7 @@
 
 G_BEGIN_DECLS
 
-#define EOM_TYPE_FILE_CHOOSER          (eom_file_chooser_get_type ())
+#define EOM_TYPE_FILE_CHOOSER          (eoc_file_chooser_get_type ())
 #define EOM_FILE_CHOOSER(o)            (G_TYPE_CHECK_INSTANCE_CAST ((o), EOM_TYPE_FILE_CHOOSER, EomFileChooser))
 #define EOM_FILE_CHOOSER_CLASS(k)      (G_TYPE_CHECK_CLASS_CAST((k), EOM_TYPE_FILE_CHOOSER, EomFileChooserClass))
 
@@ -48,11 +48,11 @@ struct _EomFileChooserClass
 };
 
 
-GType		 eom_file_chooser_get_type	(void) G_GNUC_CONST;
+GType		 eoc_file_chooser_get_type	(void) G_GNUC_CONST;
 
-GtkWidget	*eom_file_chooser_new		(GtkFileChooserAction action);
+GtkWidget	*eoc_file_chooser_new		(GtkFileChooserAction action);
 
-GdkPixbufFormat	*eom_file_chooser_get_format	(EomFileChooser *chooser);
+GdkPixbufFormat	*eoc_file_chooser_get_format	(EomFileChooser *chooser);
 
 
 G_END_DECLS

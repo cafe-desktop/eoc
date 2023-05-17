@@ -26,10 +26,10 @@
 #include "config.h"
 #endif
 
-#include "eom-preferences-dialog.h"
-#include "eom-scroll-view.h"
-#include "eom-util.h"
-#include "eom-config-keys.h"
+#include "eoc-preferences-dialog.h"
+#include "eoc-scroll-view.h"
+#include "eoc-util.h"
+#include "eoc-config-keys.h"
 
 #include <glib.h>
 #include <glib/gi18n.h>
@@ -66,7 +66,7 @@ struct _EomPreferencesDialogPrivate {
 
 static GObject *instance = NULL;
 
-G_DEFINE_TYPE_WITH_PRIVATE (EomPreferencesDialog, eom_preferences_dialog, GTK_TYPE_DIALOG);
+G_DEFINE_TYPE_WITH_PRIVATE (EomPreferencesDialog, eoc_preferences_dialog, GTK_TYPE_DIALOG);
 
 static gboolean
 pd_string_to_rgba_mapping (GValue   *value,
@@ -128,11 +128,11 @@ random_change_cb (GSettings *settings, gchar *key, GtkWidget *widget)
 }
 
 static void
-eom_preferences_response_cb (GtkDialog *dlg, gint res_id, gpointer data)
+eoc_preferences_response_cb (GtkDialog *dlg, gint res_id, gpointer data)
 {
 	switch (res_id) {
 		case GTK_RESPONSE_HELP:
-			eom_util_show_help ("eom-prefs", NULL);
+			eoc_util_show_help ("eoc-prefs", NULL);
 			break;
 		default:
 			gtk_widget_destroy (GTK_WIDGET (dlg));
@@ -141,7 +141,7 @@ eom_preferences_response_cb (GtkDialog *dlg, gint res_id, gpointer data)
 }
 
 static void
-eom_preferences_dialog_class_init (EomPreferencesDialogClass *klass)
+eoc_preferences_dialog_class_init (EomPreferencesDialogClass *klass)
 {
 	GtkWidgetClass *widget_class = (GtkWidgetClass*) klass;
 
@@ -150,7 +150,7 @@ eom_preferences_dialog_class_init (EomPreferencesDialogClass *klass)
 	g_type_ensure (PEAS_GTK_TYPE_PLUGIN_MANAGER);
 
 	gtk_widget_class_set_template_from_resource (widget_class,
-	                                             "/org/mate/eom/ui/eom-preferences-dialog.ui");
+	                                             "/org/mate/eoc/ui/eoc-preferences-dialog.ui");
 	gtk_widget_class_bind_template_child_private (widget_class,
 	                                              EomPreferencesDialog,
 	                                              interpolate_check);
@@ -198,11 +198,11 @@ eom_preferences_dialog_class_init (EomPreferencesDialogClass *klass)
 }
 
 static void
-eom_preferences_dialog_init (EomPreferencesDialog *pref_dlg)
+eoc_preferences_dialog_init (EomPreferencesDialog *pref_dlg)
 {
 	EomPreferencesDialogPrivate *priv;
 
-	pref_dlg->priv = eom_preferences_dialog_get_instance_private (pref_dlg);
+	pref_dlg->priv = eoc_preferences_dialog_get_instance_private (pref_dlg);
 	priv = pref_dlg->priv;
 
 	gtk_widget_init_template (GTK_WIDGET (pref_dlg));
@@ -212,7 +212,7 @@ eom_preferences_dialog_init (EomPreferencesDialog *pref_dlg)
 
 	g_signal_connect (G_OBJECT (pref_dlg),
 	                  "response",
-	                  G_CALLBACK (eom_preferences_response_cb),
+	                  G_CALLBACK (eoc_preferences_response_cb),
 	                  pref_dlg);
 
 	g_settings_bind (priv->view_settings,
@@ -320,7 +320,7 @@ eom_preferences_dialog_init (EomPreferencesDialog *pref_dlg)
 	gtk_widget_show_all (priv->plugin_manager);
 }
 
-GtkWidget *eom_preferences_dialog_get_instance (GtkWindow *parent)
+GtkWidget *eoc_preferences_dialog_get_instance (GtkWindow *parent)
 {
 	if (instance == NULL) {
 		instance = g_object_new (EOM_TYPE_PREFERENCES_DIALOG,

@@ -23,17 +23,17 @@
 
 #include <gtk/gtk.h>
 #include <glib/gi18n.h>
-#include "eom-image.h"
-#include "eom-print.h"
-#include "eom-print-image-setup.h"
-#include "eom-util.h"
-#include "eom-debug.h"
+#include "eoc-image.h"
+#include "eoc-print.h"
+#include "eoc-print-image-setup.h"
+#include "eoc-util.h"
+#include "eoc-debug.h"
 
 #ifdef HAVE_RSVG
 #include <librsvg/rsvg.h>
 #endif
 
-#define EOM_PRINT_SETTINGS_FILE "eom-print-settings.ini"
+#define EOM_PRINT_SETTINGS_FILE "eoc-print-settings.ini"
 #define EOM_PAGE_SETUP_GROUP "Page Setup"
 #define EOM_PRINT_SETTINGS_GROUP "Print Settings"
 
@@ -47,7 +47,7 @@ typedef struct {
 
 /* art_affine_flip modified to work with cairo_matrix_t */
 static void
-_eom_cairo_matrix_flip (cairo_matrix_t *dst, const cairo_matrix_t *src, gboolean horiz, gboolean vert)
+_eoc_cairo_matrix_flip (cairo_matrix_t *dst, const cairo_matrix_t *src, gboolean horiz, gboolean vert)
 {
 	dst->xx = horiz ? -src->xx : src->xx;
 	dst->yx = horiz ? -src->yx : src->yx;
@@ -69,7 +69,7 @@ _cairo_ctx_supports_jpg_metadata (cairo_t *cr)
 }
 
 static void
-eom_print_draw_page (GtkPrintOperation *operation,
+eoc_print_draw_page (GtkPrintOperation *operation,
 		     GtkPrintContext   *context,
 		     gint               page_nr,
 		     gpointer           user_data)
@@ -83,7 +83,7 @@ eom_print_draw_page (GtkPrintOperation *operation,
 	EomPrintData *data;
 	GtkPageSetup *page_setup;
 
-	eom_debug (DEBUG_PRINTING);
+	eoc_debug (DEBUG_PRINTING);
 
 	data = (EomPrintData *) user_data;
 
@@ -113,7 +113,7 @@ eom_print_draw_page (GtkPrintOperation *operation,
 	p_width =  gtk_page_setup_get_page_width (page_setup, GTK_UNIT_POINTS);
 	p_height = gtk_page_setup_get_page_height (page_setup, GTK_UNIT_POINTS);
 
-	eom_image_get_size (data->image, &width, &height);
+	eoc_image_get_size (data->image, &width, &height);
 
 	/* this is both a workaround for a bug in cairo's PDF backend, and
 	   a way to ensure we are not printing outside the page margins */
@@ -123,9 +123,9 @@ eom_print_draw_page (GtkPrintOperation *operation,
 	cairo_scale (cr, scale_factor, scale_factor);
 
 #ifdef HAVE_RSVG
-	if (eom_image_is_svg (data->image))
+	if (eoc_image_is_svg (data->image))
 	{
-		RsvgHandle *svg = eom_image_get_svg (data->image);
+		RsvgHandle *svg = eoc_image_get_svg (data->image);
 
 		rsvg_handle_render_cairo (svg, cr);
 		return;
@@ -133,20 +133,20 @@ eom_print_draw_page (GtkPrintOperation *operation,
 #endif
 	/* JPEGs can be attached to the cairo surface which simply embeds the JPEG file into the
 	 * destination PDF skipping (PNG-)recompression. This should reduce PDF sizes enormously. */
-	if (eom_image_is_jpeg (data->image) && _cairo_ctx_supports_jpg_metadata (cr))
+	if (eoc_image_is_jpeg (data->image) && _cairo_ctx_supports_jpg_metadata (cr))
 	{
 		GFile *file;
 		char *img_data;
 		gsize data_len;
 		cairo_surface_t *surface = NULL;
 
-		eom_debug_message (DEBUG_PRINTING, "Attaching image to cairo surface");
+		eoc_debug_message (DEBUG_PRINTING, "Attaching image to cairo surface");
 
-		file = eom_image_get_file (data->image);
+		file = eoc_image_get_file (data->image);
 		if (g_file_load_contents (file, NULL, &img_data, &data_len, NULL, NULL))
 		{
-			EomTransform *tf = eom_image_get_transform (data->image);
-			EomTransform *auto_tf = eom_image_get_autorotate_transform (data->image);
+			EomTransform *tf = eoc_image_get_transform (data->image);
+			EomTransform *auto_tf = eoc_image_get_autorotate_transform (data->image);
 			cairo_matrix_t mx, mx2;
 
 			if (!tf && auto_tf) {
@@ -163,10 +163,10 @@ eom_print_draw_page (GtkPrintOperation *operation,
 				if (auto_tf) {
 					/* If we have an autorotation apply
 					 * it before the others */
-					tf = eom_transform_compose (auto_tf, tf);
+					tf = eoc_transform_compose (auto_tf, tf);
 				}
 
-				switch (eom_transform_get_transform_type (tf)) {
+				switch (eoc_transform_get_transform_type (tf)) {
 					case EOM_TRANSFORM_ROT_90:
 						surface = cairo_image_surface_create (
 								CAIRO_FORMAT_RGB24, height, width);
@@ -189,7 +189,7 @@ eom_print_draw_page (GtkPrintOperation *operation,
 						surface = cairo_image_surface_create (
 								CAIRO_FORMAT_RGB24, width, height);
 						cairo_matrix_init_identity (&mx);
-						_eom_cairo_matrix_flip (&mx2, &mx, TRUE, FALSE);
+						_eoc_cairo_matrix_flip (&mx2, &mx, TRUE, FALSE);
 						cairo_transform (cr, &mx2);
 						cairo_translate (cr, -width, 0.0);
 						break;
@@ -197,7 +197,7 @@ eom_print_draw_page (GtkPrintOperation *operation,
 						surface = cairo_image_surface_create (
 								CAIRO_FORMAT_RGB24, width, height);
 						cairo_matrix_init_identity (&mx);
-						_eom_cairo_matrix_flip (&mx2, &mx, FALSE, TRUE);
+						_eoc_cairo_matrix_flip (&mx2, &mx, FALSE, TRUE);
 						cairo_transform (cr, &mx2);
 						cairo_translate (cr, 0.0, -height);
 						break;
@@ -206,7 +206,7 @@ eom_print_draw_page (GtkPrintOperation *operation,
 								CAIRO_FORMAT_RGB24, height, width);
 						cairo_matrix_init_rotate (&mx, 90.0 * (G_PI/180.0));
 						cairo_matrix_init_identity (&mx2);
-						_eom_cairo_matrix_flip (&mx2, &mx2, TRUE, FALSE);
+						_eoc_cairo_matrix_flip (&mx2, &mx2, TRUE, FALSE);
 						cairo_matrix_multiply (&mx2, &mx, &mx2);
 						cairo_transform (cr, &mx2);
 						break;
@@ -215,7 +215,7 @@ eom_print_draw_page (GtkPrintOperation *operation,
 								CAIRO_FORMAT_RGB24, height, width);
 						cairo_matrix_init_rotate (&mx, 90.0 * (G_PI/180.0));
 						cairo_matrix_init_identity (&mx2);
-						_eom_cairo_matrix_flip (&mx2, &mx2, FALSE, TRUE);
+						_eoc_cairo_matrix_flip (&mx2, &mx2, FALSE, TRUE);
 						cairo_matrix_multiply (&mx2, &mx, &mx2);
 						cairo_transform (cr, &mx2);
 						cairo_translate (cr, -height , -width);
@@ -248,7 +248,7 @@ eom_print_draw_page (GtkPrintOperation *operation,
 	{
 		GdkPixbuf *pixbuf;
 
-		pixbuf = eom_image_get_pixbuf (data->image);
+		pixbuf = eoc_image_get_pixbuf (data->image);
 		gdk_cairo_set_source_pixbuf (cr, pixbuf, 0, 0);
  		cairo_paint (cr);
 		g_object_unref (pixbuf);
@@ -256,13 +256,13 @@ eom_print_draw_page (GtkPrintOperation *operation,
 }
 
 static GObject *
-eom_print_create_custom_widget (GtkPrintOperation *operation,
+eoc_print_create_custom_widget (GtkPrintOperation *operation,
 				       gpointer user_data)
 {
 	GtkPageSetup *page_setup;
 	EomPrintData *data;
 
-	eom_debug (DEBUG_PRINTING);
+	eoc_debug (DEBUG_PRINTING);
 
 	data = (EomPrintData *)user_data;
 
@@ -271,11 +271,11 @@ eom_print_create_custom_widget (GtkPrintOperation *operation,
 	if (page_setup == NULL)
 		page_setup = gtk_page_setup_new ();
 
-	return G_OBJECT (eom_print_image_setup_new (data->image, page_setup));
+	return G_OBJECT (eoc_print_image_setup_new (data->image, page_setup));
 }
 
 static void
-eom_print_custom_widget_apply (GtkPrintOperation *operation,
+eoc_print_custom_widget_apply (GtkPrintOperation *operation,
 			       GtkWidget         *widget,
 			       gpointer           user_data)
 {
@@ -283,11 +283,11 @@ eom_print_custom_widget_apply (GtkPrintOperation *operation,
 	gdouble left_margin, top_margin, scale_factor;
 	GtkUnit unit;
 
-	eom_debug (DEBUG_PRINTING);
+	eoc_debug (DEBUG_PRINTING);
 
 	data = (EomPrintData *)user_data;
 
-	eom_print_image_setup_get_options (EOM_PRINT_IMAGE_SETUP (widget),
+	eoc_print_image_setup_get_options (EOM_PRINT_IMAGE_SETUP (widget),
 					   &left_margin, &top_margin,
 					   &scale_factor, &unit);
 
@@ -298,20 +298,20 @@ eom_print_custom_widget_apply (GtkPrintOperation *operation,
 }
 
 static void
-eom_print_end_print (GtkPrintOperation *operation,
+eoc_print_end_print (GtkPrintOperation *operation,
 		     GtkPrintContext   *context,
 		     gpointer           user_data)
 {
 	EomPrintData *data = (EomPrintData*) user_data;
 
-	eom_debug (DEBUG_PRINTING);
+	eoc_debug (DEBUG_PRINTING);
 
 	g_object_unref (data->image);
 	g_slice_free (EomPrintData, data);
 }
 
 GtkPrintOperation *
-eom_print_operation_new (EomImage *image,
+eoc_print_operation_new (EomImage *image,
 			 GtkPrintSettings *print_settings,
 			 GtkPageSetup *page_setup)
 {
@@ -319,7 +319,7 @@ eom_print_operation_new (EomImage *image,
 	EomPrintData *data;
 	gint width, height;
 
-	eom_debug (DEBUG_PRINTING);
+	eoc_debug (DEBUG_PRINTING);
 
 	print = gtk_print_operation_new ();
 
@@ -331,7 +331,7 @@ eom_print_operation_new (EomImage *image,
 	data->image = g_object_ref (image);
 	data->unit = GTK_UNIT_INCH;
 
-	eom_image_get_size (image, &width, &height);
+	eoc_image_get_size (image, &width, &height);
 
 	if (page_setup == NULL)
 		page_setup = gtk_page_setup_new ();
@@ -349,23 +349,23 @@ eom_print_operation_new (EomImage *image,
 						    page_setup);
 	gtk_print_operation_set_n_pages (print, 1);
 	gtk_print_operation_set_job_name (print,
-					  eom_image_get_caption (image));
+					  eoc_image_get_caption (image));
 	gtk_print_operation_set_embed_page_setup (print, TRUE);
 
 	g_signal_connect (print, "draw_page",
-			  G_CALLBACK (eom_print_draw_page),
+			  G_CALLBACK (eoc_print_draw_page),
 			  data);
 	g_signal_connect (print, "create-custom-widget",
-			  G_CALLBACK (eom_print_create_custom_widget),
+			  G_CALLBACK (eoc_print_create_custom_widget),
 			  data);
 	g_signal_connect (print, "custom-widget-apply",
-			  G_CALLBACK (eom_print_custom_widget_apply),
+			  G_CALLBACK (eoc_print_custom_widget_apply),
 			  data);
 	g_signal_connect (print, "end-print",
-			  G_CALLBACK (eom_print_end_print),
+			  G_CALLBACK (eoc_print_end_print),
 			  data);
 	g_signal_connect (print, "update-custom-widget",
-			  G_CALLBACK (eom_print_image_setup_update),
+			  G_CALLBACK (eoc_print_image_setup_update),
 			  data);
 
 	gtk_print_operation_set_custom_tab_label (print, _("Image Settings"));
@@ -374,13 +374,13 @@ eom_print_operation_new (EomImage *image,
 }
 
 static GKeyFile *
-eom_print_get_key_file (void)
+eoc_print_get_key_file (void)
 {
 	GKeyFile *key_file;
 	GError *error = NULL;
 	gchar *filename;
 	GFile *file;
-	const gchar *dot_dir = eom_util_dot_dir ();
+	const gchar *dot_dir = eoc_util_dot_dir ();
 
 	filename = g_build_filename (dot_dir, EOM_PRINT_SETTINGS_FILE, NULL);
 
@@ -408,13 +408,13 @@ eom_print_get_key_file (void)
 }
 
 GtkPageSetup *
-eom_print_get_page_setup (void)
+eoc_print_get_page_setup (void)
 {
 	GtkPageSetup *page_setup;
 	GKeyFile *key_file;
 	GError *error = NULL;
 
-	key_file = eom_print_get_key_file ();
+	key_file = eoc_print_get_key_file ();
 
 	if (key_file && g_key_file_has_group (key_file, EOM_PAGE_SETUP_GROUP)) {
 		page_setup = gtk_page_setup_new_from_key_file (key_file, EOM_PAGE_SETUP_GROUP, &error);
@@ -436,12 +436,12 @@ eom_print_get_page_setup (void)
 }
 
 static void
-eom_print_save_key_file (GKeyFile *key_file)
+eoc_print_save_key_file (GKeyFile *key_file)
 {
 	gchar *filename;
 	gchar *data;
 	GError *error = NULL;
-	const gchar *dot_dir = eom_util_dot_dir ();
+	const gchar *dot_dir = eoc_util_dot_dir ();
 
 	filename = g_build_filename (dot_dir, EOM_PRINT_SETTINGS_FILE, NULL);
 
@@ -459,30 +459,30 @@ eom_print_save_key_file (GKeyFile *key_file)
 }
 
 void
-eom_print_set_page_setup (GtkPageSetup *page_setup)
+eoc_print_set_page_setup (GtkPageSetup *page_setup)
 {
 	GKeyFile *key_file;
 
-	key_file = eom_print_get_key_file ();
+	key_file = eoc_print_get_key_file ();
 
 	if (key_file == NULL) {
 		key_file = g_key_file_new ();
 	}
 
 	gtk_page_setup_to_key_file (page_setup, key_file, EOM_PAGE_SETUP_GROUP);
-	eom_print_save_key_file (key_file);
+	eoc_print_save_key_file (key_file);
 
 	g_key_file_free (key_file);
 }
 
 GtkPrintSettings *
-eom_print_get_print_settings (void)
+eoc_print_get_print_settings (void)
 {
 	GtkPrintSettings *print_settings;
 	GError *error = NULL;
 	GKeyFile *key_file;
 
-	key_file = eom_print_get_key_file ();
+	key_file = eoc_print_get_key_file ();
 
 	if (key_file && g_key_file_has_group (key_file, EOM_PRINT_SETTINGS_GROUP)) {
 		print_settings = gtk_print_settings_new_from_key_file (key_file, EOM_PRINT_SETTINGS_GROUP, &error);
@@ -504,18 +504,18 @@ eom_print_get_print_settings (void)
 }
 
 void
-eom_print_set_print_settings (GtkPrintSettings *print_settings)
+eoc_print_set_print_settings (GtkPrintSettings *print_settings)
 {
 	GKeyFile *key_file;
 
-	key_file = eom_print_get_key_file ();
+	key_file = eoc_print_get_key_file ();
 
 	if (key_file == NULL) {
 		key_file = g_key_file_new ();
 	}
 
 	gtk_print_settings_to_key_file (print_settings, key_file, EOM_PRINT_SETTINGS_GROUP);
-	eom_print_save_key_file (key_file);
+	eoc_print_save_key_file (key_file);
 
 	g_key_file_free (key_file);
 }

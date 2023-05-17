@@ -33,7 +33,7 @@ typedef struct _EomStatusbar        EomStatusbar;
 typedef struct _EomStatusbarPrivate EomStatusbarPrivate;
 typedef struct _EomStatusbarClass   EomStatusbarClass;
 
-#define EOM_TYPE_STATUSBAR            (eom_statusbar_get_type ())
+#define EOM_TYPE_STATUSBAR            (eoc_statusbar_get_type ())
 #define EOM_STATUSBAR(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), EOM_TYPE_STATUSBAR, EomStatusbar))
 #define EOM_STATUSBAR_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST((klass),   EOM_TYPE_STATUSBAR, EomStatusbarClass))
 #define EOM_IS_STATUSBAR(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), EOM_TYPE_STATUSBAR))
@@ -52,15 +52,15 @@ struct _EomStatusbarClass
         GtkStatusbarClass parent_class;
 };
 
-GType		 eom_statusbar_get_type			(void) G_GNUC_CONST;
+GType		 eoc_statusbar_get_type			(void) G_GNUC_CONST;
 
-GtkWidget	*eom_statusbar_new			(void);
+GtkWidget	*eoc_statusbar_new			(void);
 
-void		 eom_statusbar_set_image_number		(EomStatusbar   *statusbar,
+void		 eoc_statusbar_set_image_number		(EomStatusbar   *statusbar,
 							 gint           num,
 							 gint           tot);
 
-void		 eom_statusbar_set_progress		(EomStatusbar   *statusbar,
+void		 eoc_statusbar_set_progress		(EomStatusbar   *statusbar,
 							 gdouble        progress);
 
 G_END_DECLS

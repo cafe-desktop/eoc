@@ -30,10 +30,10 @@
 
 #include <libpeas/peas-extension-set.h>
 
-#include "eom-application.h"
-#include "eom-plugin-engine.h"
+#include "eoc-application.h"
+#include "eoc-plugin-engine.h"
 #include "egg-toolbars-model.h"
-#include "eom-window.h"
+#include "eoc-window.h"
 
 G_BEGIN_DECLS
 
@@ -48,11 +48,11 @@ struct _EomApplicationPrivate {
 };
 
 
-EggToolbarsModel *eom_application_get_toolbars_model  (EomApplication *application);
+EggToolbarsModel *eoc_application_get_toolbars_model  (EomApplication *application);
 
-void              eom_application_save_toolbars_model (EomApplication *application);
+void              eoc_application_save_toolbars_model (EomApplication *application);
 
-void              eom_application_reset_toolbars_model (EomApplication *app);
+void              eoc_application_reset_toolbars_model (EomApplication *app);
 
 G_END_DECLS
 
