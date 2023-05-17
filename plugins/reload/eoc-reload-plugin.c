@@ -2,24 +2,24 @@
 #include <config.h>
 #endif
 
-#include "eom-reload-plugin.h"
+#include "eoc-reload-plugin.h"
 
 #include <gmodule.h>
 #include <glib/gi18n-lib.h>
 #include <libpeas/peas-activatable.h>
 
-#include <eom-debug.h>
-#include <eom-window.h>
-#include <eom-window-activatable.h>
+#include <eoc-debug.h>
+#include <eoc-window.h>
+#include <eoc-window-activatable.h>
 
-static void eom_window_activatable_iface_init (EomWindowActivatableInterface *iface);
+static void eoc_window_activatable_iface_init (EomWindowActivatableInterface *iface);
 
 G_DEFINE_DYNAMIC_TYPE_EXTENDED (EomReloadPlugin,
-                                eom_reload_plugin,
+                                eoc_reload_plugin,
                                 PEAS_TYPE_EXTENSION_BASE,
                                 0,
                                 G_IMPLEMENT_INTERFACE_DYNAMIC (EOM_TYPE_WINDOW_ACTIVATABLE,
-                                                               eom_window_activatable_iface_init))
+                                                               eoc_window_activatable_iface_init))
 
 enum {
 	PROP_0,
@@ -30,7 +30,7 @@ static void
 reload_cb (GtkAction *action,
            EomWindow *window)
 {
-	eom_window_reload_image (window);
+	eoc_window_reload_image (window);
 }
 
 static const gchar* const ui_definition = "<ui><menubar name=\"MainMenu\">"
@@ -46,7 +46,7 @@ static const GtkActionEntry action_entries[] = {
 };
 
 static void
-eom_reload_plugin_set_property (GObject      *object,
+eoc_reload_plugin_set_property (GObject      *object,
                                 guint         prop_id,
                                 const GValue *value,
                                 GParamSpec   *pspec)
@@ -66,7 +66,7 @@ eom_reload_plugin_set_property (GObject      *object,
 }
 
 static void
-eom_reload_plugin_get_property (GObject    *object,
+eoc_reload_plugin_get_property (GObject    *object,
                                 guint       prop_id,
                                 GValue     *value,
                                 GParamSpec *pspec)
@@ -86,35 +86,35 @@ eom_reload_plugin_get_property (GObject    *object,
 }
 
 static void
-eom_reload_plugin_init (EomReloadPlugin *plugin)
+eoc_reload_plugin_init (EomReloadPlugin *plugin)
 {
-	eom_debug_message (DEBUG_PLUGINS, "EomReloadPlugin initializing");
+	eoc_debug_message (DEBUG_PLUGINS, "EomReloadPlugin initializing");
 }
 
 static void
-eom_reload_plugin_dispose (GObject *object)
+eoc_reload_plugin_dispose (GObject *object)
 {
 	EomReloadPlugin *plugin = EOM_RELOAD_PLUGIN (object);
 
-	eom_debug_message (DEBUG_PLUGINS, "EomReloadPlugin disposing");
+	eoc_debug_message (DEBUG_PLUGINS, "EomReloadPlugin disposing");
 
 	if (plugin->window != NULL) {
 		g_object_unref (plugin->window);
 		plugin->window = NULL;
 	}
 
-	G_OBJECT_CLASS (eom_reload_plugin_parent_class)->dispose (object);
+	G_OBJECT_CLASS (eoc_reload_plugin_parent_class)->dispose (object);
 }
 
 static void
-eom_reload_plugin_activate (EomWindowActivatable *activatable)
+eoc_reload_plugin_activate (EomWindowActivatable *activatable)
 {
 	EomReloadPlugin *plugin = EOM_RELOAD_PLUGIN (activatable);
 	GtkUIManager *manager;
 
-	eom_debug (DEBUG_PLUGINS);
+	eoc_debug (DEBUG_PLUGINS);
 
-	manager = eom_window_get_ui_manager (plugin->window);
+	manager = eoc_window_get_ui_manager (plugin->window);
 
 	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
 	plugin->ui_action_group = gtk_action_group_new ("EomReloadPluginActions");
@@ -132,14 +132,14 @@ eom_reload_plugin_activate (EomWindowActivatable *activatable)
 }
 
 static void
-eom_reload_plugin_deactivate (EomWindowActivatable *activatable)
+eoc_reload_plugin_deactivate (EomWindowActivatable *activatable)
 {
 	EomReloadPlugin *plugin = EOM_RELOAD_PLUGIN (activatable);
 	GtkUIManager *manager;
 
-	eom_debug (DEBUG_PLUGINS);
+	eoc_debug (DEBUG_PLUGINS);
 
-	manager = eom_window_get_ui_manager (plugin->window);
+	manager = eoc_window_get_ui_manager (plugin->window);
 
 	gtk_ui_manager_remove_ui (manager, plugin->ui_id);
 
@@ -149,34 +149,34 @@ eom_reload_plugin_deactivate (EomWindowActivatable *activatable)
 }
 
 static void
-eom_reload_plugin_class_init (EomReloadPluginClass *klass)
+eoc_reload_plugin_class_init (EomReloadPluginClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
 
-	object_class->dispose = eom_reload_plugin_dispose;
-	object_class->set_property = eom_reload_plugin_set_property;
-	object_class->get_property = eom_reload_plugin_get_property;
+	object_class->dispose = eoc_reload_plugin_dispose;
+	object_class->set_property = eoc_reload_plugin_set_property;
+	object_class->get_property = eoc_reload_plugin_get_property;
 
 	g_object_class_override_property (object_class, PROP_WINDOW, "window");
 }
 
 static void
-eom_reload_plugin_class_finalize (EomReloadPluginClass *klass)
+eoc_reload_plugin_class_finalize (EomReloadPluginClass *klass)
 {
 	/* dummy function - used by G_DEFINE_DYNAMIC_TYPE_EXTENDED */
 }
 
 static void
-eom_window_activatable_iface_init (EomWindowActivatableInterface *iface)
+eoc_window_activatable_iface_init (EomWindowActivatableInterface *iface)
 {
-	iface->activate = eom_reload_plugin_activate;
-	iface->deactivate = eom_reload_plugin_deactivate;
+	iface->activate = eoc_reload_plugin_activate;
+	iface->deactivate = eoc_reload_plugin_deactivate;
 }
 
 G_MODULE_EXPORT void
 peas_register_types (PeasObjectModule *module)
 {
-	eom_reload_plugin_register_type (G_TYPE_MODULE (module));
+	eoc_reload_plugin_register_type (G_TYPE_MODULE (module));
 	peas_object_module_register_extension_type (module,
 	                                            EOM_TYPE_WINDOW_ACTIVATABLE,
 	                                            EOM_TYPE_RELOAD_PLUGIN);

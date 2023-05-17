@@ -26,9 +26,9 @@
 #include <config.h>
 #endif
 
-#include "eom-error-message-area.h"
-#include "eom-image.h"
-#include "eom-util.h"
+#include "eoc-error-message-area.h"
+#include "eoc-image.h"
+#include "eoc-util.h"
 
 #include <glib.h>
 #include <glib/gi18n.h>
@@ -123,7 +123,7 @@ create_error_message_area (const gchar *primary_text,
 }
 
 /**
- * eom_image_load_error_message_area_new:
+ * eoc_image_load_error_message_area_new:
  * @caption:
  * @error:
  *
@@ -132,7 +132,7 @@ create_error_message_area (const gchar *primary_text,
  * Returns: (transfer full): a new #GtkInfoArea
  **/
 GtkWidget *
-eom_image_load_error_message_area_new (const gchar  *caption,
+eoc_image_load_error_message_area_new (const gchar  *caption,
 				       const GError *error)
 {
 	GtkWidget *message_area;
@@ -151,7 +151,7 @@ eom_image_load_error_message_area_new (const gchar  *caption,
 	error_message = g_strdup_printf (_("Could not load image '%s'."),
 					 pango_escaped_caption);
 
-	message_details = eom_util_make_valid_utf8 (error->message);
+	message_details = eoc_util_make_valid_utf8 (error->message);
 
 	message_area = create_error_message_area (error_message,
 						  message_details,
@@ -165,7 +165,7 @@ eom_image_load_error_message_area_new (const gchar  *caption,
 }
 
 /**
- * eom_no_images_error_message_area_new:
+ * eoc_no_images_error_message_area_new:
  * @file:
  *
  *
@@ -173,7 +173,7 @@ eom_image_load_error_message_area_new (const gchar  *caption,
  * Returns: (transfer full): a new #GtkInfoBar
  **/
 GtkWidget *
-eom_no_images_error_message_area_new (GFile *file)
+eoc_no_images_error_message_area_new (GFile *file)
 {
 	GtkWidget *message_area;
 	gchar *error_message = NULL;

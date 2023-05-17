@@ -1,11 +1,11 @@
 <schemalist>
-  <schema gettext-domain="@GETTEXT_PACKAGE@" id="org.mate.eom" path="/org/mate/eom/">
-    <child name="view" schema="org.mate.eom.view"/>
-    <child name="full-screen" schema="org.mate.eom.full-screen"/>
-    <child name="ui" schema="org.mate.eom.ui"/>
-    <child name="plugins" schema="org.mate.eom.plugins"/>
+  <schema gettext-domain="@GETTEXT_PACKAGE@" id="org.mate.eoc" path="/org/mate/eoc/">
+    <child name="view" schema="org.mate.eoc.view"/>
+    <child name="full-screen" schema="org.mate.eoc.full-screen"/>
+    <child name="ui" schema="org.mate.eoc.ui"/>
+    <child name="plugins" schema="org.mate.eoc.plugins"/>
   </schema>
-  <schema gettext-domain="@GETTEXT_PACKAGE@" id="org.mate.eom.view" path="/org/mate/eom/view/">
+  <schema gettext-domain="@GETTEXT_PACKAGE@" id="org.mate.eoc.view" path="/org/mate/eoc/view/">
     <key name="autorotate" type="b">
       <default>true</default>
       <summary>Automatic orientation</summary>
@@ -31,7 +31,7 @@
       <summary>Extrapolate Image</summary>
       <description>Whether the image should be extrapolated on zoom-in. This leads to blurry quality and is somewhat slower than non-extrapolated images.</description>
     </key>
-    <key name="transparency" enum="org.mate.eom.EomTransparencyStyle">
+    <key name="transparency" enum="org.mate.eoc.EomTransparencyStyle">
       <default>'checked'</default>
       <summary>Transparency indicator</summary>
       <description>Determines how transparency should be indicated. Valid values are checked, color and none. If color is chosen, then the trans-color key determines the color value used.</description>
@@ -52,7 +52,7 @@
       <description>If the transparency key has the value COLOR, then this  key determines the color which is used for indicating transparency.</description>
     </key>
   </schema>
-  <schema gettext-domain="@GETTEXT_PACKAGE@" id="org.mate.eom.full-screen" path="/org/mate/eom/full-screen/">
+  <schema gettext-domain="@GETTEXT_PACKAGE@" id="org.mate.eoc.full-screen" path="/org/mate/eoc/full-screen/">
     <key name="random" type="b">
       <default>false</default>
       <summary>Randomize the image sequence</summary>
@@ -74,7 +74,7 @@
       <description>A value greater than 0 determines the seconds an image stays on screen until the next one is shown automatically. Zero  disables the automatic browsing.</description>
     </key>
   </schema>
-  <schema gettext-domain="@GETTEXT_PACKAGE@" id="org.mate.eom.ui" path="/org/mate/eom/ui/">
+  <schema gettext-domain="@GETTEXT_PACKAGE@" id="org.mate.eoc.ui" path="/org/mate/eoc/ui/">
     <key name="toolbar" type="b">
       <default>true</default>
       <summary>Show/Hide the window toolbar.</summary>
@@ -87,7 +87,7 @@
       <default>false</default>
       <summary>Show/Hide the image collection pane.</summary>
     </key>
-    <key name="image-collection-position" enum="org.mate.eom.EomWindowCollectionPos">
+    <key name="image-collection-position" enum="org.mate.eoc.EomWindowCollectionPos">
       <default>'bottom'</default>
       <summary>Image collection pane position.</summary>
     </key>
@@ -128,11 +128,11 @@
       <description>If activated and no image is loaded in the active window, the file chooser will display the user's pictures folder using the XDG special user directories. If deactivated or the pictures folder has not been set up, it will show the current working directory.</description>
     </key>
   </schema>
-  <schema gettext-domain="@GETTEXT_PACKAGE@" id="org.mate.eom.plugins" path="/org/mate/eom/plugins/">
+  <schema gettext-domain="@GETTEXT_PACKAGE@" id="org.mate.eoc.plugins" path="/org/mate/eoc/plugins/">
     <key name="active-plugins" type="as">
       <default>[]</default>
       <summary>Active plugins</summary>
-      <description>List of active plugins. It doesn't contain the "Location" of the active plugins.  See the .eom-plugin file for obtaining the "Location" of a given plugin.</description>
+      <description>List of active plugins. It doesn't contain the "Location" of the active plugins.  See the .eoc-plugin file for obtaining the "Location" of a given plugin.</description>
     </key>
   </schema>
 </schemalist>

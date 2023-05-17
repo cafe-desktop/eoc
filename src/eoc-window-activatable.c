@@ -1,6 +1,6 @@
 /*
- * eom-window-activatable.c
- * This file is part of eom
+ * eoc-window-activatable.c
+ * This file is part of eoc
  *
  * Author: Felix Riemann <friemann@gnome.org>
  *
@@ -28,15 +28,15 @@
 #include "config.h"
 #endif
 
-#include "eom-window-activatable.h"
+#include "eoc-window-activatable.h"
 
 #include <glib-object.h>
-#include "eom-window.h"
+#include "eoc-window.h"
 
-G_DEFINE_INTERFACE(EomWindowActivatable, eom_window_activatable, G_TYPE_OBJECT)
+G_DEFINE_INTERFACE(EomWindowActivatable, eoc_window_activatable, G_TYPE_OBJECT)
 
 void
-eom_window_activatable_default_init (EomWindowActivatableInterface *iface)
+eoc_window_activatable_default_init (EomWindowActivatableInterface *iface)
 {
 	static gboolean initialized = FALSE;
 
@@ -60,7 +60,7 @@ eom_window_activatable_default_init (EomWindowActivatableInterface *iface)
 }
 
 void
-eom_window_activatable_activate (EomWindowActivatable *activatable)
+eoc_window_activatable_activate (EomWindowActivatable *activatable)
 {
 	EomWindowActivatableInterface *iface;
 
@@ -73,7 +73,7 @@ eom_window_activatable_activate (EomWindowActivatable *activatable)
 }
 
 void
-eom_window_activatable_deactivate (EomWindowActivatable *activatable)
+eoc_window_activatable_deactivate (EomWindowActivatable *activatable)
 {
 	EomWindowActivatableInterface *iface;
 

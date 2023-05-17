@@ -3,11 +3,11 @@
 
 #include <glib-object.h>
 #include <glib/gi18n.h>
-#include "eom-image.h"
+#include "eoc-image.h"
 
 G_BEGIN_DECLS
 
-#define EOM_TYPE_URI_CONVERTER          (eom_uri_converter_get_type ())
+#define EOM_TYPE_URI_CONVERTER          (eoc_uri_converter_get_type ())
 #define EOM_URI_CONVERTER(o)            (G_TYPE_CHECK_INSTANCE_CAST ((o), EOM_TYPE_URI_CONVERTER, EomURIConverter))
 #define EOM_URI_CONVERTER_CLASS(k)      (G_TYPE_CHECK_CLASS_CAST((k), EOM_TYPE_URI_CONVERTER, EomURIConverterClass))
 #define EOM_IS_URI_CONVERTER(o)         (G_TYPE_CHECK_INSTANCE_TYPE ((o), EOM_TYPE_URI_CONVERTER))
@@ -50,7 +50,7 @@ typedef enum {
 	EOM_UC_ERROR_UNKNOWN
 } EomUCError;
 
-#define EOM_UC_ERROR eom_uc_error_quark ()
+#define EOM_UC_ERROR eoc_uc_error_quark ()
 
 
 struct _EomURIConverter {
@@ -64,33 +64,33 @@ struct _EomURIConverterClass {
 };
 
 G_GNUC_INTERNAL
-GType              eom_uri_converter_get_type      (void) G_GNUC_CONST;
+GType              eoc_uri_converter_get_type      (void) G_GNUC_CONST;
 
 G_GNUC_INTERNAL
-GQuark             eom_uc_error_quark              (void);
+GQuark             eoc_uc_error_quark              (void);
 
 G_GNUC_INTERNAL
-EomURIConverter*   eom_uri_converter_new           (GFile *base_file,
+EomURIConverter*   eoc_uri_converter_new           (GFile *base_file,
                                                     GdkPixbufFormat *img_format,
 						    const char *format_string);
 
 G_GNUC_INTERNAL
-gboolean           eom_uri_converter_check         (EomURIConverter *converter,
+gboolean           eoc_uri_converter_check         (EomURIConverter *converter,
                                                     GList *img_list,
                                                     GError **error);
 
 G_GNUC_INTERNAL
-gboolean           eom_uri_converter_requires_exif (EomURIConverter *converter);
+gboolean           eoc_uri_converter_requires_exif (EomURIConverter *converter);
 
 G_GNUC_INTERNAL
-gboolean           eom_uri_converter_do            (EomURIConverter *converter,
+gboolean           eoc_uri_converter_do            (EomURIConverter *converter,
                                                     EomImage *image,
                                                     GFile **file,
                                                     GdkPixbufFormat **format,
                                                     GError **error);
 
 G_GNUC_INTERNAL
-char*              eom_uri_converter_preview       (const char *format_str,
+char*              eoc_uri_converter_preview       (const char *format_str,
                                                     EomImage *img,
                                                     GdkPixbufFormat *format,
 						    gulong counter,
@@ -100,7 +100,7 @@ char*              eom_uri_converter_preview       (const char *format_str,
 
 /* for debugging purpose only */
 G_GNUC_INTERNAL
-void                eom_uri_converter_print_list (EomURIConverter *conv);
+void                eoc_uri_converter_print_list (EomURIConverter *conv);
 
 G_END_DECLS
 

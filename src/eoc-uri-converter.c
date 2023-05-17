@@ -6,8 +6,8 @@
 #include <string.h>
 #include <glib.h>
 
-#include "eom-uri-converter.h"
-#include "eom-pixbuf-util.h"
+#include "eoc-uri-converter.h"
+#include "eoc-pixbuf-util.h"
 
 enum {
 	PROP_0,
@@ -41,17 +41,17 @@ struct _EomURIConverterPrivate {
 	guint    counter_n_digits;
 };
 
-static void eom_uri_converter_set_property (GObject      *object,
+static void eoc_uri_converter_set_property (GObject      *object,
 					    guint         property_id,
 					    const GValue *value,
 					    GParamSpec   *pspec);
 
-static void eom_uri_converter_get_property (GObject    *object,
+static void eoc_uri_converter_get_property (GObject    *object,
 					    guint       property_id,
 					    GValue     *value,
 					    GParamSpec *pspec);
 
-G_DEFINE_TYPE_WITH_PRIVATE (EomURIConverter, eom_uri_converter, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (EomURIConverter, eoc_uri_converter, G_TYPE_OBJECT)
 
 static void
 free_token (gpointer data)
@@ -66,7 +66,7 @@ free_token (gpointer data)
 }
 
 static void
-eom_uri_converter_dispose (GObject *object)
+eoc_uri_converter_dispose (GObject *object)
 {
 	EomURIConverter *instance = EOM_URI_CONVERTER (object);
 	EomURIConverterPrivate *priv;
@@ -90,15 +90,15 @@ eom_uri_converter_dispose (GObject *object)
 	}
 
 
-	G_OBJECT_CLASS (eom_uri_converter_parent_class)->dispose (object);
+	G_OBJECT_CLASS (eoc_uri_converter_parent_class)->dispose (object);
 }
 
 static void
-eom_uri_converter_init (EomURIConverter *conv)
+eoc_uri_converter_init (EomURIConverter *conv)
 {
 	EomURIConverterPrivate *priv;
 
-	priv = conv->priv = eom_uri_converter_get_instance_private (conv);
+	priv = conv->priv = eoc_uri_converter_get_instance_private (conv);
 
 	priv->convert_spaces   = FALSE;
 	priv->space_character  = '_';
@@ -108,15 +108,15 @@ eom_uri_converter_init (EomURIConverter *conv)
 }
 
 static void
-eom_uri_converter_class_init (EomURIConverterClass *klass)
+eoc_uri_converter_class_init (EomURIConverterClass *klass)
 {
 	GObjectClass *object_class = (GObjectClass*) klass;
 
-	object_class->dispose = eom_uri_converter_dispose;
+	object_class->dispose = eoc_uri_converter_dispose;
 
         /* GObjectClass */
-        object_class->set_property = eom_uri_converter_set_property;
-        object_class->get_property = eom_uri_converter_get_property;
+        object_class->set_property = eoc_uri_converter_set_property;
+        object_class->get_property = eoc_uri_converter_get_property;
 
         /* Properties */
         g_object_class_install_property (
@@ -161,18 +161,18 @@ eom_uri_converter_class_init (EomURIConverterClass *klass)
 }
 
 GQuark
-eom_uc_error_quark (void)
+eoc_uc_error_quark (void)
 {
 	static GQuark q = 0;
 	if (q == 0)
-		q = g_quark_from_static_string ("eom-uri-converter-error-quark");
+		q = g_quark_from_static_string ("eoc-uri-converter-error-quark");
 
 	return q;
 }
 
 
 static void
-eom_uri_converter_set_property (GObject      *object,
+eoc_uri_converter_set_property (GObject      *object,
                                 guint         property_id,
                                 const GValue *value,
                                 GParamSpec   *pspec)
@@ -224,7 +224,7 @@ eom_uri_converter_set_property (GObject      *object,
 }
 
 static void
-eom_uri_converter_get_property (GObject    *object,
+eoc_uri_converter_get_property (GObject    *object,
                                 guint       property_id,
                                 GValue     *value,
                                 GParamSpec *pspec)
@@ -316,7 +316,7 @@ create_token_other (EomUCType type)
 }
 
 static GList*
-eom_uri_converter_parse_string (EomURIConverter *conv, const char *string)
+eoc_uri_converter_parse_string (EomURIConverter *conv, const char *string)
 {
 	EomURIConverterPrivate *priv;
 	GList *list = NULL;
@@ -436,7 +436,7 @@ eom_uri_converter_parse_string (EomURIConverter *conv, const char *string)
 }
 
 void
-eom_uri_converter_print_list (EomURIConverter *conv)
+eoc_uri_converter_print_list (EomURIConverter *conv)
 {
 	EomURIConverterPrivate *priv;
 	GList *it;
@@ -503,7 +503,7 @@ eom_uri_converter_print_list (EomURIConverter *conv)
 
 
 EomURIConverter*
-eom_uri_converter_new (GFile *base_file, GdkPixbufFormat *img_format, const char *format_str)
+eoc_uri_converter_new (GFile *base_file, GdkPixbufFormat *img_format, const char *format_str)
 {
 	EomURIConverter *conv;
 
@@ -518,7 +518,7 @@ eom_uri_converter_new (GFile *base_file, GdkPixbufFormat *img_format, const char
 		conv->priv->base_file = NULL;
 	}
 	conv->priv->img_format = img_format;
-	conv->priv->token_list = eom_uri_converter_parse_string (conv, format_str);
+	conv->priv->token_list = eoc_uri_converter_parse_string (conv, format_str);
 
 	return conv;
 }
@@ -540,7 +540,7 @@ get_file_directory (EomURIConverter *conv, EomImage *image)
 	else {
 		GFile *img_file;
 
-		img_file = eom_image_get_file (image);
+		img_file = eoc_image_get_file (image);
 		g_assert (img_file != NULL);
 
 		file = g_file_get_parent (img_file);
@@ -591,7 +591,7 @@ append_filename (GString *str, EomImage *img)
 	char *suffix;
 	GString *result;
 
-	img_file = eom_image_get_file (img);
+	img_file = eoc_image_get_file (img);
 	split_filename (img_file, &name, &suffix);
 
 	result = g_string_append (str, name);
@@ -644,7 +644,7 @@ build_absolute_file (EomURIConverter *conv, EomImage *image, GString *str,  /* i
 		char *old_suffix;
 		GFile *img_file;
 
-		img_file = eom_image_get_file (image);
+		img_file = eoc_image_get_file (image);
 		split_filename (img_file, &name, &old_suffix);
 
 		g_assert (old_suffix != NULL);
@@ -653,12 +653,12 @@ build_absolute_file (EomURIConverter *conv, EomImage *image, GString *str,  /* i
 		g_string_append (str, old_suffix);
 
 		if (format != NULL)
-			*format = eom_pixbuf_get_format_by_suffix (old_suffix);
+			*format = eoc_pixbuf_get_format_by_suffix (old_suffix);
 
 		g_object_unref (img_file);
 	} else {
 		if (priv->suffix == NULL)
-			priv->suffix = eom_pixbuf_get_common_suffix (priv->img_format);
+			priv->suffix = eoc_pixbuf_get_common_suffix (priv->img_format);
 
 		g_string_append_unichar (str, '.');
 		g_string_append (str, priv->suffix);
@@ -719,7 +719,7 @@ replace_remove_chars (GString *str, gboolean convert_spaces, gunichar space_char
  * is returned in uri and the image format will be in the format pointer.
  */
 gboolean
-eom_uri_converter_do (EomURIConverter *conv, EomImage *image,
+eoc_uri_converter_do (EomURIConverter *conv, EomImage *image,
 		      GFile **file, GdkPixbufFormat **format, GError **error)
 {
 	EomURIConverterPrivate *priv;
@@ -808,7 +808,7 @@ eom_uri_converter_do (EomURIConverter *conv, EomImage *image,
 
 
 char*
-eom_uri_converter_preview (const char *format_str, EomImage *img, GdkPixbufFormat *format,
+eoc_uri_converter_preview (const char *format_str, EomImage *img, GdkPixbufFormat *format,
 			   gulong counter, guint n_images,
 			   gboolean convert_spaces, gunichar space_char)
 {
@@ -900,7 +900,7 @@ eom_uri_converter_preview (const char *format_str, EomImage *img, GdkPixbufForma
 			char *old_suffix;
 			GFile *img_file;
 
-			img_file = eom_image_get_file (img);
+			img_file = eoc_image_get_file (img);
 			split_filename (img_file, &name, &old_suffix);
 
 			g_assert (old_suffix != NULL);
@@ -913,7 +913,7 @@ eom_uri_converter_preview (const char *format_str, EomImage *img, GdkPixbufForma
 			g_object_unref (img_file);
 		}
 		else {
-			char *suffix = eom_pixbuf_get_common_suffix (format);
+			char *suffix = eoc_pixbuf_get_common_suffix (format);
 
 			g_string_append_unichar (repl_str, '.');
 			g_string_append (repl_str, suffix);
@@ -931,7 +931,7 @@ eom_uri_converter_preview (const char *format_str, EomImage *img, GdkPixbufForma
 }
 
 gboolean
-eom_uri_converter_requires_exif (EomURIConverter *converter)
+eoc_uri_converter_requires_exif (EomURIConverter *converter)
 {
 	g_return_val_if_fail (EOM_IS_URI_CONVERTER (converter), FALSE);
 
@@ -939,14 +939,14 @@ eom_uri_converter_requires_exif (EomURIConverter *converter)
 }
 
 /**
- * eom_uri_converter_check:
+ * eoc_uri_converter_check:
  * @converter: a #EomURIConverter
  * @img_list: (element-type GFile): a #Gfile list
  * @error: a #GError location to store the error occurring, or NULL to ignore
  */
 
 gboolean
-eom_uri_converter_check (EomURIConverter *converter, GList *img_list, GError **error)
+eoc_uri_converter_check (EomURIConverter *converter, GList *img_list, GError **error)
 {
 	GList *it;
 	GList *file_list = NULL;
@@ -960,7 +960,7 @@ eom_uri_converter_check (EomURIConverter *converter, GList *img_list, GError **e
 		GFile *file;
 		GError *conv_error = NULL;
 
-		result = eom_uri_converter_do (converter, EOM_IMAGE (it->data),
+		result = eoc_uri_converter_do (converter, EOM_IMAGE (it->data),
 					       &file, NULL, &conv_error);
 
 		if (result) {

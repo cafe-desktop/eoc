@@ -12,7 +12,7 @@ G_BEGIN_DECLS
 typedef struct _EomImage EomImage;
 #endif
 
-#define EOM_TYPE_IMAGE_SAVE_INFO            (eom_image_save_info_get_type ())
+#define EOM_TYPE_IMAGE_SAVE_INFO            (eoc_image_save_info_get_type ())
 #define EOM_IMAGE_SAVE_INFO(o)         (G_TYPE_CHECK_INSTANCE_CAST ((o), EOM_TYPE_IMAGE_SAVE_INFO, EomImageSaveInfo))
 #define EOM_IMAGE_SAVE_INFO_CLASS(k)   (G_TYPE_CHECK_CLASS_CAST((k), EOM_TYPE_IMAGE_SAVE_INFO, EomImageSaveInfoClass))
 #define EOM_IS_IMAGE_SAVE_INFO(o)         (G_TYPE_CHECK_INSTANCE_TYPE ((o), EOM_TYPE_IMAGE_SAVE_INFO))
@@ -42,14 +42,14 @@ struct _EomImageSaveInfoClass {
 
 #define EOM_FILE_FORMAT_JPEG   "jpeg"
 
-GType             eom_image_save_info_get_type         (void) G_GNUC_CONST;
+GType             eoc_image_save_info_get_type         (void) G_GNUC_CONST;
 
-EomImageSaveInfo *eom_image_save_info_new_from_image   (EomImage        *image);
+EomImageSaveInfo *eoc_image_save_info_new_from_image   (EomImage        *image);
 
-EomImageSaveInfo *eom_image_save_info_new_from_uri     (const char      *uri,
+EomImageSaveInfo *eoc_image_save_info_new_from_uri     (const char      *uri,
 						       GdkPixbufFormat  *format);
 
-EomImageSaveInfo *eom_image_save_info_new_from_file    (GFile           *file,
+EomImageSaveInfo *eoc_image_save_info_new_from_file    (GFile           *file,
 						       GdkPixbufFormat  *format);
 
 G_END_DECLS

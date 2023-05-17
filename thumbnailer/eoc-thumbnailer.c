@@ -1,4 +1,4 @@
-/* gcc eom-thumbnailer.c `pkg-config --cflags --libs glib-2.0 gio-2.0 MagickWand` -lm -o eom-thumbnailer */
+/* gcc eoc-thumbnailer.c `pkg-config --cflags --libs glib-2.0 gio-2.0 MagickWand` -lm -o eoc-thumbnailer */
 /*
  * Copyright (C) 2020 MATE developers
  *

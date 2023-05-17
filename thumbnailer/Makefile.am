@@ -2,22 +2,22 @@ NULL =
 
 if USE_INTERNAL_THUMBNAILER
 
-bin_PROGRAMS = eom-thumbnailer
-eom_thumbnailer_SOURCES = \
-	eom-thumbnailer.c	\
+bin_PROGRAMS = eoc-thumbnailer
+eoc_thumbnailer_SOURCES = \
+	eoc-thumbnailer.c	\
 	$(NULL)
-eom_thumbnailer_CPPFLAGS = \
+eoc_thumbnailer_CPPFLAGS = \
 	-I$(top_srcdir)		\
 	-I$(top_builddir)	\
 	$(AM_CPPFLAGS)		\
 	$(NULL)
-eom_thumbnailer_CFLAGS = \
+eoc_thumbnailer_CFLAGS = \
 	$(THUMBNAILER_CFLAGS)	\
 	$(DISABLE_DEPRECATED)	\
 	$(WARN_CFLAGS)		\
 	$(AM_CFLAGS)		\
 	$(NULL)
-eom_thumbnailer_LDFLAGS = \
+eoc_thumbnailer_LDFLAGS = \
 	$(AM_LDFLAGS)		\
 	-lm			\
 	$(THUMBNAILER_LIBS)	\
@@ -26,10 +26,10 @@ eom_thumbnailer_LDFLAGS = \
 endif
 
 thumbnailerdir = $(datadir)/thumbnailers
-thumbnailer_DATA = eom-thumbnailer.thumbnailer
+thumbnailer_DATA = eoc-thumbnailer.thumbnailer
 
 EXTRA_DIST = \
-	eom-thumbnailer.thumbnailer.in \
+	eoc-thumbnailer.thumbnailer.in \
 	$(NULL)
 
 CLEANFILES = \

@@ -7,7 +7,7 @@
 #include <libpeas/peas-extension-base.h>
 #include <libpeas/peas-object-module.h>
 
-#include <eom-window.h>
+#include <eoc-window.h>
 
 G_BEGIN_DECLS
 
@@ -15,7 +15,7 @@ G_BEGIN_DECLS
  * Type checking and casting macros
  */
 #define EOM_TYPE_RELOAD_PLUGIN \
-	(eom_reload_plugin_get_type())
+	(eoc_reload_plugin_get_type())
 #define EOM_RELOAD_PLUGIN(o) \
 	(G_TYPE_CHECK_INSTANCE_CAST((o), EOM_TYPE_RELOAD_PLUGIN, EomReloadPlugin))
 #define EOM_RELOAD_PLUGIN_CLASS(k) \
@@ -55,7 +55,7 @@ struct _EomReloadPluginClass {
 /*
  * Public methods
  */
-GType eom_reload_plugin_get_type (void) G_GNUC_CONST;
+GType eoc_reload_plugin_get_type (void) G_GNUC_CONST;
 
 /* All the plugins must implement this function */
 G_MODULE_EXPORT void peas_register_types (PeasObjectModule *module);

@@ -33,11 +33,11 @@
 #endif
 #include <libmate-desktop/mate-desktop-thumbnail.h>
 
-#include "eom-thumbnail.h"
-#include "eom-list-store.h"
-#include "eom-debug.h"
+#include "eoc-thumbnail.h"
+#include "eoc-list-store.h"
+#include "eoc-debug.h"
 
-#define EOM_THUMB_ERROR eom_thumb_error_quark ()
+#define EOM_THUMB_ERROR eoc_thumb_error_quark ()
 
 static MateDesktopThumbnailFactory *factory = NULL;
 static GdkPixbuf *frame = NULL;
@@ -59,11 +59,11 @@ typedef struct {
 } EomThumbData;
 
 static GQuark
-eom_thumb_error_quark (void)
+eoc_thumb_error_quark (void)
 {
 	static GQuark q = 0;
 	if (q == 0)
-		q = g_quark_from_static_string ("eom-thumb-error-quark");
+		q = g_quark_from_static_string ("eoc-thumb-error-quark");
 
 	return q;
 }
@@ -132,7 +132,7 @@ create_thumbnail_from_pixbuf (EomThumbData *data,
 }
 
 static void
-eom_thumb_data_free (EomThumbData *data)
+eoc_thumb_data_free (EomThumbData *data)
 {
 	if (data == NULL)
 		return;
@@ -145,7 +145,7 @@ eom_thumb_data_free (EomThumbData *data)
 }
 
 static EomThumbData*
-eom_thumb_data_new (GFile *file, GError **error)
+eoc_thumb_data_new (GFile *file, GError **error)
 {
 	EomThumbData *data;
 	GFileInfo *file_info;
@@ -189,7 +189,7 @@ eom_thumb_data_new (GFile *file, GError **error)
 		}
 	}
 	else {
-		eom_thumb_data_free (data);
+		eoc_thumb_data_free (data);
 		data = NULL;
 		g_clear_error (&ioerror);
 	}
@@ -266,7 +266,7 @@ draw_frame_column (GdkPixbuf *frame_image,
 }
 
 static GdkPixbuf *
-eom_thumbnail_stretch_frame_image (GdkPixbuf *frame_image,
+eoc_thumbnail_stretch_frame_image (GdkPixbuf *frame_image,
 				   gint left_offset,
 				   gint top_offset,
 				   gint right_offset,
@@ -379,7 +379,7 @@ eom_thumbnail_stretch_frame_image (GdkPixbuf *frame_image,
 }
 
 /**
- * eom_thumbnail_add_frame:
+ * eoc_thumbnail_add_frame:
  * @thumbnail: a #GdkPixbuf
  *
  * Adds a frame to @thumbnail
@@ -387,7 +387,7 @@ eom_thumbnail_stretch_frame_image (GdkPixbuf *frame_image,
  * Returns: (transfer full): a new #GdkPixbuf, storing @thumbnail nicely framed.
  **/
 GdkPixbuf *
-eom_thumbnail_add_frame (GdkPixbuf *thumbnail)
+eoc_thumbnail_add_frame (GdkPixbuf *thumbnail)
 {
 	GdkPixbuf *result_pixbuf;
 	gint source_width, source_height;
@@ -399,7 +399,7 @@ eom_thumbnail_add_frame (GdkPixbuf *thumbnail)
 	dest_width  = source_width  + 9;
 	dest_height = source_height + 9;
 
-	result_pixbuf = eom_thumbnail_stretch_frame_image (frame,
+	result_pixbuf = eoc_thumbnail_stretch_frame_image (frame,
 							   3, 3, 6, 6,
 	                                	           dest_width,
 							   dest_height,
@@ -416,7 +416,7 @@ eom_thumbnail_add_frame (GdkPixbuf *thumbnail)
 }
 
 /**
- * eom_thumbnail_fit_to_size:
+ * eoc_thumbnail_fit_to_size:
  * @thumbnail: a #GdkPixbuf
  * @dimension: the maximum width or height desired
  *
@@ -425,7 +425,7 @@ eom_thumbnail_add_frame (GdkPixbuf *thumbnail)
  * Returns: (transfer full): a new #GdkPixbuf
  **/
 GdkPixbuf *
-eom_thumbnail_fit_to_size (GdkPixbuf *thumbnail, gint dimension)
+eoc_thumbnail_fit_to_size (GdkPixbuf *thumbnail, gint dimension)
 {
 	gint width, height;
 
@@ -453,7 +453,7 @@ eom_thumbnail_fit_to_size (GdkPixbuf *thumbnail, gint dimension)
 }
 
 /**
- * eom_thumbnail_load:
+ * eoc_thumbnail_load:
  * @image: a #EomImage
  * @error: location to store the error ocurring or %NULL to ignore
  *
@@ -464,7 +464,7 @@ eom_thumbnail_fit_to_size (GdkPixbuf *thumbnail, gint dimension)
  * @image or %NULL in case of error.
  **/
 GdkPixbuf*
-eom_thumbnail_load (EomImage *image, GError **error)
+eoc_thumbnail_load (EomImage *image, GError **error)
 {
 	GdkPixbuf *thumb = NULL;
 	GFile *file;
@@ -474,8 +474,8 @@ eom_thumbnail_load (EomImage *image, GError **error)
 	g_return_val_if_fail (image != NULL, NULL);
 	g_return_val_if_fail (error != NULL && *error == NULL, NULL);
 
-	file = eom_image_get_file (image);
-	data = eom_thumb_data_new (file, error);
+	file = eoc_image_get_file (image);
+	data = eoc_thumb_data_new (file, error);
 	g_object_unref (file);
 
 	if (data == NULL)
@@ -483,7 +483,7 @@ eom_thumbnail_load (EomImage *image, GError **error)
 
 	if (!data->can_read ||
 	    (data->failed_thumb_exists && mate_desktop_thumbnail_factory_has_valid_failed_thumbnail (factory, data->uri_str, data->mtime))) {
-		eom_debug_message (DEBUG_THUMBNAIL, "%s: bad permissions or valid failed thumbnail present",data->uri_str);
+		eoc_debug_message (DEBUG_THUMBNAIL, "%s: bad permissions or valid failed thumbnail present",data->uri_str);
 		set_thumb_error (error, EOM_THUMB_ERROR_GENERIC, "Thumbnail creation failed");
 		return NULL;
 	}
@@ -492,43 +492,43 @@ eom_thumbnail_load (EomImage *image, GError **error)
 	thumb = get_valid_thumbnail (data, error);
 
 	if (thumb != NULL) {
-		eom_debug_message (DEBUG_THUMBNAIL, "%s: loaded from cache",data->uri_str);
+		eoc_debug_message (DEBUG_THUMBNAIL, "%s: loaded from cache",data->uri_str);
 	} else if (mate_desktop_thumbnail_factory_can_thumbnail (factory, data->uri_str, data->mime_type, data->mtime)) {
 		/* Only use the image pixbuf when it is up to date. */
-		if (!eom_image_is_file_changed (image))
-			pixbuf = eom_image_get_pixbuf (image);
+		if (!eoc_image_is_file_changed (image))
+			pixbuf = eoc_image_get_pixbuf (image);
 
 		if (pixbuf != NULL) {
 			/* generate a thumbnail from the in-memory image,
 			   if we have already loaded the image */
-			eom_debug_message (DEBUG_THUMBNAIL, "%s: creating from pixbuf",data->uri_str);
+			eoc_debug_message (DEBUG_THUMBNAIL, "%s: creating from pixbuf",data->uri_str);
 			thumb = create_thumbnail_from_pixbuf (data, pixbuf, error);
 			g_object_unref (pixbuf);
 		} else {
 			/* generate a thumbnail from the file */
-			eom_debug_message (DEBUG_THUMBNAIL, "%s: creating from file",data->uri_str);
+			eoc_debug_message (DEBUG_THUMBNAIL, "%s: creating from file",data->uri_str);
 			thumb = mate_desktop_thumbnail_factory_generate_thumbnail (factory, data->uri_str, data->mime_type);
 		}
 
 		if (thumb != NULL) {
 			/* Save the new thumbnail */
 			mate_desktop_thumbnail_factory_save_thumbnail (factory, thumb, data->uri_str, data->mtime);
-			eom_debug_message (DEBUG_THUMBNAIL, "%s: normal thumbnail saved",data->uri_str);
+			eoc_debug_message (DEBUG_THUMBNAIL, "%s: normal thumbnail saved",data->uri_str);
 		} else {
 			/* Save a failed thumbnail, to stop further thumbnail attempts */
 			mate_desktop_thumbnail_factory_create_failed_thumbnail (factory, data->uri_str, data->mtime);
-			eom_debug_message (DEBUG_THUMBNAIL, "%s: failed thumbnail saved",data->uri_str);
+			eoc_debug_message (DEBUG_THUMBNAIL, "%s: failed thumbnail saved",data->uri_str);
 			set_thumb_error (error, EOM_THUMB_ERROR_GENERIC, "Thumbnail creation failed");
 		}
 	}
 
-	eom_thumb_data_free (data);
+	eoc_thumb_data_free (data);
 
 	return thumb;
 }
 
 void
-eom_thumbnail_init (void)
+eoc_thumbnail_init (void)
 {
 	if (factory == NULL) {
 		factory = mate_desktop_thumbnail_factory_new (MATE_DESKTOP_THUMBNAIL_SIZE_NORMAL);
@@ -536,7 +536,7 @@ eom_thumbnail_init (void)
 
 	if (frame == NULL) {
 		frame = gdk_pixbuf_new_from_resource (
-	                    "/org/mate/eom/ui/pixmaps/thumbnail-frame.png",
+	                    "/org/mate/eoc/ui/pixmaps/thumbnail-frame.png",
 	                    NULL);
 	}
 }

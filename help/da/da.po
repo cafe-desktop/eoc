@@ -184,11 +184,11 @@ msgstr ""
 #. (itstool) path: listitem/para
 #: C/index.docbook:243
 msgid ""
-"Run <command>eom</command> at the prompt in a terminal such as <application"
+"Run <command>eoc</command> at the prompt in a terminal such as <application"
 ">mate-terminal</application>, or from the <application>Run "
 "Application</application> dialog."
 msgstr ""
-"Kør <command>eom</command> i en terminal, f. eks. <application>mate-"
+"Kør <command>eoc</command> i en terminal, f. eks. <application>mate-"
 "terminal</application>, eller fra <application>Kør "
 "program</application>-dialogen."
 
@@ -621,9 +621,9 @@ msgstr "For at se alle billederne i en mappe, udfør de følgende trin:"
 #. (itstool) path: listitem/para
 #: C/index.docbook:435
 msgid ""
-"Open one of the images in the folder (see <xref linkend=\"eom-open-"
+"Open one of the images in the folder (see <xref linkend=\"eoc-open-"
 "image\"/>)."
-msgstr "Åbn et at billederne i mappen (se <xref linkend=\"eom-open-image\"/>)."
+msgstr "Åbn et at billederne i mappen (se <xref linkend=\"eoc-open-image\"/>)."
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:439
@@ -661,7 +661,7 @@ msgid ""
 " or press <keycap>F5</keycap>. To return to the collection view, press the "
 "<keycap>Esc</keycap> key, or "
 "<keycombo><keycap>Ctrl</keycap><keycap>W</keycap></keycombo>. For more "
-"information about how to customize the slide show, see <xref linkend=\"eom-"
+"information about how to customize the slide show, see <xref linkend=\"eoc-"
 "prefs-slideshow\"/>."
 msgstr ""
 "Hvis du vil se alle billederne i mappen i fuld skærm skal du vælge "
@@ -672,7 +672,7 @@ msgstr ""
 " eller trykke <keycap>F5</keycap>. Tryk på <keycap>Esc</keycap>-tasten eller"
 " <keycombo><keycap>Ctrl</keycap><keycap>W</keycap></keycombo> for at vende "
 "tilbage til billedsamlingen. For yderligere information om hvordan du "
-"tilpasser diasshowet kan du læse <xref linkend=\"eom-prefs-slideshow\"/>."
+"tilpasser diasshowet kan du læse <xref linkend=\"eoc-prefs-slideshow\"/>."
 
 #. (itstool) path: info/title
 #: C/index.docbook:450
@@ -852,7 +852,7 @@ msgid ""
 "by pressing <keycap>P</keycap>. To stop the slideshow, press the "
 "<keycap>Esc</keycap> or <keycap>F5</keycap> key, or "
 "<keycombo><keycap>Ctrl</keycap><keycap>W</keycap></keycombo>. For more "
-"information about how to customize the slide show, see <xref linkend=\"eom-"
+"information about how to customize the slide show, see <xref linkend=\"eoc-"
 "prefs-slideshow\"/>."
 msgstr ""
 "I dette tilfælde kan du også bruge diasshow-tilstanden, hvor "
@@ -864,7 +864,7 @@ msgstr ""
 " skal du trykke på <keycap>Esc</keycap> eller <keycap>F5</keycap>, eller "
 "<keycombo><keycap>Ctrl</keycap><keycap>W</keycap></keycombo>. For yderligere"
 " information om, hvordan du tilpasser diasshowet kan du læse <xref linkend"
-"=\"eom-prefs-slideshow\"/>."
+"=\"eoc-prefs-slideshow\"/>."
 
 #. (itstool) path: info/title
 #: C/index.docbook:494
@@ -876,12 +876,12 @@ msgstr "Manipulering af billeder"
 msgid ""
 "All image manipulations apply to all selected images at once. The "
 "modifications are done in memory and alter the original files on disk only "
-"when the images are saved with the save function (see <xref linkend=\"eom-"
+"when the images are saved with the save function (see <xref linkend=\"eoc-"
 "save-image\"/>)."
 msgstr ""
 "Alle billedmanipulationer anvendes på alle de valgte billeder på en gang. "
 "Ændringerne udføres i hukommelsen, og ændrer først de oprindelige filer på "
-"harddisken når billederne gemmes med Gem-funktionen (se <xref linkend=\"eom-"
+"harddisken når billederne gemmes med Gem-funktionen (se <xref linkend=\"eoc-"
 "save-image\"/>)."
 
 #. (itstool) path: info/title
@@ -1302,13 +1302,13 @@ msgstr "Arranger et billede på siden"
 msgid ""
 "Maybe you don't want your image centered or want it scaled down even "
 "further. To do that you need to open the <guilabel>Print</guilabel> dialog "
-"(see <xref linkend=\"eom-print-image\"/>) and then select the "
+"(see <xref linkend=\"eoc-print-image\"/>) and then select the "
 "<guilabel>Image Settings</guilabel> tab which offers you the following "
 "options:"
 msgstr ""
 "Måske ønsker du ikke dit billede centreret, eller ønsker at skalere det "
 "yderligere ned. For at gøre det skal du åbne "
-"<guilabel>Print</guilabel>-dialogen (se <xref linkend=\"eom-print-image\"/>)"
+"<guilabel>Print</guilabel>-dialogen (se <xref linkend=\"eoc-print-image\"/>)"
 " og derefter vælge <guilabel>Billedindstillinger</guilabel>-fanebladet, som "
 "giver dig de følgende muligheder:"
 
@@ -1460,9 +1460,9 @@ msgstr ""
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:718
-msgid "Open the toolbar editor (see <xref linkend=\"eom-toolbareditor-use\"/>)."
+msgid "Open the toolbar editor (see <xref linkend=\"eoc-toolbareditor-use\"/>)."
 msgstr ""
-"Åbn værktøjslinjeredigeringen (se <xref linkend=\"eom-toolbareditor-"
+"Åbn værktøjslinjeredigeringen (se <xref linkend=\"eoc-toolbareditor-"
 "use\"/>)."
 
 #. (itstool) path: listitem/para
@@ -1529,14 +1529,14 @@ msgid ""
 "portraits are automatically rotated upright. Note that this function "
 "requires a correctly set orientation tag in the image's metadata and thus "
 "does not work with all images. The rotation is not saved until you save the "
-"rotated image (see <xref linkend=\"eom-save-rename\"/>)."
+"rotated image (see <xref linkend=\"eoc-save-rename\"/>)."
 msgstr ""
 "Hvis du vælger <guilabel>Automatisk retning</guilabel> vil dine billeder "
 "blive roteret ved indlæsning, så de passer til deres metadata. For eksempel "
 "vil portrætter automatisk roteres så de står op. Bemærk at denne funktion "
 "kræver et korrekt indstillet retningsmærke i billedets metadata og at den "
 "derfor ikke virker med alle billeder. Rotationen gemmes ikke før du gemmer "
-"det roterede billede (se <xref linkend=\"eom-save-rename\"/>)."
+"det roterede billede (se <xref linkend=\"eoc-save-rename\"/>)."
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:746
@@ -1638,12 +1638,12 @@ msgid ""
 "Use the <guilabel>Switch image after ... seconds</guilabel> spin box to "
 "specify how long each image is displayed during the slide show. If you set "
 "this value to zero, the auto advance function is disabled and only manual "
-"browsing is available (see <xref linkend=\"eom-fullscreen\"/>)."
+"browsing is available (see <xref linkend=\"eoc-fullscreen\"/>)."
 msgstr ""
 "Brug rulleboksen <guilabel>Skift billede hver ... sekund</guilabel> til at "
 "angive hvor lang tid hvert billede vises i diasshowet. Hvis du angiver denne"
 " værdi til nul, så deaktiveres den automatiske rulning og kun manuel "
-"betjening er tilgængelig (se <xref linkend=\"eom-fullscreen\"/>)."
+"betjening er tilgængelig (se <xref linkend=\"eoc-fullscreen\"/>)."
 
 #. (itstool) path: legalnotice/para
 #: C/legal.xml:4

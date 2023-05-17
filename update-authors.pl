@@ -40,7 +40,7 @@ sub ReplaceAuthors {
 
 sub GetCurrentAuthors {
   my @authors;
-  open(FILE,"data/eom.about") or die "Can't open data/eom.about";
+  open(FILE,"data/eoc.about") or die "Can't open data/eoc.about";
   while (<FILE>) {
     if (/^Authors=*(.+)$/) {
       @authors=split(";",$1);

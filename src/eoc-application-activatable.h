@@ -1,6 +1,6 @@
 /*
- * eom-application-activatable.h
- * This file is part of eom
+ * eoc-application-activatable.h
+ * This file is part of eoc
  *
  * Author: Felix Riemann <friemann@gnome.org>
  *
@@ -31,7 +31,7 @@
 
 G_BEGIN_DECLS
 
-#define EOM_TYPE_APPLICATION_ACTIVATABLE (eom_application_activatable_get_type ())
+#define EOM_TYPE_APPLICATION_ACTIVATABLE (eoc_application_activatable_get_type ())
 #define EOM_APPLICATION_ACTIVATABLE(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), \
                                           EOM_TYPE_APPLICATION_ACTIVATABLE, \
                                           EomApplicationActivatable))
@@ -60,10 +60,10 @@ struct _EomApplicationActivatableInterface
     void	(*deactivate)	(EomApplicationActivatable *activatable);
 };
 
-GType	eom_application_activatable_get_type     (void) G_GNUC_CONST;
+GType	eoc_application_activatable_get_type     (void) G_GNUC_CONST;
 
-void	eom_application_activatable_activate     (EomApplicationActivatable *activatable);
-void	eom_application_activatable_deactivate   (EomApplicationActivatable *activatable);
+void	eoc_application_activatable_activate     (EomApplicationActivatable *activatable);
+void	eoc_application_activatable_deactivate   (EomApplicationActivatable *activatable);
 
 G_END_DECLS
 #endif /* __EOM_APPLICATION_ACTIVATABLE_H__ */

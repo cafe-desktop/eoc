@@ -1,8 +1,8 @@
 prefix=@prefix@
 exec_prefix=@exec_prefix@
 libdir=@libdir@
-includedir=@includedir@/eom-@EOM_API_VERSION@
-pluginsdir=@libdir@/eom/plugins
+includedir=@includedir@/eoc-@EOM_API_VERSION@
+pluginsdir=@libdir@/eoc/plugins
 
 Name: Eye of MATE
 Description: The MATE Image Viewer

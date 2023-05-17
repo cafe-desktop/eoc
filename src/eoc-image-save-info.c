@@ -3,15 +3,15 @@
 #endif
 
 #include <string.h>
-#include "eom-image-save-info.h"
-#include "eom-image-private.h"
-#include "eom-pixbuf-util.h"
-#include "eom-image.h"
+#include "eoc-image-save-info.h"
+#include "eoc-image-private.h"
+#include "eoc-pixbuf-util.h"
+#include "eoc-image.h"
 
-G_DEFINE_TYPE (EomImageSaveInfo, eom_image_save_info, G_TYPE_OBJECT)
+G_DEFINE_TYPE (EomImageSaveInfo, eoc_image_save_info, G_TYPE_OBJECT)
 
 static void
-eom_image_save_info_dispose (GObject *object)
+eoc_image_save_info_dispose (GObject *object)
 {
 	EomImageSaveInfo *info = EOM_IMAGE_SAVE_INFO (object);
 
@@ -25,21 +25,21 @@ eom_image_save_info_dispose (GObject *object)
 		info->format = NULL;
 	}
 
-	G_OBJECT_CLASS (eom_image_save_info_parent_class)->dispose (object);
+	G_OBJECT_CLASS (eoc_image_save_info_parent_class)->dispose (object);
 }
 
 static void
-eom_image_save_info_init (EomImageSaveInfo *obj)
+eoc_image_save_info_init (EomImageSaveInfo *obj)
 {
 
 }
 
 static void
-eom_image_save_info_class_init (EomImageSaveInfoClass *klass)
+eoc_image_save_info_class_init (EomImageSaveInfoClass *klass)
 {
 	GObjectClass *object_class = (GObjectClass*) klass;
 
-	object_class->dispose = eom_image_save_info_dispose;
+	object_class->dispose = eoc_image_save_info_dispose;
 }
 
 /* is_local_uri:
@@ -70,7 +70,7 @@ get_save_file_type_by_file (GFile *file)
 	GdkPixbufFormat *format;
 	char *type = NULL;
 
-	format = eom_pixbuf_get_format (file);
+	format = eoc_pixbuf_get_format (file);
 	if (format != NULL) {
 		type = gdk_pixbuf_format_get_name (format);
 	}
@@ -79,7 +79,7 @@ get_save_file_type_by_file (GFile *file)
 }
 
 EomImageSaveInfo*
-eom_image_save_info_new_from_image (EomImage *image)
+eoc_image_save_info_new_from_image (EomImage *image)
 {
 	EomImageSaveInfo *info = NULL;
 
@@ -87,12 +87,12 @@ eom_image_save_info_new_from_image (EomImage *image)
 
 	info = g_object_new (EOM_TYPE_IMAGE_SAVE_INFO, NULL);
 
-	info->file         = eom_image_get_file (image);
+	info->file         = eoc_image_get_file (image);
 	info->format       = g_strdup (image->priv->file_type);
 	info->exists       = g_file_query_exists (info->file, NULL);
 	info->local        = is_local_file (info->file);
-        info->has_metadata = eom_image_has_data (image, EOM_IMAGE_DATA_EXIF);
-	info->modified     = eom_image_is_modified (image);
+        info->has_metadata = eoc_image_has_data (image, EOM_IMAGE_DATA_EXIF);
+	info->modified     = eoc_image_is_modified (image);
 	info->overwrite    = FALSE;
 
 	info->jpeg_quality = -1.0;
@@ -101,7 +101,7 @@ eom_image_save_info_new_from_image (EomImage *image)
 }
 
 EomImageSaveInfo*
-eom_image_save_info_new_from_uri (const char *txt_uri, GdkPixbufFormat *format)
+eoc_image_save_info_new_from_uri (const char *txt_uri, GdkPixbufFormat *format)
 {
 	GFile *file;
 	EomImageSaveInfo *info;
@@ -110,7 +110,7 @@ eom_image_save_info_new_from_uri (const char *txt_uri, GdkPixbufFormat *format)
 
 	file = g_file_new_for_uri (txt_uri);
 
-	info = eom_image_save_info_new_from_file (file, format);
+	info = eoc_image_save_info_new_from_file (file, format);
 
 	g_object_unref (file);
 
@@ -118,7 +118,7 @@ eom_image_save_info_new_from_uri (const char *txt_uri, GdkPixbufFormat *format)
 }
 
 EomImageSaveInfo*
-eom_image_save_info_new_from_file (GFile *file, GdkPixbufFormat *format)
+eoc_image_save_info_new_from_file (GFile *file, GdkPixbufFormat *format)
 {
 	EomImageSaveInfo *info;
 

@@ -22,12 +22,12 @@
 #ifndef EOM_THUMB_VIEW_H
 #define EOM_THUMB_VIEW_H
 
-#include "eom-image.h"
-#include "eom-list-store.h"
+#include "eoc-image.h"
+#include "eoc-list-store.h"
 
 G_BEGIN_DECLS
 
-#define EOM_TYPE_THUMB_VIEW            (eom_thumb_view_get_type ())
+#define EOM_TYPE_THUMB_VIEW            (eoc_thumb_view_get_type ())
 #define EOM_THUMB_VIEW(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), EOM_TYPE_THUMB_VIEW, EomThumbView))
 #define EOM_THUMB_VIEW_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass),  EOM_TYPE_THUMB_VIEW, EomThumbViewClass))
 #define EOM_IS_THUMB_VIEW(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), EOM_TYPE_THUMB_VIEW))
@@ -56,30 +56,30 @@ struct _EomThumbViewClass {
 	 GtkIconViewClass icon_view_class;
 };
 
-GType       eom_thumb_view_get_type 		    (void) G_GNUC_CONST;
+GType       eoc_thumb_view_get_type 		    (void) G_GNUC_CONST;
 
-GtkWidget  *eom_thumb_view_new 			    (void);
+GtkWidget  *eoc_thumb_view_new 			    (void);
 
-void	    eom_thumb_view_set_model 		    (EomThumbView *thumbview,
+void	    eoc_thumb_view_set_model 		    (EomThumbView *thumbview,
 						     EomListStore *store);
 
-void        eom_thumb_view_set_item_height          (EomThumbView *thumbview,
+void        eoc_thumb_view_set_item_height          (EomThumbView *thumbview,
 						     gint          height);
 
-guint	    eom_thumb_view_get_n_selected 	    (EomThumbView *thumbview);
+guint	    eoc_thumb_view_get_n_selected 	    (EomThumbView *thumbview);
 
-EomImage   *eom_thumb_view_get_first_selected_image (EomThumbView *thumbview);
+EomImage   *eoc_thumb_view_get_first_selected_image (EomThumbView *thumbview);
 
-GList      *eom_thumb_view_get_selected_images 	    (EomThumbView *thumbview);
+GList      *eoc_thumb_view_get_selected_images 	    (EomThumbView *thumbview);
 
-void        eom_thumb_view_select_single 	    (EomThumbView *thumbview,
+void        eoc_thumb_view_select_single 	    (EomThumbView *thumbview,
 						     EomThumbViewSelectionChange change);
 
-void        eom_thumb_view_set_current_image	    (EomThumbView *thumbview,
+void        eoc_thumb_view_set_current_image	    (EomThumbView *thumbview,
 						     EomImage     *image,
 						     gboolean     deselect_other);
 
-void        eom_thumb_view_set_thumbnail_popup      (EomThumbView *thumbview,
+void        eoc_thumb_view_set_thumbnail_popup      (EomThumbView *thumbview,
 						     GtkMenu      *menu);
 
 G_END_DECLS

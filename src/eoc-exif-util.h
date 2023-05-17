@@ -34,28 +34,28 @@
 
 G_BEGIN_DECLS
 
-#define EOM_TYPE_EXIF_DATA eom_exif_data_get_type()
+#define EOM_TYPE_EXIF_DATA eoc_exif_data_get_type()
 
-gchar       *eom_exif_util_format_date           (const gchar *date);
-void         eom_exif_util_format_datetime_label (GtkLabel *label,
+gchar       *eoc_exif_util_format_date           (const gchar *date);
+void         eoc_exif_util_format_datetime_label (GtkLabel *label,
                                                   ExifData *exif_data,
                                                   gint tag_id,
                                                   const gchar *format);
-void         eom_exif_util_set_label_text        (GtkLabel *label,
+void         eoc_exif_util_set_label_text        (GtkLabel *label,
                                                   ExifData *exif_data,
                                                   gint tag_id);
 
-void         eom_exif_util_set_focal_length_label_text (GtkLabel *label,
+void         eoc_exif_util_set_focal_length_label_text (GtkLabel *label,
                                                         ExifData *exif_data);
 
-const gchar *eom_exif_data_get_value             (ExifData *exif_data,
+const gchar *eoc_exif_data_get_value             (ExifData *exif_data,
                                                   gint tag_id, gchar *buffer,
                                                   guint buf_size);
 
-GType        eom_exif_data_get_type              (void) G_GNUC_CONST;
+GType        eoc_exif_data_get_type              (void) G_GNUC_CONST;
 
-ExifData    *eom_exif_data_copy                  (ExifData *data);
-void         eom_exif_data_free                  (ExifData *data);
+ExifData    *eoc_exif_data_copy                  (ExifData *data);
+void         eoc_exif_data_free                  (ExifData *data);
 
 G_END_DECLS
 

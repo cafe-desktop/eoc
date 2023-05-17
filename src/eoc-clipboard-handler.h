@@ -1,6 +1,6 @@
 /*
- * eom-clipboard-handler.h
- * This file is part of eom
+ * eoc-clipboard-handler.h
+ * This file is part of eoc
  *
  * Author: Felix Riemann <friemann@gnome.org>
  *
@@ -27,11 +27,11 @@
 #include <glib-object.h>
 #include <gtk/gtk.h>
 
-#include "eom-image.h"
+#include "eoc-image.h"
 
 G_BEGIN_DECLS
 
-#define EOM_TYPE_CLIPBOARD_HANDLER          (eom_clipboard_handler_get_type ())
+#define EOM_TYPE_CLIPBOARD_HANDLER          (eoc_clipboard_handler_get_type ())
 #define EOM_CLIPBOARD_HANDLER(o)            (G_TYPE_CHECK_INSTANCE_CAST ((o), EOM_TYPE_CLIPBOARD_HANDLER, EomClipboardHandler))
 #define EOM_CLIPBOARD_HANDLER_CLASS(k)      (G_TYPE_CHECK_CLASS_CAST((k), EOM_TYPE_CLIPBOARD_HANDLER, EomClipboardHandlerClass))
 #define EOM_IS_CLIPBOARD_HANDLER(o)         (G_TYPE_CHECK_INSTANCE_TYPE ((o), EOM_TYPE_CLIPBOARD_HANDLER))
@@ -52,11 +52,11 @@ struct _EomClipboardHandlerClass {
 	GObjectClass parent_klass;
 };
 
-GType eom_clipboard_handler_get_type (void) G_GNUC_CONST;
+GType eoc_clipboard_handler_get_type (void) G_GNUC_CONST;
 
-EomClipboardHandler* eom_clipboard_handler_new (EomImage *img);
+EomClipboardHandler* eoc_clipboard_handler_new (EomImage *img);
 
-void eom_clipboard_handler_copy_to_clipboard (EomClipboardHandler *handler,
+void eoc_clipboard_handler_copy_to_clipboard (EomClipboardHandler *handler,
 					      GtkClipboard *clipboard);
 
 G_END_DECLS

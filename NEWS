@@ -1,24 +1,24 @@
-### eom 1.24.1
+### eoc 1.24.1
 
   * Translations update
   * help: Fix some incongruencies
   * build: silent build warnings for distcheck
-  * eom.desktop: Do not collect the translation for Icon
+  * eoc.desktop: Do not collect the translation for Icon
   * help: Fix Image Collection shortcut (#263)
   * Use user page on github when user email is private
   * Update authors
 
-### eom 1.24.0
+### eoc 1.24.0
 
   * Translations update
   * thumbnailer: add --with-gdk-pixbuf-thumbnailer option
-  * Add eom-thumbnailer for webp files
+  * Add eoc-thumbnailer for webp files
   * autoconf: AC_PROG_CC was called before AX_CHECK_ENABLE_DEBUG
-  * Fix preprocessing warning for file: src/eom-window.c
-  * Fix preprocessing warning for file: src/eom-print.c
+  * Fix preprocessing warning for file: src/eoc-window.c
+  * Fix preprocessing warning for file: src/eoc-print.c
   * Update MIME types supported by commonly used pixbuf-loaders
 
-### eom 1.23.2
+### eoc 1.23.2
 
   * Translations update
   * thumbnail: Remove use of mate-desktop-thumbnail helper
@@ -26,7 +26,7 @@
   * enable wayland support
   * EomPrintPreview: Fix preview thumbnail on HiDPI displays
 
-### eom 1.23.1
+### eoc 1.23.1
 
   * Translations update
   * help: fix Italian translation
@@ -43,7 +43,7 @@
   * remove warning: variable ‘priv’ set but not used
   * reload-plugin: suppress GtkAction warnings
   * properties-dialog: suppress GtkAction warnings
-  * eom-window: suppress GtkAction warnings
+  * eoc-window: suppress GtkAction warnings
   * egg-toolbar-editor: suppress GtkAction warnings
   * egg-editable-toolbar: suppress GtkAction warnings
   * Allow color correcting images with alpha channel
@@ -54,7 +54,7 @@
   * Assume sRGB when image doesn't have an ICC profile attached
   * Remove trailing whitespaces
 
-### eom 1.23.0
+### eoc 1.23.0
 
   * Translations update
   * require GLib 2.52
@@ -63,7 +63,7 @@
   * Disconnect callbacks for "Open with" menu items before connecting new ones.
   * Unref GtkUIManager so "Open with" menu is freed.
   * [ci] Add cppcheck html report
-  * update image of eom_toolbar_editor_window
+  * update image of eoc_toolbar_editor_window
   * Use ITS in docbook article info, validate with dbits schemas
   * store: Add any image file in the current directory to the store
   * Simplify the installation process of the icons
@@ -72,11 +72,11 @@
   * Upgrade the manual to docbook 5.0
   * Use persistent page setup
 
-### eom 1.22.0
+### eoc 1.22.0
 
   * Translations update
-  * Add update-authors.pl script which helps to update eom.about
-  * Read authors (updated) and documenters (updated) from eom.about gresource
+  * Add update-authors.pl script which helps to update eoc.about
+  * Read authors (updated) and documenters (updated) from eoc.about gresource
   * Initialize Travis CI support
   * Ensure proper translation of the about dialog title
   * Make translatable the copyright in about dialog
@@ -87,15 +87,15 @@
   * Fix url of ulink to point to mate-user-guide
   * Update Catalan screenhots
   * Fix spelling and grammar mistakes
-  * Update eom_start_window.png
-  * tx: add eom help to transifex config
+  * Update eoc_start_window.png
+  * tx: add eoc help to transifex config
   * Reduce the number of g_file_query_info calls at start-up
   * EomImage: Remove unused constructor
   * fix a memory leak
 
-### eom 1.21.2
+### eoc 1.21.2
 
-  * docs: remove eom-dialog.xml reference to fix distcheck
+  * docs: remove eoc-dialog.xml reference to fix distcheck
   * Translations update
   * tx: update source file
   * EomMetadataSidebar: Make header include guard actually work
@@ -109,9 +109,9 @@
   * EomPreferencesDialog: Convert to GtkBuilder template
   * EomThumbnail: Load thumbnail frame from a GResource
   * Load EomMultipleSaveAsDialog from GResource
-  * eom-window: fix deprecated GtkStock usage
+  * eoc-window: fix deprecated GtkStock usage
   * Fix build without XMP support
-  * Load eom-image-properties-dialog.ui with a gresource
+  * Load eoc-image-properties-dialog.ui with a gresource
   * properties-dialog: Port to gtk_show_uri_on_window
   * EomPropertiesDialog: Convert to GtkBuilder template
   * EomPropertiesDialog: Remove unused private members
@@ -126,7 +126,7 @@
   * EogMetadataSidebar: Try to unclutter and improve the sidebar's look
   * GResource: free css_file
   * Initial GResource migration
-  * Starting with eom.css and eom-ui.xml
+  * Starting with eoc.css and eoc-ui.xml
   * EomExifUtil: Fix build with newer GCC
   * EomExifUtil: Fix build with older GCCs
   * EomExifUtil: Allow freeform formatting of date strings
@@ -134,7 +134,7 @@
   * EomPropertiesDialog: Separate Exif/XMP-specific widgets from generic ones
   * EomMetadataDetails: Don't install header file
   * EomExifDetails: Rename to EomMetadataDetails
-  * Drop eom_close_confirmation_dialog_set_sensitive
+  * Drop eoc_close_confirmation_dialog_set_sensitive
   * scroll-view: Remove a gdk_window_process_updates call
   * util: Port to gtk_show_uri_on_window
   * EomImage: Make sure to emit size-prepared after applying orientation
@@ -143,7 +143,7 @@
   * drop forgotten gtkrc file
   * css: drop obsolete old css language
 
-### eom 1.21.1
+### eoc 1.21.1
 
   * EomWindow: silence a introspection warning
   * Convert to G_DEFINE_TYPE_WITH_PRIVATE
@@ -187,11 +187,11 @@
   * Port EomApplication to GtkApplication
   * Make the displayed EomImage a property of EomScrollView
   * EomPropertiesDialog: Make details view expand vertically
-  * Enable more Drag&Drop actions when eom is drag source
+  * Enable more Drag&Drop actions when eoc is drag source
   * Use new DBus API to show the current image in the file browser
   * Add an "Open containing folder" command
 
-### eom 1.21.0
+### eoc 1.21.0
 
   * Translations update
   * toolbar: add missing popup menu for launching toolbar editor
@@ -204,10 +204,10 @@
   * replace deprecated gdk_flush
   * fix some -Wincompatible-pointer-types warnings
   * Scale HiDPI images correctly
-  * eom-window.c: avoid deprecated GtkButton:use-stock
+  * eoc-window.c: avoid deprecated GtkButton:use-stock
   * avoid deprecated GtkStock
 
-### eom 1.20.0
+### eoc 1.20.0
 
   * Translations update
   * drop CSS for GTK+ 3.18
@@ -216,16 +216,16 @@
   * egg-editable-toolbar.c/egg-toolbars-model.c: drop unused variables
   * print-preview: replace custom code with GDK function call
 
-### eom 1.19.1
+### eoc 1.19.1
 
   * Translations update
   * gtk 3.22: avoid deprecated gdk_screen_get_monitor... functions:
   * don't use deprecated gtk_show_uri
   * avoid deprecated gdk_screen_get_number
   * Restore Polish translation credits from GNOME
-  * fix warning on closing empty window with multiple eom windows
+  * fix warning on closing empty window with multiple eoc windows
 
-### eom 1.19.0
+### eoc 1.19.0
 
   * EomThumbView: Replace deprecated gtk_menu_popup function
   * multiple-save-as-dialog.ui: avoid deprecated widgets
@@ -255,10 +255,10 @@
   * Fix a few GtkStock deprecations
   * EomCloseConfirmationDialog: replace deprecated GTK_STOCK_DIALOG_WARNING
   * toolbar-editor: avoid deprecated GtkAlignment
-  * Bring eom-image.c's SVG handling up to date, properly recognize svgz filetypes
-  * eom_uri_converter: GList leak fix
+  * Bring eoc-image.c's SVG handling up to date, properly recognize svgz filetypes
+  * eoc_uri_converter: GList leak fix
 
-### eom 1.18.0
+### eoc 1.18.0
 
   * NEWS: use consistent, project wide, markdown-like formatting
     to make generating release announcements easier
@@ -270,37 +270,37 @@
   * Some code and docs cleanups
   * Translations update
 
-### eom 1.16.1
+### eoc 1.16.1
 
   * Prefs dialog: fix runtime warning
   * Fix auto-reload of externally modified image
   * Fix memleak when loading SVG fails
   * GTK+3: force X11 backend
 
-### eom 1.16.0
+### eoc 1.16.0
 
   * Use GtkAboutDialog instead of MateAboutDialog
   * Fix possible out-of-bounds write in error message area
   * Some cleanups
   * Translations update
 
-### eom 1.14.2
+### eoc 1.14.2
 
   * Fix zoom and scroll performance on large images
   * Translations update
   * Make distcheck use currently selected GTK+ version
 
-### eom 1.14.1
+### eoc 1.14.1
 
   * Translations update
   * Fix new windows not getting focus
 
-### eom 1.14.0
+### eoc 1.14.0
 
   * Drop MateConf migration script
   * Use org.gnome.SessionManager DBus name to inhibit screensaver
   * Auto-reload unmodified images when their file is changed
-  * GTK+3: add eom-window style class at top level
+  * GTK+3: add eoc-window style class at top level
   * GTK+3: add css name EggToolbarEditor for 3.20
   * GTK+3: fix SVG rendering
   * GTK+3: fix several deprecations
@@ -308,7 +308,7 @@
   * Translations update
   * Fix Changelog generation
 
-### eom 1.12.2
+### eoc 1.12.2
 
   * Print preview: avoid integer overflow when allocating a large
    block of memory
@@ -316,20 +316,20 @@
   * Fix GTK+3 build when --without-cms is set
   * Some more fixes
 
-### eom 1.12.1
+### eoc 1.12.1
 
   * Fix shortcuts for several menu items in en_US locale
   * Some more fixes and cleanups
 
-### eom 1.12.0
+### eoc 1.12.0
 
   * New release incorporating all fixes from 1.10.x bugfix releases
 
-### eom 1.10.5
+### eoc 1.10.5
 
   * fix gtk3 build
 
-### eom 1.10.4
+### eoc 1.10.4
 
   * EomScrollView: clip all types of images to the visible image area
   * EomScrollView: enable double buffering
@@ -339,36 +339,36 @@
   * Some annotation fixes
   * Some GTK+3 fixes and improvements
 
-### eom 1.10.3
+### eoc 1.10.3
 
   * Fix scroll issues during zoom
   * Multiple help fixes
 
-### eom 1.10.2
+### eoc 1.10.2
 
   * Fix gschema translations.
   * GTK3 fixes and improvements.
 
-### eom 1.10.1
+### eoc 1.10.1
 
   * Bugfixes
   * Translations update
 
-### eom 1.10.0
+### eoc 1.10.0
 
   * Bugfixes
   * Improvements taken from eog
 
-### eom 1.8.0
+### eoc 1.8.0
 
   * Updates for the man page
   * Add random mode in slideshow mode
 
-### eom 1.7.0
+### eoc 1.7.0
 
   * Migration to yelp-tools
   * Migration to lcms2
 
-### eom 1.5.0
+### eoc 1.5.0
 
   * Migration to gsettings.

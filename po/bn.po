@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR MATE Desktop Environment team
-# This file is distributed under the same license as the eom package.
+# This file is distributed under the same license as the eoc package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
@@ -9,7 +9,7 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: eom 1.23.1\n"
+"Project-Id-Version: eoc 1.23.1\n"
 "Report-Msgid-Bugs-To: http://www.mate-desktop.org\n"
 "POT-Creation-Date: 2020-01-10 14:33+0100\n"
 "PO-Revision-Date: 2020-02-14 12:07+0000\n"
@@ -54,284 +54,284 @@ msgstr "নির্বাচিত টুলবার মুছে ফেলু
 msgid "Separator"
 msgstr "বিভাজক"
 
-#: data/eom.appdata.xml.in:6 src/eom-window.c:2640
+#: data/eoc.appdata.xml.in:6 src/eoc-window.c:2640
 msgid "Eye of MATE"
 msgstr "জিনোমের চোখ"
 
-#: data/eom.appdata.xml.in:7
+#: data/eoc.appdata.xml.in:7
 msgid "Simple image viewer"
 msgstr ""
 
-#: data/eom.appdata.xml.in:9
+#: data/eoc.appdata.xml.in:9
 msgid ""
 "Eye of MATE is a simple viewer for browsing images on your computer. Once an"
 " image is loaded, you can zoom and rotate the image, and also view "
 "subsequent images in the directory the image was loaded from."
 msgstr ""
 
-#: data/eom.desktop.in.in:3 src/main.c:65 src/main.c:166
+#: data/eoc.desktop.in.in:3 src/main.c:65 src/main.c:166
 msgid "Eye of MATE Image Viewer"
 msgstr "জিনোম চোখের ছবি প্রদর্শক"
 
-#: data/eom.desktop.in.in:4
+#: data/eoc.desktop.in.in:4
 msgid "Browse and rotate images"
 msgstr "ছবি ব্রাউজ করুন এবং চক্রাকারে ঘোরান"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: data/eom.desktop.in.in:8
-msgid "eom"
+#: data/eoc.desktop.in.in:8
+msgid "eoc"
 msgstr ""
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
-#: data/eom.desktop.in.in:14
+#: data/eoc.desktop.in.in:14
 msgid "image;viewer;JPEG;PNG;TIFF;SVG;MATE;photos;browse;thumbnails;rotate;"
 msgstr ""
 
-#: data/eom-image-properties-dialog.ui:8
+#: data/eoc-image-properties-dialog.ui:8
 msgid "Image Properties"
 msgstr "ছবির বৈশিষ্ট্যাবলী  "
 
-#: data/eom-image-properties-dialog.ui:54
+#: data/eoc-image-properties-dialog.ui:54
 msgid "_Previous"
 msgstr "পূর্ববর্তী (_P)"
 
-#: data/eom-image-properties-dialog.ui:101
+#: data/eoc-image-properties-dialog.ui:101
 msgid "_Next"
 msgstr "পরবর্তী (_N)"
 
-#: data/eom-image-properties-dialog.ui:198
+#: data/eoc-image-properties-dialog.ui:198
 msgid "Name:"
 msgstr "নাম:"
 
-#: data/eom-image-properties-dialog.ui:217
+#: data/eoc-image-properties-dialog.ui:217
 msgid "Width:"
 msgstr "প্রস্থ:"
 
-#: data/eom-image-properties-dialog.ui:235
+#: data/eoc-image-properties-dialog.ui:235
 msgid "Height:"
 msgstr "উচ্চতা:"
 
-#: data/eom-image-properties-dialog.ui:253
+#: data/eoc-image-properties-dialog.ui:253
 msgid "Type:"
 msgstr "ধরন:"
 
-#: data/eom-image-properties-dialog.ui:271
+#: data/eoc-image-properties-dialog.ui:271
 msgid "Bytes:"
 msgstr "বাইট:"
 
-#: data/eom-image-properties-dialog.ui:289
-#: data/eom-image-properties-dialog.ui:614
+#: data/eoc-image-properties-dialog.ui:289
+#: data/eoc-image-properties-dialog.ui:614
 msgid "Location:"
 msgstr "অবস্থান:"
 
-#: data/eom-image-properties-dialog.ui:422
+#: data/eoc-image-properties-dialog.ui:422
 msgid "General"
 msgstr "সাধারণ"
 
-#: data/eom-image-properties-dialog.ui:455
+#: data/eoc-image-properties-dialog.ui:455
 msgid "Aperture Value:"
 msgstr "অ্যাপারচার মান:"
 
-#: data/eom-image-properties-dialog.ui:471
+#: data/eoc-image-properties-dialog.ui:471
 msgid "Exposure Time:"
 msgstr "প্রদর্শনের সময়:"
 
-#: data/eom-image-properties-dialog.ui:487
+#: data/eoc-image-properties-dialog.ui:487
 msgid "Focal Length:"
 msgstr "ফোকাস দুরত্ব:"
 
-#: data/eom-image-properties-dialog.ui:503
+#: data/eoc-image-properties-dialog.ui:503
 msgid "Flash:"
 msgstr "ঝলক:"
 
-#: data/eom-image-properties-dialog.ui:519
+#: data/eoc-image-properties-dialog.ui:519
 msgid "ISO Speed Rating:"
 msgstr "ISO গতি নির্ধারক:"
 
-#: data/eom-image-properties-dialog.ui:535
+#: data/eoc-image-properties-dialog.ui:535
 msgid "Metering Mode:"
 msgstr "মিটারিং মোড:"
 
-#: data/eom-image-properties-dialog.ui:551
+#: data/eoc-image-properties-dialog.ui:551
 msgid "Camera Model:"
 msgstr "ক্যামেরা মডেল:"
 
-#: data/eom-image-properties-dialog.ui:568
+#: data/eoc-image-properties-dialog.ui:568
 msgid "Date/Time:"
 msgstr "তারিখ/সময়:"
 
-#: data/eom-image-properties-dialog.ui:598
+#: data/eoc-image-properties-dialog.ui:598
 msgid "Description:"
 msgstr "বর্ণনা:"
 
-#: data/eom-image-properties-dialog.ui:630
+#: data/eoc-image-properties-dialog.ui:630
 msgid "Keywords:"
 msgstr "মূলশব্দ:"
 
-#: data/eom-image-properties-dialog.ui:646
+#: data/eoc-image-properties-dialog.ui:646
 msgid "Author:"
 msgstr "লেখক:"
 
-#: data/eom-image-properties-dialog.ui:662
+#: data/eoc-image-properties-dialog.ui:662
 msgid "Copyright:"
 msgstr "স্বত্বাধিকার:"
 
-#: data/eom-image-properties-dialog.ui:941
-#: data/eom-image-properties-dialog.ui:990 data/metadata-sidebar.ui:409
+#: data/eoc-image-properties-dialog.ui:941
+#: data/eoc-image-properties-dialog.ui:990 data/metadata-sidebar.ui:409
 msgid "Details"
 msgstr "বিস্তারিত"
 
-#: data/eom-image-properties-dialog.ui:966
+#: data/eoc-image-properties-dialog.ui:966
 msgid "Metadata"
 msgstr "মেটাডাটা"
 
-#: data/eom-multiple-save-as-dialog.ui:16
+#: data/eoc-multiple-save-as-dialog.ui:16
 msgid "Save As"
 msgstr "নতুন ভাবে সংরক্ষণ করুন"
 
-#: data/eom-multiple-save-as-dialog.ui:101
+#: data/eoc-multiple-save-as-dialog.ui:101
 msgid "<b>%f:</b> original filename"
 msgstr "<b>%f:</b> ফাইলের আদি নাম"
 
-#: data/eom-multiple-save-as-dialog.ui:119
+#: data/eoc-multiple-save-as-dialog.ui:119
 msgid "<b>%n:</b> counter"
 msgstr "<b>%n:</b> নির্ণায়ক"
 
-#: data/eom-multiple-save-as-dialog.ui:169
+#: data/eoc-multiple-save-as-dialog.ui:169
 msgid "Choose a folder"
 msgstr "ফোল্ডার নির্বাচন করুন"
 
-#: data/eom-multiple-save-as-dialog.ui:182
+#: data/eoc-multiple-save-as-dialog.ui:182
 msgid "Destination folder:"
 msgstr "গন্তব্য ফোল্ডার:"
 
-#: data/eom-multiple-save-as-dialog.ui:194
+#: data/eoc-multiple-save-as-dialog.ui:194
 msgid "Filename format:"
 msgstr "ফাইলের নামের ফরম্যাট:"
 
-#: data/eom-multiple-save-as-dialog.ui:212
+#: data/eoc-multiple-save-as-dialog.ui:212
 msgid "File Path Specifications"
 msgstr "ফাইল পাথের সুনির্দিষ্ট বিবরণ"
 
-#: data/eom-multiple-save-as-dialog.ui:253
+#: data/eoc-multiple-save-as-dialog.ui:253
 msgid "Start counter at:"
 msgstr "কাউন্টার আরম্ভ:"
 
-#: data/eom-multiple-save-as-dialog.ui:285
+#: data/eoc-multiple-save-as-dialog.ui:285
 msgid "Replace spaces with underscores"
 msgstr "ফাঁকা জায়গাগুলো আন্ডারস্কোর দিয়ে প্রতিস্থাপন করা হবে"
 
-#: data/eom-multiple-save-as-dialog.ui:307
+#: data/eoc-multiple-save-as-dialog.ui:307
 msgid "Options"
 msgstr "অপশন"
 
-#: data/eom-multiple-save-as-dialog.ui:369
+#: data/eoc-multiple-save-as-dialog.ui:369
 msgid "Rename from:"
 msgstr "নামান্তর হয়েছে:"
 
-#: data/eom-multiple-save-as-dialog.ui:381
+#: data/eoc-multiple-save-as-dialog.ui:381
 msgid "To:"
 msgstr "প্রতি:"
 
-#: data/eom-multiple-save-as-dialog.ui:396
+#: data/eoc-multiple-save-as-dialog.ui:396
 msgid "File Name Preview"
 msgstr "ফাইলের নামের প্রাকদর্শন"
 
-#: data/eom-preferences-dialog.ui:16
+#: data/eoc-preferences-dialog.ui:16
 msgid "Eye of MATE Preferences"
 msgstr "জিনোম চোখের পছন্দসমূহ"
 
-#: data/eom-preferences-dialog.ui:88
+#: data/eoc-preferences-dialog.ui:88
 msgid "Image Enhancements"
 msgstr "ছবি বর্ধিতকরণ"
 
-#: data/eom-preferences-dialog.ui:117
+#: data/eoc-preferences-dialog.ui:117
 msgid "Smooth images when zoomed-_out"
 msgstr "ছোট আকারে প্রদর্শনের সময় ছবিগুলোকে মসৃণ করা হবে (_o)"
 
-#: data/eom-preferences-dialog.ui:155
+#: data/eoc-preferences-dialog.ui:155
 msgid "Smooth images when zoomed-_in"
 msgstr "বড় আকারে প্রদর্শনের সময় ছবিগুলোকে মসৃণ করা হবে (_i)"
 
-#: data/eom-preferences-dialog.ui:193
+#: data/eoc-preferences-dialog.ui:193
 msgid "_Automatic orientation"
 msgstr "স্বয়ংক্রিয় স্থিতিবিন্যাস (_A)"
 
-#: data/eom-preferences-dialog.ui:231
+#: data/eoc-preferences-dialog.ui:231
 msgid "Background"
 msgstr "পটভূমি"
 
-#: data/eom-preferences-dialog.ui:250
+#: data/eoc-preferences-dialog.ui:250
 msgid "As custom color:"
 msgstr ""
 
-#: data/eom-preferences-dialog.ui:267 data/org.mate.eom.gschema.xml.in:16
+#: data/eoc-preferences-dialog.ui:267 data/org.mate.eoc.gschema.xml.in:16
 msgid "Background Color"
 msgstr "পটভূমির রং"
 
-#: data/eom-preferences-dialog.ui:300
+#: data/eoc-preferences-dialog.ui:300
 msgid "Transparent Parts"
 msgstr "স্বচ্ছ অংশ"
 
-#: data/eom-preferences-dialog.ui:335
+#: data/eoc-preferences-dialog.ui:335
 msgid "As check _pattern"
 msgstr "চৌখুপী ছক হিসেবে (_p)"
 
-#: data/eom-preferences-dialog.ui:356
+#: data/eoc-preferences-dialog.ui:356
 msgid "As custom c_olor:"
 msgstr "স্বনির্ধারিত রং হিসেবে: (_o)"
 
-#: data/eom-preferences-dialog.ui:377
+#: data/eoc-preferences-dialog.ui:377
 msgid "Color for Transparent Areas"
 msgstr "স্বচ্ছ অংশসমূহের জন্য রং"
 
-#: data/eom-preferences-dialog.ui:395
+#: data/eoc-preferences-dialog.ui:395
 msgid "As _background"
 msgstr "পটভূমি হিসেবে (_b)"
 
-#: data/eom-preferences-dialog.ui:437
+#: data/eoc-preferences-dialog.ui:437
 msgid "Image View"
 msgstr "ছবি প্রদর্শন"
 
-#: data/eom-preferences-dialog.ui:461
+#: data/eoc-preferences-dialog.ui:461
 msgid "Image Zoom"
 msgstr "ছবি বড় আকারে প্রদর্শন"
 
-#: data/eom-preferences-dialog.ui:496
+#: data/eoc-preferences-dialog.ui:496
 msgid "E_xpand images to fit screen"
 msgstr "স্ক্রীনের সাথে মানানসই করার জন্য ছবিগুলোকে প্রসারিত করুন (_x)"
 
-#: data/eom-preferences-dialog.ui:541
+#: data/eoc-preferences-dialog.ui:541
 msgid "Sequence"
 msgstr "ক্রমপর্যায়"
 
-#: data/eom-preferences-dialog.ui:583
+#: data/eoc-preferences-dialog.ui:583
 msgid "_Switch image after:"
 msgstr "উল্লিখিত অবস্থার পর ছবি পরিবর্তন করা হবে: (_S)"
 
-#: data/eom-preferences-dialog.ui:611
+#: data/eoc-preferences-dialog.ui:611
 msgid "seconds"
 msgstr "সেকেন্ড"
 
-#: data/eom-preferences-dialog.ui:628
+#: data/eoc-preferences-dialog.ui:628
 msgid "_Random sequence"
 msgstr ""
 
-#: data/eom-preferences-dialog.ui:644
+#: data/eoc-preferences-dialog.ui:644
 msgid "_Loop sequence"
 msgstr "চক্রাকার আবর্তনের ক্রমপর্যায় (_L)"
 
-#: data/eom-preferences-dialog.ui:688
+#: data/eoc-preferences-dialog.ui:688
 msgid "Slideshow"
 msgstr "স্লাইড প্রদর্শনী"
 
-#: data/eom-preferences-dialog.ui:722
+#: data/eoc-preferences-dialog.ui:722
 msgid "Plugins"
 msgstr "প্লাগ-ইন"
 
-#: data/metadata-sidebar.ui:29 src/eom-print-image-setup.c:896
+#: data/metadata-sidebar.ui:29 src/eoc-print-image-setup.c:896
 msgid "Size"
 msgstr "আকার"
 
@@ -363,7 +363,7 @@ msgstr ""
 msgid "Metering"
 msgstr ""
 
-#: data/metadata-sidebar.ui:169 src/eom-metadata-details.c:65
+#: data/metadata-sidebar.ui:169 src/eoc-metadata-details.c:65
 msgid "Camera"
 msgstr "ক্যামেরা"
 
@@ -379,50 +379,50 @@ msgstr "সময়"
 msgid "Focal Length"
 msgstr "ফোকাসের দৈর্ঘ্য"
 
-#: data/org.mate.eom.gschema.xml.in:11
+#: data/org.mate.eoc.gschema.xml.in:11
 msgid "Automatic orientation"
 msgstr "স্বয়ংক্রিয় স্থিতিবিন্যাস"
 
-#: data/org.mate.eom.gschema.xml.in:12
+#: data/org.mate.eoc.gschema.xml.in:12
 msgid ""
 "Whether the image should be rotated automatically based on EXIF orientation."
 msgstr ""
 "ছবিগুলোকে EXIF স্থিতিবিন্যাসের উপর নির্ভর করে স্বয়ংক্রিয়ভাবে আবর্তিত হতে "
 "দেয়া হবে কিনা।"
 
-#: data/org.mate.eom.gschema.xml.in:17
+#: data/org.mate.eoc.gschema.xml.in:17
 msgid ""
 "The color that is used to fill the area behind the image. If the use-"
 "background-color key is not set, the color is determined by the active GTK+ "
 "theme instead."
 msgstr ""
 
-#: data/org.mate.eom.gschema.xml.in:21
+#: data/org.mate.eoc.gschema.xml.in:21
 msgid "Use a custom background color"
 msgstr ""
 
-#: data/org.mate.eom.gschema.xml.in:22
+#: data/org.mate.eoc.gschema.xml.in:22
 msgid ""
 "If this is active, the color set by the background-color key will be used to"
 " fill the area behind the image. If it is not set, the current GTK+ theme "
 "will determine the fill color."
 msgstr ""
 
-#: data/org.mate.eom.gschema.xml.in:26
+#: data/org.mate.eoc.gschema.xml.in:26
 msgid "Interpolate Image"
 msgstr "ছবিকে প্রক্ষিপ্ত করা হবে"
 
-#: data/org.mate.eom.gschema.xml.in:27
+#: data/org.mate.eoc.gschema.xml.in:27
 msgid ""
 "Whether the image should be interpolated on zoom-out. This leads to better "
 "quality but is somewhat slower than non-interpolated images."
 msgstr ""
 
-#: data/org.mate.eom.gschema.xml.in:31
+#: data/org.mate.eoc.gschema.xml.in:31
 msgid "Extrapolate Image"
 msgstr "ছবিকে প্রক্ষিপ্ত করা হবে"
 
-#: data/org.mate.eom.gschema.xml.in:32
+#: data/org.mate.eoc.gschema.xml.in:32
 msgid ""
 "Whether the image should be extrapolated on zoom-in. This leads to blurry "
 "quality and is somewhat slower than non-extrapolated images."
@@ -430,30 +430,30 @@ msgstr ""
 "ছবির আকার বড় করার সময় তাকে প্রক্ষিপ্ত করা হবে কিনা। এতে ছবির গুণগত মান উন্নত"
 " হয় কিন্তু গোটা প্রক্রিয়াটি সম্পন্ন হতে আরো বেশি সময় লাগে।"
 
-#: data/org.mate.eom.gschema.xml.in:36
+#: data/org.mate.eoc.gschema.xml.in:36
 msgid "Transparency indicator"
 msgstr "স্বচ্ছতা সূচক"
 
-#: data/org.mate.eom.gschema.xml.in:37
+#: data/org.mate.eoc.gschema.xml.in:37
 msgid ""
 "Determines how transparency should be indicated. Valid values are checked, "
 "color and none. If color is chosen, then the trans-color key determines the "
 "color value used."
 msgstr ""
 
-#: data/org.mate.eom.gschema.xml.in:41
+#: data/org.mate.eoc.gschema.xml.in:41
 msgid "Scroll wheel zoom"
 msgstr "চক্রাকারে স্ক্রল করে বড় আকারে প্রদর্শন"
 
-#: data/org.mate.eom.gschema.xml.in:42
+#: data/org.mate.eoc.gschema.xml.in:42
 msgid "Whether the scroll wheel should be used for zooming."
 msgstr "বড় আকারে প্রদর্শনের জন্য স্ক্রল চাকাটি ব্যবহার করা উচিত কিনা।"
 
-#: data/org.mate.eom.gschema.xml.in:46
+#: data/org.mate.eoc.gschema.xml.in:46
 msgid "Zoom multiplier"
 msgstr "বড় আকারে প্রদর্শনের গুণিতক"
 
-#: data/org.mate.eom.gschema.xml.in:47
+#: data/org.mate.eoc.gschema.xml.in:47
 msgid ""
 "The multiplier to be applied when using the mouse scroll wheel for zooming. "
 "This value defines the zooming step used for each scroll event. For example,"
@@ -465,11 +465,11 @@ msgstr ""
 "নির্দেশ করে। উদাহরণস্বরূপ, ৫% বড় আকারে প্রদর্শনের জন্য প্রতিবার স্ক্রল করলে "
 "বাড়ে ০.০৫ এবং ১০০% এর জন্য বাড়ে ১.০০।"
 
-#: data/org.mate.eom.gschema.xml.in:51
+#: data/org.mate.eoc.gschema.xml.in:51
 msgid "Transparency color"
 msgstr "স্বচ্ছতার রং"
 
-#: data/org.mate.eom.gschema.xml.in:52
+#: data/org.mate.eoc.gschema.xml.in:52
 msgid ""
 "If the transparency key has the value COLOR, then this key determines the "
 "color which is used for indicating transparency."
@@ -477,27 +477,27 @@ msgstr ""
 "স্বচ্ছতা কী-এর মান যদি রং হয়, তাহলে এই কী নির্ধারণ করে কোন রং ব্যবহার করে "
 "স্বচ্ছতা বোঝানো হবে।"
 
-#: data/org.mate.eom.gschema.xml.in:58
+#: data/org.mate.eoc.gschema.xml.in:58
 msgid "Randomize the image sequence"
 msgstr ""
 
-#: data/org.mate.eom.gschema.xml.in:59
+#: data/org.mate.eoc.gschema.xml.in:59
 msgid "Whether the sequence of images should be shown in an random loop."
 msgstr ""
 
-#: data/org.mate.eom.gschema.xml.in:63
+#: data/org.mate.eoc.gschema.xml.in:63
 msgid "Loop through the image sequence"
 msgstr "ছবির ক্রমের মধ্য দিয়ে আবর্তন করা হবে"
 
-#: data/org.mate.eom.gschema.xml.in:64
+#: data/org.mate.eoc.gschema.xml.in:64
 msgid "Whether the sequence of images should be shown in an endless loop."
 msgstr "ছবির ধারা একটি অবিরাম লুপ হিসেবে দেখানো হবে কিনা।"
 
-#: data/org.mate.eom.gschema.xml.in:68
+#: data/org.mate.eoc.gschema.xml.in:68
 msgid "Allow zoom greater than 100% initially"
 msgstr "প্রাথমিকভাবে বড় করে দেখার মাত্রা ১০০%-এর বেশী অনুমোদন করা হবে"
 
-#: data/org.mate.eom.gschema.xml.in:69
+#: data/org.mate.eoc.gschema.xml.in:69
 msgid ""
 "If this is set to FALSE small images will not be stretched to fit into the "
 "screen initially."
@@ -505,11 +505,11 @@ msgstr ""
 "এটা যদি FALSE হিসেবে নির্ধারিত থাকে, তাহলে প্রাথমিকভাবে ছোট ছবিগুলোকে "
 "প্রসারিত করে দেখানো হবে না।"
 
-#: data/org.mate.eom.gschema.xml.in:73
+#: data/org.mate.eoc.gschema.xml.in:73
 msgid "Delay in seconds until showing the next image"
 msgstr "পরবর্তী ছবি দেখার মধ্যবর্তী সময়ের ব্যবধান"
 
-#: data/org.mate.eom.gschema.xml.in:74
+#: data/org.mate.eoc.gschema.xml.in:74
 msgid ""
 "A value greater than 0 determines the seconds an image stays on screen until"
 " the next one is shown automatically. Zero disables the automatic browsing."
@@ -517,57 +517,57 @@ msgstr ""
 "০ থেকে বড় মান নির্দেশ করে কত সেকেন্ড পর পর স্ক্রিনে ছবি বদলানো হবে। ০ মান "
 "স্বয়ংক্রিয় ব্রাউজিং নিষ্ক্রিয় করে দেয়।"
 
-#: data/org.mate.eom.gschema.xml.in:80
+#: data/org.mate.eoc.gschema.xml.in:80
 msgid "Show/Hide the window toolbar."
 msgstr "উইন্ডো টুলবার প্রদর্শন/আড়াল।"
 
-#: data/org.mate.eom.gschema.xml.in:84
+#: data/org.mate.eoc.gschema.xml.in:84
 msgid "Show/Hide the window statusbar."
 msgstr "উইন্ডো স্ট্যাটাসবার প্রদর্শন/আড়াল।"
 
-#: data/org.mate.eom.gschema.xml.in:88
+#: data/org.mate.eoc.gschema.xml.in:88
 msgid "Show/Hide the image collection pane."
 msgstr "ছবি সংগ্রহ পেন প্রদর্শন/আড়াল।"
 
-#: data/org.mate.eom.gschema.xml.in:92
+#: data/org.mate.eoc.gschema.xml.in:92
 msgid "Image collection pane position."
 msgstr ""
 
-#: data/org.mate.eom.gschema.xml.in:96
+#: data/org.mate.eoc.gschema.xml.in:96
 msgid "Whether the image collection pane should be resizable."
 msgstr "ছবি সংগ্রহ পেনের আকার পরিবর্তনযোগ্য হওয়া উচিত কিনা।"
 
-#: data/org.mate.eom.gschema.xml.in:100
+#: data/org.mate.eoc.gschema.xml.in:100
 msgid "Show/Hide the window side pane."
 msgstr "উইন্ডোর সাইড পেন প্রদর্শন/আড়াল।"
 
-#: data/org.mate.eom.gschema.xml.in:104
+#: data/org.mate.eoc.gschema.xml.in:104
 msgid "Show/Hide the image collection pane scroll buttons."
 msgstr "ছবি সংগ্রহ পেনের স্ক্রল বোতাম প্রদর্শন/আড়াল।"
 
-#: data/org.mate.eom.gschema.xml.in:108
+#: data/org.mate.eoc.gschema.xml.in:108
 msgid "Close main window without asking to save changes."
 msgstr ""
 
-#: data/org.mate.eom.gschema.xml.in:112
+#: data/org.mate.eoc.gschema.xml.in:112
 msgid "Trash images without asking"
 msgstr "ছবিগুলোকে অনুমতি ছাড়াই আবর্জনায় সরানো হবে"
 
-#: data/org.mate.eom.gschema.xml.in:113
+#: data/org.mate.eoc.gschema.xml.in:113
 msgid ""
 "If activated, Eye of MATE won't ask for confirmation when moving images to "
 "the trash. It will still ask if any of the files cannot be moved to the "
 "trash and would be deleted instead."
 msgstr ""
 
-#: data/org.mate.eom.gschema.xml.in:117
+#: data/org.mate.eoc.gschema.xml.in:117
 msgid ""
 "Whether the metadata list in the properties dialog should have its own page."
 msgstr ""
 "বৈশিষ্ট্যাবলী ডায়ালগের ভেতর মেটাডাটার তালিকার জন্য আলাদা কোন পৃষ্ঠা থাকা "
 "উচিত কিনা।"
 
-#: data/org.mate.eom.gschema.xml.in:118
+#: data/org.mate.eoc.gschema.xml.in:118
 msgid ""
 "If activated, the detailed metadata list in the properties dialog will be "
 "moved to its own page in the dialog. This should make the dialog more usable"
@@ -575,18 +575,18 @@ msgid ""
 "be embedded on the \"Metadata\" page."
 msgstr ""
 
-#: data/org.mate.eom.gschema.xml.in:122
+#: data/org.mate.eoc.gschema.xml.in:122
 msgid "External program to use for editing images"
 msgstr ""
 
-#: data/org.mate.eom.gschema.xml.in:123
+#: data/org.mate.eoc.gschema.xml.in:123
 msgid ""
 "The desktop file name (including the \".desktop\") of the application to use"
 " for editing images (when the \"Edit Image\" toolbar button is clicked). Set"
 " to the empty string to disable this feature."
 msgstr ""
 
-#: data/org.mate.eom.gschema.xml.in:127
+#: data/org.mate.eoc.gschema.xml.in:127
 msgid ""
 "Whether the file chooser should show the user's pictures folder if no images"
 " are loaded."
@@ -594,7 +594,7 @@ msgstr ""
 "কোন ছবি লোড করা না থাকলে ফাইল নির্বাচকের ব্যবহারকারীর ছবির ফোল্ডার দেখানো "
 "উচিত কিনা।"
 
-#: data/org.mate.eom.gschema.xml.in:128
+#: data/org.mate.eoc.gschema.xml.in:128
 msgid ""
 "If activated and no image is loaded in the active window, the file chooser "
 "will display the user's pictures folder using the XDG special user "
@@ -602,18 +602,18 @@ msgid ""
 "will show the current working directory."
 msgstr ""
 
-#: data/org.mate.eom.gschema.xml.in:134
+#: data/org.mate.eoc.gschema.xml.in:134
 msgid "Active plugins"
 msgstr "সক্রিয় প্লাগ-ইন"
 
-#: data/org.mate.eom.gschema.xml.in:135
+#: data/org.mate.eoc.gschema.xml.in:135
 msgid ""
 "List of active plugins. It doesn't contain the \"Location\" of the active "
-"plugins. See the .eom-plugin file for obtaining the \"Location\" of a given "
+"plugins. See the .eoc-plugin file for obtaining the \"Location\" of a given "
 "plugin."
 msgstr ""
 "সক্রিয় প্লাগইনের তালিকা। এটি সক্রিয় প্লাগইনের \"অবস্থান\" ধারণ করে না। "
-"উল্লিখিত প্লাগইনের অবস্থান পেতে .eom-plugin ফাইলটিতে দেখুন।"
+"উল্লিখিত প্লাগইনের অবস্থান পেতে .eoc-plugin ফাইলটিতে দেখুন।"
 
 #: plugins/fullscreen/fullscreen.plugin.desktop.in:5
 msgid "Fullscreen with double-click"
@@ -623,12 +623,12 @@ msgstr "ডবল ক্লিক করে পর্দা জুড়ে প্�
 msgid "view-fullscreen"
 msgstr ""
 
-#: plugins/reload/eom-reload-plugin.c:45
+#: plugins/reload/eoc-reload-plugin.c:45
 #: plugins/reload/reload.plugin.desktop.in:5
 msgid "Reload Image"
 msgstr "ছবি পুনরায় লোড করুন"
 
-#: plugins/reload/eom-reload-plugin.c:45
+#: plugins/reload/eoc-reload-plugin.c:45
 msgid "Reload current image"
 msgstr "বর্তমান ছবিটি পুনরায় লোড করুন"
 
@@ -640,24 +640,24 @@ msgstr ""
 msgid "Date in statusbar"
 msgstr " স্ট্যাটাসবারের তারিখ"
 
-#: src/eom-close-confirmation-dialog.c:154
+#: src/eoc-close-confirmation-dialog.c:154
 msgid "Close _without Saving"
 msgstr "সংরক্ষণ না করেই বন্ধ করুন (_w)"
 
-#: src/eom-close-confirmation-dialog.c:187
+#: src/eoc-close-confirmation-dialog.c:187
 msgid "Question"
 msgstr "প্রশ্ন"
 
-#: src/eom-close-confirmation-dialog.c:366
+#: src/eoc-close-confirmation-dialog.c:366
 msgid "If you don't save, your changes will be lost."
 msgstr "আপনি যদি সংরক্ষণ না করেন, তবে আপনার পরিবর্তনগুলো বাতিল হয়ে যাবে।"
 
-#: src/eom-close-confirmation-dialog.c:402
+#: src/eoc-close-confirmation-dialog.c:402
 #, c-format
 msgid "Save changes to image \"%s\" before closing?"
 msgstr "বন্ধ করার আগে \"%s\" ছবিটিতে করা পরিবর্তনগুলো সংরক্ষণ করা হবে কি?"
 
-#: src/eom-close-confirmation-dialog.c:597
+#: src/eoc-close-confirmation-dialog.c:597
 #, c-format
 msgid "There is %d image with unsaved changes. Save changes before closing?"
 msgid_plural ""
@@ -665,19 +665,19 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/eom-close-confirmation-dialog.c:614
+#: src/eoc-close-confirmation-dialog.c:614
 msgid "S_elect the images you want to save:"
 msgstr "সংরক্ষণ করার জন্য ছবি নির্বাচন করুন: (_e)"
 
-#: src/eom-close-confirmation-dialog.c:633
+#: src/eoc-close-confirmation-dialog.c:633
 msgid "If you don't save, all your changes will be lost."
 msgstr "আপনি যদি সংরক্ষণ না করেন, তবে আপনার করা সকল পরিবর্তন বাতিল হয়ে যাবে।"
 
-#: src/eom-file-chooser.c:121
+#: src/eoc-file-chooser.c:121
 msgid "File format is unknown or unsupported"
 msgstr "ফাইল ফরম্যাট অজানা বা অসমর্থিত"
 
-#: src/eom-file-chooser.c:126
+#: src/eoc-file-chooser.c:126
 msgid ""
 "Eye of MATE could not determine a supported writable file format based on "
 "the filename."
@@ -685,277 +685,277 @@ msgstr ""
 "ফাইলের নামের উপর নির্ভর করে জিনোমের চোখ লিখনযোগ্য ফাইল ফরম্যাট নির্ধারণ করতে"
 " পারেনা।"
 
-#: src/eom-file-chooser.c:127
+#: src/eoc-file-chooser.c:127
 msgid "Please try a different file extension like .png or .jpg."
 msgstr ""
 "অনুগ্রহপূর্বক ফাইলের অন্য একটি এক্সটেনশন যেমন: .png বা .jpg-তে চেষ্টা করুন।"
 
-#: src/eom-file-chooser.c:159
+#: src/eoc-file-chooser.c:159
 msgid "All Files"
 msgstr "সব ফাইল"
 
-#: src/eom-file-chooser.c:164
+#: src/eoc-file-chooser.c:164
 msgid "All Images"
 msgstr "সকল ছবি"
 
-#: src/eom-file-chooser.c:185
+#: src/eoc-file-chooser.c:185
 #, c-format
 msgid "%s (*.%s)"
 msgstr "%s (*.%s)"
 
-#: src/eom-file-chooser.c:281 src/eom-properties-dialog.c:163
-#: src/eom-properties-dialog.c:165 src/eom-thumb-view.c:516
+#: src/eoc-file-chooser.c:281 src/eoc-properties-dialog.c:163
+#: src/eoc-properties-dialog.c:165 src/eoc-thumb-view.c:516
 msgid "pixel"
 msgid_plural "pixels"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/eom-file-chooser.c:451
+#: src/eoc-file-chooser.c:451
 msgid "Open Image"
 msgstr ""
 
-#: src/eom-file-chooser.c:459
+#: src/eoc-file-chooser.c:459
 msgid "Save Image"
 msgstr "চিত্রটি সংরক্ষণ করুন"
 
-#: src/eom-file-chooser.c:467 src/eom-window.c:4009
+#: src/eoc-file-chooser.c:467 src/eoc-window.c:4009
 msgid "Open Folder"
 msgstr "ফোল্ডার খুলুন"
 
-#: src/eom-image.c:552
+#: src/eoc-image.c:552
 msgid "Transformation on unloaded image."
 msgstr "লোড না করা ছবির রূপান্তর।"
 
-#: src/eom-image.c:580
+#: src/eoc-image.c:580
 msgid "Transformation failed."
 msgstr "রূপান্তর ব্যর্থ।"
 
-#: src/eom-image.c:1054
+#: src/eoc-image.c:1054
 msgid "EXIF not supported for this file format."
 msgstr "এই ফাইল ফরম্যাটের জন্য EXIF সমর্থিত নয়।"
 
-#: src/eom-image.c:1203
+#: src/eoc-image.c:1203
 msgid "Image loading failed."
 msgstr " ছবির লোডিং প্রক্রিয়া ব্যর্থ।"
 
-#: src/eom-image.c:1732 src/eom-image.c:1834
+#: src/eoc-image.c:1732 src/eoc-image.c:1834
 msgid "No image loaded."
 msgstr "কোন ছবি লোড করা হয়নি।"
 
-#: src/eom-image.c:1742 src/eom-image.c:1846
+#: src/eoc-image.c:1742 src/eoc-image.c:1846
 msgid "Temporary file creation failed."
 msgstr "অস্থায়ী ফাইল তৈরীতে ব্যর্থ।"
 
-#: src/eom-image-jpeg.c:384
+#: src/eoc-image-jpeg.c:384
 #, c-format
 msgid "Couldn't create temporary file for saving: %s"
 msgstr "সংরক্ষণ করার জন্য অস্থায়ী ফাইল তৈরী করা যায়নি: %s"
 
-#: src/eom-image-jpeg.c:395
+#: src/eoc-image-jpeg.c:395
 msgid "Couldn't allocate memory for loading JPEG file"
 msgstr "JPEG ফাইল পড়ার জন্য মেমরি বরাদ্দ করা যায়নি"
 
-#: src/eom-error-message-area.c:108
+#: src/eoc-error-message-area.c:108
 msgid "_Retry"
 msgstr "পুনঃপ্রচেষ্টা (_R)"
 
-#: src/eom-error-message-area.c:151
+#: src/eoc-error-message-area.c:151
 #, c-format
 msgid "Could not load image '%s'."
 msgstr "'%s' ছবি লোড করা যায়নি।"
 
-#: src/eom-error-message-area.c:193
+#: src/eoc-error-message-area.c:193
 #, c-format
 msgid "No images found in '%s'."
 msgstr " '%s'-তে কোন ছবি পাওয়া যায়নি।"
 
-#: src/eom-error-message-area.c:200
+#: src/eoc-error-message-area.c:200
 msgid "The given locations contain no images."
 msgstr "উল্লিখিত অবস্থানে কোন ছবি নেই।"
 
-#: src/eom-metadata-details.c:66
+#: src/eoc-metadata-details.c:66
 msgid "Image Data"
 msgstr "ছবির তথ্য"
 
-#: src/eom-metadata-details.c:67
+#: src/eoc-metadata-details.c:67
 msgid "Image Taking Conditions"
 msgstr "ছবি গ্রহণের শর্তাবলী"
 
-#: src/eom-metadata-details.c:68
+#: src/eoc-metadata-details.c:68
 msgid "GPS Data"
 msgstr ""
 
-#: src/eom-metadata-details.c:69
+#: src/eoc-metadata-details.c:69
 msgid "Maker Note"
 msgstr "তৈরীকারকের নোট"
 
-#: src/eom-metadata-details.c:70
+#: src/eoc-metadata-details.c:70
 msgid "Other"
 msgstr "অন্যান্য"
 
-#: src/eom-metadata-details.c:72
+#: src/eoc-metadata-details.c:72
 msgid "XMP Exif"
 msgstr "XMP এক্সিফ"
 
-#: src/eom-metadata-details.c:73
+#: src/eoc-metadata-details.c:73
 msgid "XMP IPTC"
 msgstr "XMP IPTC"
 
-#: src/eom-metadata-details.c:74
+#: src/eoc-metadata-details.c:74
 msgid "XMP Rights Management"
 msgstr "XMP স্বত্বাধিকার কর্তৃপক্ষ"
 
-#: src/eom-metadata-details.c:75
+#: src/eoc-metadata-details.c:75
 msgid "XMP Other"
 msgstr "XMP অন্যান্য"
 
-#: src/eom-metadata-details.c:251
+#: src/eoc-metadata-details.c:251
 msgid "Tag"
 msgstr "ট্যাগ"
 
-#: src/eom-metadata-details.c:261
+#: src/eoc-metadata-details.c:261
 msgid "Value"
 msgstr "মান"
 
-#: src/eom-metadata-details.c:436
+#: src/eoc-metadata-details.c:436
 msgid "North"
 msgstr "উত্তর"
 
-#: src/eom-metadata-details.c:439
+#: src/eoc-metadata-details.c:439
 msgid "East"
 msgstr "পূর্ব"
 
-#: src/eom-metadata-details.c:442
+#: src/eoc-metadata-details.c:442
 msgid "West"
 msgstr "পশ্চিম"
 
-#: src/eom-metadata-details.c:445
+#: src/eoc-metadata-details.c:445
 msgid "South"
 msgstr "দক্ষিণ"
 
-#: src/eom-exif-util.c:191 src/eom-exif-util.c:193
+#: src/eoc-exif-util.c:191 src/eoc-exif-util.c:193
 msgid "%a, %d %B %Y  %X"
 msgstr "%a, %d %B %Y  %X"
 
-#: src/eom-exif-util.c:282
+#: src/eoc-exif-util.c:282
 #, c-format
 msgid "%.1f (lens)"
 msgstr "%.1f (লেন্স)"
 
-#: src/eom-exif-util.c:293
+#: src/eoc-exif-util.c:293
 #, c-format
 msgid "%.1f (35mm film)"
 msgstr "%.1f (35mm ফিল্ম)"
 
-#: src/eom-metadata-sidebar.c:153
+#: src/eoc-metadata-sidebar.c:153
 #, c-format
 msgid "%i × %i pixel"
 msgid_plural "%i × %i pixels"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/eom-metadata-sidebar.c:164 src/eom-properties-dialog.c:180
+#: src/eoc-metadata-sidebar.c:164 src/eoc-properties-dialog.c:180
 msgid "Unknown"
 msgstr "অজানা"
 
-#: src/eom-metadata-sidebar.c:229
+#: src/eoc-metadata-sidebar.c:229
 msgid "%a, %d %B %Y"
 msgstr "%a, %d %B %Y"
 
-#: src/eom-metadata-sidebar.c:233
+#: src/eoc-metadata-sidebar.c:233
 #, c-format
 msgid "%X"
 msgstr ""
 
-#: src/eom-print.c:371
+#: src/eoc-print.c:371
 msgid "Image Settings"
 msgstr "ছবির সেটিংসমূহ"
 
-#: src/eom-print-image-setup.c:824
+#: src/eoc-print-image-setup.c:824
 msgid "Image"
 msgstr "ছবি"
 
-#: src/eom-print-image-setup.c:825
+#: src/eoc-print-image-setup.c:825
 msgid "The image whose printing properties will be set up"
 msgstr "যে ছবির মুদ্রণ বৈশিষ্টাবলী সেট আপ করা হবে"
 
-#: src/eom-print-image-setup.c:831
+#: src/eoc-print-image-setup.c:831
 msgid "Page Setup"
 msgstr "পৃষ্ঠার সেটআপ"
 
-#: src/eom-print-image-setup.c:832
+#: src/eoc-print-image-setup.c:832
 msgid "The information for the page where the image will be printed"
 msgstr "ছবিটি যেখানে মুদ্রিত হবে সেই পৃষ্ঠার জন্য তথ্যাবলী"
 
-#: src/eom-print-image-setup.c:858
+#: src/eoc-print-image-setup.c:858
 msgid "Position"
 msgstr "অবস্থান"
 
-#: src/eom-print-image-setup.c:862
+#: src/eoc-print-image-setup.c:862
 msgid "_Left:"
 msgstr "বাম: (_L)"
 
-#: src/eom-print-image-setup.c:864
+#: src/eoc-print-image-setup.c:864
 msgid "_Right:"
 msgstr "ডান: (_R)"
 
-#: src/eom-print-image-setup.c:865
+#: src/eoc-print-image-setup.c:865
 msgid "_Top:"
 msgstr "উপরে: (_T)"
 
-#: src/eom-print-image-setup.c:866
+#: src/eoc-print-image-setup.c:866
 msgid "_Bottom:"
 msgstr "নিচে: (_B)"
 
-#: src/eom-print-image-setup.c:869
+#: src/eoc-print-image-setup.c:869
 msgid "C_enter:"
 msgstr "কেন্দ্র: (_e)"
 
-#: src/eom-print-image-setup.c:874
+#: src/eoc-print-image-setup.c:874
 msgid "None"
 msgstr "একটিও নয়"
 
-#: src/eom-print-image-setup.c:876
+#: src/eoc-print-image-setup.c:876
 msgid "Horizontal"
 msgstr "অনুভূমিক "
 
-#: src/eom-print-image-setup.c:878
+#: src/eoc-print-image-setup.c:878
 msgid "Vertical"
 msgstr "উল্লম্ব"
 
-#: src/eom-print-image-setup.c:880
+#: src/eoc-print-image-setup.c:880
 msgid "Both"
 msgstr "উভয়"
 
-#: src/eom-print-image-setup.c:899
+#: src/eoc-print-image-setup.c:899
 msgid "_Width:"
 msgstr "প্রস্থ: (_W)"
 
-#: src/eom-print-image-setup.c:901
+#: src/eoc-print-image-setup.c:901
 msgid "_Height:"
 msgstr "উচ্চতা: (_H)"
 
-#: src/eom-print-image-setup.c:904
+#: src/eoc-print-image-setup.c:904
 msgid "_Scaling:"
 msgstr "আকার পরিবর্তন: (_S)"
 
-#: src/eom-print-image-setup.c:915
+#: src/eoc-print-image-setup.c:915
 msgid "_Unit:"
 msgstr "একক: (_U)"
 
-#: src/eom-print-image-setup.c:920
+#: src/eoc-print-image-setup.c:920
 msgid "Millimeters"
 msgstr "মিলিমিটার"
 
-#: src/eom-print-image-setup.c:922
+#: src/eoc-print-image-setup.c:922
 msgid "Inches"
 msgstr "ইঞ্চি"
 
-#: src/eom-print-image-setup.c:950
+#: src/eoc-print-image-setup.c:950
 msgid "Preview"
 msgstr "প্রাকদর্শন"
 
-#: src/eom-save-as-dialog-helper.c:161
+#: src/eoc-save-as-dialog-helper.c:161
 msgid "as is"
 msgstr "যেমন আছে"
 
@@ -969,24 +969,24 @@ msgstr "যেমন আছে"
 #. * Note that translating this doesn't guarantee that you get localized
 #. * digits. That needs support from your system and locale definition
 #. * too.
-#: src/eom-statusbar.c:122
+#: src/eoc-statusbar.c:122
 #, c-format
 msgid "%d / %d"
 msgstr "%d / %d"
 
-#: src/eom-thumb-view.c:544
+#: src/eoc-thumb-view.c:544
 msgid "Taken on"
 msgstr "গ্রহণ করা"
 
-#: src/eom-uri-converter.c:986
+#: src/eoc-uri-converter.c:986
 msgid "At least two file names are equal."
 msgstr "অন্তত দুইটি ফাইলের নাম অনুরূপ।"
 
-#: src/eom-util.c:68
+#: src/eoc-util.c:68
 msgid "Could not display help for Eye of MATE"
 msgstr "জিনোমের চোখের জন্য সহায়তা প্রদর্শন করা যায়নি"
 
-#: src/eom-util.c:116
+#: src/eoc-util.c:116
 msgid " (invalid Unicode)"
 msgstr " (অকার্যকর ইউনিকোড)"
 
@@ -996,30 +996,30 @@ msgstr " (অকার্যকর ইউনিকোড)"
 #. * - image height
 #. * - image size in bytes
 #. * - zoom in percent
-#: src/eom-window.c:521
+#: src/eoc-window.c:521
 #, c-format
 msgid "%i × %i pixel  %s    %i%%"
 msgid_plural "%i × %i pixels  %s    %i%%"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/eom-window.c:832
+#: src/eoc-window.c:832
 msgid "_Reload"
 msgstr "পুনরায় লোড করুন (_R)"
 
-#: src/eom-window.c:834 src/eom-window.c:2794
+#: src/eoc-window.c:834 src/eoc-window.c:2794
 msgctxt "MessageArea"
 msgid "Hi_de"
 msgstr ""
 
-#: src/eom-window.c:844
+#: src/eoc-window.c:844
 #, c-format
 msgid ""
 "The image \"%s\" has been modified by an external application.\n"
 "Would you like to reload it?"
 msgstr ""
 
-#: src/eom-window.c:1012
+#: src/eoc-window.c:1012
 #, c-format
 msgid "Use \"%s\" to open the selected image"
 msgstr "নির্বাচিত ছবিটি খোলার জন্য \"%s\" ব্যবহার করুন"
@@ -1029,25 +1029,25 @@ msgstr "নির্বাচিত ছবিটি খোলার জন্য
 #. * - the original filename
 #. * - the current image's position in the queue
 #. * - the total number of images queued for saving
-#: src/eom-window.c:1176
+#: src/eoc-window.c:1176
 #, c-format
 msgid "Saving image \"%s\" (%u/%u)"
 msgstr "\"%s\" ছবি সংরক্ষণ করা হচ্ছে (%u/%u)"
 
-#: src/eom-window.c:1543
+#: src/eoc-window.c:1543
 #, c-format
 msgid "Opening image \"%s\""
 msgstr ""
 
-#: src/eom-window.c:1909
+#: src/eoc-window.c:1909
 msgid "Leave Fullscreen"
 msgstr "পূর্ণপর্দা ত্যাগ করুন"
 
-#: src/eom-window.c:2050
+#: src/eoc-window.c:2050
 msgid "Viewing a slideshow"
 msgstr ""
 
-#: src/eom-window.c:2263
+#: src/eoc-window.c:2263
 #, c-format
 msgid ""
 "Error printing file:\n"
@@ -1056,15 +1056,15 @@ msgstr ""
 "ফাইল মুদ্রণে ত্রুটি দেখা দিয়েছে:\n"
 "%s  "
 
-#: src/eom-window.c:2526
+#: src/eoc-window.c:2526
 msgid "Toolbar Editor"
 msgstr "টুলবার সম্পাদক"
 
-#: src/eom-window.c:2529
+#: src/eoc-window.c:2529
 msgid "_Reset to Default"
 msgstr "পূর্বনির্ধারিততে পুনর্বিন্যাস করুন (_R)"
 
-#: src/eom-window.c:2594
+#: src/eoc-window.c:2594
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
 "under the terms of the GNU General Public License as published by the Free "
@@ -1076,7 +1076,7 @@ msgstr ""
 "পারেন এবং/অথবা পরিবর্তনও করতে পারেন; লাইসেন্স সংস্করণ ২, অথবা (আপনার "
 "সুবিধানুযায়ী) পরবর্তী যেকোন সংস্করণ।\n"
 
-#: src/eom-window.c:2598
+#: src/eoc-window.c:2598
 msgid ""
 "This program is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
@@ -1088,29 +1088,29 @@ msgstr ""
 "যথাযথ হওয়ারও কোন গ্যারান্টি দেয় না। আরও বিস্তারিত তথ্যের জন্য GNU সাধারণ "
 "পাবলিক লাইসেন্স দেখুন।\n"
 
-#: src/eom-window.c:2602
+#: src/eoc-window.c:2602
 msgid ""
 "You should have received a copy of the GNU General Public License along with"
 " this program; if not, write to the Free Software Foundation, Inc., 51 "
 "Franklin St, Fifth Floor, Boston, MA 02110-1301, USA."
 msgstr ""
 
-#: src/eom-window.c:2641
+#: src/eoc-window.c:2641
 msgid "About Eye of MATE"
 msgstr ""
 
-#: src/eom-window.c:2643
+#: src/eoc-window.c:2643
 msgid ""
 "Copyright © 2000-2010 Free Software Foundation, Inc.\n"
 "Copyright © 2011 Perberos\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
 
-#: src/eom-window.c:2646
+#: src/eoc-window.c:2646
 msgid "The MATE image viewer."
 msgstr "জিনোমের ছবি প্রদর্শক।"
 
-#: src/eom-window.c:2649
+#: src/eoc-window.c:2649
 msgid "translator-credits"
 msgstr ""
 "অঙ্কুর প্রকল্পের পক্ষে, সায়মিন্দু দাশগুপ্ত <unmadindu@bengalinux.org>\n"
@@ -1119,15 +1119,15 @@ msgstr ""
 "লোবা ইয়াসমীন <loba@ankur.org.bd>\n"
 "ইসরাত জাহান <israt@ankur.org.bd>"
 
-#: src/eom-window.c:2742 src/eom-window.c:2757
+#: src/eoc-window.c:2742 src/eoc-window.c:2757
 msgid "Error launching appearance preferences dialog: "
 msgstr ""
 
-#: src/eom-window.c:2792
+#: src/eoc-window.c:2792
 msgid "_Open Background Preferences"
 msgstr ""
 
-#: src/eom-window.c:2808
+#: src/eoc-window.c:2808
 #, c-format
 msgid ""
 "The image \"%s\" has been set as Desktop Background.\n"
@@ -1136,11 +1136,11 @@ msgstr ""
 "\"%s\" ছবিটি ডেস্কটপের পটভূমি হিসেবে নির্ধারিত হয়েছে।\n"
 "আপনি কি এর অবয়ব পরিবর্তন করতে চান?"
 
-#: src/eom-window.c:3249
+#: src/eoc-window.c:3249
 msgid "Saving image locally…"
 msgstr "স্থানীয়ভাবে ছবি সংরক্ষণ করা হচ্ছে…"
 
-#: src/eom-window.c:3329
+#: src/eoc-window.c:3329
 #, c-format
 msgid ""
 "Are you sure you want to move\n"
@@ -1149,7 +1149,7 @@ msgstr ""
 "আপনি কি নিশ্চিত আপনি সত্যিই\n"
 "\"%s\" কে আবর্জনায় সরাতে চান?"
 
-#: src/eom-window.c:3332
+#: src/eoc-window.c:3332
 #, c-format
 msgid ""
 "A trash for \"%s\" couldn't be found. Do you want to remove this image "
@@ -1158,7 +1158,7 @@ msgstr ""
 " \"%s\" এর জন্য কোন আবর্জনা পাওয়া যায়নি। আপনি কি ছবিটিকে স্থায়ীভাবে অপসারণ "
 "করতে চান?"
 
-#: src/eom-window.c:3337
+#: src/eoc-window.c:3337
 #, c-format
 msgid ""
 "Are you sure you want to move\n"
@@ -1169,7 +1169,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/eom-window.c:3342
+#: src/eoc-window.c:3342
 msgid ""
 "Some of the selected images can't be moved to the trash and will be removed "
 "permanently. Are you sure you want to proceed?"
@@ -1177,387 +1177,387 @@ msgstr ""
 "নির্বাচিত কিছু ছবি আবর্জনায় সরিয়ে ফেলা অসম্ভব এবং স্থায়ীভাবে অপসারিত হবে। "
 "আপনি কি নিশ্চিত আপনি অগ্রসর হতে চান? "
 
-#: src/eom-window.c:3359 src/eom-window.c:3855 src/eom-window.c:3882
+#: src/eoc-window.c:3359 src/eoc-window.c:3855 src/eoc-window.c:3882
 msgid "Move to _Trash"
 msgstr "আবর্জনায় সরিয়ে ফেলুন (_T)"
 
-#: src/eom-window.c:3361
+#: src/eoc-window.c:3361
 msgid "_Do not ask again during this session"
 msgstr "এই সেশন চলাকালীন পুনরায় জিজ্ঞেস করা হবে না (_D)"
 
-#: src/eom-window.c:3406 src/eom-window.c:3420
+#: src/eoc-window.c:3406 src/eoc-window.c:3420
 msgid "Couldn't access trash."
 msgstr "আবর্জনায় প্রবেশ করা যায়নি।"
 
-#: src/eom-window.c:3428
+#: src/eoc-window.c:3428
 msgid "Couldn't delete file"
 msgstr "ফাইলটি মুছে ফেলা যায়নি"
 
-#: src/eom-window.c:3530
+#: src/eoc-window.c:3530
 #, c-format
 msgid "Error on deleting image %s"
 msgstr "%s মুছে ফেলার সময় ত্রুটি দেখা দিয়েছে"
 
-#: src/eom-window.c:3776
+#: src/eoc-window.c:3776
 msgid "_Image"
 msgstr "ছবি (_I)"
 
-#: src/eom-window.c:3777
+#: src/eoc-window.c:3777
 msgid "_Edit"
 msgstr "সম্পাদনা (_E)"
 
-#: src/eom-window.c:3778
+#: src/eoc-window.c:3778
 msgid "_View"
 msgstr "প্রদর্শন (_V)"
 
-#: src/eom-window.c:3779
+#: src/eoc-window.c:3779
 msgid "_Go"
 msgstr "যাও (_G)"
 
-#: src/eom-window.c:3780
+#: src/eoc-window.c:3780
 msgid "_Tools"
 msgstr "সরঞ্জাম (_T)"
 
-#: src/eom-window.c:3781
+#: src/eoc-window.c:3781
 msgid "_Help"
 msgstr "সহায়িকা (_H)"
 
-#: src/eom-window.c:3783
+#: src/eoc-window.c:3783
 msgid "_Open…"
 msgstr "খুলুন… (_O)"
 
-#: src/eom-window.c:3784
+#: src/eoc-window.c:3784
 msgid "Open a file"
 msgstr "ফাইল খুলুন"
 
-#: src/eom-window.c:3786
+#: src/eoc-window.c:3786
 msgid "_Close"
 msgstr "বন্ধ করুন (_C)"
 
-#: src/eom-window.c:3787
+#: src/eoc-window.c:3787
 msgid "Close window"
 msgstr "উইন্ডো বন্ধ করুন"
 
-#: src/eom-window.c:3789
+#: src/eoc-window.c:3789
 msgid "T_oolbar"
 msgstr "টুলবার (_o)"
 
-#: src/eom-window.c:3790
+#: src/eoc-window.c:3790
 msgid "Edit the application toolbar"
 msgstr "অ্যাপলিকেশন টুলবার সম্পাদনা করুন"
 
-#: src/eom-window.c:3792
+#: src/eoc-window.c:3792
 msgid "Prefere_nces"
 msgstr "পছন্দ (_n)"
 
-#: src/eom-window.c:3793
+#: src/eoc-window.c:3793
 msgid "Preferences for Eye of MATE"
 msgstr "জিনোম চোখের পছন্দসমূহ"
 
-#: src/eom-window.c:3795
+#: src/eoc-window.c:3795
 msgid "_Contents"
 msgstr "বিষয়বস্তু (_C)"
 
-#: src/eom-window.c:3796
+#: src/eoc-window.c:3796
 msgid "Help on this application"
 msgstr "এই অ্যাপলিকেশনের সহায়তা"
 
-#: src/eom-window.c:3798
+#: src/eoc-window.c:3798
 msgid "_About"
 msgstr "পরিচিতি (_A)"
 
-#: src/eom-window.c:3799
+#: src/eoc-window.c:3799
 msgid "About this application"
 msgstr "অ্যাপ্লিকেশন পরিচিতি"
 
-#: src/eom-window.c:3804
+#: src/eoc-window.c:3804
 msgid "_Toolbar"
 msgstr "টুলবার (_T)"
 
-#: src/eom-window.c:3805
+#: src/eoc-window.c:3805
 msgid "Changes the visibility of the toolbar in the current window"
 msgstr "বর্তমান উইন্ডোতে টুলবারের দৃশ্যমানতা বদলায়"
 
-#: src/eom-window.c:3807
+#: src/eoc-window.c:3807
 msgid "_Statusbar"
 msgstr "স্ট্যাটাস-বার (_S)"
 
-#: src/eom-window.c:3808
+#: src/eoc-window.c:3808
 msgid "Changes the visibility of the statusbar in the current window"
 msgstr "বর্তমান উইন্ডোতে স্ট্যাটাসবারের দৃশ্যমানতা বদলায়"
 
-#: src/eom-window.c:3810
+#: src/eoc-window.c:3810
 msgid "_Image Collection"
 msgstr "ছবি সংগ্রহ (_I)"
 
-#: src/eom-window.c:3811
+#: src/eoc-window.c:3811
 msgid ""
 "Changes the visibility of the image collection pane in the current window"
 msgstr "বর্তমান উইন্ডোতে ছবি সংগ্রাহকের দৃশ্যমানতা বদলায়"
 
-#: src/eom-window.c:3813
+#: src/eoc-window.c:3813
 msgid "Side _Pane"
 msgstr "সাইড পেন (_P)"
 
-#: src/eom-window.c:3814
+#: src/eoc-window.c:3814
 msgid "Changes the visibility of the side pane in the current window"
 msgstr "বর্তমান উইন্ডোতে পার্শ্বদেশের দৃশ্যমানতা বদলায়"
 
-#: src/eom-window.c:3819
+#: src/eoc-window.c:3819
 msgid "_Save"
 msgstr "সংরক্ষণ করুন (_S)"
 
-#: src/eom-window.c:3820
+#: src/eoc-window.c:3820
 msgid "Save changes in currently selected images"
 msgstr "বর্তমানে নির্বাচিত ছবিগুলোর পরিবর্তন সংরক্ষণ করা হবে"
 
-#: src/eom-window.c:3822
+#: src/eoc-window.c:3822
 msgid "Open _with"
 msgstr "সহযোগে খোলা হবে (_w)"
 
-#: src/eom-window.c:3823
+#: src/eoc-window.c:3823
 msgid "Open the selected image with a different application"
 msgstr "নির্বাচিত ছবিটিকে ভিন্ন অ্যাপলিকেশনের সাথে খোলা হবে"
 
-#: src/eom-window.c:3825
+#: src/eoc-window.c:3825
 msgid "Save _As…"
 msgstr "নতুনভাবে সংরক্ষণ… (_A)"
 
-#: src/eom-window.c:3826
+#: src/eoc-window.c:3826
 msgid "Save the selected images with a different name"
 msgstr "নির্বাচিত ছবিগুলোকে ভিন্ন নামে সংরক্ষণ করা হবে"
 
-#: src/eom-window.c:3828
+#: src/eoc-window.c:3828
 msgid "Open Containing _Folder"
 msgstr ""
 
-#: src/eom-window.c:3829
+#: src/eoc-window.c:3829
 msgid "Show the folder which contains this file in the file manager"
 msgstr ""
 
-#: src/eom-window.c:3831
+#: src/eoc-window.c:3831
 msgid "_Print…"
 msgstr "মুদ্রণ… (_P)"
 
-#: src/eom-window.c:3832
+#: src/eoc-window.c:3832
 msgid "Print the selected image"
 msgstr "নির্বাচিত ছবিটিকে মুদ্রণ করা হবে"
 
-#: src/eom-window.c:3834
+#: src/eoc-window.c:3834
 msgid "Prope_rties"
 msgstr "বৈশিষ্ট্যাবলী (_r)"
 
-#: src/eom-window.c:3835
+#: src/eoc-window.c:3835
 msgid "Show the properties and metadata of the selected image"
 msgstr "নির্বাচিত ছবিটির বৈশিষ্ট্যাবলী ও মেটাডাটা প্রদর্শন"
 
-#: src/eom-window.c:3837
+#: src/eoc-window.c:3837
 msgid "_Undo"
 msgstr "পূর্বাবস্থা (_U)"
 
-#: src/eom-window.c:3838
+#: src/eoc-window.c:3838
 msgid "Undo the last change in the image"
 msgstr "ছবিটিতে করা শেষ পরিবর্তন বাতিল করা হবে"
 
-#: src/eom-window.c:3840
+#: src/eoc-window.c:3840
 msgid "Flip _Horizontal"
 msgstr "অনুভূমিকভাবে উল্টানো হবে (_H) "
 
-#: src/eom-window.c:3841
+#: src/eoc-window.c:3841
 msgid "Mirror the image horizontally"
 msgstr "ছবিটিকে অনুভূমিকভাবে প্রতিফলিত করা হবে"
 
-#: src/eom-window.c:3843
+#: src/eoc-window.c:3843
 msgid "Flip _Vertical"
 msgstr "উল্লম্বভাবে উল্টানো হবে (_V)"
 
-#: src/eom-window.c:3844
+#: src/eoc-window.c:3844
 msgid "Mirror the image vertically"
 msgstr "ছবিটিকে উল্লম্বভাবে প্রতিফলিত করা হবে"
 
-#: src/eom-window.c:3846
+#: src/eoc-window.c:3846
 msgid "_Rotate Clockwise"
 msgstr "ঘড়ির কাঁটার দিকে ঘোরান (_R)"
 
-#: src/eom-window.c:3847
+#: src/eoc-window.c:3847
 msgid "Rotate the image 90 degrees to the right"
 msgstr "ছবিটিকে ৯০ ডিগ্রী ডানে ঘোরান"
 
-#: src/eom-window.c:3849
+#: src/eoc-window.c:3849
 msgid "Rotate Counterc_lockwise"
 msgstr "ঘড়ির কাঁটার বিপরীত দিকে ঘোরান (_l)"
 
-#: src/eom-window.c:3850
+#: src/eoc-window.c:3850
 msgid "Rotate the image 90 degrees to the left"
 msgstr "ছবিটিকে ৯০ ডিগ্রী বামে ঘোরান"
 
-#: src/eom-window.c:3852
+#: src/eoc-window.c:3852
 msgid "Set as _Desktop Background"
 msgstr "ডেক্সটপের পটভূমি হিসেবে নির্ধারণ করা হবে (_D)"
 
-#: src/eom-window.c:3853
+#: src/eoc-window.c:3853
 msgid "Set the selected image as the desktop background"
 msgstr "নির্বাচিত ছবিটিকে ডেক্সটপের পটভূমি হিসেবে নির্ধারণ করা হবে"
 
-#: src/eom-window.c:3856
+#: src/eoc-window.c:3856
 msgid "Move the selected image to the trash folder"
 msgstr "নির্বাচিত ছবিটিকে আবর্জনা ফোল্ডারে সরিয়ে ফেলা হবে"
 
-#: src/eom-window.c:3858
+#: src/eoc-window.c:3858
 msgid "_Copy"
 msgstr "অনুলিপি করুন (_C)"
 
-#: src/eom-window.c:3859
+#: src/eoc-window.c:3859
 msgid "Copy the selected image to the clipboard"
 msgstr ""
 
-#: src/eom-window.c:3861 src/eom-window.c:3873 src/eom-window.c:3876
+#: src/eoc-window.c:3861 src/eoc-window.c:3873 src/eoc-window.c:3876
 msgid "_Zoom In"
 msgstr "বড় আকারে প্রদর্শন (_Z)"
 
-#: src/eom-window.c:3862 src/eom-window.c:3874
+#: src/eoc-window.c:3862 src/eoc-window.c:3874
 msgid "Enlarge the image"
 msgstr "ছবিটিকে বড় করা হবে"
 
-#: src/eom-window.c:3864 src/eom-window.c:3879
+#: src/eoc-window.c:3864 src/eoc-window.c:3879
 msgid "Zoom _Out"
 msgstr "ছোট আকারে প্রদর্শন (_O)"
 
-#: src/eom-window.c:3865 src/eom-window.c:3877 src/eom-window.c:3880
+#: src/eoc-window.c:3865 src/eoc-window.c:3877 src/eoc-window.c:3880
 msgid "Shrink the image"
 msgstr "ছবিটিকে সঙ্কোচন করা হবে"
 
-#: src/eom-window.c:3867
+#: src/eoc-window.c:3867
 msgid "_Normal Size"
 msgstr "স্বাভাবিক আকার (_N)"
 
-#: src/eom-window.c:3868
+#: src/eoc-window.c:3868
 msgid "Show the image at its normal size"
 msgstr "ছবিটিকে এর নিজস্ব আকারে প্রদর্শন করা হবে"
 
-#: src/eom-window.c:3870
+#: src/eoc-window.c:3870
 msgid "_Best Fit"
 msgstr "সেরা মাপসইকরণ (_B)"
 
-#: src/eom-window.c:3871
+#: src/eoc-window.c:3871
 msgid "Fit the image to the window"
 msgstr "ছবিটিকে উইন্ডোর সাথে মানানসই করা হবে"
 
-#: src/eom-window.c:3888
+#: src/eoc-window.c:3888
 msgid "_Fullscreen"
 msgstr "পূর্ণপর্দা (_F)"
 
-#: src/eom-window.c:3889
+#: src/eoc-window.c:3889
 msgid "Show the current image in fullscreen mode"
 msgstr "বর্তমান ছবিটি পর্দাজুড়ে প্রদর্শন করা হবে"
 
-#: src/eom-window.c:3891
+#: src/eoc-window.c:3891
 msgid "Pause Slideshow"
 msgstr ""
 
-#: src/eom-window.c:3892
+#: src/eoc-window.c:3892
 msgid "Pause or resume the slideshow"
 msgstr ""
 
-#: src/eom-window.c:3897 src/eom-window.c:3912
+#: src/eoc-window.c:3897 src/eoc-window.c:3912
 msgid "_Previous Image"
 msgstr "পূর্ববর্তী ছবি (_P)"
 
-#: src/eom-window.c:3898
+#: src/eoc-window.c:3898
 msgid "Go to the previous image of the collection"
 msgstr "এই সংগ্রহের পূর্ববর্তী ছবিতে যাও"
 
-#: src/eom-window.c:3900
+#: src/eoc-window.c:3900
 msgid "_Next Image"
 msgstr "পরবর্তী ছবি (_N)"
 
-#: src/eom-window.c:3901
+#: src/eoc-window.c:3901
 msgid "Go to the next image of the collection"
 msgstr "এই সংগ্রহের পরবর্তী ছবিতে যাও"
 
-#: src/eom-window.c:3903 src/eom-window.c:3915
+#: src/eoc-window.c:3903 src/eoc-window.c:3915
 msgid "_First Image"
 msgstr "প্রথম ছবি (_F) "
 
-#: src/eom-window.c:3904
+#: src/eoc-window.c:3904
 msgid "Go to the first image of the collection"
 msgstr "এই সংগ্রহের প্রথম ছবিতে যাও"
 
-#: src/eom-window.c:3906 src/eom-window.c:3918
+#: src/eoc-window.c:3906 src/eoc-window.c:3918
 msgid "_Last Image"
 msgstr "শেষ ছবি (_L)"
 
-#: src/eom-window.c:3907
+#: src/eoc-window.c:3907
 msgid "Go to the last image of the collection"
 msgstr "এই সংগ্রহের শেষ ছবিতে যাও"
 
-#: src/eom-window.c:3909
+#: src/eoc-window.c:3909
 msgid "_Random Image"
 msgstr "র্যান্ডম ছবি (_R)"
 
-#: src/eom-window.c:3910
+#: src/eoc-window.c:3910
 msgid "Go to a random image of the collection"
 msgstr "এই সংগ্রহের যেকোনো ছবিতে যান"
 
-#: src/eom-window.c:3924
+#: src/eoc-window.c:3924
 msgid "S_lideshow"
 msgstr ""
 
-#: src/eom-window.c:3925
+#: src/eoc-window.c:3925
 msgid "Start a slideshow view of the images"
 msgstr "ছবিগুলোর স্লাইড প্রদর্শন শুরু করা হবে"
 
-#: src/eom-window.c:3995
+#: src/eoc-window.c:3995
 msgid "Previous"
 msgstr "পূর্ববর্তী"
 
-#: src/eom-window.c:3999
+#: src/eoc-window.c:3999
 msgid "Next"
 msgstr "পরবর্তী"
 
-#: src/eom-window.c:4003
+#: src/eoc-window.c:4003
 msgid "Right"
 msgstr "ডানদিকে"
 
-#: src/eom-window.c:4006
+#: src/eoc-window.c:4006
 msgid "Left"
 msgstr "বামদিকে"
 
-#: src/eom-window.c:4012
+#: src/eoc-window.c:4012
 msgid "In"
 msgstr "ভিতরে"
 
-#: src/eom-window.c:4015
+#: src/eoc-window.c:4015
 msgid "Out"
 msgstr "বাহিরে"
 
-#: src/eom-window.c:4018
+#: src/eoc-window.c:4018
 msgid "Normal"
 msgstr "স্বাভাবিক"
 
-#: src/eom-window.c:4021
+#: src/eoc-window.c:4021
 msgid "Fit"
 msgstr "মানানসই"
 
-#: src/eom-window.c:4024
+#: src/eoc-window.c:4024
 msgid "Collection"
 msgstr "সংগ্রহ"
 
-#: src/eom-window.c:4027
+#: src/eoc-window.c:4027
 msgctxt "action (to trash)"
 msgid "Trash"
 msgstr "ট্রাশ"
 
-#: src/eom-window.c:4385
+#: src/eoc-window.c:4385
 #, c-format
 msgid "Edit the current image using %s"
 msgstr ""
 
-#: src/eom-window.c:4388
+#: src/eoc-window.c:4388
 msgid "Edit Image"
 msgstr ""
 
-#: src/eom-window.c:4612
+#: src/eoc-window.c:4612
 msgid "Properties"
 msgstr "বৈশিষ্ট্য"
 

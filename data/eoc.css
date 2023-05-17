@@ -1,8 +1,8 @@
-.eom-window statusbar progressbar.horizontal,
-.eom-window statusbar progressbar.horizontal trough {
+.eoc-window statusbar progressbar.horizontal,
+.eoc-window statusbar progressbar.horizontal trough {
     min-height: 14px;
 }
 
-#eom-sidebar-title {
+#eoc-sidebar-title {
 	font-weight: bold;
 }

@@ -26,10 +26,10 @@
 #include <config.h>
 #endif
 
-#include "eom-plugin-engine.h"
-#include "eom-debug.h"
-#include "eom-config-keys.h"
-#include "eom-util.h"
+#include "eoc-plugin-engine.h"
+#include "eoc-debug.h"
+#include "eoc-config-keys.h"
+#include "eoc-util.h"
 
 #include <glib/gi18n.h>
 #include <glib.h>
@@ -42,10 +42,10 @@ struct _EomPluginEnginePrivate {
 	GSettings *plugins_settings;
 };
 
-G_DEFINE_TYPE_WITH_PRIVATE (EomPluginEngine, eom_plugin_engine, PEAS_TYPE_ENGINE)
+G_DEFINE_TYPE_WITH_PRIVATE (EomPluginEngine, eoc_plugin_engine, PEAS_TYPE_ENGINE)
 
 static void
-eom_plugin_engine_dispose (GObject *object)
+eoc_plugin_engine_dispose (GObject *object)
 {
 	EomPluginEngine *engine = EOM_PLUGIN_ENGINE (object);
 
@@ -55,29 +55,29 @@ eom_plugin_engine_dispose (GObject *object)
 		engine->priv->plugins_settings = NULL;
 	}
 
-	G_OBJECT_CLASS (eom_plugin_engine_parent_class)->dispose (object);
+	G_OBJECT_CLASS (eoc_plugin_engine_parent_class)->dispose (object);
 }
 
 static void
-eom_plugin_engine_class_init (EomPluginEngineClass *klass)
+eoc_plugin_engine_class_init (EomPluginEngineClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
 
-	object_class->dispose = eom_plugin_engine_dispose;
+	object_class->dispose = eoc_plugin_engine_dispose;
 }
 
 static void
-eom_plugin_engine_init (EomPluginEngine *engine)
+eoc_plugin_engine_init (EomPluginEngine *engine)
 {
-	eom_debug (DEBUG_PLUGINS);
+	eoc_debug (DEBUG_PLUGINS);
 
-	engine->priv = eom_plugin_engine_get_instance_private (engine);
+	engine->priv = eoc_plugin_engine_get_instance_private (engine);
 
 	engine->priv->plugins_settings = g_settings_new (EOM_CONF_PLUGINS);
 }
 
 EomPluginEngine *
-eom_plugin_engine_new (void)
+eoc_plugin_engine_new (void)
 {
 	EomPluginEngine *engine;
 	gchar *user_plugin_path;
@@ -118,7 +118,7 @@ eom_plugin_engine_new (void)
 
 	peas_engine_enable_loader (PEAS_ENGINE (engine), "python3");
 
-	user_plugin_path = g_build_filename (eom_util_dot_dir (),
+	user_plugin_path = g_build_filename (eoc_util_dot_dir (),
 	                                     USER_EOM_PLUGINS_LOCATION, NULL);
 
 	peas_engine_add_search_path (PEAS_ENGINE (engine),

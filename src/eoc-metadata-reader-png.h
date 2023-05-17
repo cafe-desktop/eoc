@@ -26,7 +26,7 @@
 
 G_BEGIN_DECLS
 
-#define EOM_TYPE_METADATA_READER_PNG		(eom_metadata_reader_png_get_type ())
+#define EOM_TYPE_METADATA_READER_PNG		(eoc_metadata_reader_png_get_type ())
 #define EOM_METADATA_READER_PNG(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), EOM_TYPE_METADATA_READER_PNG, EomMetadataReaderPng))
 #define EOM_METADATA_READER_PNG_CLASS(k)	(G_TYPE_CHECK_CLASS_CAST((k), EOM_TYPE_METADATA_READER_PNG, EomMetadataReaderPngClass))
 #define EOM_IS_METADATA_READER_PNG(o)		(G_TYPE_CHECK_INSTANCE_TYPE ((o), EOM_TYPE_METADATA_READER_PNG))
@@ -48,7 +48,7 @@ struct _EomMetadataReaderPngClass {
 };
 
 G_GNUC_INTERNAL
-GType		      eom_metadata_reader_png_get_type	(void) G_GNUC_CONST;
+GType		      eoc_metadata_reader_png_get_type	(void) G_GNUC_CONST;
 
 G_END_DECLS
 

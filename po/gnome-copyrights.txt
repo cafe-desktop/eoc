@@ -1,7 +1,7 @@
 ========== af.po ==========
-# Afrikaans translation of eom.
+# Afrikaans translation of eoc.
 # Copyright (C) 2004 Zuza Software Foundation
-# This file is distributed under the same license as the eom package.
+# This file is distributed under the same license as the eoc package.
 # Zuza Software Foundation <info@translate.org.za>, 2004
 # F Wolff <friedel@translate.org.za>, 2008
 
@@ -11,7 +11,7 @@
 ========== am.po ==========
 # Translations into the Amharic Language.
 # Copyright (C) 2002 Free Software Foundation, Inc.
-# This file is distributed under the same license as the eom package.
+# This file is distributed under the same license as the eoc package.
 # Ge'ez Frontier Foundation <locales@geez.org>, 2002.
 #
 #
@@ -20,7 +20,7 @@
 
 
 ========== ar.po ==========
-# translation of eom.HEAD.ar.po to Arabic
+# translation of eoc.HEAD.ar.po to Arabic
 # Copyright (C) 2002,2003, 2004, 2006, 2007, 2008 Free Software Foundation, Inc.
 # Sayed Jaffer Al-Mosawi <mosawi@arabeyes.org>, 2002.
 # Isam Bayazidi <bayazidi@arabeyes.org>, 2002.
@@ -46,9 +46,9 @@
 
 
 ========== ast.po ==========
-# Asturian translation for eom.
-# Copyright (C) 2009 eom's COPYRIGHT HOLDER
-# This file is distributed under the same license as the eom package.
+# Asturian translation for eoc.
+# Copyright (C) 2009 eoc's COPYRIGHT HOLDER
+# This file is distributed under the same license as the eoc package.
 # Astur <malditoastur@gmail.com>, 2009.
 # Xandru Armesto <xandru@softastur.org>, 2010.
 
@@ -56,7 +56,7 @@
 
 
 ========== az.po ==========
-# translation of eom.HEAD.az.po to Azerbaijani Turkish
+# translation of eoc.HEAD.az.po to Azerbaijani Turkish
 # Copyright (C) 1999-2000,2003, 2004 Free Software Foundation, Inc.
 # Vasif Ismailoglu MD <azerb_linux@hotmail.com>, 2001.
 # Mətin Əmirov <metin@karegen.com>, 2003, 2004.
@@ -66,7 +66,7 @@
 
 
 ========== be.po ==========
-# Беларускі пераклад eom.HEAD.
+# Беларускі пераклад eoc.HEAD.
 # Copyright (C) 2002,2003,2004 Free Software Foundation, Inc.
 # Vital Khilko <dojlid@mova.org>, 2003.
 # Ales Nyakhaychyk <nab@mail.by>, 2002, 2004.
@@ -77,9 +77,9 @@
 
 
 ========== be@latin.po ==========
-# Biełaruski pierakład eom.
+# Biełaruski pierakład eoc.
 # Copyright (C) 2007 Ihar Hrachyshka
-# This file is distributed under the same license as the eom package.
+# This file is distributed under the same license as the eoc package.
 # Ihar Hrachyshka <ihar.hrachyshka@gmail.com>, 2007.
 #
 
@@ -87,7 +87,7 @@
 
 
 ========== bg.po ==========
-# Bulgarian translation of eom po-file.
+# Bulgarian translation of eoc po-file.
 # Copyright (C) 2002, 2004, 2005, 2006, 2007, 2008 Free Software Foundation, Inc.
 # Copyright (C) 2009, 2010 Free Software Foundation, Inc.
 # Borislav Aleksandrov <B.Aleksandrov@cnsys.bg>, 2002.
@@ -104,8 +104,8 @@
 
 
 ========== bn.po ==========
-#  Bengali translation of eom
-# This file is distributed under the same license as the eom package.
+#  Bengali translation of eoc
+# This file is distributed under the same license as the eoc package.
 # Copyright (C) 2003 Free Software Foundation, Inc.
 # Sayamindu Dasgupta <unmadindu@Softhome.net>, 2003
 # Mahay Alam Khan <makl10n@yahoo.com>, 2005.
@@ -118,8 +118,8 @@
 
 ========== bn_IN.po ==========
 # translation of bn_IN.po to Bengali INDIA
-# Bengali India translation of eom
-# This file is distributed under the same license as the eom package.
+# Bengali India translation of eoc
+# This file is distributed under the same license as the eoc package.
 # Copyright (C) 2003, 2006, 2008, 2009, 2010 Free Software Foundation, Inc.
 #
 # Sayamindu Dasgupta <unmadindu@Softhome.net>, 2003.
@@ -133,9 +133,9 @@
 
 
 ========== br.po ==========
-# Breton translation for eom
+# Breton translation for eoc
 # Copyright (c) (c) 2006 Canonical Ltd, and Rosetta Contributors 2006
-# This file is distributed under the same license as the eom package.
+# This file is distributed under the same license as the eoc package.
 # Giulia, 2006.
 #
 
@@ -143,8 +143,8 @@
 
 
 ========== bs.po ==========
-# translation of eom.HEAD.po to Bosnian
-# This file is distributed under the same license as the eom package.
+# translation of eoc.HEAD.po to Bosnian
+# This file is distributed under the same license as the eoc package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER, 2004.
 # Kenan Hadžiavdić <kenanh@gmail.com>, 2004.
 #
@@ -153,7 +153,7 @@
 
 
 ========== ca.po ==========
-# eom translation to Catalan.
+# eoc translation to Catalan.
 # Copyright © 2000-2009 Free Software Foundation, Inc.
 # Softcatalà <tradmate@softcatala.org>, 2000, 2001, 2002.
 # Jordi Mallach <jordi@sindominio.net>, 2002, 2003, 2004, 2005, 2006, 2007.
@@ -165,7 +165,7 @@
 
 
 ========== ca@valencia.po ==========
-# eom translation to Catalan.
+# eoc translation to Catalan.
 # Copyright © 2000-2009 Free Software Foundation, Inc.
 # Softcatalà <tradmate@softcatala.org>, 2000, 2001, 2002.
 # Jordi Mallach <jordi@sindominio.net>, 2002, 2003, 2004, 2005, 2006, 2007.
@@ -181,7 +181,7 @@
 # Copyright (C) 2002, 2006, 2007, 2008 the author(s) of Eye Of Mate.
 # Copyright (C) 2003, 2004, 2005 Miloslav Trmac <mitr@volny.cz>.
 # Copyright (C) 2006 Lukas Novotny <lukasnov@cvs.gnome.org>.
-# This file is distributed under the same license as the eom package.
+# This file is distributed under the same license as the eoc package.
 # George Lebl <jirka@5z.com>, 2000.
 # Michal Bukovjan <michal.bukovjan@openone.cz>, 2002.
 # Miloslav Trmac <mitr@volny.cz>, 2003, 2004, 2005.
@@ -198,8 +198,8 @@
 
 
 ========== cy.po ==========
-# translation of eom.HEAD.cy.po to Cymraeg
-# eom yn Gymraeg.
+# translation of eoc.HEAD.cy.po to Cymraeg
+# eoc yn Gymraeg.
 # Owain Green, 2003.
 # www.kyfieithu.co.uk <kyfieithu@kyfieithu.co.uk>, 2003.
 # Dafydd Harries <daf@parnassus.ath.cx>, 2003, 2004.
@@ -215,7 +215,7 @@
 ========== da.po ==========
 # Danish translation of Eye of Mate.
 # Copyright (C) 1999-2010 Free Software Foundation, Inc.
-# This file is distributed under the same license as the eom package.
+# This file is distributed under the same license as the eoc package.
 # Kenneth Christiansen <kenneth@ripen.dk>, 1999.
 # Keld Simonsen <keld@dkuug.dk>, 2000-2001.
 # Ole Laursen <olau@hardworking.dk>, 2001-2007.
@@ -256,7 +256,7 @@
 
 
 ========== dz.po ==========
-# Dzongkha translation of eom
+# Dzongkha translation of eoc
 # Copyright @ 2006 Free Software Foundation, Inc.
 # Mindu Dorji.
 #
@@ -284,7 +284,7 @@
 
 
 ========== en@shaw.po ==========
-# Shavian translation for eom.
+# Shavian translation for eoc.
 # Copyright (C) 2009 The Mate Foundation.
 # Thomas Thurman <tthurman@gnome.org>, 2009.
 
@@ -292,9 +292,9 @@
 
 
 ========== en_CA.po ==========
-# Canadian English translation of eom
+# Canadian English translation of eoc
 # Copyright (C) 2004-2006 Adam Weinberger and the MATE Foundation
-# This file is distributed under the same licence as the eom package.
+# This file is distributed under the same licence as the eoc package.
 # Adam Weinberger <adamw@gnome.org>, 2004, 2005, 2005.
 #
 #
@@ -305,7 +305,7 @@
 ========== en_GB.po ==========
 # English (British) translation.
 # Copyright (C) 2004 The Mate Foundation
-# This file is distributed under the same license as the eom package.
+# This file is distributed under the same license as the eoc package.
 # Gareth Owen <gowen72@yahoo.com>, 2004.
 # David Lodge <dave@cirt.net>, 2004.
 # Alan Horkan <horkana tcd ie>, 2005.
@@ -316,7 +316,7 @@
 
 
 ========== es.po ==========
-# translation of eom.mate-2-32.po to Español
+# translation of eoc.mate-2-32.po to Español
 # Spanish translation of the Eye of Mate
 # Copyright © 2000-2002, 2006, 2007, 2008 the Free Software Foundation, Inc.
 #
@@ -361,7 +361,7 @@
 
 
 ========== fa.po ==========
-# Persian translation of eom.
+# Persian translation of eoc.
 # Copyright (C) 2003, 2004, 2005, 2006 Sharif FarsiWeb, Inc.
 # Roozbeh Pournader <roozbeh@farsiweb.info>, 2003, 2004, 2006.
 # Meelad Zakaria <meelad@farsiweb.info>, 2004, 2005, 2006.
@@ -372,7 +372,7 @@
 
 
 ========== fi.po ==========
-# Finnish translation for eom.
+# Finnish translation for eoc.
 # Suomennos: http://mate-fi.sourceforge.net/
 # Copyright (C) 2001-2010 the Free Software Foundation, Inc.
 # Ville Hautamäki <villeh@cs.joensuu.fi>, 2000.
@@ -386,9 +386,9 @@
 
 
 ========== fr.po ==========
-# French translation of eom.
+# French translation of eoc.
 # Copyright (C) 2000-2010 Free Software Foundation, Inc.
-# This file is distributed under the same license as the eom package.
+# This file is distributed under the same license as the eoc package.
 #
 # Vincent Renardias <vincent@debian.org>, 2000.
 # Christophe Merlet <redfox@redfoxcenter.org>, 2000-2006.
@@ -419,7 +419,7 @@
 
 
 ========== ga.po ==========
-# Irish translations for eom package.
+# Irish translations for eoc package.
 # Copyright (C) 2000-2007 Free Software Foundation, Inc.
 # Alastair McKinstry <mckinstry@computer.org>, 2000.
 # Paul Duffy <dubhthach@frink.nuigalway.ie>, 2003.
@@ -430,8 +430,8 @@
 
 
 ========== gl.po ==========
-# translation of eom-master-po-gl-66757.po to Galician
-# Galician translation of eom.
+# translation of eoc-master-po-gl-66757.po to Galician
+# Galician translation of eoc.
 # Copyright (C) 1999-2004 Jesús Bravo Álvarez.
 #
 # Proxecto Trasno - Adaptación do software libre á lingua galega:  Se desexas
@@ -454,7 +454,7 @@
 
 
 ========== gu.po ==========
-# translation of eom.mate-2-28.gu.po to Gujarati
+# translation of eoc.mate-2-28.gu.po to Gujarati
 # Ankit Patel <ankit644@yahoo.com>, 2005, 2006.
 # Ankit Patel <ankit@redhat.com>, 2007, 2008.
 # Sweta Kothari <swkothar@redhat.com>, 2008, 2009, 2010.
@@ -464,8 +464,8 @@
 
 
 ========== he.po ==========
-# translation of eom.HEAD.he.po to Hebrew
-# translation of eom.mate-2-0.he.po to Hebrew
+# translation of eoc.HEAD.he.po to Hebrew
+# translation of eoc.mate-2-0.he.po to Hebrew
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
 # Gil 'Dolfin' Osher <dolfin@rpg.org.il>, 2002,2003.
@@ -476,7 +476,7 @@
 
 
 ========== hi.po ==========
-# translation of eom.master.po to Hindi
+# translation of eoc.master.po to Hindi
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
 #
@@ -489,7 +489,7 @@
 
 
 ========== hr.po ==========
-# Translation of eom to Croatiann
+# Translation of eoc to Croatiann
 # Copyright (C) Croatiann team
 # Translators: Automatski Prijevod <>,Denis Lackovic <delacko@fly.srk.fer.hr>,Željko Brajdić <zorz@iskon.hr>,Robert Sedak <robert.sedak@sk.t-com.hr>,
 
@@ -497,9 +497,9 @@
 
 
 ========== hu.po ==========
-# Hungarian translation of eom.
+# Hungarian translation of eoc.
 # Copyright (C) 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010 Free Software Foundation, Inc.
-# This file is distributed under the same license as the eom package.
+# This file is distributed under the same license as the eoc package.
 #
 # Gergo Erdi <cactus at cactus.rulez dot org>, 2000, 2001.
 # Andras Timar <timar at mate dot hu>, 2002, 2003, 2004.
@@ -511,9 +511,9 @@
 
 
 ========== id.po ==========
-# Indonesia translation of eom.
-# Copyright (C) 2004 THE eom's COPYRIGHT HOLDER
-# This file is distributed under the same license as the eom package.
+# Indonesia translation of eoc.
+# Copyright (C) 2004 THE eoc's COPYRIGHT HOLDER
+# This file is distributed under the same license as the eoc package.
 #
 # Ahmad Riza H Nst  <rizahnst@eriagempita.co.id>, 2004.
 # Mohammad DAMT <mdamt@bisnisweb.com>, 2004.
@@ -537,7 +537,7 @@
 ========== it.po ==========
 # Italian translation for Eye Of Mate
 # Copyright (C) 2001-2007, 2008, 2009 The Free Software Foundation, Inc.
-# This file is distributed under the same license as eom package.
+# This file is distributed under the same license as eoc package.
 # Christopher R. Gabriel <cgabriel@pluto.linux.it>
 # Lapo Calamandrei <lapo@it.gnome.org>, 2003.
 # Luca Ferretti <elle.uca@libero.it>, 2003, 2004, 2005, 2006, 2007, 2008.
@@ -552,7 +552,7 @@
 
 
 ========== ja.po ==========
-# eom ja.po.
+# eoc ja.po.
 # Copyright (C) 1999-2010 Free Software Foundation, Inc.
 # Takayuki KUSANO <AE5T-KSN@asahi-net.or.jp>, 1999-2002, 2010.
 # Takeshi AIHANA <takeshi.aihana@gmail.com>, 2002-2009.
@@ -566,9 +566,9 @@
 
 
 ========== ka.po ==========
-# translation of eom.po to Georgian
+# translation of eoc.po to Georgian
 # Copyright (C) 2006 Mate Georgian Translators mate@inet.ge
-# This file is distributed under the same license as the eom package.
+# This file is distributed under the same license as the eoc package.
 # Zuka Akhvlediani <korvin@soft.ge>
 # Alexander Didebulidze <didebuli@in.tum.de>, 2006.
 
@@ -576,9 +576,9 @@
 
 
 ========== kk.po ==========
-# Kazakh translation of eom.
+# Kazakh translation of eoc.
 # Copyright (C) 2010 HZ
-# This file is distributed under the same license as the eom package.
+# This file is distributed under the same license as the eoc package.
 # Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2010.
 #
 
@@ -586,7 +586,7 @@
 
 
 ========== kn.po ==========
-# translation of eom.master.kn.po to Kannada
+# translation of eoc.master.kn.po to Kannada
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
@@ -596,8 +596,8 @@
 
 
 ========== ko.po ==========
-# eom ko.po
-# This file is distributed under the same license as the eom package.
+# eoc ko.po
+# This file is distributed under the same license as the eoc package.
 #
 # Sung-Hyun Nam <namsh@kldp.org>, 1999
 # Young-Ho Cha <ganadist@chollian.net>, 2000,2001,2006
@@ -613,7 +613,7 @@
 
 
 ========== ks.po ==========
-# translation of eom.HEAD.hi.po to Kashmiri
+# translation of eoc.HEAD.hi.po to Kashmiri
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
 # Rakesh Pandit <rakesh.pandit@gmail.com> \n
@@ -623,7 +623,7 @@
 
 
 ========== ku.po ==========
-# translation of eom.HEAD.po to Kurdish
+# translation of eoc.HEAD.po to Kurdish
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) 2005 THE PACKAGE'S COPYRIGHT HOLDER.
 # Erdal Ronahi <erdal.ronahi@gmail.com, pckurd@hotmail.com>, 2005.
@@ -634,8 +634,8 @@
 
 
 ========== lt.po ==========
-# translation of eom.HEAD.po to Lithuanian
-# Lithuanian translation of eom
+# translation of eoc.HEAD.po to Lithuanian
+# Lithuanian translation of eoc
 # Copyright (C) 2000-2010 Free Software Foundation, Inc.
 #
 # Gediminas Paulauskas <menesis@chatsubo.lt>, 2000-2003.
@@ -678,8 +678,8 @@
 
 
 ========== mk.po ==========
-# translation of eom.HEAD.mk.po to Macedonian
-# translation of eom.HEAD.mk.po to
+# translation of eoc.HEAD.mk.po to Macedonian
+# translation of eoc.HEAD.mk.po to
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) 2004 THE PACKAGE'S COPYRIGHT HOLDER.
 #
@@ -697,9 +697,9 @@
 
 ========== ml.po ==========
 # translation of ml.po to
-# translation of eom.master.ml.po to
-# translation of eom.HEAD.ml.po to
-# This file is distributed under the same license as the eom package.
+# translation of eoc.master.ml.po to
+# translation of eoc.HEAD.ml.po to
+# This file is distributed under the same license as the eoc package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
 # FSF-India <locale@gnu.org.in>, 2003.
 # Ani Peter <apeter@redhat.com>, 2006, 2007, 2009.
@@ -711,8 +711,8 @@
 
 
 ========== mn.po ==========
-# translation of eom.HEAD.po to Mongolian
-# translation of eom.HEAD.mn.po to Mongolian
+# translation of eoc.HEAD.po to Mongolian
+# translation of eoc.HEAD.mn.po to Mongolian
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) 2004 THE PACKAGE'S COPYRIGHT HOLDER.
 # Ochirbat Batzaya <buuvei@yahoo.com>, 2003.
@@ -744,7 +744,7 @@
 
 
 ========== nb.po ==========
-# Norwegian translation of eom (bokmål dialect).
+# Norwegian translation of eoc (bokmål dialect).
 # Copyright (C) 1999-2004, 2005 Free Software Foundation, Inc.
 # Kjartan Maraas <kmaraas@gnome.org>, 1999-2010.
 # Terance Edward Sola <terance@lyse.net>, 2005.
@@ -754,9 +754,9 @@
 
 
 ========== nds.po ==========
-# Low German translation for eom.
-# Copyright (C) 2009 eom's COPYRIGHT HOLDER
-# This file is distributed under the same license as the eom package.
+# Low German translation for eoc.
+# Copyright (C) 2009 eoc's COPYRIGHT HOLDER
+# This file is distributed under the same license as the eoc package.
 # Nils-Christoph Fiedler <fiedler@medienkompanie.de>, 2009.
 #
 
@@ -764,8 +764,8 @@
 
 
 ========== ne.po ==========
-# translation of eom.mate-2-20.ne.po to Nepali
-# This file is distributed under the same license as the eom package.
+# translation of eoc.mate-2-20.ne.po to Nepali
+# This file is distributed under the same license as the eoc package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
 #
 # Pawan Chitrakar <pawan@nplinux.org> , 2004.
@@ -804,16 +804,16 @@
 # Kjartan Maraas  <kmaraas@gnome.org>, 2001.
 # Roy-Magne Mo <rmo@sunnmore.net>, 2002.
 # Åsmund Skjæveland <aasmunds@ulrik.uio.no>, 2003-2008.
-# Norwegian (Nynorsk) translation of eom
+# Norwegian (Nynorsk) translation of eoc
 # Copyright (C) Free Software Foundation, 2002
 
 
 
 
 ========== nso.po ==========
-# Northern Sotho translation of eom.
+# Northern Sotho translation of eoc.
 # Copyright (C) 2004 Zuza Software Foundation (Translate.org.za)
-# This file is distributed under the same license as the eom package.
+# This file is distributed under the same license as the eoc package.
 #
 # Zuza Software Foundation <info@translate.org.za>, 2004
 #
@@ -823,9 +823,9 @@
 
 ========== oc.po ==========
 # Translation of oc.po to Occitan
-# Occitan translation of eom.
+# Occitan translation of eoc.
 # Copyright (C) 2007 Free Software Foundation, Inc.
-# This file is distributed under the same license as the eom package.
+# This file is distributed under the same license as the eoc package.
 # Yannig Marchegay (Kokoyaya)  <yannig@marchegay.org>, 2007-2008.
 #
 #
@@ -834,9 +834,9 @@
 
 
 ========== or.po ==========
-# translation of eom.mate-2-30.or.po to Oriya
-# Oriya translation of eom.HEAD.pot.
-# This file is distributed under the same license as the eom package.
+# translation of eoc.mate-2-30.or.po to Oriya
+# Oriya translation of eoc.HEAD.pot.
+# This file is distributed under the same license as the eoc package.
 # Copyright (C) 2004, 2009, 2010 Free Software Foundation, Inc.
 # Gora Mohanty <gora_mohanty@yahoo.co.in>
 # $Id: or.po,v 1.10 2006/03/14 20:30:47 gmohanty Exp $
@@ -848,10 +848,10 @@
 
 
 ========== pa.po ==========
-# translation of eom.HEAD.po to Punjabi
-# translation of eom.HEAD.po to
-# Copyright (C) 2004 THE eom.HEAD'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the eom.HEAD package.
+# translation of eoc.HEAD.po to Punjabi
+# translation of eoc.HEAD.po to
+# Copyright (C) 2004 THE eoc.HEAD'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the eoc.HEAD package.
 #
 # Amanpreet Singh Alam <amanlinux@netscape.net>, 2004.
 # Amanpreet Singh Alam <aalam@redhat.com>, 2004, 2005,2006,2007 2008.
@@ -889,9 +889,9 @@
 
 
 ========== pt.po ==========
-# eom's Portuguese Translation
-# Copyright © 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010 eom
-# Distributed under the same licence as the eom package
+# eoc's Portuguese Translation
+# Copyright © 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010 eoc
+# Distributed under the same licence as the eoc package
 # Duarte Loreto <happyguy_pt@hotmail.com>, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010.
 #
 
@@ -899,9 +899,9 @@
 
 
 ========== pt_BR.po ==========
-# Brazilian Portuguese translation of eom.
+# Brazilian Portuguese translation of eoc.
 # Copyright (C) 2000-2007 Free Software Foundation, Inc.
-# This file is distributed under the same license as the eom package.
+# This file is distributed under the same license as the eoc package.
 # Eduardo Belloti <ebelloti@terra.com.br>, 2000.
 # Francisco Petrúcio Cavalcante Junior <fpcj@impa.br>, 2001.
 # Evandro Fernandes Giovanini <evandrofg@ig.com.br>, 2002, 2006.
@@ -927,7 +927,7 @@
 
 
 ========== ro.po ==========
-# translation of eom.HEAD.ro.po to Română
+# translation of eoc.HEAD.ro.po to Română
 # Eye of Mate Romanian translation
 # Copyright (C) 2002,2003, 2004, 2005, 2006 Free Software Foundation, Inc.
 # Mugurel Tudor <mugurelu@mate.ro>, 2002,2003,2004, 2005, 2006.
@@ -958,9 +958,9 @@
 
 
 ========== rw.po ==========
-# translation of eom to Kinyarwanda.
+# translation of eoc to Kinyarwanda.
 # Copyright (C) 2005 Free Software Foundation, Inc.
-# This file is distributed under the same license as the eom package.
+# This file is distributed under the same license as the eoc package.
 # Steve Murphy <murf@e-tools.com>, 2005
 # Steve performed initial rough translation from compendium built from translations provided by the following translators:
 # Philibert Ndandali  <ndandali@yahoo.fr>, 2005.
@@ -988,7 +988,7 @@
 
 ========== sk.po ==========
 # translation of sk.po to Slovak
-# eom Slovak translation.
+# eoc Slovak translation.
 # Copyright (C) 2001,2002,2003, 2004, 2007 Free Software Foundation, Inc.
 #
 #
@@ -1000,9 +1000,9 @@
 
 
 ========== sl.po ==========
-# Slovenian translations for eom.
+# Slovenian translations for eoc.
 # Copyright (C) 2005-2007 Free Software Foundation, Inc.
-# This file is distributed under the same license as the eom package.
+# This file is distributed under the same license as the eoc package.
 #
 # Andraž Tori <andraz.tori1@guest.arnes.si>, 2002.
 # Matej Urbančič <mateju@svn.gnome.org>, 2006 - 2010.
@@ -1012,7 +1012,7 @@
 
 
 ========== sq.po ==========
-# Përkthimi i mesazheve të eom në shqip
+# Përkthimi i mesazheve të eoc në shqip
 # Copyright (C) 2002-2008 Free Software Foundation, Inc.
 #
 # Laurent Dhima <laurenti@alblinux.net>, 2002-2008.
@@ -1021,9 +1021,9 @@
 
 
 ========== sr.po ==========
-# Serbian translation of eom
+# Serbian translation of eoc
 # Courtesy of Prevod.org team (http://prevod.org/) -- 2003, 2004, 2005, 2006, 2007, 2008, 2009.
-# This file is distributed under the same license as the eom package.
+# This file is distributed under the same license as the eoc package.
 # Maintainer: Горан Ракић <grakic@devbase.net>
 # Данило Шеган <danilo@gnome.org>, 2005.
 # Reviewed on 2005-07-19 by: Игор Несторовић <igor@prevod.org>
@@ -1034,9 +1034,9 @@
 
 
 ========== sr@latin.po ==========
-# Serbian translation of eom
+# Serbian translation of eoc
 # Courtesy of Prevod.org team (http://prevod.org/) -- 2003, 2004, 2005, 2006, 2007, 2008, 2009.
-# This file is distributed under the same license as the eom package.
+# This file is distributed under the same license as the eoc package.
 # Maintainer: Goran Rakić <grakic@devbase.net>
 # Danilo Šegan <danilo@gnome.org>, 2005.
 # Reviewed on 2005-07-19 by: Igor Nestorović <igor@prevod.org>
@@ -1047,7 +1047,7 @@
 
 
 ========== sv.po ==========
-# Swedish messages for eom.
+# Swedish messages for eoc.
 # Copyright (C) 1999-2010 Free Software Foundation, Inc.
 # Richard Hult <rhult@hem.passagen.se>, 1999.
 # Andreas Hyden <a.hyden@cyberpoint.se>, 2000.
@@ -1061,11 +1061,11 @@
 
 
 ========== ta.po ==========
-# translation of eom.HEAD.ta.po to Tamil
+# translation of eoc.HEAD.ta.po to Tamil
 # translation of ta.po to
-# Tamil translation of eom.
-# Copyright (C) 2002, 2003 eom's maintainers
-# This file is distributed under the same license as the eom package.
+# Tamil translation of eoc.
+# Copyright (C) 2002, 2003 eoc's maintainers
+# This file is distributed under the same license as the eoc package.
 #
 # Dinesh Nadarajah <n_dinesh@yahoo.com>, 2002, 2003.
 # Dinesh Nadarajah <dinesh_list@sbcglobal.net>, 2004.
@@ -1082,9 +1082,9 @@
 
 ========== te.po ==========
 # translation of te.po to Telugu
-# Telugu translation of eom.
+# Telugu translation of eoc.
 # Copyright (C) 2007 Swecha Telugu Localisation Team
-# This file is distributed under the same license as the eom package.
+# This file is distributed under the same license as the eoc package.
 #
 # Bharat Kumar <jonnalagaddabharat@gmail.com>, 2007.
 # Krishna Babu K <kkrothap@redhat.com>, 2009, 2010.
@@ -1095,7 +1095,7 @@
 ========== th.po ==========
 # Thai translation for oeg.
 # Copyright (C) 2003-2010 Free Software Foundation, Inc.
-# This file is distributed under the same license as the eom package.
+# This file is distributed under the same license as the eoc package.
 # Paisa Seeluangsawat <paisa@users.sf.net>, 2003-2004.
 # Theppitak Karoonboonyanan <thep@linux.thai.net>, 2005-2010.
 #
@@ -1117,7 +1117,7 @@
 
 
 ========== tr.po ==========
-# Turkish translation of eom.
+# Turkish translation of eoc.
 # Copyright (C) 1999-2003, 2004, 2005, 2008 Free Software Foundation, Inc.
 #
 # Nilgün Belma Bugüner <nilgun@fide.org>, 2001.
@@ -1135,7 +1135,7 @@
 
 
 ========== ug.po ==========
-# translation of eom to Uighur 
+# translation of eoc to Uighur 
 # This file is distributed under the same license as the PACKAGE package.
 # Gheyret T.Kenji <gheyret@yahoo.com>, 2005.
 # 
@@ -1156,9 +1156,9 @@
 
 ========== uz.po ==========
 # translation of uz@cyrillic.po to Uzbek
-# translation of eom to uzbek
+# translation of eoc to uzbek
 # Copyright (C) 2007, 2008, 2009 Free Software Foundation, Inc.
-# This file is distributed under the same license as the eom.po package.
+# This file is distributed under the same license as the eoc.po package.
 #
 # Nurali Abdurahmonov <mavnur@gmail.com>, 2007, 2008, 2009.
 
@@ -1167,9 +1167,9 @@
 
 ========== uz@cyrillic.po ==========
 # translation of uz@cyrillic.po to Uzbek
-# translation of eom to uzbek
+# translation of eoc to uzbek
 # Copyright (C) 2007, 2008, 2009 Free Software Foundation, Inc.
-# This file is distributed under the same license as the eom.po package.
+# This file is distributed under the same license as the eoc.po package.
 #
 # Nurali Abdurahmonov <mavnur@gmail.com>, 2007, 2008, 2009.
 
@@ -1179,7 +1179,7 @@
 ========== vi.po ==========
 # Vietnamese translation for Eye of Mate.
 # Copyright © 2008 Mate i18n Project for Vietnamese.
-# This file is distributed under the same licence as the eom package.
+# This file is distributed under the same licence as the eoc package.
 # Nguyễn Thái Ngọc Duy <pclouds@gmail.com>, 2002-2004,2007-2008.
 # Phạm Thành Long <lngt@ngonngu.net>, 2007.
 # Clytie Siddall <clytie@riverland.net.au>, 2005-2009.
@@ -1196,9 +1196,9 @@
 
 
 ========== xh.po ==========
-# Xhosa translation of eom
+# Xhosa translation of eoc
 # Copyright (C) 2005 Canonical Ltd.
-# This file is distributed under the same license as the eom package.
+# This file is distributed under the same license as the eoc package.
 # Translation by Canonical Ltd <translations@canonical.com> with thanks to
 # Translation World CC in South Africa, 2005.
 #
@@ -1207,7 +1207,7 @@
 
 
 ========== zh_CN.po ==========
-# translation of eom.po to zh_CN
+# translation of eoc.po to zh_CN
 # Copyright (C) 2003 Free Software Foundation, Inc.
 # Wang Li <charles@linux.net.cn>, 2002
 # Sun G11n <mate_int_l10n@ireland.sun.com>, 2002
@@ -1222,7 +1222,7 @@
 
 
 ========== zh_HK.po ==========
-# Chinese (Hong Kong) translation of eom.
+# Chinese (Hong Kong) translation of eoc.
 # Copyright (C) 2000-07 Free Software Foundation, Inc.
 # Jing-Jong Shyue <shyue@sonoma.com.tw>, 2000
 # Abel Cheung <abel@oaka.org>, 2001-2003
@@ -1237,7 +1237,7 @@
 
 
 ========== zh_TW.po ==========
-# Chinese (Hong Kong) translation of eom.
+# Chinese (Hong Kong) translation of eoc.
 # Copyright (C) 2000-07 Free Software Foundation, Inc.
 # Jing-Jong Shyue <shyue@sonoma.com.tw>, 2000
 # Abel Cheung <abel@oaka.org>, 2001-2003
@@ -1252,9 +1252,9 @@
 
 
 ========== zu.po ==========
-# Zulu translation of eom.
+# Zulu translation of eoc.
 # Copyright (C) 2004 Zuza Software Foundation (Translate.org.za)
-# This file is distributed under the same license as the eom package.
+# This file is distributed under the same license as the eoc package.
 #
 # Zuza Software Foundation <info@translate.org.za>, 2004
 #

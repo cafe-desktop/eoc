@@ -25,17 +25,17 @@
 #ifndef __EOM_JOB_QUEUE_H__
 #define __EOM_JOB_QUEUE_H__
 
-#include "eom-jobs.h"
+#include "eoc-jobs.h"
 
 #include <gtk/gtk.h>
 
 G_BEGIN_DECLS
 
-void     eom_job_queue_init       (void);
+void     eoc_job_queue_init       (void);
 
-void     eom_job_queue_add_job    (EomJob    *job);
+void     eoc_job_queue_add_job    (EomJob    *job);
 
-gboolean eom_job_queue_remove_job (EomJob    *job);
+gboolean eoc_job_queue_remove_job (EomJob    *job);
 
 G_END_DECLS
 

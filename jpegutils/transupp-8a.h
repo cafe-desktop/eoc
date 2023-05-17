@@ -158,7 +158,7 @@ typedef struct {
 
 #if TRANSFORMS_SUPPORTED
 
-/* Parse a crop specification (written in X11 geometry style) */
+/* Parse a crop specification (written in X11 geocetry style) */
 EXTERN(boolean) jtransform_parse_crop_spec
 	JPP((jpeg_transform_info *info, const char *spec));
 /* Request any required workspace */

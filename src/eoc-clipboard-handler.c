@@ -1,6 +1,6 @@
 /*
- * eom-clipboard-handler.c
- * This file is part of eom
+ * eoc-clipboard-handler.c
+ * This file is part of eoc
  *
  * Author: Felix Riemann <friemann@gnome.org>
  *
@@ -28,7 +28,7 @@
 #include <glib.h>
 #include <gdk-pixbuf/gdk-pixbuf.h>
 #include <gtk/gtk.h>
-#include "eom-clipboard-handler.h"
+#include "eoc-clipboard-handler.h"
 
 enum {
 	PROP_0,
@@ -47,10 +47,10 @@ struct _EomClipboardHandlerPrivate {
 	gchar     *uri;
 };
 
-G_DEFINE_TYPE_WITH_PRIVATE (EomClipboardHandler, eom_clipboard_handler, G_TYPE_INITIALLY_UNOWNED)
+G_DEFINE_TYPE_WITH_PRIVATE (EomClipboardHandler, eoc_clipboard_handler, G_TYPE_INITIALLY_UNOWNED)
 
 static GdkPixbuf*
-eom_clipboard_handler_get_pixbuf (EomClipboardHandler *handler)
+eoc_clipboard_handler_get_pixbuf (EomClipboardHandler *handler)
 {
 	g_return_val_if_fail (EOM_IS_CLIPBOARD_HANDLER (handler), NULL);
 
@@ -58,7 +58,7 @@ eom_clipboard_handler_get_pixbuf (EomClipboardHandler *handler)
 }
 
 static const gchar *
-eom_clipboard_handler_get_uri (EomClipboardHandler *handler)
+eoc_clipboard_handler_get_uri (EomClipboardHandler *handler)
 {
 	g_return_val_if_fail (EOM_IS_CLIPBOARD_HANDLER (handler), NULL);
 
@@ -66,7 +66,7 @@ eom_clipboard_handler_get_uri (EomClipboardHandler *handler)
 }
 
 static void
-eom_clipboard_handler_set_pixbuf (EomClipboardHandler *handler, GdkPixbuf *pixbuf)
+eoc_clipboard_handler_set_pixbuf (EomClipboardHandler *handler, GdkPixbuf *pixbuf)
 {
 	g_return_if_fail (EOM_IS_CLIPBOARD_HANDLER (handler));
 	g_return_if_fail (pixbuf == NULL || GDK_IS_PIXBUF (pixbuf));
@@ -83,7 +83,7 @@ eom_clipboard_handler_set_pixbuf (EomClipboardHandler *handler, GdkPixbuf *pixbu
 }
 
 static void
-eom_clipboard_handler_set_uri (EomClipboardHandler *handler, const gchar *uri)
+eoc_clipboard_handler_set_uri (EomClipboardHandler *handler, const gchar *uri)
 {
 	g_return_if_fail (EOM_IS_CLIPBOARD_HANDLER (handler));
 
@@ -95,7 +95,7 @@ eom_clipboard_handler_set_uri (EomClipboardHandler *handler, const gchar *uri)
 }
 
 static void
-eom_clipboard_handler_get_property (GObject *object, guint property_id,
+eoc_clipboard_handler_get_property (GObject *object, guint property_id,
 				    GValue *value, GParamSpec *pspec)
 {
 	EomClipboardHandler *handler;
@@ -107,11 +107,11 @@ eom_clipboard_handler_get_property (GObject *object, guint property_id,
 	switch (property_id) {
 	case PROP_PIXBUF:
 		g_value_set_object (value,
-				    eom_clipboard_handler_get_pixbuf (handler));
+				    eoc_clipboard_handler_get_pixbuf (handler));
 		break;
 	case PROP_URI:
 		g_value_set_string (value,
-				    eom_clipboard_handler_get_uri (handler));
+				    eoc_clipboard_handler_get_uri (handler));
 		break;
 	default:
 		G_OBJECT_WARN_INVALID_PROPERTY_ID (object, property_id, pspec);
@@ -119,7 +119,7 @@ eom_clipboard_handler_get_property (GObject *object, guint property_id,
 }
 
 static void
-eom_clipboard_handler_set_property (GObject *object, guint property_id,
+eoc_clipboard_handler_set_property (GObject *object, guint property_id,
 				    const GValue *value, GParamSpec *pspec)
 {
 	EomClipboardHandler *handler;
@@ -134,7 +134,7 @@ eom_clipboard_handler_set_property (GObject *object, guint property_id,
 		GdkPixbuf *pixbuf;
 
 		pixbuf = g_value_get_object (value);
-		eom_clipboard_handler_set_pixbuf (handler, pixbuf);
+		eoc_clipboard_handler_set_pixbuf (handler, pixbuf);
 		break;
 	}
 	case PROP_URI:
@@ -142,7 +142,7 @@ eom_clipboard_handler_set_property (GObject *object, guint property_id,
 		const gchar *uri;
 
 		uri = g_value_get_string (value);
-		eom_clipboard_handler_set_uri (handler, uri);
+		eoc_clipboard_handler_set_uri (handler, uri);
 		break;
 	}
 	default:
@@ -152,7 +152,7 @@ eom_clipboard_handler_set_property (GObject *object, guint property_id,
 }
 
 static void
-eom_clipboard_handler_dispose (GObject *obj)
+eoc_clipboard_handler_dispose (GObject *obj)
 {
 	EomClipboardHandlerPrivate *priv;
 
@@ -169,23 +169,23 @@ eom_clipboard_handler_dispose (GObject *obj)
 		priv->uri = NULL;
 	}
 
-	G_OBJECT_CLASS (eom_clipboard_handler_parent_class)->dispose (obj);
+	G_OBJECT_CLASS (eoc_clipboard_handler_parent_class)->dispose (obj);
 }
 
 static void
-eom_clipboard_handler_init (EomClipboardHandler *handler)
+eoc_clipboard_handler_init (EomClipboardHandler *handler)
 {
-	handler->priv = eom_clipboard_handler_get_instance_private (handler);
+	handler->priv = eoc_clipboard_handler_get_instance_private (handler);
 }
 
 static void
-eom_clipboard_handler_class_init (EomClipboardHandlerClass *klass)
+eoc_clipboard_handler_class_init (EomClipboardHandlerClass *klass)
 {
 	GObjectClass *g_obj_class = G_OBJECT_CLASS (klass);
 
-	g_obj_class->get_property = eom_clipboard_handler_get_property;
-	g_obj_class->set_property = eom_clipboard_handler_set_property;
-	g_obj_class->dispose = eom_clipboard_handler_dispose;
+	g_obj_class->get_property = eoc_clipboard_handler_get_property;
+	g_obj_class->set_property = eoc_clipboard_handler_set_property;
+	g_obj_class->dispose = eoc_clipboard_handler_dispose;
 
 	g_object_class_install_property (
 		g_obj_class, PROP_PIXBUF,
@@ -201,7 +201,7 @@ eom_clipboard_handler_class_init (EomClipboardHandlerClass *klass)
 }
 
 EomClipboardHandler*
-eom_clipboard_handler_new (EomImage *img)
+eoc_clipboard_handler_new (EomImage *img)
 {
 	GObject *obj;
 	GFile *file;
@@ -209,8 +209,8 @@ eom_clipboard_handler_new (EomImage *img)
 	gchar *uri;
 
 	g_object_ref (img);
-	pbuf = eom_image_get_pixbuf (img);
-	file = eom_image_get_file (img);
+	pbuf = eoc_image_get_pixbuf (img);
+	file = eoc_image_get_file (img);
 	uri = g_file_get_uri (file);
 	obj = g_object_new (EOM_TYPE_CLIPBOARD_HANDLER,
 			    "pixbuf", pbuf,
@@ -226,7 +226,7 @@ eom_clipboard_handler_new (EomImage *img)
 }
 
 static void
-eom_clipboard_handler_get_func (GtkClipboard *clipboard,
+eoc_clipboard_handler_get_func (GtkClipboard *clipboard,
 				GtkSelectionData *selection,
 				guint info, gpointer owner)
 {
@@ -239,7 +239,7 @@ eom_clipboard_handler_get_func (GtkClipboard *clipboard,
 	switch (info) {
 	case TARGET_PIXBUF:
 	{
-		GdkPixbuf *pixbuf = eom_clipboard_handler_get_pixbuf (handler);
+		GdkPixbuf *pixbuf = eoc_clipboard_handler_get_pixbuf (handler);
 		g_object_ref (pixbuf);
 		gtk_selection_data_set_pixbuf (selection, pixbuf);
 		g_object_unref (pixbuf);
@@ -248,14 +248,14 @@ eom_clipboard_handler_get_func (GtkClipboard *clipboard,
 	case TARGET_TEXT:
 	{
 		gtk_selection_data_set_text (selection,
-					     eom_clipboard_handler_get_uri (handler),
+					     eoc_clipboard_handler_get_uri (handler),
 					     -1);
 		break;
 	}
 	case TARGET_URI:
 	{
 		gchar *uris[2];
-		uris[0] = g_strdup (eom_clipboard_handler_get_uri (handler));
+		uris[0] = g_strdup (eoc_clipboard_handler_get_uri (handler));
 		uris[1] = NULL;
 
 		gtk_selection_data_set_uris (selection, uris);
@@ -269,7 +269,7 @@ eom_clipboard_handler_get_func (GtkClipboard *clipboard,
 }
 
 static void
-eom_clipboard_handler_clear_func (GtkClipboard *clipboard, gpointer owner)
+eoc_clipboard_handler_clear_func (GtkClipboard *clipboard, gpointer owner)
 {
 	g_return_if_fail (EOM_IS_CLIPBOARD_HANDLER (owner));
 
@@ -277,7 +277,7 @@ eom_clipboard_handler_clear_func (GtkClipboard *clipboard, gpointer owner)
 }
 
 void
-eom_clipboard_handler_copy_to_clipboard (EomClipboardHandler *handler,
+eoc_clipboard_handler_copy_to_clipboard (EomClipboardHandler *handler,
 					 GtkClipboard *clipboard)
 {
 	GtkTargetList *tlist;
@@ -303,8 +303,8 @@ eom_clipboard_handler_copy_to_clipboard (EomClipboardHandler *handler,
 	if (n_targets > 0) {
 		set = gtk_clipboard_set_with_owner (clipboard,
 						    targets, n_targets,
-						    eom_clipboard_handler_get_func,
-						    eom_clipboard_handler_clear_func,
+						    eoc_clipboard_handler_get_func,
+						    eoc_clipboard_handler_clear_func,
 						    G_OBJECT (handler));
 
 	}

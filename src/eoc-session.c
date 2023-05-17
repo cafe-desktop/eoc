@@ -27,26 +27,26 @@
 #include <config.h>
 #endif
 
-#include "eom-session.h"
-#include "eom-window.h"
-#include "eom-application.h"
+#include "eoc-session.h"
+#include "eoc-window.h"
+#include "eoc-application.h"
 
 void
-eom_session_init (EomApplication *application)
+eoc_session_init (EomApplication *application)
 {
 	g_return_if_fail (EOM_IS_APPLICATION (application));
 
-	/* FIXME: Session management is currently a no-op in eom. */
+	/* FIXME: Session management is currently a no-op in eoc. */
 }
 
 gboolean
-eom_session_is_restored	(void)
+eoc_session_is_restored	(void)
 {
 	return FALSE;
 }
 
 gboolean
-eom_session_load (void)
+eoc_session_load (void)
 {
 	return TRUE;
 }

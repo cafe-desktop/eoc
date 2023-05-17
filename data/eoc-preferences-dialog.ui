@@ -740,7 +740,7 @@
       <action-widget response="-7">close_button</action-widget>
     </action-widgets>
     <style>
-      <class name="eom-preferences-dialog"/>
+      <class name="eoc-preferences-dialog"/>
     </style>
   </template>
 </interface>

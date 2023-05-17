@@ -1,6 +1,6 @@
 /*
- * eom-window-activatable.h
- * This file is part of eom
+ * eoc-window-activatable.h
+ * This file is part of eoc
  *
  * Author: Felix Riemann <friemann@gnome.org>
  *
@@ -31,7 +31,7 @@
 
 G_BEGIN_DECLS
 
-#define EOM_TYPE_WINDOW_ACTIVATABLE	(eom_window_activatable_get_type ())
+#define EOM_TYPE_WINDOW_ACTIVATABLE	(eoc_window_activatable_get_type ())
 #define EOM_WINDOW_ACTIVATABLE(obj) 	(G_TYPE_CHECK_INSTANCE_CAST ((obj), \
 					 EOM_TYPE_WINDOW_ACTIVATABLE, \
 					 EomWindowActivatable))
@@ -59,10 +59,10 @@ struct _EomWindowActivatableInterface
 	void	(*deactivate)	(EomWindowActivatable *activatable);
 };
 
-GType	eom_window_activatable_get_type	(void) G_GNUC_CONST;
+GType	eoc_window_activatable_get_type	(void) G_GNUC_CONST;
 
-void	eom_window_activatable_activate	    (EomWindowActivatable *activatable);
-void	eom_window_activatable_deactivate   (EomWindowActivatable *activatable);
+void	eoc_window_activatable_activate	    (EomWindowActivatable *activatable);
+void	eoc_window_activatable_deactivate   (EomWindowActivatable *activatable);
 
 G_END_DECLS
 #endif /* __EOM_WINDOW_ACTIVATABLE_H__ */

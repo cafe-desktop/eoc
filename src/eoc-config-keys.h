@@ -27,7 +27,7 @@
 #ifndef __EOM_CONFIG_KEYS_H__
 #define __EOM_CONFIG_KEYS_H__
 
-#define EOM_CONF_DOMAIN				"org.mate.eom"
+#define EOM_CONF_DOMAIN				"org.mate.eoc"
 #define EOM_CONF_FULLSCREEN			EOM_CONF_DOMAIN".full-screen"
 #define EOM_CONF_PLUGINS			EOM_CONF_DOMAIN".plugins"
 #define EOM_CONF_UI				EOM_CONF_DOMAIN".ui"

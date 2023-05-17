@@ -32,8 +32,8 @@
 #include <config.h>
 #endif
 
-#include "eom-image-jpeg.h"
-#include "eom-image-private.h"
+#include "eoc-image-jpeg.h"
+#include "eoc-image-private.h"
 
 #if HAVE_JPEG
 
@@ -126,7 +126,7 @@ init_transform_info (EomImage *image, jpeg_transform_info *info)
 	priv = image->priv;
 
 	if (priv->trans != NULL && priv->trans_autorotate != NULL) {
-		composition = eom_transform_compose (priv->trans,
+		composition = eoc_transform_compose (priv->trans,
 						     priv->trans_autorotate);
 	} else if (priv->trans != NULL) {
 		composition = g_object_ref (priv->trans);
@@ -135,7 +135,7 @@ init_transform_info (EomImage *image, jpeg_transform_info *info)
 	}
 
 	if (composition != NULL) {
-		transformation = eom_transform_get_transform_type (composition);
+		transformation = eoc_transform_get_transform_type (composition);
 
 		switch (transformation) {
 		case EOM_TRANSFORM_ROT_90:
@@ -478,7 +478,7 @@ _save_any_as_jpeg (EomImage *image, const char *file, EomImageSaveInfo *source,
 }
 
 gboolean
-eom_image_jpeg_save_file (EomImage *image, const char *file,
+eoc_image_jpeg_save_file (EomImage *image, const char *file,
 			  EomImageSaveInfo *source, EomImageSaveInfo *target,
 			  GError **error)
 {

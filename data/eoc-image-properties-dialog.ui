@@ -144,7 +144,7 @@
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="border_width">5</property>
-            <signal name="switch-page" handler="eom_properties_dialog_page_switch" object="EomPropertiesDialog" swapped="no"/>
+            <signal name="switch-page" handler="eoc_properties_dialog_page_switch" object="EomPropertiesDialog" swapped="no"/>
             <child>
               <object class="GtkBox" id="general_box">
                 <property name="visible">True</property>
@@ -1009,7 +1009,7 @@
       <action-widget response="-7">close_button</action-widget>
     </action-widgets>
     <style>
-      <class name="eom-image-properties-dialog"/>
+      <class name="eoc-image-properties-dialog"/>
     </style>
   </template>
 </interface>

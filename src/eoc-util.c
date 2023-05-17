@@ -33,7 +33,7 @@
 
 #include <time.h>
 
-#include "eom-util.h"
+#include "eoc-util.h"
 
 #include <errno.h>
 #include <string.h>
@@ -45,15 +45,15 @@
 #include <glib/gi18n.h>
 
 void
-eom_util_show_help (const gchar *section, GtkWindow *parent)
+eoc_util_show_help (const gchar *section, GtkWindow *parent)
 {
 	GError *error = NULL;
 	gchar *uri = NULL;
 
 	if (section)
-		uri = g_strdup_printf ("help:eom/%s", section);
+		uri = g_strdup_printf ("help:eoc/%s", section);
 
-	gtk_show_uri_on_window (parent, ((uri != NULL) ? uri : "help:eom"),
+	gtk_show_uri_on_window (parent, ((uri != NULL) ? uri : "help:eoc"),
 		      gtk_get_current_event_time (), &error);
 
 	g_free (uri);
@@ -80,7 +80,7 @@ eom_util_show_help (const gchar *section, GtkWindow *parent)
 }
 
 gchar *
-eom_util_make_valid_utf8 (const gchar *str)
+eoc_util_make_valid_utf8 (const gchar *str)
 {
 	GString *string;
 	const char *remainder, *invalid;
@@ -121,7 +121,7 @@ eom_util_make_valid_utf8 (const gchar *str)
 }
 
 GSList*
-eom_util_parse_uri_string_list_to_file_list (const gchar *uri_list)
+eoc_util_parse_uri_string_list_to_file_list (const gchar *uri_list)
 {
 	GSList* file_list = NULL;
 	gsize i = 0;
@@ -140,7 +140,7 @@ eom_util_parse_uri_string_list_to_file_list (const gchar *uri_list)
 }
 
 GSList*
-eom_util_string_list_to_file_list (GSList *string_list)
+eoc_util_string_list_to_file_list (GSList *string_list)
 {
 	GSList *it = NULL;
 	GSList *file_list = NULL;
@@ -158,7 +158,7 @@ eom_util_string_list_to_file_list (GSList *string_list)
 }
 
 GSList*
-eom_util_strings_to_file_list (gchar **strings)
+eoc_util_strings_to_file_list (gchar **strings)
 {
 	int i;
  	GSList *file_list = NULL;
@@ -172,7 +172,7 @@ eom_util_strings_to_file_list (gchar **strings)
 }
 
 GSList*
-eom_util_string_array_to_list (const gchar **files, gboolean create_uri)
+eoc_util_string_array_to_list (const gchar **files, gboolean create_uri)
 {
 	gint i;
 	GSList *list = NULL;
@@ -203,7 +203,7 @@ eom_util_string_array_to_list (const gchar **files, gboolean create_uri)
 }
 
 gchar **
-eom_util_string_array_make_absolute (gchar **files)
+eoc_util_string_array_make_absolute (gchar **files)
 {
 	int i;
 	int size;
@@ -247,12 +247,12 @@ ensure_dir_exists (const char *dir)
 }
 
 const gchar *
-eom_util_dot_dir (void)
+eoc_util_dot_dir (void)
 {
 	if (dot_dir == NULL) {
 		gboolean exists;
 
-			dot_dir = g_build_filename(g_get_user_config_dir(), "mate", "eom", NULL);
+			dot_dir = g_build_filename(g_get_user_config_dir(), "mate", "eoc", NULL);
 
 		exists = ensure_dir_exists (dot_dir);
 
@@ -274,7 +274,7 @@ eom_util_dot_dir (void)
 /* Based on eel_filename_strip_extension() */
 
 /**
- * eom_util_filename_get_extension:
+ * eoc_util_filename_get_extension:
  * @filename: a filename
  *
  * Returns a reasonably good guess of the file extension of @filename.
@@ -282,7 +282,7 @@ eom_util_dot_dir (void)
  * Returns: a newly allocated string with the file extension of @filename.
  **/
 char *
-eom_util_filename_get_extension (const char * filename)
+eoc_util_filename_get_extension (const char * filename)
 {
 	char *begin, *begin2;
 
@@ -316,7 +316,7 @@ eom_util_filename_get_extension (const char * filename)
 
 
 /**
- * eom_util_file_is_persistent:
+ * eoc_util_file_is_persistent:
  * @file: a #GFile
  *
  * Checks whether @file is a non-removable local mount.
@@ -325,7 +325,7 @@ eom_util_filename_get_extension (const char * filename)
  * %FALSE otherwise or when it is remote.
  **/
 gboolean
-eom_util_file_is_persistent (GFile *file)
+eoc_util_file_is_persistent (GFile *file)
 {
 	GMount *mount;
 
@@ -343,7 +343,7 @@ eom_util_file_is_persistent (GFile *file)
 }
 
 static void
-_eom_util_show_file_in_filemanager_fallback (GFile *file, GtkWindow *toplevel)
+_eoc_util_show_file_in_filemanager_fallback (GFile *file, GtkWindow *toplevel)
 {
 	gchar *uri = NULL;
 	GError *error = NULL;
@@ -372,7 +372,7 @@ _eom_util_show_file_in_filemanager_fallback (GFile *file, GtkWindow *toplevel)
 }
 
 void
-eom_util_show_file_in_filemanager (GFile *file, GtkWindow *toplevel)
+eoc_util_show_file_in_filemanager (GFile *file, GtkWindow *toplevel)
 {
 	GDBusProxy *proxy;
 	gboolean done = FALSE;
@@ -425,5 +425,5 @@ eom_util_show_file_in_filemanager (GFile *file, GtkWindow *toplevel)
 
 	/* Fallback to gtk_show_uri() if launch over DBus is not possible */
 	if (!done)
-		_eom_util_show_file_in_filemanager_fallback (file, toplevel);
+		_eoc_util_show_file_in_filemanager_fallback (file, toplevel);
 }

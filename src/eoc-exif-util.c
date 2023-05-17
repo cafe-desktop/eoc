@@ -34,8 +34,8 @@
 #endif
 #include <time.h>
 
-#include "eom-exif-util.h"
-#include "eom-util.h"
+#include "eoc-exif-util.h"
+#include "eoc-util.h"
 
 #include <string.h>
 #include <glib/gi18n.h>
@@ -53,7 +53,7 @@
 typedef ExifData EomExifData;
 
 /* Define EomExifData type */
-G_DEFINE_BOXED_TYPE(EomExifData, eom_exif_data, eom_exif_data_copy, eom_exif_data_free)
+G_DEFINE_BOXED_TYPE(EomExifData, eoc_exif_data, eoc_exif_data_copy, eoc_exif_data_free)
 
 #ifdef HAVE_STRPTIME
 static gpointer
@@ -103,7 +103,7 @@ _calculate_wday_yday (struct tm *tm)
 
 #ifdef HAVE_STRPTIME
 static gchar *
-eom_exif_util_format_date_with_strptime (const gchar *date, const gchar* format)
+eoc_exif_util_format_date_with_strptime (const gchar *date, const gchar* format)
 {
 	static GOnce strptime_updates_wday = G_ONCE_INIT;
 	gchar *new_date = NULL;
@@ -133,7 +133,7 @@ eom_exif_util_format_date_with_strptime (const gchar *date, const gchar* format)
 }
 #else
 static gchar *
-eom_exif_util_format_date_by_hand (const gchar *date, const gchar* format)
+eoc_exif_util_format_date_by_hand (const gchar *date, const gchar* format)
 {
 	int year, month, day, hour, minutes, seconds;
 	int result;
@@ -173,7 +173,7 @@ eom_exif_util_format_date_by_hand (const gchar *date, const gchar* format)
 #pragma GCC diagnostic pop
 
 /**
- * eom_exif_util_format_date:
+ * eoc_exif_util_format_date:
  * @date: a date string following Exif specifications
  *
  * Takes a date string formatted after Exif specifications and generates a
@@ -183,20 +183,20 @@ eom_exif_util_format_date_by_hand (const gchar *date, const gchar* format)
  * current locale.
  */
 gchar *
-eom_exif_util_format_date (const gchar *date)
+eoc_exif_util_format_date (const gchar *date)
 {
 	gchar *new_date;
 #ifdef HAVE_STRPTIME
 	/* A strftime-formatted string, to display the date the image was taken.  */
-	new_date = eom_exif_util_format_date_with_strptime (date, _("%a, %d %B %Y  %X"));
+	new_date = eoc_exif_util_format_date_with_strptime (date, _("%a, %d %B %Y  %X"));
 #else
-	new_date = eom_exif_util_format_date_by_hand (date, _("%a, %d %B %Y  %X"));
+	new_date = eoc_exif_util_format_date_by_hand (date, _("%a, %d %B %Y  %X"));
 #endif /* HAVE_STRPTIME */
 	return new_date;
 }
 
 void
-eom_exif_util_set_label_text (GtkLabel *label,
+eoc_exif_util_set_label_text (GtkLabel *label,
 			      EomExifData *exif_data,
 			      gint tag_id)
 {
@@ -207,13 +207,13 @@ eom_exif_util_set_label_text (GtkLabel *label,
 	g_return_if_fail (GTK_IS_LABEL (label));
 
 	if (exif_data) {
-		buf_ptr = eom_exif_data_get_value (exif_data, tag_id,
+		buf_ptr = eoc_exif_data_get_value (exif_data, tag_id,
 						   exif_buffer, 512);
 
 		if (tag_id == EXIF_TAG_DATE_TIME_ORIGINAL && buf_ptr)
-			label_text = eom_exif_util_format_date (buf_ptr);
+			label_text = eoc_exif_util_format_date (buf_ptr);
 		else
-			label_text = eom_util_make_valid_utf8 (buf_ptr);
+			label_text = eoc_util_make_valid_utf8 (buf_ptr);
 	}
 
 	gtk_label_set_text (label, label_text);
@@ -221,7 +221,7 @@ eom_exif_util_set_label_text (GtkLabel *label,
 }
 
 void
-eom_exif_util_format_datetime_label (GtkLabel *label, EomExifData *exif_data,
+eoc_exif_util_format_datetime_label (GtkLabel *label, EomExifData *exif_data,
                                      gint tag_id, const gchar *format)
 {
 	gchar exif_buffer[512];
@@ -232,14 +232,14 @@ eom_exif_util_format_datetime_label (GtkLabel *label, EomExifData *exif_data,
 	g_warn_if_fail (tag_id == EXIF_TAG_DATE_TIME_ORIGINAL);
 
 	if (exif_data) {
-	    buf_ptr = eom_exif_data_get_value (exif_data, tag_id,
+	    buf_ptr = eoc_exif_data_get_value (exif_data, tag_id,
 	                                       exif_buffer, 512);
 
 	    if (tag_id == EXIF_TAG_DATE_TIME_ORIGINAL && buf_ptr)
 #ifdef HAVE_STRPTIME
-	        label_text = eom_exif_util_format_date_with_strptime (buf_ptr, format);
+	        label_text = eoc_exif_util_format_date_with_strptime (buf_ptr, format);
 #else
-	        label_text = eom_exif_util_format_date_by_hand (buf_ptr, format);
+	        label_text = eoc_exif_util_format_date_by_hand (buf_ptr, format);
 #endif /* HAVE_STRPTIME */
 	}
 
@@ -248,7 +248,7 @@ eom_exif_util_format_datetime_label (GtkLabel *label, EomExifData *exif_data,
 }
 
 void
-eom_exif_util_set_focal_length_label_text (GtkLabel *label,
+eoc_exif_util_set_focal_length_label_text (GtkLabel *label,
 					   EomExifData *exif_data)
 {
 	ExifEntry *entry = NULL, *entry35mm = NULL;
@@ -313,7 +313,7 @@ eom_exif_util_set_focal_length_label_text (GtkLabel *label,
 }
 
 /**
- * eom_exif_data_get_value:
+ * eoc_exif_data_get_value:
  * @exif_data: pointer to an <structname>ExifData</structname> struct
  * @tag_id: the requested tag's id. See <filename>exif-tag.h</filename>
  * from the libexif package for possible values (e.g. %EXIF_TAG_EXPOSURE_MODE).
@@ -327,7 +327,7 @@ eom_exif_util_set_focal_length_label_text (GtkLabel *label,
  * Returns: a pointer to @buffer.
  */
 const gchar *
-eom_exif_data_get_value (EomExifData *exif_data, gint tag_id, gchar *buffer, guint buf_size)
+eoc_exif_data_get_value (EomExifData *exif_data, gint tag_id, gchar *buffer, guint buf_size)
 {
 	ExifEntry *exif_entry;
 	const gchar *exif_value;
@@ -342,7 +342,7 @@ eom_exif_data_get_value (EomExifData *exif_data, gint tag_id, gchar *buffer, gui
 }
 
 EomExifData *
-eom_exif_data_copy (EomExifData *data)
+eoc_exif_data_copy (EomExifData *data)
 {
 	exif_data_ref (data);
 
@@ -350,7 +350,7 @@ eom_exif_data_copy (EomExifData *data)
 }
 
 void
-eom_exif_data_free (EomExifData *data)
+eoc_exif_data_free (EomExifData *data)
 {
 	exif_data_unref (data);
 }

@@ -1,6 +1,6 @@
 /*
- * eom-metadata-sidebar.h
- * This file is part of eom
+ * eoc-metadata-sidebar.h
+ * This file is part of eoc
  *
  * Author: Felix Riemann <friemann@gnome.org>
  *
@@ -27,11 +27,11 @@
 #include <glib-object.h>
 #include <gtk/gtk.h>
 
-#include "eom-window.h"
+#include "eoc-window.h"
 
 G_BEGIN_DECLS
 
-#define EOM_TYPE_METADATA_SIDEBAR          (eom_metadata_sidebar_get_type ())
+#define EOM_TYPE_METADATA_SIDEBAR          (eoc_metadata_sidebar_get_type ())
 #define EOM_METADATA_SIDEBAR(o)            (G_TYPE_CHECK_INSTANCE_CAST ((o), EOM_TYPE_METADATA_SIDEBAR, EomMetadataSidebar))
 #define EOM_METADATA_SIDEBAR_CLASS(k)      (G_TYPE_CHECK_CLASS_CAST((k), EOM_TYPE_METADATA_SIDEBAR, EomMetadataSidebarClass))
 #define EOM_IS_METADATA_SIDEBAR(o)         (G_TYPE_CHECK_INSTANCE_TYPE ((o), EOM_TYPE_METADATA_SIDEBAR))
@@ -52,9 +52,9 @@ struct _EomMetadataSidebarClass {
 	GtkScrolledWindowClass parent_klass;
 };
 
-GType eom_metadata_sidebar_get_type (void) G_GNUC_CONST;
+GType eoc_metadata_sidebar_get_type (void) G_GNUC_CONST;
 
-GtkWidget* eom_metadata_sidebar_new (EomWindow *window);
+GtkWidget* eoc_metadata_sidebar_new (EomWindow *window);
 
 G_END_DECLS
 
