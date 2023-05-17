@@ -19,8 +19,8 @@
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-#ifndef __EOM_IMAGE_PRIVATE_H__
-#define __EOM_IMAGE_PRIVATE_H__
+#ifndef __EOC_IMAGE_PRIVATE_H__
+#define __EOC_IMAGE_PRIVATE_H__
 
 #include "eoc-image.h"
 #ifdef HAVE_RSVG
@@ -94,4 +94,4 @@ struct _EomImagePrivate {
 
 G_END_DECLS
 
-#endif /* __EOM_IMAGE_PRIVATE_H__ */
+#endif /* __EOC_IMAGE_PRIVATE_H__ */

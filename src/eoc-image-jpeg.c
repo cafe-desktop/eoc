@@ -60,9 +60,9 @@
 #endif
 
 typedef enum {
-	EOM_SAVE_NONE,
-	EOM_SAVE_JPEG_AS_JPEG,
-	EOM_SAVE_ANY_AS_JPEG
+	EOC_SAVE_NONE,
+	EOC_SAVE_JPEG_AS_JPEG,
+	EOC_SAVE_ANY_AS_JPEG
 } EomJpegSaveMethod;
 
 /* error handler data */
@@ -119,7 +119,7 @@ init_transform_info (EomImage *image, jpeg_transform_info *info)
 	EomTransformType transformation;
 	JXFORM_CODE trans_code = JXFORM_NONE;
 
-	g_return_if_fail (EOM_IS_IMAGE (image));
+	g_return_if_fail (EOC_IS_IMAGE (image));
 
 	memset (info, 0x0, sizeof (jpeg_transform_info));
 
@@ -138,31 +138,31 @@ init_transform_info (EomImage *image, jpeg_transform_info *info)
 		transformation = eoc_transform_get_transform_type (composition);
 
 		switch (transformation) {
-		case EOM_TRANSFORM_ROT_90:
+		case EOC_TRANSFORM_ROT_90:
 			trans_code = JXFORM_ROT_90;
 			break;
-		case EOM_TRANSFORM_ROT_270:
+		case EOC_TRANSFORM_ROT_270:
 			trans_code = JXFORM_ROT_270;
 			break;
-		case EOM_TRANSFORM_ROT_180:
+		case EOC_TRANSFORM_ROT_180:
 			trans_code = JXFORM_ROT_180;
 			break;
-		case EOM_TRANSFORM_FLIP_HORIZONTAL:
+		case EOC_TRANSFORM_FLIP_HORIZONTAL:
 			trans_code = JXFORM_FLIP_H;
 			break;
-		case EOM_TRANSFORM_FLIP_VERTICAL:
+		case EOC_TRANSFORM_FLIP_VERTICAL:
 			trans_code = JXFORM_FLIP_V;
 			break;
-		case EOM_TRANSFORM_TRANSPOSE:
+		case EOC_TRANSFORM_TRANSPOSE:
 			trans_code = JXFORM_TRANSPOSE;
 			break;
-		case EOM_TRANSFORM_TRANSVERSE:
+		case EOC_TRANSFORM_TRANSVERSE:
 			trans_code = JXFORM_TRANSVERSE;
 			break;
 		default:
 			g_warning("EomTransformType not supported!");
 			/* Fallthrough intended here. */
-		case EOM_TRANSFORM_NONE:
+		case EOC_TRANSFORM_NONE:
 			trans_code = JXFORM_NONE;
 			break;
 		}
@@ -193,8 +193,8 @@ _save_jpeg_as_jpeg (EomImage *image, const char *file, EomImageSaveInfo *source,
 	EomImagePrivate               *priv;
 	gchar                          *infile_uri;
 
-	g_return_val_if_fail (EOM_IS_IMAGE (image), FALSE);
-	g_return_val_if_fail (EOM_IMAGE (image)->priv->file != NULL, FALSE);
+	g_return_val_if_fail (EOC_IS_IMAGE (image), FALSE);
+	g_return_val_if_fail (EOC_IMAGE (image)->priv->file != NULL, FALSE);
 
 	priv = image->priv;
 
@@ -362,8 +362,8 @@ _save_any_as_jpeg (EomImage *image, const char *file, EomImageSaveInfo *source,
 	FILE *outfile;
 	struct error_handler_data jerr;
 
-	g_return_val_if_fail (EOM_IS_IMAGE (image), FALSE);
-	g_return_val_if_fail (EOM_IMAGE (image)->priv->image != NULL, FALSE);
+	g_return_val_if_fail (EOC_IS_IMAGE (image), FALSE);
+	g_return_val_if_fail (EOC_IMAGE (image)->priv->image != NULL, FALSE);
 
 	priv = image->priv;
 	pixbuf = priv->image;
@@ -482,43 +482,43 @@ eoc_image_jpeg_save_file (EomImage *image, const char *file,
 			  EomImageSaveInfo *source, EomImageSaveInfo *target,
 			  GError **error)
 {
-	EomJpegSaveMethod method = EOM_SAVE_NONE;
+	EomJpegSaveMethod method = EOC_SAVE_NONE;
 	gboolean source_is_jpeg = FALSE;
 	gboolean target_is_jpeg = FALSE;
         gboolean result;
 
 	g_return_val_if_fail (source != NULL, FALSE);
 
-	source_is_jpeg = !g_ascii_strcasecmp (source->format, EOM_FILE_FORMAT_JPEG);
+	source_is_jpeg = !g_ascii_strcasecmp (source->format, EOC_FILE_FORMAT_JPEG);
 
 	/* determine which method should be used for saving */
 	if (target == NULL) {
 		if (source_is_jpeg) {
-			method = EOM_SAVE_JPEG_AS_JPEG;
+			method = EOC_SAVE_JPEG_AS_JPEG;
 		}
 	}
 	else {
-		target_is_jpeg = !g_ascii_strcasecmp (target->format, EOM_FILE_FORMAT_JPEG);
+		target_is_jpeg = !g_ascii_strcasecmp (target->format, EOC_FILE_FORMAT_JPEG);
 
 		if (source_is_jpeg && target_is_jpeg) {
 			if (target->jpeg_quality < 0.0) {
-				method = EOM_SAVE_JPEG_AS_JPEG;
+				method = EOC_SAVE_JPEG_AS_JPEG;
 			}
 			else {
 				/* reencoding is required, cause quality is set */
-				method = EOM_SAVE_ANY_AS_JPEG;
+				method = EOC_SAVE_ANY_AS_JPEG;
 			}
 		}
 		else if (!source_is_jpeg && target_is_jpeg) {
-			method = EOM_SAVE_ANY_AS_JPEG;
+			method = EOC_SAVE_ANY_AS_JPEG;
 		}
 	}
 
 	switch (method) {
-	case EOM_SAVE_JPEG_AS_JPEG:
+	case EOC_SAVE_JPEG_AS_JPEG:
 		result = _save_jpeg_as_jpeg (image, file, source, target, error);
 		break;
-	case EOM_SAVE_ANY_AS_JPEG:
+	case EOC_SAVE_ANY_AS_JPEG:
 		result = _save_any_as_jpeg (image, file, source, target, error);
 		break;
 	default:

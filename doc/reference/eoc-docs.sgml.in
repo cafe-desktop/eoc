@@ -22,9 +22,9 @@
       <xi:include href="xml/eoc-scroll-view.xml"/>
       <xi:include href="xml/eoc-window.xml"/>
       <xi:include href="xml/eoc-statusbar.xml"/>
-      @EOM_DOC_EXIF_START@
+      @EOC_DOC_EXIF_START@
       <xi:include href="xml/eoc-exif-details.xml"/>
-      @EOM_DOC_EXIF_STOP@
+      @EOC_DOC_EXIF_STOP@
       <xi:include href="xml/eoc-sidebar.xml"/>
       <xi:include href="xml/eoc-thumbnail.xml"/>
       <xi:include href="xml/eoc-save-as-dialog-helper.xml"/>
@@ -67,9 +67,9 @@
       <xi:include href="xml/eoc-debug.xml"/>
       <xi:include href="xml/eoc-uri-converter.xml"/>
       <xi:include href="xml/eoc-util.xml"/>
-      @EOM_DOC_EXIF_START@
+      @EOC_DOC_EXIF_START@
       <xi:include href="xml/eoc-exif-util.xml"/>
-      @EOM_DOC_EXIF_STOP@
+      @EOC_DOC_EXIF_STOP@
       <xi:include href="xml/eoc-pixbuf-util.xml"/>
       <xi:include href="xml/zoom.xml"/>
       <xi:include href="xml/uta.xml"/>

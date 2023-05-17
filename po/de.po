@@ -81,7 +81,7 @@ msgstr ""
 
 #: data/eoc.desktop.in.in:3 src/main.c:65 src/main.c:166
 msgid "Eye of MATE Image Viewer"
-msgstr "EOM-Bildbetrachter"
+msgstr "EOC-Bildbetrachter"
 
 #: data/eoc.desktop.in.in:4
 msgid "Browse and rotate images"

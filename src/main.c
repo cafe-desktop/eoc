@@ -46,7 +46,7 @@
 #include <exempi/xmp.h>
 #endif
 
-#define EOM_CSS_FILE_PATH EOM_DATA_DIR G_DIR_SEPARATOR_S "eoc.css"
+#define EOC_CSS_FILE_PATH EOC_DATA_DIR G_DIR_SEPARATOR_S "eoc.css"
 
 static EomStartupFlags flags;
 
@@ -82,13 +82,13 @@ static void
 set_startup_flags (void)
 {
   if (fullscreen)
-    flags |= EOM_STARTUP_FULLSCREEN;
+    flags |= EOC_STARTUP_FULLSCREEN;
 
   if (disable_collection)
-    flags |= EOM_STARTUP_DISABLE_COLLECTION;
+    flags |= EOC_STARTUP_DISABLE_COLLECTION;
 
   if (slide_show)
-    flags |= EOM_STARTUP_SLIDE_SHOW;
+    flags |= EOC_STARTUP_SLIDE_SHOW;
 }
 
 int
@@ -99,7 +99,7 @@ main (int argc, char **argv)
 	GFile *css_file;
 	GtkCssProvider *provider;
 
-	bindtextdomain (GETTEXT_PACKAGE, EOM_LOCALE_DIR);
+	bindtextdomain (GETTEXT_PACKAGE, EOC_LOCALE_DIR);
 	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
 	textdomain (GETTEXT_PACKAGE);
 
@@ -160,20 +160,20 @@ main (int argc, char **argv)
 
 	/* Add application specific icons to search path */
 	gtk_icon_theme_append_search_path (gtk_icon_theme_get_default (),
-                                           EOM_DATA_DIR G_DIR_SEPARATOR_S "icons");
+                                           EOC_DATA_DIR G_DIR_SEPARATOR_S "icons");
 
 	gtk_window_set_default_icon_name ("eoc");
 	g_set_application_name (_("Eye of MATE Image Viewer"));
 
-	EOM_APP->priv->flags = flags;
+	EOC_APP->priv->flags = flags;
 	if (force_new_instance) {
-		GApplicationFlags app_flags = g_application_get_flags (G_APPLICATION (EOM_APP));
+		GApplicationFlags app_flags = g_application_get_flags (G_APPLICATION (EOC_APP));
 		app_flags |= G_APPLICATION_NON_UNIQUE;
-		g_application_set_flags (G_APPLICATION (EOM_APP), app_flags);
+		g_application_set_flags (G_APPLICATION (EOC_APP), app_flags);
 	}
 
-	g_application_run (G_APPLICATION (EOM_APP), argc, argv);
-	g_object_unref (EOM_APP);
+	g_application_run (G_APPLICATION (EOC_APP), argc, argv);
+	g_object_unref (EOC_APP);
 
   	if (startup_files)
 		g_strfreev (startup_files);

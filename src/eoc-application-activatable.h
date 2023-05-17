@@ -24,27 +24,27 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
-#ifndef __EOM_APPLICATION_ACTIVATABLE_H__
-#define __EOM_APPLICATION_ACTIVATABLE_H__
+#ifndef __EOC_APPLICATION_ACTIVATABLE_H__
+#define __EOC_APPLICATION_ACTIVATABLE_H__
 
 #include <glib-object.h>
 
 G_BEGIN_DECLS
 
-#define EOM_TYPE_APPLICATION_ACTIVATABLE (eoc_application_activatable_get_type ())
-#define EOM_APPLICATION_ACTIVATABLE(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), \
-                                          EOM_TYPE_APPLICATION_ACTIVATABLE, \
+#define EOC_TYPE_APPLICATION_ACTIVATABLE (eoc_application_activatable_get_type ())
+#define EOC_APPLICATION_ACTIVATABLE(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), \
+                                          EOC_TYPE_APPLICATION_ACTIVATABLE, \
                                           EomApplicationActivatable))
-#define EOM_APPLICATION_ACTIVATABLE_IFACE(obj) \
+#define EOC_APPLICATION_ACTIVATABLE_IFACE(obj) \
                                           (G_TYPE_CHECK_CLASS_CAST ((obj), \
-                                           EOM_TYPE_APPLICATION_ACTIVATABLE, \
+                                           EOC_TYPE_APPLICATION_ACTIVATABLE, \
                                            EomApplicationActivatableInterface))
-#define EOM_IS_APPLICATION_ACTIVATABLE(obj) \
+#define EOC_IS_APPLICATION_ACTIVATABLE(obj) \
                                           (G_TYPE_CHECK_INSTANCE_TYPE ((obj), \
-                                           EOM_TYPE_APPLICATION_ACTIVATABLE))
-#define EOM_APPLICATION_ACTIVATABLE_GET_IFACE(obj) \
+                                           EOC_TYPE_APPLICATION_ACTIVATABLE))
+#define EOC_APPLICATION_ACTIVATABLE_GET_IFACE(obj) \
                                         (G_TYPE_INSTANCE_GET_INTERFACE ((obj), \
-                                         EOM_TYPE_APPLICATION_ACTIVATABLE, \
+                                         EOC_TYPE_APPLICATION_ACTIVATABLE, \
                                          EomApplicationActivatableInterface))
 
 typedef struct _EomApplicationActivatable		EomApplicationActivatable;
@@ -66,5 +66,5 @@ void	eoc_application_activatable_activate     (EomApplicationActivatable *activa
 void	eoc_application_activatable_deactivate   (EomApplicationActivatable *activatable);
 
 G_END_DECLS
-#endif /* __EOM_APPLICATION_ACTIVATABLE_H__ */
+#endif /* __EOC_APPLICATION_ACTIVATABLE_H__ */
 

@@ -21,8 +21,8 @@
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-#ifndef EOM_LIST_STORE_H
-#define EOM_LIST_STORE_H
+#ifndef EOC_LIST_STORE_H
+#define EOC_LIST_STORE_H
 
 #include <gtk/gtk.h>
 #include <glib-object.h>
@@ -30,8 +30,8 @@
 
 G_BEGIN_DECLS
 
-#ifndef __EOM_IMAGE_DECLR__
-#define __EOM_IMAGE_DECLR__
+#ifndef __EOC_IMAGE_DECLR__
+#define __EOC_IMAGE_DECLR__
   typedef struct _EomImage EomImage;
 #endif
 
@@ -39,21 +39,21 @@ typedef struct _EomListStore EomListStore;
 typedef struct _EomListStoreClass EomListStoreClass;
 typedef struct _EomListStorePrivate EomListStorePrivate;
 
-#define EOM_TYPE_LIST_STORE            eoc_list_store_get_type()
-#define EOM_LIST_STORE(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), EOM_TYPE_LIST_STORE, EomListStore))
-#define EOM_LIST_STORE_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass),  EOM_TYPE_LIST_STORE, EomListStoreClass))
-#define EOM_IS_LIST_STORE(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), EOM_TYPE_LIST_STORE))
-#define EOM_IS_LIST_STORE_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass),  EOM_TYPE_LIST_STORE))
-#define EOM_LIST_STORE_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj),  EOM_TYPE_LIST_STORE, EomListStoreClass))
+#define EOC_TYPE_LIST_STORE            eoc_list_store_get_type()
+#define EOC_LIST_STORE(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), EOC_TYPE_LIST_STORE, EomListStore))
+#define EOC_LIST_STORE_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass),  EOC_TYPE_LIST_STORE, EomListStoreClass))
+#define EOC_IS_LIST_STORE(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), EOC_TYPE_LIST_STORE))
+#define EOC_IS_LIST_STORE_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass),  EOC_TYPE_LIST_STORE))
+#define EOC_LIST_STORE_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj),  EOC_TYPE_LIST_STORE, EomListStoreClass))
 
-#define EOM_LIST_STORE_THUMB_SIZE 90
+#define EOC_LIST_STORE_THUMB_SIZE 90
 
 typedef enum {
-	EOM_LIST_STORE_THUMBNAIL = 0,
-	EOM_LIST_STORE_THUMB_SET,
-	EOM_LIST_STORE_EOM_IMAGE,
-	EOM_LIST_STORE_EOM_JOB,
-	EOM_LIST_STORE_NUM_COLUMNS
+	EOC_LIST_STORE_THUMBNAIL = 0,
+	EOC_LIST_STORE_THUMB_SET,
+	EOC_LIST_STORE_EOC_IMAGE,
+	EOC_LIST_STORE_EOC_JOB,
+	EOC_LIST_STORE_NUM_COLUMNS
 } EomListStoreColumn;
 
 struct _EomListStore {

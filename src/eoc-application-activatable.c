@@ -50,7 +50,7 @@ eoc_application_activatable_default_init (EomApplicationActivatableInterface *if
 		g_object_interface_install_property (iface,
                 g_param_spec_object ("app", "Application",
                              "The EomApplication this instance it attached to",
-                             EOM_TYPE_APPLICATION,
+                             EOC_TYPE_APPLICATION,
 						     G_PARAM_READWRITE |
 						     G_PARAM_CONSTRUCT_ONLY |
 						     G_PARAM_STATIC_STRINGS));
@@ -63,9 +63,9 @@ eoc_application_activatable_activate (EomApplicationActivatable *activatable)
 {
     EomApplicationActivatableInterface *iface;
 
-    g_return_if_fail (EOM_IS_APPLICATION_ACTIVATABLE (activatable));
+    g_return_if_fail (EOC_IS_APPLICATION_ACTIVATABLE (activatable));
 
-    iface = EOM_APPLICATION_ACTIVATABLE_GET_IFACE (activatable);
+    iface = EOC_APPLICATION_ACTIVATABLE_GET_IFACE (activatable);
 
 	if (G_LIKELY (iface->activate != NULL))
 		iface->activate (activatable);
@@ -76,9 +76,9 @@ eoc_application_activatable_deactivate (EomApplicationActivatable *activatable)
 {
     EomApplicationActivatableInterface *iface;
 
-    g_return_if_fail (EOM_IS_APPLICATION_ACTIVATABLE (activatable));
+    g_return_if_fail (EOC_IS_APPLICATION_ACTIVATABLE (activatable));
 
-    iface = EOM_APPLICATION_ACTIVATABLE_GET_IFACE (activatable);
+    iface = EOC_APPLICATION_ACTIVATABLE_GET_IFACE (activatable);
 
 	if (G_LIKELY (iface->deactivate != NULL))
 		iface->deactivate (activatable);

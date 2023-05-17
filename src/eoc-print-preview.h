@@ -19,8 +19,8 @@
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-#ifndef _EOM_PRINT_PREVIEW_H_
-#define _EOM_PRINT_PREVIEW_H_
+#ifndef _EOC_PRINT_PREVIEW_H_
+#define _EOC_PRINT_PREVIEW_H_
 
 G_BEGIN_DECLS
 
@@ -28,11 +28,11 @@ typedef struct _EomPrintPreview EomPrintPreview;
 typedef struct _EomPrintPreviewClass EomPrintPreviewClass;
 typedef struct _EomPrintPreviewPrivate EomPrintPreviewPrivate;
 
-#define EOM_TYPE_PRINT_PREVIEW            (eoc_print_preview_get_type ())
-#define EOM_PRINT_PREVIEW(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), EOM_TYPE_PRINT_PREVIEW, EomPrintPreview))
-#define EOM_PRINT_PREVIEW_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass), EOM_TYPE_PRINT_PREVIEW, EomPrintPreviewClass))
-#define EOM_IS_PRINT_PREVIEW(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), EOM_TYPE_PRINT_PREVIEW))
-#define EOM_IS_PRINT_PREVIEW_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), EOM_TYPE_PRINT_PREVIEW))
+#define EOC_TYPE_PRINT_PREVIEW            (eoc_print_preview_get_type ())
+#define EOC_PRINT_PREVIEW(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), EOC_TYPE_PRINT_PREVIEW, EomPrintPreview))
+#define EOC_PRINT_PREVIEW_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass), EOC_TYPE_PRINT_PREVIEW, EomPrintPreviewClass))
+#define EOC_IS_PRINT_PREVIEW(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), EOC_TYPE_PRINT_PREVIEW))
+#define EOC_IS_PRINT_PREVIEW_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), EOC_TYPE_PRINT_PREVIEW))
 
 struct _EomPrintPreview {
 	GtkAspectFrame aspect_frame;
@@ -81,4 +81,4 @@ void         eoc_print_preview_set_scale           (EomPrintPreview *preview,
 
 G_END_DECLS
 
-#endif /* _EOM_PRINT_PREVIEW_H_ */
+#endif /* _EOC_PRINT_PREVIEW_H_ */

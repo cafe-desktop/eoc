@@ -1,4 +1,4 @@
-/* Eye Of Mate - EOM Metadata Details
+/* Eye Of Mate - EOC Metadata Details
  *
  * Copyright (C) 2006 The Free Software Foundation
  *
@@ -212,7 +212,7 @@ eoc_metadata_details_dispose (GObject *object)
 {
     EomMetadataDetailsPrivate *priv;
 
-    priv = EOM_METADATA_DETAILS (object)->priv;
+    priv = EOC_METADATA_DETAILS (object)->priv;
 
     if (priv->model) {
         g_object_unref (priv->model);
@@ -473,7 +473,7 @@ exif_entry_cb (ExifEntry *entry, gpointer data)
     /* This should optimize away if comparision is correct */
     g_warn_if_fail (EXIF_IFD_COUNT <= G_MAXUINT16);
 
-    view = EOM_METADATA_DETAILS (data);
+    view = EOC_METADATA_DETAILS (data);
     priv = view->priv;
 
     store = GTK_TREE_STORE (gtk_tree_view_get_model (GTK_TREE_VIEW (view)));
@@ -546,7 +546,7 @@ eoc_metadata_details_new (void)
 {
     GObject *object;
 
-    object = g_object_new (EOM_TYPE_METADATA_DETAILS, NULL);
+    object = g_object_new (EOC_TYPE_METADATA_DETAILS, NULL);
 
     return GTK_WIDGET (object);
 }
@@ -579,7 +579,7 @@ eoc_metadata_details_reset (EomMetadataDetails *details)
 void
 eoc_metadata_details_update (EomMetadataDetails *details, ExifData *data)
 {
-    g_return_if_fail (EOM_IS_METADATA_DETAILS (details));
+    g_return_if_fail (EOC_IS_METADATA_DETAILS (details));
 
     eoc_metadata_details_reset (details);
     if (data) {
@@ -663,7 +663,7 @@ xmp_entry_insert (EomMetadataDetails *view, XmpStringPtr xmp_schema,
 void
 eoc_metadata_details_xmp_update (EomMetadataDetails *view, XmpPtr data)
 {
-    g_return_if_fail (EOM_IS_METADATA_DETAILS (view));
+    g_return_if_fail (EOC_IS_METADATA_DETAILS (view));
 
     if (data) {
         XmpIteratorPtr iter = xmp_iterator_new(data, NULL, NULL, XMP_ITER_JUSTLEAFNODES);

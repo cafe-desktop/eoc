@@ -29,8 +29,8 @@
 
 #include <string.h>
 
-#define EOM_LIST_STORE_GET_PRIVATE(object) \
-	(G_TYPE_INSTANCE_GET_PRIVATE ((object), EOM_TYPE_LIST_STORE, EomListStorePrivate))
+#define EOC_LIST_STORE_GET_PRIVATE(object) \
+	(G_TYPE_INSTANCE_GET_PRIVATE ((object), EOC_TYPE_LIST_STORE, EomListStorePrivate))
 
 struct _EomListStorePrivate {
 	GList *monitors;          /* Monitors for the directories */
@@ -51,7 +51,7 @@ foreach_monitors_free (gpointer data, gpointer user_data)
 static void
 eoc_list_store_dispose (GObject *object)
 {
-	EomListStore *store = EOM_LIST_STORE (object);
+	EomListStore *store = EOC_LIST_STORE (object);
 
 	g_list_foreach (store->priv->monitors,
 			foreach_monitors_free, NULL);
@@ -98,11 +98,11 @@ eoc_list_store_compare_func (GtkTreeModel *model,
 	EomImage *image_a, *image_b;
 
 	gtk_tree_model_get (model, a,
-			    EOM_LIST_STORE_EOM_IMAGE, &image_a,
+			    EOC_LIST_STORE_EOC_IMAGE, &image_a,
 			    -1);
 
 	gtk_tree_model_get (model, b,
-			    EOM_LIST_STORE_EOM_IMAGE, &image_b,
+			    EOC_LIST_STORE_EOC_IMAGE, &image_b,
 			    -1);
 
 	r_value = strcmp (eoc_image_get_collate_key (image_a),
@@ -125,7 +125,7 @@ eoc_list_store_get_icon (const gchar *icon_name)
 
 	pixbuf = gtk_icon_theme_load_icon (icon_theme,
 					   icon_name,
-					   EOM_LIST_STORE_THUMB_SIZE,
+					   EOC_LIST_STORE_THUMB_SIZE,
 					   0,
 					   &error);
 
@@ -140,15 +140,15 @@ eoc_list_store_get_icon (const gchar *icon_name)
 static void
 eoc_list_store_init (EomListStore *self)
 {
-	GType types[EOM_LIST_STORE_NUM_COLUMNS];
+	GType types[EOC_LIST_STORE_NUM_COLUMNS];
 
-	types[EOM_LIST_STORE_THUMBNAIL] = GDK_TYPE_PIXBUF;
-	types[EOM_LIST_STORE_EOM_IMAGE] = G_TYPE_OBJECT;
-	types[EOM_LIST_STORE_THUMB_SET] = G_TYPE_BOOLEAN;
-	types[EOM_LIST_STORE_EOM_JOB]   = G_TYPE_POINTER;
+	types[EOC_LIST_STORE_THUMBNAIL] = GDK_TYPE_PIXBUF;
+	types[EOC_LIST_STORE_EOC_IMAGE] = G_TYPE_OBJECT;
+	types[EOC_LIST_STORE_THUMB_SET] = G_TYPE_BOOLEAN;
+	types[EOC_LIST_STORE_EOC_JOB]   = G_TYPE_POINTER;
 
 	gtk_list_store_set_column_types (GTK_LIST_STORE (self),
-					 EOM_LIST_STORE_NUM_COLUMNS, types);
+					 EOC_LIST_STORE_NUM_COLUMNS, types);
 
 	self->priv = eoc_list_store_get_instance_private (self);
 
@@ -179,7 +179,7 @@ eoc_list_store_init (EomListStore *self)
 GtkListStore*
 eoc_list_store_new (void)
 {
-        return g_object_new (EOM_TYPE_LIST_STORE, NULL);
+        return g_object_new (EOC_TYPE_LIST_STORE, NULL);
 }
 
 /*
@@ -203,7 +203,7 @@ is_file_in_list_store (EomListStore *store,
 
 	do {
 		gtk_tree_model_get (GTK_TREE_MODEL (store), &iter,
-				    EOM_LIST_STORE_EOM_IMAGE, &image,
+				    EOC_LIST_STORE_EOC_IMAGE, &image,
 				    -1);
 		if (!image)
 			continue;
@@ -253,15 +253,15 @@ eoc_job_thumbnail_cb (EomJobThumbnail *job, gpointer data)
 	GdkPixbuf *thumbnail;
 	GFile *file;
 
-	g_return_if_fail (EOM_IS_LIST_STORE (data));
+	g_return_if_fail (EOC_IS_LIST_STORE (data));
 
-	store = EOM_LIST_STORE (data);
+	store = EOC_LIST_STORE (data);
 
 	file = eoc_image_get_file (job->image);
 
 	if (is_file_in_list_store_file (store, file, &iter)) {
 		gtk_tree_model_get (GTK_TREE_MODEL (store), &iter,
-				    EOM_LIST_STORE_EOM_IMAGE, &image,
+				    EOC_LIST_STORE_EOC_IMAGE, &image,
 				    -1);
 
 		if (job->thumbnail) {
@@ -275,9 +275,9 @@ eoc_job_thumbnail_cb (EomJobThumbnail *job, gpointer data)
 		}
 
 		gtk_list_store_set (GTK_LIST_STORE (store), &iter,
-				    EOM_LIST_STORE_THUMBNAIL, thumbnail,
-				    EOM_LIST_STORE_THUMB_SET, TRUE,
-				    EOM_LIST_STORE_EOM_JOB, NULL,
+				    EOC_LIST_STORE_THUMBNAIL, thumbnail,
+				    EOC_LIST_STORE_THUMB_SET, TRUE,
+				    EOC_LIST_STORE_EOC_JOB, NULL,
 				    -1);
 		g_object_unref (image);
 		g_object_unref (thumbnail);
@@ -314,7 +314,7 @@ eoc_list_store_remove (EomListStore *store, GtkTreeIter *iter)
 	EomImage *image;
 
 	gtk_tree_model_get (GTK_TREE_MODEL (store), iter,
-			    EOM_LIST_STORE_EOM_IMAGE, &image,
+			    EOC_LIST_STORE_EOC_IMAGE, &image,
 			    -1);
 
 	g_signal_handlers_disconnect_by_func (image, on_image_changed, store);
@@ -344,9 +344,9 @@ eoc_list_store_append_image (EomListStore *store, EomImage *image)
 
 	gtk_list_store_append (GTK_LIST_STORE (store), &iter);
 	gtk_list_store_set (GTK_LIST_STORE (store), &iter,
-			    EOM_LIST_STORE_EOM_IMAGE, image,
-			    EOM_LIST_STORE_THUMBNAIL, store->priv->busy_image,
-			    EOM_LIST_STORE_THUMB_SET, FALSE,
+			    EOC_LIST_STORE_EOC_IMAGE, image,
+			    EOC_LIST_STORE_THUMBNAIL, store->priv->busy_image,
+			    EOC_LIST_STORE_THUMB_SET, FALSE,
 			    -1);
 }
 
@@ -357,7 +357,7 @@ eoc_list_store_append_image_from_file (EomListStore *store,
 {
 	EomImage *image;
 
-	g_return_if_fail (EOM_IS_LIST_STORE (store));
+	g_return_if_fail (EOC_IS_LIST_STORE (store));
 
 	image = eoc_image_new_file (file, caption);
 
@@ -390,7 +390,7 @@ file_monitor_changed_cb (GFileMonitor *monitor,
 		if (is_file_in_list_store_file (store, file, &iter)) {
 			if (eoc_image_is_supported_mime_type (mimetype)) {
 				gtk_tree_model_get (GTK_TREE_MODEL (store), &iter,
-						    EOM_LIST_STORE_EOM_IMAGE, &image,
+						    EOC_LIST_STORE_EOC_IMAGE, &image,
 						    -1);
 				eoc_image_file_changed (image);
 				g_object_unref (image);
@@ -413,7 +413,7 @@ file_monitor_changed_cb (GFileMonitor *monitor,
 			EomImage *image;
 
 			gtk_tree_model_get (GTK_TREE_MODEL (store), &iter,
-					    EOM_LIST_STORE_EOM_IMAGE, &image,
+					    EOC_LIST_STORE_EOC_IMAGE, &image,
 					    -1);
 
 			eoc_list_store_remove (store, &iter);
@@ -655,8 +655,8 @@ eoc_list_store_remove_image (EomListStore *store, EomImage *image)
 	GtkTreeIter iter;
 	GFile *file;
 
-	g_return_if_fail (EOM_IS_LIST_STORE (store));
-	g_return_if_fail (EOM_IS_IMAGE (image));
+	g_return_if_fail (EOC_IS_LIST_STORE (store));
+	g_return_if_fail (EOC_IS_IMAGE (image));
 
 	file = eoc_image_get_file (image);
 
@@ -683,8 +683,8 @@ eoc_list_store_new_from_glist (GList *list)
 	GtkListStore *store = eoc_list_store_new ();
 
 	for (it = list; it != NULL; it = it->next) {
-		eoc_list_store_append_image (EOM_LIST_STORE (store),
-					     EOM_IMAGE (it->data));
+		eoc_list_store_append_image (EOC_LIST_STORE (store),
+					     EOC_IMAGE (it->data));
 	}
 
 	return store;
@@ -707,8 +707,8 @@ eoc_list_store_get_pos_by_image (EomListStore *store, EomImage *image)
 	gint pos = -1;
 	GFile *file;
 
-	g_return_val_if_fail (EOM_IS_LIST_STORE (store), -1);
-	g_return_val_if_fail (EOM_IS_IMAGE (image), -1);
+	g_return_val_if_fail (EOC_IS_LIST_STORE (store), -1);
+	g_return_val_if_fail (EOC_IS_IMAGE (image), -1);
 
 	file = eoc_image_get_file (image);
 
@@ -737,11 +737,11 @@ eoc_list_store_get_image_by_pos (EomListStore *store, gint pos)
 	EomImage *image = NULL;
 	GtkTreeIter iter;
 
-	g_return_val_if_fail (EOM_IS_LIST_STORE (store), NULL);
+	g_return_val_if_fail (EOC_IS_LIST_STORE (store), NULL);
 
 	if (gtk_tree_model_iter_nth_child (GTK_TREE_MODEL (store), &iter, NULL, pos)) {
 		gtk_tree_model_get (GTK_TREE_MODEL (store), &iter,
-				    EOM_LIST_STORE_EOM_IMAGE, &image,
+				    EOC_LIST_STORE_EOC_IMAGE, &image,
 				    -1);
 	}
 
@@ -784,7 +784,7 @@ eoc_list_store_get_pos_by_iter (EomListStore *store,
 gint
 eoc_list_store_length (EomListStore *store)
 {
-	g_return_val_if_fail (EOM_IS_LIST_STORE (store), -1);
+	g_return_val_if_fail (EOC_IS_LIST_STORE (store), -1);
 
 	return gtk_tree_model_iter_n_children (GTK_TREE_MODEL (store), NULL);
 }
@@ -802,7 +802,7 @@ eoc_list_store_length (EomListStore *store)
 gint
 eoc_list_store_get_initial_pos (EomListStore *store)
 {
-	g_return_val_if_fail (EOM_IS_LIST_STORE (store), -1);
+	g_return_val_if_fail (EOC_IS_LIST_STORE (store), -1);
 
 	return store->priv->initial_image;
 }
@@ -814,14 +814,14 @@ eoc_list_store_remove_thumbnail_job (EomListStore *store,
 	EomJob *job;
 
 	gtk_tree_model_get (GTK_TREE_MODEL (store), iter,
-			    EOM_LIST_STORE_EOM_JOB, &job,
+			    EOC_LIST_STORE_EOC_JOB, &job,
 			    -1);
 
 	if (job != NULL) {
 		g_mutex_lock (&store->priv->mutex);
 		eoc_job_queue_remove_job (job);
 		gtk_list_store_set (GTK_LIST_STORE (store), iter,
-				    EOM_LIST_STORE_EOM_JOB, NULL,
+				    EOC_LIST_STORE_EOC_JOB, NULL,
 				    -1);
 		g_mutex_unlock (&store->priv->mutex);
 	}
@@ -836,8 +836,8 @@ eoc_list_store_add_thumbnail_job (EomListStore *store, GtkTreeIter *iter)
 	EomJob *job;
 
 	gtk_tree_model_get (GTK_TREE_MODEL (store), iter,
-			    EOM_LIST_STORE_EOM_IMAGE, &image,
-			    EOM_LIST_STORE_EOM_JOB, &job,
+			    EOC_LIST_STORE_EOC_IMAGE, &image,
+			    EOC_LIST_STORE_EOC_JOB, &job,
 			    -1);
 
 	if (job != NULL) {
@@ -854,7 +854,7 @@ eoc_list_store_add_thumbnail_job (EomListStore *store, GtkTreeIter *iter)
 
 	g_mutex_lock (&store->priv->mutex);
 	gtk_list_store_set (GTK_LIST_STORE (store), iter,
-			    EOM_LIST_STORE_EOM_JOB, job,
+			    EOC_LIST_STORE_EOC_JOB, job,
 			    -1);
 	eoc_job_queue_add_job (job);
 	g_mutex_unlock (&store->priv->mutex);
@@ -877,7 +877,7 @@ eoc_list_store_thumbnail_set (EomListStore *store,
 	gboolean thumb_set = FALSE;
 
 	gtk_tree_model_get (GTK_TREE_MODEL (store), iter,
-			    EOM_LIST_STORE_THUMB_SET, &thumb_set,
+			    EOC_LIST_STORE_THUMB_SET, &thumb_set,
 			    -1);
 
 	if (thumb_set) {
@@ -905,14 +905,14 @@ eoc_list_store_thumbnail_unset (EomListStore *store,
 	eoc_list_store_remove_thumbnail_job (store, iter);
 
 	gtk_tree_model_get (GTK_TREE_MODEL (store), iter,
-			    EOM_LIST_STORE_EOM_IMAGE, &image,
+			    EOC_LIST_STORE_EOC_IMAGE, &image,
 			    -1);
 	eoc_image_set_thumbnail (image, NULL);
 	g_object_unref (image);
 
 	gtk_list_store_set (GTK_LIST_STORE (store), iter,
-			    EOM_LIST_STORE_THUMBNAIL, store->priv->busy_image,
-			    EOM_LIST_STORE_THUMB_SET, FALSE,
+			    EOC_LIST_STORE_THUMBNAIL, store->priv->busy_image,
+			    EOC_LIST_STORE_THUMB_SET, FALSE,
 			    -1);
 }
 

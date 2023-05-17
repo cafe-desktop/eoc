@@ -15,21 +15,21 @@
  * Boston, MA 02110-1301, USA.
  */
 
-#ifndef _EOM_FILE_CHOOSER_H_
-#define _EOM_FILE_CHOOSER_H_
+#ifndef _EOC_FILE_CHOOSER_H_
+#define _EOC_FILE_CHOOSER_H_
 
 #include <gtk/gtk.h>
 #include <gdk-pixbuf/gdk-pixbuf.h>
 
 G_BEGIN_DECLS
 
-#define EOM_TYPE_FILE_CHOOSER          (eoc_file_chooser_get_type ())
-#define EOM_FILE_CHOOSER(o)            (G_TYPE_CHECK_INSTANCE_CAST ((o), EOM_TYPE_FILE_CHOOSER, EomFileChooser))
-#define EOM_FILE_CHOOSER_CLASS(k)      (G_TYPE_CHECK_CLASS_CAST((k), EOM_TYPE_FILE_CHOOSER, EomFileChooserClass))
+#define EOC_TYPE_FILE_CHOOSER          (eoc_file_chooser_get_type ())
+#define EOC_FILE_CHOOSER(o)            (G_TYPE_CHECK_INSTANCE_CAST ((o), EOC_TYPE_FILE_CHOOSER, EomFileChooser))
+#define EOC_FILE_CHOOSER_CLASS(k)      (G_TYPE_CHECK_CLASS_CAST((k), EOC_TYPE_FILE_CHOOSER, EomFileChooserClass))
 
-#define EOM_IS_FILE_CHOOSER(o)         (G_TYPE_CHECK_INSTANCE_TYPE ((o), EOM_TYPE_FILE_CHOOSER))
-#define EOM_IS_FILE_CHOOSER_CLASS(k)   (G_TYPE_CHECK_CLASS_TYPE ((k), EOM_TYPE_FILE_CHOOSER))
-#define EOM_FILE_CHOOSER_GET_CLASS(o)  (G_TYPE_INSTANCE_GET_CLASS ((o), EOM_TYPE_FILE_CHOOSER, EomFileChooserClass))
+#define EOC_IS_FILE_CHOOSER(o)         (G_TYPE_CHECK_INSTANCE_TYPE ((o), EOC_TYPE_FILE_CHOOSER))
+#define EOC_IS_FILE_CHOOSER_CLASS(k)   (G_TYPE_CHECK_CLASS_TYPE ((k), EOC_TYPE_FILE_CHOOSER))
+#define EOC_FILE_CHOOSER_GET_CLASS(o)  (G_TYPE_INSTANCE_GET_CLASS ((o), EOC_TYPE_FILE_CHOOSER, EomFileChooserClass))
 
 typedef struct _EomFileChooser         EomFileChooser;
 typedef struct _EomFileChooserClass    EomFileChooserClass;
@@ -57,4 +57,4 @@ GdkPixbufFormat	*eoc_file_chooser_get_format	(EomFileChooser *chooser);
 
 G_END_DECLS
 
-#endif /* _EOM_FILE_CHOOSER_H_ */
+#endif /* _EOC_FILE_CHOOSER_H_ */

@@ -1,5 +1,5 @@
-#ifndef _EOM_SAVE_AS_DIALOG_HELPER_H_
-#define _EOM_SAVE_AS_DIALOG_HELPER_H_
+#ifndef _EOC_SAVE_AS_DIALOG_HELPER_H_
+#define _EOC_SAVE_AS_DIALOG_HELPER_H_
 
 #include <gtk/gtk.h>
 #include <gio/gio.h>
@@ -17,4 +17,4 @@ EomURIConverter* eoc_save_as_dialog_get_converter (GtkWidget *dlg);
 
 G_END_DECLS
 
-#endif /* _EOM_SAVE_DIALOG_HELPER_H_ */
+#endif /* _EOC_SAVE_DIALOG_HELPER_H_ */

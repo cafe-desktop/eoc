@@ -22,8 +22,8 @@
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-#ifndef __EOM_UTIL_H__
-#define __EOM_UTIL_H__
+#ifndef __EOC_UTIL_H__
+#define __EOC_UTIL_H__
 
 #include <gtk/gtk.h>
 
@@ -67,4 +67,4 @@ void     eoc_util_show_file_in_filemanager   (GFile *file,
 
 G_END_DECLS
 
-#endif /* __EOM_UTIL_H__ */
+#endif /* __EOC_UTIL_H__ */

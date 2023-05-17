@@ -574,7 +574,7 @@ msgid ""
 "the trash. It will still ask if any of the files cannot be moved to the "
 "trash and would be deleted instead."
 msgstr ""
-"Ha be van kapcsolva, az EOM nem kér megerősítést a képek Kukába "
+"Ha be van kapcsolva, az EOC nem kér megerősítést a képek Kukába "
 "mozgatásakor. Továbbra is rákérdez, ha a fájlok valamelyike nem helyezhető "
 "át, és helyette törlésre kerülne."
 

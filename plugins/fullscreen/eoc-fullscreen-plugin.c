@@ -18,7 +18,7 @@ G_DEFINE_DYNAMIC_TYPE_EXTENDED (EomFullscreenPlugin,
                                 eoc_fullscreen_plugin,
                                 PEAS_TYPE_EXTENSION_BASE,
                                 0,
-                                G_IMPLEMENT_INTERFACE_DYNAMIC (EOM_TYPE_WINDOW_ACTIVATABLE,
+                                G_IMPLEMENT_INTERFACE_DYNAMIC (EOC_TYPE_WINDOW_ACTIVATABLE,
                                                                eoc_window_activatable_iface_init))
 
 enum {
@@ -35,13 +35,13 @@ on_button_press (GtkWidget      *button,
 	{
 		EomWindowMode mode = eoc_window_get_mode (window);
 
-		if (mode == EOM_WINDOW_MODE_SLIDESHOW || mode == EOM_WINDOW_MODE_FULLSCREEN)
+		if (mode == EOC_WINDOW_MODE_SLIDESHOW || mode == EOC_WINDOW_MODE_FULLSCREEN)
 		{
-			eoc_window_set_mode (window, EOM_WINDOW_MODE_NORMAL);
+			eoc_window_set_mode (window, EOC_WINDOW_MODE_NORMAL);
 		}
-		else if (mode == EOM_WINDOW_MODE_NORMAL)
+		else if (mode == EOC_WINDOW_MODE_NORMAL)
 		{
-			eoc_window_set_mode (window, EOM_WINDOW_MODE_FULLSCREEN);
+			eoc_window_set_mode (window, EOC_WINDOW_MODE_FULLSCREEN);
 		}
 
 		return TRUE;
@@ -56,12 +56,12 @@ eoc_fullscreen_plugin_set_property (GObject      *object,
                                     const GValue *value,
                                     GParamSpec   *pspec)
 {
-	EomFullscreenPlugin *plugin = EOM_FULLSCREEN_PLUGIN (object);
+	EomFullscreenPlugin *plugin = EOC_FULLSCREEN_PLUGIN (object);
 
 	switch (prop_id)
 	{
 	case PROP_WINDOW:
-		plugin->window = EOM_WINDOW (g_value_dup_object (value));
+		plugin->window = EOC_WINDOW (g_value_dup_object (value));
 		break;
 
 	default:
@@ -76,7 +76,7 @@ eoc_fullscreen_plugin_get_property (GObject    *object,
                                     GValue     *value,
                                     GParamSpec *pspec)
 {
-	EomFullscreenPlugin *plugin = EOM_FULLSCREEN_PLUGIN (object);
+	EomFullscreenPlugin *plugin = EOC_FULLSCREEN_PLUGIN (object);
 
 	switch (prop_id)
 	{
@@ -99,7 +99,7 @@ eoc_fullscreen_plugin_init (EomFullscreenPlugin *plugin)
 static void
 eoc_fullscreen_plugin_dispose (GObject *object)
 {
-	EomFullscreenPlugin *plugin = EOM_FULLSCREEN_PLUGIN (object);
+	EomFullscreenPlugin *plugin = EOC_FULLSCREEN_PLUGIN (object);
 
 	eoc_debug_message (DEBUG_PLUGINS, "EomFullscreenPlugin disposing");
 
@@ -114,7 +114,7 @@ eoc_fullscreen_plugin_dispose (GObject *object)
 static void
 eoc_fullscreen_plugin_activate (EomWindowActivatable *activatable)
 {
-	EomFullscreenPlugin *plugin = EOM_FULLSCREEN_PLUGIN (activatable);
+	EomFullscreenPlugin *plugin = EOC_FULLSCREEN_PLUGIN (activatable);
 	GtkWidget *view = eoc_window_get_view (plugin->window);
 
 	eoc_debug (DEBUG_PLUGINS);
@@ -128,7 +128,7 @@ eoc_fullscreen_plugin_activate (EomWindowActivatable *activatable)
 static void
 eoc_fullscreen_plugin_deactivate (EomWindowActivatable *activatable)
 {
-	EomFullscreenPlugin *plugin = EOM_FULLSCREEN_PLUGIN (activatable);
+	EomFullscreenPlugin *plugin = EOC_FULLSCREEN_PLUGIN (activatable);
 	GtkWidget *view = eoc_window_get_view (plugin->window);
 
 	g_signal_handler_disconnect (view, plugin->signal_id);
@@ -164,6 +164,6 @@ peas_register_types (PeasObjectModule *module)
 {
 	eoc_fullscreen_plugin_register_type (G_TYPE_MODULE (module));
 	peas_object_module_register_extension_type (module,
-	                                            EOM_TYPE_WINDOW_ACTIVATABLE,
-	                                            EOM_TYPE_FULLSCREEN_PLUGIN);
+	                                            EOC_TYPE_WINDOW_ACTIVATABLE,
+	                                            EOC_TYPE_FULLSCREEN_PLUGIN);
 }

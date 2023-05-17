@@ -1,4 +1,4 @@
-/* Eye Of Mate - EOM Preferences Dialog
+/* Eye Of Mate - EOC Preferences Dialog
  *
  * Copyright (C) 2006 The Free Software Foundation
  *
@@ -19,8 +19,8 @@
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-#ifndef __EOM_PREFERENCES_DIALOG_H__
-#define __EOM_PREFERENCES_DIALOG_H__
+#ifndef __EOC_PREFERENCES_DIALOG_H__
+#define __EOC_PREFERENCES_DIALOG_H__
 
 #include "eoc-image.h"
 #include "eoc-thumb-view.h"
@@ -36,12 +36,12 @@ typedef struct _EomPreferencesDialog EomPreferencesDialog;
 typedef struct _EomPreferencesDialogClass EomPreferencesDialogClass;
 typedef struct _EomPreferencesDialogPrivate EomPreferencesDialogPrivate;
 
-#define EOM_TYPE_PREFERENCES_DIALOG            (eoc_preferences_dialog_get_type ())
-#define EOM_PREFERENCES_DIALOG(obj)            (G_TYPE_CHECK_INSTANCE_CAST((obj), EOM_TYPE_PREFERENCES_DIALOG, EomPreferencesDialog))
-#define EOM_PREFERENCES_DIALOG_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST((klass),  EOM_TYPE_PREFERENCES_DIALOG, EomPreferencesDialogClass))
-#define EOM_IS_PREFERENCES_DIALOG(obj)         (G_TYPE_CHECK_INSTANCE_TYPE((obj), EOM_TYPE_PREFERENCES_DIALOG))
-#define EOM_IS_PREFERENCES_DIALOG_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE((klass),  EOM_TYPE_PREFERENCES_DIALOG))
-#define EOM_PREFERENCES_DIALOG_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS((obj),  EOM_TYPE_PREFERENCES_DIALOG, EomPreferencesDialogClass))
+#define EOC_TYPE_PREFERENCES_DIALOG            (eoc_preferences_dialog_get_type ())
+#define EOC_PREFERENCES_DIALOG(obj)            (G_TYPE_CHECK_INSTANCE_CAST((obj), EOC_TYPE_PREFERENCES_DIALOG, EomPreferencesDialog))
+#define EOC_PREFERENCES_DIALOG_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST((klass),  EOC_TYPE_PREFERENCES_DIALOG, EomPreferencesDialogClass))
+#define EOC_IS_PREFERENCES_DIALOG(obj)         (G_TYPE_CHECK_INSTANCE_TYPE((obj), EOC_TYPE_PREFERENCES_DIALOG))
+#define EOC_IS_PREFERENCES_DIALOG_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE((klass),  EOC_TYPE_PREFERENCES_DIALOG))
+#define EOC_PREFERENCES_DIALOG_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS((obj),  EOC_TYPE_PREFERENCES_DIALOG, EomPreferencesDialogClass))
 
 struct _EomPreferencesDialog {
 	GtkDialog dialog;
@@ -61,4 +61,4 @@ GtkWidget    *eoc_preferences_dialog_get_instance	  (GtkWindow   *parent);
 
 G_END_DECLS
 
-#endif /* __EOM_PREFERENCES_DIALOG_H__ */
+#endif /* __EOC_PREFERENCES_DIALOG_H__ */

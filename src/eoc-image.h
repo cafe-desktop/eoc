@@ -19,8 +19,8 @@
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-#ifndef __EOM_IMAGE_H__
-#define __EOM_IMAGE_H__
+#ifndef __EOC_IMAGE_H__
+#define __EOC_IMAGE_H__
 
 #include "eoc-jobs.h"
 #include "eoc-window.h"
@@ -51,44 +51,44 @@
 
 G_BEGIN_DECLS
 
-#ifndef __EOM_IMAGE_DECLR__
-#define __EOM_IMAGE_DECLR__
+#ifndef __EOC_IMAGE_DECLR__
+#define __EOC_IMAGE_DECLR__
 typedef struct _EomImage EomImage;
 #endif
 typedef struct _EomImageClass EomImageClass;
 typedef struct _EomImagePrivate EomImagePrivate;
 
-#define EOM_TYPE_IMAGE            (eoc_image_get_type ())
-#define EOM_IMAGE(obj)            (G_TYPE_CHECK_INSTANCE_CAST((obj), EOM_TYPE_IMAGE, EomImage))
-#define EOM_IMAGE_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST((klass),  EOM_TYPE_IMAGE, EomImageClass))
-#define EOM_IS_IMAGE(obj)         (G_TYPE_CHECK_INSTANCE_TYPE((obj), EOM_TYPE_IMAGE))
-#define EOM_IS_IMAGE_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE((klass),  EOM_TYPE_IMAGE))
-#define EOM_IMAGE_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS((obj),  EOM_TYPE_IMAGE, EomImageClass))
+#define EOC_TYPE_IMAGE            (eoc_image_get_type ())
+#define EOC_IMAGE(obj)            (G_TYPE_CHECK_INSTANCE_CAST((obj), EOC_TYPE_IMAGE, EomImage))
+#define EOC_IMAGE_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST((klass),  EOC_TYPE_IMAGE, EomImageClass))
+#define EOC_IS_IMAGE(obj)         (G_TYPE_CHECK_INSTANCE_TYPE((obj), EOC_TYPE_IMAGE))
+#define EOC_IS_IMAGE_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE((klass),  EOC_TYPE_IMAGE))
+#define EOC_IMAGE_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS((obj),  EOC_TYPE_IMAGE, EomImageClass))
 
 typedef enum {
-	EOM_IMAGE_ERROR_SAVE_NOT_LOCAL,
-	EOM_IMAGE_ERROR_NOT_LOADED,
-	EOM_IMAGE_ERROR_VFS,
-	EOM_IMAGE_ERROR_FILE_EXISTS,
-	EOM_IMAGE_ERROR_TMP_FILE_FAILED,
-	EOM_IMAGE_ERROR_GENERIC,
-	EOM_IMAGE_ERROR_UNKNOWN
+	EOC_IMAGE_ERROR_SAVE_NOT_LOCAL,
+	EOC_IMAGE_ERROR_NOT_LOADED,
+	EOC_IMAGE_ERROR_VFS,
+	EOC_IMAGE_ERROR_FILE_EXISTS,
+	EOC_IMAGE_ERROR_TMP_FILE_FAILED,
+	EOC_IMAGE_ERROR_GENERIC,
+	EOC_IMAGE_ERROR_UNKNOWN
 } EomImageError;
 
-#define EOM_IMAGE_ERROR eoc_image_error_quark ()
+#define EOC_IMAGE_ERROR eoc_image_error_quark ()
 
 typedef enum {
-	EOM_IMAGE_STATUS_UNKNOWN,
-	EOM_IMAGE_STATUS_LOADING,
-	EOM_IMAGE_STATUS_LOADED,
-	EOM_IMAGE_STATUS_SAVING,
-	EOM_IMAGE_STATUS_FAILED
+	EOC_IMAGE_STATUS_UNKNOWN,
+	EOC_IMAGE_STATUS_LOADING,
+	EOC_IMAGE_STATUS_LOADED,
+	EOC_IMAGE_STATUS_SAVING,
+	EOC_IMAGE_STATUS_FAILED
 } EomImageStatus;
 
 typedef enum {
-  EOM_IMAGE_METADATA_NOT_READ,
-  EOM_IMAGE_METADATA_NOT_AVAILABLE,
-  EOM_IMAGE_METADATA_READY
+  EOC_IMAGE_METADATA_NOT_READ,
+  EOC_IMAGE_METADATA_NOT_AVAILABLE,
+  EOC_IMAGE_METADATA_READY
 } EomImageMetadataStatus;
 
 struct _EomImage {
@@ -219,4 +219,4 @@ gboolean          eoc_image_is_file_changed         (EomImage *img);
 
 G_END_DECLS
 
-#endif /* __EOM_IMAGE_H__ */
+#endif /* __EOC_IMAGE_H__ */

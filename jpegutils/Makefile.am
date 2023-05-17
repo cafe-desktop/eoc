@@ -1,4 +1,4 @@
-AM_CPPFLAGS = $(EOM_CFLAGS) \
+AM_CPPFLAGS = $(EOC_CFLAGS) \
 	$(EXIF_CFLAGS)
 
 noinst_LTLIBRARIES = libeoc-jpegutils.la

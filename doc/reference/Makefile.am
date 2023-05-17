@@ -85,7 +85,7 @@ AM_CPPFLAGS= \
 	-I$(top_srcdir)/plugins \
 	-I$(top_srcdir)/jpegutils				\
 	-I$(top_srcdir)/cut-n-paste/toolbar-editor		\
-	$(EOM_CFLAGS)
+	$(EOC_CFLAGS)
 
 if ENABLE_JPEG
 jpeg_LIB = $(top_builddir)/jpegutils/libeoc-jpegutils.la
@@ -97,7 +97,7 @@ GTKDOC_LIBS=\
 	$(BINDING_LIBS)			\
 	$(LIBJPEG)			\
 	$(X_LIBS)			\
-	$(EOM_LIBS)			\
+	$(EOC_LIBS)			\
 	$(jpeg_LIB)			\
 	$(MORE_GTKDOC_LIBS)
 

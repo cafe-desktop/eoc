@@ -19,19 +19,19 @@
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-#ifndef __EOM_ENUMS__
-#define __EOM_ENUMS__
+#ifndef __EOC_ENUMS__
+#define __EOC_ENUMS__
 
 typedef enum {
-	EOM_IMAGE_DATA_IMAGE     = 1 << 0,
-	EOM_IMAGE_DATA_DIMENSION = 1 << 1,
-	EOM_IMAGE_DATA_EXIF      = 1 << 2,
-	EOM_IMAGE_DATA_XMP       = 1 << 3
+	EOC_IMAGE_DATA_IMAGE     = 1 << 0,
+	EOC_IMAGE_DATA_DIMENSION = 1 << 1,
+	EOC_IMAGE_DATA_EXIF      = 1 << 2,
+	EOC_IMAGE_DATA_XMP       = 1 << 3
 } EomImageData;
 
-#define EOM_IMAGE_DATA_ALL  (EOM_IMAGE_DATA_IMAGE |     \
-			     EOM_IMAGE_DATA_DIMENSION | \
-			     EOM_IMAGE_DATA_EXIF |      \
-			     EOM_IMAGE_DATA_XMP)
+#define EOC_IMAGE_DATA_ALL  (EOC_IMAGE_DATA_IMAGE |     \
+			     EOC_IMAGE_DATA_DIMENSION | \
+			     EOC_IMAGE_DATA_EXIF |      \
+			     EOC_IMAGE_DATA_XMP)
 
 #endif

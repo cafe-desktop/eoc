@@ -23,8 +23,8 @@
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-#ifndef __EOM_SESSION_H__
-#define __EOM_SESSION_H__
+#ifndef __EOC_SESSION_H__
+#define __EOC_SESSION_H__
 
 #include "eoc-application.h"
 
@@ -43,4 +43,4 @@ gboolean 	eoc_session_load 		(void);
 
 G_END_DECLS
 
-#endif /* __EOM_SESSION_H__ */
+#endif /* __EOC_SESSION_H__ */

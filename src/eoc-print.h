@@ -19,8 +19,8 @@
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-#ifndef __EOM_PRINT_H__
-#define __EOM_PRINT_H__
+#ifndef __EOC_PRINT_H__
+#define __EOC_PRINT_H__
 
 #include "eoc-image.h"
 #include <gtk/gtk.h>
@@ -46,4 +46,4 @@ void                  eoc_print_set_print_settings (GtkPrintSettings *print_sett
 
 G_END_DECLS
 
-#endif /* __EOM_PRINT_H__ */
+#endif /* __EOC_PRINT_H__ */

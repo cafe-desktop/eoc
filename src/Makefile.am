@@ -8,7 +8,7 @@ noinst_LTLIBRARIES = libeoc.la
 
 bin_PROGRAMS = eoc
 
-headerdir = $(prefix)/include/eoc-@EOM_API_VERSION@/eoc
+headerdir = $(prefix)/include/eoc-@EOC_API_VERSION@/eoc
 header_DATA = $(INST_H_FILES)
 
 MARSHAL_OUTPUT = 	\
@@ -136,18 +136,18 @@ libeoc_la_CPPFLAGS =						\
 	-I$(top_srcdir)						\
 	-I$(top_srcdir)/jpegutils				\
 	-I$(top_srcdir)/cut-n-paste/toolbar-editor		\
-	-DG_LOG_DOMAIN=\"EOM\"					\
-	-DEOM_DATA_DIR=\""$(pkgdatadir)"\"			\
-	-DEOM_LOCALE_DIR=\""$(datadir)/locale"\"		\
-	-DEOM_PLUGIN_DIR=\""$(libdir)/eoc/plugins"\"		\
+	-DG_LOG_DOMAIN=\"EOC\"					\
+	-DEOC_DATA_DIR=\""$(pkgdatadir)"\"			\
+	-DEOC_LOCALE_DIR=\""$(datadir)/locale"\"		\
+	-DEOC_PLUGIN_DIR=\""$(libdir)/eoc/plugins"\"		\
 	-DLIBDIR=\""$(libdir)"\"
 
 libeoc_la_CFLAGS =						\
-	$(EOM_CFLAGS)						\
+	$(EOC_CFLAGS)						\
 	$(WARN_CFLAGS)
 
 libeoc_la_LIBADD = \
-	$(EOM_LIBS)
+	$(EOC_LIBS)
 
 if HAVE_LCMS
 libeoc_la_CFLAGS += 	\
@@ -163,14 +163,14 @@ eoc_SOURCES = \
 
 eoc_CFLAGS = 							\
 	-I$(top_srcdir)/cut-n-paste/toolbar-editor		\
-	$(EOM_CFLAGS)						\
-	-DEOM_DATA_DIR=\""$(pkgdatadir)"\"			\
-	-DEOM_LOCALE_DIR=\""$(datadir)/locale"\"		\
+	$(EOC_CFLAGS)						\
+	-DEOC_DATA_DIR=\""$(pkgdatadir)"\"			\
+	-DEOC_LOCALE_DIR=\""$(datadir)/locale"\"		\
 	$(INTROSPECTION_CFLAGS)
 
 eoc_LDADD = 				\
 	libeoc.la			\
-	$(EOM_LIBS)			\
+	$(EOC_LIBS)			\
 	$(LIBJPEG)			\
 	$(toolbar_LIB)			\
 	$(jpeg_LIB)			\
@@ -219,7 +219,7 @@ Eom_1_0_gir_FILES = $(INST_H_FILES) $(libeoc_c_files) $(BUILT_SOURCES)
 Eom_1_0_gir_VERSION = 1.0
 Eom_1_0_gir_PROGRAM = $(builddir)/eoc
 Eom_1_0_gir_NAMESPACE = Eom
-Eom_1_0_gir_CFLAGS = $(EOM_CFLAGS)
+Eom_1_0_gir_CFLAGS = $(EOC_CFLAGS)
 girdir = $(datadir)/gir-1.0
 gir_DATA = $(INTROSPECTION_GIRS)
 

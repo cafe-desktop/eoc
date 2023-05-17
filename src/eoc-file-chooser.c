@@ -58,7 +58,7 @@ eoc_file_chooser_finalize (GObject *object)
 {
 	EomFileChooserPrivate *priv;
 
-	priv = EOM_FILE_CHOOSER (object)->priv;
+	priv = EOC_FILE_CHOOSER (object)->priv;
 
 	if (priv->thumb_factory != NULL)
 		g_object_unref (priv->thumb_factory);
@@ -254,7 +254,7 @@ set_preview_pixbuf (EomFileChooser *chooser, GdkPixbuf *pixbuf, goffset size)
 	char *size_str    = NULL;
 	char *dim_str     = NULL;
 
-	g_return_if_fail (EOM_IS_FILE_CHOOSER (chooser));
+	g_return_if_fail (EOC_IS_FILE_CHOOSER (chooser));
 
 	priv = chooser->priv;
 
@@ -320,7 +320,7 @@ update_preview_cb (GtkFileChooser *file_chooser, gpointer data)
 	GdkPixbuf *pixbuf = NULL;
 	gboolean have_preview = FALSE;
 
-	priv = EOM_FILE_CHOOSER (file_chooser)->priv;
+	priv = EOC_FILE_CHOOSER (file_chooser)->priv;
 
 	uri = gtk_file_chooser_get_preview_uri (file_chooser);
 	if (uri == NULL) {
@@ -376,7 +376,7 @@ update_preview_cb (GtkFileChooser *file_chooser, gpointer data)
 		if (pixbuf != NULL) {
 			have_preview = TRUE;
 
-			set_preview_pixbuf (EOM_FILE_CHOOSER (file_chooser), pixbuf,
+			set_preview_pixbuf (EOC_FILE_CHOOSER (file_chooser), pixbuf,
 					    g_file_info_get_size (file_info));
 
 			if (pixbuf != NULL) {
@@ -401,7 +401,7 @@ eoc_file_chooser_add_preview (GtkWidget *widget)
 	EomFileChooserPrivate *priv;
 	GtkWidget *vbox;
 
-	priv = EOM_FILE_CHOOSER (widget)->priv;
+	priv = EOC_FILE_CHOOSER (widget)->priv;
 
 	vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
 	gtk_container_set_border_width (GTK_CONTAINER (vbox), 12);
@@ -436,7 +436,7 @@ eoc_file_chooser_new (GtkFileChooserAction action)
 	GtkWidget *chooser;
 	gchar *title = NULL;
 
-	chooser = g_object_new (EOM_TYPE_FILE_CHOOSER,
+	chooser = g_object_new (EOC_TYPE_FILE_CHOOSER,
 				"action", action,
 				"select-multiple", (action == GTK_FILE_CHOOSER_ACTION_OPEN),
 				"local-only", FALSE,
@@ -472,7 +472,7 @@ eoc_file_chooser_new (GtkFileChooserAction action)
 	}
 
 	if (action != GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER) {
-		eoc_file_chooser_add_filter (EOM_FILE_CHOOSER (chooser));
+		eoc_file_chooser_add_filter (EOC_FILE_CHOOSER (chooser));
 		eoc_file_chooser_add_preview (chooser);
 	}
 
@@ -499,7 +499,7 @@ eoc_file_chooser_get_format (EomFileChooser *chooser)
 	GtkFileFilter *filter;
 	GdkPixbufFormat* format;
 
-	g_return_val_if_fail (EOM_IS_FILE_CHOOSER (chooser), NULL);
+	g_return_val_if_fail (EOC_IS_FILE_CHOOSER (chooser), NULL);
 
 	filter = gtk_file_chooser_get_filter (GTK_FILE_CHOOSER (chooser));
 	if (filter == NULL)

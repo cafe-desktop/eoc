@@ -63,7 +63,7 @@ add_job_to_queue_locked (GQueue *queue, EomJob  *job)
 static gboolean
 notify_finished (GObject *job)
 {
-	eoc_job_finished (EOM_JOB (job));
+	eoc_job_finished (EOC_JOB (job));
 
 	return FALSE;
 }
@@ -73,8 +73,8 @@ handle_job (EomJob *job)
 {
 	g_object_ref (G_OBJECT (job));
 
-	// Do the EOM_JOB cast for safety
-	eoc_job_run (EOM_JOB (job));
+	// Do the EOC_JOB cast for safety
+	eoc_job_run (EOC_JOB (job));
 
 	g_idle_add_full (G_PRIORITY_DEFAULT_IDLE,
 			 (GSourceFunc) notify_finished,
@@ -170,17 +170,17 @@ eoc_job_queue_init (void)
 static GQueue *
 find_queue (EomJob *job)
 {
-	if (EOM_IS_JOB_THUMBNAIL (job)) {
+	if (EOC_IS_JOB_THUMBNAIL (job)) {
 		return thumbnail_queue;
-	} else if (EOM_IS_JOB_LOAD (job)) {
+	} else if (EOC_IS_JOB_LOAD (job)) {
 		return load_queue;
-	} else if (EOM_IS_JOB_MODEL (job)) {
+	} else if (EOC_IS_JOB_MODEL (job)) {
 		return model_queue;
-	} else if (EOM_IS_JOB_TRANSFORM (job)) {
+	} else if (EOC_IS_JOB_TRANSFORM (job)) {
 		return transform_queue;
-	} else if (EOM_IS_JOB_SAVE (job)) {
+	} else if (EOC_IS_JOB_SAVE (job)) {
 		return save_queue;
-	} else if (EOM_IS_JOB_COPY (job)) {
+	} else if (EOC_IS_JOB_COPY (job)) {
 		return copy_queue;
 	}
 
@@ -194,7 +194,7 @@ eoc_job_queue_add_job (EomJob *job)
 {
 	GQueue *queue;
 
-	g_return_if_fail (EOM_IS_JOB (job));
+	g_return_if_fail (EOC_IS_JOB (job));
 
 	queue = find_queue (job);
 
@@ -210,21 +210,21 @@ eoc_job_queue_remove_job (EomJob *job)
 {
 	gboolean retval = FALSE;
 
-	g_return_val_if_fail (EOM_IS_JOB (job), FALSE);
+	g_return_val_if_fail (EOC_IS_JOB (job), FALSE);
 
 	g_mutex_lock (&eoc_queue_mutex);
 
-	if (EOM_IS_JOB_THUMBNAIL (job)) {
+	if (EOC_IS_JOB_THUMBNAIL (job)) {
 		retval = remove_job_from_queue (thumbnail_queue, job);
-	} else if (EOM_IS_JOB_LOAD (job)) {
+	} else if (EOC_IS_JOB_LOAD (job)) {
 		retval = remove_job_from_queue (load_queue, job);
-	} else if (EOM_IS_JOB_MODEL (job)) {
+	} else if (EOC_IS_JOB_MODEL (job)) {
 		retval = remove_job_from_queue (model_queue, job);
-	} else if (EOM_IS_JOB_TRANSFORM (job)) {
+	} else if (EOC_IS_JOB_TRANSFORM (job)) {
 		retval = remove_job_from_queue (transform_queue, job);
-	} else if (EOM_IS_JOB_SAVE (job)) {
+	} else if (EOC_IS_JOB_SAVE (job)) {
 		retval = remove_job_from_queue (save_queue, job);
-	} else if (EOM_IS_JOB_COPY (job)) {
+	} else if (EOC_IS_JOB_COPY (job)) {
 		retval = remove_job_from_queue (copy_queue, job);
 	} else {
 		g_assert_not_reached ();

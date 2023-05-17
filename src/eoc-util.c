@@ -260,7 +260,7 @@ eoc_util_dot_dir (void)
 			static gboolean printed_warning = FALSE;
 
 			if (!printed_warning) {
-				g_warning ("EOM could not save some of your preferences in its settings directory due to a file with the same name (%s) blocking its creation. Please remove that file, or move it away.", dot_dir);
+				g_warning ("EOC could not save some of your preferences in its settings directory due to a file with the same name (%s) blocking its creation. Please remove that file, or move it away.", dot_dir);
 				printed_warning = TRUE;
 			}
 			dot_dir = NULL;

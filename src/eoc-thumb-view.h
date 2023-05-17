@@ -19,32 +19,32 @@
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-#ifndef EOM_THUMB_VIEW_H
-#define EOM_THUMB_VIEW_H
+#ifndef EOC_THUMB_VIEW_H
+#define EOC_THUMB_VIEW_H
 
 #include "eoc-image.h"
 #include "eoc-list-store.h"
 
 G_BEGIN_DECLS
 
-#define EOM_TYPE_THUMB_VIEW            (eoc_thumb_view_get_type ())
-#define EOM_THUMB_VIEW(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), EOM_TYPE_THUMB_VIEW, EomThumbView))
-#define EOM_THUMB_VIEW_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass),  EOM_TYPE_THUMB_VIEW, EomThumbViewClass))
-#define EOM_IS_THUMB_VIEW(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), EOM_TYPE_THUMB_VIEW))
-#define EOM_IS_THUMB_VIEW_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass),  EOM_TYPE_THUMB_VIEW))
-#define EOM_THUMB_VIEW_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj),  EOM_TYPE_THUMB_VIEW, EomThumbViewClass))
+#define EOC_TYPE_THUMB_VIEW            (eoc_thumb_view_get_type ())
+#define EOC_THUMB_VIEW(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), EOC_TYPE_THUMB_VIEW, EomThumbView))
+#define EOC_THUMB_VIEW_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass),  EOC_TYPE_THUMB_VIEW, EomThumbViewClass))
+#define EOC_IS_THUMB_VIEW(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), EOC_TYPE_THUMB_VIEW))
+#define EOC_IS_THUMB_VIEW_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass),  EOC_TYPE_THUMB_VIEW))
+#define EOC_THUMB_VIEW_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj),  EOC_TYPE_THUMB_VIEW, EomThumbViewClass))
 
 typedef struct _EomThumbView EomThumbView;
 typedef struct _EomThumbViewClass EomThumbViewClass;
 typedef struct _EomThumbViewPrivate EomThumbViewPrivate;
 
 typedef enum {
-	EOM_THUMB_VIEW_SELECT_CURRENT = 0,
-	EOM_THUMB_VIEW_SELECT_LEFT,
-	EOM_THUMB_VIEW_SELECT_RIGHT,
-	EOM_THUMB_VIEW_SELECT_FIRST,
-	EOM_THUMB_VIEW_SELECT_LAST,
-	EOM_THUMB_VIEW_SELECT_RANDOM
+	EOC_THUMB_VIEW_SELECT_CURRENT = 0,
+	EOC_THUMB_VIEW_SELECT_LEFT,
+	EOC_THUMB_VIEW_SELECT_RIGHT,
+	EOC_THUMB_VIEW_SELECT_FIRST,
+	EOC_THUMB_VIEW_SELECT_LAST,
+	EOC_THUMB_VIEW_SELECT_RANDOM
 } EomThumbViewSelectionChange;
 
 struct _EomThumbView {
@@ -84,4 +84,4 @@ void        eoc_thumb_view_set_thumbnail_popup      (EomThumbView *thumbview,
 
 G_END_DECLS
 
-#endif /* EOM_THUMB_VIEW_H */
+#endif /* EOC_THUMB_VIEW_H */

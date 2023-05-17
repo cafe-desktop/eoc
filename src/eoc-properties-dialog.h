@@ -19,8 +19,8 @@
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-#ifndef __EOM_PROPERTIES_DIALOG_H__
-#define __EOM_PROPERTIES_DIALOG_H__
+#ifndef __EOC_PROPERTIES_DIALOG_H__
+#define __EOC_PROPERTIES_DIALOG_H__
 
 #include "eoc-image.h"
 #include "eoc-thumb-view.h"
@@ -35,18 +35,18 @@ typedef struct _EomPropertiesDialog EomPropertiesDialog;
 typedef struct _EomPropertiesDialogClass EomPropertiesDialogClass;
 typedef struct _EomPropertiesDialogPrivate EomPropertiesDialogPrivate;
 
-#define EOM_TYPE_PROPERTIES_DIALOG            (eoc_properties_dialog_get_type ())
-#define EOM_PROPERTIES_DIALOG(obj)            (G_TYPE_CHECK_INSTANCE_CAST((obj), EOM_TYPE_PROPERTIES_DIALOG, EomPropertiesDialog))
-#define EOM_PROPERTIES_DIALOG_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST((klass),  EOM_TYPE_PROPERTIES_DIALOG, EomPropertiesDialogClass))
-#define EOM_IS_PROPERTIES_DIALOG(obj)         (G_TYPE_CHECK_INSTANCE_TYPE((obj), EOM_TYPE_PROPERTIES_DIALOG))
-#define EOM_IS_PROPERTIES_DIALOG_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE((klass),  EOM_TYPE_PROPERTIES_DIALOG))
-#define EOM_PROPERTIES_DIALOG_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS((obj),  EOM_TYPE_PROPERTIES_DIALOG, EomPropertiesDialogClass))
+#define EOC_TYPE_PROPERTIES_DIALOG            (eoc_properties_dialog_get_type ())
+#define EOC_PROPERTIES_DIALOG(obj)            (G_TYPE_CHECK_INSTANCE_CAST((obj), EOC_TYPE_PROPERTIES_DIALOG, EomPropertiesDialog))
+#define EOC_PROPERTIES_DIALOG_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST((klass),  EOC_TYPE_PROPERTIES_DIALOG, EomPropertiesDialogClass))
+#define EOC_IS_PROPERTIES_DIALOG(obj)         (G_TYPE_CHECK_INSTANCE_TYPE((obj), EOC_TYPE_PROPERTIES_DIALOG))
+#define EOC_IS_PROPERTIES_DIALOG_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE((klass),  EOC_TYPE_PROPERTIES_DIALOG))
+#define EOC_PROPERTIES_DIALOG_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS((obj),  EOC_TYPE_PROPERTIES_DIALOG, EomPropertiesDialogClass))
 
 typedef enum {
-	EOM_PROPERTIES_DIALOG_PAGE_GENERAL = 0,
-	EOM_PROPERTIES_DIALOG_PAGE_EXIF,
-	EOM_PROPERTIES_DIALOG_PAGE_DETAILS,
-	EOM_PROPERTIES_DIALOG_N_PAGES
+	EOC_PROPERTIES_DIALOG_PAGE_GENERAL = 0,
+	EOC_PROPERTIES_DIALOG_PAGE_EXIF,
+	EOC_PROPERTIES_DIALOG_PAGE_DETAILS,
+	EOC_PROPERTIES_DIALOG_N_PAGES
 } EomPropertiesDialogPage;
 
 struct _EomPropertiesDialog {
@@ -76,4 +76,4 @@ void	    eoc_properties_dialog_set_netbook_mode (EomPropertiesDialog *dlg,
 						    gboolean enable);
 G_END_DECLS
 
-#endif /* __EOM_PROPERTIES_DIALOG_H__ */
+#endif /* __EOC_PROPERTIES_DIALOG_H__ */

@@ -56,7 +56,7 @@ msgstr "Gwahanydd"
 
 #: data/eoc.appdata.xml.in:6 src/eoc-window.c:2640
 msgid "Eye of MATE"
-msgstr "EOM ('Eye of MATE)"
+msgstr "EOC ('Eye of MATE)"
 
 #: data/eoc.appdata.xml.in:7
 msgid "Simple image viewer"
@@ -241,7 +241,7 @@ msgstr ""
 
 #: data/eoc-preferences-dialog.ui:16
 msgid "Eye of MATE Preferences"
-msgstr "Hoffterau EOM ('Eye of MATE')"
+msgstr "Hoffterau EOC ('Eye of MATE')"
 
 #: data/eoc-preferences-dialog.ui:88
 msgid "Image Enhancements"
@@ -974,7 +974,7 @@ msgstr "Mae o leiaf ddau enw ffeil yr un peth."
 
 #: src/eoc-util.c:68
 msgid "Could not display help for Eye of MATE"
-msgstr "Methwyd dangos cymorth ar gyfer EOM ('Eye of MATE')"
+msgstr "Methwyd dangos cymorth ar gyfer EOC ('Eye of MATE')"
 
 #: src/eoc-util.c:116
 msgid " (invalid Unicode)"
@@ -1227,7 +1227,7 @@ msgstr "_Hoffterau"
 
 #: src/eoc-window.c:3793
 msgid "Preferences for Eye of MATE"
-msgstr "Hoffterau ar gyfer EOM ('Eye of MATE')"
+msgstr "Hoffterau ar gyfer EOC ('Eye of MATE')"
 
 #: src/eoc-window.c:3795
 msgid "_Contents"

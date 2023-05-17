@@ -34,7 +34,7 @@
 void
 eoc_session_init (EomApplication *application)
 {
-	g_return_if_fail (EOM_IS_APPLICATION (application));
+	g_return_if_fail (EOC_IS_APPLICATION (application));
 
 	/* FIXME: Session management is currently a no-op in eoc. */
 }

@@ -121,7 +121,7 @@ response_cb (EomCloseConfirmationDialog *dlg,
 {
 	EomCloseConfirmationDialogPrivate *priv;
 
-	g_return_if_fail (EOM_IS_CLOSE_CONFIRMATION_DIALOG (dlg));
+	g_return_if_fail (EOC_IS_CLOSE_CONFIRMATION_DIALOG (dlg));
 
 	priv = dlg->priv;
 
@@ -197,7 +197,7 @@ eoc_close_confirmation_dialog_finalize (GObject *object)
 {
 	EomCloseConfirmationDialogPrivate *priv;
 
-	priv = EOM_CLOSE_CONFIRMATION_DIALOG (object)->priv;
+	priv = EOC_CLOSE_CONFIRMATION_DIALOG (object)->priv;
 
 	if (priv->unsaved_images != NULL)
 		g_list_free (priv->unsaved_images);
@@ -217,7 +217,7 @@ eoc_close_confirmation_dialog_set_property (GObject      *object,
 {
 	EomCloseConfirmationDialog *dlg;
 
-	dlg = EOM_CLOSE_CONFIRMATION_DIALOG (object);
+	dlg = EOC_CLOSE_CONFIRMATION_DIALOG (object);
 
 	switch (prop_id)
 	{
@@ -239,7 +239,7 @@ eoc_close_confirmation_dialog_get_property (GObject    *object,
 {
 	EomCloseConfirmationDialogPrivate *priv;
 
-	priv = EOM_CLOSE_CONFIRMATION_DIALOG (object)->priv;
+	priv = EOC_CLOSE_CONFIRMATION_DIALOG (object)->priv;
 
 	switch( prop_id )
 	{
@@ -304,7 +304,7 @@ get_selected_imgs (GtkTreeModel *store)
 GList *
 eoc_close_confirmation_dialog_get_selected_images (EomCloseConfirmationDialog *dlg)
 {
-	g_return_val_if_fail (EOM_IS_CLOSE_CONFIRMATION_DIALOG (dlg), NULL);
+	g_return_val_if_fail (EOC_IS_CLOSE_CONFIRMATION_DIALOG (dlg), NULL);
 
 	return g_list_copy (dlg->priv->selected_images);
 }
@@ -318,7 +318,7 @@ eoc_close_confirmation_dialog_new (GtkWindow *parent,
 
 	g_return_val_if_fail (unsaved_images != NULL, NULL);
 
-	dlg = GTK_WIDGET (g_object_new (EOM_TYPE_CLOSE_CONFIRMATION_DIALOG,
+	dlg = GTK_WIDGET (g_object_new (EOC_TYPE_CLOSE_CONFIRMATION_DIALOG,
 				        "unsaved_images", unsaved_images,
 				        NULL));
 	g_return_val_if_fail (dlg != NULL, NULL);
@@ -382,7 +382,7 @@ build_single_img_dialog (EomCloseConfirmationDialog *dlg)
 	gchar         *markup_str;
 
 	g_return_if_fail (dlg->priv->unsaved_images->data != NULL);
-	img = EOM_IMAGE (dlg->priv->unsaved_images->data);
+	img = EOC_IMAGE (dlg->priv->unsaved_images->data);
 
 	/* Image */
 	image = gtk_image_new_from_icon_name ("dialog-warning",
@@ -454,7 +454,7 @@ populate_model (GtkTreeModel *store, GList *imgs)
 		int width;
 		double ratio;
 
-		img = EOM_IMAGE (imgs->data);
+		img = EOC_IMAGE (imgs->data);
 
 		name = eoc_image_get_caption (img);
 		buf = eoc_image_get_thumbnail (img);
@@ -671,7 +671,7 @@ set_unsaved_image (EomCloseConfirmationDialog *dlg,
 const GList *
 eoc_close_confirmation_dialog_get_unsaved_images (EomCloseConfirmationDialog *dlg)
 {
-	g_return_val_if_fail (EOM_IS_CLOSE_CONFIRMATION_DIALOG (dlg), NULL);
+	g_return_val_if_fail (EOC_IS_CLOSE_CONFIRMATION_DIALOG (dlg), NULL);
 
 	return dlg->priv->unsaved_images;
 }

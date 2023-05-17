@@ -4,9 +4,9 @@ pluginsdir = $(libdir)/eoc/plugins
 
 AM_CPPFLAGS = \
 	-I$(top_srcdir)/src 				\
-	$(EOM_CFLAGS) 					\
+	$(EOC_CFLAGS) 					\
 	$(WARN_CFLAGS)					\
-	-DEOM_LOCALEDIR=\""$(prefix)/$(DATADIRNAME)/locale"\"
+	-DEOC_LOCALEDIR=\""$(prefix)/$(DATADIRNAME)/locale"\"
 
 AM_LDFLAGS = -avoid-version -module
 
@@ -23,14 +23,14 @@ fullscreen_libfullscreen_la_SOURCES = \
 	fullscreen/eoc-fullscreen-plugin.h  \
 	fullscreen/eoc-fullscreen-plugin.c
 
-fullscreen_libfullscreen_la_LIBADD = $(EOM_LIBS)
+fullscreen_libfullscreen_la_LIBADD = $(EOC_LIBS)
 
 # Reload plugin
 reload_libreload_la_SOURCES = \
 	reload/eoc-reload-plugin.h  \
 	reload/eoc-reload-plugin.c
 
-reload_libreload_la_LIBADD = $(EOM_LIBS)
+reload_libreload_la_LIBADD = $(EOC_LIBS)
 
 # Statusbar Date Plugin
 if HAVE_EXIF
@@ -40,7 +40,7 @@ statusbar_date_libstatusbar_date_la_SOURCES = \
 	statusbar-date/eoc-statusbar-date-plugin.h  \
 	statusbar-date/eoc-statusbar-date-plugin.c
 
-statusbar_date_libstatusbar_date_la_LIBADD = $(EOM_LIBS)
+statusbar_date_libstatusbar_date_la_LIBADD = $(EOC_LIBS)
 plugins_in_files += statusbar-date/statusbar-date.plugin.desktop.in
 endif
 

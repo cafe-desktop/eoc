@@ -21,8 +21,8 @@ enum {
 typedef struct {
 	EomUCType  type;
 	union {
-		char    *string;  /* if type == EOM_UC_STRING */
-		gulong  counter;  /* if type == EOM_UC_COUNTER */
+		char    *string;  /* if type == EOC_UC_STRING */
+		gulong  counter;  /* if type == EOC_UC_COUNTER */
 	} data;
 } EomUCToken;
 
@@ -58,7 +58,7 @@ free_token (gpointer data)
 {
 	EomUCToken *token = (EomUCToken*) data;
 
-	if (token->type == EOM_UC_STRING) {
+	if (token->type == EOC_UC_STRING) {
 		g_free (token->data.string);
 	}
 
@@ -68,7 +68,7 @@ free_token (gpointer data)
 static void
 eoc_uri_converter_dispose (GObject *object)
 {
-	EomURIConverter *instance = EOM_URI_CONVERTER (object);
+	EomURIConverter *instance = EOC_URI_CONVERTER (object);
 	EomURIConverterPrivate *priv;
 
 	priv = instance->priv;
@@ -180,9 +180,9 @@ eoc_uri_converter_set_property (GObject      *object,
 	EomURIConverter *conv;
 	EomURIConverterPrivate *priv;
 
-        g_return_if_fail (EOM_IS_URI_CONVERTER (object));
+        g_return_if_fail (EOC_IS_URI_CONVERTER (object));
 
-        conv = EOM_URI_CONVERTER (object);
+        conv = EOC_URI_CONVERTER (object);
 	priv = conv->priv;
 
         switch (property_id)
@@ -232,9 +232,9 @@ eoc_uri_converter_get_property (GObject    *object,
 	EomURIConverter *conv;
 	EomURIConverterPrivate *priv;
 
-        g_return_if_fail (EOM_IS_URI_CONVERTER (object));
+        g_return_if_fail (EOC_IS_URI_CONVERTER (object));
 
-        conv = EOM_URI_CONVERTER (object);
+        conv = EOC_URI_CONVERTER (object);
 	priv = conv->priv;
 
         switch (property_id)
@@ -285,7 +285,7 @@ create_token_string (const char *string, int substr_start, int substr_len)
 	n_bytes = end_byte - start_byte;
 
 	token = g_slice_new0 (EomUCToken);
-	token->type = EOM_UC_STRING;
+	token->type = EOC_UC_STRING;
 	token->data.string = g_new0 (char, n_bytes);
 	token->data.string = g_utf8_strncpy (token->data.string, start_byte, substr_len);
 
@@ -298,7 +298,7 @@ create_token_counter (int start_counter)
 	EomUCToken *token;
 
 	token = g_slice_new0 (EomUCToken);
-	token->type = EOM_UC_COUNTER;
+	token->type = EOC_UC_COUNTER;
 	token->data.counter = 0;
 
 	return token;
@@ -329,7 +329,7 @@ eoc_uri_converter_parse_string (EomURIConverter *conv, const char *string)
 	const char *s;
 	EomUCToken *token;
 
-	g_return_val_if_fail (EOM_IS_URI_CONVERTER (conv), NULL);
+	g_return_val_if_fail (EOC_IS_URI_CONVERTER (conv), NULL);
 
 	priv = conv->priv;
 
@@ -371,44 +371,44 @@ eoc_uri_converter_parse_string (EomURIConverter *conv, const char *string)
 			break;
 
 		case PARSER_TOKEN: {
-			EomUCType type = EOM_UC_END;
+			EomUCType type = EOC_UC_END;
 
 			if (c == 'f') {
-				type = EOM_UC_FILENAME;
+				type = EOC_UC_FILENAME;
 			}
 			else if (c == 'n') {
-				type = EOM_UC_COUNTER;
+				type = EOC_UC_COUNTER;
 				token = create_token_counter (priv->counter_start);
 			}
 			else if (c == 'c') {
-				type = EOM_UC_COMMENT;
+				type = EOC_UC_COMMENT;
 			}
 			else if (c == 'd') {
-				type = EOM_UC_DATE;
+				type = EOC_UC_DATE;
 			}
 			else if (c == 't') {
-				type = EOM_UC_TIME;
+				type = EOC_UC_TIME;
 			}
 			else if (c == 'a') {
-				type = EOM_UC_DAY;
+				type = EOC_UC_DAY;
 			}
 			else if (c == 'm') {
-				type = EOM_UC_MONTH;
+				type = EOC_UC_MONTH;
 			}
 			else if (c == 'y') {
-				type = EOM_UC_YEAR;
+				type = EOC_UC_YEAR;
 			}
 			else if (c == 'h') {
-				type = EOM_UC_HOUR;
+				type = EOC_UC_HOUR;
 			}
 			else if (c == 'i') {
-				type = EOM_UC_MINUTE;
+				type = EOC_UC_MINUTE;
 			}
 			else if (c == 's') {
-				type = EOM_UC_SECOND;
+				type = EOC_UC_SECOND;
 			}
 
-			if (type != EOM_UC_END && token == NULL) {
+			if (type != EOC_UC_END && token == NULL) {
 				token = create_token_other (type);
 				priv->requires_exif = TRUE;
 			}
@@ -441,7 +441,7 @@ eoc_uri_converter_print_list (EomURIConverter *conv)
 	EomURIConverterPrivate *priv;
 	GList *it;
 
-	g_return_if_fail (EOM_URI_CONVERTER (conv));
+	g_return_if_fail (EOC_URI_CONVERTER (conv));
 
 	priv = conv->priv;
 
@@ -452,40 +452,40 @@ eoc_uri_converter_print_list (EomURIConverter *conv)
 		token = (EomUCToken*) it->data;
 
 		switch (token->type) {
-		case EOM_UC_STRING:
+		case EOC_UC_STRING:
 			str = g_strdup_printf ("string [%s]", token->data.string);
 			break;
-		case EOM_UC_FILENAME:
+		case EOC_UC_FILENAME:
 			str = "filename";
 			break;
-		case EOM_UC_COUNTER:
+		case EOC_UC_COUNTER:
 			str = g_strdup_printf ("counter [%lu]", token->data.counter);
 			break;
-		case EOM_UC_COMMENT:
+		case EOC_UC_COMMENT:
 			str = "comment";
 			break;
-		case EOM_UC_DATE:
+		case EOC_UC_DATE:
 			str = "date";
 			break;
-		case EOM_UC_TIME:
+		case EOC_UC_TIME:
 			str = "time";
 			break;
-		case EOM_UC_DAY:
+		case EOC_UC_DAY:
 			str = "day";
 			break;
-		case EOM_UC_MONTH:
+		case EOC_UC_MONTH:
 			str = "month";
 			break;
-		case EOM_UC_YEAR:
+		case EOC_UC_YEAR:
 			str = "year";
 			break;
-		case EOM_UC_HOUR:
+		case EOC_UC_HOUR:
 			str = "hour";
 			break;
-		case EOM_UC_MINUTE:
+		case EOC_UC_MINUTE:
 			str = "minute";
 			break;
-		case EOM_UC_SECOND:
+		case EOC_UC_SECOND:
 			str = "second";
 			break;
 		default:
@@ -495,7 +495,7 @@ eoc_uri_converter_print_list (EomURIConverter *conv)
 
 		g_print ("- %s\n", str);
 
-		if (token->type == EOM_UC_STRING || token->type == EOM_UC_COUNTER) {
+		if (token->type == EOC_UC_STRING || token->type == EOC_UC_COUNTER) {
 			g_free (str);
 		}
 	}
@@ -509,7 +509,7 @@ eoc_uri_converter_new (GFile *base_file, GdkPixbufFormat *img_format, const char
 
 	g_return_val_if_fail (format_str != NULL, NULL);
 
-	conv = g_object_new (EOM_TYPE_URI_CONVERTER, NULL);
+	conv = g_object_new (EOC_TYPE_URI_CONVERTER, NULL);
 
 	if (base_file != NULL) {
 		conv->priv->base_file  = g_object_ref (base_file);
@@ -529,8 +529,8 @@ get_file_directory (EomURIConverter *conv, EomImage *image)
 	GFile *file = NULL;
 	EomURIConverterPrivate *priv;
 
-	g_return_val_if_fail (EOM_IS_URI_CONVERTER (conv), NULL);
-	g_return_val_if_fail (EOM_IS_IMAGE (image), NULL);
+	g_return_val_if_fail (EOC_IS_URI_CONVERTER (conv), NULL);
+	g_return_val_if_fail (EOC_IS_IMAGE (image), NULL);
 
 	priv = conv->priv;
 
@@ -628,8 +628,8 @@ build_absolute_file (EomURIConverter *conv, EomImage *image, GString *str,  /* i
 	if (format != NULL)
 		*format = NULL;
 
-	g_return_if_fail (EOM_IS_URI_CONVERTER (conv));
-	g_return_if_fail (EOM_IS_IMAGE (image));
+	g_return_if_fail (EOC_IS_URI_CONVERTER (conv));
+	g_return_if_fail (EOC_IS_IMAGE (image));
 	g_return_if_fail (file != NULL);
 	g_return_if_fail (str != NULL);
 
@@ -727,7 +727,7 @@ eoc_uri_converter_do (EomURIConverter *conv, EomImage *image,
 	GString *str;
 	GString *repl_str;
 
-	g_return_val_if_fail (EOM_IS_URI_CONVERTER (conv), FALSE);
+	g_return_val_if_fail (EOC_IS_URI_CONVERTER (conv), FALSE);
 
 	priv = conv->priv;
 
@@ -741,15 +741,15 @@ eoc_uri_converter_do (EomURIConverter *conv, EomImage *image,
 		EomUCToken *token = (EomUCToken*) it->data;
 
 		switch (token->type) {
-		case EOM_UC_STRING:
+		case EOC_UC_STRING:
 			str = g_string_append (str, token->data.string);
 			break;
 
-		case EOM_UC_FILENAME:
+		case EOC_UC_FILENAME:
 			str = append_filename (str, image);
 			break;
 
-		case EOM_UC_COUNTER: {
+		case EOC_UC_COUNTER: {
 			if (token->data.counter < priv->counter_start)
 				token->data.counter = priv->counter_start;
 
@@ -757,32 +757,32 @@ eoc_uri_converter_do (EomURIConverter *conv, EomImage *image,
 			break;
 		}
 #if 0
-		case EOM_UC_COMMENT:
+		case EOC_UC_COMMENT:
 			str = g_string_append_printf ();
 			str = "comment";
 			break;
-		case EOM_UC_DATE:
+		case EOC_UC_DATE:
 			str = "date";
 			break;
-		case EOM_UC_TIME:
+		case EOC_UC_TIME:
 			str = "time";
 			break;
-		case EOM_UC_DAY:
+		case EOC_UC_DAY:
 			str = "day";
 			break;
-		case EOM_UC_MONTH:
+		case EOC_UC_MONTH:
 			str = "month";
 			break;
-		case EOM_UC_YEAR:
+		case EOC_UC_YEAR:
 			str = "year";
 			break;
-		case EOM_UC_HOUR:
+		case EOC_UC_HOUR:
 			str = "hour";
 			break;
-		case EOM_UC_MINUTE:
+		case EOC_UC_MINUTE:
 			str = "minute";
 			break;
-		case EOM_UC_SECOND:
+		case EOC_UC_SECOND:
 			str = "second";
 			break;
 #endif
@@ -823,7 +823,7 @@ eoc_uri_converter_preview (const char *format_str, EomImage *img, GdkPixbufForma
 	gboolean token_next;
 
 	g_return_val_if_fail (format_str != NULL, NULL);
-	g_return_val_if_fail (EOM_IS_IMAGE (img), NULL);
+	g_return_val_if_fail (EOC_IS_IMAGE (img), NULL);
 
 	if (n_images == 0) return NULL;
 
@@ -852,31 +852,31 @@ eoc_uri_converter_preview (const char *format_str, EomImage *img, GdkPixbufForma
 			}
 #if 0                   /* ignore the rest for now */
 			else if (c == 'c') {
-				type = EOM_UC_COMMENT;
+				type = EOC_UC_COMMENT;
 			}
 			else if (c == 'd') {
-				type = EOM_UC_DATE;
+				type = EOC_UC_DATE;
 			}
 			else if (c == 't') {
-				type = EOM_UC_TIME;
+				type = EOC_UC_TIME;
 			}
 			else if (c == 'a') {
-				type = EOM_UC_DAY;
+				type = EOC_UC_DAY;
 			}
 			else if (c == 'm') {
-				type = EOM_UC_MONTH;
+				type = EOC_UC_MONTH;
 			}
 			else if (c == 'y') {
-				type = EOM_UC_YEAR;
+				type = EOC_UC_YEAR;
 			}
 			else if (c == 'h') {
-				type = EOM_UC_HOUR;
+				type = EOC_UC_HOUR;
 			}
 			else if (c == 'i') {
-				type = EOM_UC_MINUTE;
+				type = EOC_UC_MINUTE;
 			}
 			else if (c == 's') {
-				type = EOM_UC_SECOND;
+				type = EOC_UC_SECOND;
 			}
 #endif
 			token_next = FALSE;
@@ -933,7 +933,7 @@ eoc_uri_converter_preview (const char *format_str, EomImage *img, GdkPixbufForma
 gboolean
 eoc_uri_converter_requires_exif (EomURIConverter *converter)
 {
-	g_return_val_if_fail (EOM_IS_URI_CONVERTER (converter), FALSE);
+	g_return_val_if_fail (EOC_IS_URI_CONVERTER (converter), FALSE);
 
 	return converter->priv->requires_exif;
 }
@@ -952,7 +952,7 @@ eoc_uri_converter_check (EomURIConverter *converter, GList *img_list, GError **e
 	GList *file_list = NULL;
 	gboolean all_different = TRUE;
 
-	g_return_val_if_fail (EOM_IS_URI_CONVERTER (converter), FALSE);
+	g_return_val_if_fail (EOC_IS_URI_CONVERTER (converter), FALSE);
 
 	/* convert all image uris */
 	for (it = img_list; it != NULL; it = it->next) {
@@ -960,7 +960,7 @@ eoc_uri_converter_check (EomURIConverter *converter, GList *img_list, GError **e
 		GFile *file;
 		GError *conv_error = NULL;
 
-		result = eoc_uri_converter_do (converter, EOM_IMAGE (it->data),
+		result = eoc_uri_converter_do (converter, EOC_IMAGE (it->data),
 					       &file, NULL, &conv_error);
 
 		if (result) {
@@ -981,8 +981,8 @@ eoc_uri_converter_check (EomURIConverter *converter, GList *img_list, GError **e
 	}
 
 	if (!all_different) {
-		g_set_error (error, EOM_UC_ERROR,
-			     EOM_UC_ERROR_EQUAL_FILENAMES,
+		g_set_error (error, EOC_UC_ERROR,
+			     EOC_UC_ERROR_EQUAL_FILENAMES,
 			     _("At least two file names are equal."));
 	}
 

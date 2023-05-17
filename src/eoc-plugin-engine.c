@@ -1,4 +1,4 @@
-/* Eye Of Mate - EOM Plugin Manager
+/* Eye Of Mate - EOC Plugin Manager
  *
  * Copyright (C) 2007 The Free Software Foundation
  *
@@ -36,7 +36,7 @@
 #include <gio/gio.h>
 #include <girepository.h>
 
-#define USER_EOM_PLUGINS_LOCATION "plugins/"
+#define USER_EOC_PLUGINS_LOCATION "plugins/"
 
 struct _EomPluginEnginePrivate {
 	GSettings *plugins_settings;
@@ -47,7 +47,7 @@ G_DEFINE_TYPE_WITH_PRIVATE (EomPluginEngine, eoc_plugin_engine, PEAS_TYPE_ENGINE
 static void
 eoc_plugin_engine_dispose (GObject *object)
 {
-	EomPluginEngine *engine = EOM_PLUGIN_ENGINE (object);
+	EomPluginEngine *engine = EOC_PLUGIN_ENGINE (object);
 
 	if (engine->priv->plugins_settings != NULL)
 	{
@@ -73,7 +73,7 @@ eoc_plugin_engine_init (EomPluginEngine *engine)
 
 	engine->priv = eoc_plugin_engine_get_instance_private (engine);
 
-	engine->priv->plugins_settings = g_settings_new (EOM_CONF_PLUGINS);
+	engine->priv->plugins_settings = g_settings_new (EOC_CONF_PLUGINS);
 }
 
 EomPluginEngine *
@@ -114,21 +114,21 @@ eoc_plugin_engine_new (void)
 
 	g_free (private_path);
 
-	engine = EOM_PLUGIN_ENGINE (g_object_new (EOM_TYPE_PLUGIN_ENGINE, NULL));
+	engine = EOC_PLUGIN_ENGINE (g_object_new (EOC_TYPE_PLUGIN_ENGINE, NULL));
 
 	peas_engine_enable_loader (PEAS_ENGINE (engine), "python3");
 
 	user_plugin_path = g_build_filename (eoc_util_dot_dir (),
-	                                     USER_EOM_PLUGINS_LOCATION, NULL);
+	                                     USER_EOC_PLUGINS_LOCATION, NULL);
 
 	peas_engine_add_search_path (PEAS_ENGINE (engine),
 	                             user_plugin_path, user_plugin_path);
 
 	peas_engine_add_search_path (PEAS_ENGINE (engine),
-	                             EOM_PLUGIN_DIR, EOM_PLUGIN_DIR);
+	                             EOC_PLUGIN_DIR, EOC_PLUGIN_DIR);
 
 	g_settings_bind (engine->priv->plugins_settings,
-	                 EOM_CONF_PLUGINS_ACTIVE_PLUGINS,
+	                 EOC_CONF_PLUGINS_ACTIVE_PLUGINS,
 	                 engine,
 	                 "loaded-plugins",
 	                 G_SETTINGS_BIND_DEFAULT);

@@ -22,8 +22,8 @@
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-#ifndef __EOM_ERROR_MESSAGE_AREA__
-#define __EOM_ERROR_MESSAGE_AREA__
+#ifndef __EOC_ERROR_MESSAGE_AREA__
+#define __EOC_ERROR_MESSAGE_AREA__
 
 #include <glib.h>
 #include <gtk/gtk.h>
@@ -34,4 +34,4 @@ GtkWidget   *eoc_image_load_error_message_area_new   (const gchar       *caption
 
 GtkWidget   *eoc_no_images_error_message_area_new    (GFile *file);
 
-#endif /* __EOM_ERROR_MESSAGE_AREA__ */
+#endif /* __EOC_ERROR_MESSAGE_AREA__ */

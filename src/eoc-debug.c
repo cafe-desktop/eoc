@@ -40,58 +40,58 @@ static GTimer *timer = NULL;
 static gdouble last = 0.0;
 #endif
 
-static EomDebug debug = EOM_DEBUG_NO_DEBUG;
+static EomDebug debug = EOC_DEBUG_NO_DEBUG;
 
 void
 eoc_debug_init (void)
 {
-	if (g_getenv ("EOM_DEBUG") != NULL)
+	if (g_getenv ("EOC_DEBUG") != NULL)
 	{
 		/* Enable all debugging */
-		debug = ~EOM_DEBUG_NO_DEBUG;
+		debug = ~EOC_DEBUG_NO_DEBUG;
 		goto out;
 	}
 
-	if (g_getenv ("EOM_DEBUG_WINDOW") != NULL)
-		debug = debug | EOM_DEBUG_WINDOW;
+	if (g_getenv ("EOC_DEBUG_WINDOW") != NULL)
+		debug = debug | EOC_DEBUG_WINDOW;
 
-	if (g_getenv ("EOM_DEBUG_VIEW") != NULL)
-		debug = debug | EOM_DEBUG_VIEW;
+	if (g_getenv ("EOC_DEBUG_VIEW") != NULL)
+		debug = debug | EOC_DEBUG_VIEW;
 
-	if (g_getenv ("EOM_DEBUG_JOBS") != NULL)
-		debug = debug | EOM_DEBUG_JOBS;
+	if (g_getenv ("EOC_DEBUG_JOBS") != NULL)
+		debug = debug | EOC_DEBUG_JOBS;
 
-	if (g_getenv ("EOM_DEBUG_THUMBNAIL") != NULL)
-		debug = debug | EOM_DEBUG_THUMBNAIL;
+	if (g_getenv ("EOC_DEBUG_THUMBNAIL") != NULL)
+		debug = debug | EOC_DEBUG_THUMBNAIL;
 
-	if (g_getenv ("EOM_DEBUG_IMAGE_DATA") != NULL)
-		debug = debug | EOM_DEBUG_IMAGE_DATA;
+	if (g_getenv ("EOC_DEBUG_IMAGE_DATA") != NULL)
+		debug = debug | EOC_DEBUG_IMAGE_DATA;
 
-	if (g_getenv ("EOM_DEBUG_IMAGE_LOAD") != NULL)
-		debug = debug | EOM_DEBUG_IMAGE_LOAD;
+	if (g_getenv ("EOC_DEBUG_IMAGE_LOAD") != NULL)
+		debug = debug | EOC_DEBUG_IMAGE_LOAD;
 
-	if (g_getenv ("EOM_DEBUG_IMAGE_SAVE") != NULL)
-		debug = debug | EOM_DEBUG_IMAGE_SAVE;
+	if (g_getenv ("EOC_DEBUG_IMAGE_SAVE") != NULL)
+		debug = debug | EOC_DEBUG_IMAGE_SAVE;
 
-	if (g_getenv ("EOM_DEBUG_LIST_STORE") != NULL)
-		debug = debug | EOM_DEBUG_LIST_STORE;
+	if (g_getenv ("EOC_DEBUG_LIST_STORE") != NULL)
+		debug = debug | EOC_DEBUG_LIST_STORE;
 
-	if (g_getenv ("EOM_DEBUG_PREFERENCES") != NULL)
-		debug = debug | EOM_DEBUG_PREFERENCES;
+	if (g_getenv ("EOC_DEBUG_PREFERENCES") != NULL)
+		debug = debug | EOC_DEBUG_PREFERENCES;
 
-	if (g_getenv ("EOM_DEBUG_PRINTING") != NULL)
-		debug = debug | EOM_DEBUG_PRINTING;
+	if (g_getenv ("EOC_DEBUG_PRINTING") != NULL)
+		debug = debug | EOC_DEBUG_PRINTING;
 
-	if (g_getenv ("EOM_DEBUG_LCMS") != NULL)
-		debug = debug | EOM_DEBUG_LCMS;
+	if (g_getenv ("EOC_DEBUG_LCMS") != NULL)
+		debug = debug | EOC_DEBUG_LCMS;
 
-	if (g_getenv ("EOM_DEBUG_PLUGINS") != NULL)
-		debug = debug | EOM_DEBUG_PLUGINS;
+	if (g_getenv ("EOC_DEBUG_PLUGINS") != NULL)
+		debug = debug | EOC_DEBUG_PLUGINS;
 
 out:
 
 #ifdef ENABLE_PROFILING
-	if (debug != EOM_DEBUG_NO_DEBUG)
+	if (debug != EOC_DEBUG_NO_DEBUG)
 		timer = g_timer_new ();
 #endif
 	return;

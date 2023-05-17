@@ -106,7 +106,7 @@ eoc_print_preview_get_property (GObject    *object,
 				GValue     *value,
 				GParamSpec *pspec)
 {
-	EomPrintPreviewPrivate *priv = EOM_PRINT_PREVIEW (object)->priv;
+	EomPrintPreviewPrivate *priv = EOC_PRINT_PREVIEW (object)->priv;
 
 	switch (prop_id) {
 	case PROP_IMAGE:
@@ -150,7 +150,7 @@ eoc_print_preview_set_property (GObject      *object,
 				const GValue *value,
 				GParamSpec   *pspec)
 {
-	EomPrintPreviewPrivate *priv = EOM_PRINT_PREVIEW (object)->priv;
+	EomPrintPreviewPrivate *priv = EOC_PRINT_PREVIEW (object)->priv;
 	gboolean paper_size_changed = FALSE;
 
 	switch (prop_id) {
@@ -207,7 +207,7 @@ eoc_print_preview_set_property (GObject      *object,
 			      NULL);
 	}
 
-	update_relative_sizes (EOM_PRINT_PREVIEW (object));
+	update_relative_sizes (EOC_PRINT_PREVIEW (object));
 	gtk_widget_queue_draw (priv->area);
 }
 
@@ -393,7 +393,7 @@ eoc_print_preview_finalize (GObject *object)
 {
 	EomPrintPreviewPrivate *priv;
 
-	priv = EOM_PRINT_PREVIEW (object)->priv;
+	priv = EOC_PRINT_PREVIEW (object)->priv;
 
 	if (priv->image) {
 		g_object_unref (priv->image);
@@ -480,7 +480,7 @@ eoc_print_preview_new_with_pixbuf (GdkPixbuf *pixbuf)
 
 	g_return_val_if_fail (GDK_IS_PIXBUF (pixbuf), NULL);
 
-	preview = EOM_PRINT_PREVIEW (eoc_print_preview_new ());
+	preview = EOC_PRINT_PREVIEW (eoc_print_preview_new ());
 
 	preview->priv->image = g_object_ref (pixbuf);
 
@@ -504,7 +504,7 @@ eoc_print_preview_new (void)
 	EomPrintPreview *preview;
 	GtkWidget *area;
 
-	preview = g_object_new (EOM_TYPE_PRINT_PREVIEW, NULL);
+	preview = g_object_new (EOC_TYPE_PRINT_PREVIEW, NULL);
 
 	area = preview->priv->area;
 
@@ -548,9 +548,9 @@ draw_cb (GtkDrawingArea *drawing_area,
 		 cairo_t *cr,
 		 gpointer  user_data)
 {
-	update_relative_sizes (EOM_PRINT_PREVIEW (user_data));
+	update_relative_sizes (EOC_PRINT_PREVIEW (user_data));
 
-	eoc_print_preview_draw (EOM_PRINT_PREVIEW (user_data), cr);
+	eoc_print_preview_draw (EOC_PRINT_PREVIEW (user_data), cr);
 
 	if (cairo_status (cr) != CAIRO_STATUS_SUCCESS) {
 		fprintf (stderr, "Cairo is unhappy: %s\n",
@@ -716,7 +716,7 @@ button_press_event_cb (GtkWidget *widget,
 		       GdkEventButton *event,
 		       gpointer user_data)
 {
-	EomPrintPreview *preview = EOM_PRINT_PREVIEW (user_data);
+	EomPrintPreview *preview = EOC_PRINT_PREVIEW (user_data);
 
 	preview->priv->cursorx = event->x;
 	preview->priv->cursory = event->y;
@@ -741,7 +741,7 @@ button_release_event_cb (GtkWidget *widget,
 			 GdkEventButton *event,
 			 gpointer user_data)
 {
-	EomPrintPreview *preview = EOM_PRINT_PREVIEW (user_data);
+	EomPrintPreview *preview = EOC_PRINT_PREVIEW (user_data);
 
 	switch (event->button) {
 	case 1:
@@ -809,7 +809,7 @@ motion_notify_event_cb (GtkWidget      *widget,
 			GdkEventMotion *event,
 			gpointer        user_data)
 {
-	EomPrintPreviewPrivate *priv = EOM_PRINT_PREVIEW (user_data)->priv;
+	EomPrintPreviewPrivate *priv = EOC_PRINT_PREVIEW (user_data)->priv;
 	gdouble dx, dy;
 	GtkAllocation allocation;
 
@@ -837,7 +837,7 @@ motion_notify_event_cb (GtkWidget      *widget,
 			priv->r_dy = 0;
 
 		/* we do this to correctly change the property values */
-		g_object_set (EOM_PRINT_PREVIEW (user_data),
+		g_object_set (EOC_PRINT_PREVIEW (user_data),
 			      "image-x-align", priv->image_x_align,
 			      "image-y-align", priv->image_y_align,
 			      NULL);
@@ -849,7 +849,7 @@ motion_notify_event_cb (GtkWidget      *widget,
 			       preview_signals
 			       [SIGNAL_IMAGE_MOVED], 0);
 	} else {
-		if (press_inside_image_area (EOM_PRINT_PREVIEW (user_data), event->x, event->y)) {
+		if (press_inside_image_area (EOC_PRINT_PREVIEW (user_data), event->x, event->y)) {
 		  	GdkCursor *cursor;
 			cursor = gdk_cursor_new_for_display (gtk_widget_get_display (widget),
 							     GDK_FLEUR);
@@ -871,7 +871,7 @@ size_allocate_cb (GtkWidget *widget,
 {
 	EomPrintPreview *preview;
 
-	preview = EOM_PRINT_PREVIEW (user_data);
+	preview = EOC_PRINT_PREVIEW (user_data);
 	update_relative_sizes (preview);
 
 	preview->priv->flag_create_surface = TRUE;
@@ -1002,7 +1002,7 @@ eoc_print_preview_set_page_margins (EomPrintPreview *preview,
 				    gfloat t_margin,
 				    gfloat b_margin)
 {
-	g_return_if_fail (EOM_IS_PRINT_PREVIEW (preview));
+	g_return_if_fail (EOC_IS_PRINT_PREVIEW (preview));
 
 	g_object_set (G_OBJECT(preview),
 		      "page-left-margin",   l_margin,
@@ -1024,7 +1024,7 @@ void
 eoc_print_preview_set_from_page_setup (EomPrintPreview *preview,
 				       GtkPageSetup *setup)
 {
-	g_return_if_fail (EOM_IS_PRINT_PREVIEW (preview));
+	g_return_if_fail (EOC_IS_PRINT_PREVIEW (preview));
 	g_return_if_fail (GTK_IS_PAGE_SETUP (setup));
 
 	g_object_set (G_OBJECT (preview),
@@ -1055,7 +1055,7 @@ eoc_print_preview_get_image_position (EomPrintPreview *preview,
 	EomPrintPreviewPrivate *priv;
 	gdouble width, height;
 
-	g_return_if_fail (EOM_IS_PRINT_PREVIEW (preview));
+	g_return_if_fail (EOC_IS_PRINT_PREVIEW (preview));
 
 	priv = preview->priv;
 
@@ -1087,7 +1087,7 @@ eoc_print_preview_set_image_position (EomPrintPreview *preview,
 	gfloat x_align, y_align;
 	gdouble width, height;
 
-	g_return_if_fail (EOM_IS_PRINT_PREVIEW (preview));
+	g_return_if_fail (EOC_IS_PRINT_PREVIEW (preview));
 
 	priv = preview->priv;
 
@@ -1115,7 +1115,7 @@ void
 eoc_print_preview_set_scale (EomPrintPreview *preview,
 			     gfloat           scale)
 {
-	g_return_if_fail (EOM_IS_PRINT_PREVIEW (preview));
+	g_return_if_fail (EOC_IS_PRINT_PREVIEW (preview));
 
 	g_object_set (preview,
 		      "image-scale", scale,

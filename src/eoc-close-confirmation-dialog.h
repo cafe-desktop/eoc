@@ -24,20 +24,20 @@
  * Boston, MA 02110-1301, USA.
  */
 
-#ifndef __EOM_CLOSE_CONFIRMATION_DIALOG_H__
-#define __EOM_CLOSE_CONFIRMATION_DIALOG_H__
+#ifndef __EOC_CLOSE_CONFIRMATION_DIALOG_H__
+#define __EOC_CLOSE_CONFIRMATION_DIALOG_H__
 
 #include <glib.h>
 #include <gtk/gtk.h>
 
 #include <eoc-image.h>
 
-#define EOM_TYPE_CLOSE_CONFIRMATION_DIALOG		(eoc_close_confirmation_dialog_get_type ())
-#define EOM_CLOSE_CONFIRMATION_DIALOG(obj)		(G_TYPE_CHECK_INSTANCE_CAST ((obj), EOM_TYPE_CLOSE_CONFIRMATION_DIALOG, EomCloseConfirmationDialog))
-#define EOM_CLOSE_CONFIRMATION_DIALOG_CLASS(klass)	(G_TYPE_CHECK_CLASS_CAST ((klass), EOM_TYPE_CLOSE_CONFIRMATION_DIALOG, EomCloseConfirmationDialogClass))
-#define EOM_IS_CLOSE_CONFIRMATION_DIALOG(obj)		(G_TYPE_CHECK_INSTANCE_TYPE ((obj), EOM_TYPE_CLOSE_CONFIRMATION_DIALOG))
-#define EOM_IS_CLOSE_CONFIRMATION_DIALOG_CLASS(klass)	(G_TYPE_CHECK_CLASS_TYPE ((klass), EOM_TYPE_CLOSE_CONFIRMATION_DIALOG))
-#define EOM_CLOSE_CONFIRMATION_DIALOG_GET_CLASS(obj)	(G_TYPE_INSTANCE_GET_CLASS ((obj),EOM_TYPE_CLOSE_CONFIRMATION_DIALOG, EomCloseConfirmationDialogClass))
+#define EOC_TYPE_CLOSE_CONFIRMATION_DIALOG		(eoc_close_confirmation_dialog_get_type ())
+#define EOC_CLOSE_CONFIRMATION_DIALOG(obj)		(G_TYPE_CHECK_INSTANCE_CAST ((obj), EOC_TYPE_CLOSE_CONFIRMATION_DIALOG, EomCloseConfirmationDialog))
+#define EOC_CLOSE_CONFIRMATION_DIALOG_CLASS(klass)	(G_TYPE_CHECK_CLASS_CAST ((klass), EOC_TYPE_CLOSE_CONFIRMATION_DIALOG, EomCloseConfirmationDialogClass))
+#define EOC_IS_CLOSE_CONFIRMATION_DIALOG(obj)		(G_TYPE_CHECK_INSTANCE_TYPE ((obj), EOC_TYPE_CLOSE_CONFIRMATION_DIALOG))
+#define EOC_IS_CLOSE_CONFIRMATION_DIALOG_CLASS(klass)	(G_TYPE_CHECK_CLASS_TYPE ((klass), EOC_TYPE_CLOSE_CONFIRMATION_DIALOG))
+#define EOC_CLOSE_CONFIRMATION_DIALOG_GET_CLASS(obj)	(G_TYPE_INSTANCE_GET_CLASS ((obj),EOC_TYPE_CLOSE_CONFIRMATION_DIALOG, EomCloseConfirmationDialogClass))
 
 typedef struct _EomCloseConfirmationDialog 		EomCloseConfirmationDialog;
 typedef struct _EomCloseConfirmationDialogClass 	EomCloseConfirmationDialogClass;
@@ -72,5 +72,5 @@ const GList	*eoc_close_confirmation_dialog_get_unsaved_images	(EomCloseConfirmat
 G_GNUC_INTERNAL
 GList		*eoc_close_confirmation_dialog_get_selected_images	(EomCloseConfirmationDialog *dlg);
 
-#endif /* __EOM_CLOSE_CONFIRMATION_DIALOG_H__ */
+#endif /* __EOC_CLOSE_CONFIRMATION_DIALOG_H__ */
 

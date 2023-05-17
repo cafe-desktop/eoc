@@ -1,4 +1,4 @@
-/* Statusbar Date -- Shows the EXIF date in EOM's statusbar
+/* Statusbar Date -- Shows the EXIF date in EOC's statusbar
  *
  * Copyright (C) 2008 The Free Software Foundation
  *
@@ -19,8 +19,8 @@
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-#ifndef __EOM_STATUSBAR_DATE_PLUGIN_H__
-#define __EOM_STATUSBAR_DATE_PLUGIN_H__
+#ifndef __EOC_STATUSBAR_DATE_PLUGIN_H__
+#define __EOC_STATUSBAR_DATE_PLUGIN_H__
 
 #include <glib.h>
 #include <glib-object.h>
@@ -35,18 +35,18 @@ G_BEGIN_DECLS
 /*
  * Type checking and casting macros
  */
-#define EOM_TYPE_STATUSBAR_DATE_PLUGIN \
+#define EOC_TYPE_STATUSBAR_DATE_PLUGIN \
 	(eoc_statusbar_date_plugin_get_type())
-#define EOM_STATUSBAR_DATE_PLUGIN(o) \
-	(G_TYPE_CHECK_INSTANCE_CAST((o), EOM_TYPE_STATUSBAR_DATE_PLUGIN, EomStatusbarDatePlugin))
-#define EOM_STATUSBAR_DATE_PLUGIN_CLASS(k) \
-	G_TYPE_CHECK_CLASS_CAST((k), EOM_TYPE_STATUSBAR_DATE_PLUGIN, EomStatusbarDatePluginClass))
-#define EOM_IS_STATUSBAR_DATE_PLUGIN(o) \
-	(G_TYPE_CHECK_INSTANCE_TYPE((o), EOM_TYPE_STATUSBAR_DATE_PLUGIN))
-#define EOM_IS_STATUSBAR_DATE_PLUGIN_CLASS(k) \
-	(G_TYPE_CHECK_CLASS_TYPE((k), EOM_TYPE_STATUSBAR_DATE_PLUGIN))
-#define EOM_STATUSBAR_DATE_PLUGIN_GET_CLASS(o) \
-	(G_TYPE_INSTANCE_GET_CLASS((o), EOM_TYPE_STATUSBAR_DATE_PLUGIN, EomStatusbarDatePluginClass))
+#define EOC_STATUSBAR_DATE_PLUGIN(o) \
+	(G_TYPE_CHECK_INSTANCE_CAST((o), EOC_TYPE_STATUSBAR_DATE_PLUGIN, EomStatusbarDatePlugin))
+#define EOC_STATUSBAR_DATE_PLUGIN_CLASS(k) \
+	G_TYPE_CHECK_CLASS_CAST((k), EOC_TYPE_STATUSBAR_DATE_PLUGIN, EomStatusbarDatePluginClass))
+#define EOC_IS_STATUSBAR_DATE_PLUGIN(o) \
+	(G_TYPE_CHECK_INSTANCE_TYPE((o), EOC_TYPE_STATUSBAR_DATE_PLUGIN))
+#define EOC_IS_STATUSBAR_DATE_PLUGIN_CLASS(k) \
+	(G_TYPE_CHECK_CLASS_TYPE((k), EOC_TYPE_STATUSBAR_DATE_PLUGIN))
+#define EOC_STATUSBAR_DATE_PLUGIN_GET_CLASS(o) \
+	(G_TYPE_INSTANCE_GET_CLASS((o), EOC_TYPE_STATUSBAR_DATE_PLUGIN, EomStatusbarDatePluginClass))
 
 /* Private structure type */
 typedef struct _EomStatusbarDatePluginPrivate EomStatusbarDatePluginPrivate;
@@ -83,4 +83,4 @@ G_MODULE_EXPORT void peas_register_types (PeasObjectModule *module);
 
 G_END_DECLS
 
-#endif /* __EOM_STATUSBAR_DATE_PLUGIN_H__ */
+#endif /* __EOC_STATUSBAR_DATE_PLUGIN_H__ */

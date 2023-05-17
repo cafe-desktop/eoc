@@ -24,26 +24,26 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
-#ifndef __EOM_WINDOW_ACTIVATABLE_H__
-#define __EOM_WINDOW_ACTIVATABLE_H__
+#ifndef __EOC_WINDOW_ACTIVATABLE_H__
+#define __EOC_WINDOW_ACTIVATABLE_H__
 
 #include <glib-object.h>
 
 G_BEGIN_DECLS
 
-#define EOM_TYPE_WINDOW_ACTIVATABLE	(eoc_window_activatable_get_type ())
-#define EOM_WINDOW_ACTIVATABLE(obj) 	(G_TYPE_CHECK_INSTANCE_CAST ((obj), \
-					 EOM_TYPE_WINDOW_ACTIVATABLE, \
+#define EOC_TYPE_WINDOW_ACTIVATABLE	(eoc_window_activatable_get_type ())
+#define EOC_WINDOW_ACTIVATABLE(obj) 	(G_TYPE_CHECK_INSTANCE_CAST ((obj), \
+					 EOC_TYPE_WINDOW_ACTIVATABLE, \
 					 EomWindowActivatable))
-#define EOM_WINDOW_ACTIVATABLE_IFACE(obj) \
+#define EOC_WINDOW_ACTIVATABLE_IFACE(obj) \
 					(G_TYPE_CHECK_CLASS_CAST ((obj), \
-					 EOM_TYPE_WINDOW_ACTIVATABLE, \
+					 EOC_TYPE_WINDOW_ACTIVATABLE, \
 					 EomWindowActivatableInterface))
-#define EOM_IS_WINDOW_ACTIVATABLE(obj)	(G_TYPE_CHECK_INSTANCE_TYPE ((obj), \
-					 EOM_TYPE_WINDOW_ACTIVATABLE))
-#define EOM_WINDOW_ACTIVATABLE_GET_IFACE(obj) \
+#define EOC_IS_WINDOW_ACTIVATABLE(obj)	(G_TYPE_CHECK_INSTANCE_TYPE ((obj), \
+					 EOC_TYPE_WINDOW_ACTIVATABLE))
+#define EOC_WINDOW_ACTIVATABLE_GET_IFACE(obj) \
 					(G_TYPE_INSTANCE_GET_INTERFACE ((obj), \
-					 EOM_TYPE_WINDOW_ACTIVATABLE, \
+					 EOC_TYPE_WINDOW_ACTIVATABLE, \
 					 EomWindowActivatableInterface))
 
 typedef struct _EomWindowActivatable		EomWindowActivatable;
@@ -65,5 +65,5 @@ void	eoc_window_activatable_activate	    (EomWindowActivatable *activatable);
 void	eoc_window_activatable_deactivate   (EomWindowActivatable *activatable);
 
 G_END_DECLS
-#endif /* __EOM_WINDOW_ACTIVATABLE_H__ */
+#endif /* __EOC_WINDOW_ACTIVATABLE_H__ */
 

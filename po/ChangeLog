@@ -5941,7 +5941,7 @@
 
 2003-08-23  Kjartan Maraas  <kmaraas@gnome.org>
 
-	* POTFILES.skip: Added libeoc/MATE_EOM.server.in
+	* POTFILES.skip: Added libeoc/MATE_EOC.server.in
 	* no.po: Update Norwegian translation.
 
 2003-08-23  Kjartan Maraas  <kmaraas@gnome.org>
@@ -6785,7 +6785,7 @@
 
 2002-07-16  Dmitry G. Mastrukov  <dmitry@taurussoft.org>
 
-	* POTFILES.in: Fixed libeoc/MATE_EOM.server.in.in name.
+	* POTFILES.in: Fixed libeoc/MATE_EOC.server.in.in name.
 
 2002-07-10  Jens Finke <jens@triq.net>
 
@@ -7414,7 +7414,7 @@
 
 2001-12-27  Jens Finke <jens@triq.net>
 
-	* POTFILES.in: Renamed MATE_EOM.oaf.in to MATE_EOM.server.in.
+	* POTFILES.in: Renamed MATE_EOC.oaf.in to MATE_EOC.server.in.
 
 2001-12-27  Duarte Loreto <happyguy_pt@hotmail.com>
 
@@ -7470,7 +7470,7 @@
 
 2001-10-02  Fabrice Bellet <fabrice@gnu.org>
 
-	* POTFILES.in: removed duplicated MATE_EOM.oaf.in.
+	* POTFILES.in: removed duplicated MATE_EOC.oaf.in.
 
 2001-09-30  Carlos Perelló Marín <carlos@gnome-db.org>
 
@@ -7621,7 +7621,7 @@
 2001-03-28  Jens Finke <jens@gnome.org>
 
 	* POTFILES.in: Removed all files from src/ directory, added
-	libeoc/MATE_EOM.oaf.in.
+	libeoc/MATE_EOC.oaf.in.
 
 2001-03-18  Fatih Demir <kabalak@gtranslator.org>
 
@@ -7637,7 +7637,7 @@
 
 2001-03-07  Jens Finke <jens@gnome.org>
 
-	* POTFILES.in: Added MATE_EOM_Collection.oaf.in and
+	* POTFILES.in: Added MATE_EOC_Collection.oaf.in and
 	eoc-shell-ui.xml.
 
 2001-02-27  Federico Mena Quintero  <federico@ximian.com>

@@ -19,8 +19,8 @@
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-#ifndef __EOM_THUMB_NAV_H__
-#define __EOM_THUMB_NAV_H__
+#ifndef __EOC_THUMB_NAV_H__
+#define __EOC_THUMB_NAV_H__
 
 #include "eoc-thumb-view.h"
 
@@ -34,18 +34,18 @@ typedef struct _EomThumbNav EomThumbNav;
 typedef struct _EomThumbNavClass EomThumbNavClass;
 typedef struct _EomThumbNavPrivate EomThumbNavPrivate;
 
-#define EOM_TYPE_THUMB_NAV            (eoc_thumb_nav_get_type ())
-#define EOM_THUMB_NAV(obj)            (G_TYPE_CHECK_INSTANCE_CAST((obj), EOM_TYPE_THUMB_NAV, EomThumbNav))
-#define EOM_THUMB_NAV_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST((klass),  EOM_TYPE_THUMB_NAV, EomThumbNavClass))
-#define EOM_IS_THUMB_NAV(obj)         (G_TYPE_CHECK_INSTANCE_TYPE((obj), EOM_TYPE_THUMB_NAV))
-#define EOM_IS_THUMB_NAV_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE((klass),  EOM_TYPE_THUMB_NAV))
-#define EOM_THUMB_NAV_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS((obj),  EOM_TYPE_THUMB_NAV, EomThumbNavClass))
+#define EOC_TYPE_THUMB_NAV            (eoc_thumb_nav_get_type ())
+#define EOC_THUMB_NAV(obj)            (G_TYPE_CHECK_INSTANCE_CAST((obj), EOC_TYPE_THUMB_NAV, EomThumbNav))
+#define EOC_THUMB_NAV_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST((klass),  EOC_TYPE_THUMB_NAV, EomThumbNavClass))
+#define EOC_IS_THUMB_NAV(obj)         (G_TYPE_CHECK_INSTANCE_TYPE((obj), EOC_TYPE_THUMB_NAV))
+#define EOC_IS_THUMB_NAV_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE((klass),  EOC_TYPE_THUMB_NAV))
+#define EOC_THUMB_NAV_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS((obj),  EOC_TYPE_THUMB_NAV, EomThumbNavClass))
 
 typedef enum {
-	EOM_THUMB_NAV_MODE_ONE_ROW,
-	EOM_THUMB_NAV_MODE_ONE_COLUMN,
-	EOM_THUMB_NAV_MODE_MULTIPLE_ROWS,
-	EOM_THUMB_NAV_MODE_MULTIPLE_COLUMNS
+	EOC_THUMB_NAV_MODE_ONE_ROW,
+	EOC_THUMB_NAV_MODE_ONE_COLUMN,
+	EOC_THUMB_NAV_MODE_MULTIPLE_ROWS,
+	EOC_THUMB_NAV_MODE_MULTIPLE_COLUMNS
 } EomThumbNavMode;
 
 struct _EomThumbNav {
@@ -76,4 +76,4 @@ void             eoc_thumb_nav_set_mode          (EomThumbNav       *nav,
 
 G_END_DECLS
 
-#endif /* __EOM_THUMB_NAV_H__ */
+#endif /* __EOC_THUMB_NAV_H__ */
