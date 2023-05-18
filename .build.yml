@@ -34,6 +34,9 @@ requires:
     - yelp-tools
     - zlib1g-dev
 
+    # required for cafe-common
+    - autoconf
+
 before_scripts:
   - ./html-cppcheck
   - ./install-from-git https://github.com/cafe-desktop/cafe-common master
