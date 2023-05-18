@@ -23,7 +23,6 @@ requires:
     - libjpeg-dev
     - liblcms2-dev
     - libmagickwand-dev
-    - libcafe-desktop-dev
     - libpeas-dev
     - librsvg2-dev
     - libstartup-notification0-dev
@@ -37,9 +36,18 @@ requires:
     # required for cafe-common
     - autoconf
 
+    # required for cafe-desktop
+    - autoconf-archive
+    - intltool
+    - iso-codes
+    - libglib2.0-doc
+    - libtool
+    - libx11-dev
+
 before_scripts:
   - ./html-cppcheck
   - ./install-from-git https://github.com/cafe-desktop/cafe-common master
+  - ./install-from-git https://github.com/cafe-desktop/cafe-desktop master
 
 build_scripts:
   - ./before-build
