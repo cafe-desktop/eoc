@@ -19,11 +19,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: eoc 1.23.1\n"
-"Report-Msgid-Bugs-To: http://www.mate-desktop.org\n"
+"Report-Msgid-Bugs-To: http://www.cafe-desktop.org\n"
 "POT-Creation-Date: 2020-01-10 14:33+0100\n"
 "PO-Revision-Date: 2020-02-14 12:07+0000\n"
 "Last-Translator: Lucas Lommer <drom@kdyne.net>, 2020\n"
-"Language-Team: Czech (https://www.transifex.com/mate/teams/13566/cs/)\n"
+"Language-Team: Czech (https://www.transifex.com/cafe/teams/13566/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -280,7 +280,7 @@ msgstr "Pozadí"
 msgid "As custom color:"
 msgstr "Jako vlastní barvu:"
 
-#: data/eoc-preferences-dialog.ui:267 data/org.mate.eoc.gschema.xml.in:16
+#: data/eoc-preferences-dialog.ui:267 data/org.cafe.eoc.gschema.xml.in:16
 msgid "Background Color"
 msgstr "Barva pozadí"
 
@@ -392,16 +392,16 @@ msgstr "Čas"
 msgid "Focal Length"
 msgstr "Ohnisková délka"
 
-#: data/org.mate.eoc.gschema.xml.in:11
+#: data/org.cafe.eoc.gschema.xml.in:11
 msgid "Automatic orientation"
 msgstr "Automatická orientace"
 
-#: data/org.mate.eoc.gschema.xml.in:12
+#: data/org.cafe.eoc.gschema.xml.in:12
 msgid ""
 "Whether the image should be rotated automatically based on EXIF orientation."
 msgstr "Zda má být obrázek automaticky otočen dle údajů EXIF."
 
-#: data/org.mate.eoc.gschema.xml.in:17
+#: data/org.cafe.eoc.gschema.xml.in:17
 msgid ""
 "The color that is used to fill the area behind the image. If the use-"
 "background-color key is not set, the color is determined by the active GTK+ "
@@ -411,11 +411,11 @@ msgstr ""
 "use-background-color nastaven, je místo toho použita barva dle aktivního "
 "motivu GTK+."
 
-#: data/org.mate.eoc.gschema.xml.in:21
+#: data/org.cafe.eoc.gschema.xml.in:21
 msgid "Use a custom background color"
 msgstr "Použít vlastní barvu pozadí"
 
-#: data/org.mate.eoc.gschema.xml.in:22
+#: data/org.cafe.eoc.gschema.xml.in:22
 msgid ""
 "If this is active, the color set by the background-color key will be used to"
 " fill the area behind the image. If it is not set, the current GTK+ theme "
@@ -425,11 +425,11 @@ msgstr ""
 " pro vyplnění oblasti za obrázkem. Pokud není nastaven, určí barvu výplně "
 "aktuální motiv GTK+."
 
-#: data/org.mate.eoc.gschema.xml.in:26
+#: data/org.cafe.eoc.gschema.xml.in:26
 msgid "Interpolate Image"
 msgstr "Interpolace obrázku"
 
-#: data/org.mate.eoc.gschema.xml.in:27
+#: data/org.cafe.eoc.gschema.xml.in:27
 msgid ""
 "Whether the image should be interpolated on zoom-out. This leads to better "
 "quality but is somewhat slower than non-interpolated images."
@@ -437,11 +437,11 @@ msgstr ""
 "Zda se má oddálený obrázek interpolovat. To zvyšuje kvalitu, ale je "
 "pomalejší než obrázky bez interpolace."
 
-#: data/org.mate.eoc.gschema.xml.in:31
+#: data/org.cafe.eoc.gschema.xml.in:31
 msgid "Extrapolate Image"
 msgstr "Extrapolace obrázku"
 
-#: data/org.mate.eoc.gschema.xml.in:32
+#: data/org.cafe.eoc.gschema.xml.in:32
 msgid ""
 "Whether the image should be extrapolated on zoom-in. This leads to blurry "
 "quality and is somewhat slower than non-extrapolated images."
@@ -449,11 +449,11 @@ msgstr ""
 "Zda se má přiblížený obrázek extrapolovat. To vede k rozmazání a je "
 "pomalejší než obrázky bez extrapolace."
 
-#: data/org.mate.eoc.gschema.xml.in:36
+#: data/org.cafe.eoc.gschema.xml.in:36
 msgid "Transparency indicator"
 msgstr "Indikátor průhlednosti"
 
-#: data/org.mate.eoc.gschema.xml.in:37
+#: data/org.cafe.eoc.gschema.xml.in:37
 msgid ""
 "Determines how transparency should be indicated. Valid values are checked, "
 "color and none. If color is chosen, then the trans-color key determines the "
@@ -463,19 +463,19 @@ msgstr ""
 "jeda barva a žádný. Pokud je zvolena volba \"jedna barva\", klíč \"trans-"
 "color\" určuje její hodnotu."
 
-#: data/org.mate.eoc.gschema.xml.in:41
+#: data/org.cafe.eoc.gschema.xml.in:41
 msgid "Scroll wheel zoom"
 msgstr "Přibližování rolovacím kolečkem"
 
-#: data/org.mate.eoc.gschema.xml.in:42
+#: data/org.cafe.eoc.gschema.xml.in:42
 msgid "Whether the scroll wheel should be used for zooming."
 msgstr "Zda má být rolovací kolečko používáno pro změnu přiblížení."
 
-#: data/org.mate.eoc.gschema.xml.in:46
+#: data/org.cafe.eoc.gschema.xml.in:46
 msgid "Zoom multiplier"
 msgstr "Násobič přiblížení"
 
-#: data/org.mate.eoc.gschema.xml.in:47
+#: data/org.cafe.eoc.gschema.xml.in:47
 msgid ""
 "The multiplier to be applied when using the mouse scroll wheel for zooming. "
 "This value defines the zooming step used for each scroll event. For example,"
@@ -487,11 +487,11 @@ msgstr ""
 "nárůst přiblížení při každém otočení kolečka a hodnota 1,00 znamená 100% "
 "nárůst přiblížení."
 
-#: data/org.mate.eoc.gschema.xml.in:51
+#: data/org.cafe.eoc.gschema.xml.in:51
 msgid "Transparency color"
 msgstr "Barva průhlednosti"
 
-#: data/org.mate.eoc.gschema.xml.in:52
+#: data/org.cafe.eoc.gschema.xml.in:52
 msgid ""
 "If the transparency key has the value COLOR, then this key determines the "
 "color which is used for indicating transparency."
@@ -499,27 +499,27 @@ msgstr ""
 "Pokud má klíč průhlednosti hodnotu COLOR, pak tento klíč určuje barvu, která"
 " se použije pro indikaci průhlednosti."
 
-#: data/org.mate.eoc.gschema.xml.in:58
+#: data/org.cafe.eoc.gschema.xml.in:58
 msgid "Randomize the image sequence"
 msgstr "Znáhodnit sekvenci obrázků"
 
-#: data/org.mate.eoc.gschema.xml.in:59
+#: data/org.cafe.eoc.gschema.xml.in:59
 msgid "Whether the sequence of images should be shown in an random loop."
 msgstr "Zda má být sekvence obrázků zobrazována v náhodné smyčce."
 
-#: data/org.mate.eoc.gschema.xml.in:63
+#: data/org.cafe.eoc.gschema.xml.in:63
 msgid "Loop through the image sequence"
 msgstr "Opakovat sekvenci obrázků"
 
-#: data/org.mate.eoc.gschema.xml.in:64
+#: data/org.cafe.eoc.gschema.xml.in:64
 msgid "Whether the sequence of images should be shown in an endless loop."
 msgstr "Zda má být sekvence obrázků zobrazována v nekonečné smyčce."
 
-#: data/org.mate.eoc.gschema.xml.in:68
+#: data/org.cafe.eoc.gschema.xml.in:68
 msgid "Allow zoom greater than 100% initially"
 msgstr "Povolit počáteční přiblížení větší než 100%"
 
-#: data/org.mate.eoc.gschema.xml.in:69
+#: data/org.cafe.eoc.gschema.xml.in:69
 msgid ""
 "If this is set to FALSE small images will not be stretched to fit into the "
 "screen initially."
@@ -527,11 +527,11 @@ msgstr ""
 "Pokud je toto nastaveno na „FALSE“, malé obrázky nebudou automaticky "
 "roztaženy, aby se přizpůsobily obrazovce."
 
-#: data/org.mate.eoc.gschema.xml.in:73
+#: data/org.cafe.eoc.gschema.xml.in:73
 msgid "Delay in seconds until showing the next image"
 msgstr "Zpoždění v sekundách do zobrazení dalšího obrázku"
 
-#: data/org.mate.eoc.gschema.xml.in:74
+#: data/org.cafe.eoc.gschema.xml.in:74
 msgid ""
 "A value greater than 0 determines the seconds an image stays on screen until"
 " the next one is shown automatically. Zero disables the automatic browsing."
@@ -540,43 +540,43 @@ msgstr ""
 "obrazovce, než je automaticky zobrazen další. Nula zakazuje automatické "
 "procházení."
 
-#: data/org.mate.eoc.gschema.xml.in:80
+#: data/org.cafe.eoc.gschema.xml.in:80
 msgid "Show/Hide the window toolbar."
 msgstr "Zobrazovat/Skrývat lištu nástrojů okna."
 
-#: data/org.mate.eoc.gschema.xml.in:84
+#: data/org.cafe.eoc.gschema.xml.in:84
 msgid "Show/Hide the window statusbar."
 msgstr "Zobrazovat/Skrývat stavovou lištu okna."
 
-#: data/org.mate.eoc.gschema.xml.in:88
+#: data/org.cafe.eoc.gschema.xml.in:88
 msgid "Show/Hide the image collection pane."
 msgstr "Zobrazovat/Skrývat panel se sbírkou obrázků."
 
-#: data/org.mate.eoc.gschema.xml.in:92
+#: data/org.cafe.eoc.gschema.xml.in:92
 msgid "Image collection pane position."
 msgstr "Pozice panelu náhledů obrázků."
 
-#: data/org.mate.eoc.gschema.xml.in:96
+#: data/org.cafe.eoc.gschema.xml.in:96
 msgid "Whether the image collection pane should be resizable."
 msgstr "Zda lze měnit velikost panelu se sbírkou obrázků."
 
-#: data/org.mate.eoc.gschema.xml.in:100
+#: data/org.cafe.eoc.gschema.xml.in:100
 msgid "Show/Hide the window side pane."
 msgstr "Zobrazovat/Skrývat postranní panel okna."
 
-#: data/org.mate.eoc.gschema.xml.in:104
+#: data/org.cafe.eoc.gschema.xml.in:104
 msgid "Show/Hide the image collection pane scroll buttons."
 msgstr "Zobrazovat/Skrývat tlačítka posuvu panelu se sbírkou obrázků."
 
-#: data/org.mate.eoc.gschema.xml.in:108
+#: data/org.cafe.eoc.gschema.xml.in:108
 msgid "Close main window without asking to save changes."
 msgstr "Zavřít hlavní okno bez dotazu na uložení změn."
 
-#: data/org.mate.eoc.gschema.xml.in:112
+#: data/org.cafe.eoc.gschema.xml.in:112
 msgid "Trash images without asking"
 msgstr "Přesunout obrázky do koše bez výzvy"
 
-#: data/org.mate.eoc.gschema.xml.in:113
+#: data/org.cafe.eoc.gschema.xml.in:113
 msgid ""
 "If activated, Eye of MATE won't ask for confirmation when moving images to "
 "the trash. It will still ask if any of the files cannot be moved to the "
@@ -586,12 +586,12 @@ msgstr ""
 "při přesouvání obrázků do koše. Bude se ale stále ptát, když některé soubory"
 " nebude možné přesunout do koše a byly by místo toho smazány."
 
-#: data/org.mate.eoc.gschema.xml.in:117
+#: data/org.cafe.eoc.gschema.xml.in:117
 msgid ""
 "Whether the metadata list in the properties dialog should have its own page."
 msgstr "Zda má mít seznam metadat v okně Vlastnosti svoji vlastní stránku."
 
-#: data/org.mate.eoc.gschema.xml.in:118
+#: data/org.cafe.eoc.gschema.xml.in:118
 msgid ""
 "If activated, the detailed metadata list in the properties dialog will be "
 "moved to its own page in the dialog. This should make the dialog more usable"
@@ -603,11 +603,11 @@ msgstr ""
 "menších obrazovkách, např. na netboocích. Pokud je vypnuto, widget se vloží "
 "na stránku „Metadata“."
 
-#: data/org.mate.eoc.gschema.xml.in:122
+#: data/org.cafe.eoc.gschema.xml.in:122
 msgid "External program to use for editing images"
 msgstr "Externí program pro úpravu obrázků"
 
-#: data/org.mate.eoc.gschema.xml.in:123
+#: data/org.cafe.eoc.gschema.xml.in:123
 msgid ""
 "The desktop file name (including the \".desktop\") of the application to use"
 " for editing images (when the \"Edit Image\" toolbar button is clicked). Set"
@@ -617,7 +617,7 @@ msgstr ""
 " (pokud kliknete na tlačítko \"Edit Image\" panelu nástrojů). Nastavte na "
 "prázdný řetězec, pro zakázání této funkce."
 
-#: data/org.mate.eoc.gschema.xml.in:127
+#: data/org.cafe.eoc.gschema.xml.in:127
 msgid ""
 "Whether the file chooser should show the user's pictures folder if no images"
 " are loaded."
@@ -625,7 +625,7 @@ msgstr ""
 "Zda má okno s výběrem souborů zobrazovat uživatelovu složku obrázků, pokud "
 "nejsou načteny žádné obrázky."
 
-#: data/org.mate.eoc.gschema.xml.in:128
+#: data/org.cafe.eoc.gschema.xml.in:128
 msgid ""
 "If activated and no image is loaded in the active window, the file chooser "
 "will display the user's pictures folder using the XDG special user "
@@ -637,11 +637,11 @@ msgstr ""
 "adresářů uživatele XDG. Pokud je deaktivováno nebo nebyla nastavena složka "
 "obrázků, zobrazí se aktuální pracovní adresář."
 
-#: data/org.mate.eoc.gschema.xml.in:134
+#: data/org.cafe.eoc.gschema.xml.in:134
 msgid "Active plugins"
 msgstr "Aktivní zásuvné moduly"
 
-#: data/org.mate.eoc.gschema.xml.in:135
+#: data/org.cafe.eoc.gschema.xml.in:135
 msgid ""
 "List of active plugins. It doesn't contain the \"Location\" of the active "
 "plugins. See the .eoc-plugin file for obtaining the \"Location\" of a given "

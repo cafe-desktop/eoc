@@ -11,11 +11,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: eoc 1.23.1\n"
-"Report-Msgid-Bugs-To: http://www.mate-desktop.org\n"
+"Report-Msgid-Bugs-To: http://www.cafe-desktop.org\n"
 "POT-Creation-Date: 2020-01-10 14:33+0100\n"
 "PO-Revision-Date: 2020-02-14 12:07+0000\n"
 "Last-Translator: clefebvre <clement.lefebvre@linuxmint.com>, 2020\n"
-"Language-Team: Estonian (https://www.transifex.com/mate/teams/13566/et/)\n"
+"Language-Team: Estonian (https://www.transifex.com/cafe/teams/13566/et/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -268,7 +268,7 @@ msgstr "Taust"
 msgid "As custom color:"
 msgstr "Kohandatud värvusega:"
 
-#: data/eoc-preferences-dialog.ui:267 data/org.mate.eoc.gschema.xml.in:16
+#: data/eoc-preferences-dialog.ui:267 data/org.cafe.eoc.gschema.xml.in:16
 msgid "Background Color"
 msgstr "Taustavärv"
 
@@ -380,18 +380,18 @@ msgstr "Aeg"
 msgid "Focal Length"
 msgstr "Fookuskaugus"
 
-#: data/org.mate.eoc.gschema.xml.in:11
+#: data/org.cafe.eoc.gschema.xml.in:11
 msgid "Automatic orientation"
 msgstr "Automaatne suund"
 
-#: data/org.mate.eoc.gschema.xml.in:12
+#: data/org.cafe.eoc.gschema.xml.in:12
 msgid ""
 "Whether the image should be rotated automatically based on EXIF orientation."
 msgstr ""
 "Kas pilti tuleb automaatselt pöörata EXIF-andmetes kirjeldatud suunas või "
 "mitte."
 
-#: data/org.mate.eoc.gschema.xml.in:17
+#: data/org.cafe.eoc.gschema.xml.in:17
 msgid ""
 "The color that is used to fill the area behind the image. If the use-"
 "background-color key is not set, the color is determined by the active GTK+ "
@@ -400,11 +400,11 @@ msgstr ""
 "Pildi taha jääva piirkonna katmise värvus. Kui võtmega use-background-color "
 "pole ühtegi värvust määratud, siis võetakse värvus aktiivsest GTK+ teemast."
 
-#: data/org.mate.eoc.gschema.xml.in:21
+#: data/org.cafe.eoc.gschema.xml.in:21
 msgid "Use a custom background color"
 msgstr "Kohandatud taustavärvuse kasutamine"
 
-#: data/org.mate.eoc.gschema.xml.in:22
+#: data/org.cafe.eoc.gschema.xml.in:22
 msgid ""
 "If this is active, the color set by the background-color key will be used to"
 " fill the area behind the image. If it is not set, the current GTK+ theme "
@@ -414,11 +414,11 @@ msgstr ""
 "võtmega background-color määratud värvust. Kui see pole määratud, siis "
 "otsustab selle värvuse aktiivne GTK+ teema."
 
-#: data/org.mate.eoc.gschema.xml.in:26
+#: data/org.cafe.eoc.gschema.xml.in:26
 msgid "Interpolate Image"
 msgstr "Pildi interpoleerimine"
 
-#: data/org.mate.eoc.gschema.xml.in:27
+#: data/org.cafe.eoc.gschema.xml.in:27
 msgid ""
 "Whether the image should be interpolated on zoom-out. This leads to better "
 "quality but is somewhat slower than non-interpolated images."
@@ -427,11 +427,11 @@ msgstr ""
 "Interpoleeritud piltidel on parem pildikvaliteet, kuid kuvamine on mõnevõrra"
 " aeglasem kui interpoleerimata piltide puhul."
 
-#: data/org.mate.eoc.gschema.xml.in:31
+#: data/org.cafe.eoc.gschema.xml.in:31
 msgid "Extrapolate Image"
 msgstr "Pildi ekstrapoleerimine"
 
-#: data/org.mate.eoc.gschema.xml.in:32
+#: data/org.cafe.eoc.gschema.xml.in:32
 msgid ""
 "Whether the image should be extrapolated on zoom-in. This leads to blurry "
 "quality and is somewhat slower than non-extrapolated images."
@@ -440,11 +440,11 @@ msgstr ""
 "pildid on udusemad ja kuvamine on mõnevõrra aeglasem kui ekstrapoleerimata "
 "piltide puhul."
 
-#: data/org.mate.eoc.gschema.xml.in:36
+#: data/org.cafe.eoc.gschema.xml.in:36
 msgid "Transparency indicator"
 msgstr "Läbipaistvuse indikaator"
 
-#: data/org.mate.eoc.gschema.xml.in:37
+#: data/org.cafe.eoc.gschema.xml.in:37
 msgid ""
 "Determines how transparency should be indicated. Valid values are checked, "
 "color and none. If color is chosen, then the trans-color key determines the "
@@ -455,20 +455,20 @@ msgstr ""
 "Väärtuse 'color' korral määrab kasutatava värvuse väärtuse võti 'trans-"
 "color'."
 
-#: data/org.mate.eoc.gschema.xml.in:41
+#: data/org.cafe.eoc.gschema.xml.in:41
 msgid "Scroll wheel zoom"
 msgstr "Kerimisratta suurendus"
 
-#: data/org.mate.eoc.gschema.xml.in:42
+#: data/org.cafe.eoc.gschema.xml.in:42
 msgid "Whether the scroll wheel should be used for zooming."
 msgstr ""
 "Kas hiire ratast kasutatakse suurendamiseks ja vähendamiseks või mitte."
 
-#: data/org.mate.eoc.gschema.xml.in:46
+#: data/org.cafe.eoc.gschema.xml.in:46
 msgid "Zoom multiplier"
 msgstr "Suurendustegur"
 
-#: data/org.mate.eoc.gschema.xml.in:47
+#: data/org.cafe.eoc.gschema.xml.in:47
 msgid ""
 "The multiplier to be applied when using the mouse scroll wheel for zooming. "
 "This value defines the zooming step used for each scroll event. For example,"
@@ -480,11 +480,11 @@ msgstr ""
 "suurenduse/vähenduse sammu. Näiteks väärtus 0.05 väljendab iga sündmuse "
 "korral suurenduse muutust 5% võrra, 1.00 aga 100% võrra."
 
-#: data/org.mate.eoc.gschema.xml.in:51
+#: data/org.cafe.eoc.gschema.xml.in:51
 msgid "Transparency color"
 msgstr "Läbipaistvuse värv"
 
-#: data/org.mate.eoc.gschema.xml.in:52
+#: data/org.cafe.eoc.gschema.xml.in:52
 msgid ""
 "If the transparency key has the value COLOR, then this key determines the "
 "color which is used for indicating transparency."
@@ -492,27 +492,27 @@ msgstr ""
 "Kui transparency võti sisaldab värvi COLOR, siis see võti määrab määrab "
 "läbipaistvust kujutamiseks kasutatava värvuse."
 
-#: data/org.mate.eoc.gschema.xml.in:58
+#: data/org.cafe.eoc.gschema.xml.in:58
 msgid "Randomize the image sequence"
 msgstr "Piltide järjekord juhuslikuks"
 
-#: data/org.mate.eoc.gschema.xml.in:59
+#: data/org.cafe.eoc.gschema.xml.in:59
 msgid "Whether the sequence of images should be shown in an random loop."
 msgstr "Kas pildijada näidatakse juhuslikus järjestuses või mitte."
 
-#: data/org.mate.eoc.gschema.xml.in:63
+#: data/org.cafe.eoc.gschema.xml.in:63
 msgid "Loop through the image sequence"
 msgstr "Pildiseeria lõppemisel uuesti alustamine"
 
-#: data/org.mate.eoc.gschema.xml.in:64
+#: data/org.cafe.eoc.gschema.xml.in:64
 msgid "Whether the sequence of images should be shown in an endless loop."
 msgstr "Kas pildiseerias olevaid pilte tuleb näidata lõpmatu tsüklina."
 
-#: data/org.mate.eoc.gschema.xml.in:68
+#: data/org.cafe.eoc.gschema.xml.in:68
 msgid "Allow zoom greater than 100% initially"
 msgstr "Üle 100% algsuurendus lubatud"
 
-#: data/org.mate.eoc.gschema.xml.in:69
+#: data/org.cafe.eoc.gschema.xml.in:69
 msgid ""
 "If this is set to FALSE small images will not be stretched to fit into the "
 "screen initially."
@@ -520,11 +520,11 @@ msgstr ""
 "Kui see on märkimata, siis väikeseid pilte algseisul ei venitata akna "
 "suurusega sobivaks."
 
-#: data/org.mate.eoc.gschema.xml.in:73
+#: data/org.cafe.eoc.gschema.xml.in:73
 msgid "Delay in seconds until showing the next image"
 msgstr "Viivituse kestus sekundites enne järgmise pildi näitamist"
 
-#: data/org.mate.eoc.gschema.xml.in:74
+#: data/org.cafe.eoc.gschema.xml.in:74
 msgid ""
 "A value greater than 0 determines the seconds an image stays on screen until"
 " the next one is shown automatically. Zero disables the automatic browsing."
@@ -533,43 +533,43 @@ msgstr ""
 "sekundeid ja pärast seda kuvatakse automaatselt järgmist pilti. Väärtuse 0 "
 "puhul on automaatne pildivahetus keelatud."
 
-#: data/org.mate.eoc.gschema.xml.in:80
+#: data/org.cafe.eoc.gschema.xml.in:80
 msgid "Show/Hide the window toolbar."
 msgstr "Akna tööriistariba näitamine või peitmine."
 
-#: data/org.mate.eoc.gschema.xml.in:84
+#: data/org.cafe.eoc.gschema.xml.in:84
 msgid "Show/Hide the window statusbar."
 msgstr "Akna olekuriba näitamine või peitmine."
 
-#: data/org.mate.eoc.gschema.xml.in:88
+#: data/org.cafe.eoc.gschema.xml.in:88
 msgid "Show/Hide the image collection pane."
 msgstr "Pildikogumiku paani näitamine või peitmine."
 
-#: data/org.mate.eoc.gschema.xml.in:92
+#: data/org.cafe.eoc.gschema.xml.in:92
 msgid "Image collection pane position."
 msgstr "Pildikogumiku paani asukoht."
 
-#: data/org.mate.eoc.gschema.xml.in:96
+#: data/org.cafe.eoc.gschema.xml.in:96
 msgid "Whether the image collection pane should be resizable."
 msgstr "Kas pildikogumiku paani suurust peab olema võimalik muuta või mitte."
 
-#: data/org.mate.eoc.gschema.xml.in:100
+#: data/org.cafe.eoc.gschema.xml.in:100
 msgid "Show/Hide the window side pane."
 msgstr "Akna külgpaani näitamine või peitmine."
 
-#: data/org.mate.eoc.gschema.xml.in:104
+#: data/org.cafe.eoc.gschema.xml.in:104
 msgid "Show/Hide the image collection pane scroll buttons."
 msgstr "Pildikogumiku paani kerimisnuppude näitamine või peitmine."
 
-#: data/org.mate.eoc.gschema.xml.in:108
+#: data/org.cafe.eoc.gschema.xml.in:108
 msgid "Close main window without asking to save changes."
 msgstr "Peaakna sulgemine ilma muutuste salvestamise küsimuseta."
 
-#: data/org.mate.eoc.gschema.xml.in:112
+#: data/org.cafe.eoc.gschema.xml.in:112
 msgid "Trash images without asking"
 msgstr "Piltide viskamine prügikasti ilma kinnituse küsimiseta"
 
-#: data/org.mate.eoc.gschema.xml.in:113
+#: data/org.cafe.eoc.gschema.xml.in:113
 msgid ""
 "If activated, Eye of MATE won't ask for confirmation when moving images to "
 "the trash. It will still ask if any of the files cannot be moved to the "
@@ -579,14 +579,14 @@ msgstr ""
 "kinnitust. Siiski küsitakse kinnitust juhul, kui faile pole võimalik "
 "prügikasti visata ja selle asemel tahetakse need kustutada."
 
-#: data/org.mate.eoc.gschema.xml.in:117
+#: data/org.cafe.eoc.gschema.xml.in:117
 msgid ""
 "Whether the metadata list in the properties dialog should have its own page."
 msgstr ""
 "Kas omaduste dialoogis asuv metaandmete nimekiri peab olema eraldi lehel või"
 " mitte."
 
-#: data/org.mate.eoc.gschema.xml.in:118
+#: data/org.cafe.eoc.gschema.xml.in:118
 msgid ""
 "If activated, the detailed metadata list in the properties dialog will be "
 "moved to its own page in the dialog. This should make the dialog more usable"
@@ -598,11 +598,11 @@ msgstr ""
 "paremini kasutatavaks. Kui see valik on märkimata, siis põimitakse "
 "metaandmed pildi omaduste dialoogis teiste andmete hulka."
 
-#: data/org.mate.eoc.gschema.xml.in:122
+#: data/org.cafe.eoc.gschema.xml.in:122
 msgid "External program to use for editing images"
 msgstr "Väline programm piltide muutmiseks"
 
-#: data/org.mate.eoc.gschema.xml.in:123
+#: data/org.cafe.eoc.gschema.xml.in:123
 msgid ""
 "The desktop file name (including the \".desktop\") of the application to use"
 " for editing images (when the \"Edit Image\" toolbar button is clicked). Set"
@@ -613,7 +613,7 @@ msgstr ""
 "\"Redigeeri pilti\". Redigeerimise funktsionaalsuse keelamiseks määra siia "
 "tühi string."
 
-#: data/org.mate.eoc.gschema.xml.in:127
+#: data/org.cafe.eoc.gschema.xml.in:127
 msgid ""
 "Whether the file chooser should show the user's pictures folder if no images"
 " are loaded."
@@ -621,7 +621,7 @@ msgstr ""
 "Kas failivalijas peaks kasutaja piltide kataloogi näitama, kui pilte pole "
 "laaditud."
 
-#: data/org.mate.eoc.gschema.xml.in:128
+#: data/org.cafe.eoc.gschema.xml.in:128
 msgid ""
 "If activated and no image is loaded in the active window, the file chooser "
 "will display the user's pictures folder using the XDG special user "
@@ -633,11 +633,11 @@ msgstr ""
 " XDG kasutaja erikataloogide hulgast). Kui märkimata või kui pildikataloog "
 "on määramata, siis kuvatakse hetke töökataloog."
 
-#: data/org.mate.eoc.gschema.xml.in:134
+#: data/org.cafe.eoc.gschema.xml.in:134
 msgid "Active plugins"
 msgstr "Aktiivsed pluginad"
 
-#: data/org.mate.eoc.gschema.xml.in:135
+#: data/org.cafe.eoc.gschema.xml.in:135
 msgid ""
 "List of active plugins. It doesn't contain the \"Location\" of the active "
 "plugins. See the .eoc-plugin file for obtaining the \"Location\" of a given "

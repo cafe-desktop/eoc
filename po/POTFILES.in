@@ -8,7 +8,7 @@ data/eoc-image-properties-dialog.ui
 data/eoc-multiple-save-as-dialog.ui
 data/eoc-preferences-dialog.ui
 data/metadata-sidebar.ui
-data/org.mate.eoc.gschema.xml.in
+data/org.cafe.eoc.gschema.xml.in
 plugins/fullscreen/eoc-fullscreen-plugin.c
 plugins/fullscreen/fullscreen.plugin.desktop.in
 plugins/reload/eoc-reload-plugin.c

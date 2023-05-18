@@ -855,7 +855,7 @@
 
 2008-05-02  Petr Kovar  <pknbe@volny.cz>
 
-	* cs.po: Merged Czech translation from the mate-2-22 branch,
+	* cs.po: Merged Czech translation from the cafe-2-22 branch,
 	helps to fix the bug #517967.
 
 2008-04-30  Vincent van Adrighem  <adrighem@gnome.org>
@@ -2616,7 +2616,7 @@
 
 2006-11-01  Satoru SATOH <ss@gnome.gr.jp>
 
-	* ja.po: Merged fixes for incorrect translations from mate-2-16 branch.
+	* ja.po: Merged fixes for incorrect translations from cafe-2-16 branch.
 
 2006-10-18  Claudio Saavedra  <csaavedra@alumnos.utalca.cl>
 
@@ -3773,7 +3773,7 @@
 2005-07-31  Ilkka Tuohela  <hile@iki.fi>
 
 	* fi.po: Bulk updates to Finnish translation
-	for new mate.fi website.
+	for new cafe.fi website.
 
 2005-07-31  Funda Wang  <fundawang@linux.net.cn>
 
@@ -5862,7 +5862,7 @@
 
 	* lt.po: updated Lithuanian translation.
 
-==== mate-2-4 branch =====
+==== cafe-2-4 branch =====
 
 2003-09-26  Gustavo Maciel Dias Vieira  <gdvieira@zaz.com.br>
 
@@ -6639,11 +6639,11 @@
 
 2002-12-09  Artis Trops  <hornet@navigator.lv>
 
-	* lv.po: sync with mate-2-0 branch.
+	* lv.po: sync with cafe-2-0 branch.
 
 2002-12-07  He Qiangqiang  <carton@linux.net.cn>
 
-	* zh_CN.po: sync with mate-2-0 branch.
+	* zh_CN.po: sync with cafe-2-0 branch.
 
 2002-12-06  Andras Timar  <timar@gnome.hu>
 
@@ -7559,7 +7559,7 @@
 
 2001-06-05  Jens Finke <jens@gnome.org>
 
-	* POTFILES.in: Please note: The src/ and matecomponent/ directories are
+	* POTFILES.in: Please note: The src/ and cafecomponent/ directories are
 	dead. I've removed references to files in these dirs again, which
 	will save you much translation work :-).
 
@@ -7666,7 +7666,7 @@
 
 2001-02-13  Jarkko Ranta  <jjranta@cc.joensuu.fi>
 
-	* fi.po: The Ultimately Final Finnish translation
+	* fi.po: The Ulticafely Final Finnish translation
 
 2001-02-12  Jarkko Ranta  <jjranta@cc.joensuu.fi>
 
@@ -7790,7 +7790,7 @@
 
 2000-11-16  Martin Baulig  <baulig@suse.de>
 
-	* POTFILES.in: Removed matecomponent-image-generic.c,
+	* POTFILES.in: Removed cafecomponent-image-generic.c,
 	this has been merged into the caja-image-viewer.
 
 2000-11-03  ERDI Gergo  <cactus@cactus.rulez.org>

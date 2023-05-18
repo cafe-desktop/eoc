@@ -31,7 +31,7 @@
 #ifndef MATE_DESKTOP_USE_UNSTABLE_API
 #define MATE_DESKTOP_USE_UNSTABLE_API
 #endif
-#include <libmate-desktop/mate-desktop-thumbnail.h>
+#include <libcafe-desktop/cafe-desktop-thumbnail.h>
 
 #include "eoc-thumbnail.h"
 #include "eoc-list-store.h"
@@ -98,7 +98,7 @@ get_valid_thumbnail (EocThumbData *data, GError **error)
 		thumb = gdk_pixbuf_new_from_file (data->thumb_path, error);
 
 		/* is this thumbnail file up to date? */
-		if (thumb != NULL && !mate_desktop_thumbnail_is_valid (thumb, data->uri_str, data->mtime)) {
+		if (thumb != NULL && !cafe_desktop_thumbnail_is_valid (thumb, data->uri_str, data->mtime)) {
 			g_object_unref (thumb);
 			thumb = NULL;
 		}
@@ -157,7 +157,7 @@ eoc_thumb_data_new (GFile *file, GError **error)
 	data = g_slice_new0 (EocThumbData);
 
 	data->uri_str    = g_file_get_uri (file);
-	data->thumb_path = mate_desktop_thumbnail_path_for_uri (data->uri_str, MATE_DESKTOP_THUMBNAIL_SIZE_NORMAL);
+	data->thumb_path = cafe_desktop_thumbnail_path_for_uri (data->uri_str, MATE_DESKTOP_THUMBNAIL_SIZE_NORMAL);
 
 	file_info = g_file_query_info (file,
 				       G_FILE_ATTRIBUTE_STANDARD_CONTENT_TYPE ","
@@ -482,7 +482,7 @@ eoc_thumbnail_load (EocImage *image, GError **error)
 		return NULL;
 
 	if (!data->can_read ||
-	    (data->failed_thumb_exists && mate_desktop_thumbnail_factory_has_valid_failed_thumbnail (factory, data->uri_str, data->mtime))) {
+	    (data->failed_thumb_exists && cafe_desktop_thumbnail_factory_has_valid_failed_thumbnail (factory, data->uri_str, data->mtime))) {
 		eoc_debug_message (DEBUG_THUMBNAIL, "%s: bad permissions or valid failed thumbnail present",data->uri_str);
 		set_thumb_error (error, EOC_THUMB_ERROR_GENERIC, "Thumbnail creation failed");
 		return NULL;
@@ -493,7 +493,7 @@ eoc_thumbnail_load (EocImage *image, GError **error)
 
 	if (thumb != NULL) {
 		eoc_debug_message (DEBUG_THUMBNAIL, "%s: loaded from cache",data->uri_str);
-	} else if (mate_desktop_thumbnail_factory_can_thumbnail (factory, data->uri_str, data->mime_type, data->mtime)) {
+	} else if (cafe_desktop_thumbnail_factory_can_thumbnail (factory, data->uri_str, data->mime_type, data->mtime)) {
 		/* Only use the image pixbuf when it is up to date. */
 		if (!eoc_image_is_file_changed (image))
 			pixbuf = eoc_image_get_pixbuf (image);
@@ -507,16 +507,16 @@ eoc_thumbnail_load (EocImage *image, GError **error)
 		} else {
 			/* generate a thumbnail from the file */
 			eoc_debug_message (DEBUG_THUMBNAIL, "%s: creating from file",data->uri_str);
-			thumb = mate_desktop_thumbnail_factory_generate_thumbnail (factory, data->uri_str, data->mime_type);
+			thumb = cafe_desktop_thumbnail_factory_generate_thumbnail (factory, data->uri_str, data->mime_type);
 		}
 
 		if (thumb != NULL) {
 			/* Save the new thumbnail */
-			mate_desktop_thumbnail_factory_save_thumbnail (factory, thumb, data->uri_str, data->mtime);
+			cafe_desktop_thumbnail_factory_save_thumbnail (factory, thumb, data->uri_str, data->mtime);
 			eoc_debug_message (DEBUG_THUMBNAIL, "%s: normal thumbnail saved",data->uri_str);
 		} else {
 			/* Save a failed thumbnail, to stop further thumbnail attempts */
-			mate_desktop_thumbnail_factory_create_failed_thumbnail (factory, data->uri_str, data->mtime);
+			cafe_desktop_thumbnail_factory_create_failed_thumbnail (factory, data->uri_str, data->mtime);
 			eoc_debug_message (DEBUG_THUMBNAIL, "%s: failed thumbnail saved",data->uri_str);
 			set_thumb_error (error, EOC_THUMB_ERROR_GENERIC, "Thumbnail creation failed");
 		}
@@ -531,12 +531,12 @@ void
 eoc_thumbnail_init (void)
 {
 	if (factory == NULL) {
-		factory = mate_desktop_thumbnail_factory_new (MATE_DESKTOP_THUMBNAIL_SIZE_NORMAL);
+		factory = cafe_desktop_thumbnail_factory_new (MATE_DESKTOP_THUMBNAIL_SIZE_NORMAL);
 	}
 
 	if (frame == NULL) {
 		frame = gdk_pixbuf_new_from_resource (
-	                    "/org/mate/eoc/ui/pixmaps/thumbnail-frame.png",
+	                    "/org/cafe/eoc/ui/pixmaps/thumbnail-frame.png",
 	                    NULL);
 	}
 }

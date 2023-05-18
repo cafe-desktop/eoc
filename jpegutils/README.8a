@@ -86,7 +86,7 @@ applications for inserting and extracting textual comments in JFIF files.
 The emphasis in designing this software has been on achieving portability and
 flexibility, while also making it fast enough to be useful.  In particular,
 the software is not intended to be read as a tutorial on JPEG.  (See the
-REFERENCES section for introductory material.)  Rather, it is intended to
+REFERENCES section for introductory caferial.)  Rather, it is intended to
 be reliable, portable, industrial-strength code.  We do not claim to have
 achieved that goal in every aspect of the software, but we strive for it.
 
@@ -188,7 +188,7 @@ handy, a PostScript file containing a revised version of Wallace's article is
 available at http://www.ijg.org/files/wallace.ps.gz.  The file (actually
 a preprint for an article that appeared in IEEE Trans. Consumer Electronics)
 omits the sample images that appeared in CACM, but it includes corrections
-and some added material.  Note: the Wallace article is copyright ACM and IEEE,
+and some added caferial.  Note: the Wallace article is copyright ACM and IEEE,
 and it may not be used for commercial purposes.
 
 A somewhat less technical, more leisurely introduction to JPEG can be found in

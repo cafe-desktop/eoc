@@ -3,7 +3,7 @@
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # Marcelo Ghelman <marcelo.ghelman@gmail.com>, 2020
 # Victor Gonçalves <hotcyv@gmail.com>, 2020
-# Wolfgang Ulbrich <mate@raveit.de>, 2020
+# Wolfgang Ulbrich <cafe@raveit.de>, 2020
 # Italo Penaforte <italo.penaforte@gmail.com>, 2020
 # b36c7cf4cf669a51ae00d04c19629819, 2020
 # George Silva <algoritmo.linux@gmail.com>, 2020
@@ -14,7 +14,7 @@ msgstr ""
 "POT-Creation-Date: 2019-07-02 11:34+0200\n"
 "PO-Revision-Date: 2020-02-14 12:08+0000\n"
 "Last-Translator: George Silva <algoritmo.linux@gmail.com>, 2020\n"
-"Language-Team: Portuguese (Brazil) (https://www.transifex.com/mate/teams/13566/pt_BR/)\n"
+"Language-Team: Portuguese (Brazil) (https://www.transifex.com/cafe/teams/13566/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -201,7 +201,7 @@ msgstr ""
 #: C/index.docbook:243
 msgid ""
 "Run <command>eoc</command> at the prompt in a terminal such as <application"
-">mate-terminal</application>, or from the <application>Run "
+">cafe-terminal</application>, or from the <application>Run "
 "Application</application> dialog."
 msgstr ""
 
@@ -824,7 +824,7 @@ msgid ""
 "To restore an image from the Trash, open the Trash folder in "
 "<application>Caja</application> file manager and move the image file to "
 "another folder. To delete the image permanently, empty the Trash. To find "
-"out more about using the Trash, see the <link xlink:href=\"help:mate-user-"
+"out more about using the Trash, see the <link xlink:href=\"help:cafe-user-"
 "guide/caja-trash\">Desktop User Guide</link>."
 msgstr ""
 
@@ -1453,6 +1453,6 @@ msgstr "Retorno"
 msgid ""
 "To report a bug or make a suggestion regarding the <application>Image "
 "Viewer</application> application or this manual, follow the directions in "
-"the <link xlink:href=\"help:mate-user-guide/feedback\">MATE Feedback "
+"the <link xlink:href=\"help:cafe-user-guide/feedback\">MATE Feedback "
 "Page</link>."
 msgstr ""

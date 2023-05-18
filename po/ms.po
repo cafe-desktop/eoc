@@ -11,11 +11,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: eoc 1.23.1\n"
-"Report-Msgid-Bugs-To: http://www.mate-desktop.org\n"
+"Report-Msgid-Bugs-To: http://www.cafe-desktop.org\n"
 "POT-Creation-Date: 2020-01-10 14:33+0100\n"
 "PO-Revision-Date: 2020-02-14 12:07+0000\n"
 "Last-Translator: abuyop <abuyop@gmail.com>, 2020\n"
-"Language-Team: Malay (https://www.transifex.com/mate/teams/13566/ms/)\n"
+"Language-Team: Malay (https://www.transifex.com/cafe/teams/13566/ms/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -271,7 +271,7 @@ msgstr "Latar Belakang"
 msgid "As custom color:"
 msgstr "Sebagai warna suai:"
 
-#: data/eoc-preferences-dialog.ui:267 data/org.mate.eoc.gschema.xml.in:16
+#: data/eoc-preferences-dialog.ui:267 data/org.cafe.eoc.gschema.xml.in:16
 msgid "Background Color"
 msgstr "Warna Latar Belakang"
 
@@ -383,16 +383,16 @@ msgstr "Masa"
 msgid "Focal Length"
 msgstr "Panjang Fokus"
 
-#: data/org.mate.eoc.gschema.xml.in:11
+#: data/org.cafe.eoc.gschema.xml.in:11
 msgid "Automatic orientation"
 msgstr "Orientasi automatik"
 
-#: data/org.mate.eoc.gschema.xml.in:12
+#: data/org.cafe.eoc.gschema.xml.in:12
 msgid ""
 "Whether the image should be rotated automatically based on EXIF orientation."
 msgstr "Sama ada imej perlu diputarkan automatik berasaskan orientasi EXIF."
 
-#: data/org.mate.eoc.gschema.xml.in:17
+#: data/org.cafe.eoc.gschema.xml.in:17
 msgid ""
 "The color that is used to fill the area behind the image. If the use-"
 "background-color key is not set, the color is determined by the active GTK+ "
@@ -402,11 +402,11 @@ msgstr ""
 "background-color tidak ditetapkan, warna ditentukan oleh tema aktif GTK+ "
 "sebaliknya."
 
-#: data/org.mate.eoc.gschema.xml.in:21
+#: data/org.cafe.eoc.gschema.xml.in:21
 msgid "Use a custom background color"
 msgstr "Guna warna latar belakang suai"
 
-#: data/org.mate.eoc.gschema.xml.in:22
+#: data/org.cafe.eoc.gschema.xml.in:22
 msgid ""
 "If this is active, the color set by the background-color key will be used to"
 " fill the area behind the image. If it is not set, the current GTK+ theme "
@@ -416,11 +416,11 @@ msgstr ""
 "akan digunakan untuk mengisi kawasan di sebalik imej. Jika ia tidak "
 "ditetapkan, tema semasa GTK+ akan menentukan warna isian."
 
-#: data/org.mate.eoc.gschema.xml.in:26
+#: data/org.cafe.eoc.gschema.xml.in:26
 msgid "Interpolate Image"
 msgstr "Interpolasi Imej"
 
-#: data/org.mate.eoc.gschema.xml.in:27
+#: data/org.cafe.eoc.gschema.xml.in:27
 msgid ""
 "Whether the image should be interpolated on zoom-out. This leads to better "
 "quality but is somewhat slower than non-interpolated images."
@@ -428,11 +428,11 @@ msgstr ""
 "Sama ada imej perlu diekstrapolasi pada zum keluar. Ini membawa kepada "
 "kualiti lebih baik dan agak perlahan berbanding imej tidak diekstrapolasi."
 
-#: data/org.mate.eoc.gschema.xml.in:31
+#: data/org.cafe.eoc.gschema.xml.in:31
 msgid "Extrapolate Image"
 msgstr "Ekstrapolasi Imej"
 
-#: data/org.mate.eoc.gschema.xml.in:32
+#: data/org.cafe.eoc.gschema.xml.in:32
 msgid ""
 "Whether the image should be extrapolated on zoom-in. This leads to blurry "
 "quality and is somewhat slower than non-extrapolated images."
@@ -440,11 +440,11 @@ msgstr ""
 "Sama ada imej perlu diekstrapolasi pada zum masuk. Ini membawa kepada "
 "kualiti kabur dan agak perlahan berbanding imej tidak diekstrapolasi."
 
-#: data/org.mate.eoc.gschema.xml.in:36
+#: data/org.cafe.eoc.gschema.xml.in:36
 msgid "Transparency indicator"
 msgstr "Penunjuk Kelutsinaran"
 
-#: data/org.mate.eoc.gschema.xml.in:37
+#: data/org.cafe.eoc.gschema.xml.in:37
 msgid ""
 "Determines how transparency should be indicated. Valid values are checked, "
 "color and none. If color is chosen, then the trans-color key determines the "
@@ -454,19 +454,19 @@ msgstr ""
 "tiada. Jika warna dipilih, maka kunci warna-trans tentukan nilai warna yang "
 "digunakan."
 
-#: data/org.mate.eoc.gschema.xml.in:41
+#: data/org.cafe.eoc.gschema.xml.in:41
 msgid "Scroll wheel zoom"
 msgstr "Zum roda tatal"
 
-#: data/org.mate.eoc.gschema.xml.in:42
+#: data/org.cafe.eoc.gschema.xml.in:42
 msgid "Whether the scroll wheel should be used for zooming."
 msgstr "Sama ada roda tatal perlu digunakan untuk zum."
 
-#: data/org.mate.eoc.gschema.xml.in:46
+#: data/org.cafe.eoc.gschema.xml.in:46
 msgid "Zoom multiplier"
 msgstr "Pendarab zum"
 
-#: data/org.mate.eoc.gschema.xml.in:47
+#: data/org.cafe.eoc.gschema.xml.in:47
 msgid ""
 "The multiplier to be applied when using the mouse scroll wheel for zooming. "
 "This value defines the zooming step used for each scroll event. For example,"
@@ -478,11 +478,11 @@ msgstr ""
 " skrol. Sebagai contoh, 0.05 menyebabkan pertambahan zum 5% bagi setiap "
 "tindakan skrol dan 1.00 mengakibatkan pertambahan zoom 100%."
 
-#: data/org.mate.eoc.gschema.xml.in:51
+#: data/org.cafe.eoc.gschema.xml.in:51
 msgid "Transparency color"
 msgstr "Warna Lutsinar"
 
-#: data/org.mate.eoc.gschema.xml.in:52
+#: data/org.cafe.eoc.gschema.xml.in:52
 msgid ""
 "If the transparency key has the value COLOR, then this key determines the "
 "color which is used for indicating transparency."
@@ -490,27 +490,27 @@ msgstr ""
 "Jika kunci lutsinar mempunyai nilai COLOR, kemudian kunci ini menentukan "
 "warna yang digunakan untuk menunjukkan kelutsinaran."
 
-#: data/org.mate.eoc.gschema.xml.in:58
+#: data/org.cafe.eoc.gschema.xml.in:58
 msgid "Randomize the image sequence"
 msgstr "Rawakkan jujukan imej"
 
-#: data/org.mate.eoc.gschema.xml.in:59
+#: data/org.cafe.eoc.gschema.xml.in:59
 msgid "Whether the sequence of images should be shown in an random loop."
 msgstr "Sama ada jujukan imej seharusnya ditunjukkan dalam gelung rawak."
 
-#: data/org.mate.eoc.gschema.xml.in:63
+#: data/org.cafe.eoc.gschema.xml.in:63
 msgid "Loop through the image sequence"
 msgstr "Gelung menerusi jujukan imej"
 
-#: data/org.mate.eoc.gschema.xml.in:64
+#: data/org.cafe.eoc.gschema.xml.in:64
 msgid "Whether the sequence of images should be shown in an endless loop."
 msgstr "Sama ada turutan imej patut dipaparkan dalam pusingan selamanya."
 
-#: data/org.mate.eoc.gschema.xml.in:68
+#: data/org.cafe.eoc.gschema.xml.in:68
 msgid "Allow zoom greater than 100% initially"
 msgstr "Izinkan zum lebih besar drpd 100% pada permulaan"
 
-#: data/org.mate.eoc.gschema.xml.in:69
+#: data/org.cafe.eoc.gschema.xml.in:69
 msgid ""
 "If this is set to FALSE small images will not be stretched to fit into the "
 "screen initially."
@@ -518,11 +518,11 @@ msgstr ""
 "Jika ditetapkan ke PALSU imej kecil tidak akan diregangkan supaya muat pada "
 "skrin pada permulaan."
 
-#: data/org.mate.eoc.gschema.xml.in:73
+#: data/org.cafe.eoc.gschema.xml.in:73
 msgid "Delay in seconds until showing the next image"
 msgstr "Lengahan dalam saat sehingga menunjukkan imej berikutnya"
 
-#: data/org.mate.eoc.gschema.xml.in:74
+#: data/org.cafe.eoc.gschema.xml.in:74
 msgid ""
 "A value greater than 0 determines the seconds an image stays on screen until"
 " the next one is shown automatically. Zero disables the automatic browsing."
@@ -531,43 +531,43 @@ msgstr ""
 " yangg berikutnya dipaparkan secara automatik. Sifar lumpuhkan pelayaran "
 "automatik."
 
-#: data/org.mate.eoc.gschema.xml.in:80
+#: data/org.cafe.eoc.gschema.xml.in:80
 msgid "Show/Hide the window toolbar."
 msgstr "Tunjuk/Sembunyi palang alat tetingkap."
 
-#: data/org.mate.eoc.gschema.xml.in:84
+#: data/org.cafe.eoc.gschema.xml.in:84
 msgid "Show/Hide the window statusbar."
 msgstr "Tunjuk/Sembunyi palang status tetingkap."
 
-#: data/org.mate.eoc.gschema.xml.in:88
+#: data/org.cafe.eoc.gschema.xml.in:88
 msgid "Show/Hide the image collection pane."
 msgstr "Tunjuk/Sembunyi anak tetingkap koleksi imej."
 
-#: data/org.mate.eoc.gschema.xml.in:92
+#: data/org.cafe.eoc.gschema.xml.in:92
 msgid "Image collection pane position."
 msgstr "Kedudukan anak tetingkap koleksi imej."
 
-#: data/org.mate.eoc.gschema.xml.in:96
+#: data/org.cafe.eoc.gschema.xml.in:96
 msgid "Whether the image collection pane should be resizable."
 msgstr "Sama ada anak tetingkap koleksi imej boleh saiz semula."
 
-#: data/org.mate.eoc.gschema.xml.in:100
+#: data/org.cafe.eoc.gschema.xml.in:100
 msgid "Show/Hide the window side pane."
 msgstr "Tunjuk/Sembunyi anak tetingkap sisi tetingkap."
 
-#: data/org.mate.eoc.gschema.xml.in:104
+#: data/org.cafe.eoc.gschema.xml.in:104
 msgid "Show/Hide the image collection pane scroll buttons."
 msgstr "Tunjuk/Sembunyi butang tatal anak tetingkap koleksi imej."
 
-#: data/org.mate.eoc.gschema.xml.in:108
+#: data/org.cafe.eoc.gschema.xml.in:108
 msgid "Close main window without asking to save changes."
 msgstr "Tutup tetingkap utama tanpa menanya jika simpan perubahan."
 
-#: data/org.mate.eoc.gschema.xml.in:112
+#: data/org.cafe.eoc.gschema.xml.in:112
 msgid "Trash images without asking"
 msgstr "Buang imej tanpa bertanya"
 
-#: data/org.mate.eoc.gschema.xml.in:113
+#: data/org.cafe.eoc.gschema.xml.in:113
 msgid ""
 "If activated, Eye of MATE won't ask for confirmation when moving images to "
 "the trash. It will still ask if any of the files cannot be moved to the "
@@ -577,14 +577,14 @@ msgstr ""
 "dihantar ke tong sampah. Ia masih akan meminta jika mana-mana fail tersebut "
 "tidak boleh dipindahkan ke tong sampah dan akan dipaddam sebaliknya."
 
-#: data/org.mate.eoc.gschema.xml.in:117
+#: data/org.cafe.eoc.gschema.xml.in:117
 msgid ""
 "Whether the metadata list in the properties dialog should have its own page."
 msgstr ""
 "Sama ada senarai data meta dalam dialog sifat patut mempunyai halamannya "
 "sendiri."
 
-#: data/org.mate.eoc.gschema.xml.in:118
+#: data/org.cafe.eoc.gschema.xml.in:118
 msgid ""
 "If activated, the detailed metadata list in the properties dialog will be "
 "moved to its own page in the dialog. This should make the dialog more usable"
@@ -597,11 +597,11 @@ msgstr ""
 "digunakan oleh netbook. Jika dilumpuhkan, widget akan terbenam pada halaman "
 "\"Metadata\"."
 
-#: data/org.mate.eoc.gschema.xml.in:122
+#: data/org.cafe.eoc.gschema.xml.in:122
 msgid "External program to use for editing images"
 msgstr "Program luar yang diguna untu menyunting imej"
 
-#: data/org.mate.eoc.gschema.xml.in:123
+#: data/org.cafe.eoc.gschema.xml.in:123
 msgid ""
 "The desktop file name (including the \".desktop\") of the application to use"
 " for editing images (when the \"Edit Image\" toolbar button is clicked). Set"
@@ -611,7 +611,7 @@ msgstr ""
 "menyunting imej (bila butang palang alat \"Sunting Imej\" diklik). Tetapkan "
 "untuk kosongkan rentetan untuk melumpuhkan fitur ini."
 
-#: data/org.mate.eoc.gschema.xml.in:127
+#: data/org.cafe.eoc.gschema.xml.in:127
 msgid ""
 "Whether the file chooser should show the user's pictures folder if no images"
 " are loaded."
@@ -619,7 +619,7 @@ msgstr ""
 "Sama ada pemilih fail menunjukkan folder gambar pengguna jika tiada imej "
 "dimuatkan."
 
-#: data/org.mate.eoc.gschema.xml.in:128
+#: data/org.cafe.eoc.gschema.xml.in:128
 msgid ""
 "If activated and no image is loaded in the active window, the file chooser "
 "will display the user's pictures folder using the XDG special user "
@@ -631,11 +631,11 @@ msgstr ""
 "yang khas. Jika dinyahaktifkan atau folder gambar belum ditetapkan, ia akan "
 "menunjukkan direktori bekerja semasa."
 
-#: data/org.mate.eoc.gschema.xml.in:134
+#: data/org.cafe.eoc.gschema.xml.in:134
 msgid "Active plugins"
 msgstr "Pemalam aktif"
 
-#: data/org.mate.eoc.gschema.xml.in:135
+#: data/org.cafe.eoc.gschema.xml.in:135
 msgid ""
 "List of active plugins. It doesn't contain the \"Location\" of the active "
 "plugins. See the .eoc-plugin file for obtaining the \"Location\" of a given "

@@ -257,7 +257,7 @@ eoc_image_class_init (EocImageClass *klass)
   	 * @img: the object which received the signal.
 	 * @delay: number of milliseconds the current frame will be displayed.
 	 *
-	 * The ::next-frame signal will be emitted each time an animated image
+	 * The ::next-frame signal will be emitted each time an anicafed image
 	 * advances to the next frame.
 	 */
 	signals[SIGNAL_NEXT_FRAME] =
@@ -2306,9 +2306,9 @@ eoc_image_iter_advance (EocImage *img)
  * eoc_image_is_animation:
  * @img: a #EocImage
  *
- * Checks whether a given image is animated.
+ * Checks whether a given image is anicafed.
  *
- * Returns: #TRUE if it is an animated image, #FALSE otherwise.
+ * Returns: #TRUE if it is an anicafed image, #FALSE otherwise.
  *
  **/
 gboolean
@@ -2339,9 +2339,9 @@ private_timeout (gpointer data)
  * eoc_image_start_animation:
  * @img: a #EocImage
  *
- * Starts playing an animated image.
+ * Starts playing an anicafed image.
  *
- * Returns: %TRUE on success, %FALSE if @img is already playing or isn't an animated image.
+ * Returns: %TRUE on success, %FALSE if @img is already playing or isn't an anicafed image.
  **/
 gboolean
 eoc_image_start_animation (EocImage *img)

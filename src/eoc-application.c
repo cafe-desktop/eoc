@@ -41,7 +41,7 @@
 #include <gtk/gtk.h>
 #include <gdk/gdkx.h>
 
-#define APPLICATION_SERVICE_NAME "org.mate.eoc.ApplicationService"
+#define APPLICATION_SERVICE_NAME "org.cafe.eoc.ApplicationService"
 
 static void eoc_application_load_accelerators (void);
 static void eoc_application_save_accelerators (void);
@@ -512,7 +512,7 @@ eoc_application_reset_toolbars_model (EocApplication *app)
 static void
 eoc_application_load_accelerators (void)
 {
-		gchar* accelfile = g_build_filename(g_get_user_config_dir(), "mate", "accels", "eoc", NULL);
+		gchar* accelfile = g_build_filename(g_get_user_config_dir(), "cafe", "accels", "eoc", NULL);
 
 	/* gtk_accel_map_load does nothing if the file does not exist */
 	gtk_accel_map_load (accelfile);
@@ -522,7 +522,7 @@ eoc_application_load_accelerators (void)
 static void
 eoc_application_save_accelerators (void)
 {
-		gchar* accelfile = g_build_filename(g_get_user_config_dir(), "mate", "accels", "eoc", NULL);
+		gchar* accelfile = g_build_filename(g_get_user_config_dir(), "cafe", "accels", "eoc", NULL);
 
 	gtk_accel_map_save (accelfile);
 	g_free (accelfile);

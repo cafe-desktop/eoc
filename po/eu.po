@@ -12,11 +12,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: eoc 1.23.1\n"
-"Report-Msgid-Bugs-To: http://www.mate-desktop.org\n"
+"Report-Msgid-Bugs-To: http://www.cafe-desktop.org\n"
 "POT-Creation-Date: 2020-01-10 14:33+0100\n"
 "PO-Revision-Date: 2020-02-14 12:07+0000\n"
 "Last-Translator: Aritz Jorge Sánchez <aritz.jorge@protonmail.com>, 2020\n"
-"Language-Team: Basque (https://www.transifex.com/mate/teams/13566/eu/)\n"
+"Language-Team: Basque (https://www.transifex.com/cafe/teams/13566/eu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -269,7 +269,7 @@ msgstr "Atzeko planoa"
 msgid "As custom color:"
 msgstr "Kolore pertsonalizatu gisa:"
 
-#: data/eoc-preferences-dialog.ui:267 data/org.mate.eoc.gschema.xml.in:16
+#: data/eoc-preferences-dialog.ui:267 data/org.cafe.eoc.gschema.xml.in:16
 msgid "Background Color"
 msgstr "Atzeko planoaren kolorea"
 
@@ -381,16 +381,16 @@ msgstr "Ordua"
 msgid "Focal Length"
 msgstr "Fokuaren luzera"
 
-#: data/org.mate.eoc.gschema.xml.in:11
+#: data/org.cafe.eoc.gschema.xml.in:11
 msgid "Automatic orientation"
 msgstr "Orientazio automatikoa"
 
-#: data/org.mate.eoc.gschema.xml.in:12
+#: data/org.cafe.eoc.gschema.xml.in:12
 msgid ""
 "Whether the image should be rotated automatically based on EXIF orientation."
 msgstr "EXIF orientazioaren arabera irudia automatikoki biratuko den edo ez."
 
-#: data/org.mate.eoc.gschema.xml.in:17
+#: data/org.cafe.eoc.gschema.xml.in:17
 msgid ""
 "The color that is used to fill the area behind the image. If the use-"
 "background-color key is not set, the color is determined by the active GTK+ "
@@ -400,11 +400,11 @@ msgstr ""
 "color' gakoa ez bada ezartzen, aktibo dagoen GTK+ gaiak zehaztuko du "
 "kolorea."
 
-#: data/org.mate.eoc.gschema.xml.in:21
+#: data/org.cafe.eoc.gschema.xml.in:21
 msgid "Use a custom background color"
 msgstr "Erabili atzeko planoaren kolore pertsonalizatua"
 
-#: data/org.mate.eoc.gschema.xml.in:22
+#: data/org.cafe.eoc.gschema.xml.in:22
 msgid ""
 "If this is active, the color set by the background-color key will be used to"
 " fill the area behind the image. If it is not set, the current GTK+ theme "
@@ -414,11 +414,11 @@ msgstr ""
 " ezarritako kolorea erabiliko da irudiaren atzeko area betetzeko. Aukera hau"
 " ez bada ezartzen, uneko GTK+ gaiak zehaztuko du kolore betegarria."
 
-#: data/org.mate.eoc.gschema.xml.in:26
+#: data/org.cafe.eoc.gschema.xml.in:26
 msgid "Interpolate Image"
 msgstr "Interpolatu irudia"
 
-#: data/org.mate.eoc.gschema.xml.in:27
+#: data/org.cafe.eoc.gschema.xml.in:27
 msgid ""
 "Whether the image should be interpolated on zoom-out. This leads to better "
 "quality but is somewhat slower than non-interpolated images."
@@ -426,11 +426,11 @@ msgstr ""
 "Irudia zooma txikiagotzean interpolatu behar den ala ez. Kalitatea hobea "
 "izango da, baina interpolatu gabeko irudiak baino mantsoago ibiliko da."
 
-#: data/org.mate.eoc.gschema.xml.in:31
+#: data/org.cafe.eoc.gschema.xml.in:31
 msgid "Extrapolate Image"
 msgstr "Estrapolatu irudia"
 
-#: data/org.mate.eoc.gschema.xml.in:32
+#: data/org.cafe.eoc.gschema.xml.in:32
 msgid ""
 "Whether the image should be extrapolated on zoom-in. This leads to blurry "
 "quality and is somewhat slower than non-extrapolated images."
@@ -438,11 +438,11 @@ msgstr ""
 "Irudia zooma handiagotzean estrapolatu behar den ala ez. Kalitatea lausoagoa"
 " izango da, baina estrapolatu gabeko irudiak baino mantsoago ibiliko da."
 
-#: data/org.mate.eoc.gschema.xml.in:36
+#: data/org.cafe.eoc.gschema.xml.in:36
 msgid "Transparency indicator"
 msgstr "Gardentasun-adierazlea"
 
-#: data/org.mate.eoc.gschema.xml.in:37
+#: data/org.cafe.eoc.gschema.xml.in:37
 msgid ""
 "Determines how transparency should be indicated. Valid values are checked, "
 "color and none. If color is chosen, then the trans-color key determines the "
@@ -452,19 +452,19 @@ msgstr ""
 "kolorea eta deus ez. Kolorea aukeratzen bada, trans_color gakoak zehazten du"
 " kolorearen balioa."
 
-#: data/org.mate.eoc.gschema.xml.in:41
+#: data/org.cafe.eoc.gschema.xml.in:41
 msgid "Scroll wheel zoom"
 msgstr "Korritze-gurpilaren zooma"
 
-#: data/org.mate.eoc.gschema.xml.in:42
+#: data/org.cafe.eoc.gschema.xml.in:42
 msgid "Whether the scroll wheel should be used for zooming."
 msgstr "Korritze-gurpila zooma egiteko erabiliko den edo ez."
 
-#: data/org.mate.eoc.gschema.xml.in:46
+#: data/org.cafe.eoc.gschema.xml.in:46
 msgid "Zoom multiplier"
 msgstr "Zoomaren biderkatzailea"
 
-#: data/org.mate.eoc.gschema.xml.in:47
+#: data/org.cafe.eoc.gschema.xml.in:47
 msgid ""
 "The multiplier to be applied when using the mouse scroll wheel for zooming. "
 "This value defines the zooming step used for each scroll event. For example,"
@@ -476,11 +476,11 @@ msgstr ""
 " du. Adibidez, 0.05 balioak %5-ean handitzen du zooma korritze-gertaera "
 "bakoitzean, eta 1.00 balioak zooma %100-ean handitzen du"
 
-#: data/org.mate.eoc.gschema.xml.in:51
+#: data/org.cafe.eoc.gschema.xml.in:51
 msgid "Transparency color"
 msgstr "Gardentasunaren kolorea"
 
-#: data/org.mate.eoc.gschema.xml.in:52
+#: data/org.cafe.eoc.gschema.xml.in:52
 msgid ""
 "If the transparency key has the value COLOR, then this key determines the "
 "color which is used for indicating transparency."
@@ -488,28 +488,28 @@ msgstr ""
 "Gardentasunaren gakoak COLOR balioa badu, gako honek zehaztuko du "
 "gardentasuna adierazteko erabiliko den kolorea."
 
-#: data/org.mate.eoc.gschema.xml.in:58
+#: data/org.cafe.eoc.gschema.xml.in:58
 msgid "Randomize the image sequence"
 msgstr "Ausaz nahastu irudi segida"
 
-#: data/org.mate.eoc.gschema.xml.in:59
+#: data/org.cafe.eoc.gschema.xml.in:59
 msgid "Whether the sequence of images should be shown in an random loop."
 msgstr "Irudi segida ausazko begizta batean erakutsi behar den edo ez "
 
-#: data/org.mate.eoc.gschema.xml.in:63
+#: data/org.cafe.eoc.gschema.xml.in:63
 msgid "Loop through the image sequence"
 msgstr "Begiztatu irudi-segida bitartez"
 
-#: data/org.mate.eoc.gschema.xml.in:64
+#: data/org.cafe.eoc.gschema.xml.in:64
 msgid "Whether the sequence of images should be shown in an endless loop."
 msgstr ""
 "Irudi-segida amaierarik gabeko begizta batean erakutsi behar den edo ez."
 
-#: data/org.mate.eoc.gschema.xml.in:68
+#: data/org.cafe.eoc.gschema.xml.in:68
 msgid "Allow zoom greater than 100% initially"
 msgstr "Baimendu zooma %100 baino handiagoa izatea hasieran"
 
-#: data/org.mate.eoc.gschema.xml.in:69
+#: data/org.cafe.eoc.gschema.xml.in:69
 msgid ""
 "If this is set to FALSE small images will not be stretched to fit into the "
 "screen initially."
@@ -517,11 +517,11 @@ msgstr ""
 "FALSE balioarekin ezartzen bada, irudi txikiak ez dira pantaila bete arte "
 "tiratuko hasieran."
 
-#: data/org.mate.eoc.gschema.xml.in:73
+#: data/org.cafe.eoc.gschema.xml.in:73
 msgid "Delay in seconds until showing the next image"
 msgstr "Atzerapena segundotan, hurrengo irudia erakutsi aurretik"
 
-#: data/org.mate.eoc.gschema.xml.in:74
+#: data/org.cafe.eoc.gschema.xml.in:74
 msgid ""
 "A value greater than 0 determines the seconds an image stays on screen until"
 " the next one is shown automatically. Zero disables the automatic browsing."
@@ -530,43 +530,43 @@ msgstr ""
 "erakutsiko den zehazten du, hurrengo irudia automatikoki erakutsi aurretik. "
 "0 balioak bistaratze automatikoa desgaitzen du."
 
-#: data/org.mate.eoc.gschema.xml.in:80
+#: data/org.cafe.eoc.gschema.xml.in:80
 msgid "Show/Hide the window toolbar."
 msgstr "Erakutsi/ezkutatu leihoaren tresna-barra."
 
-#: data/org.mate.eoc.gschema.xml.in:84
+#: data/org.cafe.eoc.gschema.xml.in:84
 msgid "Show/Hide the window statusbar."
 msgstr "Erakutsi/ezkutatu leihoaren egoera-barra."
 
-#: data/org.mate.eoc.gschema.xml.in:88
+#: data/org.cafe.eoc.gschema.xml.in:88
 msgid "Show/Hide the image collection pane."
 msgstr "Erakutsi/ezkutatu irudi-bildumaren panela."
 
-#: data/org.mate.eoc.gschema.xml.in:92
+#: data/org.cafe.eoc.gschema.xml.in:92
 msgid "Image collection pane position."
 msgstr "Irudi bilduma panelaren kokapena"
 
-#: data/org.mate.eoc.gschema.xml.in:96
+#: data/org.cafe.eoc.gschema.xml.in:96
 msgid "Whether the image collection pane should be resizable."
 msgstr "Irudi-bildumaren panela tamainaz alda daitekeen edo ez."
 
-#: data/org.mate.eoc.gschema.xml.in:100
+#: data/org.cafe.eoc.gschema.xml.in:100
 msgid "Show/Hide the window side pane."
 msgstr "Erakutsi/ezkutatu leihoaren albo-panela."
 
-#: data/org.mate.eoc.gschema.xml.in:104
+#: data/org.cafe.eoc.gschema.xml.in:104
 msgid "Show/Hide the image collection pane scroll buttons."
 msgstr "Erakutsi/ezkutatu irudi-bildumaren paneleko korritze-botoiak."
 
-#: data/org.mate.eoc.gschema.xml.in:108
+#: data/org.cafe.eoc.gschema.xml.in:108
 msgid "Close main window without asking to save changes."
 msgstr "Itxi leiho nagusia aldaketak gordetzeko eskatu gabe"
 
-#: data/org.mate.eoc.gschema.xml.in:112
+#: data/org.cafe.eoc.gschema.xml.in:112
 msgid "Trash images without asking"
 msgstr "Bota irudiak zakarrontzira galdetu gabe"
 
-#: data/org.mate.eoc.gschema.xml.in:113
+#: data/org.cafe.eoc.gschema.xml.in:113
 msgid ""
 "If activated, Eye of MATE won't ask for confirmation when moving images to "
 "the trash. It will still ask if any of the files cannot be moved to the "
@@ -576,14 +576,14 @@ msgstr ""
 "zakarrontzira botatzean. Hala ere, irudietariko batzuk ezin badira "
 "zakarrontzira bota, horren ordez ezabatu egin behar al diren galdetuko du."
 
-#: data/org.mate.eoc.gschema.xml.in:117
+#: data/org.cafe.eoc.gschema.xml.in:117
 msgid ""
 "Whether the metadata list in the properties dialog should have its own page."
 msgstr ""
 "Propietateen elkarrizketa-koadroan metadatuen zerrendak bere orrialde "
 "propioa eduki behar duen edo ez."
 
-#: data/org.mate.eoc.gschema.xml.in:118
+#: data/org.cafe.eoc.gschema.xml.in:118
 msgid ""
 "If activated, the detailed metadata list in the properties dialog will be "
 "moved to its own page in the dialog. This should make the dialog more usable"
@@ -596,11 +596,11 @@ msgstr ""
 "ordenagailuetan, adib. 'sareko ordenagailu' edo netbook-etan. Desaktibatzen "
 "bada, trepeta \"Metadatuak\" orrialdean kapsulatuko dira."
 
-#: data/org.mate.eoc.gschema.xml.in:122
+#: data/org.cafe.eoc.gschema.xml.in:122
 msgid "External program to use for editing images"
 msgstr "Irudiak editatzeko kanpoko aplikazioa"
 
-#: data/org.mate.eoc.gschema.xml.in:123
+#: data/org.cafe.eoc.gschema.xml.in:123
 msgid ""
 "The desktop file name (including the \".desktop\") of the application to use"
 " for editing images (when the \"Edit Image\" toolbar button is clicked). Set"
@@ -610,7 +610,7 @@ msgstr ""
 "badago) erabiliko den mahaigaineko fitxategi-izena (\".desktop\" barne). "
 "Hutsik utzi bat ere ez erabiltzeko."
 
-#: data/org.mate.eoc.gschema.xml.in:127
+#: data/org.cafe.eoc.gschema.xml.in:127
 msgid ""
 "Whether the file chooser should show the user's pictures folder if no images"
 " are loaded."
@@ -618,7 +618,7 @@ msgstr ""
 "Irudirik ez bada kargatu, fitxategi-aukeratzaileak erabiltzailearen "
 "argazkien karpeta erakutsi behar duen edo ez."
 
-#: data/org.mate.eoc.gschema.xml.in:128
+#: data/org.cafe.eoc.gschema.xml.in:128
 msgid ""
 "If activated and no image is loaded in the active window, the file chooser "
 "will display the user's pictures folder using the XDG special user "
@@ -631,11 +631,11 @@ msgstr ""
 "argazkien karpeta ez bada konfiguratu, uneko laneko direktorioa erakutsiko "
 "du."
 
-#: data/org.mate.eoc.gschema.xml.in:134
+#: data/org.cafe.eoc.gschema.xml.in:134
 msgid "Active plugins"
 msgstr "Aktibatu pluginak"
 
-#: data/org.mate.eoc.gschema.xml.in:135
+#: data/org.cafe.eoc.gschema.xml.in:135
 msgid ""
 "List of active plugins. It doesn't contain the \"Location\" of the active "
 "plugins. See the .eoc-plugin file for obtaining the \"Location\" of a given "

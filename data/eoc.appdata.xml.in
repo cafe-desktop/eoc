@@ -12,8 +12,8 @@
       subsequent images in the directory the image was loaded from.
     </p>
   </description>
-  <url type="homepage">http://mate-desktop.org/</url>
+  <url type="homepage">http://cafe-desktop.org/</url>
   <screenshots>
-    <screenshot type="default">http://mate-desktop.org/gallery/1.8/eoc.png</screenshot>
+    <screenshot type="default">http://cafe-desktop.org/gallery/1.8/eoc.png</screenshot>
   </screenshots>
 </component>

@@ -13,11 +13,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: eoc 1.23.1\n"
-"Report-Msgid-Bugs-To: http://www.mate-desktop.org\n"
+"Report-Msgid-Bugs-To: http://www.cafe-desktop.org\n"
 "POT-Creation-Date: 2020-01-10 14:33+0100\n"
 "PO-Revision-Date: 2020-02-14 12:07+0000\n"
 "Last-Translator: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2020\n"
-"Language-Team: Catalan (https://www.transifex.com/mate/teams/13566/ca/)\n"
+"Language-Team: Catalan (https://www.transifex.com/cafe/teams/13566/ca/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -275,7 +275,7 @@ msgstr "Fons"
 msgid "As custom color:"
 msgstr "Com a color personalitzat:"
 
-#: data/eoc-preferences-dialog.ui:267 data/org.mate.eoc.gschema.xml.in:16
+#: data/eoc-preferences-dialog.ui:267 data/org.cafe.eoc.gschema.xml.in:16
 msgid "Background Color"
 msgstr "Color de fons"
 
@@ -387,16 +387,16 @@ msgstr "Hora"
 msgid "Focal Length"
 msgstr "Longitud focal"
 
-#: data/org.mate.eoc.gschema.xml.in:11
+#: data/org.cafe.eoc.gschema.xml.in:11
 msgid "Automatic orientation"
 msgstr "Orientació automàtica"
 
-#: data/org.mate.eoc.gschema.xml.in:12
+#: data/org.cafe.eoc.gschema.xml.in:12
 msgid ""
 "Whether the image should be rotated automatically based on EXIF orientation."
 msgstr "Si la imatge s'ha de girar automàticament d'acord amb les dades EXIF."
 
-#: data/org.mate.eoc.gschema.xml.in:17
+#: data/org.cafe.eoc.gschema.xml.in:17
 msgid ""
 "The color that is used to fill the area behind the image. If the use-"
 "background-color key is not set, the color is determined by the active GTK+ "
@@ -406,11 +406,11 @@ msgstr ""
 "clau «use-background-color» no està establerta, s'utilitzarà el color del "
 "tema de GTK+."
 
-#: data/org.mate.eoc.gschema.xml.in:21
+#: data/org.cafe.eoc.gschema.xml.in:21
 msgid "Use a custom background color"
 msgstr "Utilitza un color de fons personalitzat"
 
-#: data/org.mate.eoc.gschema.xml.in:22
+#: data/org.cafe.eoc.gschema.xml.in:22
 msgid ""
 "If this is active, the color set by the background-color key will be used to"
 " fill the area behind the image. If it is not set, the current GTK+ theme "
@@ -420,11 +420,11 @@ msgstr ""
 " per a emplenar l'àrea de darrere la imatge. Si no està establerta, "
 "s'utilitzarà el color del tema de GTK+."
 
-#: data/org.mate.eoc.gschema.xml.in:26
+#: data/org.cafe.eoc.gschema.xml.in:26
 msgid "Interpolate Image"
 msgstr "Interpola la imatge"
 
-#: data/org.mate.eoc.gschema.xml.in:27
+#: data/org.cafe.eoc.gschema.xml.in:27
 msgid ""
 "Whether the image should be interpolated on zoom-out. This leads to better "
 "quality but is somewhat slower than non-interpolated images."
@@ -432,11 +432,11 @@ msgstr ""
 "Si s'ha d'interpolar la imatge en disminuir el zoom. Això aporta una millor "
 "qualitat però és una mica més lent que les imatges no interpolades."
 
-#: data/org.mate.eoc.gschema.xml.in:31
+#: data/org.cafe.eoc.gschema.xml.in:31
 msgid "Extrapolate Image"
 msgstr "Extrapola la imatge"
 
-#: data/org.mate.eoc.gschema.xml.in:32
+#: data/org.cafe.eoc.gschema.xml.in:32
 msgid ""
 "Whether the image should be extrapolated on zoom-in. This leads to blurry "
 "quality and is somewhat slower than non-extrapolated images."
@@ -444,11 +444,11 @@ msgstr ""
 "Si s'ha d'extrapolar la imatge en augmentar el zoom. Això aporta una "
 "qualitat borrosa i és una mica més lent que les imatges no extrapolades."
 
-#: data/org.mate.eoc.gschema.xml.in:36
+#: data/org.cafe.eoc.gschema.xml.in:36
 msgid "Transparency indicator"
 msgstr "Indicador de transparència"
 
-#: data/org.mate.eoc.gschema.xml.in:37
+#: data/org.cafe.eoc.gschema.xml.in:37
 msgid ""
 "Determines how transparency should be indicated. Valid values are checked, "
 "color and none. If color is chosen, then the trans-color key determines the "
@@ -458,19 +458,19 @@ msgstr ""
 "comprova, color o cap. Si se selecciona color, aleshores la clau «trans-"
 "color» determina el valor del color utilitzat."
 
-#: data/org.mate.eoc.gschema.xml.in:41
+#: data/org.cafe.eoc.gschema.xml.in:41
 msgid "Scroll wheel zoom"
 msgstr "Zoom amb la rodeta de desplaçament"
 
-#: data/org.mate.eoc.gschema.xml.in:42
+#: data/org.cafe.eoc.gschema.xml.in:42
 msgid "Whether the scroll wheel should be used for zooming."
 msgstr "Si s'ha d'utilitzar la rodeta de desplaçament per fer zoom."
 
-#: data/org.mate.eoc.gschema.xml.in:46
+#: data/org.cafe.eoc.gschema.xml.in:46
 msgid "Zoom multiplier"
 msgstr "Factor del zoom"
 
-#: data/org.mate.eoc.gschema.xml.in:47
+#: data/org.cafe.eoc.gschema.xml.in:47
 msgid ""
 "The multiplier to be applied when using the mouse scroll wheel for zooming. "
 "This value defines the zooming step used for each scroll event. For example,"
@@ -483,11 +483,11 @@ msgstr ""
 "esdeveniment de rodeta s'incrementarà un 5% el zoom, 1,00 incrementarà el "
 "zoom en un 100%."
 
-#: data/org.mate.eoc.gschema.xml.in:51
+#: data/org.cafe.eoc.gschema.xml.in:51
 msgid "Transparency color"
 msgstr "Color de transparència"
 
-#: data/org.mate.eoc.gschema.xml.in:52
+#: data/org.cafe.eoc.gschema.xml.in:52
 msgid ""
 "If the transparency key has the value COLOR, then this key determines the "
 "color which is used for indicating transparency."
@@ -495,27 +495,27 @@ msgstr ""
 "Si la clau de transparència té el valor COLOR, aleshores aquesta clau "
 "determina el color que s'utilitza per indicar la transparència."
 
-#: data/org.mate.eoc.gschema.xml.in:58
+#: data/org.cafe.eoc.gschema.xml.in:58
 msgid "Randomize the image sequence"
 msgstr "Selecciona aleatòriament la seqüència d'imatges"
 
-#: data/org.mate.eoc.gschema.xml.in:59
+#: data/org.cafe.eoc.gschema.xml.in:59
 msgid "Whether the sequence of images should be shown in an random loop."
 msgstr "Si la seqüència d'imatges s'hauria de mostrar en un bucle aleatori."
 
-#: data/org.mate.eoc.gschema.xml.in:63
+#: data/org.cafe.eoc.gschema.xml.in:63
 msgid "Loop through the image sequence"
 msgstr "Repeteix la seqüència d'imatges"
 
-#: data/org.mate.eoc.gschema.xml.in:64
+#: data/org.cafe.eoc.gschema.xml.in:64
 msgid "Whether the sequence of images should be shown in an endless loop."
 msgstr "Si la seqüència d'imatges s'hauria de mostrar en un bucle infinit."
 
-#: data/org.mate.eoc.gschema.xml.in:68
+#: data/org.cafe.eoc.gschema.xml.in:68
 msgid "Allow zoom greater than 100% initially"
 msgstr "Permet que el zoom inicialment sigui superior al 100%"
 
-#: data/org.mate.eoc.gschema.xml.in:69
+#: data/org.cafe.eoc.gschema.xml.in:69
 msgid ""
 "If this is set to FALSE small images will not be stretched to fit into the "
 "screen initially."
@@ -523,11 +523,11 @@ msgstr ""
 "En el cas que estigui establert a FALSE, les imatges petites no s'estiraran "
 "per ajustar a la finestra inicialment."
 
-#: data/org.mate.eoc.gschema.xml.in:73
+#: data/org.cafe.eoc.gschema.xml.in:73
 msgid "Delay in seconds until showing the next image"
 msgstr "Retard en segons abans de mostrar la següent imatge"
 
-#: data/org.mate.eoc.gschema.xml.in:74
+#: data/org.cafe.eoc.gschema.xml.in:74
 msgid ""
 "A value greater than 0 determines the seconds an image stays on screen until"
 " the next one is shown automatically. Zero disables the automatic browsing."
@@ -536,45 +536,45 @@ msgstr ""
 "pantalla fins que la següent es mostri automàticament. Zero inhabilita la "
 "navegació automàtica."
 
-#: data/org.mate.eoc.gschema.xml.in:80
+#: data/org.cafe.eoc.gschema.xml.in:80
 msgid "Show/Hide the window toolbar."
 msgstr "Mostra o oculta la barra d'eines de la finestra."
 
-#: data/org.mate.eoc.gschema.xml.in:84
+#: data/org.cafe.eoc.gschema.xml.in:84
 msgid "Show/Hide the window statusbar."
 msgstr "Mostra o oculta la barra d'estat de la finestra."
 
-#: data/org.mate.eoc.gschema.xml.in:88
+#: data/org.cafe.eoc.gschema.xml.in:88
 msgid "Show/Hide the image collection pane."
 msgstr "Mostra o oculta el plafó de la col·lecció d'imatges."
 
-#: data/org.mate.eoc.gschema.xml.in:92
+#: data/org.cafe.eoc.gschema.xml.in:92
 msgid "Image collection pane position."
 msgstr "Posició del plafó de la col·lecció d'imatges."
 
-#: data/org.mate.eoc.gschema.xml.in:96
+#: data/org.cafe.eoc.gschema.xml.in:96
 msgid "Whether the image collection pane should be resizable."
 msgstr "Si el plafó de la col·lecció d'imatges s'ha de poder redimensionar."
 
-#: data/org.mate.eoc.gschema.xml.in:100
+#: data/org.cafe.eoc.gschema.xml.in:100
 msgid "Show/Hide the window side pane."
 msgstr "Mostra o oculta el plafó lateral de la finestra."
 
-#: data/org.mate.eoc.gschema.xml.in:104
+#: data/org.cafe.eoc.gschema.xml.in:104
 msgid "Show/Hide the image collection pane scroll buttons."
 msgstr ""
 "Mostra o oculta els botons de desplaçament del plafó de la col·lecció "
 "d'imatges."
 
-#: data/org.mate.eoc.gschema.xml.in:108
+#: data/org.cafe.eoc.gschema.xml.in:108
 msgid "Close main window without asking to save changes."
 msgstr "Tanca la finestra principal sense preguntar per desar els canvis."
 
-#: data/org.mate.eoc.gschema.xml.in:112
+#: data/org.cafe.eoc.gschema.xml.in:112
 msgid "Trash images without asking"
 msgstr "Envia les imatges a la paperera sense confirmar"
 
-#: data/org.mate.eoc.gschema.xml.in:113
+#: data/org.cafe.eoc.gschema.xml.in:113
 msgid ""
 "If activated, Eye of MATE won't ask for confirmation when moving images to "
 "the trash. It will still ask if any of the files cannot be moved to the "
@@ -584,14 +584,14 @@ msgstr ""
 " la paperera. Tot i això, la demanarà si algun dels fitxers no es pot enviar"
 " a la paperera i s'ha de suprimir."
 
-#: data/org.mate.eoc.gschema.xml.in:117
+#: data/org.cafe.eoc.gschema.xml.in:117
 msgid ""
 "Whether the metadata list in the properties dialog should have its own page."
 msgstr ""
 "Si la llista de metadades del diàleg de propietats hauria de tenir la seva "
 "pròpia pàgina."
 
-#: data/org.mate.eoc.gschema.xml.in:118
+#: data/org.cafe.eoc.gschema.xml.in:118
 msgid ""
 "If activated, the detailed metadata list in the properties dialog will be "
 "moved to its own page in the dialog. This should make the dialog more usable"
@@ -604,11 +604,11 @@ msgstr ""
 "s'utilitzi en ordinadors ultraportàtils. Si està inhabilitat, l'estri "
 "s'incrustarà a la pàgina «Metadades»."
 
-#: data/org.mate.eoc.gschema.xml.in:122
+#: data/org.cafe.eoc.gschema.xml.in:122
 msgid "External program to use for editing images"
 msgstr "Programa extern a utilitzar per editar les imatges"
 
-#: data/org.mate.eoc.gschema.xml.in:123
+#: data/org.cafe.eoc.gschema.xml.in:123
 msgid ""
 "The desktop file name (including the \".desktop\") of the application to use"
 " for editing images (when the \"Edit Image\" toolbar button is clicked). Set"
@@ -619,7 +619,7 @@ msgstr ""
 "la barra d'eines). Establiu-ho amb la cadena buida per desactivar aquesta "
 "característica."
 
-#: data/org.mate.eoc.gschema.xml.in:127
+#: data/org.cafe.eoc.gschema.xml.in:127
 msgid ""
 "Whether the file chooser should show the user's pictures folder if no images"
 " are loaded."
@@ -627,7 +627,7 @@ msgstr ""
 "Si el selector de fitxers hauria de mostrar la carpeta d'imatges de l'usuari"
 " si no s'ha carregat cap imatge."
 
-#: data/org.mate.eoc.gschema.xml.in:128
+#: data/org.cafe.eoc.gschema.xml.in:128
 msgid ""
 "If activated and no image is loaded in the active window, the file chooser "
 "will display the user's pictures folder using the XDG special user "
@@ -640,11 +640,11 @@ msgstr ""
 "no s'ha configurat la carpeta de les imatges, es mostrarà el directori de "
 "treball actual."
 
-#: data/org.mate.eoc.gschema.xml.in:134
+#: data/org.cafe.eoc.gschema.xml.in:134
 msgid "Active plugins"
 msgstr "Activa els connectors"
 
-#: data/org.mate.eoc.gschema.xml.in:135
+#: data/org.cafe.eoc.gschema.xml.in:135
 msgid ""
 "List of active plugins. It doesn't contain the \"Location\" of the active "
 "plugins. See the .eoc-plugin file for obtaining the \"Location\" of a given "

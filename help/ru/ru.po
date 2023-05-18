@@ -2,7 +2,7 @@
 # Translators:
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # AlexL <loginov.alex.valer@gmail.com>, 2020
-# Wolfgang Ulbrich <mate@raveit.de>, 2020
+# Wolfgang Ulbrich <cafe@raveit.de>, 2020
 # Konstantin <kilolife@gmail.com>, 2020
 # monsta <monsta@inbox.ru>, 2020
 # Михаил Ильинский <mail@milinsky.com>, 2020
@@ -17,7 +17,7 @@ msgstr ""
 "POT-Creation-Date: 2019-07-02 11:34+0200\n"
 "PO-Revision-Date: 2020-02-14 12:08+0000\n"
 "Last-Translator: Aleksey Kabanov <ak099@mail.ru>, 2020\n"
-"Language-Team: Russian (https://www.transifex.com/mate/teams/13566/ru/)\n"
+"Language-Team: Russian (https://www.transifex.com/cafe/teams/13566/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -221,7 +221,7 @@ msgstr ""
 #: C/index.docbook:243
 msgid ""
 "Run <command>eoc</command> at the prompt in a terminal such as <application"
-">mate-terminal</application>, or from the <application>Run "
+">cafe-terminal</application>, or from the <application>Run "
 "Application</application> dialog."
 msgstr ""
 "Выполнить команду <command>eoc</command> в командной строке терминала "
@@ -1028,13 +1028,13 @@ msgid ""
 "To restore an image from the Trash, open the Trash folder in "
 "<application>Caja</application> file manager and move the image file to "
 "another folder. To delete the image permanently, empty the Trash. To find "
-"out more about using the Trash, see the <link xlink:href=\"help:mate-user-"
+"out more about using the Trash, see the <link xlink:href=\"help:cafe-user-"
 "guide/caja-trash\">Desktop User Guide</link>."
 msgstr ""
 "Чтобы восстановить изображение из корзины, откройте корзину в файловом "
 "менеджере <application>Caja</application> и переместите нужный файл в другую"
 " папку. Чтобы окончательно удалить изображение, очистите корзину. Подробнее "
-"о корзине читайте в <link xlink:href=\"help:mate-user-guide/caja-"
+"о корзине читайте в <link xlink:href=\"help:cafe-user-guide/caja-"
 "trash\">Руководстве пользователя рабочей среды</link>."
 
 #. (itstool) path: note/para
@@ -1806,10 +1806,10 @@ msgstr "Обратная связь"
 msgid ""
 "To report a bug or make a suggestion regarding the <application>Image "
 "Viewer</application> application or this manual, follow the directions in "
-"the <link xlink:href=\"help:mate-user-guide/feedback\">MATE Feedback "
+"the <link xlink:href=\"help:cafe-user-guide/feedback\">MATE Feedback "
 "Page</link>."
 msgstr ""
 "Чтобы сообщить об ошибке или внести предложение относительно "
 "<application>Программы просмотра изображений</application> или этого "
-"руководства, следуйте инструкциям на <ulink url=\"help:mate-user-"
+"руководства, следуйте инструкциям на <ulink url=\"help:cafe-user-"
 "guide/feedback\" type=\"help\">Странице обратной связи MATE</ulink>."

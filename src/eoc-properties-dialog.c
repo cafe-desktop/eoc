@@ -610,7 +610,7 @@ eoc_properties_dialog_class_init (EocPropertiesDialogClass *klass)
 	GtkWidgetClass *wklass = (GtkWidgetClass*) klass;
 
 	gtk_widget_class_set_template_from_resource (wklass,
-	                                             "/org/mate/eoc/ui/eoc-image-properties-dialog.ui");
+	                                             "/org/cafe/eoc/ui/eoc-image-properties-dialog.ui");
 
 	gtk_widget_class_bind_template_child_private(wklass,
 						     EocPropertiesDialog,
