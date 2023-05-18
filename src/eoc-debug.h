@@ -1,4 +1,4 @@
-/* Eye Of Mate - Debugging
+/* Eye Of Cafe - Debugging
  *
  * Copyright (C) 2007 The Free Software Foundation
  *

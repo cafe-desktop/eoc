@@ -1,4 +1,4 @@
-/* Eye Of Mate - Erro Message Area
+/* Eye Of Cafe - Erro Message Area
  *
  * Copyright (C) 2007 The Free Software Foundation
  *

@@ -1,4 +1,4 @@
-/* Eye Of Mate - Main
+/* Eye Of Cafe - Main
  *
  * Copyright (C) 2000-2006 The Free Software Foundation
  *

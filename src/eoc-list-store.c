@@ -1,4 +1,4 @@
-/* Eye Of Mate - Image Store
+/* Eye Of Cafe - Image Store
  *
  * Copyright (C) 2006-2008 The Free Software Foundation
  *

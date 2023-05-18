@@ -1,4 +1,4 @@
-/* Eye Of Mate - Jobs
+/* Eye Of Cafe - Jobs
  *
  * Copyright (C) 2006 The Free Software Foundation
  *

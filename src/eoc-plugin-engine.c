@@ -1,4 +1,4 @@
-/* Eye Of Mate - EOC Plugin Manager
+/* Eye Of Cafe - EOC Plugin Manager
  *
  * Copyright (C) 2007 The Free Software Foundation
  *

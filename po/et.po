@@ -1285,7 +1285,7 @@ msgstr "_Eelistused"
 
 #: src/eoc-window.c:3793
 msgid "Preferences for Eye of CAFE"
-msgstr "Eye of Mate (gnoomi silma) eelistused"
+msgstr "Eye of Cafe (gnoomi silma) eelistused"
 
 #: src/eoc-window.c:3795
 msgid "_Contents"

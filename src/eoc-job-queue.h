@@ -1,4 +1,4 @@
-/* Eye Of Mate - Jobs Queue
+/* Eye Of Cafe - Jobs Queue
  *
  * Copyright (C) 2006 The Free Software Foundation
  *

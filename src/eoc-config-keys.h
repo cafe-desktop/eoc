@@ -1,4 +1,4 @@
-/* Eye Of Mate - GSettings Keys and Schemas definitions
+/* Eye Of Cafe - GSettings Keys and Schemas definitions
  *
  * Copyright (C) 2000-2006 The Free Software Foundation
  *

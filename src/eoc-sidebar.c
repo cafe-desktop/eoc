@@ -1,4 +1,4 @@
-/* Eye of Mate - Side bar
+/* Eye of Cafe - Side bar
  *
  * Copyright (C) 2004 Red Hat, Inc.
  * Copyright (C) 2007 The Free Software Foundation

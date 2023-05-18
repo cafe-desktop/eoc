@@ -254,7 +254,7 @@ msgstr "Pratinjau Nama Berkas"
 
 #: data/eoc-preferences-dialog.ui:16
 msgid "Eye of CAFE Preferences"
-msgstr "Preferensi Eye of Mate"
+msgstr "Preferensi Eye of Cafe"
 
 #: data/eoc-preferences-dialog.ui:88
 msgid "Image Enhancements"
@@ -1298,7 +1298,7 @@ msgstr "Prefere_nsi"
 
 #: src/eoc-window.c:3793
 msgid "Preferences for Eye of CAFE"
-msgstr "Preferensi Eye of Mate"
+msgstr "Preferensi Eye of Cafe"
 
 #: src/eoc-window.c:3795
 msgid "_Contents"

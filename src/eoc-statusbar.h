@@ -1,4 +1,4 @@
-/* Eye of Mate - Statusbar
+/* Eye of Cafe - Statusbar
  *
  * Copyright (C) 2000-2006 The Free Software Foundation
  *

@@ -1,4 +1,4 @@
-/* Eye Of Mate - EOC Image Exif Details
+/* Eye Of Cafe - EOC Image Exif Details
  *
  * Copyright (C) 2006 The Free Software Foundation
  *

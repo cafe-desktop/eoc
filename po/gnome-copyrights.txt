@@ -177,8 +177,8 @@
 
 
 ========== cs.po ==========
-# Czech translation of Eye Of Mate.
-# Copyright (C) 2002, 2006, 2007, 2008 the author(s) of Eye Of Mate.
+# Czech translation of Eye Of Cafe.
+# Copyright (C) 2002, 2006, 2007, 2008 the author(s) of Eye Of Cafe.
 # Copyright (C) 2003, 2004, 2005 Miloslav Trmac <mitr@volny.cz>.
 # Copyright (C) 2006 Lukas Novotny <lukasnov@cvs.gnome.org>.
 # This file is distributed under the same license as the eoc package.
@@ -213,7 +213,7 @@
 
 
 ========== da.po ==========
-# Danish translation of Eye of Mate.
+# Danish translation of Eye of Cafe.
 # Copyright (C) 1999-2010 Free Software Foundation, Inc.
 # This file is distributed under the same license as the eoc package.
 # Kenneth Christiansen <kenneth@ripen.dk>, 1999.
@@ -237,7 +237,7 @@
 
 
 ========== de.po ==========
-# German translation for Eye of Mate.
+# German translation for Eye of Cafe.
 # Copyright (C) 1999-2002, 2008 Free Software Foundation, Inc.
 # Matthias Warkus <mawa@iname.com>, 1999-2001.
 # Christian Meyer <chrisime@gnome.org>, 2000, 2001.
@@ -267,13 +267,13 @@
 ========== el.po ==========
 # Translation of Eye of CAFE Documentation to Greek
 # Initial translation by Simos.
-# kostas: 29Oct2003, first update for Mate 2.6
+# kostas: 29Oct2003, first update for Cafe 2.6
 # kostas: 25Jan2004, update
 # kostas: 22feb2004, update
 # kostas: 164 messages, 04Nov2002, compelted translation.
 # simos: 164 messages, 04Nov2002, full review of translation.
-# kostas: updated th translation, 03Dec2002, for Mate 2.1x.
-# kostas: updated translation, 25May2003, for Mate 2.4x.
+# kostas: updated th translation, 03Dec2002, for Cafe 2.1x.
+# kostas: updated translation, 25May2003, for Cafe 2.4x.
 # kostas: updated translation, 18Jul2003.
 # Simos Xenitellis <simos@hellug.gr>, 2000, 2001, 2002.2003.
 # Kostas Papadimas <pkst@gnome.org>, 2002,2003, 2004, 2005, 2006, 2007, 2008.
@@ -285,7 +285,7 @@
 
 ========== en@shaw.po ==========
 # Shavian translation for eoc.
-# Copyright (C) 2009 The Mate Foundation.
+# Copyright (C) 2009 The Cafe Foundation.
 # Thomas Thurman <tthurman@gnome.org>, 2009.
 
 
@@ -304,7 +304,7 @@
 
 ========== en_GB.po ==========
 # English (British) translation.
-# Copyright (C) 2004 The Mate Foundation
+# Copyright (C) 2004 The Cafe Foundation
 # This file is distributed under the same license as the eoc package.
 # Gareth Owen <gowen72@yahoo.com>, 2004.
 # David Lodge <dave@cirt.net>, 2004.
@@ -317,7 +317,7 @@
 
 ========== es.po ==========
 # translation of eoc.cafe-2-32.po to Español
-# Spanish translation of the Eye of Mate
+# Spanish translation of the Eye of Cafe
 # Copyright © 2000-2002, 2006, 2007, 2008 the Free Software Foundation, Inc.
 #
 # Federico Mena-Quintero <federico@gimp.org>, 1999.
@@ -338,7 +338,7 @@
 #
 # Copyright (C) 2000, 2005, 2006 Free Software Foundation, Inc.
 # Copyright (C) 2007-2010 The CAFE Project.
-# This file is distributed under the same license as the Eye of Mate package.
+# This file is distributed under the same license as the Eye of Cafe package.
 #
 # Lauris Kaplinski <lauris ariman ee>, 2000.
 # Ivar Smolin <okul linux ee>, 2005-2010.
@@ -535,7 +535,7 @@
 
 
 ========== it.po ==========
-# Italian translation for Eye Of Mate
+# Italian translation for Eye Of Cafe
 # Copyright (C) 2001-2007, 2008, 2009 The Free Software Foundation, Inc.
 # This file is distributed under the same license as eoc package.
 # Christopher R. Gabriel <cgabriel@pluto.linux.it>
@@ -567,7 +567,7 @@
 
 ========== ka.po ==========
 # translation of eoc.po to Georgian
-# Copyright (C) 2006 Mate Georgian Translators cafe@inet.ge
+# Copyright (C) 2006 Cafe Georgian Translators cafe@inet.ge
 # This file is distributed under the same license as the eoc package.
 # Zuka Akhvlediani <korvin@soft.ge>
 # Alexander Didebulidze <didebuli@in.tum.de>, 2006.
@@ -735,7 +735,7 @@
 
 
 ========== ms.po ==========
-# Eyes of Mate, Ainul Mate Bahasa Melayu (ms)
+# Eyes of Cafe, Ainul Cafe Bahasa Melayu (ms)
 # Mata yang cantik, bersinar...lagi?
 # Hasbullah Bin Pit (sebol) <sebol@my-penguin.org>, 2002-2004
 #
@@ -782,9 +782,9 @@
 
 
 ========== nl.po ==========
-# Dutch translation for Eye of Mate
+# Dutch translation for Eye of Cafe
 #
-# This file is distributed under the same license as the Eye of Mate package.
+# This file is distributed under the same license as the Eye of Cafe package.
 #
 # Vincent van Adrighem <V.vanadrighem@dirck.mine.nu>
 # Dennis Smit <synap@area101.penguin.nl>, 2000
@@ -928,7 +928,7 @@
 
 ========== ro.po ==========
 # translation of eoc.HEAD.ro.po to Română
-# Eye of Mate Romanian translation
+# Eye of Cafe Romanian translation
 # Copyright (C) 2002,2003, 2004, 2005, 2006 Free Software Foundation, Inc.
 # Mugurel Tudor <mugurelu@cafe.ro>, 2002,2003,2004, 2005, 2006.
 # Mișu Moldovan <dumol@cafe.ro>, 2003.
@@ -1005,7 +1005,7 @@
 # This file is distributed under the same license as the eoc package.
 #
 # Andraž Tori <andraz.tori1@guest.arnes.si>, 2002.
-# Matej Urbančič <cafeju@svn.gnome.org>, 2006 - 2010.
+# Cafej Urbančič <cafeju@svn.gnome.org>, 2006 - 2010.
 #
 
 
@@ -1177,8 +1177,8 @@
 
 
 ========== vi.po ==========
-# Vietnamese translation for Eye of Mate.
-# Copyright © 2008 Mate i18n Project for Vietnamese.
+# Vietnamese translation for Eye of Cafe.
+# Copyright © 2008 Cafe i18n Project for Vietnamese.
 # This file is distributed under the same licence as the eoc package.
 # Nguyễn Thái Ngọc Duy <pclouds@gmail.com>, 2002-2004,2007-2008.
 # Phạm Thành Long <lngt@ngonngu.net>, 2007.

@@ -31,7 +31,7 @@
 #include <gtk/gtk.h>
 
 /* We must define CAFE_DESKTOP_USE_UNSTABLE_API to be able
-   to use MateDesktopThumbnail */
+   to use CafeDesktopThumbnail */
 #ifndef CAFE_DESKTOP_USE_UNSTABLE_API
 #define CAFE_DESKTOP_USE_UNSTABLE_API
 #endif
@@ -43,7 +43,7 @@ static char *last_dir[] = { NULL, NULL, NULL, NULL };
 
 struct _EocFileChooserPrivate
 {
-	MateDesktopThumbnailFactory *thumb_factory;
+	CafeDesktopThumbnailFactory *thumb_factory;
 
 	GtkWidget *image;
 	GtkWidget *size_label;
@@ -290,7 +290,7 @@ set_preview_pixbuf (EocFileChooser *chooser, GdkPixbuf *pixbuf, goffset size)
 		/* stupid workaround to display nicer string if the
 		 * thumbnail is created through the cafe libraries.
 		 */
-		if (g_ascii_strcasecmp (creator, "Mate::ThumbnailFactory") == 0) {
+		if (g_ascii_strcasecmp (creator, "Cafe::ThumbnailFactory") == 0) {
 			creator = "CAFE Libs";
 		}
 #endif

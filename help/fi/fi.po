@@ -41,7 +41,7 @@ msgstr ""
 #: C/index.docbook:47 C/index.docbook:57 C/index.docbook:123
 #: C/index.docbook:124
 msgid "CAFE Documentation Project"
-msgstr "Maten dokumentointiprojekti"
+msgstr "Cafen dokumentointiprojekti"
 
 #. (itstool) path: publisher/publishername
 #. (itstool) path: affiliation/orgname
@@ -58,7 +58,7 @@ msgstr ""
 #. (itstool) path: affiliation/orgname
 #: C/index.docbook:59
 msgid "CAFE Desktop"
-msgstr "Mate-työpöytä"
+msgstr "Cafe-työpöytä"
 
 #. (itstool) path: personname/firstname
 #: C/index.docbook:91

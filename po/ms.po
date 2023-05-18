@@ -245,7 +245,7 @@ msgstr "Pratonton Nama Fail"
 
 #: data/eoc-preferences-dialog.ui:16
 msgid "Eye of CAFE Preferences"
-msgstr "Keutamaan Eye of Mate"
+msgstr "Keutamaan Eye of Cafe"
 
 #: data/eoc-preferences-dialog.ui:88
 msgid "Image Enhancements"
