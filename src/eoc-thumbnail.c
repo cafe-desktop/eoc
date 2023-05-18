@@ -1,4 +1,4 @@
-/* Eye Of Mate - Thumbnailing functions
+/* Eye Of Cafe - Thumbnailing functions
  *
  * Copyright (C) 2000-2008 The Free Software Foundation
  *
@@ -27,7 +27,7 @@
 #endif
 
 /* We must define CAFE_DESKTOP_USE_UNSTABLE_API to be able
-   to use MateDesktopThumbnail */
+   to use CafeDesktopThumbnail */
 #ifndef CAFE_DESKTOP_USE_UNSTABLE_API
 #define CAFE_DESKTOP_USE_UNSTABLE_API
 #endif
@@ -39,7 +39,7 @@
 
 #define EOC_THUMB_ERROR eoc_thumb_error_quark ()
 
-static MateDesktopThumbnailFactory *factory = NULL;
+static CafeDesktopThumbnailFactory *factory = NULL;
 static GdkPixbuf *frame = NULL;
 
 typedef enum {

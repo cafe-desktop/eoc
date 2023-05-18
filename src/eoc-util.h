@@ -1,4 +1,4 @@
-/* Eye Of Mate - General Utilities
+/* Eye Of Cafe - General Utilities
  *
  * Copyright (C) 2006 The Free Software Foundation
  *

@@ -247,9 +247,9 @@
   * EocCloseConfirmationDialog: Fix size request for the image list
   * Printing paper orientation should default based on image dimensions
   * Avoid recompressing JPEGs as PNG when printing
-  * EocFileChooser: Use MateThumbnailFactory to create preview image
+  * EocFileChooser: Use CafeThumbnailFactory to create preview image
   * EocPropertiesDialog: Allow RGBA for transparent background color
-  * preferences-ui: drop usage of MateColorButton
+  * preferences-ui: drop usage of CafeColorButton
   * EocScrollView: Switch to GdkRGBA for background and transparent colors
   * EocPrintPreview: Avoid unnecessary color parsing
   * Fix a few GtkStock deprecations
@@ -279,7 +279,7 @@
 
 ### eoc 1.16.0
 
-  * Use GtkAboutDialog instead of MateAboutDialog
+  * Use GtkAboutDialog instead of CafeAboutDialog
   * Fix possible out-of-bounds write in error message area
   * Some cleanups
   * Translations update
@@ -297,7 +297,7 @@
 
 ### eoc 1.14.0
 
-  * Drop MateConf migration script
+  * Drop CafeConf migration script
   * Use org.gnome.SessionManager DBus name to inhibit screensaver
   * Auto-reload unmodified images when their file is changed
   * GTK+3: add eoc-window style class at top level

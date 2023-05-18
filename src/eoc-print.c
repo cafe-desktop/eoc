@@ -1,4 +1,4 @@
-/* Eye of Mate - Print Operations
+/* Eye of Cafe - Print Operations
  *
  * Copyright (C) 2005-2008 The Free Software Foundation
  *

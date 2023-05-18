@@ -1,4 +1,4 @@
-/* Eye Of Mate - Session Handler
+/* Eye Of Cafe - Session Handler
  *
  * Copyright (C) 2006 The Free Software Foundation
  *

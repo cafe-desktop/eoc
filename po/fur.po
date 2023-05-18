@@ -1233,7 +1233,7 @@ msgstr "Prefere_nces"
 
 #: src/eoc-window.c:3793
 msgid "Preferences for Eye of CAFE"
-msgstr "Preferencis par Eye of Mate"
+msgstr "Preferencis par Eye of Cafe"
 
 #: src/eoc-window.c:3795
 msgid "_Contents"

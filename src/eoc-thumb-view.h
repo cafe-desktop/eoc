@@ -1,4 +1,4 @@
-/* Eye Of Mate - Thumbnail View
+/* Eye Of Cafe - Thumbnail View
  *
  * Copyright (C) 2006 The Free Software Foundation
  *

@@ -1,4 +1,4 @@
-/* Eye Of Mate - EOC Plugin Engine
+/* Eye Of Cafe - EOC Plugin Engine
  *
  * Copyright (C) 2007 The Free Software Foundation
  *

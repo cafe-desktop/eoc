@@ -1,4 +1,4 @@
-/* Eye Of Mate - Application Facade
+/* Eye Of Cafe - Application Facade
  *
  * Copyright (C) 2006 The Free Software Foundation
  *

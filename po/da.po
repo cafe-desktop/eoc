@@ -57,7 +57,7 @@ msgstr "Adskiller"
 
 #: data/eoc.appdata.xml.in:6 src/eoc-window.c:2640
 msgid "Eye of CAFE"
-msgstr "Mates øje"
+msgstr "Cafes øje"
 
 #: data/eoc.appdata.xml.in:7
 msgid "Simple image viewer"
@@ -75,7 +75,7 @@ msgstr ""
 
 #: data/eoc.desktop.in.in:3 src/main.c:65 src/main.c:166
 msgid "Eye of CAFE Image Viewer"
-msgstr "Mates øje - billedfremviser"
+msgstr "Cafes øje - billedfremviser"
 
 #: data/eoc.desktop.in.in:4
 msgid "Browse and rotate images"
@@ -246,7 +246,7 @@ msgstr "Forhåndsvisning af filnavn"
 
 #: data/eoc-preferences-dialog.ui:16
 msgid "Eye of CAFE Preferences"
-msgstr "Indstillinger for Mates øje"
+msgstr "Indstillinger for Cafes øje"
 
 #: data/eoc-preferences-dialog.ui:88
 msgid "Image Enhancements"
@@ -717,7 +717,7 @@ msgid ""
 "Eye of CAFE could not determine a supported writable file format based on "
 "the filename."
 msgstr ""
-"Mates øje kunne ikke finde et understøttet skrivbart filformat baseret på "
+"Cafes øje kunne ikke finde et understøttet skrivbart filformat baseret på "
 "filnavnet."
 
 #: src/eoc-file-chooser.c:127
@@ -1018,7 +1018,7 @@ msgstr "Mindst to filnavne er ens."
 
 #: src/eoc-util.c:68
 msgid "Could not display help for Eye of CAFE"
-msgstr "Kunne ikke vise hjælp til Mates øje"
+msgstr "Kunne ikke vise hjælp til Cafes øje"
 
 #: src/eoc-util.c:116
 msgid " (invalid Unicode)"
@@ -1136,7 +1136,7 @@ msgstr ""
 
 #: src/eoc-window.c:2641
 msgid "About Eye of CAFE"
-msgstr "Om Mates øje"
+msgstr "Om Cafes øje"
 
 #: src/eoc-window.c:2643
 msgid ""
@@ -1150,7 +1150,7 @@ msgstr ""
 
 #: src/eoc-window.c:2646
 msgid "The CAFE image viewer."
-msgstr "Mates øje - billedfremviser."
+msgstr "Cafes øje - billedfremviser."
 
 #: src/eoc-window.c:2649
 msgid "translator-credits"
@@ -1297,7 +1297,7 @@ msgstr "_Indstillinger"
 
 #: src/eoc-window.c:3793
 msgid "Preferences for Eye of CAFE"
-msgstr "Indstillinger for Mates øje"
+msgstr "Indstillinger for Cafes øje"
 
 #: src/eoc-window.c:3795
 msgid "_Contents"

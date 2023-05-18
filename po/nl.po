@@ -62,7 +62,7 @@ msgstr "Scheidingsteken"
 
 #: data/eoc.appdata.xml.in:6 src/eoc-window.c:2640
 msgid "Eye of CAFE"
-msgstr "Oog van Mate (Eye of Mate)"
+msgstr "Oog van Cafe (Eye of Cafe)"
 
 #: data/eoc.appdata.xml.in:7
 msgid "Simple image viewer"
@@ -81,7 +81,7 @@ msgstr ""
 
 #: data/eoc.desktop.in.in:3 src/main.c:65 src/main.c:166
 msgid "Eye of CAFE Image Viewer"
-msgstr "Oog van Mate (Eye of Mate) afbeeldingsweergave"
+msgstr "Oog van Cafe (Eye of Cafe) afbeeldingsweergave"
 
 #: data/eoc.desktop.in.in:4
 msgid "Browse and rotate images"
@@ -252,7 +252,7 @@ msgstr "Voorbeeldweergave bestandsnaam"
 
 #: data/eoc-preferences-dialog.ui:16
 msgid "Eye of CAFE Preferences"
-msgstr "Voorkeuren van Oog van Mate (Eye of Mate)"
+msgstr "Voorkeuren van Oog van Cafe (Eye of Cafe)"
 
 #: data/eoc-preferences-dialog.ui:88
 msgid "Image Enhancements"
@@ -587,7 +587,7 @@ msgid ""
 "the trash. It will still ask if any of the files cannot be moved to the "
 "trash and would be deleted instead."
 msgstr ""
-"Indien ingeschakeld zal Oog van Mate (Eye of Mate) niet vragen om "
+"Indien ingeschakeld zal Oog van Cafe (Eye of Cafe) niet vragen om "
 "bevestiging bij het verplaatsen van afbeeldingen naar de prullenbak. Er zal "
 "nog steeds om bevestiging gevraagd worden als afbeeldingen niet naar de "
 "prullenbak verplaatst, maar enkel definitief verwijderd kunnen worden."
@@ -731,7 +731,7 @@ msgid ""
 "Eye of CAFE could not determine a supported writable file format based on "
 "the filename."
 msgstr ""
-"Eye of Mate kon geen geschikte bestandssoort bepalen om te schrijven, op "
+"Eye of Cafe kon geen geschikte bestandssoort bepalen om te schrijven, op "
 "basis van de bestandsnaam."
 
 #: src/eoc-file-chooser.c:127
@@ -1032,7 +1032,7 @@ msgstr "Tenminste twee bestandsnamen zijn identiek."
 
 #: src/eoc-util.c:68
 msgid "Could not display help for Eye of CAFE"
-msgstr "Kon de hulptekst voor Oog van Mate (Eye of Mate) niet weergeven"
+msgstr "Kon de hulptekst voor Oog van Cafe (Eye of Cafe) niet weergeven"
 
 #: src/eoc-util.c:116
 msgid " (invalid Unicode)"
@@ -1321,7 +1321,7 @@ msgstr "_Voorkeuren"
 
 #: src/eoc-window.c:3793
 msgid "Preferences for Eye of CAFE"
-msgstr "Voorkeuren voor Oog van Mate (Eye of Mate)"
+msgstr "Voorkeuren voor Oog van Cafe (Eye of Cafe)"
 
 #: src/eoc-window.c:3795
 msgid "_Contents"

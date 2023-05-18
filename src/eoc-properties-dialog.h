@@ -1,4 +1,4 @@
-/* Eye Of Mate - Image Properties Dialog
+/* Eye Of Cafe - Image Properties Dialog
  *
  * Copyright (C) 2006 The Free Software Foundation
  *

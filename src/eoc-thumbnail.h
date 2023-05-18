@@ -1,4 +1,4 @@
-/* Eye Of Mate - Thumbnailing functions
+/* Eye Of Cafe - Thumbnailing functions
  *
  * Copyright (C) 2000-2007 The Free Software Foundation
  *

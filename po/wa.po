@@ -55,7 +55,7 @@ msgstr ""
 
 #: data/eoc.appdata.xml.in:6 src/eoc-window.c:2640
 msgid "Eye of CAFE"
-msgstr "Eye of Mate"
+msgstr "Eye of Cafe"
 
 #: data/eoc.appdata.xml.in:7
 msgid "Simple image viewer"
@@ -240,7 +240,7 @@ msgstr ""
 
 #: data/eoc-preferences-dialog.ui:16
 msgid "Eye of CAFE Preferences"
-msgstr "Preferinces di Eye of Mate"
+msgstr "Preferinces di Eye of Cafe"
 
 #: data/eoc-preferences-dialog.ui:88
 msgid "Image Enhancements"
@@ -967,7 +967,7 @@ msgstr "I gn a pol moens does nos d' fitchîs ki sont les minmes."
 
 #: src/eoc-util.c:68
 msgid "Could not display help for Eye of CAFE"
-msgstr "Dji n' a savou håyner l' aidance di Eye of Mate"
+msgstr "Dji n' a savou håyner l' aidance di Eye of Cafe"
 
 #: src/eoc-util.c:116
 msgid " (invalid Unicode)"
@@ -1222,7 +1222,7 @@ msgstr "Preferi_nces"
 
 #: src/eoc-window.c:3793
 msgid "Preferences for Eye of CAFE"
-msgstr "Preferinces po Eye of Mate"
+msgstr "Preferinces po Eye of Cafe"
 
 #: src/eoc-window.c:3795
 msgid "_Contents"

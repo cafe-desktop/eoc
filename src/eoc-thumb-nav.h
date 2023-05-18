@@ -1,4 +1,4 @@
-/* Eye Of Mate - Thumbnail Navigator
+/* Eye Of Cafe - Thumbnail Navigator
  *
  * Copyright (C) 2006 The Free Software Foundation
  *

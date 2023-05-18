@@ -1,4 +1,4 @@
-/* Eye Of Mate - EXIF Utilities
+/* Eye Of Cafe - EXIF Utilities
  *
  * Copyright (C) 2006-2007 The Free Software Foundation
  *

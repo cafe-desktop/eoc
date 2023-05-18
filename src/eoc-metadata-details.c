@@ -1,4 +1,4 @@
-/* Eye Of Mate - EOC Metadata Details
+/* Eye Of Cafe - EOC Metadata Details
  *
  * Copyright (C) 2006 The Free Software Foundation
  *

@@ -1,4 +1,4 @@
-/* Eye Of Mate - Main Window
+/* Eye Of Cafe - Main Window
  *
  * Copyright (C) 2000-2008 The Free Software Foundation
  *

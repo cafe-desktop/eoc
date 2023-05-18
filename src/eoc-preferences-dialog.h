@@ -1,4 +1,4 @@
-/* Eye Of Mate - EOC Preferences Dialog
+/* Eye Of Cafe - EOC Preferences Dialog
  *
  * Copyright (C) 2006 The Free Software Foundation
  *

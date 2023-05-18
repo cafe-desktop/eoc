@@ -1,4 +1,4 @@
-/* Eye of Mate image viewer - utility functions for computing zoom factors
+/* Eye of Cafe image viewer - utility functions for computing zoom factors
  *
  * Copyright (C) 2000 The Free Software Foundation
  *

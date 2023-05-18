@@ -1,4 +1,4 @@
-/* Eye Of Mate - Image Private Data
+/* Eye Of Cafe - Image Private Data
  *
  * Copyright (C) 2007 The Free Software Foundation
  *
