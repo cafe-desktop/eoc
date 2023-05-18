@@ -6,7 +6,7 @@ m4_define(eoc_minor_version, 24)
 m4_define(eoc_micro_version, 1)
 m4_define(eoc_version, eoc_major_version.eoc_minor_version.eoc_micro_version)
 
-AC_INIT([eoc], eoc_version, [http://www.mate-desktop.org], [eoc])
+AC_INIT([eoc], eoc_version, [http://www.cafe-desktop.org], [eoc])
 AM_INIT_AUTOMAKE([1.9 foreign no-dist-gzip dist-xz check-news])
 
 # Support silencing the build output if supported (automake-1.11+)
@@ -74,7 +74,7 @@ AC_SUBST(CFLAGS)
 AC_SUBST(LDFLAGS)
 
 # ***************
-# mate-doc-utils
+# cafe-doc-utils
 # ***************
 
 PKG_PROG_PKG_CONFIG
@@ -102,7 +102,7 @@ EOC_MODULES="gtk+-3.0 >= $GTK_REQUIRED \
              gio-2.0 >= $GLIB_REQUIRED \
              gio-unix-2.0 >= $GLIB_REQUIRED \
              gthread-2.0 >= $GLIB_REQUIRED \
-             mate-desktop-2.0 >= $MATE_DESKTOP_REQUIRED \
+             cafe-desktop-2.0 >= $MATE_DESKTOP_REQUIRED \
              gdk-pixbuf-2.0 >= $GDKPIXBUF_REQUIRED \
              gio-2.0 >= $GIO_REQUIRED \
              gtk+-unix-print-3.0 >= $GTK_REQUIRED \
@@ -395,7 +395,7 @@ po/Makefile.in
 data/Makefile
 data/eoc.pc
 data/eoc.desktop.in
-data/org.mate.eoc.gschema.xml
+data/org.cafe.eoc.gschema.xml
 data/pixmaps/Makefile
 data/icons/Makefile
 doc/Makefile

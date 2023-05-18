@@ -252,7 +252,7 @@ eoc_util_dot_dir (void)
 	if (dot_dir == NULL) {
 		gboolean exists;
 
-			dot_dir = g_build_filename(g_get_user_config_dir(), "mate", "eoc", NULL);
+			dot_dir = g_build_filename(g_get_user_config_dir(), "cafe", "eoc", NULL);
 
 		exists = ensure_dir_exists (dot_dir);
 

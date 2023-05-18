@@ -395,7 +395,7 @@
 	* it/it.po: added 
 	* it/legal.xml: added
 
-	switched Italian translation to mate-doc-utils
+	switched Italian translation to cafe-doc-utils
 
 2007-09-04  Claude Paroz  <claude@2xlibre.net>
 
@@ -487,7 +487,7 @@
 2007-04-13  Changwoo Ryu  <cwryu@debian.org>
 
 	* Makefile.am: Removed ko from SUBDIRS and added ko to DOC_LINGUAS.
-	* ko/ko.po: Migrated to mate-doc-utils.
+	* ko/ko.po: Migrated to cafe-doc-utils.
 	* ko/figures/*.png: Updated screenshots.
 	* ko/Makefile.am, ko/eoc.xml, ko/eoc-ko.omf, ko/legal.xml: Removed.
 

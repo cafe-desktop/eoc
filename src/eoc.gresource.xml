@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
-  <gresource prefix="/org/mate/eoc/ui">
+  <gresource prefix="/org/cafe/eoc/ui">
     <file>eoc.css</file>
     <file compressed="true" preprocess="xml-stripblanks">eoc-image-properties-dialog.ui</file>
     <file compressed="true" preprocess="xml-stripblanks">eoc-multiple-save-as-dialog.ui</file>

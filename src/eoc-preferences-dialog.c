@@ -150,7 +150,7 @@ eoc_preferences_dialog_class_init (EocPreferencesDialogClass *klass)
 	g_type_ensure (PEAS_GTK_TYPE_PLUGIN_MANAGER);
 
 	gtk_widget_class_set_template_from_resource (widget_class,
-	                                             "/org/mate/eoc/ui/eoc-preferences-dialog.ui");
+	                                             "/org/cafe/eoc/ui/eoc-preferences-dialog.ui");
 	gtk_widget_class_bind_template_child_private (widget_class,
 	                                              EocPreferencesDialog,
 	                                              interpolate_check);

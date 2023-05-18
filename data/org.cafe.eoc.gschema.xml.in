@@ -1,11 +1,11 @@
 <schemalist>
-  <schema gettext-domain="@GETTEXT_PACKAGE@" id="org.mate.eoc" path="/org/mate/eoc/">
-    <child name="view" schema="org.mate.eoc.view"/>
-    <child name="full-screen" schema="org.mate.eoc.full-screen"/>
-    <child name="ui" schema="org.mate.eoc.ui"/>
-    <child name="plugins" schema="org.mate.eoc.plugins"/>
+  <schema gettext-domain="@GETTEXT_PACKAGE@" id="org.cafe.eoc" path="/org/cafe/eoc/">
+    <child name="view" schema="org.cafe.eoc.view"/>
+    <child name="full-screen" schema="org.cafe.eoc.full-screen"/>
+    <child name="ui" schema="org.cafe.eoc.ui"/>
+    <child name="plugins" schema="org.cafe.eoc.plugins"/>
   </schema>
-  <schema gettext-domain="@GETTEXT_PACKAGE@" id="org.mate.eoc.view" path="/org/mate/eoc/view/">
+  <schema gettext-domain="@GETTEXT_PACKAGE@" id="org.cafe.eoc.view" path="/org/cafe/eoc/view/">
     <key name="autorotate" type="b">
       <default>true</default>
       <summary>Automatic orientation</summary>
@@ -31,7 +31,7 @@
       <summary>Extrapolate Image</summary>
       <description>Whether the image should be extrapolated on zoom-in. This leads to blurry quality and is somewhat slower than non-extrapolated images.</description>
     </key>
-    <key name="transparency" enum="org.mate.eoc.EocTransparencyStyle">
+    <key name="transparency" enum="org.cafe.eoc.EocTransparencyStyle">
       <default>'checked'</default>
       <summary>Transparency indicator</summary>
       <description>Determines how transparency should be indicated. Valid values are checked, color and none. If color is chosen, then the trans-color key determines the color value used.</description>
@@ -52,7 +52,7 @@
       <description>If the transparency key has the value COLOR, then this  key determines the color which is used for indicating transparency.</description>
     </key>
   </schema>
-  <schema gettext-domain="@GETTEXT_PACKAGE@" id="org.mate.eoc.full-screen" path="/org/mate/eoc/full-screen/">
+  <schema gettext-domain="@GETTEXT_PACKAGE@" id="org.cafe.eoc.full-screen" path="/org/cafe/eoc/full-screen/">
     <key name="random" type="b">
       <default>false</default>
       <summary>Randomize the image sequence</summary>
@@ -74,7 +74,7 @@
       <description>A value greater than 0 determines the seconds an image stays on screen until the next one is shown automatically. Zero  disables the automatic browsing.</description>
     </key>
   </schema>
-  <schema gettext-domain="@GETTEXT_PACKAGE@" id="org.mate.eoc.ui" path="/org/mate/eoc/ui/">
+  <schema gettext-domain="@GETTEXT_PACKAGE@" id="org.cafe.eoc.ui" path="/org/cafe/eoc/ui/">
     <key name="toolbar" type="b">
       <default>true</default>
       <summary>Show/Hide the window toolbar.</summary>
@@ -87,7 +87,7 @@
       <default>false</default>
       <summary>Show/Hide the image collection pane.</summary>
     </key>
-    <key name="image-collection-position" enum="org.mate.eoc.EocWindowCollectionPos">
+    <key name="image-collection-position" enum="org.cafe.eoc.EocWindowCollectionPos">
       <default>'bottom'</default>
       <summary>Image collection pane position.</summary>
     </key>
@@ -128,7 +128,7 @@
       <description>If activated and no image is loaded in the active window, the file chooser will display the user's pictures folder using the XDG special user directories. If deactivated or the pictures folder has not been set up, it will show the current working directory.</description>
     </key>
   </schema>
-  <schema gettext-domain="@GETTEXT_PACKAGE@" id="org.mate.eoc.plugins" path="/org/mate/eoc/plugins/">
+  <schema gettext-domain="@GETTEXT_PACKAGE@" id="org.cafe.eoc.plugins" path="/org/cafe/eoc/plugins/">
     <key name="active-plugins" type="as">
       <default>[]</default>
       <summary>Active plugins</summary>

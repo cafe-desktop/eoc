@@ -474,7 +474,7 @@ eoc_metadata_sidebar_class_init (EocMetadataSidebarClass *klass)
 				    );
 
 	gtk_widget_class_set_template_from_resource (widget_class,
-						     "/org/mate/eoc/ui/metadata-sidebar.ui");
+						     "/org/cafe/eoc/ui/metadata-sidebar.ui");
 
 	gtk_widget_class_bind_template_child_private (widget_class,
 						      EocMetadataSidebar,

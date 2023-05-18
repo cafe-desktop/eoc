@@ -26,7 +26,7 @@ DISTCHECK_CONFIGURE_FLAGS =      \
 	--enable-compile-warnings=no \
 	CFLAGS='-Wno-deprecated-declarations'
 
-distuninstallcheck_listfiles = find . -type f -print | grep -v /share/mate/help/ | grep -v \.omf
+distuninstallcheck_listfiles = find . -type f -print | grep -v /share/cafe/help/ | grep -v \.omf
 
 MAINTAINERCLEANFILES = \
 	$(srcdir)/aclocal.m4 \

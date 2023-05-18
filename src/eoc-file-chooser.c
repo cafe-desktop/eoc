@@ -35,7 +35,7 @@
 #ifndef MATE_DESKTOP_USE_UNSTABLE_API
 #define MATE_DESKTOP_USE_UNSTABLE_API
 #endif
-#include <libmate-desktop/mate-desktop-thumbnail.h>
+#include <libcafe-desktop/cafe-desktop-thumbnail.h>
 
 static char *last_dir[] = { NULL, NULL, NULL, NULL };
 
@@ -288,7 +288,7 @@ set_preview_pixbuf (EocFileChooser *chooser, GdkPixbuf *pixbuf, goffset size)
 		creator = gdk_pixbuf_get_option (pixbuf, "tEXt::Software");
 
 		/* stupid workaround to display nicer string if the
-		 * thumbnail is created through the mate libraries.
+		 * thumbnail is created through the cafe libraries.
 		 */
 		if (g_ascii_strcasecmp (creator, "Mate::ThumbnailFactory") == 0) {
 			creator = "MATE Libs";
@@ -343,7 +343,7 @@ update_preview_cb (GtkFileChooser *file_chooser, gpointer data)
 
 		mtime = g_file_info_get_attribute_uint64 (file_info,
 							  G_FILE_ATTRIBUTE_TIME_MODIFIED);
-		thumb_path = mate_desktop_thumbnail_factory_lookup (priv->thumb_factory, uri, mtime);
+		thumb_path = cafe_desktop_thumbnail_factory_lookup (priv->thumb_factory, uri, mtime);
 
 		if (thumb_path != NULL && g_file_test (thumb_path, G_FILE_TEST_EXISTS)) {
 			/* try to load and display preview thumbnail */
@@ -358,15 +358,15 @@ update_preview_cb (GtkFileChooser *file_chooser, gpointer data)
 			if (G_LIKELY (mime_type)) {
 				gboolean can_thumbnail, has_failed;
 
-				can_thumbnail = mate_desktop_thumbnail_factory_can_thumbnail (
+				can_thumbnail = cafe_desktop_thumbnail_factory_can_thumbnail (
 							priv->thumb_factory,
 							uri, mime_type, mtime);
-				has_failed = mate_desktop_thumbnail_factory_has_valid_failed_thumbnail (
+				has_failed = cafe_desktop_thumbnail_factory_has_valid_failed_thumbnail (
 							priv->thumb_factory,
 							uri, mtime);
 
 				if (G_LIKELY (can_thumbnail && !has_failed))
-					pixbuf = mate_desktop_thumbnail_factory_generate_thumbnail (
+					pixbuf = cafe_desktop_thumbnail_factory_generate_thumbnail (
 							priv->thumb_factory, uri, mime_type);
 
 				g_free (mime_type);
@@ -424,7 +424,7 @@ eoc_file_chooser_add_preview (GtkWidget *widget)
 	gtk_file_chooser_set_preview_widget (GTK_FILE_CHOOSER (widget), vbox);
 	gtk_file_chooser_set_preview_widget_active (GTK_FILE_CHOOSER (widget), FALSE);
 
-	priv->thumb_factory = mate_desktop_thumbnail_factory_new (MATE_DESKTOP_THUMBNAIL_SIZE_NORMAL);
+	priv->thumb_factory = cafe_desktop_thumbnail_factory_new (MATE_DESKTOP_THUMBNAIL_SIZE_NORMAL);
 
 	g_signal_connect (widget, "update-preview",
 			  G_CALLBACK (update_preview_cb), NULL);

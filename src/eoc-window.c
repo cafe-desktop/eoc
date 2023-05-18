@@ -83,7 +83,7 @@
 #endif
 
 #define MATE_DESKTOP_USE_UNSTABLE_API
-#include <libmate-desktop/mate-desktop-utils.h>
+#include <libcafe-desktop/cafe-desktop-utils.h>
 
 #define EOC_WINDOW_MIN_WIDTH  440
 #define EOC_WINDOW_MIN_HEIGHT 350
@@ -2613,7 +2613,7 @@ eoc_window_cmd_about (GtkAction *action, gpointer user_data)
 	char **authors, **documenters;
 	gsize n_authors = 0, n_documenters = 0 , i;
 
-	bytes = g_resources_lookup_data ("/org/mate/eoc/ui/eoc.about", G_RESOURCE_LOOKUP_FLAGS_NONE, &error);
+	bytes = g_resources_lookup_data ("/org/cafe/eoc/ui/eoc.about", G_RESOURCE_LOOKUP_FLAGS_NONE, &error);
 	g_assert_no_error (error);
 
 	data = g_bytes_get_data (bytes, &data_len);
@@ -2647,7 +2647,7 @@ eoc_window_cmd_about (GtkAction *action, gpointer user_data)
 			       "authors", authors,
 			       "documenters", documenters,
 			       "translator-credits", _("translator-credits"),
-			       "website", "http://www.mate-desktop.org/",
+			       "website", "http://www.cafe-desktop.org/",
 			       "logo-icon-name", "eoc",
 			       "wrap-license", TRUE,
 			       "license", license_trans,
@@ -2733,8 +2733,8 @@ wallpaper_info_bar_response (GtkInfoBar *bar, gint response, EocWindow *window)
 		GAppInfo *app_info;
 		GError *error = NULL;
 
-		app_info = g_app_info_create_from_commandline ("mate-appearance-properties --show-page=background",
-							       "mate-appearance-properties",
+		app_info = g_app_info_create_from_commandline ("cafe-appearance-properties --show-page=background",
+							       "cafe-appearance-properties",
 							       G_APP_INFO_CREATE_NONE,
 							       &error);
 
@@ -4125,7 +4125,7 @@ eoc_window_update_recent_files_menu (EocWindow *window)
 
 		/* This is a workaround for a bug (#351945) regarding
 		 * gtk_recent_info_get_uri_display() and remote URIs.
-		 * mate_vfs_format_uri_for_display is sufficient here
+		 * cafe_vfs_format_uri_for_display is sufficient here
 		 * since the password gets stripped when adding the
 		 * file to the recently used list. */
 		if (tip == NULL)
@@ -4484,7 +4484,7 @@ eoc_window_construct_ui (EocWindow *window)
 	gtk_ui_manager_insert_action_group (priv->ui_mgr, priv->actions_collection, 0);
 
 	if (!gtk_ui_manager_add_ui_from_resource (priv->ui_mgr,
-	                                          "/org/mate/eoc/ui/eoc-ui.xml",
+	                                          "/org/cafe/eoc/ui/eoc-ui.xml",
 	                                          &error)) {
 		g_warning ("building menus failed: %s", error->message);
 		g_error_free (error);

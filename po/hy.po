@@ -10,11 +10,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: eoc 1.23.1\n"
-"Report-Msgid-Bugs-To: http://www.mate-desktop.org\n"
+"Report-Msgid-Bugs-To: http://www.cafe-desktop.org\n"
 "POT-Creation-Date: 2020-01-10 14:33+0100\n"
 "PO-Revision-Date: 2020-02-14 12:07+0000\n"
 "Last-Translator: Siranush <ss.m.95@mail.ru>, 2020\n"
-"Language-Team: Armenian (https://www.transifex.com/mate/teams/13566/hy/)\n"
+"Language-Team: Armenian (https://www.transifex.com/cafe/teams/13566/hy/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -267,7 +267,7 @@ msgstr "Ֆոն"
 msgid "As custom color:"
 msgstr "Որպես գործարկողի գույն:"
 
-#: data/eoc-preferences-dialog.ui:267 data/org.mate.eoc.gschema.xml.in:16
+#: data/eoc-preferences-dialog.ui:267 data/org.cafe.eoc.gschema.xml.in:16
 msgid "Background Color"
 msgstr "Ֆոնի գույն"
 
@@ -379,16 +379,16 @@ msgstr "Ժամանակ"
 msgid "Focal Length"
 msgstr "Ֆոկուսի երկարությունը"
 
-#: data/org.mate.eoc.gschema.xml.in:11
+#: data/org.cafe.eoc.gschema.xml.in:11
 msgid "Automatic orientation"
 msgstr "Ավտոմատ կողմնորոշում"
 
-#: data/org.mate.eoc.gschema.xml.in:12
+#: data/org.cafe.eoc.gschema.xml.in:12
 msgid ""
 "Whether the image should be rotated automatically based on EXIF orientation."
 msgstr "Արդյոք պատկերը պետք է պտտվի ինքնաբերաբար EXIF կողմնորոշման հիման վրա։"
 
-#: data/org.mate.eoc.gschema.xml.in:17
+#: data/org.cafe.eoc.gschema.xml.in:17
 msgid ""
 "The color that is used to fill the area behind the image. If the use-"
 "background-color key is not set, the color is determined by the active GTK+ "
@@ -398,11 +398,11 @@ msgstr ""
 "օգտագործել֊ֆանի֊գույն բանալին սահմանված չէ,ապա փոխարենը գույն որոշում է "
 "ակտիվ GTK+ թեման։"
 
-#: data/org.mate.eoc.gschema.xml.in:21
+#: data/org.cafe.eoc.gschema.xml.in:21
 msgid "Use a custom background color"
 msgstr "Օգտագործել սովորական ֆոնի գույն"
 
-#: data/org.mate.eoc.gschema.xml.in:22
+#: data/org.cafe.eoc.gschema.xml.in:22
 msgid ""
 "If this is active, the color set by the background-color key will be used to"
 " fill the area behind the image. If it is not set, the current GTK+ theme "
@@ -412,11 +412,11 @@ msgstr ""
 "կոգտագործվի պատկերի ետևի տարածքը լրացնելու համար։ Եթե դա սահմանված չէ, ապա "
 "ընթացիկ GTK+ թեման կորոշի լրացնելու գույնը։"
 
-#: data/org.mate.eoc.gschema.xml.in:26
+#: data/org.cafe.eoc.gschema.xml.in:26
 msgid "Interpolate Image"
 msgstr "Ընդմիջարկել պատկերը"
 
-#: data/org.mate.eoc.gschema.xml.in:27
+#: data/org.cafe.eoc.gschema.xml.in:27
 msgid ""
 "Whether the image should be interpolated on zoom-out. This leads to better "
 "quality but is somewhat slower than non-interpolated images."
@@ -424,11 +424,11 @@ msgstr ""
 "Արֆյոք պատկերը պետք է լինի ինտերպոլացված։ Սա հանգեցնում է ավելի լավ որակի, "
 "բայց որոշ չափով դանդաղ է, քան ոչինտերպոլացված պատկերները։"
 
-#: data/org.mate.eoc.gschema.xml.in:31
+#: data/org.cafe.eoc.gschema.xml.in:31
 msgid "Extrapolate Image"
 msgstr "էկստրապոլացնել Պատկերը"
 
-#: data/org.mate.eoc.gschema.xml.in:32
+#: data/org.cafe.eoc.gschema.xml.in:32
 msgid ""
 "Whether the image should be extrapolated on zoom-in. This leads to blurry "
 "quality and is somewhat slower than non-extrapolated images."
@@ -436,11 +436,11 @@ msgstr ""
 "Արդյոք պատկերը պետք է էքստրապոլացնել։ Սա հանգեցնում է աղոտ որակի, և ինչ-որ "
 "չափով դանդաղ է, քան ոչ-էքստրապոլացված պատկերները։"
 
-#: data/org.mate.eoc.gschema.xml.in:36
+#: data/org.cafe.eoc.gschema.xml.in:36
 msgid "Transparency indicator"
 msgstr "Թափանցիկության ցուցանիշ"
 
-#: data/org.mate.eoc.gschema.xml.in:37
+#: data/org.cafe.eoc.gschema.xml.in:37
 msgid ""
 "Determines how transparency should be indicated. Valid values are checked, "
 "color and none. If color is chosen, then the trans-color key determines the "
@@ -450,19 +450,19 @@ msgstr ""
 "արժեքներ են՝ ստուգված, գույն և ոչ մեկը։ Եթե գույն ըընտրված չէ, ապա "
 "տրանս֊գույնբանալին սահմանում է գունի արժեքը որն օգտագործված է։"
 
-#: data/org.mate.eoc.gschema.xml.in:41
+#: data/org.cafe.eoc.gschema.xml.in:41
 msgid "Scroll wheel zoom"
 msgstr "Պտտել անիվի խոշորացումը"
 
-#: data/org.mate.eoc.gschema.xml.in:42
+#: data/org.cafe.eoc.gschema.xml.in:42
 msgid "Whether the scroll wheel should be used for zooming."
 msgstr "Արդյոք անիվի ոլորումը պետք է օգտագործվի խոշորացման համար։"
 
-#: data/org.mate.eoc.gschema.xml.in:46
+#: data/org.cafe.eoc.gschema.xml.in:46
 msgid "Zoom multiplier"
 msgstr "Խոշորացման բազմապատկիչ"
 
-#: data/org.mate.eoc.gschema.xml.in:47
+#: data/org.cafe.eoc.gschema.xml.in:47
 msgid ""
 "The multiplier to be applied when using the mouse scroll wheel for zooming. "
 "This value defines the zooming step used for each scroll event. For example,"
@@ -474,11 +474,11 @@ msgstr ""
 "յուրաքանչյուր ոլորման համար։ Օրինակ, 0.05 արդյունքները 5% խոշորացման "
 "ավելացման համար յուրաքանչյուր ոլորման համար և 1.00 արդյունք 100% խոշորացում։"
 
-#: data/org.mate.eoc.gschema.xml.in:51
+#: data/org.cafe.eoc.gschema.xml.in:51
 msgid "Transparency color"
 msgstr "Թափանցիկ գույն"
 
-#: data/org.mate.eoc.gschema.xml.in:52
+#: data/org.cafe.eoc.gschema.xml.in:52
 msgid ""
 "If the transparency key has the value COLOR, then this key determines the "
 "color which is used for indicating transparency."
@@ -486,29 +486,29 @@ msgstr ""
 "Եթե թափանցիկության բանալին ունի արժեքը՝ գույն, ապա այս բանալին որոշում է "
 "գույնը, որն օգտագործվում է, նշելով թափանցիկությունը։"
 
-#: data/org.mate.eoc.gschema.xml.in:58
+#: data/org.cafe.eoc.gschema.xml.in:58
 msgid "Randomize the image sequence"
 msgstr "Պատահականացնել պատկերի հաջորդականությունը"
 
-#: data/org.mate.eoc.gschema.xml.in:59
+#: data/org.cafe.eoc.gschema.xml.in:59
 msgid "Whether the sequence of images should be shown in an random loop."
 msgstr ""
 "Արդյոք պատկերների հաջորդականությունը պետք է ցույց տալ պապահական հանգույցով։"
 
-#: data/org.mate.eoc.gschema.xml.in:63
+#: data/org.cafe.eoc.gschema.xml.in:63
 msgid "Loop through the image sequence"
 msgstr "Տեղապտույտ է տալիս պատկերի հերթականությունը"
 
-#: data/org.mate.eoc.gschema.xml.in:64
+#: data/org.cafe.eoc.gschema.xml.in:64
 msgid "Whether the sequence of images should be shown in an endless loop."
 msgstr ""
 "Արդյոք պատկերների հաջորդականությունը պետք է ցույց տալ անվերջ հանգույցով։"
 
-#: data/org.mate.eoc.gschema.xml.in:68
+#: data/org.cafe.eoc.gschema.xml.in:68
 msgid "Allow zoom greater than 100% initially"
 msgstr "Թույլ տալ խոշորացնել ավելի մեծ, քան 100% սկզբնական շրջանում"
 
-#: data/org.mate.eoc.gschema.xml.in:69
+#: data/org.cafe.eoc.gschema.xml.in:69
 msgid ""
 "If this is set to FALSE small images will not be stretched to fit into the "
 "screen initially."
@@ -516,11 +516,11 @@ msgstr ""
 "Եթե սա սահմանվել է կեղծ, ապա պատկերը կձգվի էկրանին սկզբնական ջրջանում "
 "էկրանին տեղավորելու համար։"
 
-#: data/org.mate.eoc.gschema.xml.in:73
+#: data/org.cafe.eoc.gschema.xml.in:73
 msgid "Delay in seconds until showing the next image"
 msgstr "Ուշացումը վայրկյաններով, մինչև ցուցադրվում է հաջորդ պատկերը"
 
-#: data/org.mate.eoc.gschema.xml.in:74
+#: data/org.cafe.eoc.gschema.xml.in:74
 msgid ""
 "A value greater than 0 determines the seconds an image stays on screen until"
 " the next one is shown automatically. Zero disables the automatic browsing."
@@ -529,43 +529,43 @@ msgstr ""
 "էկրանին մինչև ինքնաբերաբար ցուցադրվում է հաջորդը։ Զրոն անջատում է "
 "ինքնաբերաբար թերթումը։"
 
-#: data/org.mate.eoc.gschema.xml.in:80
+#: data/org.cafe.eoc.gschema.xml.in:80
 msgid "Show/Hide the window toolbar."
 msgstr "Ցուցադրել/Թաքցնել գործիքադարակի պատուհանը"
 
-#: data/org.mate.eoc.gschema.xml.in:84
+#: data/org.cafe.eoc.gschema.xml.in:84
 msgid "Show/Hide the window statusbar."
 msgstr "Ցուցադրել/Թաքցնել կարգավիճակի վահանակի պատուհանը։"
 
-#: data/org.mate.eoc.gschema.xml.in:88
+#: data/org.cafe.eoc.gschema.xml.in:88
 msgid "Show/Hide the image collection pane."
 msgstr "Ցուցադրել/Թաքցնել պատկերի հավաքածուի վահանակը։"
 
-#: data/org.mate.eoc.gschema.xml.in:92
+#: data/org.cafe.eoc.gschema.xml.in:92
 msgid "Image collection pane position."
 msgstr "Պատկերների հավաքագրման վահանակի դիրքորոշումը։"
 
-#: data/org.mate.eoc.gschema.xml.in:96
+#: data/org.cafe.eoc.gschema.xml.in:96
 msgid "Whether the image collection pane should be resizable."
 msgstr "Արդյոք պատկերի հավաքածուի վահանակը պետք է լինի չափափոխելի։"
 
-#: data/org.mate.eoc.gschema.xml.in:100
+#: data/org.cafe.eoc.gschema.xml.in:100
 msgid "Show/Hide the window side pane."
 msgstr "Ցուցադրել/Թաքցնել կողմնակի վահանակի պատուհանը։"
 
-#: data/org.mate.eoc.gschema.xml.in:104
+#: data/org.cafe.eoc.gschema.xml.in:104
 msgid "Show/Hide the image collection pane scroll buttons."
 msgstr "Ցույց տալ/թաքցնել պատկերի հավաքագրման վահանակի ոլորման կոճակները։"
 
-#: data/org.mate.eoc.gschema.xml.in:108
+#: data/org.cafe.eoc.gschema.xml.in:108
 msgid "Close main window without asking to save changes."
 msgstr "Փակել հիմնական պատուհանը, առանց խնդրելով պահպանել փոփոխությունները:"
 
-#: data/org.mate.eoc.gschema.xml.in:112
+#: data/org.cafe.eoc.gschema.xml.in:112
 msgid "Trash images without asking"
 msgstr "Զամբյուղից պատկերները առանց հարցնելու"
 
-#: data/org.mate.eoc.gschema.xml.in:113
+#: data/org.cafe.eoc.gschema.xml.in:113
 msgid ""
 "If activated, Eye of MATE won't ask for confirmation when moving images to "
 "the trash. It will still ask if any of the files cannot be moved to the "
@@ -575,14 +575,14 @@ msgstr ""
 "տեղափոխվում են զամբյուղից։ Այն կհարցնի, եթե որևէ  ֆայլ չի կարող տեղափոխել է "
 "զամբյուղից և փոխարենը կջնջի։"
 
-#: data/org.mate.eoc.gschema.xml.in:117
+#: data/org.cafe.eoc.gschema.xml.in:117
 msgid ""
 "Whether the metadata list in the properties dialog should have its own page."
 msgstr ""
 "Արդյոք մետատվյալները ցուցակ հատկությունների երկխոսության մեջ պետք է ունենա "
 "իր սեփական էջը։"
 
-#: data/org.mate.eoc.gschema.xml.in:118
+#: data/org.cafe.eoc.gschema.xml.in:118
 msgid ""
 "If activated, the detailed metadata list in the properties dialog will be "
 "moved to its own page in the dialog. This should make the dialog more usable"
@@ -595,11 +595,11 @@ msgstr ""
 " ավելի քիչ, օրինակ, ինչպես օգտագործվում է ըստ նեթբուքերի։ Եթե անջատված է, "
 "ապա դաշտը կլինի ներդրված \"Metadata\" էջում: "
 
-#: data/org.mate.eoc.gschema.xml.in:122
+#: data/org.cafe.eoc.gschema.xml.in:122
 msgid "External program to use for editing images"
 msgstr "Արտաքին ծրագիրը օգտագործել պատկերների խմբագրման համար"
 
-#: data/org.mate.eoc.gschema.xml.in:123
+#: data/org.cafe.eoc.gschema.xml.in:123
 msgid ""
 "The desktop file name (including the \".desktop\") of the application to use"
 " for editing images (when the \"Edit Image\" toolbar button is clicked). Set"
@@ -609,7 +609,7 @@ msgstr ""
 "օգտագործում է պատկերի խմբագրման համար (երբ \"Edit Image\" գործիքաշարի կոճակը"
 " սեղմված է)։ Սահմանել դատարկ տող, այս հնարավորության անջատման համար։"
 
-#: data/org.mate.eoc.gschema.xml.in:127
+#: data/org.cafe.eoc.gschema.xml.in:127
 msgid ""
 "Whether the file chooser should show the user's pictures folder if no images"
 " are loaded."
@@ -617,7 +617,7 @@ msgstr ""
 "Արդյոք ֆայլ ընտրոցը պետք է ցույց օգտագործողների լուսանկարների թղթապանակը, "
 "եթե չկան բեռնված պատկերներ։"
 
-#: data/org.mate.eoc.gschema.xml.in:128
+#: data/org.cafe.eoc.gschema.xml.in:128
 msgid ""
 "If activated and no image is loaded in the active window, the file chooser "
 "will display the user's pictures folder using the XDG special user "
@@ -629,11 +629,11 @@ msgstr ""
 "օգտվողի թղթապանակները։ Եթե ապաակտիվացված է կամ նկարների թղթապանակը սահմանված"
 " չէ, ապա դա ցույց կտա ընթացիկ աշխատանքային թղթապանակը։"
 
-#: data/org.mate.eoc.gschema.xml.in:134
+#: data/org.cafe.eoc.gschema.xml.in:134
 msgid "Active plugins"
 msgstr "Ակտիվ կոնտակտները"
 
-#: data/org.mate.eoc.gschema.xml.in:135
+#: data/org.cafe.eoc.gschema.xml.in:135
 msgid ""
 "List of active plugins. It doesn't contain the \"Location\" of the active "
 "plugins. See the .eoc-plugin file for obtaining the \"Location\" of a given "

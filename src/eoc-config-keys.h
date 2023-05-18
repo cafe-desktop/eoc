@@ -27,16 +27,16 @@
 #ifndef __EOC_CONFIG_KEYS_H__
 #define __EOC_CONFIG_KEYS_H__
 
-#define EOC_CONF_DOMAIN				"org.mate.eoc"
+#define EOC_CONF_DOMAIN				"org.cafe.eoc"
 #define EOC_CONF_FULLSCREEN			EOC_CONF_DOMAIN".full-screen"
 #define EOC_CONF_PLUGINS			EOC_CONF_DOMAIN".plugins"
 #define EOC_CONF_UI				EOC_CONF_DOMAIN".ui"
 #define EOC_CONF_VIEW				EOC_CONF_DOMAIN".view"
 
-#define EOC_CONF_BACKGROUND_SCHEMA              "org.mate.background"
+#define EOC_CONF_BACKGROUND_SCHEMA              "org.cafe.background"
 #define EOC_CONF_BACKGROUND_FILE                "picture-filename"
 
-#define EOC_CONF_LOCKDOWN_SCHEMA                "org.mate.lockdown"
+#define EOC_CONF_LOCKDOWN_SCHEMA                "org.cafe.lockdown"
 #define EOC_CONF_LOCKDOWN_CAN_SAVE              "disable-save-to-disk"
 #define EOC_CONF_LOCKDOWN_CAN_PRINT             "disable-printing"
 #define EOC_CONF_LOCKDOWN_CAN_SETUP_PAGE        "disable-print-setup"

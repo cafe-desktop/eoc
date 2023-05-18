@@ -14,11 +14,11 @@ appdata_DATA = $(appdata_in_files:.xml.in=.xml)
 $(appdata_DATA): $(appdata_in_files)
 	$(AM_V_GEN) $(MSGFMT) --xml --template $< -d $(top_srcdir)/po -o $@
 
-gsettings_ENUM_NAMESPACE = org.mate.eoc
+gsettings_ENUM_NAMESPACE = org.cafe.eoc
 gsettings_ENUM_FILES = $(top_srcdir)/src/eoc-scroll-view.h	\
                        $(top_srcdir)/src/eoc-window.h
 
-gsettings_SCHEMAS = org.mate.eoc.gschema.xml
+gsettings_SCHEMAS = org.cafe.eoc.gschema.xml
 @GSETTINGS_RULES@
 
 uidir = $(pkgdatadir)

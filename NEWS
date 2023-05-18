@@ -21,7 +21,7 @@
 ### eoc 1.23.2
 
   * Translations update
-  * thumbnail: Remove use of mate-desktop-thumbnail helper
+  * thumbnail: Remove use of cafe-desktop-thumbnail helper
   * Update copyright to 2020
   * enable wayland support
   * EocPrintPreview: Fix preview thumbnail on HiDPI displays
@@ -84,7 +84,7 @@
   * disable deprecation warnings for distcheck
   * Update the appdata XML file
   * Use make functions for HELP_LINGUAS
-  * Fix url of ulink to point to mate-user-guide
+  * Fix url of ulink to point to cafe-user-guide
   * Update Catalan screenhots
   * Fix spelling and grammar mistakes
   * Update eoc_start_window.png
@@ -262,7 +262,7 @@
 
   * NEWS: use consistent, project wide, markdown-like formatting
     to make generating release announcements easier
-  * Build: require libmate-desktop >= 1.17
+  * Build: require libcafe-desktop >= 1.17
   * Move to GTK+3 (require GTK+ >= 3.14), drop GTK+2 code and
     --with-gtk build option
   * Drop Python bindings and --enable-python build option
@@ -334,7 +334,7 @@
   * EocScrollView: clip all types of images to the visible image area
   * EocScrollView: enable double buffering
   * Bump GLib/GIO required version to 2.36
-  * Drop useless dependency on mate-icon-theme
+  * Drop useless dependency on cafe-icon-theme
   * Fix build with libexif when prefix is not /usr
   * Some annotation fixes
   * Some GTK+3 fixes and improvements
