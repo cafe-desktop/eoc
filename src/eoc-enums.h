@@ -1,4 +1,4 @@
-/* Eye of MATE - General enumerations.
+/* Eye of CAFE - General enumerations.
  *
  * Copyright (C) 2007-2008 The Free Software Foundation
  *

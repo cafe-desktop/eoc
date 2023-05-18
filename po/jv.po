@@ -6,7 +6,7 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MATE Desktop Environment\n"
+"Project-Id-Version: CAFE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-17 22:30+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -59,7 +59,7 @@ msgid "Separator"
 msgstr ""
 
 #: ../data/eoc.appdata.xml.in.h:1 ../src/eoc-window.c:2584
-msgid "Eye of MATE"
+msgid "Eye of CAFE"
 msgstr ""
 
 #: ../data/eoc.appdata.xml.in.h:2
@@ -68,13 +68,13 @@ msgstr ""
 
 #: ../data/eoc.appdata.xml.in.h:3
 msgid ""
-"<p> Eye of MATE is a simple viewer for browsing images on your computer. "
+"<p> Eye of CAFE is a simple viewer for browsing images on your computer. "
 "Once an image is loaded, you can zoom and rotate the image, and also view "
 "subsequent images in the directory the image was loaded from. </p>"
 msgstr ""
 
 #: ../data/eoc.desktop.in.in.h:1 ../src/main.c:65 ../src/main.c:163
-msgid "Eye of MATE Image Viewer"
+msgid "Eye of CAFE Image Viewer"
 msgstr ""
 
 #: ../data/eoc.desktop.in.in.h:2
@@ -252,7 +252,7 @@ msgid "File Name Preview"
 msgstr ""
 
 #: ../data/eoc-preferences-dialog.ui.h:1
-msgid "Eye of MATE Preferences"
+msgid "Eye of CAFE Preferences"
 msgstr ""
 
 #: ../data/eoc-preferences-dialog.ui.h:2
@@ -508,7 +508,7 @@ msgstr ""
 
 #: ../data/org.cafe.eoc.gschema.xml.in.h:38
 msgid ""
-"If activated, Eye of MATE won't ask for confirmation when moving images to "
+"If activated, Eye of CAFE won't ask for confirmation when moving images to "
 "the trash. It will still ask if any of the files cannot be moved to the "
 "trash and would be deleted instead."
 msgstr ""
@@ -627,7 +627,7 @@ msgstr ""
 
 #: ../src/eoc-file-chooser.c:126
 msgid ""
-"Eye of MATE could not determine a supported writable file format based on "
+"Eye of CAFE could not determine a supported writable file format based on "
 "the filename."
 msgstr ""
 
@@ -951,7 +951,7 @@ msgid "At least two file names are equal."
 msgstr ""
 
 #: ../src/eoc-util.c:68
-msgid "Could not display help for Eye of MATE"
+msgid "Could not display help for Eye of CAFE"
 msgstr ""
 
 #: ../src/eoc-util.c:116
@@ -1059,7 +1059,7 @@ msgid ""
 msgstr ""
 
 #: ../src/eoc-window.c:2589
-msgid "The MATE image viewer."
+msgid "The CAFE image viewer."
 msgstr ""
 
 #: ../src/eoc-window.c:2679 ../src/eoc-window.c:2694
@@ -1191,7 +1191,7 @@ msgid "Prefere_nces"
 msgstr ""
 
 #: ../src/eoc-window.c:3716
-msgid "Preferences for Eye of MATE"
+msgid "Preferences for Eye of CAFE"
 msgstr ""
 
 #: ../src/eoc-window.c:3718

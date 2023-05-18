@@ -1,4 +1,4 @@
-/* Eye Of MATE -- Metadata Reader Interface
+/* Eye Of CAFE -- Metadata Reader Interface
  *
  * Copyright (C) 2008 The Free Software Foundation
  *

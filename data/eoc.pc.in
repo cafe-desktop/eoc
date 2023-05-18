@@ -4,8 +4,8 @@ libdir=@libdir@
 includedir=@includedir@/eoc-@EOC_API_VERSION@
 pluginsdir=@libdir@/eoc/plugins
 
-Name: Eye of MATE
-Description: The MATE Image Viewer
+Name: Eye of CAFE
+Description: The CAFE Image Viewer
 Requires: gtk+-3.0, gio-2.0
 Version: @VERSION@
 Cflags: -I${includedir}

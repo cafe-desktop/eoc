@@ -1,4 +1,4 @@
-/* Eye Of MATE -- JPEG Metadata Reader
+/* Eye Of CAFE -- JPEG Metadata Reader
  *
  * Copyright (C) 2008 The Free Software Foundation
  *

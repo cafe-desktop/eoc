@@ -30,8 +30,8 @@ msgstr "Panduan Pelihat Imej"
 #. (itstool) path: revdescription/para
 #: C/index.docbook:47 C/index.docbook:57 C/index.docbook:123
 #: C/index.docbook:124
-msgid "MATE Documentation Project"
-msgstr "Projek Dokumentasi MATE"
+msgid "CAFE Documentation Project"
+msgstr "Projek Dokumentasi CAFE"
 
 #. (itstool) path: publisher/publishername
 #. (itstool) path: affiliation/orgname
@@ -47,8 +47,8 @@ msgstr "Projek Dokumentasi GNOME"
 
 #. (itstool) path: affiliation/orgname
 #: C/index.docbook:59
-msgid "MATE Desktop"
-msgstr "Desktop MATE"
+msgid "CAFE Desktop"
+msgstr "Desktop CAFE"
 
 #. (itstool) path: personname/firstname
 #: C/index.docbook:91
@@ -129,8 +129,8 @@ msgstr "Panduan ini menerangkan versi 1.22 bagi Pelihat Imej."
 
 #. (itstool) path: article/indexterm
 #: C/index.docbook:217
-msgid "<primary>Eye of MATE</primary>"
-msgstr "<primary>Eye of MATE</primary>"
+msgid "<primary>Eye of CAFE</primary>"
+msgstr "<primary>Eye of CAFE</primary>"
 
 #. (itstool) path: info/title
 #: C/index.docbook:224
@@ -140,10 +140,10 @@ msgstr "Pengenalan"
 #. (itstool) path: section/para
 #: C/index.docbook:226
 msgid ""
-"The <application>Eye of MATE Image Viewer</application> application enables "
+"The <application>Eye of CAFE Image Viewer</application> application enables "
 "you to view single image files, as well as large image collections."
 msgstr ""
-"Aplikasi <application>Pelihat Imej Eye of MATE</application> membolehkan "
+"Aplikasi <application>Pelihat Imej Eye of CAFE</application> membolehkan "
 "anda paparkan satu fail imej, dan juga satu koleksi besar imej."
 
 #. (itstool) path: info/title
@@ -1109,10 +1109,10 @@ msgstr "Dialog Simpan Sebagai untuk imej berbilang"
 #. (itstool) path: textobject/phrase
 #: C/index.docbook:607
 msgid ""
-"Shows Eye of MATE <guilabel>Save As</guilabel> dialog when saving multiple "
+"Shows Eye of CAFE <guilabel>Save As</guilabel> dialog when saving multiple "
 "images."
 msgstr ""
-"Menunjukkan dialog <guilabel>Simpan Sebagai</guilabel> Eye of MATE ketika "
+"Menunjukkan dialog <guilabel>Simpan Sebagai</guilabel> Eye of CAFE ketika "
 "menyimpan imej berbilang."
 
 #. (itstool) path: section/para
@@ -1388,8 +1388,8 @@ msgstr "Tetingkap penyunting palang alat"
 
 #. (itstool) path: textobject/phrase
 #: C/index.docbook:694
-msgid "Shows Eye of MATE toolbar editor window."
-msgstr "Menunjukkan tetingkap penyunting palang alat Eye of MATE."
+msgid "Shows Eye of CAFE toolbar editor window."
+msgstr "Menunjukkan tetingkap penyunting palang alat Eye of CAFE."
 
 #. (itstool) path: section/para
 #: C/index.docbook:699
@@ -1663,12 +1663,12 @@ msgstr ""
 #. (itstool) path: legalnotice/para
 #: C/legal.xml:13
 msgid ""
-"This manual is part of a collection of MATE manuals distributed under the "
+"This manual is part of a collection of CAFE manuals distributed under the "
 "GFDL. If you want to distribute this manual separately from the collection, "
 "you can do so by adding a copy of the license to the manual, as described in"
 " section 6 of the license."
 msgstr ""
-"Panduan ini adalah sebahagian dari koleksi panduan MATE yang diedar bawah "
+"Panduan ini adalah sebahagian dari koleksi panduan CAFE yang diedar bawah "
 "GFDL. Jika anda mahu edar panduan ini secara berasingan dari koleksi "
 "asalnya, anda boleh membuat sedemikian dengan menambah satu salinan lesen ke"
 " dalam panduan sepertimana yang dijelaskan dalam seksyen 6 lesen tersebut."
@@ -1677,14 +1677,14 @@ msgstr ""
 #: C/legal.xml:20
 msgid ""
 "Many of the names used by companies to distinguish their products and "
-"services are claimed as trademarks. Where those names appear in any MATE "
-"documentation, and the members of the MATE Documentation Project are made "
+"services are claimed as trademarks. Where those names appear in any CAFE "
+"documentation, and the members of the CAFE Documentation Project are made "
 "aware of those trademarks, then the names are in capital letters or initial "
 "capital letters."
 msgstr ""
 "Kebanyakan nama digunakan oleh syarikat untuk membezakan produk dan "
 "perkhidmatan mereka dituntut sebagai tanda dagangan. Jika nama tersebut ada "
-"di dalam dokumentasi MATE, dan ahli-ahli Projek Dokumentasi MATE sedar akan "
+"di dalam dokumentasi CAFE, dan ahli-ahli Projek Dokumentasi CAFE sedar akan "
 "tanda dagangan tersebut, kerana nama-nama tersebut telah di huruf besarkan "
 "atau huruf awalnya telah dihuruf besarkan."
 
@@ -1762,10 +1762,10 @@ msgstr "Maklumbalas"
 msgid ""
 "To report a bug or make a suggestion regarding the <application>Image "
 "Viewer</application> application or this manual, follow the directions in "
-"the <link xlink:href=\"help:cafe-user-guide/feedback\">MATE Feedback "
+"the <link xlink:href=\"help:cafe-user-guide/feedback\">CAFE Feedback "
 "Page</link>."
 msgstr ""
 "Untuk melaporkan pepijat atau membuat saranan berkenaan aplikasi "
 "<application>Pelihat Imej</application> atau panduan ini, ikuti arahan di "
 "dalam <link xlink:href=\"help:cafe-user-guide/feedback\">Halaman Maklumbalas"
-" MATE</link>."
+" CAFE</link>."

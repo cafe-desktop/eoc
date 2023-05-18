@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR MATE Desktop Environment team
+# Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the eoc package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -57,8 +57,8 @@ msgid "Separator"
 msgstr "Bereizlea"
 
 #: data/eoc.appdata.xml.in:6 src/eoc-window.c:2640
-msgid "Eye of MATE"
-msgstr "MATEren begia"
+msgid "Eye of CAFE"
+msgstr "CAFEren begia"
 
 #: data/eoc.appdata.xml.in:7
 msgid "Simple image viewer"
@@ -66,14 +66,14 @@ msgstr "Irudi-ikusle sinplea"
 
 #: data/eoc.appdata.xml.in:9
 msgid ""
-"Eye of MATE is a simple viewer for browsing images on your computer. Once an"
+"Eye of CAFE is a simple viewer for browsing images on your computer. Once an"
 " image is loaded, you can zoom and rotate the image, and also view "
 "subsequent images in the directory the image was loaded from."
 msgstr ""
 
 #: data/eoc.desktop.in.in:3 src/main.c:65 src/main.c:166
-msgid "Eye of MATE Image Viewer"
-msgstr "MATEren irudi-ikustailearen begia"
+msgid "Eye of CAFE Image Viewer"
+msgstr "CAFEren irudi-ikustailearen begia"
 
 #: data/eoc.desktop.in.in:4
 msgid "Browse and rotate images"
@@ -88,7 +88,7 @@ msgstr ""
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/eoc.desktop.in.in:14
-msgid "image;viewer;JPEG;PNG;TIFF;SVG;MATE;photos;browse;thumbnails;rotate;"
+msgid "image;viewer;JPEG;PNG;TIFF;SVG;CAFE;photos;browse;thumbnails;rotate;"
 msgstr ""
 
 #: data/eoc-image-properties-dialog.ui:8
@@ -242,8 +242,8 @@ msgid "File Name Preview"
 msgstr "Fitxategi-izenaren aurrebista"
 
 #: data/eoc-preferences-dialog.ui:16
-msgid "Eye of MATE Preferences"
-msgstr "MATEren begiaren hobespenak"
+msgid "Eye of CAFE Preferences"
+msgstr "CAFEren begiaren hobespenak"
 
 #: data/eoc-preferences-dialog.ui:88
 msgid "Image Enhancements"
@@ -568,11 +568,11 @@ msgstr "Bota irudiak zakarrontzira galdetu gabe"
 
 #: data/org.cafe.eoc.gschema.xml.in:113
 msgid ""
-"If activated, Eye of MATE won't ask for confirmation when moving images to "
+"If activated, Eye of CAFE won't ask for confirmation when moving images to "
 "the trash. It will still ask if any of the files cannot be moved to the "
 "trash and would be deleted instead."
 msgstr ""
-"Aktibatzen bada, MATEren Begiak ez du berrespenik eskatuko irudiak "
+"Aktibatzen bada, CAFEren Begiak ez du berrespenik eskatuko irudiak "
 "zakarrontzira botatzean. Hala ere, irudietariko batzuk ezin badira "
 "zakarrontzira bota, horren ordez ezabatu egin behar al diren galdetuko du."
 
@@ -708,10 +708,10 @@ msgstr "Fitxategi-formatua ezezaguna da edo ez dago onartuta"
 
 #: src/eoc-file-chooser.c:126
 msgid ""
-"Eye of MATE could not determine a supported writable file format based on "
+"Eye of CAFE could not determine a supported writable file format based on "
 "the filename."
 msgstr ""
-"MATEren Begiak ezin izan du fitxategi-formatu idazgarria zehaztu fitxategi-"
+"CAFEren Begiak ezin izan du fitxategi-formatu idazgarria zehaztu fitxategi-"
 "izenean oinarrituz"
 
 #: src/eoc-file-chooser.c:127
@@ -1011,8 +1011,8 @@ msgid "At least two file names are equal."
 msgstr "Bi fitxategi-izen behintzat berdinak dira"
 
 #: src/eoc-util.c:68
-msgid "Could not display help for Eye of MATE"
-msgstr "Ezin da bistaratu MATEren begiaren laguntza"
+msgid "Could not display help for Eye of CAFE"
+msgstr "Ezin da bistaratu CAFEren begiaren laguntza"
 
 #: src/eoc-util.c:116
 msgid " (invalid Unicode)"
@@ -1129,19 +1129,19 @@ msgstr ""
 "Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA"
 
 #: src/eoc-window.c:2641
-msgid "About Eye of MATE"
+msgid "About Eye of CAFE"
 msgstr ""
 
 #: src/eoc-window.c:2643
 msgid ""
 "Copyright © 2000-2010 Free Software Foundation, Inc.\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 
 #: src/eoc-window.c:2646
-msgid "The MATE image viewer."
-msgstr "MATEren irudi-ikustailea."
+msgid "The CAFE image viewer."
+msgstr "CAFEren irudi-ikustailea."
 
 #: src/eoc-window.c:2649
 msgid "translator-credits"
@@ -1281,8 +1281,8 @@ msgid "Prefere_nces"
 msgstr "Hobes_penak"
 
 #: src/eoc-window.c:3793
-msgid "Preferences for Eye of MATE"
-msgstr "MATEren begiaren hobespenak"
+msgid "Preferences for Eye of CAFE"
+msgstr "CAFEren begiaren hobespenak"
 
 #: src/eoc-window.c:3795
 msgid "_Contents"

@@ -1,4 +1,4 @@
-/* Eye Of MATE -- PNG Metadata Reader
+/* Eye Of CAFE -- PNG Metadata Reader
  *
  * Copyright (C) 2008 The Free Software Foundation
  *

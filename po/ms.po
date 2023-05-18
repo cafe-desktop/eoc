@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR MATE Desktop Environment team
+# Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the eoc package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -56,8 +56,8 @@ msgid "Separator"
 msgstr "Pemisah"
 
 #: data/eoc.appdata.xml.in:6 src/eoc-window.c:2640
-msgid "Eye of MATE"
-msgstr "Eye of MATE"
+msgid "Eye of CAFE"
+msgstr "Eye of CAFE"
 
 #: data/eoc.appdata.xml.in:7
 msgid "Simple image viewer"
@@ -65,17 +65,17 @@ msgstr "Pelihat imej ringkas"
 
 #: data/eoc.appdata.xml.in:9
 msgid ""
-"Eye of MATE is a simple viewer for browsing images on your computer. Once an"
+"Eye of CAFE is a simple viewer for browsing images on your computer. Once an"
 " image is loaded, you can zoom and rotate the image, and also view "
 "subsequent images in the directory the image was loaded from."
 msgstr ""
-"Eye of MATE merupakan pelihat ringkas untuk melayari imej dalam komputer "
+"Eye of CAFE merupakan pelihat ringkas untuk melayari imej dalam komputer "
 "anda. Bila imehj dimuatkan, anda boleh zum dan putar imej, dan juga dapat "
 "melihat imej berikutnya di dalam direktori imej yang dimuatkan."
 
 #: data/eoc.desktop.in.in:3 src/main.c:65 src/main.c:166
-msgid "Eye of MATE Image Viewer"
-msgstr "Pelihat Imej Eye of MATE"
+msgid "Eye of CAFE Image Viewer"
+msgstr "Pelihat Imej Eye of CAFE"
 
 #: data/eoc.desktop.in.in:4
 msgid "Browse and rotate images"
@@ -90,8 +90,8 @@ msgstr "eoc"
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/eoc.desktop.in.in:14
-msgid "image;viewer;JPEG;PNG;TIFF;SVG;MATE;photos;browse;thumbnails;rotate;"
-msgstr "Imej;pelihat;JPEG;PNG;TIFF;SVG;MATE;foto;layar;lakaran kenit;putar;"
+msgid "image;viewer;JPEG;PNG;TIFF;SVG;CAFE;photos;browse;thumbnails;rotate;"
+msgstr "Imej;pelihat;JPEG;PNG;TIFF;SVG;CAFE;foto;layar;lakaran kenit;putar;"
 
 #: data/eoc-image-properties-dialog.ui:8
 msgid "Image Properties"
@@ -244,7 +244,7 @@ msgid "File Name Preview"
 msgstr "Pratonton Nama Fail"
 
 #: data/eoc-preferences-dialog.ui:16
-msgid "Eye of MATE Preferences"
+msgid "Eye of CAFE Preferences"
 msgstr "Keutamaan Eye of Mate"
 
 #: data/eoc-preferences-dialog.ui:88
@@ -569,11 +569,11 @@ msgstr "Buang imej tanpa bertanya"
 
 #: data/org.cafe.eoc.gschema.xml.in:113
 msgid ""
-"If activated, Eye of MATE won't ask for confirmation when moving images to "
+"If activated, Eye of CAFE won't ask for confirmation when moving images to "
 "the trash. It will still ask if any of the files cannot be moved to the "
 "trash and would be deleted instead."
 msgstr ""
-"Jika diaktifkan, Eye of MATE tidak akan meminta pengesahan apabila imej "
+"Jika diaktifkan, Eye of CAFE tidak akan meminta pengesahan apabila imej "
 "dihantar ke tong sampah. Ia masih akan meminta jika mana-mana fail tersebut "
 "tidak boleh dipindahkan ke tong sampah dan akan dipaddam sebaliknya."
 
@@ -709,10 +709,10 @@ msgstr "Format fail tidak diketahui atau tidak disokong"
 
 #: src/eoc-file-chooser.c:126
 msgid ""
-"Eye of MATE could not determine a supported writable file format based on "
+"Eye of CAFE could not determine a supported writable file format based on "
 "the filename."
 msgstr ""
-"Eye of MATE tidak dapat menentukan sokongan boleh tulis format fail "
+"Eye of CAFE tidak dapat menentukan sokongan boleh tulis format fail "
 "berdasarkan nama fail."
 
 #: src/eoc-file-chooser.c:127
@@ -1010,8 +1010,8 @@ msgid "At least two file names are equal."
 msgstr "Sekurang-kurangnya dua nama fail adalah sama."
 
 #: src/eoc-util.c:68
-msgid "Could not display help for Eye of MATE"
-msgstr "Tidak dapat papar bantuan bagi Eye of MATE"
+msgid "Could not display help for Eye of CAFE"
+msgstr "Tidak dapat papar bantuan bagi Eye of CAFE"
 
 #: src/eoc-util.c:116
 msgid " (invalid Unicode)"
@@ -1127,22 +1127,22 @@ msgstr ""
 "Street, Fifth Floor, Boston, MA 02110-1301, USA."
 
 #: src/eoc-window.c:2641
-msgid "About Eye of MATE"
-msgstr "Perihal Eye of MATE"
+msgid "About Eye of CAFE"
+msgstr "Perihal Eye of CAFE"
 
 #: src/eoc-window.c:2643
 msgid ""
 "Copyright © 2000-2010 Free Software Foundation, Inc.\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 "Hak Cipta © 2000-2010 Free Software Foundation, Inc.\n"
 "Hak Cipta © 2011 Perberos\n"
-"Hak Cipta © 2012-2020 Pembangun MATE"
+"Hak Cipta © 2012-2020 Pembangun CAFE"
 
 #: src/eoc-window.c:2646
-msgid "The MATE image viewer."
-msgstr "Pelihat Imej MATE."
+msgid "The CAFE image viewer."
+msgstr "Pelihat Imej CAFE."
 
 #: src/eoc-window.c:2649
 msgid "translator-credits"
@@ -1281,8 +1281,8 @@ msgid "Prefere_nces"
 msgstr "_Keutamaan"
 
 #: src/eoc-window.c:3793
-msgid "Preferences for Eye of MATE"
-msgstr "Keutamaan bagi Eye of MATE"
+msgid "Preferences for Eye of CAFE"
+msgstr "Keutamaan bagi Eye of CAFE"
 
 #: src/eoc-window.c:3795
 msgid "_Contents"

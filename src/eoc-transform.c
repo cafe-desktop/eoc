@@ -1,4 +1,4 @@
-/* Eye Of MATE -- Affine Transformations
+/* Eye Of CAFE -- Affine Transformations
  *
  * Copyright (C) 2003-2009 The Free Software Foundation
  *

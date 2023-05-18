@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR MATE Desktop Environment team
+# Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the eoc package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -62,8 +62,8 @@ msgid "Separator"
 msgstr "Separador"
 
 #: data/eoc.appdata.xml.in:6 src/eoc-window.c:2640
-msgid "Eye of MATE"
-msgstr "Ojo de MATE"
+msgid "Eye of CAFE"
+msgstr "Ojo de CAFE"
 
 #: data/eoc.appdata.xml.in:7
 msgid "Simple image viewer"
@@ -71,17 +71,17 @@ msgstr "Visor de imágenes simple"
 
 #: data/eoc.appdata.xml.in:9
 msgid ""
-"Eye of MATE is a simple viewer for browsing images on your computer. Once an"
+"Eye of CAFE is a simple viewer for browsing images on your computer. Once an"
 " image is loaded, you can zoom and rotate the image, and also view "
 "subsequent images in the directory the image was loaded from."
 msgstr ""
-"Ojo de MATE es un sencillo visor para examinar las imágenes del equipo. Una "
+"Ojo de CAFE es un sencillo visor para examinar las imágenes del equipo. Una "
 "vez cargada una imagen, puede ampliarla y girarla, y también puede ver el "
 "resto de imágenes de la carpeta desde la que se cargó la imagen."
 
 #: data/eoc.desktop.in.in:3 src/main.c:65 src/main.c:166
-msgid "Eye of MATE Image Viewer"
-msgstr "Visor de imágenes Ojo de MATE"
+msgid "Eye of CAFE Image Viewer"
+msgstr "Visor de imágenes Ojo de CAFE"
 
 #: data/eoc.desktop.in.in:4
 msgid "Browse and rotate images"
@@ -96,8 +96,8 @@ msgstr "eoc"
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/eoc.desktop.in.in:14
-msgid "image;viewer;JPEG;PNG;TIFF;SVG;MATE;photos;browse;thumbnails;rotate;"
-msgstr "imagen;visor;JPEG;PNG;TIFF;SVG;MATE;fotos;examinar;miniaturas;girar;"
+msgid "image;viewer;JPEG;PNG;TIFF;SVG;CAFE;photos;browse;thumbnails;rotate;"
+msgstr "imagen;visor;JPEG;PNG;TIFF;SVG;CAFE;fotos;examinar;miniaturas;girar;"
 
 #: data/eoc-image-properties-dialog.ui:8
 msgid "Image Properties"
@@ -250,8 +250,8 @@ msgid "File Name Preview"
 msgstr "Vista previa del nombre de archivo"
 
 #: data/eoc-preferences-dialog.ui:16
-msgid "Eye of MATE Preferences"
-msgstr "Preferencias de Ojo de MATE"
+msgid "Eye of CAFE Preferences"
+msgstr "Preferencias de Ojo de CAFE"
 
 #: data/eoc-preferences-dialog.ui:88
 msgid "Image Enhancements"
@@ -579,12 +579,12 @@ msgstr "Mover las imágenes a la papelera sin preguntar"
 
 #: data/org.cafe.eoc.gschema.xml.in:113
 msgid ""
-"If activated, Eye of MATE won't ask for confirmation when moving images to "
+"If activated, Eye of CAFE won't ask for confirmation when moving images to "
 "the trash. It will still ask if any of the files cannot be moved to the "
 "trash and would be deleted instead."
 msgstr ""
-"Si se activa, Ojo de MATE no pedirá confirmación al mover imágenes a la papelera. Preguntará si alguno de los archivos no se puede mover a la papelera y deberá eliminarse en su lugar.\n"
-"Si se activa, Ojo de MATE no pedirá confirmación al mover imágenes a la papelera. Todavía preguntará si alguno de los archivos no se puede mover a la papelera y se debe eliminar."
+"Si se activa, Ojo de CAFE no pedirá confirmación al mover imágenes a la papelera. Preguntará si alguno de los archivos no se puede mover a la papelera y deberá eliminarse en su lugar.\n"
+"Si se activa, Ojo de CAFE no pedirá confirmación al mover imágenes a la papelera. Todavía preguntará si alguno de los archivos no se puede mover a la papelera y se debe eliminar."
 
 #: data/org.cafe.eoc.gschema.xml.in:117
 msgid ""
@@ -718,10 +718,10 @@ msgstr "Formato de archivo desconocido o no compatible"
 
 #: src/eoc-file-chooser.c:126
 msgid ""
-"Eye of MATE could not determine a supported writable file format based on "
+"Eye of CAFE could not determine a supported writable file format based on "
 "the filename."
 msgstr ""
-"Ojo de MATE no ha podido determinar un formato de archivo escribible "
+"Ojo de CAFE no ha podido determinar un formato de archivo escribible "
 "compatible basándose en el nombre del archivo."
 
 #: src/eoc-file-chooser.c:127
@@ -1021,8 +1021,8 @@ msgid "At least two file names are equal."
 msgstr "Al menos dos nombres de archivo son iguales."
 
 #: src/eoc-util.c:68
-msgid "Could not display help for Eye of MATE"
-msgstr "No se ha podido mostrar la ayuda para Ojo de MATE"
+msgid "Could not display help for Eye of CAFE"
+msgstr "No se ha podido mostrar la ayuda para Ojo de CAFE"
 
 #: src/eoc-util.c:116
 msgid " (invalid Unicode)"
@@ -1139,22 +1139,22 @@ msgstr ""
 " Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
 
 #: src/eoc-window.c:2641
-msgid "About Eye of MATE"
-msgstr "Acerca de Ojo de MATE"
+msgid "About Eye of CAFE"
+msgstr "Acerca de Ojo de CAFE"
 
 #: src/eoc-window.c:2643
 msgid ""
 "Copyright © 2000-2010 Free Software Foundation, Inc.\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 "Copyright © 2001–2010 Free Software Foundation, Inc.\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012–2020 Los desarrolladores de MATE"
+"Copyright © 2012–2020 Los desarrolladores de CAFE"
 
 #: src/eoc-window.c:2646
-msgid "The MATE image viewer."
-msgstr "El visor de imágenes de MATE."
+msgid "The CAFE image viewer."
+msgstr "El visor de imágenes de CAFE."
 
 #: src/eoc-window.c:2649
 msgid "translator-credits"
@@ -1298,8 +1298,8 @@ msgid "Prefere_nces"
 msgstr "Prefere_ncias"
 
 #: src/eoc-window.c:3793
-msgid "Preferences for Eye of MATE"
-msgstr "Preferencias para Ojo de MATE"
+msgid "Preferences for Eye of CAFE"
+msgstr "Preferencias para Ojo de CAFE"
 
 #: src/eoc-window.c:3795
 msgid "_Contents"

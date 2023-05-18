@@ -1,4 +1,4 @@
-/* Eye Of MATE -- Print Dialog Custom Widget
+/* Eye Of CAFE -- Print Dialog Custom Widget
  *
  * Copyright (C) 2006-2007 The Free Software Foundation
  *

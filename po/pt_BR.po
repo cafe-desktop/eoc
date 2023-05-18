@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR MATE Desktop Environment team
+# Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the eoc package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -71,7 +71,7 @@ msgid "Separator"
 msgstr "Separador"
 
 #: data/eoc.appdata.xml.in:6 src/eoc-window.c:2640
-msgid "Eye of MATE"
+msgid "Eye of CAFE"
 msgstr "Visualizador de Imagens"
 
 #: data/eoc.appdata.xml.in:7
@@ -80,13 +80,13 @@ msgstr "Visualizador de imagens simples"
 
 #: data/eoc.appdata.xml.in:9
 msgid ""
-"Eye of MATE is a simple viewer for browsing images on your computer. Once an"
+"Eye of CAFE is a simple viewer for browsing images on your computer. Once an"
 " image is loaded, you can zoom and rotate the image, and also view "
 "subsequent images in the directory the image was loaded from."
 msgstr ""
 
 #: data/eoc.desktop.in.in:3 src/main.c:65 src/main.c:166
-msgid "Eye of MATE Image Viewer"
+msgid "Eye of CAFE Image Viewer"
 msgstr "Visualizador de Imagens"
 
 #: data/eoc.desktop.in.in:4
@@ -102,7 +102,7 @@ msgstr ""
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/eoc.desktop.in.in:14
-msgid "image;viewer;JPEG;PNG;TIFF;SVG;MATE;photos;browse;thumbnails;rotate;"
+msgid "image;viewer;JPEG;PNG;TIFF;SVG;CAFE;photos;browse;thumbnails;rotate;"
 msgstr ""
 
 #: data/eoc-image-properties-dialog.ui:8
@@ -256,7 +256,7 @@ msgid "File Name Preview"
 msgstr "Visualização do nome de arquivo"
 
 #: data/eoc-preferences-dialog.ui:16
-msgid "Eye of MATE Preferences"
+msgid "Eye of CAFE Preferences"
 msgstr "Preferências do Visualizador de Imagens"
 
 #: data/eoc-preferences-dialog.ui:88
@@ -581,11 +581,11 @@ msgstr "Mover para a lixeira sem perguntar"
 
 #: data/org.cafe.eoc.gschema.xml.in:113
 msgid ""
-"If activated, Eye of MATE won't ask for confirmation when moving images to "
+"If activated, Eye of CAFE won't ask for confirmation when moving images to "
 "the trash. It will still ask if any of the files cannot be moved to the "
 "trash and would be deleted instead."
 msgstr ""
-"Se ativado, o Eye of MATE não pedirá confirmação ao mover imagens para a "
+"Se ativado, o Eye of CAFE não pedirá confirmação ao mover imagens para a "
 "lixeira. Ele ainda pedirá se algum dos arquivos não puder ser movido para a "
 "lixeira e em vez disso for excluído."
 
@@ -719,7 +719,7 @@ msgstr "Formato de arquivo desconhecido ou sem suporte"
 
 #: src/eoc-file-chooser.c:126
 msgid ""
-"Eye of MATE could not determine a supported writable file format based on "
+"Eye of CAFE could not determine a supported writable file format based on "
 "the filename."
 msgstr ""
 "Não foi possível determinar um formato de gravação de arquivo com suporte "
@@ -1022,7 +1022,7 @@ msgid "At least two file names are equal."
 msgstr "Dois nomes de arquivos ou mais são iguais."
 
 #: src/eoc-util.c:68
-msgid "Could not display help for Eye of MATE"
+msgid "Could not display help for Eye of CAFE"
 msgstr "Não foi possível exibir a ajuda do Visualizador de Imagens"
 
 #: src/eoc-util.c:116
@@ -1140,19 +1140,19 @@ msgstr ""
 "Franklin St, Fifth Floor, Boston, MA 02110-1301 USA."
 
 #: src/eoc-window.c:2641
-msgid "About Eye of MATE"
-msgstr "Sobre Eye of MATE"
+msgid "About Eye of CAFE"
+msgstr "Sobre Eye of CAFE"
 
 #: src/eoc-window.c:2643
 msgid ""
 "Copyright © 2000-2010 Free Software Foundation, Inc.\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 
 #: src/eoc-window.c:2646
-msgid "The MATE image viewer."
-msgstr "Visualizador de imagens do MATE."
+msgid "The CAFE image viewer."
+msgstr "Visualizador de imagens do CAFE."
 
 #: src/eoc-window.c:2649
 msgid "translator-credits"
@@ -1313,7 +1313,7 @@ msgid "Prefere_nces"
 msgstr "_Preferências"
 
 #: src/eoc-window.c:3793
-msgid "Preferences for Eye of MATE"
+msgid "Preferences for Eye of CAFE"
 msgstr "Preferências do Visualizador de Imagens"
 
 #: src/eoc-window.c:3795

@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR MATE Desktop Environment team
+# Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the eoc package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -59,8 +59,8 @@ msgid "Separator"
 msgstr "Skirtukas"
 
 #: data/eoc.appdata.xml.in:6 src/eoc-window.c:2640
-msgid "Eye of MATE"
-msgstr "Eye of MATE"
+msgid "Eye of CAFE"
+msgstr "Eye of CAFE"
 
 #: data/eoc.appdata.xml.in:7
 msgid "Simple image viewer"
@@ -68,18 +68,18 @@ msgstr "Paprasta paveikslų žiūryklė"
 
 #: data/eoc.appdata.xml.in:9
 msgid ""
-"Eye of MATE is a simple viewer for browsing images on your computer. Once an"
+"Eye of CAFE is a simple viewer for browsing images on your computer. Once an"
 " image is loaded, you can zoom and rotate the image, and also view "
 "subsequent images in the directory the image was loaded from."
 msgstr ""
-"Eye of MATE yra paprasta paveikslų žiūryklė, skirta naršyti po paveikslus "
+"Eye of CAFE yra paprasta paveikslų žiūryklė, skirta naršyti po paveikslus "
 "jūsų kompiuteryje. Kai įkeliamas paveikslas, galite ji didinti/mažinti, "
 "pasukti, o taip pat žiūrėti kitus paveikslus esančius tame pačiame įkelto "
 "paveikslo kataloge."
 
 #: data/eoc.desktop.in.in:3 src/main.c:65 src/main.c:166
-msgid "Eye of MATE Image Viewer"
-msgstr "Eye of MATE paveikslų žiūryklė"
+msgid "Eye of CAFE Image Viewer"
+msgstr "Eye of CAFE paveikslų žiūryklė"
 
 #: data/eoc.desktop.in.in:4
 msgid "Browse and rotate images"
@@ -94,9 +94,9 @@ msgstr "eoc"
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/eoc.desktop.in.in:14
-msgid "image;viewer;JPEG;PNG;TIFF;SVG;MATE;photos;browse;thumbnails;rotate;"
+msgid "image;viewer;JPEG;PNG;TIFF;SVG;CAFE;photos;browse;thumbnails;rotate;"
 msgstr ""
-"paveiklsų;paveiksliukų;žiūryklė;JPEG;PNG;TIFF;SVG;MATE;nuotraukos;nuotraukų;naršyti;miniatiūros;pasukti;"
+"paveiklsų;paveiksliukų;žiūryklė;JPEG;PNG;TIFF;SVG;CAFE;nuotraukos;nuotraukų;naršyti;miniatiūros;pasukti;"
 
 #: data/eoc-image-properties-dialog.ui:8
 msgid "Image Properties"
@@ -249,8 +249,8 @@ msgid "File Name Preview"
 msgstr "Failų pavadinimų peržiūra"
 
 #: data/eoc-preferences-dialog.ui:16
-msgid "Eye of MATE Preferences"
-msgstr "Eye of MATE nustatymai"
+msgid "Eye of CAFE Preferences"
+msgstr "Eye of CAFE nustatymai"
 
 #: data/eoc-preferences-dialog.ui:88
 msgid "Image Enhancements"
@@ -575,11 +575,11 @@ msgstr "Mesti paveikslus į šiukšlinę, neklausiant"
 
 #: data/org.cafe.eoc.gschema.xml.in:113
 msgid ""
-"If activated, Eye of MATE won't ask for confirmation when moving images to "
+"If activated, Eye of CAFE won't ask for confirmation when moving images to "
 "the trash. It will still ask if any of the files cannot be moved to the "
 "trash and would be deleted instead."
 msgstr ""
-"Jei įjungta, Eye of MATE neklaus patvirtinimo prieš perkeliant paveikslus į "
+"Jei įjungta, Eye of CAFE neklaus patvirtinimo prieš perkeliant paveikslus į "
 "šiukšlinę. Bus klausiama patvirtinimo, jei bent vienas iš failų negali būti "
 "perkeltas į šiukšlinę, todėl bus ištrintas."
 
@@ -722,10 +722,10 @@ msgstr "Failo formatas nežinomas arba nepalaikomas"
 
 #: src/eoc-file-chooser.c:126
 msgid ""
-"Eye of MATE could not determine a supported writable file format based on "
+"Eye of CAFE could not determine a supported writable file format based on "
 "the filename."
 msgstr ""
-"Eye of MATE nepavyko pagal failo vardą nustatyti palaikomo įrašomo failo "
+"Eye of CAFE nepavyko pagal failo vardą nustatyti palaikomo įrašomo failo "
 "formato."
 
 #: src/eoc-file-chooser.c:127
@@ -1029,8 +1029,8 @@ msgid "At least two file names are equal."
 msgstr "Mažiausiai du failų pavadinimai yra vienodi."
 
 #: src/eoc-util.c:68
-msgid "Could not display help for Eye of MATE"
-msgstr "Nepavyko parodyti Eye of MATE žinyno"
+msgid "Could not display help for Eye of CAFE"
+msgstr "Nepavyko parodyti Eye of CAFE žinyno"
 
 #: src/eoc-util.c:116
 msgid " (invalid Unicode)"
@@ -1149,22 +1149,22 @@ msgstr ""
 " Fifth Floor, Boston, MA 02110-1301, JAV."
 
 #: src/eoc-window.c:2641
-msgid "About Eye of MATE"
-msgstr "Apie Eye of MATE"
+msgid "About Eye of CAFE"
+msgstr "Apie Eye of CAFE"
 
 #: src/eoc-window.c:2643
 msgid ""
 "Copyright © 2000-2010 Free Software Foundation, Inc.\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 "Autorių teisės © 2000-2010 Free Software Foundation, Inc.\n"
 "Autorių teisės © 2011 Perberos\n"
-"Autorių teisės © 2012-2020 MATE kūrėjai"
+"Autorių teisės © 2012-2020 CAFE kūrėjai"
 
 #: src/eoc-window.c:2646
-msgid "The MATE image viewer."
-msgstr "MATE paveikslų žiūryklė."
+msgid "The CAFE image viewer."
+msgstr "CAFE paveikslų žiūryklė."
 
 #: src/eoc-window.c:2649
 msgid "translator-credits"
@@ -1320,8 +1320,8 @@ msgid "Prefere_nces"
 msgstr "_Nuostatos"
 
 #: src/eoc-window.c:3793
-msgid "Preferences for Eye of MATE"
-msgstr "Eye of MATE nustatymai"
+msgid "Preferences for Eye of CAFE"
+msgstr "Eye of CAFE nustatymai"
 
 #: src/eoc-window.c:3795
 msgid "_Contents"

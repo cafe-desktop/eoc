@@ -30,10 +30,10 @@
 #include <gio/gio.h>
 #include <gtk/gtk.h>
 
-/* We must define MATE_DESKTOP_USE_UNSTABLE_API to be able
+/* We must define CAFE_DESKTOP_USE_UNSTABLE_API to be able
    to use MateDesktopThumbnail */
-#ifndef MATE_DESKTOP_USE_UNSTABLE_API
-#define MATE_DESKTOP_USE_UNSTABLE_API
+#ifndef CAFE_DESKTOP_USE_UNSTABLE_API
+#define CAFE_DESKTOP_USE_UNSTABLE_API
 #endif
 #include <libcafe-desktop/cafe-desktop-thumbnail.h>
 
@@ -123,7 +123,7 @@ save_response_cb (GtkDialog *dlg, gint id, gpointer data)
 		gtk_message_dialog_format_secondary_text (
 						GTK_MESSAGE_DIALOG (msg_dialog),
 						"%s\n%s",
-		 				_("Eye of MATE could not determine a supported writable file format based on the filename."),
+		 				_("Eye of CAFE could not determine a supported writable file format based on the filename."),
 		  				_("Please try a different file extension like .png or .jpg."));
 
 		gtk_dialog_run (GTK_DIALOG (msg_dialog));
@@ -291,7 +291,7 @@ set_preview_pixbuf (EocFileChooser *chooser, GdkPixbuf *pixbuf, goffset size)
 		 * thumbnail is created through the cafe libraries.
 		 */
 		if (g_ascii_strcasecmp (creator, "Mate::ThumbnailFactory") == 0) {
-			creator = "MATE Libs";
+			creator = "CAFE Libs";
 		}
 #endif
 	}
@@ -424,7 +424,7 @@ eoc_file_chooser_add_preview (GtkWidget *widget)
 	gtk_file_chooser_set_preview_widget (GTK_FILE_CHOOSER (widget), vbox);
 	gtk_file_chooser_set_preview_widget_active (GTK_FILE_CHOOSER (widget), FALSE);
 
-	priv->thumb_factory = cafe_desktop_thumbnail_factory_new (MATE_DESKTOP_THUMBNAIL_SIZE_NORMAL);
+	priv->thumb_factory = cafe_desktop_thumbnail_factory_new (CAFE_DESKTOP_THUMBNAIL_SIZE_NORMAL);
 
 	g_signal_connect (widget, "update-preview",
 			  G_CALLBACK (update_preview_cb), NULL);

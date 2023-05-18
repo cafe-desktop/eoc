@@ -110,7 +110,7 @@
     <key name="disable-trash-confirmation" type="b">
       <default>false</default>
       <summary>Trash images without asking</summary>
-      <description>If activated, Eye of MATE won't ask for confirmation when moving images to the trash. It will still ask if any of the files cannot be moved to the trash and would be deleted instead.</description>
+      <description>If activated, Eye of CAFE won't ask for confirmation when moving images to the trash. It will still ask if any of the files cannot be moved to the trash and would be deleted instead.</description>
     </key>
     <key name="propsdialog-netbook-mode" type="b">
       <default>true</default>
