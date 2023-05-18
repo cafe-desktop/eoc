@@ -29,7 +29,6 @@ requires:
     - libstartup-notification0-dev
     - libxml2-dev
     - make
-    - cafe-common
     - shared-mime-info
     - x11proto-core-dev
     - yelp-tools
