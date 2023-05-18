@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR MATE Desktop Environment team
+# Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the eoc package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -55,7 +55,7 @@ msgid "Separator"
 msgstr "Раздвајач"
 
 #: data/eoc.appdata.xml.in:6 src/eoc-window.c:2640
-msgid "Eye of MATE"
+msgid "Eye of CAFE"
 msgstr "Мејтово око"
 
 #: data/eoc.appdata.xml.in:7
@@ -64,7 +64,7 @@ msgstr "Једноставан прегледач слика"
 
 #: data/eoc.appdata.xml.in:9
 msgid ""
-"Eye of MATE is a simple viewer for browsing images on your computer. Once an"
+"Eye of CAFE is a simple viewer for browsing images on your computer. Once an"
 " image is loaded, you can zoom and rotate the image, and also view "
 "subsequent images in the directory the image was loaded from."
 msgstr ""
@@ -73,7 +73,7 @@ msgstr ""
 " преостале слике у директоријуму из ког сте ту слику учитали."
 
 #: data/eoc.desktop.in.in:3 src/main.c:65 src/main.c:166
-msgid "Eye of MATE Image Viewer"
+msgid "Eye of CAFE Image Viewer"
 msgstr "Прегледач слика Мејтово око"
 
 #: data/eoc.desktop.in.in:4
@@ -89,7 +89,7 @@ msgstr "eoc"
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/eoc.desktop.in.in:14
-msgid "image;viewer;JPEG;PNG;TIFF;SVG;MATE;photos;browse;thumbnails;rotate;"
+msgid "image;viewer;JPEG;PNG;TIFF;SVG;CAFE;photos;browse;thumbnails;rotate;"
 msgstr ""
 "слика;прегледач;ЈПЕГ;ПНГ;ТИФФ;СВГ;Мејт;фотографије;разгледај;сличице;заокрени;"
 
@@ -244,7 +244,7 @@ msgid "File Name Preview"
 msgstr "Преглед назива датотеке"
 
 #: data/eoc-preferences-dialog.ui:16
-msgid "Eye of MATE Preferences"
+msgid "Eye of CAFE Preferences"
 msgstr "Поставке Мејтовог ока"
 
 #: data/eoc-preferences-dialog.ui:88
@@ -569,7 +569,7 @@ msgstr "Слање слика у смеће без питања"
 
 #: data/org.cafe.eoc.gschema.xml.in:113
 msgid ""
-"If activated, Eye of MATE won't ask for confirmation when moving images to "
+"If activated, Eye of CAFE won't ask for confirmation when moving images to "
 "the trash. It will still ask if any of the files cannot be moved to the "
 "trash and would be deleted instead."
 msgstr ""
@@ -712,7 +712,7 @@ msgstr "Формат датотеке је непознат или неподр�
 
 #: src/eoc-file-chooser.c:126
 msgid ""
-"Eye of MATE could not determine a supported writable file format based on "
+"Eye of CAFE could not determine a supported writable file format based on "
 "the filename."
 msgstr ""
 "Прегледник слика не може да одреди подржани запис за упис датотеке на основу"
@@ -1017,7 +1017,7 @@ msgid "At least two file names are equal."
 msgstr "Најмање два назива датотека су иста."
 
 #: src/eoc-util.c:68
-msgid "Could not display help for Eye of MATE"
+msgid "Could not display help for Eye of CAFE"
 msgstr "Не могу да прикажем помоћ за Мејтово око"
 
 #: src/eoc-util.c:116
@@ -1135,21 +1135,21 @@ msgstr ""
 "софтвера на адресу: „Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA“."
 
 #: src/eoc-window.c:2641
-msgid "About Eye of MATE"
+msgid "About Eye of CAFE"
 msgstr "О Мејтовом оку"
 
 #: src/eoc-window.c:2643
 msgid ""
 "Copyright © 2000-2010 Free Software Foundation, Inc.\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 "Ауторска права © 2000-2010 Фондација слободног софтвера, Доо.\n"
 "Ауторска права © 2011 Перберос\n"
 "Ауторска права © 2012-2020 Програмери Мејта"
 
 #: src/eoc-window.c:2646
-msgid "The MATE image viewer."
+msgid "The CAFE image viewer."
 msgstr "Мејтов прегледач слика."
 
 #: src/eoc-window.c:2649
@@ -1294,7 +1294,7 @@ msgid "Prefere_nces"
 msgstr "Пос_тавке"
 
 #: src/eoc-window.c:3793
-msgid "Preferences for Eye of MATE"
+msgid "Preferences for Eye of CAFE"
 msgstr "Поставке Мејтовог ока"
 
 #: src/eoc-window.c:3795

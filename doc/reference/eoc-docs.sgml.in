@@ -5,9 +5,9 @@
 ]>
 <book id="index" xmlns:xi="http://www.w3.org/2003/XInclude">
   <bookinfo>
-    <title>Eye of MATE Reference Manual</title>
+    <title>Eye of CAFE Reference Manual</title>
     <releaseinfo>
-      for Eye of MATE &version;
+      for Eye of CAFE &version;
     </releaseinfo>
   </bookinfo>
   <reference>

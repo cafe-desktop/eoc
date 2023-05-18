@@ -2,7 +2,7 @@
 <?xml-model href="http://docbook.org/xml/5.0/rng/dbits.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <!-- 
       (Do not remove this comment block.)
-  Maintained by the MATE Documentation Project
+  Maintained by the CAFE Documentation Project
   http://wiki.cafe-desktop.org/dev-doc:doc-team-guide
   Template version: 2.0 beta
   Template last modified Feb 12, 2002
@@ -21,7 +21,7 @@
 
     <copyright its:translate="no">
       <year>2015-2020</year>
-      <holder>MATE Documentation Project</holder>
+      <holder>CAFE Documentation Project</holder>
     </copyright>
     <copyright its:translate="no">
       <year>2006</year>
@@ -44,7 +44,7 @@
     </copyright>
 
     <publisher role="maintainer">
-      <publishername>MATE Documentation Project</publishername>
+      <publishername>CAFE Documentation Project</publishername>
     </publisher>
     <publisher>
       <publishername>GNOME Documentation Project</publishername>
@@ -54,9 +54,9 @@
 
    <authorgroup its:translate="no">
        <author>
-           <orgname its:translate="yes">MATE Documentation Project</orgname>
+           <orgname its:translate="yes">CAFE Documentation Project</orgname>
            <affiliation>
-               <orgname its:translate="yes">MATE Desktop</orgname>
+               <orgname its:translate="yes">CAFE Desktop</orgname>
            </affiliation>
        </author>
        <author>
@@ -120,8 +120,8 @@
 		<revnumber>2.9</revnumber>
 		<date its:translate="yes">July 2015</date>
 		<revdescription>
-	  		<para role="author" its:translate="yes">MATE Documentation Project</para>
-	  		<para role="publisher" its:translate="yes">MATE Documentation Project</para>
+	  		<para role="author" its:translate="yes">CAFE Documentation Project</para>
+	  		<para role="publisher" its:translate="yes">CAFE Documentation Project</para>
 		</revdescription>
     </revision>
     <revision>
@@ -215,7 +215,7 @@
   </info>
 
   <indexterm>
-    <primary>Eye of MATE</primary> 
+    <primary>Eye of CAFE</primary> 
   </indexterm> 
 
 <!-- ============= Document Body ============================= -->
@@ -223,7 +223,7 @@
 <!-- ============= Introduction ============================== -->
 <section xml:id="eoc-introduction"><info><title>Introduction</title></info>
   
-  <para>The <application>Eye of MATE Image Viewer</application>
+  <para>The <application>Eye of CAFE Image Viewer</application>
   application enables you to view single image files, as well as large image collections.
   </para>
 
@@ -604,7 +604,7 @@
 			      <imagedata fileref="figures/eoc_save_as_window.png" format="PNG"/>
 			    </imageobject>
 			    <textobject>
-			      <phrase its:translate="yes">Shows Eye of MATE <guilabel>Save As</guilabel> dialog when saving multiple images.</phrase>
+			      <phrase its:translate="yes">Shows Eye of CAFE <guilabel>Save As</guilabel> dialog when saving multiple images.</phrase>
 			    </textobject>
 			  </mediaobject>
 			</screenshot>
@@ -691,7 +691,7 @@
 						<imagedata fileref="figures/eoc_toolbar_editor_window.png" format="PNG"/>
 					</imageobject>
 					<textobject>
-						<phrase its:translate="yes">Shows Eye of MATE toolbar editor window.</phrase>
+						<phrase its:translate="yes">Shows Eye of CAFE toolbar editor window.</phrase>
 					</textobject>
 				</mediaobject>
 			</screenshot>

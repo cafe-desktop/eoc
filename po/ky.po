@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR MATE Desktop Environment team
+# Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the eoc package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -56,8 +56,8 @@ msgid "Separator"
 msgstr "Бөлгүч"
 
 #: data/eoc.appdata.xml.in:6 src/eoc-window.c:2640
-msgid "Eye of MATE"
-msgstr "MATE көзү"
+msgid "Eye of CAFE"
+msgstr "CAFE көзү"
 
 #: data/eoc.appdata.xml.in:7
 msgid "Simple image viewer"
@@ -65,14 +65,14 @@ msgstr ""
 
 #: data/eoc.appdata.xml.in:9
 msgid ""
-"Eye of MATE is a simple viewer for browsing images on your computer. Once an"
+"Eye of CAFE is a simple viewer for browsing images on your computer. Once an"
 " image is loaded, you can zoom and rotate the image, and also view "
 "subsequent images in the directory the image was loaded from."
 msgstr ""
 
 #: data/eoc.desktop.in.in:3 src/main.c:65 src/main.c:166
-msgid "Eye of MATE Image Viewer"
-msgstr "«MATE көзү» аттуу сүрөт көрсөткүчү"
+msgid "Eye of CAFE Image Viewer"
+msgstr "«CAFE көзү» аттуу сүрөт көрсөткүчү"
 
 #: data/eoc.desktop.in.in:4
 msgid "Browse and rotate images"
@@ -87,7 +87,7 @@ msgstr ""
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/eoc.desktop.in.in:14
-msgid "image;viewer;JPEG;PNG;TIFF;SVG;MATE;photos;browse;thumbnails;rotate;"
+msgid "image;viewer;JPEG;PNG;TIFF;SVG;CAFE;photos;browse;thumbnails;rotate;"
 msgstr ""
 
 #: data/eoc-image-properties-dialog.ui:8
@@ -241,8 +241,8 @@ msgid "File Name Preview"
 msgstr "Файл атын көрүү"
 
 #: data/eoc-preferences-dialog.ui:16
-msgid "Eye of MATE Preferences"
-msgstr "«MATE көзү» программасынын ырастоолору"
+msgid "Eye of CAFE Preferences"
+msgstr "«CAFE көзү» программасынын ырастоолору"
 
 #: data/eoc-preferences-dialog.ui:88
 msgid "Image Enhancements"
@@ -543,7 +543,7 @@ msgstr "Сүрөттөрдү суроосуз себетке ташуу"
 
 #: data/org.cafe.eoc.gschema.xml.in:113
 msgid ""
-"If activated, Eye of MATE won't ask for confirmation when moving images to "
+"If activated, Eye of CAFE won't ask for confirmation when moving images to "
 "the trash. It will still ask if any of the files cannot be moved to the "
 "trash and would be deleted instead."
 msgstr ""
@@ -660,7 +660,7 @@ msgstr "Файл форматы белгисиз же колдолбойт"
 
 #: src/eoc-file-chooser.c:126
 msgid ""
-"Eye of MATE could not determine a supported writable file format based on "
+"Eye of CAFE could not determine a supported writable file format based on "
 "the filename."
 msgstr ""
 
@@ -959,8 +959,8 @@ msgid "At least two file names are equal."
 msgstr "Кеминде эки файл аты бирдей."
 
 #: src/eoc-util.c:68
-msgid "Could not display help for Eye of MATE"
-msgstr "«MATE көзү» программасынын жардамын көрсөтүү оңунан чыккан жок"
+msgid "Could not display help for Eye of CAFE"
+msgstr "«CAFE көзү» программасынын жардамын көрсөтүү оңунан чыккан жок"
 
 #: src/eoc-util.c:116
 msgid " (invalid Unicode)"
@@ -1067,19 +1067,19 @@ msgid ""
 msgstr ""
 
 #: src/eoc-window.c:2641
-msgid "About Eye of MATE"
+msgid "About Eye of CAFE"
 msgstr ""
 
 #: src/eoc-window.c:2643
 msgid ""
 "Copyright © 2000-2010 Free Software Foundation, Inc.\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 
 #: src/eoc-window.c:2646
-msgid "The MATE image viewer."
-msgstr "MATE сүрөт көрсөткүчү."
+msgid "The CAFE image viewer."
+msgstr "CAFE сүрөт көрсөткүчү."
 
 #: src/eoc-window.c:2649
 msgid "translator-credits"
@@ -1208,8 +1208,8 @@ msgid "Prefere_nces"
 msgstr "_Ырастоолор"
 
 #: src/eoc-window.c:3793
-msgid "Preferences for Eye of MATE"
-msgstr "«MATE көзү» программасынын ырастоолору"
+msgid "Preferences for Eye of CAFE"
+msgstr "«CAFE көзү» программасынын ырастоолору"
 
 #: src/eoc-window.c:3795
 msgid "_Contents"

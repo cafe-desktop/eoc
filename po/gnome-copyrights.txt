@@ -206,7 +206,7 @@
 # Dafydd Tomos <l10n@da.fydd.org>, 2004.
 # Rhys Jones <rhys@sucs.org>, 2004, 2005, 2006.
 #
-# rhysj - Wedi diweddaru ffeil a'i gyrru drwy Cysill ar gyfer MATE 2.12.
+# rhysj - Wedi diweddaru ffeil a'i gyrru drwy Cysill ar gyfer CAFE 2.12.
 # rhysj - a hefyd ar gyfer 2.14.
 
 
@@ -265,7 +265,7 @@
 
 
 ========== el.po ==========
-# Translation of Eye of MATE Documentation to Greek
+# Translation of Eye of CAFE Documentation to Greek
 # Initial translation by Simos.
 # kostas: 29Oct2003, first update for Mate 2.6
 # kostas: 25Jan2004, update
@@ -293,7 +293,7 @@
 
 ========== en_CA.po ==========
 # Canadian English translation of eoc
-# Copyright (C) 2004-2006 Adam Weinberger and the MATE Foundation
+# Copyright (C) 2004-2006 Adam Weinberger and the CAFE Foundation
 # This file is distributed under the same licence as the eoc package.
 # Adam Weinberger <adamw@gnome.org>, 2004, 2005, 2005.
 #
@@ -333,11 +333,11 @@
 
 
 ========== et.po ==========
-# Gnoomi silma (Eye of MATE) eesti keele tõlge.
-# Estonian translation of Eye of MATE.
+# Gnoomi silma (Eye of CAFE) eesti keele tõlge.
+# Estonian translation of Eye of CAFE.
 #
 # Copyright (C) 2000, 2005, 2006 Free Software Foundation, Inc.
-# Copyright (C) 2007-2010 The MATE Project.
+# Copyright (C) 2007-2010 The CAFE Project.
 # This file is distributed under the same license as the Eye of Mate package.
 #
 # Lauris Kaplinski <lauris ariman ee>, 2000.
@@ -940,7 +940,7 @@
 
 ========== ru.po ==========
 # translation of ru.po to Russian
-# Russian translation for Eye of MATE.
+# Russian translation for Eye of CAFE.
 # Copyright (C) 1999-2009 Free Software Foundation, Inc.
 #
 #
@@ -1144,7 +1144,7 @@
 
 
 ========== uk.po ==========
-# Ukrainian translation for Eye of MATE.
+# Ukrainian translation for Eye of CAFE.
 # Copyright (C) 1999-2003 Free Software Foundation, Inc.
 # Yuri Syrota <rasta@renome.rovno.ua>, 1999, 2000.
 # Maxim Dziumanenko <dziumanenko@gmail.com>, 2004-2010

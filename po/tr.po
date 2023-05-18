@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR MATE Desktop Environment team
+# Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the eoc package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -64,8 +64,8 @@ msgid "Separator"
 msgstr "Ayıraç"
 
 #: data/eoc.appdata.xml.in:6 src/eoc-window.c:2640
-msgid "Eye of MATE"
-msgstr "MATE'nin Gözü"
+msgid "Eye of CAFE"
+msgstr "CAFE'nin Gözü"
 
 #: data/eoc.appdata.xml.in:7
 msgid "Simple image viewer"
@@ -73,14 +73,14 @@ msgstr "Sade bir resim görüntüleyicisi"
 
 #: data/eoc.appdata.xml.in:9
 msgid ""
-"Eye of MATE is a simple viewer for browsing images on your computer. Once an"
+"Eye of CAFE is a simple viewer for browsing images on your computer. Once an"
 " image is loaded, you can zoom and rotate the image, and also view "
 "subsequent images in the directory the image was loaded from."
 msgstr ""
 
 #: data/eoc.desktop.in.in:3 src/main.c:65 src/main.c:166
-msgid "Eye of MATE Image Viewer"
-msgstr "MATE'nin Gözü Resim Görüntüleyicisi"
+msgid "Eye of CAFE Image Viewer"
+msgstr "CAFE'nin Gözü Resim Görüntüleyicisi"
 
 #: data/eoc.desktop.in.in:4
 msgid "Browse and rotate images"
@@ -95,7 +95,7 @@ msgstr ""
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/eoc.desktop.in.in:14
-msgid "image;viewer;JPEG;PNG;TIFF;SVG;MATE;photos;browse;thumbnails;rotate;"
+msgid "image;viewer;JPEG;PNG;TIFF;SVG;CAFE;photos;browse;thumbnails;rotate;"
 msgstr ""
 
 #: data/eoc-image-properties-dialog.ui:8
@@ -249,8 +249,8 @@ msgid "File Name Preview"
 msgstr "Dosya Adı Önizlemesi"
 
 #: data/eoc-preferences-dialog.ui:16
-msgid "Eye of MATE Preferences"
-msgstr "MATE'nin Gözü Tercihleri"
+msgid "Eye of CAFE Preferences"
+msgstr "CAFE'nin Gözü Tercihleri"
 
 #: data/eoc-preferences-dialog.ui:88
 msgid "Image Enhancements"
@@ -581,11 +581,11 @@ msgstr "Resimleri sormada çöpe at"
 
 #: data/org.cafe.eoc.gschema.xml.in:113
 msgid ""
-"If activated, Eye of MATE won't ask for confirmation when moving images to "
+"If activated, Eye of CAFE won't ask for confirmation when moving images to "
 "the trash. It will still ask if any of the files cannot be moved to the "
 "trash and would be deleted instead."
 msgstr ""
-"Etkinleştirilirse, MATE'nin Gözü resimleri çöpe taşırken teyit "
+"Etkinleştirilirse, CAFE'nin Gözü resimleri çöpe taşırken teyit "
 "istemeyecektir. Ancak resimlerden herhangi biri çöpe taşınamaz ise ve "
 "doğrudan silinecekse onay istenecektir."
 
@@ -720,10 +720,10 @@ msgstr "Dosya biçimi bilinmiyor ya da desteklenmiyor"
 
 #: src/eoc-file-chooser.c:126
 msgid ""
-"Eye of MATE could not determine a supported writable file format based on "
+"Eye of CAFE could not determine a supported writable file format based on "
 "the filename."
 msgstr ""
-"MATE'nin Gözü dosya ismine bakarak desteklenen bir yazılabilir dosya "
+"CAFE'nin Gözü dosya ismine bakarak desteklenen bir yazılabilir dosya "
 "biçimine karar veremedi."
 
 #: src/eoc-file-chooser.c:127
@@ -1023,8 +1023,8 @@ msgid "At least two file names are equal."
 msgstr "En az iki dosya ismi eşit."
 
 #: src/eoc-util.c:68
-msgid "Could not display help for Eye of MATE"
-msgstr "MATE'nin Gözü için yardım görüntülenemedi"
+msgid "Could not display help for Eye of CAFE"
+msgstr "CAFE'nin Gözü için yardım görüntülenemedi"
 
 #: src/eoc-util.c:116
 msgid " (invalid Unicode)"
@@ -1140,19 +1140,19 @@ msgstr ""
 "Boston, MA 02110-1301, USA adresine yazınız."
 
 #: src/eoc-window.c:2641
-msgid "About Eye of MATE"
-msgstr "MATE'nin Gözü Hakkında"
+msgid "About Eye of CAFE"
+msgstr "CAFE'nin Gözü Hakkında"
 
 #: src/eoc-window.c:2643
 msgid ""
 "Copyright © 2000-2010 Free Software Foundation, Inc.\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 
 #: src/eoc-window.c:2646
-msgid "The MATE image viewer."
-msgstr "MATE resim görüntüleyicisi."
+msgid "The CAFE image viewer."
+msgstr "CAFE resim görüntüleyicisi."
 
 #: src/eoc-window.c:2649
 msgid "translator-credits"
@@ -1162,7 +1162,7 @@ msgstr ""
 "Görkem Çetin <gorkem@gelecek.com.tr>, 2002/2003.\n"
 "Barış Çicek <baris@teamforce.name.tr>, 2004, 2008, 2009.\n"
 "Muhammet Kara <muhammet.k@gmail.com>, 2011.\n"
-"MATE projesine katkıda bulunanlar:\n"
+"CAFE projesine katkıda bulunanlar:\n"
 "hsngrms <dead-bodies-everywhere@hotmail.com>, 2012\n"
 "mauron, 2012, 2013, 2014, 2015, 2016, 2017, 2018\n"
 "Atilla Öntaş <tarakbumba@gmail.com>, 2014\n"
@@ -1300,8 +1300,8 @@ msgid "Prefere_nces"
 msgstr "_Tercihler"
 
 #: src/eoc-window.c:3793
-msgid "Preferences for Eye of MATE"
-msgstr "MATE'nin Gözü Tercihleri"
+msgid "Preferences for Eye of CAFE"
+msgstr "CAFE'nin Gözü Tercihleri"
 
 #: src/eoc-window.c:3795
 msgid "_Contents"

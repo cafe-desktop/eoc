@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR MATE Desktop Environment team
+# Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the eoc package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -54,7 +54,7 @@ msgid "Separator"
 msgstr "དབྱེ་བྱེད།"
 
 #: data/eoc.appdata.xml.in:6 src/eoc-window.c:2640
-msgid "Eye of MATE"
+msgid "Eye of CAFE"
 msgstr "ཨའི་ཨོཕ་ཇི་ནོམ།"
 
 #: data/eoc.appdata.xml.in:7
@@ -63,13 +63,13 @@ msgstr ""
 
 #: data/eoc.appdata.xml.in:9
 msgid ""
-"Eye of MATE is a simple viewer for browsing images on your computer. Once an"
+"Eye of CAFE is a simple viewer for browsing images on your computer. Once an"
 " image is loaded, you can zoom and rotate the image, and also view "
 "subsequent images in the directory the image was loaded from."
 msgstr ""
 
 #: data/eoc.desktop.in.in:3 src/main.c:65 src/main.c:166
-msgid "Eye of MATE Image Viewer"
+msgid "Eye of CAFE Image Viewer"
 msgstr "ཇི་ནོམ་ གཟུགས་བརྙན་སྟོན་བྱེད་ཀྱི་མིག་ཏོ་"
 
 #: data/eoc.desktop.in.in:4
@@ -85,7 +85,7 @@ msgstr ""
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/eoc.desktop.in.in:14
-msgid "image;viewer;JPEG;PNG;TIFF;SVG;MATE;photos;browse;thumbnails;rotate;"
+msgid "image;viewer;JPEG;PNG;TIFF;SVG;CAFE;photos;browse;thumbnails;rotate;"
 msgstr ""
 
 #: data/eoc-image-properties-dialog.ui:8
@@ -239,7 +239,7 @@ msgid "File Name Preview"
 msgstr ""
 
 #: data/eoc-preferences-dialog.ui:16
-msgid "Eye of MATE Preferences"
+msgid "Eye of CAFE Preferences"
 msgstr "ཨའི་ཨོཕ་ཇི་ནོམ་གྱི་་དགའ་གདམ།"
 
 #: data/eoc-preferences-dialog.ui:88
@@ -555,7 +555,7 @@ msgstr ""
 
 #: data/org.cafe.eoc.gschema.xml.in:113
 msgid ""
-"If activated, Eye of MATE won't ask for confirmation when moving images to "
+"If activated, Eye of CAFE won't ask for confirmation when moving images to "
 "the trash. It will still ask if any of the files cannot be moved to the "
 "trash and would be deleted instead."
 msgstr ""
@@ -675,7 +675,7 @@ msgstr "ཡིག་སྣོད་ཀྱི་ རྩ་སྒྲིག་ མ�
 
 #: src/eoc-file-chooser.c:126
 msgid ""
-"Eye of MATE could not determine a supported writable file format based on "
+"Eye of CAFE could not determine a supported writable file format based on "
 "the filename."
 msgstr ""
 "ཇི་ནོམ་གྱི་ཨཱི་དེ་གིས་ ཡིག་སྣོད་ཀྱི་མིང་ལུ་གཞི་བཞག་ཐོག་ལས་ "
@@ -980,7 +980,7 @@ msgid "At least two file names are equal."
 msgstr "ཉུང་མཐའ་ལུ་ ཡིག་སྣོད་གཉིས་ཀྱི་མིང་ འདྲ་མཉམ་འདུག"
 
 #: src/eoc-util.c:68
-msgid "Could not display help for Eye of MATE"
+msgid "Could not display help for Eye of CAFE"
 msgstr "ཨའི་ཨོཕ་ཇི་ནོམ་གྱི་དོན་ལུ་ གྲོགས་རམ་བཀྲམ་སྟོན་འབད་མ་ཚུགས།"
 
 #: src/eoc-util.c:116
@@ -1093,18 +1093,18 @@ msgid ""
 msgstr ""
 
 #: src/eoc-window.c:2641
-msgid "About Eye of MATE"
+msgid "About Eye of CAFE"
 msgstr ""
 
 #: src/eoc-window.c:2643
 msgid ""
 "Copyright © 2000-2010 Free Software Foundation, Inc.\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 
 #: src/eoc-window.c:2646
-msgid "The MATE image viewer."
+msgid "The CAFE image viewer."
 msgstr "ཇི་ནོམ་ གཟུགས་བརྙན་ མཐོང་བྱེད། "
 
 #: src/eoc-window.c:2649
@@ -1237,7 +1237,7 @@ msgid "Prefere_nces"
 msgstr "དགའ་གདམ་ཚུ།(_n)"
 
 #: src/eoc-window.c:3793
-msgid "Preferences for Eye of MATE"
+msgid "Preferences for Eye of CAFE"
 msgstr "ཨའི་ཨོཕ་ཇི་ནོམ་གྱི་དོན་ལུ་དགའ་གདམ་ཚུ།"
 
 #: src/eoc-window.c:3795

@@ -1,4 +1,4 @@
-/* Eye of MATE -- Print Preview Widget
+/* Eye of CAFE -- Print Preview Widget
  *
  * Copyright (C) 2006-2007 The Free Software Foundation
  *

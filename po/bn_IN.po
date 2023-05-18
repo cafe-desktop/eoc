@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR MATE Desktop Environment team
+# Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the eoc package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -55,8 +55,8 @@ msgid "Separator"
 msgstr "বিভাজক"
 
 #: data/eoc.appdata.xml.in:6 src/eoc-window.c:2640
-msgid "Eye of MATE"
-msgstr "Eye of MATE"
+msgid "Eye of CAFE"
+msgstr "Eye of CAFE"
 
 #: data/eoc.appdata.xml.in:7
 msgid "Simple image viewer"
@@ -64,14 +64,14 @@ msgstr ""
 
 #: data/eoc.appdata.xml.in:9
 msgid ""
-"Eye of MATE is a simple viewer for browsing images on your computer. Once an"
+"Eye of CAFE is a simple viewer for browsing images on your computer. Once an"
 " image is loaded, you can zoom and rotate the image, and also view "
 "subsequent images in the directory the image was loaded from."
 msgstr ""
 
 #: data/eoc.desktop.in.in:3 src/main.c:65 src/main.c:166
-msgid "Eye of MATE Image Viewer"
-msgstr "Eye of MATE ছবি প্রদর্শন ব্যবস্থা"
+msgid "Eye of CAFE Image Viewer"
+msgstr "Eye of CAFE ছবি প্রদর্শন ব্যবস্থা"
 
 #: data/eoc.desktop.in.in:4
 msgid "Browse and rotate images"
@@ -86,7 +86,7 @@ msgstr ""
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/eoc.desktop.in.in:14
-msgid "image;viewer;JPEG;PNG;TIFF;SVG;MATE;photos;browse;thumbnails;rotate;"
+msgid "image;viewer;JPEG;PNG;TIFF;SVG;CAFE;photos;browse;thumbnails;rotate;"
 msgstr ""
 
 #: data/eoc-image-properties-dialog.ui:8
@@ -240,8 +240,8 @@ msgid "File Name Preview"
 msgstr ""
 
 #: data/eoc-preferences-dialog.ui:16
-msgid "Eye of MATE Preferences"
-msgstr "Eye of MATE সংক্রান্ত পছন্দ"
+msgid "Eye of CAFE Preferences"
+msgstr "Eye of CAFE সংক্রান্ত পছন্দ"
 
 #: data/eoc-preferences-dialog.ui:88
 msgid "Image Enhancements"
@@ -553,7 +553,7 @@ msgstr "জিজ্ঞাসা না করে ছবি মুছে ফে�
 
 #: data/org.cafe.eoc.gschema.xml.in:113
 msgid ""
-"If activated, Eye of MATE won't ask for confirmation when moving images to "
+"If activated, Eye of CAFE won't ask for confirmation when moving images to "
 "the trash. It will still ask if any of the files cannot be moved to the "
 "trash and would be deleted instead."
 msgstr ""
@@ -676,10 +676,10 @@ msgstr "ফাইলের বিন্যাস অজানা অথবা �
 
 #: src/eoc-file-chooser.c:126
 msgid ""
-"Eye of MATE could not determine a supported writable file format based on "
+"Eye of CAFE could not determine a supported writable file format based on "
 "the filename."
 msgstr ""
-"ফাইলের নামের সাহায্যে সমর্থিত লিখনযোগ্য ফাইলের বিন্যাস Eye of MATE দ্বারা "
+"ফাইলের নামের সাহায্যে সমর্থিত লিখনযোগ্য ফাইলের বিন্যাস Eye of CAFE দ্বারা "
 "বোধগম্য হয়নি।"
 
 #: src/eoc-file-chooser.c:127
@@ -979,8 +979,8 @@ msgid "At least two file names are equal."
 msgstr "অন্তত দুইটি ফাইলের নাম অনুরূপ।"
 
 #: src/eoc-util.c:68
-msgid "Could not display help for Eye of MATE"
-msgstr "Eye of MATE সংক্রান্ত সহায়ক তথ্য প্রদর্শন করতে ব্যর্থ"
+msgid "Could not display help for Eye of CAFE"
+msgstr "Eye of CAFE সংক্রান্ত সহায়ক তথ্য প্রদর্শন করতে ব্যর্থ"
 
 #: src/eoc-util.c:116
 msgid " (invalid Unicode)"
@@ -1092,19 +1092,19 @@ msgid ""
 msgstr ""
 
 #: src/eoc-window.c:2641
-msgid "About Eye of MATE"
+msgid "About Eye of CAFE"
 msgstr ""
 
 #: src/eoc-window.c:2643
 msgid ""
 "Copyright © 2000-2010 Free Software Foundation, Inc.\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 
 #: src/eoc-window.c:2646
-msgid "The MATE image viewer."
-msgstr "MATE-র ছবি প্রদর্শনের প্রোগ্রাম।"
+msgid "The CAFE image viewer."
+msgstr "CAFE-র ছবি প্রদর্শনের প্রোগ্রাম।"
 
 #: src/eoc-window.c:2649
 msgid "translator-credits"
@@ -1243,8 +1243,8 @@ msgid "Prefere_nces"
 msgstr "পছন্দ (_n)"
 
 #: src/eoc-window.c:3793
-msgid "Preferences for Eye of MATE"
-msgstr "Eye of MATE সংক্রান্ত পছন্দ"
+msgid "Preferences for Eye of CAFE"
+msgstr "Eye of CAFE সংক্রান্ত পছন্দ"
 
 #: src/eoc-window.c:3795
 msgid "_Contents"

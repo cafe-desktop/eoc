@@ -26,10 +26,10 @@
 #include <config.h>
 #endif
 
-/* We must define MATE_DESKTOP_USE_UNSTABLE_API to be able
+/* We must define CAFE_DESKTOP_USE_UNSTABLE_API to be able
    to use MateDesktopThumbnail */
-#ifndef MATE_DESKTOP_USE_UNSTABLE_API
-#define MATE_DESKTOP_USE_UNSTABLE_API
+#ifndef CAFE_DESKTOP_USE_UNSTABLE_API
+#define CAFE_DESKTOP_USE_UNSTABLE_API
 #endif
 #include <libcafe-desktop/cafe-desktop-thumbnail.h>
 
@@ -157,7 +157,7 @@ eoc_thumb_data_new (GFile *file, GError **error)
 	data = g_slice_new0 (EocThumbData);
 
 	data->uri_str    = g_file_get_uri (file);
-	data->thumb_path = cafe_desktop_thumbnail_path_for_uri (data->uri_str, MATE_DESKTOP_THUMBNAIL_SIZE_NORMAL);
+	data->thumb_path = cafe_desktop_thumbnail_path_for_uri (data->uri_str, CAFE_DESKTOP_THUMBNAIL_SIZE_NORMAL);
 
 	file_info = g_file_query_info (file,
 				       G_FILE_ATTRIBUTE_STANDARD_CONTENT_TYPE ","
@@ -531,7 +531,7 @@ void
 eoc_thumbnail_init (void)
 {
 	if (factory == NULL) {
-		factory = cafe_desktop_thumbnail_factory_new (MATE_DESKTOP_THUMBNAIL_SIZE_NORMAL);
+		factory = cafe_desktop_thumbnail_factory_new (CAFE_DESKTOP_THUMBNAIL_SIZE_NORMAL);
 	}
 
 	if (frame == NULL) {

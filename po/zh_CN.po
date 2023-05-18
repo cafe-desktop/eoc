@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR MATE Desktop Environment team
+# Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the eoc package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -63,8 +63,8 @@ msgid "Separator"
 msgstr "分隔符"
 
 #: data/eoc.appdata.xml.in:6 src/eoc-window.c:2640
-msgid "Eye of MATE"
-msgstr "MATE 之眼"
+msgid "Eye of CAFE"
+msgstr "CAFE 之眼"
 
 #: data/eoc.appdata.xml.in:7
 msgid "Simple image viewer"
@@ -72,14 +72,14 @@ msgstr "简单的图像查看器"
 
 #: data/eoc.appdata.xml.in:9
 msgid ""
-"Eye of MATE is a simple viewer for browsing images on your computer. Once an"
+"Eye of CAFE is a simple viewer for browsing images on your computer. Once an"
 " image is loaded, you can zoom and rotate the image, and also view "
 "subsequent images in the directory the image was loaded from."
-msgstr "MATE之眼（EoC）为一款简易的图像查看器。 加载图像后，可以缩放或旋转图像，还可以继续查看后续图像。"
+msgstr "CAFE之眼（EoC）为一款简易的图像查看器。 加载图像后，可以缩放或旋转图像，还可以继续查看后续图像。"
 
 #: data/eoc.desktop.in.in:3 src/main.c:65 src/main.c:166
-msgid "Eye of MATE Image Viewer"
-msgstr "MATE 之眼图像查看器"
+msgid "Eye of CAFE Image Viewer"
+msgstr "CAFE 之眼图像查看器"
 
 #: data/eoc.desktop.in.in:4
 msgid "Browse and rotate images"
@@ -94,8 +94,8 @@ msgstr "eoc"
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/eoc.desktop.in.in:14
-msgid "image;viewer;JPEG;PNG;TIFF;SVG;MATE;photos;browse;thumbnails;rotate;"
-msgstr "图像;查看器;JPEG;PNG;TIFF;SVG;MATE;照片;浏览;缩略图;旋转;"
+msgid "image;viewer;JPEG;PNG;TIFF;SVG;CAFE;photos;browse;thumbnails;rotate;"
+msgstr "图像;查看器;JPEG;PNG;TIFF;SVG;CAFE;照片;浏览;缩略图;旋转;"
 
 #: data/eoc-image-properties-dialog.ui:8
 msgid "Image Properties"
@@ -248,8 +248,8 @@ msgid "File Name Preview"
 msgstr "文件名预览"
 
 #: data/eoc-preferences-dialog.ui:16
-msgid "Eye of MATE Preferences"
-msgstr "MATE 之眼首选项"
+msgid "Eye of CAFE Preferences"
+msgstr "CAFE 之眼首选项"
 
 #: data/eoc-preferences-dialog.ui:88
 msgid "Image Enhancements"
@@ -552,10 +552,10 @@ msgstr "把图像移除到回收站而不询问"
 
 #: data/org.cafe.eoc.gschema.xml.in:113
 msgid ""
-"If activated, Eye of MATE won't ask for confirmation when moving images to "
+"If activated, Eye of CAFE won't ask for confirmation when moving images to "
 "the trash. It will still ask if any of the files cannot be moved to the "
 "trash and would be deleted instead."
-msgstr "如果启用，那么 MATE 之眼将不会在移动图像到回收站的时候要求确认。但是如果文件不能被移动到回收站而是被删除的话，那么它仍将询问。"
+msgstr "如果启用，那么 CAFE 之眼将不会在移动图像到回收站的时候要求确认。但是如果文件不能被移动到回收站而是被删除的话，那么它仍将询问。"
 
 #: data/org.cafe.eoc.gschema.xml.in:117
 msgid ""
@@ -672,9 +672,9 @@ msgstr "文件格式未知或不支持"
 
 #: src/eoc-file-chooser.c:126
 msgid ""
-"Eye of MATE could not determine a supported writable file format based on "
+"Eye of CAFE could not determine a supported writable file format based on "
 "the filename."
-msgstr "MATE 之眼无法从文件名推测出被支持的可写入的文件格式。"
+msgstr "CAFE 之眼无法从文件名推测出被支持的可写入的文件格式。"
 
 #: src/eoc-file-chooser.c:127
 msgid "Please try a different file extension like .png or .jpg."
@@ -971,8 +971,8 @@ msgid "At least two file names are equal."
 msgstr "至少两个文件名相等。"
 
 #: src/eoc-util.c:68
-msgid "Could not display help for Eye of MATE"
-msgstr "无法显示 MATE 之眼的帮助"
+msgid "Could not display help for Eye of CAFE"
+msgstr "无法显示 CAFE 之眼的帮助"
 
 #: src/eoc-util.c:116
 msgid " (invalid Unicode)"
@@ -1083,22 +1083,22 @@ msgstr ""
 "Inc., 51 Franklin Street, Fifth Floor, Boston, \"\"MA 02110-1301, USA \""
 
 #: src/eoc-window.c:2641
-msgid "About Eye of MATE"
-msgstr "关于 MATE 之眼"
+msgid "About Eye of CAFE"
+msgstr "关于 CAFE 之眼"
 
 #: src/eoc-window.c:2643
 msgid ""
 "Copyright © 2000-2010 Free Software Foundation, Inc.\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 "Copyright © 2001–2010 自由软件基金会\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 MATE 开发者"
+"Copyright © 2012-2020 CAFE 开发者"
 
 #: src/eoc-window.c:2646
-msgid "The MATE image viewer."
-msgstr "MATE 之眼图像查看器。"
+msgid "The CAFE image viewer."
+msgstr "CAFE 之眼图像查看器。"
 
 #: src/eoc-window.c:2649
 msgid "translator-credits"
@@ -1244,8 +1244,8 @@ msgid "Prefere_nces"
 msgstr "首选项(_N)"
 
 #: src/eoc-window.c:3793
-msgid "Preferences for Eye of MATE"
-msgstr "MATE 之眼的首选项"
+msgid "Preferences for Eye of CAFE"
+msgstr "CAFE 之眼的首选项"
 
 #: src/eoc-window.c:3795
 msgid "_Contents"

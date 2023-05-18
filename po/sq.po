@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR MATE Desktop Environment team
+# Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the eoc package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -59,8 +59,8 @@ msgid "Separator"
 msgstr "Ndarës"
 
 #: data/eoc.appdata.xml.in:6 src/eoc-window.c:2640
-msgid "Eye of MATE"
-msgstr "Eye of MATE"
+msgid "Eye of CAFE"
+msgstr "Eye of CAFE"
 
 #: data/eoc.appdata.xml.in:7
 msgid "Simple image viewer"
@@ -68,14 +68,14 @@ msgstr "Shikues figurash i thjeshtë"
 
 #: data/eoc.appdata.xml.in:9
 msgid ""
-"Eye of MATE is a simple viewer for browsing images on your computer. Once an"
+"Eye of CAFE is a simple viewer for browsing images on your computer. Once an"
 " image is loaded, you can zoom and rotate the image, and also view "
 "subsequent images in the directory the image was loaded from."
 msgstr ""
 
 #: data/eoc.desktop.in.in:3 src/main.c:65 src/main.c:166
-msgid "Eye of MATE Image Viewer"
-msgstr "Shfaqësi i figurave Eye of MATE"
+msgid "Eye of CAFE Image Viewer"
+msgstr "Shfaqësi i figurave Eye of CAFE"
 
 #: data/eoc.desktop.in.in:4
 msgid "Browse and rotate images"
@@ -90,7 +90,7 @@ msgstr ""
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/eoc.desktop.in.in:14
-msgid "image;viewer;JPEG;PNG;TIFF;SVG;MATE;photos;browse;thumbnails;rotate;"
+msgid "image;viewer;JPEG;PNG;TIFF;SVG;CAFE;photos;browse;thumbnails;rotate;"
 msgstr ""
 
 #: data/eoc-image-properties-dialog.ui:8
@@ -244,8 +244,8 @@ msgid "File Name Preview"
 msgstr "Pamja e parë e dokumentit"
 
 #: data/eoc-preferences-dialog.ui:16
-msgid "Eye of MATE Preferences"
-msgstr "Preferimet e Eye of MATE"
+msgid "Eye of CAFE Preferences"
+msgstr "Preferimet e Eye of CAFE"
 
 #: data/eoc-preferences-dialog.ui:88
 msgid "Image Enhancements"
@@ -569,11 +569,11 @@ msgstr "Fshi imazhet pa pyetur"
 
 #: data/org.cafe.eoc.gschema.xml.in:113
 msgid ""
-"If activated, Eye of MATE won't ask for confirmation when moving images to "
+"If activated, Eye of CAFE won't ask for confirmation when moving images to "
 "the trash. It will still ask if any of the files cannot be moved to the "
 "trash and would be deleted instead."
 msgstr ""
-"Nëse aktivizohet, Syri i MATE nuk do të kërkojë konfirmim kur lëvizin "
+"Nëse aktivizohet, Syri i CAFE nuk do të kërkojë konfirmim kur lëvizin "
 "imazhet në kosh. Ajo do të vazhdojë të kërkojë nëse ndonjë fotografi nuk "
 "mund të zhvendoset në kosh dhe do të fshihet në vend."
 
@@ -709,10 +709,10 @@ msgstr "Format i panjohur apo i pasuportuar file"
 
 #: src/eoc-file-chooser.c:126
 msgid ""
-"Eye of MATE could not determine a supported writable file format based on "
+"Eye of CAFE could not determine a supported writable file format based on "
 "the filename."
 msgstr ""
-"Eye of MATE nuk arriti të përcaktojë një format të suportuar të shkruajtshëm"
+"Eye of CAFE nuk arriti të përcaktojë një format të suportuar të shkruajtshëm"
 " file duke u nisur nga emri i file."
 
 #: src/eoc-file-chooser.c:127
@@ -1012,8 +1012,8 @@ msgid "At least two file names are equal."
 msgstr "Të paktën dy prej emrave të file janë njësoj."
 
 #: src/eoc-util.c:68
-msgid "Could not display help for Eye of MATE"
-msgstr "E pamundur shfaqja e ndihmës për Eye of MATE"
+msgid "Could not display help for Eye of CAFE"
+msgstr "E pamundur shfaqja e ndihmës për Eye of CAFE"
 
 #: src/eoc-util.c:116
 msgid " (invalid Unicode)"
@@ -1130,19 +1130,19 @@ msgstr ""
 "Lirë, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA."
 
 #: src/eoc-window.c:2641
-msgid "About Eye of MATE"
+msgid "About Eye of CAFE"
 msgstr ""
 
 #: src/eoc-window.c:2643
 msgid ""
 "Copyright © 2000-2010 Free Software Foundation, Inc.\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 
 #: src/eoc-window.c:2646
-msgid "The MATE image viewer."
-msgstr "Shfaqësi i figurave për MATE."
+msgid "The CAFE image viewer."
+msgstr "Shfaqësi i figurave për CAFE."
 
 #: src/eoc-window.c:2649
 msgid "translator-credits"
@@ -1281,8 +1281,8 @@ msgid "Prefere_nces"
 msgstr "Preferi_met"
 
 #: src/eoc-window.c:3793
-msgid "Preferences for Eye of MATE"
-msgstr "Preferimet për Eye of MATE"
+msgid "Preferences for Eye of CAFE"
+msgstr "Preferimet për Eye of CAFE"
 
 #: src/eoc-window.c:3795
 msgid "_Contents"

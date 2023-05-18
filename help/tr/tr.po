@@ -29,7 +29,7 @@ msgstr ""
 "Görkem Çetin <gorkem@gelecek.com.tr>, 2002/2003.\n"
 "Barış Çicek <baris@teamforce.name.tr>, 2004, 2008, 2009.\n"
 "Muhammet Kara <muhammet.k@gmail.com>, 2011.\n"
-"MATE projesine katkıda bulunanlar:\n"
+"CAFE projesine katkıda bulunanlar:\n"
 "hsngrms <dead-bodies-everywhere@hotmail.com>, 2012\n"
 "mauron, 2012, 2013, 2014, 2015, 2016, 2017, 2018\n"
 "Atilla Öntaş <tarakbumba@gmail.com>, 2014\n"
@@ -45,8 +45,8 @@ msgstr ""
 #. (itstool) path: revdescription/para
 #: C/index.docbook:47 C/index.docbook:57 C/index.docbook:123
 #: C/index.docbook:124
-msgid "MATE Documentation Project"
-msgstr "MATE Belgelendirme Projesi"
+msgid "CAFE Documentation Project"
+msgstr "CAFE Belgelendirme Projesi"
 
 #. (itstool) path: publisher/publishername
 #. (itstool) path: affiliation/orgname
@@ -62,8 +62,8 @@ msgstr "GNOME Belgelendirme Projesi"
 
 #. (itstool) path: affiliation/orgname
 #: C/index.docbook:59
-msgid "MATE Desktop"
-msgstr "MATE Masaüstü"
+msgid "CAFE Desktop"
+msgstr "CAFE Masaüstü"
 
 #. (itstool) path: personname/firstname
 #: C/index.docbook:91
@@ -144,7 +144,7 @@ msgstr ""
 
 #. (itstool) path: article/indexterm
 #: C/index.docbook:217
-msgid "<primary>Eye of MATE</primary>"
+msgid "<primary>Eye of CAFE</primary>"
 msgstr ""
 
 #. (itstool) path: info/title
@@ -155,7 +155,7 @@ msgstr "Başlangıç"
 #. (itstool) path: section/para
 #: C/index.docbook:226
 msgid ""
-"The <application>Eye of MATE Image Viewer</application> application enables "
+"The <application>Eye of CAFE Image Viewer</application> application enables "
 "you to view single image files, as well as large image collections."
 msgstr ""
 
@@ -909,7 +909,7 @@ msgstr ""
 #. (itstool) path: textobject/phrase
 #: C/index.docbook:607
 msgid ""
-"Shows Eye of MATE <guilabel>Save As</guilabel> dialog when saving multiple "
+"Shows Eye of CAFE <guilabel>Save As</guilabel> dialog when saving multiple "
 "images."
 msgstr ""
 
@@ -1123,7 +1123,7 @@ msgstr ""
 
 #. (itstool) path: textobject/phrase
 #: C/index.docbook:694
-msgid "Shows Eye of MATE toolbar editor window."
+msgid "Shows Eye of CAFE toolbar editor window."
 msgstr ""
 
 #. (itstool) path: section/para
@@ -1338,13 +1338,13 @@ msgstr ""
 #. (itstool) path: legalnotice/para
 #: C/legal.xml:13
 msgid ""
-"This manual is part of a collection of MATE manuals distributed under the "
+"This manual is part of a collection of CAFE manuals distributed under the "
 "GFDL. If you want to distribute this manual separately from the collection, "
 "you can do so by adding a copy of the license to the manual, as described in"
 " section 6 of the license."
 msgstr ""
 "Bu kılavuz, GFDL (GNU Özgür Belgelendirme Lisansı) kapsamında yayınlanan "
-"MATE kılavuzları koleksiyonunun bir parçasıdır. Bu kılavuzu koleksiyondan "
+"CAFE kılavuzları koleksiyonunun bir parçasıdır. Bu kılavuzu koleksiyondan "
 "ayrı bir biçimde dağıtmak istiyorsanız, lisansın 6. bölümünde açıklandığı "
 "gibi kılavuza lisansın bir kopyasını ilave ederek yapabilirsiniz."
 
@@ -1352,14 +1352,14 @@ msgstr ""
 #: C/legal.xml:20
 msgid ""
 "Many of the names used by companies to distinguish their products and "
-"services are claimed as trademarks. Where those names appear in any MATE "
-"documentation, and the members of the MATE Documentation Project are made "
+"services are claimed as trademarks. Where those names appear in any CAFE "
+"documentation, and the members of the CAFE Documentation Project are made "
 "aware of those trademarks, then the names are in capital letters or initial "
 "capital letters."
 msgstr ""
 "Firmalar tarafından ürün ve hizmetlerinin ayırt edilmeleri için "
 "kullandıkları isimlerin birçoğu tescilli marka olarak ayrılmıştır. Bu "
-"isimlerin MATE belgelendirilmesinde yer alması ve MATE Belgelendirme Projesi"
+"isimlerin CAFE belgelendirilmesinde yer alması ve CAFE Belgelendirme Projesi"
 " mensupları bu tescilli markalardan haberdar edildikleri durumda, isimlerin "
 "ilk harfi ya da tamamı büyük harflerle yazılır."
 
@@ -1435,6 +1435,6 @@ msgstr "Geri bildirim"
 msgid ""
 "To report a bug or make a suggestion regarding the <application>Image "
 "Viewer</application> application or this manual, follow the directions in "
-"the <link xlink:href=\"help:cafe-user-guide/feedback\">MATE Feedback "
+"the <link xlink:href=\"help:cafe-user-guide/feedback\">CAFE Feedback "
 "Page</link>."
 msgstr ""

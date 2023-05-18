@@ -43,8 +43,8 @@ msgstr ""
 #. (itstool) path: revdescription/para
 #: C/index.docbook:47 C/index.docbook:57 C/index.docbook:123
 #: C/index.docbook:124
-msgid "MATE Documentation Project"
-msgstr "MATE dokumentacijos projektas"
+msgid "CAFE Documentation Project"
+msgstr "CAFE dokumentacijos projektas"
 
 #. (itstool) path: publisher/publishername
 #. (itstool) path: affiliation/orgname
@@ -60,8 +60,8 @@ msgstr "GNOME dokumentacijos projektas"
 
 #. (itstool) path: affiliation/orgname
 #: C/index.docbook:59
-msgid "MATE Desktop"
-msgstr "MATE Darbastalis"
+msgid "CAFE Desktop"
+msgstr "CAFE Darbastalis"
 
 #. (itstool) path: personname/firstname
 #: C/index.docbook:91
@@ -142,7 +142,7 @@ msgstr ""
 
 #. (itstool) path: article/indexterm
 #: C/index.docbook:217
-msgid "<primary>Eye of MATE</primary>"
+msgid "<primary>Eye of CAFE</primary>"
 msgstr ""
 
 #. (itstool) path: info/title
@@ -153,7 +153,7 @@ msgstr "Įžanga"
 #. (itstool) path: section/para
 #: C/index.docbook:226
 msgid ""
-"The <application>Eye of MATE Image Viewer</application> application enables "
+"The <application>Eye of CAFE Image Viewer</application> application enables "
 "you to view single image files, as well as large image collections."
 msgstr ""
 
@@ -907,7 +907,7 @@ msgstr ""
 #. (itstool) path: textobject/phrase
 #: C/index.docbook:607
 msgid ""
-"Shows Eye of MATE <guilabel>Save As</guilabel> dialog when saving multiple "
+"Shows Eye of CAFE <guilabel>Save As</guilabel> dialog when saving multiple "
 "images."
 msgstr ""
 
@@ -1121,7 +1121,7 @@ msgstr ""
 
 #. (itstool) path: textobject/phrase
 #: C/index.docbook:694
-msgid "Shows Eye of MATE toolbar editor window."
+msgid "Shows Eye of CAFE toolbar editor window."
 msgstr ""
 
 #. (itstool) path: section/para
@@ -1336,12 +1336,12 @@ msgstr ""
 #. (itstool) path: legalnotice/para
 #: C/legal.xml:13
 msgid ""
-"This manual is part of a collection of MATE manuals distributed under the "
+"This manual is part of a collection of CAFE manuals distributed under the "
 "GFDL. If you want to distribute this manual separately from the collection, "
 "you can do so by adding a copy of the license to the manual, as described in"
 " section 6 of the license."
 msgstr ""
-"Šis žinynas yra MATE žinynų rinkinio, platinamo GFDL sąlygomis, dalis. Jeigu"
+"Šis žinynas yra CAFE žinynų rinkinio, platinamo GFDL sąlygomis, dalis. Jeigu"
 " norite dalintis šiuo žinynu atskirai nuo šio rinkinio, galite tą daryti "
 "pridėdami šios licencijos kopiją, kaip nurodyta 6 šios licencijos dalyje."
 
@@ -1349,13 +1349,13 @@ msgstr ""
 #: C/legal.xml:20
 msgid ""
 "Many of the names used by companies to distinguish their products and "
-"services are claimed as trademarks. Where those names appear in any MATE "
-"documentation, and the members of the MATE Documentation Project are made "
+"services are claimed as trademarks. Where those names appear in any CAFE "
+"documentation, and the members of the CAFE Documentation Project are made "
 "aware of those trademarks, then the names are in capital letters or initial "
 "capital letters."
 msgstr ""
 "Nemažai įmonių, jų produktų ir paslaugų pavadinimai laikomi prekės ženklais."
-" Kuomet šie pavadinimai pasirodo bet kur MATE dokumentacijoje, ir MATE "
+" Kuomet šie pavadinimai pasirodo bet kur CAFE dokumentacijoje, ir CAFE "
 "dokumentacijos projekto nariai atkreipia į juos dėmesį, šie pavadinimai "
 "radomi didžiosiomis raidėmis arba pradedami didžiąja raide."
 
@@ -1380,7 +1380,7 @@ msgstr ""
 " TIKRŲ TEISIŲ. VISA ŠIO DOKUMENTO  AR JO MODIFIKUOTOS VERSIJOS KOKYBĖS, "
 "TIKSLUMO IR VEIKIMO PRIKLAUSO JUMS. ESANT BET KOKIAM ŠIO DOKUMENTO AR JO "
 "MODIFIKUOTOS VERSIJOS TRŪKUMUI, JŪS (NE PIRMINIS RAŠYTOJAS, AUTORIUS AR "
-"KITAS PAGALBININKAS) PRISIIMATE REIKIAMO APTARNAVIMO, REMONTO AR TAISYMO "
+"KITAS PAGALBININKAS) PRISIICAFE REIKIAMO APTARNAVIMO, REMONTO AR TAISYMO "
 "IŠLAIDAS. ŠIS ATSAKOMYBĖS ATSISAKYMAS YRA ESMINĖ ŠIOS LICENCIJOS DALIS. "
 "TOLIAU NELEIDŽIAMAS JOKS ŠIO DOKUMENTO AR MODIFIKUOTOS VERSIJOS NAUDOJIMAS, "
 "IŠSKYRUS PAGAL ŠĮ ATSAKOMYBĖS ATSISAKYMĄ; IR"
@@ -1430,6 +1430,6 @@ msgstr "Atsiliepimai"
 msgid ""
 "To report a bug or make a suggestion regarding the <application>Image "
 "Viewer</application> application or this manual, follow the directions in "
-"the <link xlink:href=\"help:cafe-user-guide/feedback\">MATE Feedback "
+"the <link xlink:href=\"help:cafe-user-guide/feedback\">CAFE Feedback "
 "Page</link>."
 msgstr ""

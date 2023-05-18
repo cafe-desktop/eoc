@@ -40,8 +40,8 @@ msgstr "Manual del Visor de imágenes"
 #. (itstool) path: revdescription/para
 #: C/index.docbook:47 C/index.docbook:57 C/index.docbook:123
 #: C/index.docbook:124
-msgid "MATE Documentation Project"
-msgstr "Proyecto de documentación de MATE"
+msgid "CAFE Documentation Project"
+msgstr "Proyecto de documentación de CAFE"
 
 #. (itstool) path: publisher/publishername
 #. (itstool) path: affiliation/orgname
@@ -57,8 +57,8 @@ msgstr "Proyecto de documentación de GNOME"
 
 #. (itstool) path: affiliation/orgname
 #: C/index.docbook:59
-msgid "MATE Desktop"
-msgstr "Escritorio MATE"
+msgid "CAFE Desktop"
+msgstr "Escritorio CAFE"
 
 #. (itstool) path: personname/firstname
 #: C/index.docbook:91
@@ -139,8 +139,8 @@ msgstr ""
 
 #. (itstool) path: article/indexterm
 #: C/index.docbook:217
-msgid "<primary>Eye of MATE</primary>"
-msgstr "<primary>Ojo de MATE</primary>"
+msgid "<primary>Eye of CAFE</primary>"
+msgstr "<primary>Ojo de CAFE</primary>"
 
 #. (itstool) path: info/title
 #: C/index.docbook:224
@@ -150,10 +150,10 @@ msgstr "Introducción"
 #. (itstool) path: section/para
 #: C/index.docbook:226
 msgid ""
-"The <application>Eye of MATE Image Viewer</application> application enables "
+"The <application>Eye of CAFE Image Viewer</application> application enables "
 "you to view single image files, as well as large image collections."
 msgstr ""
-"El visor de imágenes <application>Ojo de MATE</application> le permite "
+"El visor de imágenes <application>Ojo de CAFE</application> le permite "
 "visualizar archivos de imagen individuales o colecciones grandes de "
 "imágenes."
 
@@ -1029,7 +1029,7 @@ msgstr ""
 #. (itstool) path: textobject/phrase
 #: C/index.docbook:607
 msgid ""
-"Shows Eye of MATE <guilabel>Save As</guilabel> dialog when saving multiple "
+"Shows Eye of CAFE <guilabel>Save As</guilabel> dialog when saving multiple "
 "images."
 msgstr ""
 
@@ -1243,7 +1243,7 @@ msgstr ""
 
 #. (itstool) path: textobject/phrase
 #: C/index.docbook:694
-msgid "Shows Eye of MATE toolbar editor window."
+msgid "Shows Eye of CAFE toolbar editor window."
 msgstr ""
 
 #. (itstool) path: section/para
@@ -1465,12 +1465,12 @@ msgstr ""
 #. (itstool) path: legalnotice/para
 #: C/legal.xml:13
 msgid ""
-"This manual is part of a collection of MATE manuals distributed under the "
+"This manual is part of a collection of CAFE manuals distributed under the "
 "GFDL. If you want to distribute this manual separately from the collection, "
 "you can do so by adding a copy of the license to the manual, as described in"
 " section 6 of the license."
 msgstr ""
-"Este manual es parte de una colección de manuales de MATE distribuidos bajo "
+"Este manual es parte de una colección de manuales de CAFE distribuidos bajo "
 "la GFDL. Si quiere distribuir este manual por separado de la colección, "
 "puede hacerlo añadiendo una copia de la licencia al manual, tal y como se "
 "describe en la sección 6 de la licencia."
@@ -1479,15 +1479,15 @@ msgstr ""
 #: C/legal.xml:20
 msgid ""
 "Many of the names used by companies to distinguish their products and "
-"services are claimed as trademarks. Where those names appear in any MATE "
-"documentation, and the members of the MATE Documentation Project are made "
+"services are claimed as trademarks. Where those names appear in any CAFE "
+"documentation, and the members of the CAFE Documentation Project are made "
 "aware of those trademarks, then the names are in capital letters or initial "
 "capital letters."
 msgstr ""
 "Muchos de los nombres utilizados por las empresas para distinguir sus "
 "productos y servicios se consideran marcas comerciales. Cuando esos nombres "
-"aparecen en cualquier documentación de MATE y los miembros del proyecto de "
-"documentación de MATE son conscientes de que se trata de marcas registradas,"
+"aparecen en cualquier documentación de CAFE y los miembros del proyecto de "
+"documentación de CAFE son conscientes de que se trata de marcas registradas,"
 " dichos nombres se escriben en letras mayúsculas o con inical mayúscula."
 
 #. (itstool) path: listitem/para
@@ -1567,6 +1567,6 @@ msgstr "Comentarios"
 msgid ""
 "To report a bug or make a suggestion regarding the <application>Image "
 "Viewer</application> application or this manual, follow the directions in "
-"the <link xlink:href=\"help:cafe-user-guide/feedback\">MATE Feedback "
+"the <link xlink:href=\"help:cafe-user-guide/feedback\">CAFE Feedback "
 "Page</link>."
 msgstr ""

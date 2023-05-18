@@ -62,7 +62,7 @@ _print_version_and_exit (const gchar *option_name,
 			 gpointer data,
 			 GError **error)
 {
-	g_print("%s %s\n", _("Eye of MATE Image Viewer"), VERSION);
+	g_print("%s %s\n", _("Eye of CAFE Image Viewer"), VERSION);
 	exit (EXIT_SUCCESS);
 	return TRUE;
 }
@@ -163,7 +163,7 @@ main (int argc, char **argv)
                                            EOC_DATA_DIR G_DIR_SEPARATOR_S "icons");
 
 	gtk_window_set_default_icon_name ("eoc");
-	g_set_application_name (_("Eye of MATE Image Viewer"));
+	g_set_application_name (_("Eye of CAFE Image Viewer"));
 
 	EOC_APP->priv->flags = flags;
 	if (force_new_instance) {

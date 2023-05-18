@@ -45,8 +45,8 @@ msgstr ""
 #. (itstool) path: revdescription/para
 #: C/index.docbook:47 C/index.docbook:57 C/index.docbook:123
 #: C/index.docbook:124
-msgid "MATE Documentation Project"
-msgstr "MATE ドキュメンテーション・プロジェクト"
+msgid "CAFE Documentation Project"
+msgstr "CAFE ドキュメンテーション・プロジェクト"
 
 #. (itstool) path: publisher/publishername
 #. (itstool) path: affiliation/orgname
@@ -62,8 +62,8 @@ msgstr "GNOME ドキュメンテーション・プロジェクト"
 
 #. (itstool) path: affiliation/orgname
 #: C/index.docbook:59
-msgid "MATE Desktop"
-msgstr "MATE デスクトップ"
+msgid "CAFE Desktop"
+msgstr "CAFE デスクトップ"
 
 #. (itstool) path: personname/firstname
 #: C/index.docbook:91
@@ -144,7 +144,7 @@ msgstr ""
 
 #. (itstool) path: article/indexterm
 #: C/index.docbook:217
-msgid "<primary>Eye of MATE</primary>"
+msgid "<primary>Eye of CAFE</primary>"
 msgstr ""
 
 #. (itstool) path: info/title
@@ -155,7 +155,7 @@ msgstr "はじめに"
 #. (itstool) path: section/para
 #: C/index.docbook:226
 msgid ""
-"The <application>Eye of MATE Image Viewer</application> application enables "
+"The <application>Eye of CAFE Image Viewer</application> application enables "
 "you to view single image files, as well as large image collections."
 msgstr ""
 
@@ -909,7 +909,7 @@ msgstr ""
 #. (itstool) path: textobject/phrase
 #: C/index.docbook:607
 msgid ""
-"Shows Eye of MATE <guilabel>Save As</guilabel> dialog when saving multiple "
+"Shows Eye of CAFE <guilabel>Save As</guilabel> dialog when saving multiple "
 "images."
 msgstr ""
 
@@ -1123,7 +1123,7 @@ msgstr ""
 
 #. (itstool) path: textobject/phrase
 #: C/index.docbook:694
-msgid "Shows Eye of MATE toolbar editor window."
+msgid "Shows Eye of CAFE toolbar editor window."
 msgstr ""
 
 #. (itstool) path: section/para
@@ -1338,12 +1338,12 @@ msgstr ""
 #. (itstool) path: legalnotice/para
 #: C/legal.xml:13
 msgid ""
-"This manual is part of a collection of MATE manuals distributed under the "
+"This manual is part of a collection of CAFE manuals distributed under the "
 "GFDL. If you want to distribute this manual separately from the collection, "
 "you can do so by adding a copy of the license to the manual, as described in"
 " section 6 of the license."
 msgstr ""
-"本ドキュメントは GFDL の下で配布されているその他の MATE "
+"本ドキュメントは GFDL の下で配布されているその他の CAFE "
 "マニュアル集の一部である。これらのマニュアルとは別に本ドキュメントを別個に配布する場合は、GFDL "
 "のセクション6で説明しているように、そのマニュアル集に対するライセンスの複製を添付することで実現できる。"
 
@@ -1351,13 +1351,13 @@ msgstr ""
 #: C/legal.xml:20
 msgid ""
 "Many of the names used by companies to distinguish their products and "
-"services are claimed as trademarks. Where those names appear in any MATE "
-"documentation, and the members of the MATE Documentation Project are made "
+"services are claimed as trademarks. Where those names appear in any CAFE "
+"documentation, and the members of the CAFE Documentation Project are made "
 "aware of those trademarks, then the names are in capital letters or initial "
 "capital letters."
 msgstr ""
-"企業は自分達の製品とサービスを区別するために使用する多くの名称が登録商標であると主張している。これらの名称が MATE "
-"のドキュメントの中に表記されていたり、これらの登録商標が MATE "
+"企業は自分達の製品とサービスを区別するために使用する多くの名称が登録商標であると主張している。これらの名称が CAFE "
+"のドキュメントの中に表記されていたり、これらの登録商標が CAFE "
 "ドキュメンテーション・プロジェクトのメンバに提示している箇所は全部を大文字または最初の文字を大文字にしている。"
 
 #. (itstool) path: listitem/para
@@ -1430,6 +1430,6 @@ msgstr "フィードバック"
 msgid ""
 "To report a bug or make a suggestion regarding the <application>Image "
 "Viewer</application> application or this manual, follow the directions in "
-"the <link xlink:href=\"help:cafe-user-guide/feedback\">MATE Feedback "
+"the <link xlink:href=\"help:cafe-user-guide/feedback\">CAFE Feedback "
 "Page</link>."
 msgstr ""

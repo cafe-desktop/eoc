@@ -35,8 +35,8 @@ msgstr "Manual til Billedfremviser"
 #. (itstool) path: revdescription/para
 #: C/index.docbook:47 C/index.docbook:57 C/index.docbook:123
 #: C/index.docbook:124
-msgid "MATE Documentation Project"
-msgstr "MATE-dokumentationsprojekt"
+msgid "CAFE Documentation Project"
+msgstr "CAFE-dokumentationsprojekt"
 
 #. (itstool) path: publisher/publishername
 #. (itstool) path: affiliation/orgname
@@ -52,8 +52,8 @@ msgstr "GNOME-dokumentationsprojekt"
 
 #. (itstool) path: affiliation/orgname
 #: C/index.docbook:59
-msgid "MATE Desktop"
-msgstr "MATE-skrivebord"
+msgid "CAFE Desktop"
+msgstr "CAFE-skrivebord"
 
 #. (itstool) path: personname/firstname
 #: C/index.docbook:91
@@ -134,8 +134,8 @@ msgstr "Denne manual beskriver version 1.22 af Billedfremviser."
 
 #. (itstool) path: article/indexterm
 #: C/index.docbook:217
-msgid "<primary>Eye of MATE</primary>"
-msgstr "<primary>MATE's øje</primary>"
+msgid "<primary>Eye of CAFE</primary>"
+msgstr "<primary>CAFE's øje</primary>"
 
 #. (itstool) path: info/title
 #: C/index.docbook:224
@@ -145,10 +145,10 @@ msgstr "Indledning"
 #. (itstool) path: section/para
 #: C/index.docbook:226
 msgid ""
-"The <application>Eye of MATE Image Viewer</application> application enables "
+"The <application>Eye of CAFE Image Viewer</application> application enables "
 "you to view single image files, as well as large image collections."
 msgstr ""
-"<application>Billedfremviseren MATE's øje</application> er et program, som "
+"<application>Billedfremviseren CAFE's øje</application> er et program, som "
 "giver dig mulighed for at se billeder - lige fra enkeltstående billeder til "
 "store billedsamlinger."
 
@@ -1113,10 +1113,10 @@ msgstr "Gem som-dialog for flere billeder"
 #. (itstool) path: textobject/phrase
 #: C/index.docbook:607
 msgid ""
-"Shows Eye of MATE <guilabel>Save As</guilabel> dialog when saving multiple "
+"Shows Eye of CAFE <guilabel>Save As</guilabel> dialog when saving multiple "
 "images."
 msgstr ""
-"Viser MATE's Øje-dialogen <guilabel>Gem som</guilabel> når flere billeder "
+"Viser CAFE's Øje-dialogen <guilabel>Gem som</guilabel> når flere billeder "
 "gemmes."
 
 #. (itstool) path: section/para
@@ -1394,8 +1394,8 @@ msgstr "Værktøjslinjeredigering-vinduet"
 
 #. (itstool) path: textobject/phrase
 #: C/index.docbook:694
-msgid "Shows Eye of MATE toolbar editor window."
-msgstr "Viser redigeringsvinduet for MATE's Øje-værktøjslinjen."
+msgid "Shows Eye of CAFE toolbar editor window."
+msgstr "Viser redigeringsvinduet for CAFE's Øje-værktøjslinjen."
 
 #. (itstool) path: section/para
 #: C/index.docbook:699
@@ -1667,12 +1667,12 @@ msgstr ""
 #. (itstool) path: legalnotice/para
 #: C/legal.xml:13
 msgid ""
-"This manual is part of a collection of MATE manuals distributed under the "
+"This manual is part of a collection of CAFE manuals distributed under the "
 "GFDL. If you want to distribute this manual separately from the collection, "
 "you can do so by adding a copy of the license to the manual, as described in"
 " section 6 of the license."
 msgstr ""
-"Denne manual er en del af MATE-manualsamlingen distribueret under GFDL. Hvis"
+"Denne manual er en del af CAFE-manualsamlingen distribueret under GFDL. Hvis"
 " du vil distribuere denne manual separat fra denne samling, kan du gøre det "
 "ved at tilføje en kopi af licensen til manualen, som beskrevet i sektion 6 "
 "af licensen."
@@ -1681,14 +1681,14 @@ msgstr ""
 #: C/legal.xml:20
 msgid ""
 "Many of the names used by companies to distinguish their products and "
-"services are claimed as trademarks. Where those names appear in any MATE "
-"documentation, and the members of the MATE Documentation Project are made "
+"services are claimed as trademarks. Where those names appear in any CAFE "
+"documentation, and the members of the CAFE Documentation Project are made "
 "aware of those trademarks, then the names are in capital letters or initial "
 "capital letters."
 msgstr ""
 "Mange af navnene brugt af firmaer til at skelne deres produkter og tjenester"
-" er registrerede varemærker. Der hvor disse navne optræder i MATE-"
-"dokumentationen, og medlemmerne af MATE-dokumentationsprojektet er blevet "
+" er registrerede varemærker. Der hvor disse navne optræder i CAFE-"
+"dokumentationen, og medlemmerne af CAFE-dokumentationsprojektet er blevet "
 "gjort opmærksomme på disse varemærker, er navnene skrevet med store "
 "bogstaver eller store forbogstaver."
 
@@ -1767,10 +1767,10 @@ msgstr "Tilbagemelding"
 msgid ""
 "To report a bug or make a suggestion regarding the <application>Image "
 "Viewer</application> application or this manual, follow the directions in "
-"the <link xlink:href=\"help:cafe-user-guide/feedback\">MATE Feedback "
+"the <link xlink:href=\"help:cafe-user-guide/feedback\">CAFE Feedback "
 "Page</link>."
 msgstr ""
 "For at rapportere fejl eller foreslå forbedringer vedrørende programmet "
 "<application>Billedfremviser</application> eller denne manual, bør du følge "
-"instruktionerne på <link xlink:href=\"help:cafe-user-guide/feedback\">MATE-"
+"instruktionerne på <link xlink:href=\"help:cafe-user-guide/feedback\">CAFE-"
 "tilbagemeldingssiden</link>."

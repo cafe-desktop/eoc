@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=Eye of MATE Image Viewer
+Name=Eye of CAFE Image Viewer
 Comment=Browse and rotate images
 TryExec=eoc
 Exec=eoc %U
@@ -10,10 +10,10 @@ Terminal=false
 Type=Application
 Categories=GTK;Graphics;RasterGraphics;Viewer;
 # Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-Keywords=image;viewer;JPEG;PNG;TIFF;SVG;MATE;photos;browse;thumbnails;rotate;
-X-MATE-Bugzilla-Bugzilla=MATE
-X-MATE-Bugzilla-Product=EOC
-X-MATE-Bugzilla-Component=general
-X-MATE-Bugzilla-Version=@VERSION@
-X-MATE-DocPath=eoc/index.docbook
+Keywords=image;viewer;JPEG;PNG;TIFF;SVG;CAFE;photos;browse;thumbnails;rotate;
+X-CAFE-Bugzilla-Bugzilla=CAFE
+X-CAFE-Bugzilla-Product=EOC
+X-CAFE-Bugzilla-Component=general
+X-CAFE-Bugzilla-Version=@VERSION@
+X-CAFE-DocPath=eoc/index.docbook
 MimeType=application/ico;application/x-navi-animation;audio/x-riff;image/bmp;image/gif;image/ico;image/icon;image/jp2;image/jpeg;image/jpeg2000;image/jpg;image/jpx;image/pjpeg;image/png;image/qtif;image/svg;image/svg+xml;image/svg+xml-compressed;image/svg-xml;image/tiff;image/vnd.adobe.svg+xml;image/vnd.microsoft.icon;image/vnd.wap.wbmp;image/webp;image/x-MS-bmp;image/x-adobe-dng;image/x-bmp;image/x-canon-cr2;image/x-canon-crw;image/x-compressed-xcf;image/x-epson-erf;image/x-fuji-raf;image/x-gray;image/x-icb;image/x-icns;image/x-ico;image/x-icon;image/x-minolta-mrw;image/x-nikon-nef;image/x-olympus-orf;image/x-pcx;image/x-pentax-pef;image/x-png;image/x-portable-anymap;image/x-portable-bitmap;image/x-portable-graymap;image/x-portable-pixmap;image/x-quicktime;image/x-sony-arw;image/x-tga;image/x-win-bitmap;image/x-wmf;image/x-xbitmap;image/x-xcf;image/x-xpixmap;text/ico;text/xml-svg;

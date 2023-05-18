@@ -71,8 +71,8 @@ msgstr "Руководство по Программе просмотра изо
 #. (itstool) path: revdescription/para
 #: C/index.docbook:47 C/index.docbook:57 C/index.docbook:123
 #: C/index.docbook:124
-msgid "MATE Documentation Project"
-msgstr "Проект документирования MATE"
+msgid "CAFE Documentation Project"
+msgstr "Проект документирования CAFE"
 
 #. (itstool) path: publisher/publishername
 #. (itstool) path: affiliation/orgname
@@ -88,8 +88,8 @@ msgstr "Проект документирования GNOME"
 
 #. (itstool) path: affiliation/orgname
 #: C/index.docbook:59
-msgid "MATE Desktop"
-msgstr "Рабочий стол MATE"
+msgid "CAFE Desktop"
+msgstr "Рабочий стол CAFE"
 
 #. (itstool) path: personname/firstname
 #: C/index.docbook:91
@@ -171,8 +171,8 @@ msgstr ""
 
 #. (itstool) path: article/indexterm
 #: C/index.docbook:217
-msgid "<primary>Eye of MATE</primary>"
-msgstr "<primary>Глаз MATE</primary>"
+msgid "<primary>Eye of CAFE</primary>"
+msgstr "<primary>Глаз CAFE</primary>"
 
 #. (itstool) path: info/title
 #: C/index.docbook:224
@@ -182,10 +182,10 @@ msgstr "Введение"
 #. (itstool) path: section/para
 #: C/index.docbook:226
 msgid ""
-"The <application>Eye of MATE Image Viewer</application> application enables "
+"The <application>Eye of CAFE Image Viewer</application> application enables "
 "you to view single image files, as well as large image collections."
 msgstr ""
-"<application>Программа просмотра изображений «Глаз MATE»</application> "
+"<application>Программа просмотра изображений «Глаз CAFE»</application> "
 "позволяет просматривать как отдельные изображения, так и большие коллекции."
 
 #. (itstool) path: info/title
@@ -225,7 +225,7 @@ msgid ""
 "Application</application> dialog."
 msgstr ""
 "Выполнить команду <command>eoc</command> в командной строке терминала "
-"(например, <application>терминала MATE</application>) или в диалоге "
+"(например, <application>терминала CAFE</application>) или в диалоге "
 "<application>Выполнить программу</application>."
 
 #. (itstool) path: info/title
@@ -1163,11 +1163,11 @@ msgstr "Диалог «Сохранить как…» для нескольки�
 #. (itstool) path: textobject/phrase
 #: C/index.docbook:607
 msgid ""
-"Shows Eye of MATE <guilabel>Save As</guilabel> dialog when saving multiple "
+"Shows Eye of CAFE <guilabel>Save As</guilabel> dialog when saving multiple "
 "images."
 msgstr ""
 "Показывает диалог <guilabel>Сохранить как…</guilabel> в приложении «Глаз "
-"MATE» при сохранении нескольких изображений."
+"CAFE» при сохранении нескольких изображений."
 
 #. (itstool) path: section/para
 #: C/index.docbook:612
@@ -1438,8 +1438,8 @@ msgstr "Окно редактора панели инструментов"
 
 #. (itstool) path: textobject/phrase
 #: C/index.docbook:694
-msgid "Shows Eye of MATE toolbar editor window."
-msgstr "Показывает окно редактора панели инструментов программы \"Глаз MATE\""
+msgid "Shows Eye of CAFE toolbar editor window."
+msgstr "Показывает окно редактора панели инструментов программы \"Глаз CAFE\""
 
 #. (itstool) path: section/para
 #: C/index.docbook:699
@@ -1712,12 +1712,12 @@ msgstr ""
 #. (itstool) path: legalnotice/para
 #: C/legal.xml:13
 msgid ""
-"This manual is part of a collection of MATE manuals distributed under the "
+"This manual is part of a collection of CAFE manuals distributed under the "
 "GFDL. If you want to distribute this manual separately from the collection, "
 "you can do so by adding a copy of the license to the manual, as described in"
 " section 6 of the license."
 msgstr ""
-"Этот документ является частью документации MATE, распространяемой на "
+"Этот документ является частью документации CAFE, распространяемой на "
 "условиях лицензии GFDL. Если вы хотите распространять этот документ отдельно"
 " от общей документации, вы должны приложить копию лицензии к документу, как "
 "написано в части 6 лицензии."
@@ -1726,14 +1726,14 @@ msgstr ""
 #: C/legal.xml:20
 msgid ""
 "Many of the names used by companies to distinguish their products and "
-"services are claimed as trademarks. Where those names appear in any MATE "
-"documentation, and the members of the MATE Documentation Project are made "
+"services are claimed as trademarks. Where those names appear in any CAFE "
+"documentation, and the members of the CAFE Documentation Project are made "
 "aware of those trademarks, then the names are in capital letters or initial "
 "capital letters."
 msgstr ""
 "Некоторые имена и марки используются компаниями для обозначения их продуктов"
 " и услуг и являются торговыми марками. Там, где эти имена присутствуют в "
-"документации и где участники проекта документирования MATE знают об этом, "
+"документации и где участники проекта документирования CAFE знают об этом, "
 "имена выделяются заглавными буквами или начальной заглавной буквой."
 
 #. (itstool) path: listitem/para
@@ -1806,10 +1806,10 @@ msgstr "Обратная связь"
 msgid ""
 "To report a bug or make a suggestion regarding the <application>Image "
 "Viewer</application> application or this manual, follow the directions in "
-"the <link xlink:href=\"help:cafe-user-guide/feedback\">MATE Feedback "
+"the <link xlink:href=\"help:cafe-user-guide/feedback\">CAFE Feedback "
 "Page</link>."
 msgstr ""
 "Чтобы сообщить об ошибке или внести предложение относительно "
 "<application>Программы просмотра изображений</application> или этого "
 "руководства, следуйте инструкциям на <ulink url=\"help:cafe-user-"
-"guide/feedback\" type=\"help\">Странице обратной связи MATE</ulink>."
+"guide/feedback\" type=\"help\">Странице обратной связи CAFE</ulink>."

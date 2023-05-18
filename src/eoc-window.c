@@ -82,7 +82,7 @@
 #include <lcms2.h>
 #endif
 
-#define MATE_DESKTOP_USE_UNSTABLE_API
+#define CAFE_DESKTOP_USE_UNSTABLE_API
 #include <libcafe-desktop/cafe-desktop-utils.h>
 
 #define EOC_WINDOW_MIN_WIDTH  440
@@ -95,7 +95,7 @@
 #define EOC_WINDOW_FULLSCREEN_POPUP_THRESHOLD 5
 
 #define EOC_RECENT_FILES_GROUP  "Graphics"
-#define EOC_RECENT_FILES_APP_NAME "Eye of MATE Image Viewer"
+#define EOC_RECENT_FILES_APP_NAME "Eye of CAFE Image Viewer"
 #define EOC_RECENT_FILES_LIMIT  5
 
 #define EOC_WALLPAPER_FILENAME "eoc-wallpaper"
@@ -2637,13 +2637,13 @@ eoc_window_cmd_about (GtkAction *action, gpointer user_data)
 	window = EOC_WINDOW (user_data);
 
 	gtk_show_about_dialog (GTK_WINDOW (window),
-			       "program-name", _("Eye of MATE"),
-			       "title", _("About Eye of MATE"),
+			       "program-name", _("Eye of CAFE"),
+			       "title", _("About Eye of CAFE"),
 			       "version", VERSION,
 			       "copyright", _("Copyright \xc2\xa9 2000-2010 Free Software Foundation, Inc.\n"
 			                      "Copyright \xc2\xa9 2011 Perberos\n"
-			                      "Copyright \xc2\xa9 2012-2020 MATE developers"),
-			       "comments",_("The MATE image viewer."),
+			                      "Copyright \xc2\xa9 2012-2020 CAFE developers"),
+			       "comments",_("The CAFE image viewer."),
 			       "authors", authors,
 			       "documenters", documenters,
 			       "translator-credits", _("translator-credits"),
@@ -3790,7 +3790,7 @@ static const GtkActionEntry action_entries_window[] = {
 	  N_("Edit the application toolbar"),
 	  G_CALLBACK (eoc_window_cmd_edit_toolbar) },
 	{ "EditPreferences", "preferences-desktop", N_("Prefere_nces"), NULL,
-	  N_("Preferences for Eye of MATE"),
+	  N_("Preferences for Eye of CAFE"),
 	  G_CALLBACK (eoc_window_cmd_preferences) },
 	{ "HelpManual", "help-browser", N_("_Contents"), "F1",
 	  N_("Help on this application"),

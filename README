@@ -1,4 +1,4 @@
-Eye of MATE: an image viewing and cataloging program
+Eye of CAFE: an image viewing and cataloging program
 -----------------------------------------------------
 
 Perfect vision soup:
@@ -13,10 +13,10 @@ Perfect vision soup:
 Description
 -----------
 
-This is the Eye of MATE, an image viewer program.  It is meant to be
+This is the Eye of CAFE, an image viewer program.  It is meant to be
 a fast and functional image viewer.
 
-Eye of MATE is a fork of Eye of GNOME.
+Eye of CAFE is a fork of Eye of GNOME.
 
 Requirements
 ------------
@@ -24,8 +24,8 @@ Requirements
 This package requires the following modules to be installed: glib,
 GTK+, cafe-desktop, gio, gdk-pixbuf, shared-mime-info.
 
-You can get these packages from your favourite MATE FTP mirror or at
-http://pub.cafe-desktop.org/ or from other sources where MATE
+You can get these packages from your favourite CAFE FTP mirror or at
+http://pub.cafe-desktop.org/ or from other sources where CAFE
 packages are distributed. shared-mime-info can be downloaded
 from the freedesktop.org website.
 
@@ -33,13 +33,13 @@ from the freedesktop.org website.
 Optional Libraries
 ------------------
 
-'Eye of MATE' supports the reading of EXIF information stored in
+'Eye of CAFE' supports the reading of EXIF information stored in
 images by digital cameras. To get this working, you need the optional
 libexif library. It is available at http://libexif.sourceforge.net.
 If you also want to preserve your EXIF data on save make sure you have
 libjpeg installed, including the development files.
 
-In order to make 'Eye of MATE' work as a single instance application you'll
+In order to make 'Eye of CAFE' work as a single instance application you'll
 need D-Bus installed in your system. You can get it from
 http://www.freedesktop.org/wiki/Software/dbus .
 
@@ -49,21 +49,21 @@ Exempi for XMP metadata reading.
 Availability
 ------------
 
-The bleeding-edge version of this package is always available from the MATE
+The bleeding-edge version of this package is always available from the CAFE
 GIT repository (instructions at http://wiki.cafe-desktop.org/).
 Released versions are available at http://pub.cafe-desktop.org/.
 
 Webpage
 -------
 
-You can find screenshots and the latest news about 'Eye of MATE' in
+You can find screenshots and the latest news about 'Eye of CAFE' in
 http://wiki.cafe-desktop.org/doku.php/applications:eoc.
 
 
 Reporting bugs
 --------------
 
-Please use the MATE bug tracking system to report bugs.  You can
+Please use the CAFE bug tracking system to report bugs.  You can
 reach it at https://github.com/cafe-desktop/eoc/issues.
 
 
