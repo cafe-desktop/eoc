@@ -1080,7 +1080,7 @@ msgstr ""
 #: src/eoc-window.c:2649
 msgid "translator-credits"
 msgstr ""
-"Francisco Javier F. Serrador <serrador@cvs.cafe.org>\n"
+"Francisco Javier F. Serrador <serrador@cvs.mate.org>\n"
 "Jorge González González <jorge.gonzalez.gonzalez@hispalinux.es>"
 
 #: src/eoc-window.c:2742 src/eoc-window.c:2757

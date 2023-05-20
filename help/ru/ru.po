@@ -2,7 +2,7 @@
 # Translators:
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # AlexL <loginov.alex.valer@gmail.com>, 2020
-# Wolfgang Ulbrich <cafe@raveit.de>, 2020
+# Wolfgang Ulbrich <mate@raveit.de>, 2020
 # Konstantin <kilolife@gmail.com>, 2020
 # monsta <monsta@inbox.ru>, 2020
 # Михаил Ильинский <mail@milinsky.com>, 2020

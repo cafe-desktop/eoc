@@ -2,7 +2,7 @@
 # Translators:
 # Sérgio Marques <smarquespt@gmail.com>, 2020
 # Carlos Moreira, 2020
-# Wolfgang Ulbrich <cafe@raveit.de>, 2020
+# Wolfgang Ulbrich <mate@raveit.de>, 2020
 # Diogo Oliveira <diogodesigns@gmail.com>, 2020
 # Rui <xymarior@yandex.com>, 2020
 # Manuela Silva <manuelarodsilva@gmail.com>, 2020

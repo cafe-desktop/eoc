@@ -4,7 +4,7 @@
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # Andres Sanchez <blackatze93@gmail.com>, 2020
 # elio <micta2003@hotmail.com>, 2020
-# Wolfgang Ulbrich <cafe@raveit.de>, 2020
+# Wolfgang Ulbrich <mate@raveit.de>, 2020
 # Isabel Ortuño <isabel.ortuno1@gmail.com>, 2020
 # Toni Estévez <toni.estevez@gmail.com>, 2020
 # 

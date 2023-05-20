@@ -1080,8 +1080,8 @@ msgstr ""
 #: src/eoc-window.c:2649
 msgid "translator-credits"
 msgstr ""
-"Jorge González <jorgegonz@svn.cafe.org>\n"
-"Francisco Javier F. Serrador <serrador@cvs.cafe.org>"
+"Jorge González <jorgegonz@svn.mate.org>\n"
+"Francisco Javier F. Serrador <serrador@cvs.mate.org>"
 
 #: src/eoc-window.c:2742 src/eoc-window.c:2757
 msgid "Error launching appearance preferences dialog: "

@@ -155,7 +155,7 @@
 ========== ca.po ==========
 # eoc translation to Catalan.
 # Copyright © 2000-2009 Free Software Foundation, Inc.
-# Softcatalà <tradcafe@softcatala.org>, 2000, 2001, 2002.
+# Softcatalà <tradmate@softcatala.org>, 2000, 2001, 2002.
 # Jordi Mallach <jordi@sindominio.net>, 2002, 2003, 2004, 2005, 2006, 2007.
 # Jordi Mas <jmas@softcatala.org>, 2007.
 # Gil Forcada <gilforcada@guifi.net>, 2010.
@@ -167,7 +167,7 @@
 ========== ca@valencia.po ==========
 # eoc translation to Catalan.
 # Copyright © 2000-2009 Free Software Foundation, Inc.
-# Softcatalà <tradcafe@softcatala.org>, 2000, 2001, 2002.
+# Softcatalà <tradmate@softcatala.org>, 2000, 2001, 2002.
 # Jordi Mallach <jordi@sindominio.net>, 2002, 2003, 2004, 2005, 2006, 2007.
 # Jordi Mas <jmas@softcatala.org>, 2007.
 # Gil Forcada <gilforcada@guifi.net>, 2010.
@@ -321,7 +321,7 @@
 # Copyright © 2000-2002, 2006, 2007, 2008 the Free Software Foundation, Inc.
 #
 # Federico Mena-Quintero <federico@gimp.org>, 1999.
-# Carlos Perelló Marín <carlos@cafe-db.org>, 2001.
+# Carlos Perelló Marín <carlos@mate-db.org>, 2001.
 # Hector Garcia Alvarez <hector@scouts-es.org>, 2001.
 # Germán Poo Caamaño <gpoo@ubiobio.cl>, 2002. (Revisión).
 # Francisco Javier F. Serrador <serrador@cvs.gnome.org>, 2004, 2005, 2006, 2007.
@@ -393,7 +393,7 @@
 # Vincent Renardias <vincent@debian.org>, 2000.
 # Christophe Merlet <redfox@redfoxcenter.org>, 2000-2006.
 # Christophe Fergeau <teuf@users.sourceforge.net>, 2002.
-# Sun G11n <cafe_int_l10n@ireland.sun.com>, 2002.
+# Sun G11n <mate_int_l10n@ireland.sun.com>, 2002.
 # Sébastien Bacher <seb128@debian.org>, 2004.
 # Benoît Dejean <tazforever@dlfp.org>, 2005.
 # Stéphane Raimbault <stephane.raimbault@free.fr>, 2005-2008.
@@ -556,8 +556,8 @@
 # Copyright (C) 1999-2010 Free Software Foundation, Inc.
 # Takayuki KUSANO <AE5T-KSN@asahi-net.or.jp>, 1999-2002, 2010.
 # Takeshi AIHANA <takeshi.aihana@gmail.com>, 2002-2009.
-# KAMAGASAKO Masatoshi <emerald@cafe.gr.jp>, 2003.
-# Satoru SATOH <ss@cafe.gr.jp>, 2006.
+# KAMAGASAKO Masatoshi <emerald@mate.gr.jp>, 2003.
+# Satoru SATOH <ss@mate.gr.jp>, 2006.
 # Hideki Yamane (Debian-JP) <henrich@debian.or.jp>, 2009.
 # SUGITA Toshinori <sugita@d-pad.co.jp>, 2009.
 #
@@ -930,8 +930,8 @@
 # translation of eoc.HEAD.ro.po to Română
 # Eye of Cafe Romanian translation
 # Copyright (C) 2002,2003, 2004, 2005, 2006 Free Software Foundation, Inc.
-# Mugurel Tudor <mugurelu@cafe.ro>, 2002,2003,2004, 2005, 2006.
-# Mișu Moldovan <dumol@cafe.ro>, 2003.
+# Mugurel Tudor <mugurelu@mate.ro>, 2002,2003,2004, 2005, 2006.
+# Mișu Moldovan <dumol@mate.ro>, 2003.
 # Adi Roiban https://launchpad.net/~adiroiban, 2008, 2009
 # Lucian Adrian Grijincu <lucian.grijincu@gmail.com>, 2010.
 
@@ -1005,7 +1005,7 @@
 # This file is distributed under the same license as the eoc package.
 #
 # Andraž Tori <andraz.tori1@guest.arnes.si>, 2002.
-# Cafej Urbančič <cafeju@svn.gnome.org>, 2006 - 2010.
+# Matej Urbančič <mateju@svn.gnome.org>, 2006 - 2010.
 #
 
 
@@ -1210,7 +1210,7 @@
 # translation of eoc.po to zh_CN
 # Copyright (C) 2003 Free Software Foundation, Inc.
 # Wang Li <charles@linux.net.cn>, 2002
-# Sun G11n <cafe_int_l10n@ireland.sun.com>, 2002
+# Sun G11n <mate_int_l10n@ireland.sun.com>, 2002
 # Updated by He Qiangqiang <carton@linux.net.cn>, 2002
 # Xiong Jiang <jxiong@offtopic.org>, 2003
 # Funda Wang <fundawang@linux.net.cn>, 2003

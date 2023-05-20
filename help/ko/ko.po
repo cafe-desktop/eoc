@@ -4,7 +4,7 @@
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>, 2020
 # clefebvre <clement.lefebvre@linuxmint.com>, 2020
-# Wolfgang Ulbrich <cafe@raveit.de>, 2020
+# Wolfgang Ulbrich <mate@raveit.de>, 2020
 # HanSol Park <totron114@gmail.com>, 2020
 # 
 msgid ""
