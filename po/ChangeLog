@@ -393,7 +393,7 @@
 
 	* POTFILES.in:
 	* POTFILES.skip:
-	Add GtkBuilder files.
+	Add CtkBuilder files.
 
 2008-10-12  Petr Kovar  <pknbe@volny.cz>
 

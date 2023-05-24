@@ -42,34 +42,34 @@ typedef struct _EocSidebarPrivate EocSidebarPrivate;
 #define EOC_SIDEBAR_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS((obj),  EOC_TYPE_SIDEBAR, EocSidebarClass))
 
 struct _EocSidebar {
-	GtkBox base_instance;
+	CtkBox base_instance;
 
 	EocSidebarPrivate *priv;
 };
 
 struct _EocSidebarClass {
-	GtkBoxClass base_class;
+	CtkBoxClass base_class;
 
 	void (* page_added)   (EocSidebar *eoc_sidebar,
-			       GtkWidget  *main_widget);
+			       CtkWidget  *main_widget);
 
 	void (* page_removed) (EocSidebar *eoc_sidebar,
-			       GtkWidget  *main_widget);
+			       CtkWidget  *main_widget);
 };
 
 GType      eoc_sidebar_get_type     (void);
 
-GtkWidget *eoc_sidebar_new          (void);
+CtkWidget *eoc_sidebar_new          (void);
 
 void       eoc_sidebar_add_page     (EocSidebar  *eoc_sidebar,
 				     const gchar *title,
-				     GtkWidget   *main_widget);
+				     CtkWidget   *main_widget);
 
 void       eoc_sidebar_remove_page  (EocSidebar  *eoc_sidebar,
-				     GtkWidget   *main_widget);
+				     CtkWidget   *main_widget);
 
 void       eoc_sidebar_set_page     (EocSidebar  *eoc_sidebar,
-				     GtkWidget   *main_widget);
+				     CtkWidget   *main_widget);
 
 gint       eoc_sidebar_get_n_pages  (EocSidebar  *eoc_sidebar);
 

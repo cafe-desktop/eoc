@@ -48,17 +48,17 @@ typedef enum {
 } EocThumbViewSelectionChange;
 
 struct _EocThumbView {
-	GtkIconView icon_view;
+	CtkIconView icon_view;
 	EocThumbViewPrivate *priv;
 };
 
 struct _EocThumbViewClass {
-	 GtkIconViewClass icon_view_class;
+	 CtkIconViewClass icon_view_class;
 };
 
 GType       eoc_thumb_view_get_type 		    (void) G_GNUC_CONST;
 
-GtkWidget  *eoc_thumb_view_new 			    (void);
+CtkWidget  *eoc_thumb_view_new 			    (void);
 
 void	    eoc_thumb_view_set_model 		    (EocThumbView *thumbview,
 						     EocListStore *store);
@@ -80,7 +80,7 @@ void        eoc_thumb_view_set_current_image	    (EocThumbView *thumbview,
 						     gboolean     deselect_other);
 
 void        eoc_thumb_view_set_thumbnail_popup      (EocThumbView *thumbview,
-						     GtkMenu      *menu);
+						     CtkMenu      *menu);
 
 G_END_DECLS
 

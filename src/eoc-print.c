@@ -42,7 +42,7 @@ typedef struct {
 	gdouble left_margin;
 	gdouble top_margin;
 	gdouble scale_factor;
-	GtkUnit unit;
+	CtkUnit unit;
 } EocPrintData;
 
 /* art_affine_flip modified to work with cairo_matrix_t */
@@ -69,8 +69,8 @@ _cairo_ctx_supports_jpg_metadata (cairo_t *cr)
 }
 
 static void
-eoc_print_draw_page (GtkPrintOperation *operation,
-		     GtkPrintContext   *context,
+eoc_print_draw_page (CtkPrintOperation *operation,
+		     CtkPrintContext   *context,
 		     gint               page_nr,
 		     gpointer           user_data)
 {
@@ -81,7 +81,7 @@ eoc_print_draw_page (GtkPrintOperation *operation,
 	gdouble p_width, p_height;
 	gint width, height;
 	EocPrintData *data;
-	GtkPageSetup *page_setup;
+	CtkPageSetup *page_setup;
 
 	eoc_debug (DEBUG_PRINTING);
 
@@ -256,10 +256,10 @@ eoc_print_draw_page (GtkPrintOperation *operation,
 }
 
 static GObject *
-eoc_print_create_custom_widget (GtkPrintOperation *operation,
+eoc_print_create_custom_widget (CtkPrintOperation *operation,
 				       gpointer user_data)
 {
-	GtkPageSetup *page_setup;
+	CtkPageSetup *page_setup;
 	EocPrintData *data;
 
 	eoc_debug (DEBUG_PRINTING);
@@ -275,13 +275,13 @@ eoc_print_create_custom_widget (GtkPrintOperation *operation,
 }
 
 static void
-eoc_print_custom_widget_apply (GtkPrintOperation *operation,
-			       GtkWidget         *widget,
+eoc_print_custom_widget_apply (CtkPrintOperation *operation,
+			       CtkWidget         *widget,
 			       gpointer           user_data)
 {
 	EocPrintData *data;
 	gdouble left_margin, top_margin, scale_factor;
-	GtkUnit unit;
+	CtkUnit unit;
 
 	eoc_debug (DEBUG_PRINTING);
 
@@ -298,8 +298,8 @@ eoc_print_custom_widget_apply (GtkPrintOperation *operation,
 }
 
 static void
-eoc_print_end_print (GtkPrintOperation *operation,
-		     GtkPrintContext   *context,
+eoc_print_end_print (CtkPrintOperation *operation,
+		     CtkPrintContext   *context,
 		     gpointer           user_data)
 {
 	EocPrintData *data = (EocPrintData*) user_data;
@@ -310,12 +310,12 @@ eoc_print_end_print (GtkPrintOperation *operation,
 	g_slice_free (EocPrintData, data);
 }
 
-GtkPrintOperation *
+CtkPrintOperation *
 eoc_print_operation_new (EocImage *image,
-			 GtkPrintSettings *print_settings,
-			 GtkPageSetup *page_setup)
+			 CtkPrintSettings *print_settings,
+			 CtkPageSetup *page_setup)
 {
-	GtkPrintOperation *print;
+	CtkPrintOperation *print;
 	EocPrintData *data;
 	gint width, height;
 
@@ -407,10 +407,10 @@ eoc_print_get_key_file (void)
 	return key_file;
 }
 
-GtkPageSetup *
+CtkPageSetup *
 eoc_print_get_page_setup (void)
 {
-	GtkPageSetup *page_setup;
+	CtkPageSetup *page_setup;
 	GKeyFile *key_file;
 	GError *error = NULL;
 
@@ -459,7 +459,7 @@ eoc_print_save_key_file (GKeyFile *key_file)
 }
 
 void
-eoc_print_set_page_setup (GtkPageSetup *page_setup)
+eoc_print_set_page_setup (CtkPageSetup *page_setup)
 {
 	GKeyFile *key_file;
 
@@ -475,10 +475,10 @@ eoc_print_set_page_setup (GtkPageSetup *page_setup)
 	g_key_file_free (key_file);
 }
 
-GtkPrintSettings *
+CtkPrintSettings *
 eoc_print_get_print_settings (void)
 {
-	GtkPrintSettings *print_settings;
+	CtkPrintSettings *print_settings;
 	GError *error = NULL;
 	GKeyFile *key_file;
 
@@ -504,7 +504,7 @@ eoc_print_get_print_settings (void)
 }
 
 void
-eoc_print_set_print_settings (GtkPrintSettings *print_settings)
+eoc_print_set_print_settings (CtkPrintSettings *print_settings)
 {
 	GKeyFile *key_file;
 

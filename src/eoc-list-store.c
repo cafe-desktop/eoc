@@ -88,9 +88,9 @@ eoc_list_store_class_init (EocListStoreClass *klass)
 */
 
 static gint
-eoc_list_store_compare_func (GtkTreeModel *model,
-			     GtkTreeIter *a,
-			     GtkTreeIter *b,
+eoc_list_store_compare_func (CtkTreeModel *model,
+			     CtkTreeIter *a,
+			     CtkTreeIter *b,
 			     gpointer user_data)
 {
 	gint r_value;
@@ -118,7 +118,7 @@ static GdkPixbuf *
 eoc_list_store_get_icon (const gchar *icon_name)
 {
 	GError *error = NULL;
-	GtkIconTheme *icon_theme;
+	CtkIconTheme *icon_theme;
 	GdkPixbuf *pixbuf;
 
 	icon_theme = ctk_icon_theme_get_default ();
@@ -176,7 +176,7 @@ eoc_list_store_init (EocListStore *self)
  *
  * Returns: a newly created #EocListStore.
  **/
-GtkListStore*
+CtkListStore*
 eoc_list_store_new (void)
 {
         return g_object_new (EOC_TYPE_LIST_STORE, NULL);
@@ -184,18 +184,18 @@ eoc_list_store_new (void)
 
 /*
    Searchs for a file in the store. If found and @iter_found is not NULL,
-   then sets @iter_found to a #GtkTreeIter pointing to the file.
+   then sets @iter_found to a #CtkTreeIter pointing to the file.
  */
 static gboolean
 is_file_in_list_store (EocListStore *store,
 		       const gchar *info_uri,
-		       GtkTreeIter *iter_found)
+		       CtkTreeIter *iter_found)
 {
 	gboolean found = FALSE;
 	EocImage *image;
 	GFile *file;
 	gchar *str;
-	GtkTreeIter iter;
+	CtkTreeIter iter;
 
 	if (!ctk_tree_model_get_iter_first (GTK_TREE_MODEL (store), &iter)) {
 		return FALSE;
@@ -230,7 +230,7 @@ is_file_in_list_store (EocListStore *store,
 static gboolean
 is_file_in_list_store_file (EocListStore *store,
 			   GFile *file,
-			   GtkTreeIter *iter_found)
+			   CtkTreeIter *iter_found)
 {
 	gchar *uri_str;
 	gboolean result;
@@ -248,7 +248,7 @@ static void
 eoc_job_thumbnail_cb (EocJobThumbnail *job, gpointer data)
 {
 	EocListStore *store;
-	GtkTreeIter iter;
+	CtkTreeIter iter;
 	EocImage *image;
 	GdkPixbuf *thumbnail;
 	GFile *file;
@@ -289,8 +289,8 @@ eoc_job_thumbnail_cb (EocJobThumbnail *job, gpointer data)
 static void
 on_image_changed (EocImage *image, EocListStore *store)
 {
-	GtkTreePath *path;
-	GtkTreeIter iter;
+	CtkTreePath *path;
+	CtkTreeIter iter;
 	gint pos;
 
 	pos = eoc_list_store_get_pos_by_image (store, image);
@@ -304,12 +304,12 @@ on_image_changed (EocImage *image, EocListStore *store)
 /**
  * eoc_list_store_remove:
  * @store: An #EocListStore.
- * @iter: A #GtkTreeIter.
+ * @iter: A #CtkTreeIter.
  *
  * Removes the image pointed by @iter from @store.
  **/
 static void
-eoc_list_store_remove (EocListStore *store, GtkTreeIter *iter)
+eoc_list_store_remove (EocListStore *store, CtkTreeIter *iter)
 {
 	EocImage *image;
 
@@ -336,7 +336,7 @@ eoc_list_store_remove (EocListStore *store, GtkTreeIter *iter)
 void
 eoc_list_store_append_image (EocListStore *store, EocImage *image)
 {
-	GtkTreeIter iter;
+	CtkTreeIter iter;
 
 	g_signal_connect (image, "changed",
  			  G_CALLBACK (on_image_changed),
@@ -373,7 +373,7 @@ file_monitor_changed_cb (GFileMonitor *monitor,
 {
 	const char *mimetype;
 	GFileInfo *file_info;
-	GtkTreeIter iter;
+	CtkTreeIter iter;
 	EocImage *image;
 
 	switch (event) {
@@ -551,7 +551,7 @@ eoc_list_store_add_files (EocListStore *store, GList *file_list)
 	GFileInfo *file_info;
 	GFileType file_type;
 	GFile *initial_file = NULL;
-	GtkTreeIter iter;
+	CtkTreeIter iter;
 
 	if (file_list == NULL) {
 		return;
@@ -652,7 +652,7 @@ eoc_list_store_add_files (EocListStore *store, GList *file_list)
 void
 eoc_list_store_remove_image (EocListStore *store, EocImage *image)
 {
-	GtkTreeIter iter;
+	CtkTreeIter iter;
 	GFile *file;
 
 	g_return_if_fail (EOC_IS_LIST_STORE (store));
@@ -675,12 +675,12 @@ eoc_list_store_remove_image (EocListStore *store, EocImage *image)
  *
  * Returns: a new #EocListStore.
  **/
-GtkListStore *
+CtkListStore *
 eoc_list_store_new_from_glist (GList *list)
 {
 	GList *it;
 
-	GtkListStore *store = eoc_list_store_new ();
+	CtkListStore *store = eoc_list_store_new ();
 
 	for (it = list; it != NULL; it = it->next) {
 		eoc_list_store_append_image (EOC_LIST_STORE (store),
@@ -703,7 +703,7 @@ eoc_list_store_new_from_glist (GList *list)
 gint
 eoc_list_store_get_pos_by_image (EocListStore *store, EocImage *image)
 {
-	GtkTreeIter iter;
+	CtkTreeIter iter;
 	gint pos = -1;
 	GFile *file;
 
@@ -735,7 +735,7 @@ EocImage *
 eoc_list_store_get_image_by_pos (EocListStore *store, gint pos)
 {
 	EocImage *image = NULL;
-	GtkTreeIter iter;
+	CtkTreeIter iter;
 
 	g_return_val_if_fail (EOC_IS_LIST_STORE (store), NULL);
 
@@ -751,7 +751,7 @@ eoc_list_store_get_image_by_pos (EocListStore *store, gint pos)
 /**
  * eoc_list_store_get_pos_by_iter:
  * @store: An #EocListStore.
- * @iter: A #GtkTreeIter pointing to an image in @store.
+ * @iter: A #CtkTreeIter pointing to an image in @store.
  *
  * Gets the position of the image pointed by @iter.
  *
@@ -759,10 +759,10 @@ eoc_list_store_get_image_by_pos (EocListStore *store, gint pos)
  **/
 gint
 eoc_list_store_get_pos_by_iter (EocListStore *store,
-				GtkTreeIter *iter)
+				CtkTreeIter *iter)
 {
 	gint *indices;
-	GtkTreePath *path;
+	CtkTreePath *path;
 	gint pos;
 
 	path = ctk_tree_model_get_path (GTK_TREE_MODEL (store), iter);
@@ -809,7 +809,7 @@ eoc_list_store_get_initial_pos (EocListStore *store)
 
 static void
 eoc_list_store_remove_thumbnail_job (EocListStore *store,
-				     GtkTreeIter *iter)
+				     CtkTreeIter *iter)
 {
 	EocJob *job;
 
@@ -830,7 +830,7 @@ eoc_list_store_remove_thumbnail_job (EocListStore *store,
 }
 
 static void
-eoc_list_store_add_thumbnail_job (EocListStore *store, GtkTreeIter *iter)
+eoc_list_store_add_thumbnail_job (EocListStore *store, CtkTreeIter *iter)
 {
 	EocImage *image;
 	EocJob *job;
@@ -865,14 +865,14 @@ eoc_list_store_add_thumbnail_job (EocListStore *store, GtkTreeIter *iter)
 /**
  * eoc_list_store_thumbnail_set:
  * @store: An #EocListStore.
- * @iter: A #GtkTreeIter pointing to an image in @store.
+ * @iter: A #CtkTreeIter pointing to an image in @store.
  *
  * Sets the thumbnail for the image pointed by @iter.
  *
  **/
 void
 eoc_list_store_thumbnail_set (EocListStore *store,
-			      GtkTreeIter *iter)
+			      CtkTreeIter *iter)
 {
 	gboolean thumb_set = FALSE;
 
@@ -890,7 +890,7 @@ eoc_list_store_thumbnail_set (EocListStore *store,
 /**
  * eoc_list_store_thumbnail_unset:
  * @store: An #EocListStore.
- * @iter: A #GtkTreeIter pointing to an image in @store.
+ * @iter: A #CtkTreeIter pointing to an image in @store.
  *
  * Unsets the thumbnail for the image pointed by @iter, changing
  * it to a "busy" icon.
@@ -898,7 +898,7 @@ eoc_list_store_thumbnail_set (EocListStore *store,
  **/
 void
 eoc_list_store_thumbnail_unset (EocListStore *store,
-				GtkTreeIter *iter)
+				CtkTreeIter *iter)
 {
 	EocImage *image;
 
@@ -919,14 +919,14 @@ eoc_list_store_thumbnail_unset (EocListStore *store,
 /**
  * eoc_list_store_thumbnail_refresh:
  * @store: An #EocListStore.
- * @iter: A #GtkTreeIter pointing to an image in @store.
+ * @iter: A #CtkTreeIter pointing to an image in @store.
  *
  * Refreshes the thumbnail for the image pointed by @iter.
  *
  **/
 void
 eoc_list_store_thumbnail_refresh (EocListStore *store,
-				  GtkTreeIter *iter)
+				  CtkTreeIter *iter)
 {
 	eoc_list_store_remove_thumbnail_job (store, iter);
 	eoc_list_store_add_thumbnail_job (store, iter);

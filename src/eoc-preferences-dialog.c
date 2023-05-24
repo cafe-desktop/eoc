@@ -46,22 +46,22 @@ struct _EocPreferencesDialogPrivate {
 	GSettings    *ui_settings;
 	GSettings    *fullscreen_settings;
 
-	GtkWidget     *interpolate_check;
-	GtkWidget     *extrapolate_check;
-	GtkWidget     *autorotate_check;
-	GtkWidget     *bg_color_check;
-	GtkWidget     *bg_color_button;
-	GtkWidget     *color_radio;
-	GtkWidget     *checkpattern_radio;
-	GtkWidget     *background_radio;
-	GtkWidget     *transp_color_button;
+	CtkWidget     *interpolate_check;
+	CtkWidget     *extrapolate_check;
+	CtkWidget     *autorotate_check;
+	CtkWidget     *bg_color_check;
+	CtkWidget     *bg_color_button;
+	CtkWidget     *color_radio;
+	CtkWidget     *checkpattern_radio;
+	CtkWidget     *background_radio;
+	CtkWidget     *transp_color_button;
 
-	GtkWidget     *upscale_check;
-	GtkWidget     *random_check;
-	GtkWidget     *loop_check;
-	GtkWidget     *seconds_spin;
+	CtkWidget     *upscale_check;
+	CtkWidget     *random_check;
+	CtkWidget     *loop_check;
+	CtkWidget     *seconds_spin;
 
-	GtkWidget     *plugin_manager;
+	CtkWidget     *plugin_manager;
 };
 
 static GObject *instance = NULL;
@@ -108,7 +108,7 @@ pd_rgba_to_string_mapping (const GValue       *value,
 }
 
 static void
-pd_transp_radio_toggle_cb (GtkWidget *widget, gpointer data)
+pd_transp_radio_toggle_cb (CtkWidget *widget, gpointer data)
 {
 	gpointer value = NULL;
 
@@ -122,13 +122,13 @@ pd_transp_radio_toggle_cb (GtkWidget *widget, gpointer data)
 }
 
 static void
-random_change_cb (GSettings *settings, gchar *key, GtkWidget *widget)
+random_change_cb (GSettings *settings, gchar *key, CtkWidget *widget)
 {
 	ctk_widget_set_sensitive (widget, !g_settings_get_boolean (settings, key));
 }
 
 static void
-eoc_preferences_response_cb (GtkDialog *dlg, gint res_id, gpointer data)
+eoc_preferences_response_cb (CtkDialog *dlg, gint res_id, gpointer data)
 {
 	switch (res_id) {
 		case GTK_RESPONSE_HELP:
@@ -143,7 +143,7 @@ eoc_preferences_response_cb (GtkDialog *dlg, gint res_id, gpointer data)
 static void
 eoc_preferences_dialog_class_init (EocPreferencesDialogClass *klass)
 {
-	GtkWidgetClass *widget_class = (GtkWidgetClass*) klass;
+	CtkWidgetClass *widget_class = (CtkWidgetClass*) klass;
 
 	/* This should make sure the libpeas-ctk dependency isn't
 	 * dropped by aggressive linkers (#739618) */
@@ -320,7 +320,7 @@ eoc_preferences_dialog_init (EocPreferencesDialog *pref_dlg)
 	ctk_widget_show_all (priv->plugin_manager);
 }
 
-GtkWidget *eoc_preferences_dialog_get_instance (GtkWindow *parent)
+CtkWidget *eoc_preferences_dialog_get_instance (CtkWindow *parent)
 {
 	if (instance == NULL) {
 		instance = g_object_new (EOC_TYPE_PREFERENCES_DIALOG,

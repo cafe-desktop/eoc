@@ -57,7 +57,7 @@ GType eoc_clipboard_handler_get_type (void) G_GNUC_CONST;
 EocClipboardHandler* eoc_clipboard_handler_new (EocImage *img);
 
 void eoc_clipboard_handler_copy_to_clipboard (EocClipboardHandler *handler,
-					      GtkClipboard *clipboard);
+					      CtkClipboard *clipboard);
 
 G_END_DECLS
 #endif /* __EOC_CLIPBOARD_HANDLER_H__ */

@@ -41,11 +41,11 @@
   * remove warnings: incorrect usage of abs() [-Wabsolute-value]
   * remove warnings: redundant redeclaration [-Wredundant-decls]
   * remove warning: variable ‘priv’ set but not used
-  * reload-plugin: suppress GtkAction warnings
-  * properties-dialog: suppress GtkAction warnings
-  * eoc-window: suppress GtkAction warnings
-  * egg-toolbar-editor: suppress GtkAction warnings
-  * egg-editable-toolbar: suppress GtkAction warnings
+  * reload-plugin: suppress CtkAction warnings
+  * properties-dialog: suppress CtkAction warnings
+  * eoc-window: suppress CtkAction warnings
+  * egg-toolbar-editor: suppress CtkAction warnings
+  * egg-editable-toolbar: suppress CtkAction warnings
   * Allow color correcting images with alpha channel
   * EocMetadataReaderPng: Use built-in SRGB profile for matching cHRM/gAMA
   * EocMetadataReaderPNG: Only build profile from cHRM if gAMA is present
@@ -61,7 +61,7 @@
   * Update FSF address
   * Restore image types list and add wildcard
   * Disconnect callbacks for "Open with" menu items before connecting new ones.
-  * Unref GtkUIManager so "Open with" menu is freed.
+  * Unref CtkUIManager so "Open with" menu is freed.
   * [ci] Add cppcheck html report
   * update image of eoc_toolbar_editor_window
   * Use ITS in docbook article info, validate with dbits schemas
@@ -106,14 +106,14 @@
   * Fix GResource dependency calculation for out-of-tree builds
   * Make sure the libpeas-ctk dependency isn't optimized away
   * Remove EocDialog helper class
-  * EocPreferencesDialog: Convert to GtkBuilder template
+  * EocPreferencesDialog: Convert to CtkBuilder template
   * EocThumbnail: Load thumbnail frame from a GResource
   * Load EocMultipleSaveAsDialog from GResource
-  * eoc-window: fix deprecated GtkStock usage
+  * eoc-window: fix deprecated CtkStock usage
   * Fix build without XMP support
   * Load eoc-image-properties-dialog.ui with a gresource
   * properties-dialog: Port to ctk_show_uri_on_window
-  * EocPropertiesDialog: Convert to GtkBuilder template
+  * EocPropertiesDialog: Convert to CtkBuilder template
   * EocPropertiesDialog: Remove unused private members
   * Fix metadata sidebar with libexif disabled
   * Fix API docs build without libexif
@@ -149,7 +149,7 @@
   * Convert to G_DEFINE_TYPE_WITH_PRIVATE
   * EocApplication: Make most members private
   * Add new plugin hook for per-application plugins
-  * Make EocWindow a GtkApplicationWindow
+  * Make EocWindow a CtkApplicationWindow
   * sidebar: show complete directory in button tooltip
   * properties-dialog: show complete directory in button tooltip
   * Make the URI-label in the properties dialog a button showing the folder
@@ -179,12 +179,12 @@
   * Don't force-enable the sidebar on startup once a page is added
   * Make Exif/XMP summaries available as sidebar
   * Drop now unneeded TotemScrSaver
-  * Use GtkApplication to inhibit the screensaver during slideshows
+  * Use CtkApplication to inhibit the screensaver during slideshows
   * Ensure UI action sensitivity is set at least once
   * Remove leftover DBus service description file
   * Remove spurious g_object_unref
   * reload: ensure that pending updates to UI are complete
-  * Port EocApplication to GtkApplication
+  * Port EocApplication to CtkApplication
   * Make the displayed EocImage a property of EocScrollView
   * EocPropertiesDialog: Make details view expand vertically
   * Enable more Drag&Drop actions when eoc is drag source
@@ -204,8 +204,8 @@
   * replace deprecated gdk_flush
   * fix some -Wincompatible-pointer-types warnings
   * Scale HiDPI images correctly
-  * eoc-window.c: avoid deprecated GtkButton:use-stock
-  * avoid deprecated GtkStock
+  * eoc-window.c: avoid deprecated CtkButton:use-stock
+  * avoid deprecated CtkStock
 
 ### eoc 1.20.0
 
@@ -229,13 +229,13 @@
 
   * EocThumbView: Replace deprecated ctk_menu_popup function
   * multiple-save-as-dialog.ui: avoid deprecated widgets
-  * error-message: replace usage of GtkStock
+  * error-message: replace usage of CtkStock
   * A bunch of instrospection warning fixes
   * EocScrollView: fix override_background deprecated call
   * EocPropertiesDialog: Fix deprecation warnings
   * EocThumbNav: Fix deprecated function warning
   * EocScrollView: Replace deprecated ctk_menu_popup function
-  * EocScrollView: Switch from GtkDeviceManager to GdkSeat
+  * EocScrollView: Switch from CtkDeviceManager to GdkSeat
   * fix typo in function annotation
   * use different css files for < ctk+=3.20
   * Translations update
@@ -252,9 +252,9 @@
   * preferences-ui: drop usage of CafeColorButton
   * EocScrollView: Switch to GdkRGBA for background and transparent colors
   * EocPrintPreview: Avoid unnecessary color parsing
-  * Fix a few GtkStock deprecations
+  * Fix a few CtkStock deprecations
   * EocCloseConfirmationDialog: replace deprecated GTK_STOCK_DIALOG_WARNING
-  * toolbar-editor: avoid deprecated GtkAlignment
+  * toolbar-editor: avoid deprecated CtkAlignment
   * Bring eoc-image.c's SVG handling up to date, properly recognize svgz filetypes
   * eoc_uri_converter: GList leak fix
 
@@ -279,7 +279,7 @@
 
 ### eoc 1.16.0
 
-  * Use GtkAboutDialog instead of CafeAboutDialog
+  * Use CtkAboutDialog instead of CafeAboutDialog
   * Fix possible out-of-bounds write in error message area
   * Some cleanups
   * Translations update

@@ -68,26 +68,26 @@ struct _EocMetadataSidebarPrivate {
 	gulong image_changed_id;
 	gulong thumb_changed_id;
 
-	GtkWidget *size_label;
-	GtkWidget *type_label;
-	GtkWidget *filesize_label;
-	GtkWidget *folder_label;
+	CtkWidget *size_label;
+	CtkWidget *type_label;
+	CtkWidget *filesize_label;
+	CtkWidget *folder_label;
 
 #if HAVE_EXIF
-	GtkWidget *aperture_label;
-	GtkWidget *exposure_label;
-	GtkWidget *focallen_label;
-	GtkWidget *iso_label;
-	GtkWidget *metering_label;
-	GtkWidget *model_label;
-	GtkWidget *date_label;
-	GtkWidget *time_label;
+	CtkWidget *aperture_label;
+	CtkWidget *exposure_label;
+	CtkWidget *focallen_label;
+	CtkWidget *iso_label;
+	CtkWidget *metering_label;
+	CtkWidget *model_label;
+	CtkWidget *date_label;
+	CtkWidget *time_label;
 #else
-	GtkWidget *metadata_grid;
+	CtkWidget *metadata_grid;
 #endif
 
 #if HAVE_METADATA
-	GtkWidget *details_button;
+	CtkWidget *details_button;
 #endif
 };
 
@@ -305,12 +305,12 @@ _notify_image_cb (GObject *gobject, GParamSpec *pspec, gpointer user_data)
 }
 
 static void
-_folder_label_clicked_cb (GtkLabel *label, const gchar *uri, gpointer user_data)
+_folder_label_clicked_cb (CtkLabel *label, const gchar *uri, gpointer user_data)
 {
 	EocMetadataSidebarPrivate *priv = EOC_METADATA_SIDEBAR(user_data)->priv;
 	EocImage *img;
-	GtkWidget *toplevel;
-	GtkWindow *window;
+	CtkWidget *toplevel;
+	CtkWindow *window;
 	GFile *file;
 
 	g_return_if_fail (priv->parent_window != NULL);
@@ -331,10 +331,10 @@ _folder_label_clicked_cb (GtkLabel *label, const gchar *uri, gpointer user_data)
 
 #ifdef HAVE_METADATA
 static void
-_details_button_clicked_cb (GtkButton *button, gpointer user_data)
+_details_button_clicked_cb (CtkButton *button, gpointer user_data)
 {
 	EocMetadataSidebarPrivate *priv = EOC_METADATA_SIDEBAR(user_data)->priv;
-	GtkWidget *dlg;
+	CtkWidget *dlg;
 
 	g_return_if_fail (priv->parent_window != NULL);
 
@@ -352,7 +352,7 @@ eoc_metadata_sidebar_set_parent_window (EocMetadataSidebar *sidebar,
 					EocWindow *window)
 {
 	EocMetadataSidebarPrivate *priv;
-	GtkWidget *view;
+	CtkWidget *view;
 
 	g_return_if_fail (EOC_IS_METADATA_SIDEBAR (sidebar));
 	priv = sidebar->priv;
@@ -455,7 +455,7 @@ static void
 eoc_metadata_sidebar_class_init (EocMetadataSidebarClass *klass)
 {
 	GObjectClass *g_obj_class = G_OBJECT_CLASS (klass);
-	GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (klass);
+	CtkWidgetClass *widget_class = GTK_WIDGET_CLASS (klass);
 
 	g_obj_class->get_property = eoc_metadata_sidebar_get_property;
 	g_obj_class->set_property = eoc_metadata_sidebar_set_property;
@@ -526,7 +526,7 @@ eoc_metadata_sidebar_class_init (EocMetadataSidebarClass *klass)
 }
 
 
-GtkWidget*
+CtkWidget*
 eoc_metadata_sidebar_new (EocWindow *window)
 {
 	return ctk_widget_new (EOC_TYPE_METADATA_SIDEBAR,

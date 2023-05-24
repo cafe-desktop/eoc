@@ -46,7 +46,7 @@ enum {
 #define EOC_THUMB_VIEW_SPACING 0
 
 static EocImage* eoc_thumb_view_get_image_from_path (EocThumbView      *thumbview,
-						     GtkTreePath       *path);
+						     CtkTreePath       *path);
 
 static void      eoc_thumb_view_popup_menu          (EocThumbView      *widget,
 						     GdkEventButton    *event);
@@ -54,21 +54,21 @@ static void      eoc_thumb_view_popup_menu          (EocThumbView      *widget,
 static void      eoc_thumb_view_update_columns (EocThumbView *view);
 
 static gboolean
-thumbview_on_query_tooltip_cb (GtkWidget  *widget,
+thumbview_on_query_tooltip_cb (CtkWidget  *widget,
 			       gint        x,
 			       gint        y,
 			       gboolean    keyboard_mode,
-			       GtkTooltip *tooltip,
+			       CtkTooltip *tooltip,
 			       gpointer    user_data);
 static void
-thumbview_on_parent_set_cb (GtkWidget *widget,
-			    GtkWidget *old_parent,
+thumbview_on_parent_set_cb (CtkWidget *widget,
+			    CtkWidget *old_parent,
 			    gpointer   user_data);
 
 static void
-thumbview_on_drag_data_get_cb (GtkWidget        *widget,
+thumbview_on_drag_data_get_cb (CtkWidget        *widget,
 			       GdkDragContext   *drag_context,
-			       GtkSelectionData *data,
+			       CtkSelectionData *data,
 			       guint             info,
 			       guint             time,
 			       gpointer          user_data);
@@ -76,11 +76,11 @@ thumbview_on_drag_data_get_cb (GtkWidget        *widget,
 struct _EocThumbViewPrivate {
 	gint start_thumb; /* the first visible thumbnail */
 	gint end_thumb;   /* the last visible thumbnail  */
-	GtkWidget *menu;  /* a contextual menu for thumbnails */
-	GtkCellRenderer *pixbuf_cell;
+	CtkWidget *menu;  /* a contextual menu for thumbnails */
+	CtkCellRenderer *pixbuf_cell;
 	gint visible_range_changed_id;
 
-	GtkOrientation orientation;
+	CtkOrientation orientation;
 	gint n_images;
 	gulong image_add_id;
 	gulong image_removed_id;
@@ -159,7 +159,7 @@ static void
 eoc_thumb_view_dispose (GObject *object)
 {
 	EocThumbViewPrivate *priv = EOC_THUMB_VIEW (object)->priv;
-	GtkTreeModel *model;
+	CtkTreeModel *model;
 
 	if (priv->visible_range_changed_id != 0) {
 		g_source_remove (priv->visible_range_changed_id);
@@ -240,8 +240,8 @@ eoc_thumb_view_clear_range (EocThumbView *thumbview,
 			    const gint start_thumb,
 			    const gint end_thumb)
 {
-	GtkTreePath *path;
-	GtkTreeIter iter;
+	CtkTreePath *path;
+	CtkTreeIter iter;
 	EocListStore *store = EOC_LIST_STORE (ctk_icon_view_get_model (GTK_ICON_VIEW (thumbview)));
 	gint thumb = start_thumb;
 	gboolean result;
@@ -262,8 +262,8 @@ eoc_thumb_view_add_range (EocThumbView *thumbview,
 			  const gint start_thumb,
 			  const gint end_thumb)
 {
-	GtkTreePath *path;
-	GtkTreeIter iter;
+	CtkTreePath *path;
+	CtkTreeIter iter;
 	EocListStore *store = EOC_LIST_STORE (ctk_icon_view_get_model (GTK_ICON_VIEW (thumbview)));
 	gint thumb = start_thumb;
 	gboolean result;
@@ -310,7 +310,7 @@ eoc_thumb_view_update_visible_range (EocThumbView *thumbview,
 static gboolean
 visible_range_changed_cb (EocThumbView *thumbview)
 {
-	GtkTreePath *path1, *path2;
+	CtkTreePath *path1, *path2;
 
 	thumbview->priv->visible_range_changed_id = 0;
 
@@ -359,16 +359,16 @@ thumbview_on_adjustment_changed_cb (EocThumbView *thumbview,
 }
 
 static void
-thumbview_on_parent_set_cb (GtkWidget *widget,
-			    GtkWidget *old_parent,
+thumbview_on_parent_set_cb (CtkWidget *widget,
+			    CtkWidget *old_parent,
 			    gpointer   user_data)
 {
 	EocThumbView *thumbview = EOC_THUMB_VIEW (widget);
-	GtkScrolledWindow *sw;
-	GtkAdjustment *hadjustment;
-	GtkAdjustment *vadjustment;
+	CtkScrolledWindow *sw;
+	CtkAdjustment *hadjustment;
+	CtkAdjustment *vadjustment;
 
-	GtkWidget *parent = ctk_widget_get_parent (GTK_WIDGET (thumbview));
+	CtkWidget *parent = ctk_widget_get_parent (GTK_WIDGET (thumbview));
 	if (!GTK_IS_SCROLLED_WINDOW (parent)) {
 		return;
 	}
@@ -402,10 +402,10 @@ thumbview_on_parent_set_cb (GtkWidget *widget,
 }
 
 static gboolean
-thumbview_on_button_press_event_cb (GtkWidget *thumbview, GdkEventButton *event,
+thumbview_on_button_press_event_cb (CtkWidget *thumbview, GdkEventButton *event,
 				    gpointer user_data)
 {
-	GtkTreePath *path;
+	CtkTreePath *path;
 
 	/* Ignore double-clicks and triple-clicks */
 	if (event->button == 3 && event->type == GDK_BUTTON_PRESS)
@@ -433,9 +433,9 @@ thumbview_on_button_press_event_cb (GtkWidget *thumbview, GdkEventButton *event,
 }
 
 static void
-thumbview_on_drag_data_get_cb (GtkWidget        *widget,
+thumbview_on_drag_data_get_cb (CtkWidget        *widget,
 			       GdkDragContext   *drag_context,
-			       GtkSelectionData *data,
+			       CtkSelectionData *data,
 			       guint             info,
 			       guint             time,
 			       gpointer          user_data)
@@ -570,14 +570,14 @@ on_data_loaded_cb (EocJob *job, gpointer data)
 }
 
 static gboolean
-thumbview_on_query_tooltip_cb (GtkWidget  *widget,
+thumbview_on_query_tooltip_cb (CtkWidget  *widget,
 			       gint        x,
 			       gint        y,
 			       gboolean    keyboard_mode,
-			       GtkTooltip *tooltip,
+			       CtkTooltip *tooltip,
 			       gpointer    user_data)
 {
-	GtkTreePath *path;
+	CtkTreePath *path;
 	EocImage *image;
 	gchar *tooltip_string;
 	EocImageData data = 0;
@@ -648,7 +648,7 @@ eoc_thumb_view_init (EocThumbView *thumbview)
  *
  * Returns: a newly created #EocThumbView.
  **/
-GtkWidget *
+CtkWidget *
 eoc_thumb_view_new (void)
 {
 	EocThumbView *thumbview;
@@ -673,9 +673,9 @@ eoc_thumb_view_update_columns (EocThumbView *view)
 }
 
 static void
-eoc_thumb_view_row_inserted_cb (GtkTreeModel    *tree_model,
-                                GtkTreePath     *path,
-                                GtkTreeIter     *iter,
+eoc_thumb_view_row_inserted_cb (CtkTreeModel    *tree_model,
+                                CtkTreePath     *path,
+                                CtkTreeIter     *iter,
                                 EocThumbView    *view)
 {
 	EocThumbViewPrivate *priv = view->priv;
@@ -685,8 +685,8 @@ eoc_thumb_view_row_inserted_cb (GtkTreeModel    *tree_model,
 }
 
 static void
-eoc_thumb_view_row_deleted_cb (GtkTreeModel    *tree_model,
-                               GtkTreePath     *path,
+eoc_thumb_view_row_deleted_cb (CtkTreeModel    *tree_model,
+                               CtkTreePath     *path,
                                EocThumbView    *view)
 {
 	EocThumbViewPrivate *priv = view->priv;
@@ -709,7 +709,7 @@ eoc_thumb_view_set_model (EocThumbView *thumbview, EocListStore *store)
 {
 	gint index;
 	EocThumbViewPrivate *priv;
-	GtkTreeModel *existing;
+	CtkTreeModel *existing;
 
 	g_return_if_fail (EOC_IS_THUMB_VIEW (thumbview));
 	g_return_if_fail (EOC_IS_LIST_STORE (store));
@@ -748,7 +748,7 @@ eoc_thumb_view_set_model (EocThumbView *thumbview, EocListStore *store)
 	eoc_thumb_view_update_columns (thumbview);
 
 	if (index >= 0) {
-		GtkTreePath *path = ctk_tree_path_new_from_indices (index, -1);
+		CtkTreePath *path = ctk_tree_path_new_from_indices (index, -1);
 		ctk_icon_view_select_path (GTK_ICON_VIEW (thumbview), path);
 		ctk_icon_view_set_cursor (GTK_ICON_VIEW (thumbview), path, NULL, FALSE);
 		ctk_icon_view_scroll_to_path (GTK_ICON_VIEW (thumbview), path, FALSE, 0, 0);
@@ -775,8 +775,8 @@ eoc_thumb_view_set_item_height (EocThumbView *thumbview, gint height)
 }
 
 static void
-eoc_thumb_view_get_n_selected_helper (GtkIconView *thumbview,
-				      GtkTreePath *path,
+eoc_thumb_view_get_n_selected_helper (CtkIconView *thumbview,
+				      CtkTreePath *path,
 				      gpointer data)
 {
 	/* data is of type (guint *) */
@@ -804,7 +804,7 @@ eoc_thumb_view_get_n_selected (EocThumbView *thumbview)
 /**
  * eoc_thumb_view_get_image_from_path:
  * @thumbview: A #EocThumbView.
- * @path: A #GtkTreePath pointing to a #EocImage in the model for @thumbview.
+ * @path: A #CtkTreePath pointing to a #EocImage in the model for @thumbview.
  *
  * Gets the #EocImage stored in @thumbview's #EocListStore at the position indicated
  * by @path.
@@ -812,10 +812,10 @@ eoc_thumb_view_get_n_selected (EocThumbView *thumbview)
  * Returns: (transfer full): A #EocImage.
  **/
 static EocImage *
-eoc_thumb_view_get_image_from_path (EocThumbView *thumbview, GtkTreePath *path)
+eoc_thumb_view_get_image_from_path (EocThumbView *thumbview, CtkTreePath *path)
 {
-	GtkTreeModel *model;
-	GtkTreeIter iter;
+	CtkTreeModel *model;
+	CtkTreeIter iter;
 	EocImage *image;
 
 	model = ctk_icon_view_get_model (GTK_ICON_VIEW (thumbview));
@@ -845,14 +845,14 @@ eoc_thumb_view_get_first_selected_image (EocThumbView *thumbview)
 	   smaller tree path value => tricky and expensive. Do we really need this?
 	*/
 	EocImage *image;
-	GtkTreePath *path;
+	CtkTreePath *path;
 	GList *list = ctk_icon_view_get_selected_items (GTK_ICON_VIEW (thumbview));
 
 	if (list == NULL) {
 		return NULL;
 	}
 
-	path = (GtkTreePath *) (list->data);
+	path = (CtkTreePath *) (list->data);
 
 	image = eoc_thumb_view_get_image_from_path (thumbview, path);
 
@@ -877,12 +877,12 @@ eoc_thumb_view_get_selected_images (EocThumbView *thumbview)
 	GList *l, *item;
 	GList *list = NULL;
 
-	GtkTreePath *path;
+	CtkTreePath *path;
 
 	l = ctk_icon_view_get_selected_items (GTK_ICON_VIEW (thumbview));
 
 	for (item = l; item != NULL; item = item->next) {
-		path = (GtkTreePath *) item->data;
+		path = (CtkTreePath *) item->data;
 		list = g_list_prepend (list, eoc_thumb_view_get_image_from_path (thumbview, path));
 		ctk_tree_path_free (path);
 	}
@@ -908,7 +908,7 @@ void
 eoc_thumb_view_set_current_image (EocThumbView *thumbview, EocImage *image,
 				  gboolean deselect_other)
 {
-	GtkTreePath *path;
+	CtkTreePath *path;
 	EocListStore *store;
 	gint pos;
 
@@ -949,8 +949,8 @@ void
 eoc_thumb_view_select_single (EocThumbView *thumbview,
 			      EocThumbViewSelectionChange change)
 {
-  	GtkTreePath *path = NULL;
-	GtkTreeModel *model;
+  	CtkTreePath *path = NULL;
+	CtkTreeModel *model;
 	GList *list;
 	gint n_items;
 
@@ -982,7 +982,7 @@ eoc_thumb_view_select_single (EocThumbView *thumbview,
 		}
 	} else {
 		list = ctk_icon_view_get_selected_items (GTK_ICON_VIEW (thumbview));
-		path = ctk_tree_path_copy ((GtkTreePath *) list->data);
+		path = ctk_tree_path_copy ((CtkTreePath *) list->data);
 		g_list_foreach (list, (GFunc) ctk_tree_path_free , NULL);
 		g_list_free (list);
 
@@ -1030,7 +1030,7 @@ eoc_thumb_view_select_single (EocThumbView *thumbview,
 /**
  * eoc_thumb_view_set_thumbnail_popup:
  * @thumbview: An #EocThumbView.
- * @menu: A #GtkMenu.
+ * @menu: A #CtkMenu.
  *
  * Set the contextual menu to be used with the thumbnails in the
  * widget. This can be done only once.
@@ -1038,7 +1038,7 @@ eoc_thumb_view_select_single (EocThumbView *thumbview,
  **/
 void
 eoc_thumb_view_set_thumbnail_popup (EocThumbView *thumbview,
-				    GtkMenu      *menu)
+				    CtkMenu      *menu)
 {
 	g_return_if_fail (EOC_IS_THUMB_VIEW (thumbview));
 	g_return_if_fail (thumbview->priv->menu == NULL);

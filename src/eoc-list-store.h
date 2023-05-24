@@ -57,12 +57,12 @@ typedef enum {
 } EocListStoreColumn;
 
 struct _EocListStore {
-        GtkListStore parent;
+        CtkListStore parent;
 	EocListStorePrivate *priv;
 };
 
 struct _EocListStoreClass {
-        GtkListStoreClass parent_class;
+        CtkListStoreClass parent_class;
 
 	/* Padding for future expansion */
 	void (* _eoc_reserved1) (void);
@@ -73,9 +73,9 @@ struct _EocListStoreClass {
 
 GType           eoc_list_store_get_type 	     (void) G_GNUC_CONST;
 
-GtkListStore   *eoc_list_store_new 		     (void);
+CtkListStore   *eoc_list_store_new 		     (void);
 
-GtkListStore   *eoc_list_store_new_from_glist 	     (GList *list);
+CtkListStore   *eoc_list_store_new_from_glist 	     (GList *list);
 
 void            eoc_list_store_append_image 	     (EocListStore *store,
 						      EocImage     *image);
@@ -93,20 +93,20 @@ EocImage       *eoc_list_store_get_image_by_pos      (EocListStore *store,
 						      gint   pos);
 
 gint            eoc_list_store_get_pos_by_iter 	     (EocListStore *store,
-						      GtkTreeIter  *iter);
+						      CtkTreeIter  *iter);
 
 gint            eoc_list_store_length                (EocListStore *store);
 
 gint            eoc_list_store_get_initial_pos 	     (EocListStore *store);
 
 void            eoc_list_store_thumbnail_set         (EocListStore *store,
-						      GtkTreeIter *iter);
+						      CtkTreeIter *iter);
 
 void            eoc_list_store_thumbnail_unset       (EocListStore *store,
-						      GtkTreeIter *iter);
+						      CtkTreeIter *iter);
 
 void            eoc_list_store_thumbnail_refresh     (EocListStore *store,
-						      GtkTreeIter *iter);
+						      CtkTreeIter *iter);
 
 G_END_DECLS
 

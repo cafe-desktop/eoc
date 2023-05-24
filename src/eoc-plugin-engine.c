@@ -96,9 +96,9 @@ eoc_plugin_engine_new (void)
 	}
 
 	if (g_irepository_require (g_irepository_get_default (),
-	                           "PeasGtk", "1.0", 0, &error) == NULL)
+	                           "PeasCtk", "1.0", 0, &error) == NULL)
 	{
-		g_warning ("Error loading PeasGtk typelib: %s\n",
+		g_warning ("Error loading PeasCtk typelib: %s\n",
 		           error->message);
 		g_clear_error (&error);
 	}

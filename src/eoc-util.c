@@ -45,7 +45,7 @@
 #include <glib/gi18n.h>
 
 void
-eoc_util_show_help (const gchar *section, GtkWindow *parent)
+eoc_util_show_help (const gchar *section, CtkWindow *parent)
 {
 	GError *error = NULL;
 	gchar *uri = NULL;
@@ -59,7 +59,7 @@ eoc_util_show_help (const gchar *section, GtkWindow *parent)
 	g_free (uri);
 
 	if (error) {
-		GtkWidget *dialog;
+		CtkWidget *dialog;
 
 		dialog = ctk_message_dialog_new (parent,
 						 0,
@@ -343,7 +343,7 @@ eoc_util_file_is_persistent (GFile *file)
 }
 
 static void
-_eoc_util_show_file_in_filemanager_fallback (GFile *file, GtkWindow *toplevel)
+_eoc_util_show_file_in_filemanager_fallback (GFile *file, CtkWindow *toplevel)
 {
 	gchar *uri = NULL;
 	GError *error = NULL;
@@ -372,7 +372,7 @@ _eoc_util_show_file_in_filemanager_fallback (GFile *file, GtkWindow *toplevel)
 }
 
 void
-eoc_util_show_file_in_filemanager (GFile *file, GtkWindow *toplevel)
+eoc_util_show_file_in_filemanager (GFile *file, CtkWindow *toplevel)
 {
 	GDBusProxy *proxy;
 	gboolean done = FALSE;

@@ -214,7 +214,7 @@ INTROSPECTION_GIRS = Eoc-1.0.gir
 INTROSPECTION_SCANNER_ARGS = -I$(top_srcdir) --warn-all $(libeoc_la_CPPFLAGS)
 
 Eoc-1.0.gir: eoc
-Eoc_1_0_gir_INCLUDES = Gtk-3.0
+Eoc_1_0_gir_INCLUDES = Ctk-3.0
 Eoc_1_0_gir_FILES = $(INST_H_FILES) $(libeoc_c_files) $(BUILT_SOURCES)
 Eoc_1_0_gir_VERSION = 1.0
 Eoc_1_0_gir_PROGRAM = $(builddir)/eoc

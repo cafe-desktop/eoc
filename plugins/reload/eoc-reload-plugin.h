@@ -39,7 +39,7 @@ struct _EocReloadPlugin {
 	PeasExtensionBase parent_instance;
 
 	EocWindow *window;
-	GtkActionGroup *ui_action_group;
+	CtkActionGroup *ui_action_group;
 	guint ui_id;
 };
 

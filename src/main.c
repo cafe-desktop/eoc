@@ -97,7 +97,7 @@ main (int argc, char **argv)
 	GError *error = NULL;
 	GOptionContext *ctx;
 	GFile *css_file;
-	GtkCssProvider *provider;
+	CtkCssProvider *provider;
 
 	bindtextdomain (GETTEXT_PACKAGE, EOC_LOCALE_DIR);
 	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");

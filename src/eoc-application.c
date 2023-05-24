@@ -279,7 +279,7 @@ eoc_application_open_window (EocApplication  *application,
 			     EocStartupFlags flags,
 			     GError        **error)
 {
-	GtkWidget *new_window = NULL;
+	CtkWidget *new_window = NULL;
 
 	new_window = GTK_WIDGET (eoc_application_get_empty_window (application));
 

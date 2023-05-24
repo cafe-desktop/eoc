@@ -43,18 +43,18 @@ typedef struct _EocMetadataSidebarClass EocMetadataSidebarClass;
 typedef struct _EocMetadataSidebarPrivate EocMetadataSidebarPrivate;
 
 struct _EocMetadataSidebar {
-	GtkScrolledWindow parent;
+	CtkScrolledWindow parent;
 
 	EocMetadataSidebarPrivate *priv;
 };
 
 struct _EocMetadataSidebarClass {
-	GtkScrolledWindowClass parent_klass;
+	CtkScrolledWindowClass parent_klass;
 };
 
 GType eoc_metadata_sidebar_get_type (void) G_GNUC_CONST;
 
-GtkWidget* eoc_metadata_sidebar_new (EocWindow *window);
+CtkWidget* eoc_metadata_sidebar_new (EocWindow *window);
 
 G_END_DECLS
 

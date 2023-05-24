@@ -28,21 +28,21 @@
 G_BEGIN_DECLS
 
 G_GNUC_INTERNAL
-GtkPrintOperation*    eoc_print_operation_new (EocImage *image,
-					       GtkPrintSettings *print_settings,
-					       GtkPageSetup *page_setup);
+CtkPrintOperation*    eoc_print_operation_new (EocImage *image,
+					       CtkPrintSettings *print_settings,
+					       CtkPageSetup *page_setup);
 
 G_GNUC_INTERNAL
-GtkPageSetup*         eoc_print_get_page_setup (void);
+CtkPageSetup*         eoc_print_get_page_setup (void);
 
 G_GNUC_INTERNAL
-void                  eoc_print_set_page_setup (GtkPageSetup *page_setup);
+void                  eoc_print_set_page_setup (CtkPageSetup *page_setup);
 
 G_GNUC_INTERNAL
-GtkPrintSettings *    eoc_print_get_print_settings (void);
+CtkPrintSettings *    eoc_print_get_print_settings (void);
 
 G_GNUC_INTERNAL
-void                  eoc_print_set_print_settings (GtkPrintSettings *print_settings);
+void                  eoc_print_set_print_settings (CtkPrintSettings *print_settings);
 
 G_END_DECLS
 

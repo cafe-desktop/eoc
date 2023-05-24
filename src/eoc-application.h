@@ -48,13 +48,13 @@ typedef struct _EocApplicationPrivate EocApplicationPrivate;
 #define EOC_APP				(eoc_application_get_instance ())
 
 struct _EocApplication {
-	GtkApplication base_instance;
+	CtkApplication base_instance;
 
 	EocApplicationPrivate *priv;
 };
 
 struct _EocApplicationClass {
-	GtkApplicationClass parent_class;
+	CtkApplicationClass parent_class;
 };
 
 GType	          eoc_application_get_type	      (void) G_GNUC_CONST;

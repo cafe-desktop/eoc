@@ -27,7 +27,7 @@
 #include "eoc-print-preview.h"
 
 struct _EocPrintPreviewPrivate {
-	GtkWidget *area;
+	CtkWidget *area;
 	GdkPixbuf *image;
 	GdkPixbuf *image_scaled;
 
@@ -456,13 +456,13 @@ eoc_print_preview_init (EocPrintPreview *preview)
 	priv->r_dy    = 0;
 }
 
-static gboolean button_press_event_cb   (GtkWidget *widget, GdkEventButton *bev, gpointer user_data);
-static gboolean button_release_event_cb (GtkWidget *widget, GdkEventButton *bev, gpointer user_data);
-static gboolean motion_notify_event_cb  (GtkWidget *widget, GdkEventMotion *mev, gpointer user_data);
-static gboolean key_press_event_cb      (GtkWidget *widget, GdkEventKey *event, gpointer user_data);
+static gboolean button_press_event_cb   (CtkWidget *widget, GdkEventButton *bev, gpointer user_data);
+static gboolean button_release_event_cb (CtkWidget *widget, GdkEventButton *bev, gpointer user_data);
+static gboolean motion_notify_event_cb  (CtkWidget *widget, GdkEventMotion *mev, gpointer user_data);
+static gboolean key_press_event_cb      (CtkWidget *widget, GdkEventKey *event, gpointer user_data);
 
-static gboolean draw_cb (GtkDrawingArea *drawing_area, cairo_t *cr, gpointer user_data);
-static void size_allocate_cb (GtkWidget *widget, GtkAllocation *allocation, gpointer user_data);
+static gboolean draw_cb (CtkDrawingArea *drawing_area, cairo_t *cr, gpointer user_data);
+static void size_allocate_cb (CtkWidget *widget, CtkAllocation *allocation, gpointer user_data);
 
 /**
  * eoc_print_preview_new_with_pixbuf:
@@ -473,7 +473,7 @@ static void size_allocate_cb (GtkWidget *widget, GtkAllocation *allocation, gpoi
  *
  * Returns: A new #EocPrintPreview widget.
  **/
-GtkWidget *
+CtkWidget *
 eoc_print_preview_new_with_pixbuf (GdkPixbuf *pixbuf)
 {
 	EocPrintPreview *preview;
@@ -498,11 +498,11 @@ eoc_print_preview_new_with_pixbuf (GdkPixbuf *pixbuf)
  *
  * Returns: A new and empty #EocPrintPreview widget.
  **/
-GtkWidget *
+CtkWidget *
 eoc_print_preview_new (void)
 {
 	EocPrintPreview *preview;
-	GtkWidget *area;
+	CtkWidget *area;
 
 	preview = g_object_new (EOC_TYPE_PRINT_PREVIEW, NULL);
 
@@ -544,7 +544,7 @@ eoc_print_preview_new (void)
 }
 
 static gboolean
-draw_cb (GtkDrawingArea *drawing_area,
+draw_cb (CtkDrawingArea *drawing_area,
 		 cairo_t *cr,
 		 gpointer  user_data)
 {
@@ -574,7 +574,7 @@ get_current_image_coordinates (EocPrintPreview *preview,
 			       gint *x0, gint *y0)
 {
 	EocPrintPreviewPrivate *priv;
-	GtkAllocation allocation;
+	CtkAllocation allocation;
 
 	priv = preview->priv;
 	ctk_widget_get_allocation (GTK_WIDGET (priv->area), &allocation);
@@ -619,7 +619,7 @@ create_image_scaled (EocPrintPreview *preview)
 
 	if (!priv->image_scaled) {
 		gint i_width, i_height;
-		GtkAllocation allocation;
+		CtkAllocation allocation;
 
 		ctk_widget_get_allocation (priv->area, &allocation);
 		i_width = gdk_pixbuf_get_width (priv->image);
@@ -712,7 +712,7 @@ create_surface_when_idle (EocPrintPreview *preview)
 }
 
 static gboolean
-button_press_event_cb (GtkWidget *widget,
+button_press_event_cb (CtkWidget *widget,
 		       GdkEventButton *event,
 		       gpointer user_data)
 {
@@ -737,7 +737,7 @@ button_press_event_cb (GtkWidget *widget,
 }
 
 static gboolean
-button_release_event_cb (GtkWidget *widget,
+button_release_event_cb (CtkWidget *widget,
 			 GdkEventButton *event,
 			 gpointer user_data)
 {
@@ -755,7 +755,7 @@ button_release_event_cb (GtkWidget *widget,
 }
 
 static gboolean
-key_press_event_cb (GtkWidget   *widget,
+key_press_event_cb (CtkWidget   *widget,
 		    GdkEventKey *event,
 		    gpointer     user_data)
 {
@@ -805,13 +805,13 @@ key_press_event_cb (GtkWidget   *widget,
 }
 
 static gboolean
-motion_notify_event_cb (GtkWidget      *widget,
+motion_notify_event_cb (CtkWidget      *widget,
 			GdkEventMotion *event,
 			gpointer        user_data)
 {
 	EocPrintPreviewPrivate *priv = EOC_PRINT_PREVIEW (user_data)->priv;
 	gdouble dx, dy;
-	GtkAllocation allocation;
+	CtkAllocation allocation;
 
 	if (priv->grabbed) {
 		dx = event->x - priv->cursorx;
@@ -865,8 +865,8 @@ motion_notify_event_cb (GtkWidget      *widget,
 }
 
 static void
-size_allocate_cb (GtkWidget *widget,
-		  GtkAllocation *allocation,
+size_allocate_cb (CtkWidget *widget,
+		  CtkAllocation *allocation,
 		  gpointer user_data)
 {
 	EocPrintPreview *preview;
@@ -888,8 +888,8 @@ static void
 eoc_print_preview_draw (EocPrintPreview *preview, cairo_t *cr)
 {
 	EocPrintPreviewPrivate *priv;
-	GtkWidget *area;
-	GtkAllocation allocation;
+	CtkWidget *area;
+	CtkAllocation allocation;
 	gint x0, y0;
 	gboolean has_focus;
 
@@ -948,7 +948,7 @@ eoc_print_preview_draw (EocPrintPreview *preview, cairo_t *cr)
 	}
 
 	if (has_focus) {
-		GtkStyleContext *ctx;
+		CtkStyleContext *ctx;
 
 		ctx = ctk_widget_get_style_context (area);
 		ctk_render_focus (ctx, cr, 0, 0,
@@ -960,7 +960,7 @@ static void
 update_relative_sizes (EocPrintPreview *preview)
 {
 	EocPrintPreviewPrivate *priv;
-	GtkAllocation allocation;
+	CtkAllocation allocation;
 	gint i_width, i_height;
 
 	priv = preview->priv;
@@ -1015,14 +1015,14 @@ eoc_print_preview_set_page_margins (EocPrintPreview *preview,
 /**
  * eoc_print_preview_set_from_page_setup:
  * @preview: a #EocPrintPreview
- * @setup: a #GtkPageSetup to set the properties from
+ * @setup: a #CtkPageSetup to set the properties from
  *
- * Sets up the page properties from a #GtkPageSetup. Useful when using the
- * widget with the GtkPrint API.
+ * Sets up the page properties from a #CtkPageSetup. Useful when using the
+ * widget with the CtkPrint API.
  **/
 void
 eoc_print_preview_set_from_page_setup (EocPrintPreview *preview,
-				       GtkPageSetup *setup)
+				       CtkPageSetup *setup)
 {
 	g_return_if_fail (EOC_IS_PRINT_PREVIEW (preview));
 	g_return_if_fail (GTK_IS_PAGE_SETUP (setup));

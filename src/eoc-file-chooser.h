@@ -37,20 +37,20 @@ typedef struct _EocFileChooserPrivate  EocFileChooserPrivate;
 
 struct _EocFileChooser
 {
-	GtkFileChooserDialog  parent;
+	CtkFileChooserDialog  parent;
 
 	EocFileChooserPrivate *priv;
 };
 
 struct _EocFileChooserClass
 {
-	GtkFileChooserDialogClass  parent_class;
+	CtkFileChooserDialogClass  parent_class;
 };
 
 
 GType		 eoc_file_chooser_get_type	(void) G_GNUC_CONST;
 
-GtkWidget	*eoc_file_chooser_new		(GtkFileChooserAction action);
+CtkWidget	*eoc_file_chooser_new		(CtkFileChooserAction action);
 
 GdkPixbufFormat	*eoc_file_chooser_get_format	(EocFileChooser *chooser);
 

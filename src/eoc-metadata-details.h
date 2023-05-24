@@ -45,20 +45,20 @@ typedef struct _EocMetadataDetailsPrivate EocMetadataDetailsPrivate;
 #define EOC_METADATA_DETAILS_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), EOC_TYPE_METADATA_DETAILS, EocMetadataDetailsClass))
 
 struct _EocMetadataDetails {
-        GtkTreeView parent;
+        CtkTreeView parent;
 
 	EocMetadataDetailsPrivate *priv;
 };
 
 struct _EocMetadataDetailsClass {
-	GtkTreeViewClass parent_class;
+	CtkTreeViewClass parent_class;
 };
 
 G_GNUC_INTERNAL
 GType               eoc_metadata_details_get_type    (void) G_GNUC_CONST;
 
 G_GNUC_INTERNAL
-GtkWidget          *eoc_metadata_details_new         (void);
+CtkWidget          *eoc_metadata_details_new         (void);
 
 #if HAVE_EXIF
 G_GNUC_INTERNAL

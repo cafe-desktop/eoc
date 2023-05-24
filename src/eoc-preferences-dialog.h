@@ -44,20 +44,20 @@ typedef struct _EocPreferencesDialogPrivate EocPreferencesDialogPrivate;
 #define EOC_PREFERENCES_DIALOG_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS((obj),  EOC_TYPE_PREFERENCES_DIALOG, EocPreferencesDialogClass))
 
 struct _EocPreferencesDialog {
-	GtkDialog dialog;
+	CtkDialog dialog;
 
 	EocPreferencesDialogPrivate *priv;
 };
 
 struct _EocPreferencesDialogClass {
-	GtkDialogClass parent_class;
+	CtkDialogClass parent_class;
 };
 
 G_GNUC_INTERNAL
 GType	    eoc_preferences_dialog_get_type	  (void) G_GNUC_CONST;
 
 G_GNUC_INTERNAL
-GtkWidget    *eoc_preferences_dialog_get_instance	  (GtkWindow   *parent);
+CtkWidget    *eoc_preferences_dialog_get_instance	  (CtkWindow   *parent);
 
 G_END_DECLS
 
