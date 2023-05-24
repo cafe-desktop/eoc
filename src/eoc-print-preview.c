@@ -478,7 +478,7 @@ eoc_print_preview_new_with_pixbuf (GdkPixbuf *pixbuf)
 {
 	EocPrintPreview *preview;
 
-	g_return_val_if_fail (CDK_IS_PIXBUF (pixbuf), NULL);
+	g_return_val_if_fail (GDK_IS_PIXBUF (pixbuf), NULL);
 
 	preview = EOC_PRINT_PREVIEW (eoc_print_preview_new ());
 
