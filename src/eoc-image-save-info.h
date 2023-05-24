@@ -47,10 +47,10 @@ GType             eoc_image_save_info_get_type         (void) G_GNUC_CONST;
 EocImageSaveInfo *eoc_image_save_info_new_from_image   (EocImage        *image);
 
 EocImageSaveInfo *eoc_image_save_info_new_from_uri     (const char      *uri,
-						       CdkPixbufFormat  *format);
+						       GdkPixbufFormat  *format);
 
 EocImageSaveInfo *eoc_image_save_info_new_from_file    (GFile           *file,
-						       CdkPixbufFormat  *format);
+						       GdkPixbufFormat  *format);
 
 G_END_DECLS
 

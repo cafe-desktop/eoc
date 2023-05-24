@@ -246,7 +246,7 @@ eoc_print_draw_page (CtkPrintOperation *operation,
 	}
 
 	{
-		CdkPixbuf *pixbuf;
+		GdkPixbuf *pixbuf;
 
 		pixbuf = eoc_image_get_pixbuf (data->image);
 		cdk_cairo_set_source_pixbuf (cr, pixbuf, 0, 0);

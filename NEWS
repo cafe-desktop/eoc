@@ -50,7 +50,7 @@
   * EocMetadataReaderPng: Use built-in SRGB profile for matching cHRM/gAMA
   * EocMetadataReaderPNG: Only build profile from cHRM if gAMA is present
   * Assume sRGB if no display profile is set
-  * EocImage: Check CdkPixbuf for an ICC profile before falling back to sRGB
+  * EocImage: Check GdkPixbuf for an ICC profile before falling back to sRGB
   * Assume sRGB when image doesn't have an ICC profile attached
   * Remove trailing whitespaces
 
@@ -158,7 +158,7 @@
   * Place GPS Exif tags into their own subcategory
   * Reformat Exif tags for GPS position to be better understandable
   * Make sure GPS Exif tags are named and ordered correctly
-  * Use CdkPixbuf's "orientation" feature as fallback for autorotation
+  * Use GdkPixbuf's "orientation" feature as fallback for autorotation
   * EogScrollView: Implement simple two-pass filtering
   * EocScrollView: Use better downscaling filter
   * Remove unneeded finalize() from EocListStore

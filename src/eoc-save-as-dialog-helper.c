@@ -23,10 +23,10 @@ typedef struct {
 	gint       nth_image;
 } SaveAsData;
 
-static CdkPixbufFormat *
+static GdkPixbufFormat *
 get_selected_format (CtkComboBox *combobox)
 {
-	CdkPixbufFormat *format;
+	GdkPixbufFormat *format;
 	CtkTreeModel *store;
 	CtkTreeIter iter;
 
@@ -45,7 +45,7 @@ update_preview (gpointer user_data)
 	const char *token_str;
 	gboolean convert_spaces;
 	gulong   counter_start;
-	CdkPixbufFormat *format;
+	GdkPixbufFormat *format;
 
 	data = g_object_get_data (G_OBJECT (user_data), "data");
 	g_assert (data != NULL);
@@ -148,9 +148,9 @@ prepare_format_combobox (SaveAsData *data)
 
 	formats = eoc_pixbuf_get_savable_formats ();
 	for (it = formats; it != NULL; it = it->next) {
-		CdkPixbufFormat *f;
+		GdkPixbufFormat *f;
 
-		f = (CdkPixbufFormat*) it->data;
+		f = (GdkPixbufFormat*) it->data;
 
 		ctk_list_store_append (store, &iter);
 		ctk_list_store_set (store, &iter, 0, cdk_pixbuf_format_get_name (f), 1, f, -1);
@@ -267,7 +267,7 @@ eoc_save_as_dialog_get_converter (CtkWidget *dlg)
 	const char *format_str;
 	gboolean convert_spaces;
 	gulong   counter_start;
-	CdkPixbufFormat *format;
+	GdkPixbufFormat *format;
 	GFile *base_file;
 
 	data = g_object_get_data (G_OBJECT (dlg), "data");

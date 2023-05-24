@@ -232,7 +232,7 @@ eoc_job_thumbnail_run (EocJob *ejob)
 {
 	gchar *orig_width, *orig_height;
 	gint width, height;
-	CdkPixbuf *pixbuf;
+	GdkPixbuf *pixbuf;
 	EocJobThumbnail *job;
 
 	g_return_if_fail (EOC_IS_JOB_THUMBNAIL (ejob));
@@ -757,7 +757,7 @@ eoc_job_save_as_run (EocJob *ejob)
 	job->current_pos = 0;
 
 	for (it = job->images; it != NULL; it = it->next, job->current_pos++) {
-		CdkPixbufFormat *format;
+		GdkPixbufFormat *format;
 		EocImageSaveInfo *src_info, *dest_info;
 		EocImage *image = EOC_IMAGE (it->data);
 		gboolean success = FALSE;

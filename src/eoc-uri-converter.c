@@ -31,7 +31,7 @@ struct _EocURIConverterPrivate {
 	GFile           *base_file;
 	GList           *token_list;
 	char            *suffix;
-	CdkPixbufFormat *img_format;
+	GdkPixbufFormat *img_format;
 	gboolean        requires_exif;
 
 	/* options */
@@ -503,7 +503,7 @@ eoc_uri_converter_print_list (EocURIConverter *conv)
 
 
 EocURIConverter*
-eoc_uri_converter_new (GFile *base_file, CdkPixbufFormat *img_format, const char *format_str)
+eoc_uri_converter_new (GFile *base_file, GdkPixbufFormat *img_format, const char *format_str)
 {
 	EocURIConverter *conv;
 
@@ -619,7 +619,7 @@ append_counter (GString *str, gulong counter,  EocURIConverter *conv)
 
 static void
 build_absolute_file (EocURIConverter *conv, EocImage *image, GString *str,  /* input  */
-		     GFile **file, CdkPixbufFormat **format)                /* output */
+		     GFile **file, GdkPixbufFormat **format)                /* output */
 {
 	GFile *dir_file;
 	EocURIConverterPrivate *priv;
@@ -720,7 +720,7 @@ replace_remove_chars (GString *str, gboolean convert_spaces, gunichar space_char
  */
 gboolean
 eoc_uri_converter_do (EocURIConverter *conv, EocImage *image,
-		      GFile **file, CdkPixbufFormat **format, GError **error)
+		      GFile **file, GdkPixbufFormat **format, GError **error)
 {
 	EocURIConverterPrivate *priv;
 	GList *it;
@@ -808,7 +808,7 @@ eoc_uri_converter_do (EocURIConverter *conv, EocImage *image,
 
 
 char*
-eoc_uri_converter_preview (const char *format_str, EocImage *img, CdkPixbufFormat *format,
+eoc_uri_converter_preview (const char *format_str, EocImage *img, GdkPixbufFormat *format,
 			   gulong counter, guint n_images,
 			   gboolean convert_spaces, gunichar space_char)
 {

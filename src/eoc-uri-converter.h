@@ -71,7 +71,7 @@ GQuark             eoc_uc_error_quark              (void);
 
 G_GNUC_INTERNAL
 EocURIConverter*   eoc_uri_converter_new           (GFile *base_file,
-                                                    CdkPixbufFormat *img_format,
+                                                    GdkPixbufFormat *img_format,
 						    const char *format_string);
 
 G_GNUC_INTERNAL
@@ -86,13 +86,13 @@ G_GNUC_INTERNAL
 gboolean           eoc_uri_converter_do            (EocURIConverter *converter,
                                                     EocImage *image,
                                                     GFile **file,
-                                                    CdkPixbufFormat **format,
+                                                    GdkPixbufFormat **format,
                                                     GError **error);
 
 G_GNUC_INTERNAL
 char*              eoc_uri_converter_preview       (const char *format_str,
                                                     EocImage *img,
-                                                    CdkPixbufFormat *format,
+                                                    GdkPixbufFormat *format,
 						    gulong counter,
 						    guint n_images,
 						    gboolean convert_spaces,

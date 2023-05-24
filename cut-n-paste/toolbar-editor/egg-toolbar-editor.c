@@ -378,7 +378,7 @@ event_box_realize_cb (CtkWidget *widget, CtkImage *icon)
   if (type == CTK_IMAGE_STOCK)
     {
       gchar *stock_id;
-      CdkPixbuf *pixbuf;
+      GdkPixbuf *pixbuf;
 
       ctk_image_get_stock (icon, &stock_id, NULL);
       pixbuf = ctk_widget_render_icon (widget, stock_id,
@@ -392,7 +392,7 @@ event_box_realize_cb (CtkWidget *widget, CtkImage *icon)
       CdkScreen *screen;
       CtkIconTheme *icon_theme;
       gint width, height;
-      CdkPixbuf *pixbuf;
+      GdkPixbuf *pixbuf;
 
       ctk_image_get_icon_name (icon, &icon_name, NULL);
       screen = ctk_widget_get_screen (widget);
@@ -415,7 +415,7 @@ event_box_realize_cb (CtkWidget *widget, CtkImage *icon)
     }
   else if (type == CTK_IMAGE_PIXBUF)
     {
-      CdkPixbuf *pixbuf = ctk_image_get_pixbuf (icon);
+      GdkPixbuf *pixbuf = ctk_image_get_pixbuf (icon);
       ctk_drag_source_set_icon_pixbuf (widget, pixbuf);
     }
 }
