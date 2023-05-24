@@ -2,7 +2,7 @@
 #define _EOC_TRANSFORM_H_
 
 #include <glib-object.h>
-#include <cdk-pixbuf/cdk-pixbuf.h>
+#include <gdk-pixbuf/gdk-pixbuf.h>
 
 G_BEGIN_DECLS
 

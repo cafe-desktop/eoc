@@ -25,7 +25,7 @@
 #ifndef _EOC_THUMBNAIL_H_
 #define _EOC_THUMBNAIL_H_
 
-#include <cdk-pixbuf/cdk-pixbuf.h>
+#include <gdk-pixbuf/gdk-pixbuf.h>
 #include "eoc-image.h"
 
 G_BEGIN_DECLS

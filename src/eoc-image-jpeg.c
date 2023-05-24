@@ -1,4 +1,4 @@
-/* This code is based on the jpeg saving code from cdk-pixbuf. Full copyright
+/* This code is based on the jpeg saving code from gdk-pixbuf. Full copyright
  * notice is given in the following:
  */
 /* CdkPixbuf library - JPEG image loader
@@ -47,7 +47,7 @@
 #include <jerror.h>
 #include "transupp.h"
 #include <glib.h>
-#include <cdk-pixbuf/cdk-pixbuf.h>
+#include <gdk-pixbuf/gdk-pixbuf.h>
 #include <glib/gi18n.h>
 #if HAVE_EXIF
 #include <libexif/exif-data.h>

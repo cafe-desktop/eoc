@@ -4,7 +4,7 @@
 
 #include <stdlib.h>
 #include <math.h>
-#include <cdk-pixbuf/cdk-pixbuf.h>
+#include <gdk-pixbuf/gdk-pixbuf.h>
 #include <cdk/cdkkeysyms.h>
 #ifdef HAVE_RSVG
 #include <librsvg/rsvg.h>

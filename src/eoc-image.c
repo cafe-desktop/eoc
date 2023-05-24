@@ -50,7 +50,7 @@
 #include <glib-object.h>
 #include <glib/gi18n.h>
 #include <ctk/ctk.h>
-#include <cdk-pixbuf/cdk-pixbuf.h>
+#include <gdk-pixbuf/gdk-pixbuf.h>
 
 #ifdef HAVE_EXIF
 #include "eoc-exif-util.h"
