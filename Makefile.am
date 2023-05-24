@@ -22,7 +22,7 @@ DISTCLEANFILES =
 
 DISTCHECK_CONFIGURE_FLAGS =      \
 	--disable-schemas-install    \
-	--enable-ctk-doc    \
+	--enable-gtk-doc    \
 	--enable-compile-warnings=no \
 	CFLAGS='-Wno-deprecated-declarations'
 
@@ -34,7 +34,7 @@ MAINTAINERCLEANFILES = \
 	$(srcdir)/config.h.in \
 	$(srcdir)/config.sub \
 	$(srcdir)/depcomp \
-	$(srcdir)/ctk-doc.make \
+	$(srcdir)/gtk-doc.make \
 	$(srcdir)/install-sh \
 	$(srcdir)/ltmain.sh \
 	$(srcdir)/missing \
