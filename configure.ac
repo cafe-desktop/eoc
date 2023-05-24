@@ -89,7 +89,7 @@ GLIB_REQUIRED=2.52.0
 GIO_REQUIRED=2.50.0
 CTK_REQUIRED=3.22.0
 CAFE_DESKTOP_REQUIRED=1.17.0
-CDKPIXBUF_REQUIRED=2.36.5
+GDKPIXBUF_REQUIRED=2.36.5
 SHARED_MIME_INFO_REQUIRED=0.20
 EXEMPI_REQUIRED=1.99.5
 LIBPEAS_REQUIRED=1.8.0
@@ -103,7 +103,7 @@ EOC_MODULES="ctk+-3.0 >= $CTK_REQUIRED \
              gio-unix-2.0 >= $GLIB_REQUIRED \
              gthread-2.0 >= $GLIB_REQUIRED \
              cafe-desktop-2.0 >= $CAFE_DESKTOP_REQUIRED \
-             gdk-pixbuf-2.0 >= $CDKPIXBUF_REQUIRED \
+             gdk-pixbuf-2.0 >= $GDKPIXBUF_REQUIRED \
              gio-2.0 >= $GIO_REQUIRED \
              ctk+-unix-print-3.0 >= $CTK_REQUIRED \
              shared-mime-info >= $SHARED_MIME_INFO_REQUIRED \
