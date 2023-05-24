@@ -51,7 +51,7 @@ enum {
 };
 
 static void
-statusbar_set_date (GtkStatusbar *statusbar,
+statusbar_set_date (CtkStatusbar *statusbar,
                     EocThumbView *view)
 {
 	EocImage *image;
@@ -169,8 +169,8 @@ eoc_statusbar_date_plugin_activate (EocWindowActivatable *activatable)
 {
 	EocStatusbarDatePlugin *plugin = EOC_STATUSBAR_DATE_PLUGIN (activatable);
 	EocWindow *window = plugin->window;
-	GtkWidget *statusbar = eoc_window_get_statusbar (window);
-	GtkWidget *thumbview = eoc_window_get_thumb_view (window);
+	CtkWidget *statusbar = eoc_window_get_statusbar (window);
+	CtkWidget *thumbview = eoc_window_get_thumb_view (window);
 
 	eoc_debug (DEBUG_PLUGINS);
 
@@ -192,8 +192,8 @@ eoc_statusbar_date_plugin_deactivate (EocWindowActivatable *activatable)
 {
 	EocStatusbarDatePlugin *plugin = EOC_STATUSBAR_DATE_PLUGIN (activatable);
 	EocWindow *window = plugin->window;
-	GtkWidget *statusbar = eoc_window_get_statusbar (window);
-	GtkWidget *view = eoc_window_get_thumb_view (window);
+	CtkWidget *statusbar = eoc_window_get_statusbar (window);
+	CtkWidget *view = eoc_window_get_thumb_view (window);
 
 	g_signal_handler_disconnect (view, plugin->signal_id);
 

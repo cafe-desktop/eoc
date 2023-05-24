@@ -29,9 +29,9 @@
 #include <ctk/ctk.h>
 #include <gio/gio.h>
 
-GtkWidget   *eoc_image_load_error_message_area_new   (const gchar       *caption,
+CtkWidget   *eoc_image_load_error_message_area_new   (const gchar       *caption,
 						      const GError      *error);
 
-GtkWidget   *eoc_no_images_error_message_area_new    (GFile *file);
+CtkWidget   *eoc_no_images_error_message_area_new    (GFile *file);
 
 #endif /* __EOC_ERROR_MESSAGE_AREA__ */

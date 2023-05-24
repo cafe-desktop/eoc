@@ -32,8 +32,8 @@
 
 struct _EocStatusbarPrivate
 {
-	GtkWidget *progressbar;
-	GtkWidget *img_num_label;
+	CtkWidget *progressbar;
+	CtkWidget *img_num_label;
 };
 
 G_DEFINE_TYPE_WITH_PRIVATE (EocStatusbar, eoc_statusbar, GTK_TYPE_STATUSBAR)
@@ -48,7 +48,7 @@ static void
 eoc_statusbar_init (EocStatusbar *statusbar)
 {
 	EocStatusbarPrivate *priv;
-	GtkWidget *vbox;
+	CtkWidget *vbox;
 
 	statusbar->priv = eoc_statusbar_get_instance_private (statusbar);
 	priv = statusbar->priv;
@@ -90,7 +90,7 @@ eoc_statusbar_init (EocStatusbar *statusbar)
 
 }
 
-GtkWidget *
+CtkWidget *
 eoc_statusbar_new (void)
 {
 	return GTK_WIDGET (g_object_new (EOC_TYPE_STATUSBAR, NULL));

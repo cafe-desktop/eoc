@@ -196,7 +196,7 @@ eoc_exif_util_format_date (const gchar *date)
 }
 
 void
-eoc_exif_util_set_label_text (GtkLabel *label,
+eoc_exif_util_set_label_text (CtkLabel *label,
 			      EocExifData *exif_data,
 			      gint tag_id)
 {
@@ -221,7 +221,7 @@ eoc_exif_util_set_label_text (GtkLabel *label,
 }
 
 void
-eoc_exif_util_format_datetime_label (GtkLabel *label, EocExifData *exif_data,
+eoc_exif_util_format_datetime_label (CtkLabel *label, EocExifData *exif_data,
                                      gint tag_id, const gchar *format)
 {
 	gchar exif_buffer[512];
@@ -248,7 +248,7 @@ eoc_exif_util_format_datetime_label (GtkLabel *label, EocExifData *exif_data,
 }
 
 void
-eoc_exif_util_set_focal_length_label_text (GtkLabel *label,
+eoc_exif_util_set_focal_length_label_text (CtkLabel *label,
 					   EocExifData *exif_data)
 {
 	ExifEntry *entry = NULL, *entry35mm = NULL;

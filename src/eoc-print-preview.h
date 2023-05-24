@@ -35,13 +35,13 @@ typedef struct _EocPrintPreviewPrivate EocPrintPreviewPrivate;
 #define EOC_IS_PRINT_PREVIEW_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), EOC_TYPE_PRINT_PREVIEW))
 
 struct _EocPrintPreview {
-	GtkAspectFrame aspect_frame;
+	CtkAspectFrame aspect_frame;
 
 	EocPrintPreviewPrivate *priv;
 };
 
 struct _EocPrintPreviewClass {
-	GtkAspectFrameClass parent_class;
+	CtkAspectFrameClass parent_class;
 
 };
 
@@ -49,10 +49,10 @@ G_GNUC_INTERNAL
 GType        eoc_print_preview_get_type            (void) G_GNUC_CONST;
 
 G_GNUC_INTERNAL
-GtkWidget   *eoc_print_preview_new                 (void);
+CtkWidget   *eoc_print_preview_new                 (void);
 
 G_GNUC_INTERNAL
-GtkWidget   *eoc_print_preview_new_with_pixbuf     (GdkPixbuf       *pixbuf);
+CtkWidget   *eoc_print_preview_new_with_pixbuf     (GdkPixbuf       *pixbuf);
 
 G_GNUC_INTERNAL
 void         eoc_print_preview_set_page_margins    (EocPrintPreview *preview,
@@ -63,7 +63,7 @@ void         eoc_print_preview_set_page_margins    (EocPrintPreview *preview,
 
 G_GNUC_INTERNAL
 void         eoc_print_preview_set_from_page_setup (EocPrintPreview *preview,
-						    GtkPageSetup    *setup);
+						    CtkPageSetup    *setup);
 
 G_GNUC_INTERNAL
 void         eoc_print_preview_get_image_position  (EocPrintPreview *preview,

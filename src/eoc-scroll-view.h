@@ -18,13 +18,13 @@ typedef struct _EocScrollViewPrivate EocScrollViewPrivate;
 
 
 struct _EocScrollView {
-	GtkGrid base_instance;
+	CtkGrid base_instance;
 
 	EocScrollViewPrivate *priv;
 };
 
 struct _EocScrollViewClass {
-	GtkGridClass parent_class;
+	CtkGridClass parent_class;
 
 	void (* zoom_changed) (EocScrollView *view, double zoom);
 };
@@ -36,7 +36,7 @@ typedef enum {
 } EocTransparencyStyle;
 
 GType    eoc_scroll_view_get_type         (void) G_GNUC_CONST;
-GtkWidget* eoc_scroll_view_new            (void);
+CtkWidget* eoc_scroll_view_new            (void);
 
 /* loading stuff */
 void     eoc_scroll_view_set_image        (EocScrollView *view, EocImage *image);
@@ -51,7 +51,7 @@ void     eoc_scroll_view_set_antialiasing_out (EocScrollView *view, gboolean sta
 void     eoc_scroll_view_set_transparency_color (EocScrollView *view, GdkRGBA *color);
 void     eoc_scroll_view_set_transparency (EocScrollView *view, EocTransparencyStyle style);
 gboolean eoc_scroll_view_scrollbars_visible (EocScrollView *view);
-void	 eoc_scroll_view_set_popup (EocScrollView *view, GtkMenu *menu);
+void	 eoc_scroll_view_set_popup (EocScrollView *view, CtkMenu *menu);
 void	 eoc_scroll_view_set_background_color (EocScrollView *view,
 					       const GdkRGBA *color);
 void	 eoc_scroll_view_override_bg_color (EocScrollView *view,

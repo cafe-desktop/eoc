@@ -38,32 +38,32 @@ typedef struct _EocPrintImageSetupPrivate   EocPrintImageSetupPrivate;
 #define EOC_PRINT_IMAGE_SETUP_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), EOC_TYPE_PRINT_IMAGE_SETUP, EocPrintImageSetupClass))
 
 struct _EocPrintImageSetup {
-	GtkGrid parent_instance;
+	CtkGrid parent_instance;
 
 	EocPrintImageSetupPrivate *priv;
 };
 
 struct _EocPrintImageSetupClass {
-	GtkGridClass parent_class;
+	CtkGridClass parent_class;
 };
 
 G_GNUC_INTERNAL
 GType		  eoc_print_image_setup_get_type    (void) G_GNUC_CONST;
 
 G_GNUC_INTERNAL
-GtkWidget        *eoc_print_image_setup_new         (EocImage     *image,
-						     GtkPageSetup *page_setup);
+CtkWidget        *eoc_print_image_setup_new         (EocImage     *image,
+						     CtkPageSetup *page_setup);
 
 G_GNUC_INTERNAL
 void              eoc_print_image_setup_get_options (EocPrintImageSetup *setup,
 						     gdouble            *left,
 						     gdouble            *top,
 						     gdouble            *scale,
-						     GtkUnit            *unit);
-void              eoc_print_image_setup_update      (GtkPrintOperation *operation,
-						     GtkWidget         *custom_widget,
-						     GtkPageSetup      *page_setup,
-						     GtkPrintSettings  *print_settings,
+						     CtkUnit            *unit);
+void              eoc_print_image_setup_update      (CtkPrintOperation *operation,
+						     CtkWidget         *custom_widget,
+						     CtkPageSetup      *page_setup,
+						     CtkPrintSettings  *print_settings,
 						     gpointer           user_data);
 
 G_END_DECLS

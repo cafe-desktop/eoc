@@ -64,7 +64,7 @@ typedef enum {
 } EocScrollViewCursor;
 
 /* Drag 'n Drop */
-static GtkTargetEntry target_table[] = {
+static CtkTargetEntry target_table[] = {
 	{ "text/uri-list", 0, 0},
 };
 
@@ -84,12 +84,12 @@ enum {
 /* Private part of the EocScrollView structure */
 struct _EocScrollViewPrivate {
 	/* some widgets we rely on */
-	GtkWidget *display;
-	GtkAdjustment *hadj;
-	GtkAdjustment *vadj;
-	GtkWidget *hbar;
-	GtkWidget *vbar;
-	GtkWidget *menu;
+	CtkWidget *display;
+	CtkAdjustment *hadj;
+	CtkAdjustment *vadj;
+	CtkWidget *hbar;
+	CtkWidget *vbar;
+	CtkWidget *menu;
 
 	/* actual image */
 	EocImage *image;
@@ -158,11 +158,11 @@ static void scroll_by (EocScrollView *view, int xofs, int yofs);
 static void set_zoom_fit (EocScrollView *view);
 /* static void request_paint_area (EocScrollView *view, GdkRectangle *area); */
 static void set_minimum_zoom_factor (EocScrollView *view);
-static void view_on_drag_begin_cb (GtkWidget *widget, GdkDragContext *context,
+static void view_on_drag_begin_cb (CtkWidget *widget, GdkDragContext *context,
 				   gpointer user_data);
-static void view_on_drag_data_get_cb (GtkWidget *widget,
+static void view_on_drag_data_get_cb (CtkWidget *widget,
 				      GdkDragContext*drag_context,
-				      GtkSelectionData *data, guint info,
+				      CtkSelectionData *data, guint info,
 				      guint time, gpointer user_data);
 
 static gboolean _eoc_gdk_rgba_equal0 (const GdkRGBA *a, const GdkRGBA *b);
@@ -293,7 +293,7 @@ update_scrollbar_values (EocScrollView *view)
 	int scaled_width, scaled_height;
 	gdouble page_size,page_increment,step_increment;
 	gdouble lower, upper;
-	GtkAllocation allocation;
+	CtkAllocation allocation;
 
 	priv = view->priv;
 
@@ -357,7 +357,7 @@ eoc_scroll_view_set_cursor (EocScrollView *view, EocScrollViewCursor new_cursor)
 {
 	GdkCursor *cursor = NULL;
 	GdkDisplay *display;
-	GtkWidget *widget;
+	CtkWidget *widget;
 
 	if (view->priv->cursor == new_cursor) {
 		return;
@@ -390,14 +390,14 @@ eoc_scroll_view_set_cursor (EocScrollView *view, EocScrollViewCursor new_cursor)
  * specified allocation, or the current allocation if NULL is specified.
  */
 static void
-check_scrollbar_visibility (EocScrollView *view, GtkAllocation *alloc)
+check_scrollbar_visibility (EocScrollView *view, CtkAllocation *alloc)
 {
 	EocScrollViewPrivate *priv;
 	int bar_height;
 	int bar_width;
 	int img_width;
 	int img_height;
-	GtkRequisition req;
+	CtkRequisition req;
 	int width, height;
 	gboolean hbar_visible, vbar_visible;
 
@@ -407,7 +407,7 @@ check_scrollbar_visibility (EocScrollView *view, GtkAllocation *alloc)
 		width = alloc->width;
 		height = alloc->height;
 	} else {
-		GtkAllocation allocation;
+		CtkAllocation allocation;
 
 		ctk_widget_get_allocation (GTK_WIDGET (view), &allocation);
 		width = allocation.width;
@@ -570,7 +570,7 @@ static void
 scroll_to (EocScrollView *view, int x, int y, gboolean change_adjustments)
 {
 	EocScrollViewPrivate *priv;
-	GtkAllocation allocation;
+	CtkAllocation allocation;
 	int xofs, yofs;
 	GdkWindow *window;
 
@@ -649,7 +649,7 @@ scroll_by (EocScrollView *view, int xofs, int yofs)
 
 /* Callback used when an adjustment is changed */
 static void
-adjustment_changed_cb (GtkAdjustment *adj, gpointer data)
+adjustment_changed_cb (CtkAdjustment *adj, gpointer data)
 {
 	EocScrollView *view;
 	EocScrollViewPrivate *priv;
@@ -711,7 +711,7 @@ set_zoom (EocScrollView *view, double zoom,
 	  gboolean have_anchor, int anchorx, int anchory)
 {
 	EocScrollViewPrivate *priv;
-	GtkAllocation allocation;
+	CtkAllocation allocation;
 	int xofs, yofs;
 	double x_rel, y_rel;
 
@@ -774,7 +774,7 @@ static void
 set_zoom_fit (EocScrollView *view)
 {
 	EocScrollViewPrivate *priv;
-	GtkAllocation allocation;
+	CtkAllocation allocation;
 	double new_zoom;
 
 	priv = view->priv;
@@ -814,11 +814,11 @@ set_zoom_fit (EocScrollView *view)
 
 /* Key press event handler for the image view */
 static gboolean
-display_key_press_event (GtkWidget *widget, GdkEventKey *event, gpointer data)
+display_key_press_event (CtkWidget *widget, GdkEventKey *event, gpointer data)
 {
 	EocScrollView *view;
 	EocScrollViewPrivate *priv;
-	GtkAllocation allocation;
+	CtkAllocation allocation;
 	gboolean do_zoom;
 	double zoom;
 	gboolean do_scroll;
@@ -930,7 +930,7 @@ display_key_press_event (GtkWidget *widget, GdkEventKey *event, gpointer data)
 
 /* Button press event handler for the image view */
 static gboolean
-eoc_scroll_view_button_press_event (GtkWidget *widget, GdkEventButton *event, gpointer data)
+eoc_scroll_view_button_press_event (CtkWidget *widget, GdkEventButton *event, gpointer data)
 {
 	EocScrollView *view;
 	EocScrollViewPrivate *priv;
@@ -972,7 +972,7 @@ eoc_scroll_view_button_press_event (GtkWidget *widget, GdkEventButton *event, gp
 
 /* Button release event handler for the image view */
 static gboolean
-eoc_scroll_view_button_release_event (GtkWidget *widget, GdkEventButton *event, gpointer data)
+eoc_scroll_view_button_release_event (CtkWidget *widget, GdkEventButton *event, gpointer data)
 {
 	EocScrollView *view;
 	EocScrollViewPrivate *priv;
@@ -1005,7 +1005,7 @@ eoc_scroll_view_button_release_event (GtkWidget *widget, GdkEventButton *event, 
  * dragging the image with button 1 anyways.
  */
 static gboolean
-eoc_scroll_view_scroll_event (GtkWidget *widget, GdkEventScroll *event, gpointer data)
+eoc_scroll_view_scroll_event (CtkWidget *widget, GdkEventScroll *event, gpointer data)
 {
 	EocScrollView *view;
 	EocScrollViewPrivate *priv;
@@ -1073,7 +1073,7 @@ eoc_scroll_view_scroll_event (GtkWidget *widget, GdkEventScroll *event, gpointer
 
 /* Motion event handler for the image view */
 static gboolean
-eoc_scroll_view_motion_event (GtkWidget *widget, GdkEventMotion *event, gpointer data)
+eoc_scroll_view_motion_event (CtkWidget *widget, GdkEventMotion *event, gpointer data)
 {
 	EocScrollView *view;
 	EocScrollViewPrivate *priv;
@@ -1098,7 +1098,7 @@ eoc_scroll_view_motion_event (GtkWidget *widget, GdkEventMotion *event, gpointer
 }
 
 static void
-display_map_event (GtkWidget *widget, GdkEvent *event, gpointer data)
+display_map_event (CtkWidget *widget, GdkEvent *event, gpointer data)
 {
 	EocScrollView *view;
 	EocScrollViewPrivate *priv;
@@ -1114,7 +1114,7 @@ display_map_event (GtkWidget *widget, GdkEvent *event, gpointer data)
 }
 
 static void
-eoc_scroll_view_size_allocate (GtkWidget *widget, GtkAllocation *alloc)
+eoc_scroll_view_size_allocate (CtkWidget *widget, CtkAllocation *alloc)
 {
 	EocScrollView *view;
 
@@ -1126,7 +1126,7 @@ eoc_scroll_view_size_allocate (GtkWidget *widget, GtkAllocation *alloc)
 }
 
 static void
-display_size_change (GtkWidget *widget, GdkEventConfigure *event, gpointer data)
+display_size_change (CtkWidget *widget, GdkEventConfigure *event, gpointer data)
 {
 	EocScrollView *view;
 	EocScrollViewPrivate *priv;
@@ -1135,7 +1135,7 @@ display_size_change (GtkWidget *widget, GdkEventConfigure *event, gpointer data)
 	priv = view->priv;
 
 	if (priv->zoom_mode == ZOOM_MODE_FIT) {
-		GtkAllocation alloc;
+		CtkAllocation alloc;
 
 		alloc.width = event->width;
 		alloc.height = event->height;
@@ -1164,7 +1164,7 @@ display_size_change (GtkWidget *widget, GdkEventConfigure *event, gpointer data)
 
 
 static gboolean
-eoc_scroll_view_focus_in_event (GtkWidget     *widget,
+eoc_scroll_view_focus_in_event (CtkWidget     *widget,
 			    GdkEventFocus *event,
 			    gpointer data)
 {
@@ -1173,7 +1173,7 @@ eoc_scroll_view_focus_in_event (GtkWidget     *widget,
 }
 
 static gboolean
-eoc_scroll_view_focus_out_event (GtkWidget     *widget,
+eoc_scroll_view_focus_out_event (CtkWidget     *widget,
 			     GdkEventFocus *event,
 			     gpointer data)
 {
@@ -1221,12 +1221,12 @@ _set_hq_redraw_timeout (EocScrollView *view)
 }
 
 static gboolean
-display_draw (GtkWidget *widget, cairo_t *cr, gpointer data)
+display_draw (CtkWidget *widget, cairo_t *cr, gpointer data)
 {
 	const GdkRGBA *background_color = NULL;
 	EocScrollView *view;
 	EocScrollViewPrivate *priv;
-	GtkAllocation allocation;
+	CtkAllocation allocation;
 	int scaled_width, scaled_height;
 	int xofs, yofs;
 
@@ -2060,10 +2060,10 @@ static void
 eoc_scroll_view_class_init (EocScrollViewClass *klass)
 {
 	GObjectClass *gobject_class;
-	GtkWidgetClass *widget_class;
+	CtkWidgetClass *widget_class;
 
 	gobject_class = (GObjectClass*) klass;
-	widget_class = (GtkWidgetClass*) klass;
+	widget_class = (CtkWidgetClass*) klass;
 
 	gobject_class->dispose = eoc_scroll_view_dispose;
         gobject_class->set_property = eoc_scroll_view_set_property;
@@ -2168,7 +2168,7 @@ eoc_scroll_view_class_init (EocScrollViewClass *klass)
 }
 
 static void
-view_on_drag_begin_cb (GtkWidget        *widget,
+view_on_drag_begin_cb (CtkWidget        *widget,
 		       GdkDragContext   *context,
 		       gpointer          user_data)
 {
@@ -2191,9 +2191,9 @@ view_on_drag_begin_cb (GtkWidget        *widget,
 }
 
 static void
-view_on_drag_data_get_cb (GtkWidget        *widget,
+view_on_drag_data_get_cb (CtkWidget        *widget,
 			  GdkDragContext   *drag_context,
-			  GtkSelectionData *data,
+			  CtkSelectionData *data,
 			  guint             info,
 			  guint             time,
 			  gpointer          user_data)
@@ -2217,10 +2217,10 @@ view_on_drag_data_get_cb (GtkWidget        *widget,
 	g_object_unref (file);
 }
 
-GtkWidget*
+CtkWidget*
 eoc_scroll_view_new (void)
 {
-	GtkWidget *widget;
+	CtkWidget *widget;
 
 	widget = g_object_new (EOC_TYPE_SCROLL_VIEW,
 			       "can-focus", TRUE,
@@ -2233,7 +2233,7 @@ eoc_scroll_view_new (void)
 }
 
 static gboolean
-view_on_button_press_event_cb (GtkWidget *widget, GdkEventButton *event,
+view_on_button_press_event_cb (CtkWidget *widget, GdkEventButton *event,
 			       gpointer user_data)
 {
     EocScrollView *view = EOC_SCROLL_VIEW (widget);
@@ -2252,7 +2252,7 @@ view_on_button_press_event_cb (GtkWidget *widget, GdkEventButton *event,
 
 void
 eoc_scroll_view_set_popup (EocScrollView *view,
-			   GtkMenu *menu)
+			   CtkMenu *menu)
 {
 	g_return_if_fail (EOC_IS_SCROLL_VIEW (view));
 	g_return_if_fail (view->priv->menu == NULL);

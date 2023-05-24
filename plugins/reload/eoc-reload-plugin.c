@@ -27,7 +27,7 @@ enum {
 };
 
 static void
-reload_cb (GtkAction *action,
+reload_cb (CtkAction *action,
            EocWindow *window)
 {
 	eoc_window_reload_image (window);
@@ -41,7 +41,7 @@ static const gchar* const ui_definition = "<ui><menubar name=\"MainMenu\">"
 	"<menuitem action=\"EocPluginRunReload\"/><separator/>"
 	"</popup></ui>";
 
-static const GtkActionEntry action_entries[] = {
+static const CtkActionEntry action_entries[] = {
 	{ "EocPluginRunReload", "view-refresh", N_("Reload Image"), "R", N_("Reload current image"), G_CALLBACK (reload_cb) }
 };
 
@@ -110,7 +110,7 @@ static void
 eoc_reload_plugin_activate (EocWindowActivatable *activatable)
 {
 	EocReloadPlugin *plugin = EOC_RELOAD_PLUGIN (activatable);
-	GtkUIManager *manager;
+	CtkUIManager *manager;
 
 	eoc_debug (DEBUG_PLUGINS);
 
@@ -135,7 +135,7 @@ static void
 eoc_reload_plugin_deactivate (EocWindowActivatable *activatable)
 {
 	EocReloadPlugin *plugin = EOC_RELOAD_PLUGIN (activatable);
-	GtkUIManager *manager;
+	CtkUIManager *manager;
 
 	eoc_debug (DEBUG_PLUGINS);
 

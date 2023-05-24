@@ -50,21 +50,21 @@ typedef enum {
 } EocPropertiesDialogPage;
 
 struct _EocPropertiesDialog {
-	GtkDialog dialog;
+	CtkDialog dialog;
 
 	EocPropertiesDialogPrivate *priv;
 };
 
 struct _EocPropertiesDialogClass {
-	GtkDialogClass parent_class;
+	CtkDialogClass parent_class;
 };
 
 GType	    eoc_properties_dialog_get_type	(void) G_GNUC_CONST;
 
-GtkWidget   *eoc_properties_dialog_new	  	(GtkWindow               *parent,
+CtkWidget   *eoc_properties_dialog_new	  	(CtkWindow               *parent,
                                              EocThumbView            *thumbview,
-                                             GtkAction               *next_image_action,
-                                             GtkAction               *previous_image_action);
+                                             CtkAction               *next_image_action,
+                                             CtkAction               *previous_image_action);
 
 void	    eoc_properties_dialog_update  	(EocPropertiesDialog     *prop,
 						 EocImage                *image);

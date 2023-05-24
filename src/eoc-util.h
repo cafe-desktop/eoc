@@ -31,7 +31,7 @@ G_BEGIN_DECLS
 
 G_GNUC_INTERNAL
 void     eoc_util_show_help                  (const gchar *section,
-					      GtkWindow   *parent);
+					      CtkWindow   *parent);
 
 G_GNUC_INTERNAL
 gchar   *eoc_util_make_valid_utf8            (const gchar *name);
@@ -63,7 +63,7 @@ gboolean eoc_util_file_is_persistent (GFile *file);
 
 G_GNUC_INTERNAL
 void     eoc_util_show_file_in_filemanager   (GFile *file,
-                                              GtkWindow *toplevel);
+                                              CtkWindow *toplevel);
 
 G_END_DECLS
 

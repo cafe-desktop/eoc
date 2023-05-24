@@ -45,7 +45,7 @@ typedef struct _EocCloseConfirmationDialogPrivate 	EocCloseConfirmationDialogPri
 
 struct _EocCloseConfirmationDialog
 {
-	GtkDialog parent;
+	CtkDialog parent;
 
 	/*< private > */
 	EocCloseConfirmationDialogPrivate *priv;
@@ -53,17 +53,17 @@ struct _EocCloseConfirmationDialog
 
 struct _EocCloseConfirmationDialogClass
 {
-	GtkDialogClass parent_class;
+	CtkDialogClass parent_class;
 };
 
 G_GNUC_INTERNAL
 GType 		 eoc_close_confirmation_dialog_get_type		(void) G_GNUC_CONST;
 
 G_GNUC_INTERNAL
-GtkWidget	*eoc_close_confirmation_dialog_new			(GtkWindow     *parent,
+CtkWidget	*eoc_close_confirmation_dialog_new			(CtkWindow     *parent,
 									 GList         *unsaved_documents);
 G_GNUC_INTERNAL
-GtkWidget 	*eoc_close_confirmation_dialog_new_single 		(GtkWindow     *parent,
+CtkWidget 	*eoc_close_confirmation_dialog_new_single 		(CtkWindow     *parent,
 									 EocImage      *image);
 
 G_GNUC_INTERNAL

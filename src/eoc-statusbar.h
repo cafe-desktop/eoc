@@ -42,19 +42,19 @@ typedef struct _EocStatusbarClass   EocStatusbarClass;
 
 struct _EocStatusbar
 {
-        GtkStatusbar parent;
+        CtkStatusbar parent;
 
         EocStatusbarPrivate *priv;
 };
 
 struct _EocStatusbarClass
 {
-        GtkStatusbarClass parent_class;
+        CtkStatusbarClass parent_class;
 };
 
 GType		 eoc_statusbar_get_type			(void) G_GNUC_CONST;
 
-GtkWidget	*eoc_statusbar_new			(void);
+CtkWidget	*eoc_statusbar_new			(void);
 
 void		 eoc_statusbar_set_image_number		(EocStatusbar   *statusbar,
 							 gint           num,

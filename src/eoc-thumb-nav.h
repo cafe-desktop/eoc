@@ -49,18 +49,18 @@ typedef enum {
 } EocThumbNavMode;
 
 struct _EocThumbNav {
-	GtkBox base_instance;
+	CtkBox base_instance;
 
 	EocThumbNavPrivate *priv;
 };
 
 struct _EocThumbNavClass {
-	GtkBoxClass parent_class;
+	CtkBoxClass parent_class;
 };
 
 GType	         eoc_thumb_nav_get_type          (void) G_GNUC_CONST;
 
-GtkWidget       *eoc_thumb_nav_new               (GtkWidget         *thumbview,
+CtkWidget       *eoc_thumb_nav_new               (CtkWidget         *thumbview,
 						  EocThumbNavMode    mode,
 	             			          gboolean           show_buttons);
 

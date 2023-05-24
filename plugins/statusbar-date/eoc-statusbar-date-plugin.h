@@ -60,7 +60,7 @@ struct _EocStatusbarDatePlugin {
 	PeasExtensionBase parent_instance;
 
 	EocWindow *window;
-	GtkWidget *statusbar_date;
+	CtkWidget *statusbar_date;
 	gulong signal_id;
 };
 

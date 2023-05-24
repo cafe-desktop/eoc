@@ -10,12 +10,12 @@
 #include "eoc-file-chooser.h"
 
 typedef struct {
-	GtkWidget *dir_chooser;
-	GtkWidget *token_entry;
-	GtkWidget *replace_spaces_check;
-	GtkWidget *counter_spin;
-	GtkWidget *preview_label;
-	GtkWidget *format_combobox;
+	CtkWidget *dir_chooser;
+	CtkWidget *token_entry;
+	CtkWidget *replace_spaces_check;
+	CtkWidget *counter_spin;
+	CtkWidget *preview_label;
+	CtkWidget *format_combobox;
 
 	guint      idle_id;
 	gint       n_images;
@@ -24,11 +24,11 @@ typedef struct {
 } SaveAsData;
 
 static GdkPixbufFormat *
-get_selected_format (GtkComboBox *combobox)
+get_selected_format (CtkComboBox *combobox)
 {
 	GdkPixbufFormat *format;
-	GtkTreeModel *store;
-	GtkTreeIter iter;
+	CtkTreeModel *store;
+	CtkTreeIter iter;
 
 	ctk_combo_box_get_active_iter (combobox, &iter);
 	store = ctk_combo_box_get_model (combobox);
@@ -79,7 +79,7 @@ update_preview (gpointer user_data)
 }
 
 static void
-request_preview_update (GtkWidget *dlg)
+request_preview_update (CtkWidget *dlg)
 {
 	SaveAsData *data;
 
@@ -93,13 +93,13 @@ request_preview_update (GtkWidget *dlg)
 }
 
 static void
-on_format_combobox_changed (GtkComboBox *widget, gpointer data)
+on_format_combobox_changed (CtkComboBox *widget, gpointer data)
 {
 	request_preview_update (GTK_WIDGET (data));
 }
 
 static void
-on_token_entry_changed (GtkWidget *widget, gpointer user_data)
+on_token_entry_changed (CtkWidget *widget, gpointer user_data)
 {
 	SaveAsData *data;
 	gboolean enable_save;
@@ -115,13 +115,13 @@ on_token_entry_changed (GtkWidget *widget, gpointer user_data)
 }
 
 static void
-on_replace_spaces_check_clicked (GtkWidget *widget, gpointer data)
+on_replace_spaces_check_clicked (CtkWidget *widget, gpointer data)
 {
 	request_preview_update (GTK_WIDGET (data));
 }
 
 static void
-on_counter_spin_changed (GtkWidget *widget, gpointer data)
+on_counter_spin_changed (CtkWidget *widget, gpointer data)
 {
 	request_preview_update (GTK_WIDGET (data));
 }
@@ -129,12 +129,12 @@ on_counter_spin_changed (GtkWidget *widget, gpointer data)
 static void
 prepare_format_combobox (SaveAsData *data)
 {
-	GtkComboBox *combobox;
-	GtkCellRenderer *cell;
+	CtkComboBox *combobox;
+	CtkCellRenderer *cell;
 	GSList *formats;
-	GtkListStore *store;
+	CtkListStore *store;
 	GSList *it;
-	GtkTreeIter iter;
+	CtkTreeIter iter;
 
 	combobox = GTK_COMBO_BOX (data->format_combobox);
 
@@ -180,7 +180,7 @@ destroy_data_cb (gpointer data)
 }
 
 static void
-set_default_values (GtkWidget *dlg, GFile *base_file)
+set_default_values (CtkWidget *dlg, GFile *base_file)
 {
 	SaveAsData *sd;
 
@@ -198,13 +198,13 @@ set_default_values (GtkWidget *dlg, GFile *base_file)
 	request_preview_update (dlg);
 }
 
-GtkWidget*
-eoc_save_as_dialog_new (GtkWindow *main, GList *images, GFile *base_file)
+CtkWidget*
+eoc_save_as_dialog_new (CtkWindow *main, GList *images, GFile *base_file)
 {
-	GtkBuilder  *xml;
-	GtkWidget *dlg;
+	CtkBuilder  *xml;
+	CtkWidget *dlg;
 	SaveAsData *data;
-	GtkWidget *label;
+	CtkWidget *label;
 
 	xml = ctk_builder_new_from_resource ("/org/gnome/eog/ui/eoc-multiple-save-as-dialog.ui");
 	ctk_builder_set_translation_domain (xml, GETTEXT_PACKAGE);
@@ -259,7 +259,7 @@ eoc_save_as_dialog_new (GtkWindow *main, GList *images, GFile *base_file)
 }
 
 EocURIConverter*
-eoc_save_as_dialog_get_converter (GtkWidget *dlg)
+eoc_save_as_dialog_get_converter (CtkWidget *dlg)
 {
 	EocURIConverter *conv;
 

@@ -195,13 +195,13 @@ static ExifTagCategory exif_tag_category_map[] = {
 #define MODEL_COLUMN_VALUE     1
 
 struct _EocMetadataDetailsPrivate {
-    GtkTreeModel *model;
+    CtkTreeModel *model;
 
     GHashTable   *id_path_hash;
     GHashTable   *id_path_hash_mnote;
 };
 
-static char*  set_row_data (GtkTreeStore *store, char *path, char *parent, const char *attribute, const char *value);
+static char*  set_row_data (CtkTreeStore *store, char *path, char *parent, const char *attribute, const char *value);
 
 static void eoc_metadata_details_reset (EocMetadataDetails *exif_details);
 
@@ -235,8 +235,8 @@ static void
 eoc_metadata_details_init (EocMetadataDetails *details)
 {
     EocMetadataDetailsPrivate *priv;
-    GtkTreeViewColumn *column;
-    GtkCellRenderer *cell;
+    CtkTreeViewColumn *column;
+    CtkCellRenderer *cell;
 
     details->priv = eoc_metadata_details_get_instance_private (details);
 
@@ -301,9 +301,9 @@ get_exif_category (ExifEntry *entry)
 #endif
 
 static char*
-set_row_data (GtkTreeStore *store, char *path, char *parent, const char *attribute, const char *value)
+set_row_data (CtkTreeStore *store, char *path, char *parent, const char *attribute, const char *value)
 {
-    GtkTreeIter iter;
+    CtkTreeIter iter;
     gchar *utf_attribute = NULL;
     gchar *utf_value = NULL;
     gboolean iter_valid = FALSE;
@@ -315,8 +315,8 @@ set_row_data (GtkTreeStore *store, char *path, char *parent, const char *attribu
     }
 
     if (!iter_valid) {
-        GtkTreePath *tree_path;
-        GtkTreeIter parent_iter;
+        CtkTreePath *tree_path;
+        CtkTreeIter parent_iter;
         gboolean parent_valid = FALSE;
 
         if (parent != NULL) {
@@ -461,7 +461,7 @@ eoc_exif_entry_get_value (ExifEntry    *e,
 static void
 exif_entry_cb (ExifEntry *entry, gpointer data)
 {
-    GtkTreeStore *store;
+    CtkTreeStore *store;
     EocMetadataDetails *view;
     EocMetadataDetailsPrivate *priv;
     MetadataCategory cat;
@@ -478,7 +478,7 @@ exif_entry_cb (ExifEntry *entry, gpointer data)
 
     store = GTK_TREE_STORE (ctk_tree_view_get_model (GTK_TREE_VIEW (view)));
 
-    /* Take the tag's IFD into account when caching their GtkTreePaths.
+    /* Take the tag's IFD into account when caching their CtkTreePaths.
      * That should fix key collisions for tags that have the same number
      * but are stored in different IFDs. Exif tag numbers are 16-bit
      * values so we should be able to set the high word to the IFD number.
@@ -541,7 +541,7 @@ exif_content_cb (ExifContent *content, gpointer data)
 }
 #endif
 
-GtkWidget *
+CtkWidget *
 eoc_metadata_details_new (void)
 {
     GObject *object;
@@ -627,7 +627,7 @@ static void
 xmp_entry_insert (EocMetadataDetails *view, XmpStringPtr xmp_schema,
                   XmpStringPtr xmp_path, XmpStringPtr xmp_prop)
 {
-    GtkTreeStore *store;
+    CtkTreeStore *store;
     EocMetadataDetailsPrivate *priv;
     MetadataCategory cat;
     char *path;

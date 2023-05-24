@@ -45,10 +45,10 @@ struct _EocFileChooserPrivate
 {
 	CafeDesktopThumbnailFactory *thumb_factory;
 
-	GtkWidget *image;
-	GtkWidget *size_label;
-	GtkWidget *dim_label;
-	GtkWidget *creator_label;
+	CtkWidget *image;
+	CtkWidget *size_label;
+	CtkWidget *dim_label;
+	CtkWidget *creator_label;
 };
 
 G_DEFINE_TYPE_WITH_PRIVATE (EocFileChooser, eoc_file_chooser, GTK_TYPE_FILE_CHOOSER_DIALOG)
@@ -81,10 +81,10 @@ eoc_file_chooser_init (EocFileChooser *chooser)
 }
 
 static void
-response_cb (GtkDialog *dlg, gint id, gpointer data)
+response_cb (CtkDialog *dlg, gint id, gpointer data)
 {
 	char *dir;
-	GtkFileChooserAction action;
+	CtkFileChooserAction action;
 
 	if (id == GTK_RESPONSE_OK) {
 		dir = ctk_file_chooser_get_current_folder (GTK_FILE_CHOOSER (dlg));
@@ -98,7 +98,7 @@ response_cb (GtkDialog *dlg, gint id, gpointer data)
 }
 
 static void
-save_response_cb (GtkDialog *dlg, gint id, gpointer data)
+save_response_cb (CtkDialog *dlg, gint id, gpointer data)
 {
 	GFile *file;
 	GdkPixbufFormat *format;
@@ -111,7 +111,7 @@ save_response_cb (GtkDialog *dlg, gint id, gpointer data)
 	g_object_unref (file);
 
 	if (!format || !gdk_pixbuf_format_is_writable (format)) {
-		GtkWidget *msg_dialog;
+		CtkWidget *msg_dialog;
 
 		msg_dialog = ctk_message_dialog_new (
 						     GTK_WINDOW (dlg),
@@ -140,13 +140,13 @@ eoc_file_chooser_add_filter (EocFileChooser *chooser)
 {
 	GSList *it;
 	GSList *formats;
- 	GtkFileFilter *all_file_filter;
-	GtkFileFilter *all_img_filter;
-	GtkFileFilter *filter;
+ 	CtkFileFilter *all_file_filter;
+	CtkFileFilter *all_img_filter;
+	CtkFileFilter *filter;
 	GSList *filters = NULL;
 	gchar **mime_types, **pattern, *tmp;
 	int i;
-	GtkFileChooserAction action;
+	CtkFileChooserAction action;
 
 	action = ctk_file_chooser_get_action (GTK_FILE_CHOOSER (chooser));
 
@@ -227,7 +227,7 @@ eoc_file_chooser_add_filter (EocFileChooser *chooser)
 }
 
 static void
-set_preview_label (GtkWidget *label, const char *str)
+set_preview_label (CtkWidget *label, const char *str)
 {
 	if (str == NULL) {
 		ctk_widget_hide (GTK_WIDGET (label));
@@ -310,7 +310,7 @@ set_preview_pixbuf (EocFileChooser *chooser, GdkPixbuf *pixbuf, goffset size)
 }
 
 static void
-update_preview_cb (GtkFileChooser *file_chooser, gpointer data)
+update_preview_cb (CtkFileChooser *file_chooser, gpointer data)
 {
 	EocFileChooserPrivate *priv;
 	char *uri;
@@ -396,10 +396,10 @@ update_preview_cb (GtkFileChooser *file_chooser, gpointer data)
 }
 
 static void
-eoc_file_chooser_add_preview (GtkWidget *widget)
+eoc_file_chooser_add_preview (CtkWidget *widget)
 {
 	EocFileChooserPrivate *priv;
-	GtkWidget *vbox;
+	CtkWidget *vbox;
 
 	priv = EOC_FILE_CHOOSER (widget)->priv;
 
@@ -430,10 +430,10 @@ eoc_file_chooser_add_preview (GtkWidget *widget)
 			  G_CALLBACK (update_preview_cb), NULL);
 }
 
-GtkWidget *
-eoc_file_chooser_new (GtkFileChooserAction action)
+CtkWidget *
+eoc_file_chooser_new (CtkFileChooserAction action)
 {
-	GtkWidget *chooser;
+	CtkWidget *chooser;
 	gchar *title = NULL;
 
 	chooser = g_object_new (EOC_TYPE_FILE_CHOOSER,
@@ -496,7 +496,7 @@ eoc_file_chooser_new (GtkFileChooserAction action)
 GdkPixbufFormat *
 eoc_file_chooser_get_format (EocFileChooser *chooser)
 {
-	GtkFileFilter *filter;
+	CtkFileFilter *filter;
 	GdkPixbufFormat* format;
 
 	g_return_val_if_fail (EOC_IS_FILE_CHOOSER (chooser), NULL);

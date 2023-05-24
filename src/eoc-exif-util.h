@@ -37,15 +37,15 @@ G_BEGIN_DECLS
 #define EOC_TYPE_EXIF_DATA eoc_exif_data_get_type()
 
 gchar       *eoc_exif_util_format_date           (const gchar *date);
-void         eoc_exif_util_format_datetime_label (GtkLabel *label,
+void         eoc_exif_util_format_datetime_label (CtkLabel *label,
                                                   ExifData *exif_data,
                                                   gint tag_id,
                                                   const gchar *format);
-void         eoc_exif_util_set_label_text        (GtkLabel *label,
+void         eoc_exif_util_set_label_text        (CtkLabel *label,
                                                   ExifData *exif_data,
                                                   gint tag_id);
 
-void         eoc_exif_util_set_focal_length_label_text (GtkLabel *label,
+void         eoc_exif_util_set_focal_length_label_text (CtkLabel *label,
                                                         ExifData *exif_data);
 
 const gchar *eoc_exif_data_get_value             (ExifData *exif_data,

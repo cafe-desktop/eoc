@@ -82,39 +82,39 @@ typedef enum {
 } EocStartupFlags;
 
 struct _EocWindow {
-	GtkApplicationWindow win;
+	CtkApplicationWindow win;
 
 	EocWindowPrivate *priv;
 };
 
 struct _EocWindowClass {
-	GtkApplicationWindowClass parent_class;
+	CtkApplicationWindowClass parent_class;
 
 	void (* prepared) (EocWindow *window);
 };
 
 GType         eoc_window_get_type  	(void) G_GNUC_CONST;
 
-GtkWidget    *eoc_window_new		(EocStartupFlags  flags);
+CtkWidget    *eoc_window_new		(EocStartupFlags  flags);
 
 EocWindowMode eoc_window_get_mode       (EocWindow       *window);
 
 void          eoc_window_set_mode       (EocWindow       *window,
 					 EocWindowMode    mode);
 
-GtkUIManager *eoc_window_get_ui_manager (EocWindow       *window);
+CtkUIManager *eoc_window_get_ui_manager (EocWindow       *window);
 
 EocListStore *eoc_window_get_store      (EocWindow       *window);
 
-GtkWidget    *eoc_window_get_view       (EocWindow       *window);
+CtkWidget    *eoc_window_get_view       (EocWindow       *window);
 
-GtkWidget    *eoc_window_get_sidebar    (EocWindow       *window);
+CtkWidget    *eoc_window_get_sidebar    (EocWindow       *window);
 
-GtkWidget    *eoc_window_get_thumb_view (EocWindow       *window);
+CtkWidget    *eoc_window_get_thumb_view (EocWindow       *window);
 
-GtkWidget    *eoc_window_get_thumb_nav  (EocWindow       *window);
+CtkWidget    *eoc_window_get_thumb_nav  (EocWindow       *window);
 
-GtkWidget    *eoc_window_get_statusbar  (EocWindow       *window);
+CtkWidget    *eoc_window_get_statusbar  (EocWindow       *window);
 
 EocImage     *eoc_window_get_image      (EocWindow       *window);
 
@@ -124,7 +124,7 @@ void          eoc_window_open_file_list	(EocWindow       *window,
 gboolean      eoc_window_is_empty 	(EocWindow       *window);
 
 void          eoc_window_reload_image (EocWindow *window);
-GtkWidget    *eoc_window_get_properties_dialog (EocWindow *window);
+CtkWidget    *eoc_window_get_properties_dialog (EocWindow *window);
 G_END_DECLS
 
 #endif

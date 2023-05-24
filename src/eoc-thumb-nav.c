@@ -53,17 +53,17 @@ struct _EocThumbNavPrivate {
 	gint              scroll_pos;
 	gint              scroll_id;
 
-	GtkWidget        *button_left;
-	GtkWidget        *button_right;
-	GtkWidget        *sw;
-	GtkWidget        *thumbview;
-	GtkAdjustment    *adj;
+	CtkWidget        *button_left;
+	CtkWidget        *button_right;
+	CtkWidget        *sw;
+	CtkWidget        *thumbview;
+	CtkAdjustment    *adj;
 };
 
 G_DEFINE_TYPE_WITH_PRIVATE (EocThumbNav, eoc_thumb_nav, GTK_TYPE_BOX);
 
 static gboolean
-eoc_thumb_nav_scroll_event (GtkWidget *widget, GdkEventScroll *event, gpointer user_data)
+eoc_thumb_nav_scroll_event (CtkWidget *widget, GdkEventScroll *event, gpointer user_data)
 {
 	EocThumbNav *nav = EOC_THUMB_NAV (user_data);
 	gint inc = EOC_THUMB_NAV_SCROLL_INC * 3;
@@ -112,7 +112,7 @@ eoc_thumb_nav_scroll_event (GtkWidget *widget, GdkEventScroll *event, gpointer u
 }
 
 static void
-eoc_thumb_nav_adj_changed (GtkAdjustment *adj, gpointer user_data)
+eoc_thumb_nav_adj_changed (CtkAdjustment *adj, gpointer user_data)
 {
 	EocThumbNav *nav;
 	EocThumbNavPrivate *priv;
@@ -129,7 +129,7 @@ eoc_thumb_nav_adj_changed (GtkAdjustment *adj, gpointer user_data)
 }
 
 static void
-eoc_thumb_nav_adj_value_changed (GtkAdjustment *adj, gpointer user_data)
+eoc_thumb_nav_adj_value_changed (CtkAdjustment *adj, gpointer user_data)
 {
 	EocThumbNav *nav;
 	EocThumbNavPrivate *priv;
@@ -152,7 +152,7 @@ static gboolean
 eoc_thumb_nav_scroll_step (gpointer user_data)
 {
 	EocThumbNav *nav = EOC_THUMB_NAV (user_data);
-	GtkAdjustment *adj = nav->priv->adj;
+	CtkAdjustment *adj = nav->priv->adj;
 	gint delta;
 
 	if (nav->priv->scroll_pos < 10)
@@ -188,7 +188,7 @@ eoc_thumb_nav_scroll_step (gpointer user_data)
 }
 
 static void
-eoc_thumb_nav_button_clicked (GtkButton *button, EocThumbNav *nav)
+eoc_thumb_nav_button_clicked (CtkButton *button, EocThumbNav *nav)
 {
 	nav->priv->scroll_pos = 0;
 
@@ -200,7 +200,7 @@ eoc_thumb_nav_button_clicked (GtkButton *button, EocThumbNav *nav)
 }
 
 static void
-eoc_thumb_nav_start_scroll (GtkButton *button, EocThumbNav *nav)
+eoc_thumb_nav_start_scroll (CtkButton *button, EocThumbNav *nav)
 {
 	nav->priv->scroll_dir = ctk_widget_get_direction (GTK_WIDGET (button)) == GTK_TEXT_DIR_LTR ?
 		GTK_WIDGET (button) == nav->priv->button_right :
@@ -212,7 +212,7 @@ eoc_thumb_nav_start_scroll (GtkButton *button, EocThumbNav *nav)
 }
 
 static void
-eoc_thumb_nav_stop_scroll (GtkButton *button, EocThumbNav *nav)
+eoc_thumb_nav_stop_scroll (CtkButton *button, EocThumbNav *nav)
 {
 	if (nav->priv->scroll_id > 0) {
 		g_source_remove (nav->priv->scroll_id);
@@ -337,7 +337,7 @@ static void
 eoc_thumb_nav_init (EocThumbNav *nav)
 {
 	EocThumbNavPrivate *priv;
-	GtkWidget *arrow;
+	CtkWidget *arrow;
 
 	ctk_orientable_set_orientation (GTK_ORIENTABLE (nav),
 					GTK_ORIENTATION_HORIZONTAL);
@@ -444,8 +444,8 @@ eoc_thumb_nav_init (EocThumbNav *nav)
  *
  * Returns: a new #EocThumbNav object.
  **/
-GtkWidget *
-eoc_thumb_nav_new (GtkWidget       *thumbview,
+CtkWidget *
+eoc_thumb_nav_new (CtkWidget       *thumbview,
 		   EocThumbNavMode  mode,
 		   gboolean         show_buttons)
 {

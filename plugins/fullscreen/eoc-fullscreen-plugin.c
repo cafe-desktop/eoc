@@ -27,7 +27,7 @@ enum {
 };
 
 static gboolean
-on_button_press (GtkWidget      *button,
+on_button_press (CtkWidget      *button,
                  GdkEventButton *event,
                  EocWindow      *window)
 {
@@ -115,7 +115,7 @@ static void
 eoc_fullscreen_plugin_activate (EocWindowActivatable *activatable)
 {
 	EocFullscreenPlugin *plugin = EOC_FULLSCREEN_PLUGIN (activatable);
-	GtkWidget *view = eoc_window_get_view (plugin->window);
+	CtkWidget *view = eoc_window_get_view (plugin->window);
 
 	eoc_debug (DEBUG_PLUGINS);
 
@@ -129,7 +129,7 @@ static void
 eoc_fullscreen_plugin_deactivate (EocWindowActivatable *activatable)
 {
 	EocFullscreenPlugin *plugin = EOC_FULLSCREEN_PLUGIN (activatable);
-	GtkWidget *view = eoc_window_get_view (plugin->window);
+	CtkWidget *view = eoc_window_get_view (plugin->window);
 
 	g_signal_handler_disconnect (view, plugin->signal_id);
 }

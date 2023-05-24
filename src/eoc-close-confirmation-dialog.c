@@ -63,8 +63,8 @@ struct _EocCloseConfirmationDialogPrivate
 
 	GList       *selected_images;
 
-	GtkTreeModel *list_store;
-	GtkCellRenderer *toggle_renderer;
+	CtkTreeModel *list_store;
+	CtkCellRenderer *toggle_renderer;
 };
 
 #define GET_MODE(priv) (((priv->unsaved_images != NULL) && \
@@ -78,13 +78,13 @@ G_DEFINE_TYPE_WITH_PRIVATE (EocCloseConfirmationDialog, eoc_close_confirmation_d
 static void 	 set_unsaved_image 		(EocCloseConfirmationDialog *dlg,
 						 const GList                  *list);
 
-static GList 	*get_selected_imgs 		(GtkTreeModel                 *store);
+static GList 	*get_selected_imgs 		(CtkTreeModel                 *store);
 
 static GdkPixbuf *
 eoc_close_confirmation_dialog_get_icon (const gchar *icon_name)
 {
 	GError *error = NULL;
-	GtkIconTheme *icon_theme;
+	CtkIconTheme *icon_theme;
 	GdkPixbuf *pixbuf;
 
 	icon_theme = ctk_icon_theme_get_default ();
@@ -272,11 +272,11 @@ eoc_close_confirmation_dialog_class_init (EocCloseConfirmationDialogClass *klass
 }
 
 static GList *
-get_selected_imgs (GtkTreeModel *store)
+get_selected_imgs (CtkTreeModel *store)
 {
 	GList       *list;
 	gboolean     valid;
-	GtkTreeIter  iter;
+	CtkTreeIter  iter;
 
 	list = NULL;
 	valid = ctk_tree_model_get_iter_first (store, &iter);
@@ -309,12 +309,12 @@ eoc_close_confirmation_dialog_get_selected_images (EocCloseConfirmationDialog *d
 	return g_list_copy (dlg->priv->selected_images);
 }
 
-GtkWidget *
-eoc_close_confirmation_dialog_new (GtkWindow *parent,
+CtkWidget *
+eoc_close_confirmation_dialog_new (CtkWindow *parent,
 				   GList     *unsaved_images)
 {
-	GtkWidget *dlg;
-	GtkWindowGroup *wg;
+	CtkWidget *dlg;
+	CtkWindowGroup *wg;
 
 	g_return_val_if_fail (unsaved_images != NULL, NULL);
 
@@ -340,11 +340,11 @@ eoc_close_confirmation_dialog_new (GtkWindow *parent,
 	return dlg;
 }
 
-GtkWidget *
-eoc_close_confirmation_dialog_new_single (GtkWindow     *parent,
+CtkWidget *
+eoc_close_confirmation_dialog_new_single (CtkWindow     *parent,
 					  EocImage	*image)
 {
-	GtkWidget *dlg;
+	CtkWidget *dlg;
 	GList *unsaved_images;
 	g_return_val_if_fail (image != NULL, NULL);
 
@@ -371,11 +371,11 @@ get_text_secondary_label (EocImage *image)
 static void
 build_single_img_dialog (EocCloseConfirmationDialog *dlg)
 {
-	GtkWidget     *hbox;
-	GtkWidget     *vbox;
-	GtkWidget     *primary_label;
-	GtkWidget     *secondary_label;
-	GtkWidget     *image;
+	CtkWidget     *hbox;
+	CtkWidget     *vbox;
+	CtkWidget     *primary_label;
+	CtkWidget     *secondary_label;
+	CtkWidget     *image;
 	EocImage      *img;
 	const gchar   *image_name;
 	gchar         *str;
@@ -441,9 +441,9 @@ build_single_img_dialog (EocCloseConfirmationDialog *dlg)
 }
 
 static void
-populate_model (GtkTreeModel *store, GList *imgs)
+populate_model (CtkTreeModel *store, GList *imgs)
 {
-	GtkTreeIter iter;
+	CtkTreeIter iter;
 
 	while (imgs != NULL)
 	{
@@ -480,10 +480,10 @@ populate_model (GtkTreeModel *store, GList *imgs)
 }
 
 static void
-save_toggled (GtkCellRendererToggle *renderer, gchar *path_str, GtkTreeModel *store)
+save_toggled (CtkCellRendererToggle *renderer, gchar *path_str, CtkTreeModel *store)
 {
-	GtkTreePath *path = ctk_tree_path_new_from_string (path_str);
-	GtkTreeIter iter;
+	CtkTreePath *path = ctk_tree_path_new_from_string (path_str);
+	CtkTreeIter iter;
 	gboolean active;
 
 	ctk_tree_model_get_iter (store, &iter, path);
@@ -497,13 +497,13 @@ save_toggled (GtkCellRendererToggle *renderer, gchar *path_str, GtkTreeModel *st
 	ctk_tree_path_free (path);
 }
 
-static GtkWidget *
+static CtkWidget *
 create_treeview (EocCloseConfirmationDialogPrivate *priv)
 {
-	GtkListStore *store;
-	GtkWidget *treeview;
-	GtkCellRenderer *renderer;
-	GtkTreeViewColumn *column;
+	CtkListStore *store;
+	CtkWidget *treeview;
+	CtkCellRenderer *renderer;
+	CtkTreeViewColumn *column;
 
 	treeview = ctk_tree_view_new ();
 	ctk_tree_view_set_headers_visible (GTK_TREE_VIEW (treeview), FALSE);
@@ -557,15 +557,15 @@ static void
 build_multiple_imgs_dialog (EocCloseConfirmationDialog *dlg)
 {
 	EocCloseConfirmationDialogPrivate *priv;
-	GtkWidget *hbox;
-	GtkWidget *image;
-	GtkWidget *vbox;
-	GtkWidget *primary_label;
-	GtkWidget *vbox2;
-	GtkWidget *select_label;
-	GtkWidget *scrolledwindow;
-	GtkWidget *treeview;
-	GtkWidget *secondary_label;
+	CtkWidget *hbox;
+	CtkWidget *image;
+	CtkWidget *vbox;
+	CtkWidget *primary_label;
+	CtkWidget *vbox2;
+	CtkWidget *select_label;
+	CtkWidget *scrolledwindow;
+	CtkWidget *treeview;
+	CtkWidget *secondary_label;
 	gchar     *str;
 	gchar     *markup_str;
 

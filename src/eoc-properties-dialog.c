@@ -63,46 +63,46 @@ struct _EocPropertiesDialogPrivate {
 	gboolean        update_page;
 	EocPropertiesDialogPage current_page;
 
-	GtkWidget      *notebook;
-	GtkWidget      *close_button;
-	GtkWidget      *next_button;
-	GtkWidget      *previous_button;
+	CtkWidget      *notebook;
+	CtkWidget      *close_button;
+	CtkWidget      *next_button;
+	CtkWidget      *previous_button;
 
-	GtkWidget      *general_box;
-	GtkWidget      *thumbnail_image;
-	GtkWidget      *name_label;
-	GtkWidget      *width_label;
-	GtkWidget      *height_label;
-	GtkWidget      *type_label;
-	GtkWidget      *bytes_label;
-	GtkWidget      *folder_button;
+	CtkWidget      *general_box;
+	CtkWidget      *thumbnail_image;
+	CtkWidget      *name_label;
+	CtkWidget      *width_label;
+	CtkWidget      *height_label;
+	CtkWidget      *type_label;
+	CtkWidget      *bytes_label;
+	CtkWidget      *folder_button;
 	gchar          *folder_button_uri;
 #ifdef HAVE_EXIF
-	GtkWidget      *exif_aperture_label;
-	GtkWidget      *exif_exposure_label;
-	GtkWidget      *exif_focal_label;
-	GtkWidget      *exif_flash_label;
-	GtkWidget      *exif_iso_label;
-	GtkWidget      *exif_metering_label;
-	GtkWidget      *exif_model_label;
-	GtkWidget      *exif_date_label;
+	CtkWidget      *exif_aperture_label;
+	CtkWidget      *exif_exposure_label;
+	CtkWidget      *exif_focal_label;
+	CtkWidget      *exif_flash_label;
+	CtkWidget      *exif_iso_label;
+	CtkWidget      *exif_metering_label;
+	CtkWidget      *exif_model_label;
+	CtkWidget      *exif_date_label;
 #endif
 #ifdef HAVE_EXEMPI
-	GtkWidget      *xmp_location_label;
-	GtkWidget      *xmp_description_label;
-	GtkWidget      *xmp_keywords_label;
-	GtkWidget      *xmp_creator_label;
-	GtkWidget      *xmp_rights_label;
+	CtkWidget      *xmp_location_label;
+	CtkWidget      *xmp_description_label;
+	CtkWidget      *xmp_keywords_label;
+	CtkWidget      *xmp_creator_label;
+	CtkWidget      *xmp_rights_label;
 #else
-	GtkWidget      *xmp_box;
-	GtkWidget      *xmp_box_label;
+	CtkWidget      *xmp_box;
+	CtkWidget      *xmp_box_label;
 #endif
 #if HAVE_METADATA
-	GtkWidget      *metadata_box;
-	GtkWidget      *metadata_details_expander;
-	GtkWidget      *metadata_details;
-	GtkWidget      *metadata_details_box;
-	GtkWidget      *metadata_details_sw;
+	CtkWidget      *metadata_box;
+	CtkWidget      *metadata_details_expander;
+	CtkWidget      *metadata_details;
+	CtkWidget      *metadata_details_box;
+	CtkWidget      *metadata_details_sw;
 #endif
 
 	gboolean        netbook_mode;
@@ -227,7 +227,7 @@ static void
 eoc_xmp_set_label (XmpPtr xmp,
 		   const char *ns,
 		   const char *propname,
-		   GtkWidget *w)
+		   CtkWidget *w)
 {
 	uint32_t options;
 
@@ -283,7 +283,7 @@ pd_update_metadata_tab (EocPropertiesDialog *prop_dlg,
 			EocImage            *image)
 {
 	EocPropertiesDialogPrivate *priv;
-	GtkNotebook *notebook;
+	CtkNotebook *notebook;
 #if HAVE_EXIF
 	ExifData    *exif_data;
 #endif
@@ -425,9 +425,9 @@ pd_resize_dialog (gpointer user_data)
 }
 
 static void
-pd_exif_details_activated_cb (GtkExpander *expander,
+pd_exif_details_activated_cb (CtkExpander *expander,
 			      GParamSpec *param_spec,
-			      GtkWidget *dialog)
+			      CtkWidget *dialog)
 {
 	gboolean expanded;
 
@@ -441,10 +441,10 @@ pd_exif_details_activated_cb (GtkExpander *expander,
 #endif
 
 static void
-pd_folder_button_clicked_cb (GtkButton *button, gpointer data)
+pd_folder_button_clicked_cb (CtkButton *button, gpointer data)
 {
 	EocPropertiesDialogPrivate *priv = EOC_PROPERTIES_DIALOG (data)->priv;
-	GtkWindow *window;
+	CtkWindow *window;
 	guint32 timestamp;
 
 	if (!priv->folder_button_uri)
@@ -457,7 +457,7 @@ pd_folder_button_clicked_cb (GtkButton *button, gpointer data)
 }
 
 static gboolean
-eoc_properties_dialog_page_switch (GtkNotebook     *notebook,
+eoc_properties_dialog_page_switch (CtkNotebook     *notebook,
 				   gpointer         page,
 				   guint            page_index,
 				   EocPropertiesDialog *prop_dlg)
@@ -607,7 +607,7 @@ eoc_properties_dialog_class_init (EocPropertiesDialogClass *klass)
 							      G_PARAM_READWRITE |
 							      G_PARAM_STATIC_STRINGS));
 
-	GtkWidgetClass *wklass = (GtkWidgetClass*) klass;
+	CtkWidgetClass *wklass = (CtkWidgetClass*) klass;
 
 	ctk_widget_class_set_template_from_resource (wklass,
 	                                             "/org/cafe/eoc/ui/eoc-image-properties-dialog.ui");
@@ -724,7 +724,7 @@ eoc_properties_dialog_init (EocPropertiesDialog *prop_dlg)
 {
 	EocPropertiesDialogPrivate *priv;
 #if HAVE_METADATA
-	GtkWidget *sw;
+	CtkWidget *sw;
 #endif
 
 	prop_dlg->priv = eoc_properties_dialog_get_instance_private (prop_dlg);
@@ -803,11 +803,11 @@ eoc_properties_dialog_init (EocPropertiesDialog *prop_dlg)
  * Returns: (transfer full) (type EocPropertiesDialog): a new #EocPropertiesDialog
  **/
 
-GtkWidget *
-eoc_properties_dialog_new (GtkWindow    *parent,
+CtkWidget *
+eoc_properties_dialog_new (CtkWindow    *parent,
 			   EocThumbView *thumbview,
-			   GtkAction    *next_image_action,
-			   GtkAction    *previous_image_action)
+			   CtkAction    *next_image_action,
+			   CtkAction    *previous_image_action)
 {
 	GObject *prop_dlg;
 

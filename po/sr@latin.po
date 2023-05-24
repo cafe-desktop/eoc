@@ -397,7 +397,7 @@ msgid ""
 msgstr ""
 "Boja koja se koristi za ispunjavanje oblasti iza slike. Ukoliko nije "
 "postavljen ključ use-background-color (koristi boju pozadine) iza slike će "
-"biti prikazana podrazumevana boja iz trenutne Gtk+ teme."
+"biti prikazana podrazumevana boja iz trenutne Ctk+ teme."
 
 #: data/org.cafe.eoc.gschema.xml.in:21
 msgid "Use a custom background color"
@@ -411,7 +411,7 @@ msgid ""
 msgstr ""
 "Ukoliko uključite ovu opciju, boja postavljena unutar ključa background-"
 "color će biti postavljena iza slike. Ukoliko ovaj ključ nije postavljen biće"
-" iskorišćena boja iz trenutne Gtk teme."
+" iskorišćena boja iz trenutne Ctk teme."
 
 #: data/org.cafe.eoc.gschema.xml.in:26
 msgid "Interpolate Image"

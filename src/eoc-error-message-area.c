@@ -36,18 +36,18 @@
 #include <ctk/ctk.h>
 
 static void
-set_message_area_text_and_icon (GtkInfoBar   *message_area,
+set_message_area_text_and_icon (CtkInfoBar   *message_area,
 				const gchar  *icon_name,
 				const gchar  *primary_text,
 				const gchar  *secondary_text)
 {
-	GtkWidget *hbox_content;
-	GtkWidget *image;
-	GtkWidget *vbox;
+	CtkWidget *hbox_content;
+	CtkWidget *image;
+	CtkWidget *vbox;
 	gchar *primary_markup;
 	gchar *secondary_markup;
-	GtkWidget *primary_label;
-	GtkWidget *secondary_label;
+	CtkWidget *primary_label;
+	CtkWidget *secondary_label;
 
 	hbox_content = ctk_box_new (GTK_ORIENTATION_HORIZONTAL, 8);
 	ctk_widget_show (hbox_content);
@@ -97,12 +97,12 @@ set_message_area_text_and_icon (GtkInfoBar   *message_area,
 	ctk_box_pack_start (GTK_BOX (ctk_info_bar_get_content_area (GTK_INFO_BAR (message_area))), hbox_content, TRUE, TRUE, 0);
 }
 
-static GtkWidget *
+static CtkWidget *
 create_error_message_area (const gchar *primary_text,
 			   const gchar *secondary_text,
 			   gboolean     recoverable)
 {
-	GtkWidget *message_area;
+	CtkWidget *message_area;
 
 	if (recoverable)
 		message_area = ctk_info_bar_new_with_buttons (_("_Retry"),
@@ -129,13 +129,13 @@ create_error_message_area (const gchar *primary_text,
  *
  *
  *
- * Returns: (transfer full): a new #GtkInfoArea
+ * Returns: (transfer full): a new #CtkInfoArea
  **/
-GtkWidget *
+CtkWidget *
 eoc_image_load_error_message_area_new (const gchar  *caption,
 				       const GError *error)
 {
-	GtkWidget *message_area;
+	CtkWidget *message_area;
 	gchar *error_message = NULL;
 	gchar *message_details = NULL;
 	gchar *pango_escaped_caption = NULL;
@@ -146,7 +146,7 @@ eoc_image_load_error_message_area_new (const gchar  *caption,
 	/* Escape the caption string with respect to pango markup.
 	   This is necessary because otherwise characters like "&" will
 	   be interpreted as the beginning of a pango entity inside
-	   the message area GtkLabel. */
+	   the message area CtkLabel. */
 	pango_escaped_caption = g_markup_escape_text (caption, -1);
 	error_message = g_strdup_printf (_("Could not load image '%s'."),
 					 pango_escaped_caption);
@@ -170,12 +170,12 @@ eoc_image_load_error_message_area_new (const gchar  *caption,
  *
  *
  *
- * Returns: (transfer full): a new #GtkInfoBar
+ * Returns: (transfer full): a new #CtkInfoBar
  **/
-GtkWidget *
+CtkWidget *
 eoc_no_images_error_message_area_new (GFile *file)
 {
-	GtkWidget *message_area;
+	CtkWidget *message_area;
 	gchar *error_message = NULL;
 
 	if (file != NULL) {
@@ -188,7 +188,7 @@ eoc_no_images_error_message_area_new (GFile *file)
 		/* Escape the URI string with respect to pango markup.
 		   This is necessary because the URI string can contain
 		   for example "&" which will otherwise be interpreted
-		   as a pango markup entity when inserted into a GtkLabel. */
+		   as a pango markup entity when inserted into a CtkLabel. */
 		pango_escaped_str = g_markup_escape_text (unescaped_str, -1);
 		error_message = g_strdup_printf (_("No images found in '%s'."),
 						 pango_escaped_str);

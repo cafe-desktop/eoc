@@ -226,8 +226,8 @@ eoc_clipboard_handler_new (EocImage *img)
 }
 
 static void
-eoc_clipboard_handler_get_func (GtkClipboard *clipboard,
-				GtkSelectionData *selection,
+eoc_clipboard_handler_get_func (CtkClipboard *clipboard,
+				CtkSelectionData *selection,
 				guint info, gpointer owner)
 {
 	EocClipboardHandler *handler;
@@ -269,7 +269,7 @@ eoc_clipboard_handler_get_func (GtkClipboard *clipboard,
 }
 
 static void
-eoc_clipboard_handler_clear_func (GtkClipboard *clipboard, gpointer owner)
+eoc_clipboard_handler_clear_func (CtkClipboard *clipboard, gpointer owner)
 {
 	g_return_if_fail (EOC_IS_CLIPBOARD_HANDLER (owner));
 
@@ -278,10 +278,10 @@ eoc_clipboard_handler_clear_func (GtkClipboard *clipboard, gpointer owner)
 
 void
 eoc_clipboard_handler_copy_to_clipboard (EocClipboardHandler *handler,
-					 GtkClipboard *clipboard)
+					 CtkClipboard *clipboard)
 {
-	GtkTargetList *tlist;
-	GtkTargetEntry *targets;
+	CtkTargetList *tlist;
+	CtkTargetEntry *targets;
 	gint n_targets = 0;
 	gboolean set = FALSE;
 
