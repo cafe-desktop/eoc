@@ -63,7 +63,7 @@ struct _EocThumbNavPrivate {
 G_DEFINE_TYPE_WITH_PRIVATE (EocThumbNav, eoc_thumb_nav, CTK_TYPE_BOX);
 
 static gboolean
-eoc_thumb_nav_scroll_event (CtkWidget *widget, GdkEventScroll *event, gpointer user_data)
+eoc_thumb_nav_scroll_event (CtkWidget *widget, CdkEventScroll *event, gpointer user_data)
 {
 	EocThumbNav *nav = EOC_THUMB_NAV (user_data);
 	gint inc = EOC_THUMB_NAV_SCROLL_INC * 3;
@@ -85,7 +85,7 @@ eoc_thumb_nav_scroll_event (CtkWidget *widget, GdkEventScroll *event, gpointer u
 	{
 		/* Compatibility code to catch smooth events from mousewheels */
 		gdouble x_delta, y_delta;
-		gboolean set = cdk_event_get_scroll_deltas ((GdkEvent*)event,
+		gboolean set = cdk_event_get_scroll_deltas ((CdkEvent*)event,
 							    &x_delta, &y_delta);
 
 		/* Propagate horizontal smooth scroll events further,

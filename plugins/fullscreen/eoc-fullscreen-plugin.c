@@ -28,7 +28,7 @@ enum {
 
 static gboolean
 on_button_press (CtkWidget      *button,
-                 GdkEventButton *event,
+                 CdkEventButton *event,
                  EocWindow      *window)
 {
 	if (event->button == 1 && event->type == GDK_2BUTTON_PRESS)

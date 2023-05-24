@@ -138,7 +138,7 @@ void              eoc_image_data_ref                 (EocImage   *img);
 void              eoc_image_data_unref               (EocImage   *img);
 
 void              eoc_image_set_thumbnail            (EocImage   *img,
-					              GdkPixbuf  *pixbuf);
+					              CdkPixbuf  *pixbuf);
 
 gboolean          eoc_image_save_as_by_info          (EocImage   *img,
 		      			              EocImageSaveInfo *source,
@@ -149,9 +149,9 @@ gboolean          eoc_image_save_by_info             (EocImage   *img,
 					              EocImageSaveInfo *source,
 					              GError    **error);
 
-GdkPixbuf*        eoc_image_get_pixbuf               (EocImage   *img);
+CdkPixbuf*        eoc_image_get_pixbuf               (EocImage   *img);
 
-GdkPixbuf*        eoc_image_get_thumbnail            (EocImage   *img);
+CdkPixbuf*        eoc_image_get_thumbnail            (EocImage   *img);
 
 void              eoc_image_get_size                 (EocImage   *img,
 					              gint       *width,

@@ -49,7 +49,7 @@ static EocImage* eoc_thumb_view_get_image_from_path (EocThumbView      *thumbvie
 						     CtkTreePath       *path);
 
 static void      eoc_thumb_view_popup_menu          (EocThumbView      *widget,
-						     GdkEventButton    *event);
+						     CdkEventButton    *event);
 
 static void      eoc_thumb_view_update_columns (EocThumbView *view);
 
@@ -67,7 +67,7 @@ thumbview_on_parent_set_cb (CtkWidget *widget,
 
 static void
 thumbview_on_drag_data_get_cb (CtkWidget        *widget,
-			       GdkDragContext   *drag_context,
+			       CdkDragContext   *drag_context,
 			       CtkSelectionData *data,
 			       guint             info,
 			       guint             time,
@@ -402,7 +402,7 @@ thumbview_on_parent_set_cb (CtkWidget *widget,
 }
 
 static gboolean
-thumbview_on_button_press_event_cb (CtkWidget *thumbview, GdkEventButton *event,
+thumbview_on_button_press_event_cb (CtkWidget *thumbview, CdkEventButton *event,
 				    gpointer user_data)
 {
 	CtkTreePath *path;
@@ -434,7 +434,7 @@ thumbview_on_button_press_event_cb (CtkWidget *thumbview, GdkEventButton *event,
 
 static void
 thumbview_on_drag_data_get_cb (CtkWidget        *widget,
-			       GdkDragContext   *drag_context,
+			       CdkDragContext   *drag_context,
 			       CtkSelectionData *data,
 			       guint             info,
 			       guint             time,
@@ -1056,10 +1056,10 @@ eoc_thumb_view_set_thumbnail_popup (EocThumbView *thumbview,
 
 
 static void
-eoc_thumb_view_popup_menu (EocThumbView *thumbview, GdkEventButton *event)
+eoc_thumb_view_popup_menu (EocThumbView *thumbview, CdkEventButton *event)
 {
 	g_return_if_fail (event != NULL);
 
 	ctk_menu_popup_at_pointer (CTK_MENU (thumbview->priv->menu),
-	                           (const GdkEvent*) event);
+	                           (const CdkEvent*) event);
 }

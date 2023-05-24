@@ -50,7 +50,7 @@
   * EocMetadataReaderPng: Use built-in SRGB profile for matching cHRM/gAMA
   * EocMetadataReaderPNG: Only build profile from cHRM if gAMA is present
   * Assume sRGB if no display profile is set
-  * EocImage: Check GdkPixbuf for an ICC profile before falling back to sRGB
+  * EocImage: Check CdkPixbuf for an ICC profile before falling back to sRGB
   * Assume sRGB when image doesn't have an ICC profile attached
   * Remove trailing whitespaces
 
@@ -158,7 +158,7 @@
   * Place GPS Exif tags into their own subcategory
   * Reformat Exif tags for GPS position to be better understandable
   * Make sure GPS Exif tags are named and ordered correctly
-  * Use GdkPixbuf's "orientation" feature as fallback for autorotation
+  * Use CdkPixbuf's "orientation" feature as fallback for autorotation
   * EogScrollView: Implement simple two-pass filtering
   * EocScrollView: Use better downscaling filter
   * Remove unneeded finalize() from EocListStore
@@ -235,7 +235,7 @@
   * EocPropertiesDialog: Fix deprecation warnings
   * EocThumbNav: Fix deprecated function warning
   * EocScrollView: Replace deprecated ctk_menu_popup function
-  * EocScrollView: Switch from CtkDeviceManager to GdkSeat
+  * EocScrollView: Switch from CtkDeviceManager to CdkSeat
   * fix typo in function annotation
   * use different css files for < ctk+=3.20
   * Translations update
@@ -250,7 +250,7 @@
   * EocFileChooser: Use CafeThumbnailFactory to create preview image
   * EocPropertiesDialog: Allow RGBA for transparent background color
   * preferences-ui: drop usage of CafeColorButton
-  * EocScrollView: Switch to GdkRGBA for background and transparent colors
+  * EocScrollView: Switch to CdkRGBA for background and transparent colors
   * EocPrintPreview: Avoid unnecessary color parsing
   * Fix a few CtkStock deprecations
   * EocCloseConfirmationDialog: replace deprecated CTK_STOCK_DIALOG_WARNING

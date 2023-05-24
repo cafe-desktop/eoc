@@ -404,7 +404,7 @@ eoc_image_real_transform (EocImage     *img,
 			  EocJob       *job)
 {
 	EocImagePrivate *priv;
-	GdkPixbuf *transformed;
+	CdkPixbuf *transformed;
 	gboolean modified = FALSE;
 
 	g_return_if_fail (EOC_IS_IMAGE (img));
@@ -474,7 +474,7 @@ eoc_image_emit_size_prepared (EocImage *img)
 }
 
 static void
-eoc_image_size_prepared (GdkPixbufLoader *loader,
+eoc_image_size_prepared (CdkPixbufLoader *loader,
 			 gint             width,
 			 gint             height,
 			 gpointer         data)
@@ -533,7 +533,7 @@ eoc_image_needs_transformation (EocImage *img)
 static gboolean
 eoc_image_apply_transformations (EocImage *img, GError **error)
 {
-	GdkPixbuf *transformed = NULL;
+	CdkPixbuf *transformed = NULL;
 	EocTransform *composition = NULL;
 	EocImagePrivate *priv;
 
@@ -638,7 +638,7 @@ eoc_image_apply_display_profile (EocImage *img, cmsHPROFILE screen)
 	}
 
 	if (priv->profile == NULL) {
-		/* Check whether GdkPixbuf was able to extract a profile */
+		/* Check whether CdkPixbuf was able to extract a profile */
 		const char* data = cdk_pixbuf_get_option (priv->image,
 		                                          "icc-profile");
 
@@ -650,7 +650,7 @@ eoc_image_apply_display_profile (EocImage *img, cmsHPROFILE screen)
 			if (profile_data && profile_size > 0) {
 				eoc_debug_message (DEBUG_LCMS,
 				                   "Using ICC profile "
-				                   "extracted by GdkPixbuf");
+				                   "extracted by CdkPixbuf");
 				priv->profile =
 					cmsOpenProfileFromMem(profile_data,
 					                      profile_size);
@@ -738,7 +738,7 @@ eoc_image_set_orientation (EocImage *img)
 	} else
 #endif
 	{
-		GdkPixbuf *pbuf;
+		CdkPixbuf *pbuf;
 
 		pbuf = eoc_image_get_pixbuf (img);
 
@@ -890,9 +890,9 @@ eoc_image_real_load (EocImage *img,
 	EocImagePrivate *priv;
 	GFileInputStream *input_stream;
 	EocMetadataReader *md_reader = NULL;
-	GdkPixbufFormat *format;
+	CdkPixbufFormat *format;
 	gchar *mime_type;
-	GdkPixbufLoader *loader = NULL;
+	CdkPixbufLoader *loader = NULL;
 	guchar *buffer;
 	goffset bytes_read, bytes_read_total = 0;
 	gboolean failed = FALSE;
@@ -1299,7 +1299,7 @@ eoc_image_load (EocImage *img, EocImageData data2read, EocJob *job, GError **err
 }
 
 void
-eoc_image_set_thumbnail (EocImage *img, GdkPixbuf *thumbnail)
+eoc_image_set_thumbnail (EocImage *img, CdkPixbuf *thumbnail)
 {
 	EocImagePrivate *priv;
 
@@ -1332,14 +1332,14 @@ eoc_image_set_thumbnail (EocImage *img, GdkPixbuf *thumbnail)
  * eoc_image_get_pixbuf:
  * @img: a #EocImage
  *
- * Gets the #GdkPixbuf of the image
+ * Gets the #CdkPixbuf of the image
  *
- * Returns: (transfer full): a #GdkPixbuf
+ * Returns: (transfer full): a #CdkPixbuf
  **/
-GdkPixbuf *
+CdkPixbuf *
 eoc_image_get_pixbuf (EocImage *img)
 {
-	GdkPixbuf *image = NULL;
+	CdkPixbuf *image = NULL;
 
 	g_return_val_if_fail (EOC_IS_IMAGE (img), NULL);
 
@@ -1370,9 +1370,9 @@ eoc_image_get_profile (EocImage *img)
  *
  * Gets the thumbnail pixbuf for @img
  *
- * Returns: (transfer full): a #GdkPixbuf with a thumbnail
+ * Returns: (transfer full): a #CdkPixbuf with a thumbnail
  **/
-GdkPixbuf *
+CdkPixbuf *
 eoc_image_get_thumbnail (EocImage *img)
 {
 	g_return_val_if_fail (EOC_IS_IMAGE (img), NULL);
@@ -2228,7 +2228,7 @@ eoc_image_get_supported_mime_types (void)
 
 		for (it = format_list; it != NULL; it = it->next) {
 			mime_types =
-				cdk_pixbuf_format_get_mime_types ((GdkPixbufFormat *) it->data);
+				cdk_pixbuf_format_get_mime_types ((CdkPixbufFormat *) it->data);
 
 			for (i = 0; mime_types[i] != NULL; i++) {
 				supported_mime_types =
@@ -2287,7 +2287,7 @@ eoc_image_iter_advance (EocImage *img)
 	 	g_object_ref (priv->image);
 		/* keep the transformation over time */
 		if (EOC_IS_TRANSFORM (priv->trans)) {
-			GdkPixbuf* transformed = eoc_transform_apply (priv->trans, priv->image, NULL);
+			CdkPixbuf* transformed = eoc_transform_apply (priv->trans, priv->image, NULL);
 			g_object_unref (priv->image);
 			priv->image = transformed;
 			priv->width = cdk_pixbuf_get_width (transformed);

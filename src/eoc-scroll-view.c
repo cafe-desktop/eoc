@@ -95,7 +95,7 @@ struct _EocScrollViewPrivate {
 	EocImage *image;
 	guint image_changed_id;
 	guint frame_changed_id;
-	GdkPixbuf *pixbuf;
+	CdkPixbuf *pixbuf;
 	cairo_surface_t *surface;
 
 	/* scale factor */
@@ -138,14 +138,14 @@ struct _EocScrollViewPrivate {
 
 	/* how to indicate transparency in images */
 	EocTransparencyStyle transp_style;
-	GdkRGBA transp_color;
+	CdkRGBA transp_color;
 
 	/* the type of the cursor we are currently showing */
 	EocScrollViewCursor cursor;
 
 	gboolean  use_bg_color;
-	GdkRGBA *background_color;
-	GdkRGBA *override_bg_color;
+	CdkRGBA *background_color;
+	CdkRGBA *override_bg_color;
 
 	cairo_surface_t *background_surface;
 
@@ -156,16 +156,16 @@ struct _EocScrollViewPrivate {
 
 static void scroll_by (EocScrollView *view, int xofs, int yofs);
 static void set_zoom_fit (EocScrollView *view);
-/* static void request_paint_area (EocScrollView *view, GdkRectangle *area); */
+/* static void request_paint_area (EocScrollView *view, CdkRectangle *area); */
 static void set_minimum_zoom_factor (EocScrollView *view);
-static void view_on_drag_begin_cb (CtkWidget *widget, GdkDragContext *context,
+static void view_on_drag_begin_cb (CtkWidget *widget, CdkDragContext *context,
 				   gpointer user_data);
 static void view_on_drag_data_get_cb (CtkWidget *widget,
-				      GdkDragContext*drag_context,
+				      CdkDragContext*drag_context,
 				      CtkSelectionData *data, guint info,
 				      guint time, gpointer user_data);
 
-static gboolean _eoc_cdk_rgba_equal0 (const GdkRGBA *a, const GdkRGBA *b);
+static gboolean _eoc_cdk_rgba_equal0 (const CdkRGBA *a, const CdkRGBA *b);
 
 G_DEFINE_TYPE_WITH_PRIVATE (EocScrollView, eoc_scroll_view, CTK_TYPE_GRID)
 
@@ -175,7 +175,7 @@ G_DEFINE_TYPE_WITH_PRIVATE (EocScrollView, eoc_scroll_view, CTK_TYPE_GRID)
   ---------------------------------*/
 
 static cairo_surface_t *
-create_surface_from_pixbuf (EocScrollView *view, GdkPixbuf *pixbuf)
+create_surface_from_pixbuf (EocScrollView *view, CdkPixbuf *pixbuf)
 {
 	cairo_surface_t *surface;
 
@@ -355,8 +355,8 @@ update_scrollbar_values (EocScrollView *view)
 static void
 eoc_scroll_view_set_cursor (EocScrollView *view, EocScrollViewCursor new_cursor)
 {
-	GdkCursor *cursor = NULL;
-	GdkDisplay *display;
+	CdkCursor *cursor = NULL;
+	CdkDisplay *display;
 	CtkWidget *widget;
 
 	if (view->priv->cursor == new_cursor) {
@@ -495,7 +495,7 @@ is_image_movable (EocScrollView *view)
   ---------------------------------*/
 
 static void
-get_transparency_params (EocScrollView *view, int *size, GdkRGBA *color1, GdkRGBA *color2)
+get_transparency_params (EocScrollView *view, int *size, CdkRGBA *color1, CdkRGBA *color2)
 {
 	EocScrollViewPrivate *priv;
 
@@ -530,8 +530,8 @@ static cairo_surface_t *
 create_background_surface (EocScrollView *view)
 {
 	int check_size;
-	GdkRGBA check_1;
-	GdkRGBA check_2;
+	CdkRGBA check_1;
+	CdkRGBA check_2;
 	cairo_surface_t *surface;
 
 	get_transparency_params (view, &check_size, &check_1, &check_2);
@@ -572,7 +572,7 @@ scroll_to (EocScrollView *view, int x, int y, gboolean change_adjustments)
 	EocScrollViewPrivate *priv;
 	CtkAllocation allocation;
 	int xofs, yofs;
-	GdkWindow *window;
+	CdkWindow *window;
 
 	priv = view->priv;
 
@@ -814,7 +814,7 @@ set_zoom_fit (EocScrollView *view)
 
 /* Key press event handler for the image view */
 static gboolean
-display_key_press_event (CtkWidget *widget, GdkEventKey *event, gpointer data)
+display_key_press_event (CtkWidget *widget, CdkEventKey *event, gpointer data)
 {
 	EocScrollView *view;
 	EocScrollViewPrivate *priv;
@@ -909,8 +909,8 @@ display_key_press_event (CtkWidget *widget, GdkEventKey *event, gpointer data)
 	}
 
 	if (do_zoom) {
-		GdkSeat *seat;
-		GdkDevice *device;
+		CdkSeat *seat;
+		CdkDevice *device;
 		gint x, y;
 
 		seat = cdk_display_get_default_seat (ctk_widget_get_display (widget));
@@ -930,7 +930,7 @@ display_key_press_event (CtkWidget *widget, GdkEventKey *event, gpointer data)
 
 /* Button press event handler for the image view */
 static gboolean
-eoc_scroll_view_button_press_event (CtkWidget *widget, GdkEventButton *event, gpointer data)
+eoc_scroll_view_button_press_event (CtkWidget *widget, CdkEventButton *event, gpointer data)
 {
 	EocScrollView *view;
 	EocScrollViewPrivate *priv;
@@ -972,7 +972,7 @@ eoc_scroll_view_button_press_event (CtkWidget *widget, GdkEventButton *event, gp
 
 /* Button release event handler for the image view */
 static gboolean
-eoc_scroll_view_button_release_event (CtkWidget *widget, GdkEventButton *event, gpointer data)
+eoc_scroll_view_button_release_event (CtkWidget *widget, CdkEventButton *event, gpointer data)
 {
 	EocScrollView *view;
 	EocScrollViewPrivate *priv;
@@ -1005,7 +1005,7 @@ eoc_scroll_view_button_release_event (CtkWidget *widget, GdkEventButton *event, 
  * dragging the image with button 1 anyways.
  */
 static gboolean
-eoc_scroll_view_scroll_event (CtkWidget *widget, GdkEventScroll *event, gpointer data)
+eoc_scroll_view_scroll_event (CtkWidget *widget, CdkEventScroll *event, gpointer data)
 {
 	EocScrollView *view;
 	EocScrollViewPrivate *priv;
@@ -1073,12 +1073,12 @@ eoc_scroll_view_scroll_event (CtkWidget *widget, GdkEventScroll *event, gpointer
 
 /* Motion event handler for the image view */
 static gboolean
-eoc_scroll_view_motion_event (CtkWidget *widget, GdkEventMotion *event, gpointer data)
+eoc_scroll_view_motion_event (CtkWidget *widget, CdkEventMotion *event, gpointer data)
 {
 	EocScrollView *view;
 	EocScrollViewPrivate *priv;
 	gint x, y;
-	GdkModifierType mods;
+	CdkModifierType mods;
 
 	view = EOC_SCROLL_VIEW (data);
 	priv = view->priv;
@@ -1098,7 +1098,7 @@ eoc_scroll_view_motion_event (CtkWidget *widget, GdkEventMotion *event, gpointer
 }
 
 static void
-display_map_event (CtkWidget *widget, GdkEvent *event, gpointer data)
+display_map_event (CtkWidget *widget, CdkEvent *event, gpointer data)
 {
 	EocScrollView *view;
 	EocScrollViewPrivate *priv;
@@ -1126,7 +1126,7 @@ eoc_scroll_view_size_allocate (CtkWidget *widget, CtkAllocation *alloc)
 }
 
 static void
-display_size_change (CtkWidget *widget, GdkEventConfigure *event, gpointer data)
+display_size_change (CtkWidget *widget, CdkEventConfigure *event, gpointer data)
 {
 	EocScrollView *view;
 	EocScrollViewPrivate *priv;
@@ -1165,7 +1165,7 @@ display_size_change (CtkWidget *widget, GdkEventConfigure *event, gpointer data)
 
 static gboolean
 eoc_scroll_view_focus_in_event (CtkWidget     *widget,
-			    GdkEventFocus *event,
+			    CdkEventFocus *event,
 			    gpointer data)
 {
 	g_signal_stop_emission_by_name (G_OBJECT (widget), "focus_in_event");
@@ -1174,7 +1174,7 @@ eoc_scroll_view_focus_in_event (CtkWidget     *widget,
 
 static gboolean
 eoc_scroll_view_focus_out_event (CtkWidget     *widget,
-			     GdkEventFocus *event,
+			     CdkEventFocus *event,
 			     gpointer data)
 {
 	g_signal_stop_emission_by_name (G_OBJECT (widget), "focus_out_event");
@@ -1223,7 +1223,7 @@ _set_hq_redraw_timeout (EocScrollView *view)
 static gboolean
 display_draw (CtkWidget *widget, cairo_t *cr, gpointer data)
 {
-	const GdkRGBA *background_color = NULL;
+	const CdkRGBA *background_color = NULL;
 	EocScrollView *view;
 	EocScrollViewPrivate *priv;
 	CtkAllocation allocation;
@@ -1384,7 +1384,7 @@ display_draw (CtkWidget *widget, cairo_t *cr, gpointer data)
 /* Use when the pixbuf in the view is changed, to keep a
    reference to it and create its cairo surface. */
 static void
-update_pixbuf (EocScrollView *view, GdkPixbuf *pixbuf)
+update_pixbuf (EocScrollView *view, CdkPixbuf *pixbuf)
 {
 	EocScrollViewPrivate *priv;
 
@@ -1510,7 +1510,7 @@ _transp_background_changed (EocScrollView *view)
 }
 
 void
-eoc_scroll_view_set_transparency_color (EocScrollView *view, GdkRGBA *color)
+eoc_scroll_view_set_transparency_color (EocScrollView *view, CdkRGBA *color)
 {
 	EocScrollViewPrivate *priv;
 
@@ -1771,7 +1771,7 @@ sv_string_to_rgba_mapping (GValue   *value,
 			    GVariant *variant,
 			    gpointer  user_data)
 {
-	GdkRGBA color;
+	CdkRGBA color;
 
 	g_return_val_if_fail (g_variant_is_of_type (variant, G_VARIANT_TYPE_STRING), FALSE);
 
@@ -1789,7 +1789,7 @@ sv_rgba_to_string_mapping (const GValue       *value,
 			    gpointer            user_data)
 {
 	GVariant *variant = NULL;
-	GdkRGBA *color;
+	CdkRGBA *color;
 	gchar *hex_val;
 
 	g_return_val_if_fail (G_VALUE_TYPE (value) == GDK_TYPE_RGBA, NULL);
@@ -2031,7 +2031,7 @@ eoc_scroll_view_set_property (GObject *object, guint property_id,
 		break;
 	case PROP_BACKGROUND_COLOR:
 	{
-		const GdkRGBA *color = g_value_get_boxed (value);
+		const CdkRGBA *color = g_value_get_boxed (value);
 		eoc_scroll_view_set_background_color (view, color);
 		break;
 	}
@@ -2169,12 +2169,12 @@ eoc_scroll_view_class_init (EocScrollViewClass *klass)
 
 static void
 view_on_drag_begin_cb (CtkWidget        *widget,
-		       GdkDragContext   *context,
+		       CdkDragContext   *context,
 		       gpointer          user_data)
 {
 	EocScrollView *view;
 	EocImage *image;
-	GdkPixbuf *thumbnail;
+	CdkPixbuf *thumbnail;
 	gint width, height;
 
 	view = EOC_SCROLL_VIEW (user_data);
@@ -2192,7 +2192,7 @@ view_on_drag_begin_cb (CtkWidget        *widget,
 
 static void
 view_on_drag_data_get_cb (CtkWidget        *widget,
-			  GdkDragContext   *drag_context,
+			  CdkDragContext   *drag_context,
 			  CtkSelectionData *data,
 			  guint             info,
 			  guint             time,
@@ -2233,7 +2233,7 @@ eoc_scroll_view_new (void)
 }
 
 static gboolean
-view_on_button_press_event_cb (CtkWidget *widget, GdkEventButton *event,
+view_on_button_press_event_cb (CtkWidget *widget, CdkEventButton *event,
 			       gpointer user_data)
 {
     EocScrollView *view = EOC_SCROLL_VIEW (widget);
@@ -2242,7 +2242,7 @@ view_on_button_press_event_cb (CtkWidget *widget, GdkEventButton *event,
     if (event->button == 3 && event->type == GDK_BUTTON_PRESS)
     {
 	    ctk_menu_popup_at_pointer (CTK_MENU (view->priv->menu),
-	                               (const GdkEvent*) event);
+	                               (const CdkEvent*) event);
 
 	    return TRUE;
     }
@@ -2268,7 +2268,7 @@ eoc_scroll_view_set_popup (EocScrollView *view,
 }
 
 static gboolean
-_eoc_cdk_rgba_equal0 (const GdkRGBA *a, const GdkRGBA *b)
+_eoc_cdk_rgba_equal0 (const CdkRGBA *a, const CdkRGBA *b)
 {
 	if (a == NULL || b == NULL)
 		return (a == b);
@@ -2277,9 +2277,9 @@ _eoc_cdk_rgba_equal0 (const GdkRGBA *a, const GdkRGBA *b)
 }
 
 static gboolean
-_eoc_replace_cdk_rgba (GdkRGBA **dest, const GdkRGBA *src)
+_eoc_replace_cdk_rgba (CdkRGBA **dest, const CdkRGBA *src)
 {
-	GdkRGBA *old = *dest;
+	CdkRGBA *old = *dest;
 
 	if (_eoc_cdk_rgba_equal0 (old, src))
 		return FALSE;
@@ -2310,7 +2310,7 @@ _eoc_scroll_view_update_bg_color (EocScrollView *view)
 
 void
 eoc_scroll_view_set_background_color (EocScrollView *view,
-				      const GdkRGBA *color)
+				      const CdkRGBA *color)
 {
 	g_return_if_fail (EOC_IS_SCROLL_VIEW (view));
 
@@ -2320,7 +2320,7 @@ eoc_scroll_view_set_background_color (EocScrollView *view,
 
 void
 eoc_scroll_view_override_bg_color (EocScrollView *view,
-				   const GdkRGBA *color)
+				   const CdkRGBA *color)
 {
 	g_return_if_fail (EOC_IS_SCROLL_VIEW (view));
 

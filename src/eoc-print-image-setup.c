@@ -685,7 +685,7 @@ eoc_print_image_setup_set_property (GObject      *object,
 {
 	EocPrintImageSetup *setup = EOC_PRINT_IMAGE_SETUP (object);
 	EocPrintImageSetupPrivate *priv = setup->priv;
-	GdkPixbuf *pixbuf;
+	CdkPixbuf *pixbuf;
 
 	switch (prop_id) {
 	case PROP_IMAGE:
