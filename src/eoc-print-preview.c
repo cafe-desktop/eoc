@@ -158,7 +158,7 @@ eoc_print_preview_set_property (GObject      *object,
 		if (priv->image) {
 			g_object_unref (priv->image);
 		}
-		priv->image = CDK_PIXBUF (g_value_dup_object (value));
+		priv->image = GDK_PIXBUF (g_value_dup_object (value));
 
 		if (priv->image_scaled) {
 			g_object_unref (priv->image_scaled);
