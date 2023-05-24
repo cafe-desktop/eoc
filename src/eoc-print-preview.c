@@ -28,8 +28,8 @@
 
 struct _EocPrintPreviewPrivate {
 	CtkWidget *area;
-	CdkPixbuf *image;
-	CdkPixbuf *image_scaled;
+	GdkPixbuf *image;
+	GdkPixbuf *image_scaled;
 
 	/* The surface to set to the cairo context, created from the image */
 	cairo_surface_t *surface;
@@ -466,15 +466,15 @@ static void size_allocate_cb (CtkWidget *widget, CtkAllocation *allocation, gpoi
 
 /**
  * eoc_print_preview_new_with_pixbuf:
- * @pixbuf: a #CdkPixbuf
+ * @pixbuf: a #GdkPixbuf
  *
- * Creates a new #EocPrintPreview widget, and sets the #CdkPixbuf to preview
+ * Creates a new #EocPrintPreview widget, and sets the #GdkPixbuf to preview
  * on it.
  *
  * Returns: A new #EocPrintPreview widget.
  **/
 CtkWidget *
-eoc_print_preview_new_with_pixbuf (CdkPixbuf *pixbuf)
+eoc_print_preview_new_with_pixbuf (GdkPixbuf *pixbuf)
 {
 	EocPrintPreview *preview;
 
@@ -642,10 +642,10 @@ create_image_scaled (EocPrintPreview *preview)
 	}
 }
 
-static CdkPixbuf *
+static GdkPixbuf *
 create_preview_buffer (EocPrintPreview *preview)
 {
-	CdkPixbuf *pixbuf;
+	GdkPixbuf *pixbuf;
 	gint width, height, widget_scale;
 	CdkInterpType type = CDK_INTERP_TILES;
 
@@ -686,7 +686,7 @@ static void
 create_surface (EocPrintPreview *preview)
 {
 	EocPrintPreviewPrivate *priv = preview->priv;
-	CdkPixbuf *pixbuf;
+	GdkPixbuf *pixbuf;
 
 	if (priv->surface) {
 		cairo_surface_destroy (priv->surface);

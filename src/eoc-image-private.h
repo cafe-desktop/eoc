@@ -37,10 +37,10 @@ struct _EocImagePrivate {
 	EocImageMetadataStatus metadata_status;
 
 	gboolean          is_playing;
-	CdkPixbufAnimation     *anim;
-	CdkPixbufAnimationIter *anim_iter;
-	CdkPixbuf        *image;
-	CdkPixbuf        *thumbnail;
+	GdkPixbufAnimation     *anim;
+	GdkPixbufAnimationIter *anim_iter;
+	GdkPixbuf        *image;
+	GdkPixbuf        *thumbnail;
 #ifdef HAVE_RSVG
 	RsvgHandle       *svg;
 #endif

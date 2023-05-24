@@ -80,12 +80,12 @@ static void 	 set_unsaved_image 		(EocCloseConfirmationDialog *dlg,
 
 static GList 	*get_selected_imgs 		(CtkTreeModel                 *store);
 
-static CdkPixbuf *
+static GdkPixbuf *
 eoc_close_confirmation_dialog_get_icon (const gchar *icon_name)
 {
 	GError *error = NULL;
 	CtkIconTheme *icon_theme;
-	CdkPixbuf *pixbuf;
+	GdkPixbuf *pixbuf;
 
 	icon_theme = ctk_icon_theme_get_default ();
 
@@ -103,7 +103,7 @@ eoc_close_confirmation_dialog_get_icon (const gchar *icon_name)
 	return pixbuf;
 }
 
-static CdkPixbuf*
+static GdkPixbuf*
 get_nothumb_pixbuf (void)
 {
 	static GOnce nothumb_once = G_ONCE_INIT;
@@ -449,8 +449,8 @@ populate_model (CtkTreeModel *store, GList *imgs)
 	{
 		EocImage *img;
 		const gchar *name;
-		CdkPixbuf *buf = NULL;
-		CdkPixbuf *buf_scaled = NULL;
+		GdkPixbuf *buf = NULL;
+		GdkPixbuf *buf_scaled = NULL;
 		int width;
 		double ratio;
 

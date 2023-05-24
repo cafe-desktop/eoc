@@ -40,7 +40,7 @@
 #define EOC_THUMB_ERROR eoc_thumb_error_quark ()
 
 static CafeDesktopThumbnailFactory *factory = NULL;
-static CdkPixbuf *frame = NULL;
+static GdkPixbuf *frame = NULL;
 
 typedef enum {
 	EOC_THUMB_ERROR_VFS,
@@ -86,10 +86,10 @@ set_thumb_error (GError **error, int error_id, const char *string)
 		     "%s", string);
 }
 
-static CdkPixbuf*
+static GdkPixbuf*
 get_valid_thumbnail (EocThumbData *data, GError **error)
 {
-	CdkPixbuf *thumb = NULL;
+	GdkPixbuf *thumb = NULL;
 
 	g_return_val_if_fail (data != NULL, NULL);
 
@@ -107,12 +107,12 @@ get_valid_thumbnail (EocThumbData *data, GError **error)
 	return thumb;
 }
 
-static CdkPixbuf *
+static GdkPixbuf *
 create_thumbnail_from_pixbuf (EocThumbData *data,
-			      CdkPixbuf *pixbuf,
+			      GdkPixbuf *pixbuf,
 			      GError **error)
 {
-	CdkPixbuf *thumb;
+	GdkPixbuf *thumb;
 	gint width, height;
 	gfloat perc;
 
@@ -200,12 +200,12 @@ eoc_thumb_data_new (GFile *file, GError **error)
 }
 
 static void
-draw_frame_row (CdkPixbuf *frame_image,
+draw_frame_row (GdkPixbuf *frame_image,
 		gint target_width,
 		gint source_width,
 		gint source_v_position,
 		gint dest_v_position,
-		CdkPixbuf *result_pixbuf,
+		GdkPixbuf *result_pixbuf,
 		gint left_offset,
 		gint height)
 {
@@ -233,12 +233,12 @@ draw_frame_row (CdkPixbuf *frame_image,
 }
 
 static void
-draw_frame_column (CdkPixbuf *frame_image,
+draw_frame_column (GdkPixbuf *frame_image,
 		   gint target_height,
 		   gint source_height,
 		   gint source_h_position,
 		   gint dest_h_position,
-		   CdkPixbuf *result_pixbuf,
+		   GdkPixbuf *result_pixbuf,
 		   gint top_offset,
 		   gint width)
 {
@@ -265,8 +265,8 @@ draw_frame_column (CdkPixbuf *frame_image,
 	}
 }
 
-static CdkPixbuf *
-eoc_thumbnail_stretch_frame_image (CdkPixbuf *frame_image,
+static GdkPixbuf *
+eoc_thumbnail_stretch_frame_image (GdkPixbuf *frame_image,
 				   gint left_offset,
 				   gint top_offset,
 				   gint right_offset,
@@ -275,7 +275,7 @@ eoc_thumbnail_stretch_frame_image (CdkPixbuf *frame_image,
 				   gint dest_height,
 				   gboolean fill_flag)
 {
-        CdkPixbuf *result_pixbuf;
+        GdkPixbuf *result_pixbuf;
         gint frame_width, frame_height;
         gint target_width, target_frame_width;
         gint target_height, target_frame_height;
@@ -380,16 +380,16 @@ eoc_thumbnail_stretch_frame_image (CdkPixbuf *frame_image,
 
 /**
  * eoc_thumbnail_add_frame:
- * @thumbnail: a #CdkPixbuf
+ * @thumbnail: a #GdkPixbuf
  *
  * Adds a frame to @thumbnail
  *
- * Returns: (transfer full): a new #CdkPixbuf, storing @thumbnail nicely framed.
+ * Returns: (transfer full): a new #GdkPixbuf, storing @thumbnail nicely framed.
  **/
-CdkPixbuf *
-eoc_thumbnail_add_frame (CdkPixbuf *thumbnail)
+GdkPixbuf *
+eoc_thumbnail_add_frame (GdkPixbuf *thumbnail)
 {
-	CdkPixbuf *result_pixbuf;
+	GdkPixbuf *result_pixbuf;
 	gint source_width, source_height;
 	gint dest_width, dest_height;
 
@@ -417,15 +417,15 @@ eoc_thumbnail_add_frame (CdkPixbuf *thumbnail)
 
 /**
  * eoc_thumbnail_fit_to_size:
- * @thumbnail: a #CdkPixbuf
+ * @thumbnail: a #GdkPixbuf
  * @dimension: the maximum width or height desired
  *
  * Ensures a pixbuf fits a given @dimension
  *
- * Returns: (transfer full): a new #CdkPixbuf
+ * Returns: (transfer full): a new #GdkPixbuf
  **/
-CdkPixbuf *
-eoc_thumbnail_fit_to_size (CdkPixbuf *thumbnail, gint dimension)
+GdkPixbuf *
+eoc_thumbnail_fit_to_size (GdkPixbuf *thumbnail, gint dimension)
 {
 	gint width, height;
 
@@ -433,7 +433,7 @@ eoc_thumbnail_fit_to_size (CdkPixbuf *thumbnail, gint dimension)
 	height = cdk_pixbuf_get_height (thumbnail);
 
 	if (width > dimension || height > dimension) {
-		CdkPixbuf *result_pixbuf;
+		GdkPixbuf *result_pixbuf;
 		gfloat factor;
 
 		if (width > height) {
@@ -460,16 +460,16 @@ eoc_thumbnail_fit_to_size (CdkPixbuf *thumbnail, gint dimension)
  * Loads the thumbnail for @image. In case of error, %NULL is returned
  * and @error is set.
  *
- * Returns: (transfer full): a new #CdkPixbuf with the thumbnail for
+ * Returns: (transfer full): a new #GdkPixbuf with the thumbnail for
  * @image or %NULL in case of error.
  **/
-CdkPixbuf*
+GdkPixbuf*
 eoc_thumbnail_load (EocImage *image, GError **error)
 {
-	CdkPixbuf *thumb = NULL;
+	GdkPixbuf *thumb = NULL;
 	GFile *file;
 	EocThumbData *data;
-	CdkPixbuf *pixbuf = NULL;
+	GdkPixbuf *pixbuf = NULL;
 
 	g_return_val_if_fail (image != NULL, NULL);
 	g_return_val_if_fail (error != NULL && *error == NULL, NULL);

@@ -32,12 +32,12 @@ G_BEGIN_DECLS
 
 void          eoc_thumbnail_init        (void);
 
-CdkPixbuf*    eoc_thumbnail_fit_to_size (CdkPixbuf *thumbnail,
+GdkPixbuf*    eoc_thumbnail_fit_to_size (GdkPixbuf *thumbnail,
 					 gint        dimension);
 
-CdkPixbuf*    eoc_thumbnail_add_frame   (CdkPixbuf *thumbnail);
+GdkPixbuf*    eoc_thumbnail_add_frame   (GdkPixbuf *thumbnail);
 
-CdkPixbuf*    eoc_thumbnail_load        (EocImage *image,
+GdkPixbuf*    eoc_thumbnail_load        (EocImage *image,
 					 GError **error);
 
 #define EOC_THUMBNAIL_ORIGINAL_WIDTH  "eoc-thumbnail-orig-width"

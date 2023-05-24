@@ -64,15 +64,15 @@ eoc_transform_class_init (EocTransformClass *klass)
 /**
  * eoc_transform_apply:
  * @trans: a #EocTransform
- * @pixbuf: a #CdkPixbuf
+ * @pixbuf: a #GdkPixbuf
  * @job: a #EocJob
  *
  * Applies the transformation in @trans to @pixbuf, setting its progress in @job.
  *
- * Returns: (transfer full): A new #CdkPixbuf with the transformation applied.
+ * Returns: (transfer full): A new #GdkPixbuf with the transformation applied.
  **/
-CdkPixbuf*
-eoc_transform_apply (EocTransform *trans, CdkPixbuf *pixbuf, EocJob *job)
+GdkPixbuf*
+eoc_transform_apply (EocTransform *trans, GdkPixbuf *pixbuf, EocJob *job)
 {
 	EocPoint dest_top_left;
 	EocPoint dest_bottom_right;
@@ -87,7 +87,7 @@ eoc_transform_apply (EocTransform *trans, CdkPixbuf *pixbuf, EocJob *job)
 	int src_n_channels;
 	guchar *src_buffer;
 
-	CdkPixbuf *dest_pixbuf;
+	GdkPixbuf *dest_pixbuf;
 	int dest_width;
 	int dest_height;
 	int dest_rowstride;

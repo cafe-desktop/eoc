@@ -35,8 +35,8 @@
 struct _EocListStorePrivate {
 	GList *monitors;          /* Monitors for the directories */
 	gint initial_image;       /* The image that should be selected firstly by the view. */
-	CdkPixbuf *busy_image;    /* Loading image icon */
-	CdkPixbuf *missing_image; /* Missing image icon */
+	GdkPixbuf *busy_image;    /* Loading image icon */
+	GdkPixbuf *missing_image; /* Missing image icon */
 	GMutex mutex;            /* Mutex for saving the jobs in the model */
 };
 
@@ -114,12 +114,12 @@ eoc_list_store_compare_func (CtkTreeModel *model,
 	return r_value;
 }
 
-static CdkPixbuf *
+static GdkPixbuf *
 eoc_list_store_get_icon (const gchar *icon_name)
 {
 	GError *error = NULL;
 	CtkIconTheme *icon_theme;
-	CdkPixbuf *pixbuf;
+	GdkPixbuf *pixbuf;
 
 	icon_theme = ctk_icon_theme_get_default ();
 
@@ -250,7 +250,7 @@ eoc_job_thumbnail_cb (EocJobThumbnail *job, gpointer data)
 	EocListStore *store;
 	CtkTreeIter iter;
 	EocImage *image;
-	CdkPixbuf *thumbnail;
+	GdkPixbuf *thumbnail;
 	GFile *file;
 
 	g_return_if_fail (EOC_IS_LIST_STORE (data));
