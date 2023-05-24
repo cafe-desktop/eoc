@@ -510,7 +510,7 @@ create_treeview (EocCloseConfirmationDialogPrivate *priv)
 	ctk_tree_view_set_enable_search (CTK_TREE_VIEW (treeview), FALSE);
 
 	/* Create and populate the model */
-	store = ctk_list_store_new (N_COLUMNS, G_TYPE_BOOLEAN, CDK_TYPE_PIXBUF, G_TYPE_STRING, G_TYPE_POINTER);
+	store = ctk_list_store_new (N_COLUMNS, G_TYPE_BOOLEAN, GDK_TYPE_PIXBUF, G_TYPE_STRING, G_TYPE_POINTER);
 	populate_model (CTK_TREE_MODEL (store), priv->unsaved_images);
 
 	/* Set model to the treeview */
