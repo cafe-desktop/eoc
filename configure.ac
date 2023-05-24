@@ -103,7 +103,7 @@ EOC_MODULES="ctk+-3.0 >= $CTK_REQUIRED \
              gio-unix-2.0 >= $GLIB_REQUIRED \
              gthread-2.0 >= $GLIB_REQUIRED \
              cafe-desktop-2.0 >= $CAFE_DESKTOP_REQUIRED \
-             cdk-pixbuf-2.0 >= $CDKPIXBUF_REQUIRED \
+             gdk-pixbuf-2.0 >= $CDKPIXBUF_REQUIRED \
              gio-2.0 >= $GIO_REQUIRED \
              ctk+-unix-print-3.0 >= $CTK_REQUIRED \
              shared-mime-info >= $SHARED_MIME_INFO_REQUIRED \
@@ -297,18 +297,18 @@ AC_ARG_ENABLE(thumbnailer,
 	[enable_thumbnailer=no])
 AM_CONDITIONAL(ENABLE_THUMBNAILER, test x$enable_thumbnailer != xno)
 
-AC_ARG_WITH(cdk-pixbuf-thumbnailer,
-	[AS_HELP_STRING([--without-cdk-pixbuf-thumbnailer],
-		[Disable the use of cdk-pixbuf-thumbnailer])],
+AC_ARG_WITH(gdk-pixbuf-thumbnailer,
+	[AS_HELP_STRING([--without-gdk-pixbuf-thumbnailer],
+		[Disable the use of gdk-pixbuf-thumbnailer])],
 	[],
 	[with_cdk_pixbuf_thumbnailer=yes])
 AM_CONDITIONAL(USE_INTERNAL_THUMBNAILER, test x$with_cdk_pixbuf_thumbnailer != xyes)
 
 if test "x$enable_thumbnailer" != "xno"; then
 	if test "x$with_cdk_pixbuf_thumbnailer" = "xyes"; then
-		AC_PATH_PROG([CDK_PIXBUF_THUMBNAILER],[cdk-pixbuf-thumbnailer],[])
+		AC_PATH_PROG([CDK_PIXBUF_THUMBNAILER],[gdk-pixbuf-thumbnailer],[])
 		if test -z "$CDK_PIXBUF_THUMBNAILER"; then
-			AC_MSG_ERROR([cdk-pixbuf-thumbnailer not found])
+			AC_MSG_ERROR([gdk-pixbuf-thumbnailer not found])
 		fi
 		eoc_thumbnailer="$CDK_PIXBUF_THUMBNAILER"
 	else

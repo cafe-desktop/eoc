@@ -19,7 +19,7 @@
 #define _EOC_FILE_CHOOSER_H_
 
 #include <ctk/ctk.h>
-#include <cdk-pixbuf/cdk-pixbuf.h>
+#include <gdk-pixbuf/gdk-pixbuf.h>
 
 G_BEGIN_DECLS
 

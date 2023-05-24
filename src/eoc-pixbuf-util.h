@@ -1,7 +1,7 @@
 #ifndef _EOC_PIXBUF_UTIL_H_
 #define _EOC_PIXBUF_UTIL_H_
 
-#include <cdk-pixbuf/cdk-pixbuf.h>
+#include <gdk-pixbuf/gdk-pixbuf.h>
 #include <gio/gio.h>
 
 G_GNUC_INTERNAL

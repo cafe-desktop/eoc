@@ -31,7 +31,7 @@
 #include "eoc-thumbnail.h"
 #include "eoc-pixbuf-util.h"
 
-#include <cdk-pixbuf/cdk-pixbuf.h>
+#include <gdk-pixbuf/gdk-pixbuf.h>
 
 #define EOC_JOB_GET_PRIVATE(object) \
 	(G_TYPE_INSTANCE_GET_PRIVATE ((object), EOC_TYPE_JOB, EocJobPrivate))
