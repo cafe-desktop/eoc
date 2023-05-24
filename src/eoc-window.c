@@ -187,7 +187,7 @@ struct _EocWindowPrivate {
 
 	CtkPageSetup        *page_setup;
 
-	PeasExtensionSet    *extensions;
+	BeanExtensionSet    *extensions;
 
 #if defined(HAVE_LCMS) && defined(CDK_WINDOWING_X11)
 	cmsHPROFILE         *display_profile;
@@ -5206,18 +5206,18 @@ eoc_window_get_property (GObject    *object,
 }
 
 static void
-on_extension_added (PeasExtensionSet *set,
-		    PeasPluginInfo   *info,
-		    PeasExtension    *exten,
+on_extension_added (BeanExtensionSet *set,
+		    BeanPluginInfo   *info,
+		    BeanExtension    *exten,
 		    CtkWindow        *window)
 {
 	bean_extension_call (exten, "activate", window);
 }
 
 static void
-on_extension_removed (PeasExtensionSet *set,
-		      PeasPluginInfo   *info,
-		      PeasExtension    *exten,
+on_extension_removed (BeanExtensionSet *set,
+		      BeanPluginInfo   *info,
+		      BeanExtension    *exten,
 		      CtkWindow        *window)
 {
 	bean_extension_call (exten, "deactivate", window);

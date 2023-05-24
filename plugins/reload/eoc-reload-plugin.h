@@ -36,7 +36,7 @@ typedef struct _EocReloadPluginPrivate EocReloadPluginPrivate;
 typedef struct _EocReloadPlugin EocReloadPlugin;
 
 struct _EocReloadPlugin {
-	PeasExtensionBase parent_instance;
+	BeanExtensionBase parent_instance;
 
 	EocWindow *window;
 	CtkActionGroup *ui_action_group;
@@ -49,7 +49,7 @@ struct _EocReloadPlugin {
 typedef struct _EocReloadPluginClass EocReloadPluginClass;
 
 struct _EocReloadPluginClass {
-	PeasExtensionBaseClass parent_class;
+	BeanExtensionBaseClass parent_class;
 };
 
 /*
@@ -58,7 +58,7 @@ struct _EocReloadPluginClass {
 GType eoc_reload_plugin_get_type (void) G_GNUC_CONST;
 
 /* All the plugins must implement this function */
-G_MODULE_EXPORT void bean_register_types (PeasObjectModule *module);
+G_MODULE_EXPORT void bean_register_types (BeanObjectModule *module);
 
 G_END_DECLS
 

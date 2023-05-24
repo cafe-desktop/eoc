@@ -44,7 +44,7 @@ struct _EocApplicationPrivate {
 
 	EocStartupFlags   flags;
 
-	PeasExtensionSet *extensions;
+	BeanExtensionSet *extensions;
 };
 
 

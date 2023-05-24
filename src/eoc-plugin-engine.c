@@ -88,17 +88,17 @@ eoc_plugin_engine_new (void)
 
 	/* This should be moved to libbean */
 	if (g_irepository_require (g_irepository_get_default (),
-	                           "Peas", "1.0", 0, &error) == NULL)
+	                           "Bean", "1.0", 0, &error) == NULL)
 	{
-		g_warning ("Error loading Peas typelib: %s\n",
+		g_warning ("Error loading Bean typelib: %s\n",
 		           error->message);
 		g_clear_error (&error);
 	}
 
 	if (g_irepository_require (g_irepository_get_default (),
-	                           "PeasCtk", "1.0", 0, &error) == NULL)
+	                           "BeanCtk", "1.0", 0, &error) == NULL)
 	{
-		g_warning ("Error loading PeasCtk typelib: %s\n",
+		g_warning ("Error loading BeanCtk typelib: %s\n",
 		           error->message);
 		g_clear_error (&error);
 	}

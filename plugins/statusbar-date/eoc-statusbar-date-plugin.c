@@ -226,7 +226,7 @@ eoc_window_activatable_iface_init (EocWindowActivatableInterface *iface)
 }
 
 G_MODULE_EXPORT void
-bean_register_types (PeasObjectModule *module)
+bean_register_types (BeanObjectModule *module)
 {
 	eoc_statusbar_date_plugin_register_type (G_TYPE_MODULE (module));
 	bean_object_module_register_extension_type (module,

@@ -42,12 +42,12 @@ typedef struct _EocPluginEnginePrivate EocPluginEnginePrivate;
 #define EOC_PLUGIN_ENGINE_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), EOC_TYPE_PLUGIN_ENGINE, EocPluginEngineClass))
 
 struct _EocPluginEngine {
-	PeasEngine parent;
+	BeanEngine parent;
 	EocPluginEnginePrivate *priv;
 };
 
 struct _EocPluginEngineClass {
-	PeasEngineClass parent_class;
+	BeanEngineClass parent_class;
 };
 
 GType eoc_plugin_engine_get_type (void) G_GNUC_CONST;
