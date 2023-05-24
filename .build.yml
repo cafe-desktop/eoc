@@ -22,7 +22,6 @@ requires:
     - libjpeg-dev
     - liblcms2-dev
     - libmagickwand-dev
-    - libpeas-dev
     - librsvg2-dev
     - libstartup-notification0-dev
     - libxml2-dev
