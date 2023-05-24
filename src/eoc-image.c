@@ -23,7 +23,7 @@
 #include "config.h"
 #endif
 
-#define CDK_PIXBUF_ENABLE_BACKEND
+#define GDK_PIXBUF_ENABLE_BACKEND
 #include <cdk/cdkx.h>
 
 #include "eoc-image.h"

@@ -306,11 +306,11 @@ AM_CONDITIONAL(USE_INTERNAL_THUMBNAILER, test x$with_cdk_pixbuf_thumbnailer != x
 
 if test "x$enable_thumbnailer" != "xno"; then
 	if test "x$with_cdk_pixbuf_thumbnailer" = "xyes"; then
-		AC_PATH_PROG([CDK_PIXBUF_THUMBNAILER],[gdk-pixbuf-thumbnailer],[])
-		if test -z "$CDK_PIXBUF_THUMBNAILER"; then
+		AC_PATH_PROG([GDK_PIXBUF_THUMBNAILER],[gdk-pixbuf-thumbnailer],[])
+		if test -z "$GDK_PIXBUF_THUMBNAILER"; then
 			AC_MSG_ERROR([gdk-pixbuf-thumbnailer not found])
 		fi
-		eoc_thumbnailer="$CDK_PIXBUF_THUMBNAILER"
+		eoc_thumbnailer="$GDK_PIXBUF_THUMBNAILER"
 	else
 		PKG_CHECK_MODULES(GLIB, glib-2.0 >= $GLIB_REQUIRED)
 		PKG_CHECK_MODULES(GIO, gio-2.0 >= $GLIB_REQUIRED)

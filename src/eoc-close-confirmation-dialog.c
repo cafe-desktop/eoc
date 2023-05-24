@@ -108,7 +108,7 @@ get_nothumb_pixbuf (void)
 {
 	static GOnce nothumb_once = G_ONCE_INIT;
 	g_once (&nothumb_once, (GThreadFunc) eoc_close_confirmation_dialog_get_icon, "image-x-generic");
-	return CDK_PIXBUF (g_object_ref (nothumb_once.retval));
+	return GDK_PIXBUF (g_object_ref (nothumb_once.retval));
 }
 
 /*  Since we connect in the costructor we are sure this handler will be called
