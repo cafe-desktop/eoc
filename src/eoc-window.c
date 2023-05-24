@@ -4775,12 +4775,12 @@ eoc_window_dispose (GObject *object)
 	window = EOC_WINDOW (object);
 	priv = window->priv;
 
-	bean_engine_garbage_collect (PEAS_ENGINE (EOC_APP->priv->plugin_engine));
+	bean_engine_garbage_collect (BEAN_ENGINE (EOC_APP->priv->plugin_engine));
 
 	if (priv->extensions != NULL) {
 		g_object_unref (priv->extensions);
 		priv->extensions = NULL;
-		bean_engine_garbage_collect (PEAS_ENGINE (EOC_APP->priv->plugin_engine));
+		bean_engine_garbage_collect (BEAN_ENGINE (EOC_APP->priv->plugin_engine));
 	}
 
 	if (priv->page_setup != NULL) {
@@ -4900,7 +4900,7 @@ eoc_window_dispose (GObject *object)
 		priv->last_save_as_folder = NULL;
 	}
 
-	bean_engine_garbage_collect (PEAS_ENGINE (EOC_APP->priv->plugin_engine));
+	bean_engine_garbage_collect (BEAN_ENGINE (EOC_APP->priv->plugin_engine));
 
 	G_OBJECT_CLASS (eoc_window_parent_class)->dispose (object);
 }
@@ -5238,7 +5238,7 @@ eoc_window_constructor (GType type,
 
 	eoc_window_construct_ui (EOC_WINDOW (object));
 
-	priv->extensions = bean_extension_set_new (PEAS_ENGINE (EOC_APP->priv->plugin_engine),
+	priv->extensions = bean_extension_set_new (BEAN_ENGINE (EOC_APP->priv->plugin_engine),
 	                                           EOC_TYPE_WINDOW_ACTIVATABLE,
 	                                           "window",
 	                                           EOC_WINDOW (object), NULL);

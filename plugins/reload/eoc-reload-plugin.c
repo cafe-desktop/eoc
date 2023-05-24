@@ -16,7 +16,7 @@ static void eoc_window_activatable_iface_init (EocWindowActivatableInterface *if
 
 G_DEFINE_DYNAMIC_TYPE_EXTENDED (EocReloadPlugin,
                                 eoc_reload_plugin,
-                                PEAS_TYPE_EXTENSION_BASE,
+                                BEAN_TYPE_EXTENSION_BASE,
                                 0,
                                 G_IMPLEMENT_INTERFACE_DYNAMIC (EOC_TYPE_WINDOW_ACTIVATABLE,
                                                                eoc_window_activatable_iface_init))

@@ -42,7 +42,7 @@ struct _EocPluginEnginePrivate {
 	GSettings *plugins_settings;
 };
 
-G_DEFINE_TYPE_WITH_PRIVATE (EocPluginEngine, eoc_plugin_engine, PEAS_TYPE_ENGINE)
+G_DEFINE_TYPE_WITH_PRIVATE (EocPluginEngine, eoc_plugin_engine, BEAN_TYPE_ENGINE)
 
 static void
 eoc_plugin_engine_dispose (GObject *object)
@@ -116,15 +116,15 @@ eoc_plugin_engine_new (void)
 
 	engine = EOC_PLUGIN_ENGINE (g_object_new (EOC_TYPE_PLUGIN_ENGINE, NULL));
 
-	bean_engine_enable_loader (PEAS_ENGINE (engine), "python3");
+	bean_engine_enable_loader (BEAN_ENGINE (engine), "python3");
 
 	user_plugin_path = g_build_filename (eoc_util_dot_dir (),
 	                                     USER_EOC_PLUGINS_LOCATION, NULL);
 
-	bean_engine_add_search_path (PEAS_ENGINE (engine),
+	bean_engine_add_search_path (BEAN_ENGINE (engine),
 	                             user_plugin_path, user_plugin_path);
 
-	bean_engine_add_search_path (PEAS_ENGINE (engine),
+	bean_engine_add_search_path (BEAN_ENGINE (engine),
 	                             EOC_PLUGIN_DIR, EOC_PLUGIN_DIR);
 
 	g_settings_bind (engine->priv->plugins_settings,
