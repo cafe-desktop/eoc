@@ -189,7 +189,7 @@ eoc_clipboard_handler_class_init (EocClipboardHandlerClass *klass)
 
 	g_object_class_install_property (
 		g_obj_class, PROP_PIXBUF,
-		g_param_spec_object ("pixbuf", NULL, NULL, CDK_TYPE_PIXBUF,
+		g_param_spec_object ("pixbuf", NULL, NULL, GDK_TYPE_PIXBUF,
 				     G_PARAM_READWRITE | G_PARAM_CONSTRUCT_ONLY |
 				     G_PARAM_STATIC_STRINGS));
 
