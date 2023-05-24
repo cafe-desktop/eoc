@@ -108,8 +108,8 @@ main (int argc, char **argv)
 	ctx = g_option_context_new (_("[FILE…]"));
 	g_option_context_add_main_entries (ctx, goption_options, PACKAGE);
 	/* Option groups are free'd together with the context
-	 * Using gtk_get_option_group here initializes gtk during parsing */
-	g_option_context_add_group (ctx, gtk_get_option_group (TRUE));
+	 * Using ctk_get_option_group here initializes ctk during parsing */
+	g_option_context_add_group (ctx, ctk_get_option_group (TRUE));
 #ifdef HAVE_INTROSPECTION
 	g_option_context_add_group (ctx, g_irepository_get_option_group ());
 #endif
@@ -142,15 +142,15 @@ main (int argc, char **argv)
 
 	/* Load special style properties for EocThumbView's scrollbar */
 	css_file = g_file_new_for_uri ("resource:///org/cafe/eoc/ui/eoc.css");
-	provider = gtk_css_provider_new ();
-	if (G_UNLIKELY (!gtk_css_provider_load_from_file(provider,
+	provider = ctk_css_provider_new ();
+	if (G_UNLIKELY (!ctk_css_provider_load_from_file(provider,
 	                                                 css_file,
 	                                                 &error)))
 	{
 		g_critical ("Could not load CSS data: %s", error->message);
 		g_clear_error (&error);
 	} else {
-		gtk_style_context_add_provider_for_screen (
+		ctk_style_context_add_provider_for_screen (
 				gdk_screen_get_default(),
 				GTK_STYLE_PROVIDER (provider),
 				GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
@@ -159,10 +159,10 @@ main (int argc, char **argv)
 	g_object_unref (css_file);
 
 	/* Add application specific icons to search path */
-	gtk_icon_theme_append_search_path (gtk_icon_theme_get_default (),
+	ctk_icon_theme_append_search_path (ctk_icon_theme_get_default (),
                                            EOC_DATA_DIR G_DIR_SEPARATOR_S "icons");
 
-	gtk_window_set_default_icon_name ("eoc");
+	ctk_window_set_default_icon_name ("eoc");
 	g_set_application_name (_("Eye of CAFE Image Viewer"));
 
 	EOC_APP->priv->flags = flags;

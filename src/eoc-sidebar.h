@@ -26,7 +26,7 @@
 #ifndef __EOC_SIDEBAR_H__
 #define __EOC_SIDEBAR_H__
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 G_BEGIN_DECLS
 

@@ -26,7 +26,7 @@
 #include <time.h>
 #include <stdlib.h>
 #include <math.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include <cairo/cairo.h>
 
 #include "eoc-transform.h"

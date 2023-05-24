@@ -216,7 +216,7 @@ eoc_exif_util_set_label_text (GtkLabel *label,
 			label_text = eoc_util_make_valid_utf8 (buf_ptr);
 	}
 
-	gtk_label_set_text (label, label_text);
+	ctk_label_set_text (label, label_text);
 	g_free (label_text);
 }
 
@@ -243,7 +243,7 @@ eoc_exif_util_format_datetime_label (GtkLabel *label, EocExifData *exif_data,
 #endif /* HAVE_STRPTIME */
 	}
 
-	gtk_label_set_text (label, label_text);
+	ctk_label_set_text (label, label_text);
 	g_free (label_text);
 }
 
@@ -298,14 +298,14 @@ eoc_exif_util_set_focal_length_label_text (GtkLabel *label,
 			gchar *merged_txt;
 
 			merged_txt = g_strconcat (fl35_text,", ", fl_text, NULL);
-			gtk_label_set_text (label, merged_txt);
+			ctk_label_set_text (label, merged_txt);
 			g_free (merged_txt);
 		} else {
-			gtk_label_set_text (label, fl_text);
+			ctk_label_set_text (label, fl_text);
 		}
 	} else {
 		/* This will also clear the label if no ExifData was supplied */
-		gtk_label_set_text (label, fl35_text);
+		ctk_label_set_text (label, fl35_text);
 	}
 
 	g_free (fl35_text);

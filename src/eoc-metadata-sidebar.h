@@ -25,7 +25,7 @@
 #define EOC_METADATA_SIDEBAR_H
 
 #include <glib-object.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 #include "eoc-window.h"
 

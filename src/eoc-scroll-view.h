@@ -1,7 +1,7 @@
 #ifndef _EOC_SCROLL_VIEW_H_
 #define _EOC_SCROLL_VIEW_H_
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include "eoc-image.h"
 
 G_BEGIN_DECLS

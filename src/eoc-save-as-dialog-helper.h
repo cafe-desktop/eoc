@@ -1,7 +1,7 @@
 #ifndef _EOC_SAVE_AS_DIALOG_HELPER_H_
 #define _EOC_SAVE_AS_DIALOG_HELPER_H_
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include <gio/gio.h>
 #include "eoc-uri-converter.h"
 

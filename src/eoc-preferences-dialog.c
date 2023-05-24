@@ -34,9 +34,9 @@
 #include <glib.h>
 #include <glib/gi18n.h>
 #include <glib-object.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include <gio/gio.h>
-#include <libpeas-gtk/peas-gtk-plugin-manager.h>
+#include <libpeas-ctk/peas-ctk-plugin-manager.h>
 
 #define GSETTINGS_OBJECT_KEY		"GSETTINGS_KEY"
 #define GSETTINGS_OBJECT_VALUE		"GSETTINGS_VALUE"
@@ -112,7 +112,7 @@ pd_transp_radio_toggle_cb (GtkWidget *widget, gpointer data)
 {
 	gpointer value = NULL;
 
-	if (!gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (widget)))
+	if (!ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (widget)))
 	    return;
 
 	value = g_object_get_data (G_OBJECT (widget), GSETTINGS_OBJECT_VALUE);
@@ -124,7 +124,7 @@ pd_transp_radio_toggle_cb (GtkWidget *widget, gpointer data)
 static void
 random_change_cb (GSettings *settings, gchar *key, GtkWidget *widget)
 {
-	gtk_widget_set_sensitive (widget, !g_settings_get_boolean (settings, key));
+	ctk_widget_set_sensitive (widget, !g_settings_get_boolean (settings, key));
 }
 
 static void
@@ -135,7 +135,7 @@ eoc_preferences_response_cb (GtkDialog *dlg, gint res_id, gpointer data)
 			eoc_util_show_help ("eoc-prefs", NULL);
 			break;
 		default:
-			gtk_widget_destroy (GTK_WIDGET (dlg));
+			ctk_widget_destroy (GTK_WIDGET (dlg));
 			instance = NULL;
 	}
 }
@@ -145,54 +145,54 @@ eoc_preferences_dialog_class_init (EocPreferencesDialogClass *klass)
 {
 	GtkWidgetClass *widget_class = (GtkWidgetClass*) klass;
 
-	/* This should make sure the libpeas-gtk dependency isn't
+	/* This should make sure the libpeas-ctk dependency isn't
 	 * dropped by aggressive linkers (#739618) */
 	g_type_ensure (PEAS_GTK_TYPE_PLUGIN_MANAGER);
 
-	gtk_widget_class_set_template_from_resource (widget_class,
+	ctk_widget_class_set_template_from_resource (widget_class,
 	                                             "/org/cafe/eoc/ui/eoc-preferences-dialog.ui");
-	gtk_widget_class_bind_template_child_private (widget_class,
+	ctk_widget_class_bind_template_child_private (widget_class,
 	                                              EocPreferencesDialog,
 	                                              interpolate_check);
-	gtk_widget_class_bind_template_child_private (widget_class,
+	ctk_widget_class_bind_template_child_private (widget_class,
 	                                              EocPreferencesDialog,
 	                                              extrapolate_check);
-	gtk_widget_class_bind_template_child_private (widget_class,
+	ctk_widget_class_bind_template_child_private (widget_class,
 	                                              EocPreferencesDialog,
 	                                              autorotate_check);
-	gtk_widget_class_bind_template_child_private (widget_class,
+	ctk_widget_class_bind_template_child_private (widget_class,
 	                                              EocPreferencesDialog,
 	                                              bg_color_check);
-	gtk_widget_class_bind_template_child_private (widget_class,
+	ctk_widget_class_bind_template_child_private (widget_class,
 	                                              EocPreferencesDialog,
 	                                              bg_color_button);
-	gtk_widget_class_bind_template_child_private (widget_class,
+	ctk_widget_class_bind_template_child_private (widget_class,
 	                                              EocPreferencesDialog,
 	                                              color_radio);
-	gtk_widget_class_bind_template_child_private (widget_class,
+	ctk_widget_class_bind_template_child_private (widget_class,
 	                                              EocPreferencesDialog,
 	                                              checkpattern_radio);
-	gtk_widget_class_bind_template_child_private (widget_class,
+	ctk_widget_class_bind_template_child_private (widget_class,
 	                                              EocPreferencesDialog,
 	                                              background_radio);
-	gtk_widget_class_bind_template_child_private (widget_class,
+	ctk_widget_class_bind_template_child_private (widget_class,
 	                                              EocPreferencesDialog,
 	                                              transp_color_button);
 
-	gtk_widget_class_bind_template_child_private (widget_class,
+	ctk_widget_class_bind_template_child_private (widget_class,
 	                                              EocPreferencesDialog,
 	                                              upscale_check);
-	gtk_widget_class_bind_template_child_private (widget_class,
+	ctk_widget_class_bind_template_child_private (widget_class,
 	                                              EocPreferencesDialog,
 	                                              random_check);
-	gtk_widget_class_bind_template_child_private (widget_class,
+	ctk_widget_class_bind_template_child_private (widget_class,
 	                                              EocPreferencesDialog,
 	                                              loop_check);
-	gtk_widget_class_bind_template_child_private (widget_class,
+	ctk_widget_class_bind_template_child_private (widget_class,
 	                                              EocPreferencesDialog,
 	                                              seconds_spin);
 
-	gtk_widget_class_bind_template_child_private (widget_class,
+	ctk_widget_class_bind_template_child_private (widget_class,
 	                                              EocPreferencesDialog,
 	                                              plugin_manager);
 }
@@ -205,7 +205,7 @@ eoc_preferences_dialog_init (EocPreferencesDialog *pref_dlg)
 	pref_dlg->priv = eoc_preferences_dialog_get_instance_private (pref_dlg);
 	priv = pref_dlg->priv;
 
-	gtk_widget_init_template (GTK_WIDGET (pref_dlg));
+	ctk_widget_init_template (GTK_WIDGET (pref_dlg));
 
 	priv->view_settings = g_settings_new (EOC_CONF_VIEW);
 	priv->fullscreen_settings = g_settings_new (EOC_CONF_FULLSCREEN);
@@ -270,16 +270,16 @@ eoc_preferences_dialog_init (EocPreferencesDialog *pref_dlg)
 				    EOC_CONF_VIEW_TRANSPARENCY))
 	{
 	case EOC_TRANSP_COLOR:
-		gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (priv->color_radio), TRUE);
+		ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (priv->color_radio), TRUE);
 		break;
 	case EOC_TRANSP_CHECKED:
-		gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (priv->checkpattern_radio), TRUE);
+		ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (priv->checkpattern_radio), TRUE);
 		break;
 	default:
 		// Log a warning and use EOC_TRANSP_BACKGROUND as fallback
 		g_warn_if_reached ();
 	case EOC_TRANSP_BACKGROUND:
-		gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (priv->background_radio), TRUE);
+		ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (priv->background_radio), TRUE);
 		break;
 	}
 
@@ -317,7 +317,7 @@ eoc_preferences_dialog_init (EocPreferencesDialog *pref_dlg)
 	                 priv->seconds_spin, "value",
 	                 G_SETTINGS_BIND_DEFAULT);
 
-	gtk_widget_show_all (priv->plugin_manager);
+	ctk_widget_show_all (priv->plugin_manager);
 }
 
 GtkWidget *eoc_preferences_dialog_get_instance (GtkWindow *parent)
@@ -328,7 +328,7 @@ GtkWidget *eoc_preferences_dialog_get_instance (GtkWindow *parent)
 	}
 
 	if (parent)
-		gtk_window_set_transient_for (GTK_WINDOW (instance), parent);
+		ctk_window_set_transient_for (GTK_WINDOW (instance), parent);
 
 	return GTK_WIDGET(instance);
 }

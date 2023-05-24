@@ -26,7 +26,7 @@
 #define __EOC_ERROR_MESSAGE_AREA__
 
 #include <glib.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include <gio/gio.h>
 
 GtkWidget   *eoc_image_load_error_message_area_new   (const gchar       *caption,

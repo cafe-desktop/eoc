@@ -96,7 +96,7 @@ LIBPEAS_REQUIRED=1.8.0
 MAGICK_REQUIRED=6.2.6
 
 PKG_CHECK_MODULES(GMODULE, gmodule-2.0, [GMODULE_ADD="gmodule-2.0"],[GMODULE_ADD=""])
-EOC_MODULES="gtk+-3.0 >= $GTK_REQUIRED \
+EOC_MODULES="ctk+-3.0 >= $GTK_REQUIRED \
              glib-2.0 >= $GLIB_REQUIRED \
              $GMODULE_ADD \
              gio-2.0 >= $GLIB_REQUIRED \
@@ -105,10 +105,10 @@ EOC_MODULES="gtk+-3.0 >= $GTK_REQUIRED \
              cafe-desktop-2.0 >= $CAFE_DESKTOP_REQUIRED \
              gdk-pixbuf-2.0 >= $GDKPIXBUF_REQUIRED \
              gio-2.0 >= $GIO_REQUIRED \
-             gtk+-unix-print-3.0 >= $GTK_REQUIRED \
+             ctk+-unix-print-3.0 >= $GTK_REQUIRED \
              shared-mime-info >= $SHARED_MIME_INFO_REQUIRED \
              libpeas-1.0 >= $LIBPEAS_REQUIRED \
-             libpeas-gtk-1.0 >= $LIBPEAS_REQUIRED"
+             libpeas-ctk-1.0 >= $LIBPEAS_REQUIRED"
 
 # Introspection
 GOBJECT_INTROSPECTION_CHECK([0.9.3])

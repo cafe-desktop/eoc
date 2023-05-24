@@ -68,7 +68,7 @@
 #include <gio/gio.h>
 #include <gdk/gdkkeysyms.h>
 #include <gio/gdesktopappinfo.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 #include <libpeas/peas-extension-set.h>
 #include <libpeas/peas-activatable.h>
@@ -100,7 +100,7 @@
 
 #define EOC_WALLPAPER_FILENAME "eoc-wallpaper"
 
-#define is_rtl (gtk_widget_get_default_direction () == GTK_TEXT_DIR_RTL)
+#define is_rtl (ctk_widget_get_default_direction () == GTK_TEXT_DIR_RTL)
 
 typedef enum {
 	EOC_WINDOW_STATUS_UNKNOWN,
@@ -257,15 +257,15 @@ eoc_window_set_collection_mode (EocWindow *window, EocWindowCollectionPos positi
 	priv->collection_position = position;
 	priv->collection_resizable = resizable;
 
-	hpaned = gtk_widget_get_parent (priv->sidebar);
+	hpaned = ctk_widget_get_parent (priv->sidebar);
 
 	g_object_ref (hpaned);
 	g_object_ref (priv->nav);
 
-	gtk_container_remove (GTK_CONTAINER (priv->layout), hpaned);
-	gtk_container_remove (GTK_CONTAINER (priv->layout), priv->nav);
+	ctk_container_remove (GTK_CONTAINER (priv->layout), hpaned);
+	ctk_container_remove (GTK_CONTAINER (priv->layout), priv->nav);
 
-	gtk_widget_destroy (priv->layout);
+	ctk_widget_destroy (priv->layout);
 
 	switch (position) {
 	case EOC_WINDOW_COLLECTION_POS_BOTTOM:
@@ -273,26 +273,26 @@ eoc_window_set_collection_mode (EocWindow *window, EocWindowCollectionPos positi
 		if (resizable) {
 			mode = EOC_THUMB_NAV_MODE_MULTIPLE_ROWS;
 
-			priv->layout = gtk_paned_new (GTK_ORIENTATION_VERTICAL);
+			priv->layout = ctk_paned_new (GTK_ORIENTATION_VERTICAL);
 
 			if (position == EOC_WINDOW_COLLECTION_POS_BOTTOM) {
-				gtk_paned_pack1 (GTK_PANED (priv->layout), hpaned, TRUE, FALSE);
-				gtk_paned_pack2 (GTK_PANED (priv->layout), priv->nav, FALSE, TRUE);
+				ctk_paned_pack1 (GTK_PANED (priv->layout), hpaned, TRUE, FALSE);
+				ctk_paned_pack2 (GTK_PANED (priv->layout), priv->nav, FALSE, TRUE);
 			} else {
-				gtk_paned_pack1 (GTK_PANED (priv->layout), priv->nav, FALSE, TRUE);
-				gtk_paned_pack2 (GTK_PANED (priv->layout), hpaned, TRUE, FALSE);
+				ctk_paned_pack1 (GTK_PANED (priv->layout), priv->nav, FALSE, TRUE);
+				ctk_paned_pack2 (GTK_PANED (priv->layout), hpaned, TRUE, FALSE);
 			}
 		} else {
 			mode = EOC_THUMB_NAV_MODE_ONE_ROW;
 
-			priv->layout = gtk_box_new (GTK_ORIENTATION_VERTICAL, 2);
+			priv->layout = ctk_box_new (GTK_ORIENTATION_VERTICAL, 2);
 
 			if (position == EOC_WINDOW_COLLECTION_POS_BOTTOM) {
-				gtk_box_pack_start (GTK_BOX (priv->layout), hpaned, TRUE, TRUE, 0);
-				gtk_box_pack_start (GTK_BOX (priv->layout), priv->nav, FALSE, FALSE, 0);
+				ctk_box_pack_start (GTK_BOX (priv->layout), hpaned, TRUE, TRUE, 0);
+				ctk_box_pack_start (GTK_BOX (priv->layout), priv->nav, FALSE, FALSE, 0);
 			} else {
-				gtk_box_pack_start (GTK_BOX (priv->layout), priv->nav, FALSE, FALSE, 0);
-				gtk_box_pack_start (GTK_BOX (priv->layout), hpaned, TRUE, TRUE, 0);
+				ctk_box_pack_start (GTK_BOX (priv->layout), priv->nav, FALSE, FALSE, 0);
+				ctk_box_pack_start (GTK_BOX (priv->layout), hpaned, TRUE, TRUE, 0);
 			}
 		}
 		break;
@@ -302,33 +302,33 @@ eoc_window_set_collection_mode (EocWindow *window, EocWindowCollectionPos positi
 		if (resizable) {
 			mode = EOC_THUMB_NAV_MODE_MULTIPLE_COLUMNS;
 
-			priv->layout = gtk_paned_new (GTK_ORIENTATION_HORIZONTAL);
+			priv->layout = ctk_paned_new (GTK_ORIENTATION_HORIZONTAL);
 
 			if (position == EOC_WINDOW_COLLECTION_POS_LEFT) {
-				gtk_paned_pack1 (GTK_PANED (priv->layout), priv->nav, FALSE, TRUE);
-				gtk_paned_pack2 (GTK_PANED (priv->layout), hpaned, TRUE, FALSE);
+				ctk_paned_pack1 (GTK_PANED (priv->layout), priv->nav, FALSE, TRUE);
+				ctk_paned_pack2 (GTK_PANED (priv->layout), hpaned, TRUE, FALSE);
 			} else {
-				gtk_paned_pack1 (GTK_PANED (priv->layout), hpaned, TRUE, FALSE);
-				gtk_paned_pack2 (GTK_PANED (priv->layout), priv->nav, FALSE, TRUE);
+				ctk_paned_pack1 (GTK_PANED (priv->layout), hpaned, TRUE, FALSE);
+				ctk_paned_pack2 (GTK_PANED (priv->layout), priv->nav, FALSE, TRUE);
 			}
 		} else {
 			mode = EOC_THUMB_NAV_MODE_ONE_COLUMN;
 
-			priv->layout = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 2);
+			priv->layout = ctk_box_new (GTK_ORIENTATION_HORIZONTAL, 2);
 
 			if (position == EOC_WINDOW_COLLECTION_POS_LEFT) {
-				gtk_box_pack_start (GTK_BOX (priv->layout), priv->nav, FALSE, FALSE, 0);
-				gtk_box_pack_start (GTK_BOX (priv->layout), hpaned, TRUE, TRUE, 0);
+				ctk_box_pack_start (GTK_BOX (priv->layout), priv->nav, FALSE, FALSE, 0);
+				ctk_box_pack_start (GTK_BOX (priv->layout), hpaned, TRUE, TRUE, 0);
 			} else {
-				gtk_box_pack_start (GTK_BOX (priv->layout), hpaned, TRUE, TRUE, 0);
-				gtk_box_pack_start (GTK_BOX (priv->layout), priv->nav, FALSE, FALSE, 0);
+				ctk_box_pack_start (GTK_BOX (priv->layout), hpaned, TRUE, TRUE, 0);
+				ctk_box_pack_start (GTK_BOX (priv->layout), priv->nav, FALSE, FALSE, 0);
 			}
 		}
 
 		break;
 	}
 
-	gtk_box_pack_end (GTK_BOX (priv->cbox), priv->layout, TRUE, TRUE, 0);
+	ctk_box_pack_end (GTK_BOX (priv->cbox), priv->layout, TRUE, TRUE, 0);
 
 	eoc_thumb_nav_set_mode (EOC_THUMB_NAV (priv->nav), mode);
 
@@ -358,21 +358,21 @@ eoc_window_can_save_changed_cb (GSettings *settings, gchar *key, gpointer user_d
 
 	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
 	action_save =
-		gtk_action_group_get_action (priv->actions_image, "ImageSave");
+		ctk_action_group_get_action (priv->actions_image, "ImageSave");
 	action_save_as =
-		gtk_action_group_get_action (priv->actions_image, "ImageSaveAs");
+		ctk_action_group_get_action (priv->actions_image, "ImageSaveAs");
 
 	if (priv->save_disabled) {
-		gtk_action_set_sensitive (action_save, FALSE);
-		gtk_action_set_sensitive (action_save_as, FALSE);
+		ctk_action_set_sensitive (action_save, FALSE);
+		ctk_action_set_sensitive (action_save_as, FALSE);
 	} else {
 		EocImage *image = eoc_window_get_image (window);
 
 		if (EOC_IS_IMAGE (image)) {
-			gtk_action_set_sensitive (action_save,
+			ctk_action_set_sensitive (action_save,
 						  eoc_image_is_modified (image));
 
-			gtk_action_set_sensitive (action_save_as, TRUE);
+			ctk_action_set_sensitive (action_save_as, TRUE);
 		}
 	}
 	G_GNUC_END_IGNORE_DEPRECATIONS;
@@ -531,10 +531,10 @@ update_status_bar (EocWindow *window)
 		update_image_pos (window);
 	}
 
-	gtk_statusbar_pop (GTK_STATUSBAR (priv->statusbar),
+	ctk_statusbar_pop (GTK_STATUSBAR (priv->statusbar),
 			   priv->image_info_message_cid);
 
-	gtk_statusbar_push (GTK_STATUSBAR (priv->statusbar),
+	ctk_statusbar_push (GTK_STATUSBAR (priv->statusbar),
 			    priv->image_info_message_cid, str ? str : "");
 
 	g_free (str);
@@ -548,13 +548,13 @@ eoc_window_set_message_area (EocWindow *window,
 		return;
 
 	if (window->priv->message_area != NULL)
-		gtk_widget_destroy (window->priv->message_area);
+		ctk_widget_destroy (window->priv->message_area);
 
 	window->priv->message_area = message_area;
 
 	if (message_area == NULL) return;
 
-	gtk_box_pack_start (GTK_BOX (window->priv->cbox),
+	ctk_box_pack_start (GTK_BOX (window->priv->cbox),
 			    window->priv->message_area,
 			    FALSE,
 			    FALSE,
@@ -585,23 +585,23 @@ update_action_groups_state (EocWindow *window)
 
 	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
 	action_collection =
-		gtk_action_group_get_action (priv->actions_window,
+		ctk_action_group_get_action (priv->actions_window,
 					     "ViewImageCollection");
 
 	action_sidebar =
-		gtk_action_group_get_action (priv->actions_window,
+		ctk_action_group_get_action (priv->actions_window,
 					     "ViewSidebar");
 
 	action_fscreen =
-		gtk_action_group_get_action (priv->actions_image,
+		ctk_action_group_get_action (priv->actions_image,
 					     "ViewFullscreen");
 
 	action_sshow =
-		gtk_action_group_get_action (priv->actions_collection,
+		ctk_action_group_get_action (priv->actions_collection,
 					     "ViewSlideshow");
 
 	action_print =
-		gtk_action_group_get_action (priv->actions_image,
+		ctk_action_group_get_action (priv->actions_image,
 					     "ImagePrint");
 	G_GNUC_END_IGNORE_DEPRECATIONS;
 
@@ -616,15 +616,15 @@ update_action_groups_state (EocWindow *window)
 	}
 
 	if (n_images == 0) {
-		gtk_widget_hide (priv->layout);
+		ctk_widget_hide (priv->layout);
 
 		G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
-		gtk_action_group_set_sensitive (priv->actions_window,      TRUE);
-		gtk_action_group_set_sensitive (priv->actions_image,       FALSE);
-		gtk_action_group_set_sensitive (priv->actions_collection,  FALSE);
+		ctk_action_group_set_sensitive (priv->actions_window,      TRUE);
+		ctk_action_group_set_sensitive (priv->actions_image,       FALSE);
+		ctk_action_group_set_sensitive (priv->actions_collection,  FALSE);
 
-		gtk_action_set_sensitive (action_fscreen, FALSE);
-		gtk_action_set_sensitive (action_sshow,   FALSE);
+		ctk_action_set_sensitive (action_fscreen, FALSE);
+		ctk_action_set_sensitive (action_sshow,   FALSE);
 		G_GNUC_END_IGNORE_DEPRECATIONS;
 
 		/* If there are no images on model, initialization
@@ -646,34 +646,34 @@ update_action_groups_state (EocWindow *window)
 					n_images > 1 &&
 					priv->mode != EOC_WINDOW_MODE_SLIDESHOW;
 
-		gtk_widget_show (priv->layout);
+		ctk_widget_show (priv->layout);
 
 		if (show_image_collection)
-			gtk_widget_show (priv->nav);
+			ctk_widget_show (priv->nav);
 
 		G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
-		gtk_toggle_action_set_active (GTK_TOGGLE_ACTION (action_collection),
+		ctk_toggle_action_set_active (GTK_TOGGLE_ACTION (action_collection),
 					      show_image_collection);
 
-		gtk_action_group_set_sensitive (priv->actions_window, TRUE);
-		gtk_action_group_set_sensitive (priv->actions_image,  TRUE);
+		ctk_action_group_set_sensitive (priv->actions_window, TRUE);
+		ctk_action_group_set_sensitive (priv->actions_image,  TRUE);
 
-		gtk_action_set_sensitive (action_fscreen, TRUE);
+		ctk_action_set_sensitive (action_fscreen, TRUE);
 
 		if (n_images == 1) {
-			gtk_action_group_set_sensitive (priv->actions_collection,  FALSE);
-			gtk_action_set_sensitive (action_collection, FALSE);
-			gtk_action_set_sensitive (action_sshow, FALSE);
+			ctk_action_group_set_sensitive (priv->actions_collection,  FALSE);
+			ctk_action_set_sensitive (action_collection, FALSE);
+			ctk_action_set_sensitive (action_sshow, FALSE);
 		} else {
-			gtk_action_group_set_sensitive (priv->actions_collection,  TRUE);
-			gtk_action_set_sensitive (action_sshow, TRUE);
+			ctk_action_group_set_sensitive (priv->actions_collection,  TRUE);
+			ctk_action_set_sensitive (action_sshow, TRUE);
 		}
 		G_GNUC_END_IGNORE_DEPRECATIONS;
 
 		if (show_image_collection)
-			gtk_widget_grab_focus (priv->thumbview);
+			ctk_widget_grab_focus (priv->thumbview);
 		else
-			gtk_widget_grab_focus (priv->view);
+			ctk_widget_grab_focus (priv->view);
 	}
 
 	print_disabled = g_settings_get_boolean (priv->lockdown_settings,
@@ -681,13 +681,13 @@ update_action_groups_state (EocWindow *window)
 
 	if (print_disabled) {
 		G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
-		gtk_action_set_sensitive (action_print, FALSE);
+		ctk_action_set_sensitive (action_print, FALSE);
 	}
 
 	if (eoc_sidebar_is_empty (EOC_SIDEBAR (priv->sidebar))) {
-		gtk_action_set_sensitive (action_sidebar, FALSE);
+		ctk_action_set_sensitive (action_sidebar, FALSE);
 		G_GNUC_END_IGNORE_DEPRECATIONS;
-		gtk_widget_hide (priv->sidebar);
+		ctk_widget_hide (priv->sidebar);
 	}
 }
 
@@ -704,13 +704,13 @@ update_selection_ui_visibility (EocWindow *window)
 
 	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
 	wallpaper_action =
-		gtk_action_group_get_action (priv->actions_image,
+		ctk_action_group_get_action (priv->actions_image,
 					     "ImageSetAsWallpaper");
 
 	if (n_selected == 1) {
-		gtk_action_set_sensitive (wallpaper_action, TRUE);
+		ctk_action_set_sensitive (wallpaper_action, TRUE);
 	} else {
-		gtk_action_set_sensitive (wallpaper_action, FALSE);
+		ctk_action_set_sensitive (wallpaper_action, FALSE);
 	}
 	G_GNUC_END_IGNORE_DEPRECATIONS;
 }
@@ -727,7 +727,7 @@ add_file_to_recent_files (GFile *file)
 
 	/* The password gets stripped here because ~/.recently-used.xbel is
 	 * readable by everyone (chmod 644). It also makes the workaround
-	 * for the bug with gtk_recent_info_get_uri_display() easier
+	 * for the bug with ctk_recent_info_get_uri_display() easier
 	 * (see the comment in eoc_window_update_recent_files_menu()). */
 	text_uri = g_file_get_uri (file);
 
@@ -749,7 +749,7 @@ add_file_to_recent_files (GFile *file)
 	recent_data->groups = groups;
 	recent_data->is_private = FALSE;
 
-	gtk_recent_manager_add_full (gtk_recent_manager_get_default (),
+	ctk_recent_manager_add_full (ctk_recent_manager_get_default (),
 				     text_uri,
 				     recent_data);
 
@@ -777,7 +777,7 @@ image_thumb_changed_cb (EocImage *image, gpointer data)
 	thumb = eoc_image_get_thumbnail (image);
 
 	if (thumb != NULL) {
-		gtk_window_set_icon (GTK_WINDOW (window), thumb);
+		ctk_window_set_icon (GTK_WINDOW (window), thumb);
 
 		if (window->priv->properties_dlg != NULL) {
 			eoc_properties_dialog_update (EOC_PROPERTIES_DIALOG (priv->properties_dlg),
@@ -785,14 +785,14 @@ image_thumb_changed_cb (EocImage *image, gpointer data)
 		}
 
 		g_object_unref (thumb);
-	} else if (!gtk_widget_get_visible (window->priv->nav)) {
+	} else if (!ctk_widget_get_visible (window->priv->nav)) {
 		gint img_pos = eoc_list_store_get_pos_by_image (window->priv->store, image);
-		GtkTreePath *path = gtk_tree_path_new_from_indices (img_pos,-1);
+		GtkTreePath *path = ctk_tree_path_new_from_indices (img_pos,-1);
 		GtkTreeIter iter;
 
-		gtk_tree_model_get_iter (GTK_TREE_MODEL (window->priv->store), &iter, path);
+		ctk_tree_model_get_iter (GTK_TREE_MODEL (window->priv->store), &iter, path);
 		eoc_list_store_thumbnail_set (window->priv->store, &iter);
-		gtk_tree_path_free (path);
+		ctk_tree_path_free (path);
 	}
 }
 
@@ -829,34 +829,34 @@ image_file_changed_cb (EocImage *img, EocWindow *window)
 
 	window->priv->needs_reload_confirmation = FALSE;
 
-	info_bar = gtk_info_bar_new_with_buttons (_("_Reload"),
+	info_bar = ctk_info_bar_new_with_buttons (_("_Reload"),
 						  GTK_RESPONSE_YES,
 						  C_("MessageArea", "Hi_de"),
 						  GTK_RESPONSE_NO, NULL);
-	gtk_info_bar_set_message_type (GTK_INFO_BAR (info_bar),
+	ctk_info_bar_set_message_type (GTK_INFO_BAR (info_bar),
 				       GTK_MESSAGE_QUESTION);
-	image = gtk_image_new_from_icon_name ("dialog-question",
+	image = ctk_image_new_from_icon_name ("dialog-question",
 					  GTK_ICON_SIZE_DIALOG);
-	label = gtk_label_new (NULL);
+	label = ctk_label_new (NULL);
 
 	/* The newline character is currently necessary due to a problem
 	 * with the automatic line break. */
 	text = g_strdup_printf (_("The image \"%s\" has been modified by an external application."
 				  "\nWould you like to reload it?"), eoc_image_get_caption (img));
 	markup = g_markup_printf_escaped ("<b>%s</b>", text);
-	gtk_label_set_markup (GTK_LABEL (label), markup);
+	ctk_label_set_markup (GTK_LABEL (label), markup);
 	g_free (text);
 	g_free (markup);
 
-	hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 8);
-	gtk_box_pack_start (GTK_BOX (hbox), image, FALSE, FALSE, 0);
-	gtk_widget_set_halign (image, GTK_ALIGN_START);
-	gtk_widget_set_valign (image, GTK_ALIGN_END);
-	gtk_box_pack_start (GTK_BOX (hbox), label, TRUE, TRUE, 0);
-	gtk_label_set_xalign (GTK_LABEL (label), 0.0);
-	gtk_box_pack_start (GTK_BOX (gtk_info_bar_get_content_area (GTK_INFO_BAR (info_bar))), hbox, TRUE, TRUE, 0);
-	gtk_widget_show_all (hbox);
-	gtk_widget_show (info_bar);
+	hbox = ctk_box_new (GTK_ORIENTATION_HORIZONTAL, 8);
+	ctk_box_pack_start (GTK_BOX (hbox), image, FALSE, FALSE, 0);
+	ctk_widget_set_halign (image, GTK_ALIGN_START);
+	ctk_widget_set_valign (image, GTK_ALIGN_END);
+	ctk_box_pack_start (GTK_BOX (hbox), label, TRUE, TRUE, 0);
+	ctk_label_set_xalign (GTK_LABEL (label), 0.0);
+	ctk_box_pack_start (GTK_BOX (ctk_info_bar_get_content_area (GTK_INFO_BAR (info_bar))), hbox, TRUE, TRUE, 0);
+	ctk_widget_show_all (hbox);
+	ctk_widget_show (info_bar);
 
 	eoc_window_set_message_area (window, info_bar);
 	g_signal_connect (info_bar, "response",
@@ -894,7 +894,7 @@ eoc_window_display_image (EocWindow *window, EocImage *image)
 
 	eoc_scroll_view_set_image (EOC_SCROLL_VIEW (priv->view), image);
 
-	gtk_window_set_title (GTK_WINDOW (window), eoc_image_get_caption (image));
+	ctk_window_set_title (GTK_WINDOW (window), eoc_image_get_caption (image));
 
 	update_status_bar (window);
 
@@ -962,12 +962,12 @@ eoc_window_update_openwith_menu (EocWindow *window, EocImage *image)
 	}
 
 	if (priv->open_with_menu_id != 0) {
-		gtk_ui_manager_remove_ui (priv->ui_mgr, priv->open_with_menu_id);
+		ctk_ui_manager_remove_ui (priv->ui_mgr, priv->open_with_menu_id);
 		priv->open_with_menu_id = 0;
 	}
 
 	if (priv->actions_open_with != NULL) {
-		gtk_ui_manager_remove_action_group (priv->ui_mgr, priv->actions_open_with);
+		ctk_ui_manager_remove_action_group (priv->ui_mgr, priv->actions_open_with);
 		g_object_unref (priv->actions_open_with);
 		priv->actions_open_with = NULL;
 	}
@@ -985,11 +985,11 @@ eoc_window_update_openwith_menu (EocWindow *window, EocImage *image)
 		return;
 
 	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
-	priv->actions_open_with = gtk_action_group_new ("OpenWithActions");
+	priv->actions_open_with = ctk_action_group_new ("OpenWithActions");
 	G_GNUC_END_IGNORE_DEPRECATIONS;
-	gtk_ui_manager_insert_action_group (priv->ui_mgr, priv->actions_open_with, -1);
+	ctk_ui_manager_insert_action_group (priv->ui_mgr, priv->actions_open_with, -1);
 
-	priv->open_with_menu_id = gtk_ui_manager_new_merge_id (priv->ui_mgr);
+	priv->open_with_menu_id = ctk_ui_manager_new_merge_id (priv->ui_mgr);
 
 	for (iter = apps; iter; iter = iter->next) {
 		GAppInfo *app = iter->data;
@@ -1012,14 +1012,14 @@ eoc_window_update_openwith_menu (EocWindow *window, EocImage *image)
 		tip = g_strdup_printf (_("Use \"%s\" to open the selected image"), g_app_info_get_name (app));
 
 		G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
-		action = gtk_action_new (name, label, tip, NULL);
+		action = ctk_action_new (name, label, tip, NULL);
 		G_GNUC_END_IGNORE_DEPRECATIONS;
 
 		app_icon = g_app_info_get_icon (app);
 		if (G_LIKELY (app_icon != NULL)) {
 			g_object_ref (app_icon);
 			G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
-			gtk_action_set_gicon (action, app_icon);
+			ctk_action_set_gicon (action, app_icon);
 			G_GNUC_END_IGNORE_DEPRECATIONS;
 			g_object_unref (app_icon);
 		}
@@ -1036,11 +1036,11 @@ eoc_window_update_openwith_menu (EocWindow *window, EocImage *image)
 				          image);
 
 		G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
-		gtk_action_group_add_action (priv->actions_open_with, action);
+		ctk_action_group_add_action (priv->actions_open_with, action);
 		G_GNUC_END_IGNORE_DEPRECATIONS;
 		g_object_unref (action);
 
-		gtk_ui_manager_add_ui (priv->ui_mgr,
+		ctk_ui_manager_add_ui (priv->ui_mgr,
 				        priv->open_with_menu_id,
 				        "/MainMenu/Image/ImageOpenWith/Applications Placeholder",
 				        name,
@@ -1048,14 +1048,14 @@ eoc_window_update_openwith_menu (EocWindow *window, EocImage *image)
 				        GTK_UI_MANAGER_MENUITEM,
 				        FALSE);
 
-		gtk_ui_manager_add_ui (priv->ui_mgr,
+		ctk_ui_manager_add_ui (priv->ui_mgr,
 				        priv->open_with_menu_id,
 				        "/ThumbnailPopup/ImageOpenWith/Applications Placeholder",
 				        name,
 				        name,
 				        GTK_UI_MANAGER_MENUITEM,
 				        FALSE);
-		gtk_ui_manager_add_ui (priv->ui_mgr,
+		ctk_ui_manager_add_ui (priv->ui_mgr,
 				        priv->open_with_menu_id,
 				        "/ViewPopup/ImageOpenWith/Applications Placeholder",
 				        name,
@@ -1065,28 +1065,28 @@ eoc_window_update_openwith_menu (EocWindow *window, EocImage *image)
 
 		path = g_strdup_printf ("/MainMenu/Image/ImageOpenWith/Applications Placeholder/%s", name);
 
-		menuitem = gtk_ui_manager_get_widget (priv->ui_mgr, path);
+		menuitem = ctk_ui_manager_get_widget (priv->ui_mgr, path);
 
 		/* Only force displaying the icon if it is an application icon */
-		gtk_image_menu_item_set_always_show_image (GTK_IMAGE_MENU_ITEM (menuitem), app_icon != NULL);
+		ctk_image_menu_item_set_always_show_image (GTK_IMAGE_MENU_ITEM (menuitem), app_icon != NULL);
 
 		g_free (path);
 
 		path = g_strdup_printf ("/ThumbnailPopup/ImageOpenWith/Applications Placeholder/%s", name);
 
-		menuitem = gtk_ui_manager_get_widget (priv->ui_mgr, path);
+		menuitem = ctk_ui_manager_get_widget (priv->ui_mgr, path);
 
 		/* Only force displaying the icon if it is an application icon */
-		gtk_image_menu_item_set_always_show_image (GTK_IMAGE_MENU_ITEM (menuitem), app_icon != NULL);
+		ctk_image_menu_item_set_always_show_image (GTK_IMAGE_MENU_ITEM (menuitem), app_icon != NULL);
 
 		g_free (path);
 
 		path = g_strdup_printf ("/ViewPopup/ImageOpenWith/Applications Placeholder/%s", name);
 
-		menuitem = gtk_ui_manager_get_widget (priv->ui_mgr, path);
+		menuitem = ctk_ui_manager_get_widget (priv->ui_mgr, path);
 
 		/* Only force displaying the icon if it is an application icon */
-		gtk_image_menu_item_set_always_show_image (GTK_IMAGE_MENU_ITEM (menuitem), app_icon != NULL);
+		ctk_image_menu_item_set_always_show_image (GTK_IMAGE_MENU_ITEM (menuitem), app_icon != NULL);
 
 		g_free (path);
 	}
@@ -1094,10 +1094,10 @@ eoc_window_update_openwith_menu (EocWindow *window, EocImage *image)
 	g_list_free (apps);
 
 	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
-	action = gtk_action_group_get_action (window->priv->actions_image,
+	action = ctk_action_group_get_action (window->priv->actions_image,
 		                                  "OpenEditor");
 	if (action != NULL) {
-		gtk_action_set_sensitive (action, edit_button_active);
+		ctk_action_set_sensitive (action, edit_button_active);
 	}
 	G_GNUC_END_IGNORE_DEPRECATIONS;
 }
@@ -1179,10 +1179,10 @@ eoc_job_save_progress_cb (EocJobSave *job, float progress, gpointer user_data)
 						  n_images);
 		g_free (str_image);
 
-		gtk_statusbar_pop (GTK_STATUSBAR (priv->statusbar),
+		ctk_statusbar_pop (GTK_STATUSBAR (priv->statusbar),
 				   priv->image_info_message_cid);
 
-		gtk_statusbar_push (GTK_STATUSBAR (priv->statusbar),
+		ctk_statusbar_push (GTK_STATUSBAR (priv->statusbar),
 				    priv->image_info_message_cid,
 				    status_message);
 
@@ -1215,27 +1215,27 @@ eoc_window_obtain_desired_size (EocImage  *image,
 	img_width = width;
 	img_height = height;
 
-	if (!gtk_widget_get_realized (window->priv->view)) {
-		gtk_widget_realize (window->priv->view);
+	if (!ctk_widget_get_realized (window->priv->view)) {
+		ctk_widget_realize (window->priv->view);
 	}
 
-	gtk_widget_get_allocation (window->priv->view, &allocation);
+	ctk_widget_get_allocation (window->priv->view, &allocation);
 	view_width  = allocation.width;
 	view_height = allocation.height;
 
-	if (!gtk_widget_get_realized (GTK_WIDGET (window))) {
-		gtk_widget_realize (GTK_WIDGET (window));
+	if (!ctk_widget_get_realized (GTK_WIDGET (window))) {
+		ctk_widget_realize (GTK_WIDGET (window));
 	}
 
-	gtk_widget_get_allocation (GTK_WIDGET (window), &allocation);
+	ctk_widget_get_allocation (GTK_WIDGET (window), &allocation);
 	window_width  = allocation.width;
 	window_height = allocation.height;
 
-	screen = gtk_window_get_screen (GTK_WINDOW (window));
+	screen = ctk_window_get_screen (GTK_WINDOW (window));
 	display = gdk_screen_get_display (screen);
 
 	gdk_monitor_get_geometry (gdk_display_get_monitor_at_window (display,
-								     gtk_widget_get_window (GTK_WIDGET (window))),
+								     ctk_widget_get_window (GTK_WIDGET (window))),
 				  &monitor);
 
 	screen_width  = monitor.width;
@@ -1266,7 +1266,7 @@ eoc_window_obtain_desired_size (EocImage  *image,
 
 	eoc_debug_message (DEBUG_WINDOW, "Setting window size: %d x %d", final_width, final_height);
 
-	gtk_window_set_default_size (GTK_WINDOW (window), final_width, final_height);
+	ctk_window_set_default_size (GTK_WINDOW (window), final_width, final_height);
 
 	g_signal_emit (window, signals[SIGNAL_PREPARED], 0);
 }
@@ -1303,7 +1303,7 @@ eoc_job_load_cb (EocJobLoad *job, gpointer data)
 
 	eoc_statusbar_set_progress (EOC_STATUSBAR (priv->statusbar), 0.0);
 
-	gtk_statusbar_pop (GTK_STATUSBAR (window->priv->statusbar),
+	ctk_statusbar_pop (GTK_STATUSBAR (window->priv->statusbar),
 			   priv->image_info_message_cid);
 
 	if (priv->image != NULL) {
@@ -1326,7 +1326,7 @@ eoc_job_load_cb (EocJobLoad *job, gpointer data)
 #endif
 
 		G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
-		gtk_action_group_set_sensitive (priv->actions_image, TRUE);
+		ctk_action_group_set_sensitive (priv->actions_image, TRUE);
 		G_GNUC_END_IGNORE_DEPRECATIONS;
 
 		eoc_window_display_image (window, job->image);
@@ -1342,16 +1342,16 @@ eoc_job_load_cb (EocJobLoad *job, gpointer data)
 				  G_CALLBACK (eoc_window_error_message_area_response),
 				  window);
 
-		gtk_window_set_icon (GTK_WINDOW (window), NULL);
-		gtk_window_set_title (GTK_WINDOW (window),
+		ctk_window_set_icon (GTK_WINDOW (window), NULL);
+		ctk_window_set_title (GTK_WINDOW (window),
 				      eoc_image_get_caption (job->image));
 
 		eoc_window_set_message_area (window, message_area);
 
-		gtk_info_bar_set_default_response (GTK_INFO_BAR (message_area),
+		ctk_info_bar_set_default_response (GTK_INFO_BAR (message_area),
 						   GTK_RESPONSE_CANCEL);
 
-		gtk_widget_show (message_area);
+		ctk_widget_show (message_area);
 
 		update_status_bar (window);
 
@@ -1364,7 +1364,7 @@ eoc_job_load_cb (EocJobLoad *job, gpointer data)
 		}
 
 		G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
-		gtk_action_group_set_sensitive (priv->actions_image, FALSE);
+		ctk_action_group_set_sensitive (priv->actions_image, FALSE);
 		G_GNUC_END_IGNORE_DEPRECATIONS;
 	}
 
@@ -1380,13 +1380,13 @@ eoc_job_load_cb (EocJobLoad *job, gpointer data)
 	}
 
 	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
-	action_save = gtk_action_group_get_action (priv->actions_image, "ImageSave");
-	action_undo = gtk_action_group_get_action (priv->actions_image, "EditUndo");
+	action_save = ctk_action_group_get_action (priv->actions_image, "ImageSave");
+	action_undo = ctk_action_group_get_action (priv->actions_image, "EditUndo");
 
 	/* Set Save and Undo sensitive according to image state.
 	 * Respect lockdown in case of Save.*/
-	gtk_action_set_sensitive (action_save, (!priv->save_disabled && eoc_image_is_modified (job->image)));
-	gtk_action_set_sensitive (action_undo, eoc_image_is_modified (job->image));
+	ctk_action_set_sensitive (action_save, (!priv->save_disabled && eoc_image_is_modified (job->image)));
+	ctk_action_set_sensitive (action_undo, eoc_image_is_modified (job->image));
 	G_GNUC_END_IGNORE_DEPRECATIONS;
 
 	g_object_unref (job->image);
@@ -1424,17 +1424,17 @@ eoc_job_transform_cb (EocJobTransform *job, gpointer data)
 
 	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
 	action_undo =
-		gtk_action_group_get_action (window->priv->actions_image, "EditUndo");
+		ctk_action_group_get_action (window->priv->actions_image, "EditUndo");
 	action_save =
-		gtk_action_group_get_action (window->priv->actions_image, "ImageSave");
+		ctk_action_group_get_action (window->priv->actions_image, "ImageSave");
 
 	image = eoc_window_get_image (window);
 
-	gtk_action_set_sensitive (action_undo, eoc_image_is_modified (image));
+	ctk_action_set_sensitive (action_undo, eoc_image_is_modified (image));
 
 	if (!window->priv->save_disabled)
 	{
-		gtk_action_set_sensitive (action_save, eoc_image_is_modified (image));
+		ctk_action_set_sensitive (action_save, eoc_image_is_modified (image));
 	}
 	G_GNUC_END_IGNORE_DEPRECATIONS;
 }
@@ -1479,9 +1479,9 @@ handle_image_selection_changed_cb (EocThumbView *thumbview, EocWindow *window)
 	priv = window->priv;
 
 	if (eoc_list_store_length (EOC_LIST_STORE (priv->store)) == 0) {
-		gtk_window_set_title (GTK_WINDOW (window),
+		ctk_window_set_title (GTK_WINDOW (window),
 				      g_get_application_name());
-		gtk_statusbar_remove_all (GTK_STATUSBAR (priv->statusbar),
+		ctk_statusbar_remove_all (GTK_STATUSBAR (priv->statusbar),
 					  priv->image_info_message_cid);
 		eoc_scroll_view_set_image (EOC_SCROLL_VIEW (priv->view),
 					   NULL);
@@ -1500,7 +1500,7 @@ handle_image_selection_changed_cb (EocThumbView *thumbview, EocWindow *window)
 
 	eoc_window_set_message_area (window, NULL);
 
-	gtk_statusbar_pop (GTK_STATUSBAR (priv->statusbar),
+	ctk_statusbar_pop (GTK_STATUSBAR (priv->statusbar),
 			   priv->image_info_message_cid);
 
 	if (image == priv->image) {
@@ -1545,7 +1545,7 @@ handle_image_selection_changed_cb (EocThumbView *thumbview, EocWindow *window)
 
 	g_free (str_image);
 
-	gtk_statusbar_push (GTK_STATUSBAR (priv->statusbar),
+	ctk_statusbar_push (GTK_STATUSBAR (priv->statusbar),
 			    priv->image_info_message_cid, status_message);
 
 	g_free (status_message);
@@ -1566,16 +1566,16 @@ view_zoom_changed_cb (GtkWidget *widget, double zoom, gpointer user_data)
 
 	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
 	action_zoom_in =
-		gtk_action_group_get_action (window->priv->actions_image,
+		ctk_action_group_get_action (window->priv->actions_image,
 					     "ViewZoomIn");
 
 	action_zoom_out =
-		gtk_action_group_get_action (window->priv->actions_image,
+		ctk_action_group_get_action (window->priv->actions_image,
 					     "ViewZoomOut");
 
-	gtk_action_set_sensitive (action_zoom_in,
+	ctk_action_set_sensitive (action_zoom_in,
 			!eoc_scroll_view_get_zoom_is_max (EOC_SCROLL_VIEW (window->priv->view)));
-	gtk_action_set_sensitive (action_zoom_out,
+	ctk_action_set_sensitive (action_zoom_out,
 			!eoc_scroll_view_get_zoom_is_min (EOC_SCROLL_VIEW (window->priv->view)));
 	G_GNUC_END_IGNORE_DEPRECATIONS;
 }
@@ -1587,10 +1587,10 @@ eoc_window_open_recent_cb (GtkAction *action, EocWindow *window)
 	const gchar *uri;
 	GSList *list = NULL;
 
-	info = g_object_get_data (G_OBJECT (action), "gtk-recent-info");
+	info = g_object_get_data (G_OBJECT (action), "ctk-recent-info");
 	g_return_if_fail (info != NULL);
 
-	uri = gtk_recent_info_get_uri (info);
+	uri = ctk_recent_info_get_uri (info);
 	list = g_slist_prepend (list, g_strdup (uri));
 
 	eoc_application_open_uri_list (EOC_APP,
@@ -1611,7 +1611,7 @@ file_open_dialog_response_cb (GtkWidget *chooser,
 	if (response_id == GTK_RESPONSE_OK) {
 		GSList *uris;
 
-		uris = gtk_file_chooser_get_uris (GTK_FILE_CHOOSER (chooser));
+		uris = ctk_file_chooser_get_uris (GTK_FILE_CHOOSER (chooser));
 
 		eoc_application_open_uri_list (EOC_APP,
 					       uris,
@@ -1623,7 +1623,7 @@ file_open_dialog_response_cb (GtkWidget *chooser,
 		g_slist_free (uris);
 	}
 
-	gtk_widget_destroy (chooser);
+	ctk_widget_destroy (chooser);
 }
 
 static void
@@ -1632,13 +1632,13 @@ eoc_window_update_fullscreen_action (EocWindow *window)
 	GtkAction *action;
 
 	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
-	action = gtk_action_group_get_action (window->priv->actions_image,
+	action = ctk_action_group_get_action (window->priv->actions_image,
 					      "ViewFullscreen");
 
 	g_signal_handlers_block_by_func
 		(action, G_CALLBACK (eoc_window_cmd_fullscreen), window);
 
-	gtk_toggle_action_set_active (GTK_TOGGLE_ACTION (action),
+	ctk_toggle_action_set_active (GTK_TOGGLE_ACTION (action),
 				      window->priv->mode == EOC_WINDOW_MODE_FULLSCREEN);
 	G_GNUC_END_IGNORE_DEPRECATIONS;
 
@@ -1652,13 +1652,13 @@ eoc_window_update_slideshow_action (EocWindow *window)
 	GtkAction *action;
 
 	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
-	action = gtk_action_group_get_action (window->priv->actions_collection,
+	action = ctk_action_group_get_action (window->priv->actions_collection,
 					      "ViewSlideshow");
 
 	g_signal_handlers_block_by_func
 		(action, G_CALLBACK (eoc_window_cmd_slideshow), window);
 
-	gtk_toggle_action_set_active (GTK_TOGGLE_ACTION (action),
+	ctk_toggle_action_set_active (GTK_TOGGLE_ACTION (action),
 				      window->priv->mode == EOC_WINDOW_MODE_SLIDESHOW);
 	G_GNUC_END_IGNORE_DEPRECATIONS;
 
@@ -1672,13 +1672,13 @@ eoc_window_update_pause_slideshow_action (EocWindow *window)
 	GtkAction *action;
 
 	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
-	action = gtk_action_group_get_action (window->priv->actions_image,
+	action = ctk_action_group_get_action (window->priv->actions_image,
 					      "PauseSlideshow");
 
 	g_signal_handlers_block_by_func
 		(action, G_CALLBACK (eoc_window_cmd_pause_slideshow), window);
 
-	gtk_toggle_action_set_active (GTK_TOGGLE_ACTION (action),
+	ctk_toggle_action_set_active (GTK_TOGGLE_ACTION (action),
 				      window->priv->mode != EOC_WINDOW_MODE_SLIDESHOW);
 	G_GNUC_END_IGNORE_DEPRECATIONS;
 
@@ -1696,20 +1696,20 @@ eoc_window_update_fullscreen_popup (EocWindow *window)
 
 	g_return_if_fail (popup != NULL);
 
-	if (gtk_widget_get_window (GTK_WIDGET (window)) == NULL) return;
+	if (ctk_widget_get_window (GTK_WIDGET (window)) == NULL) return;
 
-	screen = gtk_widget_get_screen (GTK_WIDGET (window));
+	screen = ctk_widget_get_screen (GTK_WIDGET (window));
 	display = gdk_screen_get_display (screen);
 
 	gdk_monitor_get_geometry (gdk_display_get_monitor_at_window (display,
-								     gtk_widget_get_window (GTK_WIDGET (window))),
+								     ctk_widget_get_window (GTK_WIDGET (window))),
 				  &screen_rect);
 
-	gtk_widget_set_size_request (popup,
+	ctk_widget_set_size_request (popup,
 				     screen_rect.width,
 				     -1);
 
-	gtk_window_move (GTK_WINDOW (popup), screen_rect.x, screen_rect.y);
+	ctk_window_move (GTK_WINDOW (popup), screen_rect.x, screen_rect.y);
 }
 
 static void
@@ -1723,7 +1723,7 @@ fullscreen_timeout_cb (gpointer data)
 {
 	EocWindow *window = EOC_WINDOW (data);
 
-	gtk_widget_hide (window->priv->fullscreen_popup);
+	ctk_widget_hide (window->priv->fullscreen_popup);
 
 	eoc_scroll_view_hide_cursor (EOC_SCROLL_VIEW (window->priv->view));
 
@@ -1841,8 +1841,8 @@ show_fullscreen_popup (EocWindow *window)
 {
 	eoc_debug (DEBUG_WINDOW);
 
-	if (!gtk_widget_get_visible (window->priv->fullscreen_popup)) {
-		gtk_widget_show_all (GTK_WIDGET (window->priv->fullscreen_popup));
+	if (!ctk_widget_get_visible (window->priv->fullscreen_popup)) {
+		ctk_widget_show_all (GTK_WIDGET (window->priv->fullscreen_popup));
 	}
 
 	fullscreen_set_timeout (window);
@@ -1889,15 +1889,15 @@ exit_fullscreen_button_clicked_cb (GtkWidget *button, EocWindow *window)
 
 	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
 	if (window->priv->mode == EOC_WINDOW_MODE_SLIDESHOW) {
-		action = gtk_action_group_get_action (window->priv->actions_collection,
+		action = ctk_action_group_get_action (window->priv->actions_collection,
 						      "ViewSlideshow");
 	} else {
-		action = gtk_action_group_get_action (window->priv->actions_image,
+		action = ctk_action_group_get_action (window->priv->actions_image,
 						      "ViewFullscreen");
 	}
 	g_return_if_fail (action != NULL);
 
-	gtk_toggle_action_set_active (GTK_TOGGLE_ACTION (action), FALSE);
+	ctk_toggle_action_set_active (GTK_TOGGLE_ACTION (action), FALSE);
 	G_GNUC_END_IGNORE_DEPRECATIONS;
 }
 
@@ -1906,8 +1906,8 @@ eoc_window_get_exit_fullscreen_button (EocWindow *window)
 {
 	GtkWidget *button;
 
-	button = gtk_button_new_with_mnemonic (_("Leave Fullscreen"));
-	gtk_button_set_image (GTK_BUTTON (button), gtk_image_new_from_icon_name ("view-restore", GTK_ICON_SIZE_BUTTON));
+	button = ctk_button_new_with_mnemonic (_("Leave Fullscreen"));
+	ctk_button_set_image (GTK_BUTTON (button), ctk_image_new_from_icon_name ("view-restore", GTK_ICON_SIZE_BUTTON));
 
 	g_signal_connect (button, "clicked",
 			  G_CALLBACK (exit_fullscreen_button_clicked_cb),
@@ -1927,23 +1927,23 @@ eoc_window_create_fullscreen_popup (EocWindow *window)
 
 	eoc_debug (DEBUG_WINDOW);
 
-	popup = gtk_window_new (GTK_WINDOW_POPUP);
+	popup = ctk_window_new (GTK_WINDOW_POPUP);
 
-	hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
-	gtk_container_add (GTK_CONTAINER (popup), hbox);
+	hbox = ctk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
+	ctk_container_add (GTK_CONTAINER (popup), hbox);
 
-	toolbar = gtk_ui_manager_get_widget (window->priv->ui_mgr,
+	toolbar = ctk_ui_manager_get_widget (window->priv->ui_mgr,
 					     "/FullscreenToolbar");
 	g_assert (GTK_IS_WIDGET (toolbar));
-	gtk_toolbar_set_style (GTK_TOOLBAR (toolbar), GTK_TOOLBAR_ICONS);
-	gtk_box_pack_start (GTK_BOX (hbox), toolbar, TRUE, TRUE, 0);
+	ctk_toolbar_set_style (GTK_TOOLBAR (toolbar), GTK_TOOLBAR_ICONS);
+	ctk_box_pack_start (GTK_BOX (hbox), toolbar, TRUE, TRUE, 0);
 
 	button = eoc_window_get_exit_fullscreen_button (window);
-	gtk_box_pack_start (GTK_BOX (hbox), button, FALSE, FALSE, 0);
+	ctk_box_pack_start (GTK_BOX (hbox), button, FALSE, FALSE, 0);
 
-	gtk_window_set_resizable (GTK_WINDOW (popup), FALSE);
+	ctk_window_set_resizable (GTK_WINDOW (popup), FALSE);
 
-	screen = gtk_widget_get_screen (GTK_WIDGET (window));
+	screen = ctk_widget_get_screen (GTK_WIDGET (window));
 
 	g_signal_connect_object (screen, "size-changed",
 			         G_CALLBACK (screen_size_changed_cb),
@@ -1954,7 +1954,7 @@ eoc_window_create_fullscreen_popup (EocWindow *window)
 			  G_CALLBACK (fullscreen_leave_notify_cb),
 			  window);
 
-	gtk_window_set_screen (GTK_WINDOW (popup), screen);
+	ctk_window_set_screen (GTK_WINDOW (popup), screen);
 
 	return popup;
 }
@@ -1978,59 +1978,59 @@ update_ui_visibility (EocWindow *window)
 	fullscreen_mode = priv->mode == EOC_WINDOW_MODE_FULLSCREEN ||
 			  priv->mode == EOC_WINDOW_MODE_SLIDESHOW;
 
-	menubar = gtk_ui_manager_get_widget (priv->ui_mgr, "/MainMenu");
+	menubar = ctk_ui_manager_get_widget (priv->ui_mgr, "/MainMenu");
 	g_assert (GTK_IS_WIDGET (menubar));
 
 	visible = g_settings_get_boolean (priv->ui_settings, EOC_CONF_UI_TOOLBAR);
 	visible = visible && !fullscreen_mode;
 
-	action = gtk_ui_manager_get_action (priv->ui_mgr, "/MainMenu/View/ToolbarToggle");
+	action = ctk_ui_manager_get_action (priv->ui_mgr, "/MainMenu/View/ToolbarToggle");
 	g_assert (action != NULL);
 	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
-	gtk_toggle_action_set_active (GTK_TOGGLE_ACTION (action), visible);
+	ctk_toggle_action_set_active (GTK_TOGGLE_ACTION (action), visible);
 	G_GNUC_END_IGNORE_DEPRECATIONS;
 	g_object_set (G_OBJECT (priv->toolbar), "visible", visible, NULL);
 
 	visible = g_settings_get_boolean (priv->ui_settings, EOC_CONF_UI_STATUSBAR);
 	visible = visible && !fullscreen_mode;
 
-	action = gtk_ui_manager_get_action (priv->ui_mgr, "/MainMenu/View/StatusbarToggle");
+	action = ctk_ui_manager_get_action (priv->ui_mgr, "/MainMenu/View/StatusbarToggle");
 	g_assert (action != NULL);
 	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
-	gtk_toggle_action_set_active (GTK_TOGGLE_ACTION (action), visible);
+	ctk_toggle_action_set_active (GTK_TOGGLE_ACTION (action), visible);
 	G_GNUC_END_IGNORE_DEPRECATIONS;
 	g_object_set (G_OBJECT (priv->statusbar), "visible", visible, NULL);
 
 	if (priv->status != EOC_WINDOW_STATUS_INIT) {
 		visible = g_settings_get_boolean (priv->ui_settings, EOC_CONF_UI_IMAGE_COLLECTION);
 		visible = visible && priv->mode != EOC_WINDOW_MODE_SLIDESHOW;
-		action = gtk_ui_manager_get_action (priv->ui_mgr, "/MainMenu/View/ImageCollectionToggle");
+		action = ctk_ui_manager_get_action (priv->ui_mgr, "/MainMenu/View/ImageCollectionToggle");
 		g_assert (action != NULL);
 		G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
-		gtk_toggle_action_set_active (GTK_TOGGLE_ACTION (action), visible);
+		ctk_toggle_action_set_active (GTK_TOGGLE_ACTION (action), visible);
 		G_GNUC_END_IGNORE_DEPRECATIONS;
 		if (visible) {
-			gtk_widget_show (priv->nav);
+			ctk_widget_show (priv->nav);
 		} else {
-			gtk_widget_hide (priv->nav);
+			ctk_widget_hide (priv->nav);
 		}
 	}
 
 	visible = g_settings_get_boolean (priv->ui_settings, EOC_CONF_UI_SIDEBAR);
 	visible = visible && !fullscreen_mode;
-	action = gtk_ui_manager_get_action (priv->ui_mgr, "/MainMenu/View/SidebarToggle");
+	action = ctk_ui_manager_get_action (priv->ui_mgr, "/MainMenu/View/SidebarToggle");
 	g_assert (action != NULL);
 	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
-	gtk_toggle_action_set_active (GTK_TOGGLE_ACTION (action), visible);
+	ctk_toggle_action_set_active (GTK_TOGGLE_ACTION (action), visible);
 	G_GNUC_END_IGNORE_DEPRECATIONS;
 	if (visible) {
-		gtk_widget_show (priv->sidebar);
+		ctk_widget_show (priv->sidebar);
 	} else {
-		gtk_widget_hide (priv->sidebar);
+		ctk_widget_hide (priv->sidebar);
 	}
 
 	if (priv->fullscreen_popup != NULL) {
-		gtk_widget_hide (priv->fullscreen_popup);
+		ctk_widget_hide (priv->fullscreen_popup);
 	}
 }
 
@@ -2044,7 +2044,7 @@ eoc_window_inhibit_screensaver (EocWindow *window)
 	eoc_debug (DEBUG_WINDOW);
 
 	window->priv->fullscreen_idle_inhibit_cookie =
-		gtk_application_inhibit (GTK_APPLICATION (EOC_APP),
+		ctk_application_inhibit (GTK_APPLICATION (EOC_APP),
 		                         GTK_WINDOW (window),
 		                         GTK_APPLICATION_INHIBIT_IDLE,
 		                         _("Viewing a slideshow"));
@@ -2060,7 +2060,7 @@ eoc_window_uninhibit_screensaver (EocWindow *window)
 
 	eoc_debug (DEBUG_WINDOW);
 
-	gtk_application_uninhibit (GTK_APPLICATION (EOC_APP),
+	ctk_application_uninhibit (GTK_APPLICATION (EOC_APP),
 	                           priv->fullscreen_idle_inhibit_cookie);
 	priv->fullscreen_idle_inhibit_cookie = 0;
 }
@@ -2094,9 +2094,9 @@ eoc_window_run_fullscreen (EocWindow *window, gboolean slideshow)
 
 	update_ui_visibility (window);
 
-	menubar = gtk_ui_manager_get_widget (priv->ui_mgr, "/MainMenu");
+	menubar = ctk_ui_manager_get_widget (priv->ui_mgr, "/MainMenu");
 	g_assert (GTK_IS_WIDGET (menubar));
-	gtk_widget_hide (menubar);
+	ctk_widget_hide (menubar);
 
 	g_signal_connect (priv->view,
 			  "motion-notify-event",
@@ -2142,12 +2142,12 @@ eoc_window_run_fullscreen (EocWindow *window, gboolean slideshow)
 	eoc_scroll_view_set_zoom_upscale (EOC_SCROLL_VIEW (priv->view),
 					  upscale);
 
-	gtk_widget_grab_focus (priv->view);
+	ctk_widget_grab_focus (priv->view);
 
 	eoc_scroll_view_override_bg_color (EOC_SCROLL_VIEW (window->priv->view),
 	                                   &black);
 
-	gtk_window_fullscreen (GTK_WINDOW (window));
+	ctk_window_fullscreen (GTK_WINDOW (window));
 	eoc_window_update_fullscreen_popup (window);
 
 	eoc_window_inhibit_screensaver (window);
@@ -2197,15 +2197,15 @@ eoc_window_stop_fullscreen (EocWindow *window, gboolean slideshow)
 
 	update_ui_visibility (window);
 
-	menubar = gtk_ui_manager_get_widget (priv->ui_mgr, "/MainMenu");
+	menubar = ctk_ui_manager_get_widget (priv->ui_mgr, "/MainMenu");
 	g_assert (GTK_IS_WIDGET (menubar));
-	gtk_widget_show (menubar);
+	ctk_widget_show (menubar);
 
 	eoc_scroll_view_set_zoom_upscale (EOC_SCROLL_VIEW (priv->view), FALSE);
 
 	eoc_scroll_view_override_bg_color (EOC_SCROLL_VIEW (window->priv->view),
 					   NULL);
-	gtk_window_unfullscreen (GTK_WINDOW (window));
+	ctk_window_unfullscreen (GTK_WINDOW (window));
 
 	if (slideshow) {
 		eoc_window_update_slideshow_action (window);
@@ -2249,27 +2249,27 @@ eoc_window_print (EocWindow *window)
 	page_setup_disabled = g_settings_get_boolean (window->priv->lockdown_settings,
 						      EOC_CONF_LOCKDOWN_CAN_SETUP_PAGE);
 	if (page_setup_disabled)
-		gtk_print_operation_set_embed_page_setup (print, FALSE);
+		ctk_print_operation_set_embed_page_setup (print, FALSE);
 
-	res = gtk_print_operation_run (print,
+	res = ctk_print_operation_run (print,
 				       GTK_PRINT_OPERATION_ACTION_PRINT_DIALOG,
 				       GTK_WINDOW (window), &error);
 
 	if (res == GTK_PRINT_OPERATION_RESULT_ERROR) {
-		dialog = gtk_message_dialog_new (GTK_WINDOW (window),
+		dialog = ctk_message_dialog_new (GTK_WINDOW (window),
 						 GTK_DIALOG_DESTROY_WITH_PARENT,
 						 GTK_MESSAGE_ERROR,
 						 GTK_BUTTONS_CLOSE,
 						 _("Error printing file:\n%s"),
 						 error->message);
 		g_signal_connect (dialog, "response",
-				  G_CALLBACK (gtk_widget_destroy), NULL);
-		gtk_widget_show (dialog);
+				  G_CALLBACK (ctk_widget_destroy), NULL);
+		ctk_widget_show (dialog);
 		g_error_free (error);
 	} else if (res == GTK_PRINT_OPERATION_RESULT_APPLY) {
 		GtkPageSetup *new_page_setup;
-		eoc_print_set_print_settings (gtk_print_operation_get_print_settings (print));
-		new_page_setup = gtk_print_operation_get_default_page_setup (print);
+		eoc_print_set_print_settings (ctk_print_operation_get_print_settings (print));
+		new_page_setup = ctk_print_operation_get_default_page_setup (print);
 		if (window->priv->page_setup != NULL)
 			g_object_unref (window->priv->page_setup);
 		window->priv->page_setup = g_object_ref (new_page_setup);
@@ -2297,7 +2297,7 @@ eoc_window_cmd_file_open (GtkAction *action, gpointer user_data)
         priv = window->priv;
 
 	dlg = eoc_file_chooser_new (GTK_FILE_CHOOSER_ACTION_OPEN);
-	gtk_window_set_transient_for (GTK_WINDOW (dlg), GTK_WINDOW (window));
+	ctk_window_set_transient_for (GTK_WINDOW (dlg), GTK_WINDOW (window));
 
 	current = eoc_thumb_view_get_first_selected_image (EOC_THUMB_VIEW (priv->thumbview));
 
@@ -2307,7 +2307,7 @@ eoc_window_cmd_file_open (GtkAction *action, gpointer user_data)
 		file_uri = eoc_image_get_uri_for_display (current);
 		dir_uri = g_path_get_dirname (file_uri);
 
-	        gtk_file_chooser_set_current_folder_uri (GTK_FILE_CHOOSER (dlg),
+	        ctk_file_chooser_set_current_folder_uri (GTK_FILE_CHOOSER (dlg),
                                                          dir_uri);
 		g_free (file_uri);
 		g_free (dir_uri);
@@ -2322,7 +2322,7 @@ eoc_window_cmd_file_open (GtkAction *action, gpointer user_data)
 					   EOC_CONF_UI_FILECHOOSER_XDG_FALLBACK);
 		pics_dir = g_get_user_special_dir (G_USER_DIRECTORY_PICTURES);
 		if (use_fallback && pics_dir) {
-			gtk_file_chooser_set_current_folder (GTK_FILE_CHOOSER (dlg),
+			ctk_file_chooser_set_current_folder (GTK_FILE_CHOOSER (dlg),
 							     pics_dir);
 		}
 	}
@@ -2331,7 +2331,7 @@ eoc_window_cmd_file_open (GtkAction *action, gpointer user_data)
 			  G_CALLBACK (file_open_dialog_response_cb),
 			  window);
 
-	gtk_widget_show_all (dlg);
+	ctk_widget_show_all (dlg);
 }
 
 static void
@@ -2343,7 +2343,7 @@ eoc_job_close_save_cb (EocJobSave *job, gpointer user_data)
 					      eoc_job_close_save_cb,
 					      window);
 
-	gtk_widget_destroy (GTK_WIDGET (window));
+	ctk_widget_destroy (GTK_WIDGET (window));
 }
 
 static void
@@ -2374,12 +2374,12 @@ close_confirmation_dialog_response_handler (EocCloseConfirmationDialog *dlg,
 
 		case GTK_RESPONSE_NO:
 			/* dont save */
-			gtk_widget_destroy (GTK_WIDGET (window));
+			ctk_widget_destroy (GTK_WIDGET (window));
 			break;
 
 		default:
 			/* Cancel */
-			gtk_widget_destroy (GTK_WIDGET (dlg));
+			ctk_widget_destroy (GTK_WIDGET (dlg));
 			break;
 	}
 }
@@ -2404,9 +2404,9 @@ eoc_window_unsaved_images_confirm (EocWindow *window)
 	}
 
 	list = NULL;
-	if (gtk_tree_model_get_iter_first (GTK_TREE_MODEL (priv->store), &iter)) {
+	if (ctk_tree_model_get_iter_first (GTK_TREE_MODEL (priv->store), &iter)) {
 		do {
-			gtk_tree_model_get (GTK_TREE_MODEL (priv->store), &iter,
+			ctk_tree_model_get (GTK_TREE_MODEL (priv->store), &iter,
 					    EOC_LIST_STORE_EOC_IMAGE, &image,
 					    -1);
 			if (!image)
@@ -2415,7 +2415,7 @@ eoc_window_unsaved_images_confirm (EocWindow *window)
 			if (eoc_image_is_modified (image)) {
 				list = g_list_prepend (list, image);
 			}
-		} while (gtk_tree_model_iter_next (GTK_TREE_MODEL (priv->store), &iter));
+		} while (ctk_tree_model_iter_next (GTK_TREE_MODEL (priv->store), &iter));
 	}
 
 	if (list) {
@@ -2428,9 +2428,9 @@ eoc_window_unsaved_images_confirm (EocWindow *window)
 				  "response",
 				  G_CALLBACK (close_confirmation_dialog_response_handler),
 				  window);
-		gtk_window_set_destroy_with_parent (GTK_WINDOW (dialog), TRUE);
+		ctk_window_set_destroy_with_parent (GTK_WINDOW (dialog), TRUE);
 
-		gtk_widget_show (dialog);
+		ctk_widget_show (dialog);
 		return TRUE;
 
 	}
@@ -2453,7 +2453,7 @@ eoc_window_cmd_close_window (GtkAction *action, gpointer user_data)
 	}
 
 	if (!eoc_window_unsaved_images_confirm (window)) {
-		gtk_widget_destroy (GTK_WIDGET (user_data));
+		ctk_widget_destroy (GTK_WIDGET (user_data));
 	}
 }
 
@@ -2469,7 +2469,7 @@ eoc_window_cmd_preferences (GtkAction *action, gpointer user_data)
 
 	pref_dlg = eoc_preferences_dialog_get_instance (GTK_WINDOW (window));
 
-	gtk_widget_show (pref_dlg);
+	ctk_widget_show (pref_dlg);
 }
 
 #define EOC_TB_EDITOR_DLG_RESET_RESPONSE 128
@@ -2508,7 +2508,7 @@ eoc_window_cmd_edit_toolbar_cb (GtkDialog *dialog, gint response, gpointer data)
 
 		eoc_application_save_toolbars_model (EOC_APP);
 
-		gtk_widget_destroy (GTK_WIDGET (dialog));
+		ctk_widget_destroy (GTK_WIDGET (dialog));
 	}
 }
 
@@ -2523,37 +2523,37 @@ eoc_window_cmd_edit_toolbar (GtkAction *action, gpointer *user_data)
 
 	window = EOC_WINDOW (user_data);
 
-	dialog = gtk_dialog_new_with_buttons (_("Toolbar Editor"),
+	dialog = ctk_dialog_new_with_buttons (_("Toolbar Editor"),
 					      GTK_WINDOW (window),
 				              GTK_DIALOG_DESTROY_WITH_PARENT,
 					      _("_Reset to Default"),
 					      EOC_TB_EDITOR_DLG_RESET_RESPONSE,
- 					      "gtk-close",
+ 					      "ctk-close",
 					      GTK_RESPONSE_CLOSE,
-					      "gtk-help",
+					      "ctk-help",
 					      GTK_RESPONSE_HELP,
 					      NULL);
 
-	gtk_dialog_set_default_response (GTK_DIALOG (dialog),
+	ctk_dialog_set_default_response (GTK_DIALOG (dialog),
 					 GTK_RESPONSE_CLOSE);
 
-	gtk_container_set_border_width (GTK_CONTAINER (dialog), 5);
+	ctk_container_set_border_width (GTK_CONTAINER (dialog), 5);
 
-	gtk_box_set_spacing (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dialog))), 2);
+	ctk_box_set_spacing (GTK_BOX (ctk_dialog_get_content_area (GTK_DIALOG (dialog))), 2);
 
-	gtk_window_set_default_size (GTK_WINDOW (dialog), 500, 400);
+	ctk_window_set_default_size (GTK_WINDOW (dialog), 500, 400);
 
 	editor = egg_toolbar_editor_new (window->priv->ui_mgr,
 					 eoc_application_get_toolbars_model (EOC_APP));
 
-	gtk_container_set_border_width (GTK_CONTAINER (editor), 5);
+	ctk_container_set_border_width (GTK_CONTAINER (editor), 5);
 
 	// Use as much vertical space as available
-	gtk_widget_set_vexpand (GTK_WIDGET (editor), TRUE);
+	ctk_widget_set_vexpand (GTK_WIDGET (editor), TRUE);
 
-	gtk_box_set_spacing (GTK_BOX (EGG_TOOLBAR_EDITOR (editor)), 5);
+	ctk_box_set_spacing (GTK_BOX (EGG_TOOLBAR_EDITOR (editor)), 5);
 
-	gtk_container_add (GTK_CONTAINER (gtk_dialog_get_content_area (GTK_DIALOG (dialog))), editor);
+	ctk_container_add (GTK_CONTAINER (ctk_dialog_get_content_area (GTK_DIALOG (dialog))), editor);
 
 	egg_editable_toolbar_set_edit_mode
 		(EGG_EDITABLE_TOOLBAR (window->priv->toolbar), TRUE);
@@ -2565,7 +2565,7 @@ eoc_window_cmd_edit_toolbar (GtkAction *action, gpointer *user_data)
 			  G_CALLBACK (eoc_window_cmd_edit_toolbar_cb),
 			  window);
 
-	gtk_widget_show_all (dialog);
+	ctk_widget_show_all (dialog);
 }
 
 static void
@@ -2636,7 +2636,7 @@ eoc_window_cmd_about (GtkAction *action, gpointer user_data)
 
 	window = EOC_WINDOW (user_data);
 
-	gtk_show_about_dialog (GTK_WINDOW (window),
+	ctk_show_about_dialog (GTK_WINDOW (window),
 			       "program-name", _("Eye of CAFE"),
 			       "title", _("About Eye of CAFE"),
 			       "version", VERSION,
@@ -2675,8 +2675,8 @@ eoc_window_cmd_show_hide_bar (GtkAction *action, gpointer user_data)
             priv->mode != EOC_WINDOW_MODE_FULLSCREEN) return;
 
 	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
-	visible = gtk_toggle_action_get_active (GTK_TOGGLE_ACTION (action));
-	action_name = gtk_action_get_name (action);
+	visible = ctk_toggle_action_get_active (GTK_TOGGLE_ACTION (action));
+	action_name = ctk_action_get_name (action);
 	G_GNUC_END_IGNORE_DEPRECATIONS;
 
 	if (g_ascii_strcasecmp (action_name, "ViewToolbar") == 0) {
@@ -2695,32 +2695,32 @@ eoc_window_cmd_show_hide_bar (GtkAction *action, gpointer user_data)
 		if (visible) {
 			/* Make sure the focus widget is realized to
 			 * avoid warnings on keypress events */
-			if (!gtk_widget_get_realized (window->priv->thumbview))
-				gtk_widget_realize (window->priv->thumbview);
+			if (!ctk_widget_get_realized (window->priv->thumbview))
+				ctk_widget_realize (window->priv->thumbview);
 
-			gtk_widget_show (priv->nav);
-			gtk_widget_grab_focus (priv->thumbview);
+			ctk_widget_show (priv->nav);
+			ctk_widget_grab_focus (priv->thumbview);
 		} else {
 			/* Make sure the focus widget is realized to
 			 * avoid warnings on keypress events.
 			 * Don't do it during init phase or the view
 			 * will get a bogus allocation. */
-			if (!gtk_widget_get_realized (priv->view)
+			if (!ctk_widget_get_realized (priv->view)
 			    && priv->status == EOC_WINDOW_STATUS_NORMAL)
-				gtk_widget_realize (priv->view);
+				ctk_widget_realize (priv->view);
 
-			gtk_widget_hide (priv->nav);
+			ctk_widget_hide (priv->nav);
 
-			if (gtk_widget_get_realized (priv->view))
-				gtk_widget_grab_focus (priv->view);
+			if (ctk_widget_get_realized (priv->view))
+				ctk_widget_grab_focus (priv->view);
 		}
 		g_settings_set_boolean (priv->ui_settings, EOC_CONF_UI_IMAGE_COLLECTION, visible);
 
 	} else if (g_ascii_strcasecmp (action_name, "ViewSidebar") == 0) {
 		if (visible) {
-			gtk_widget_show (priv->sidebar);
+			ctk_widget_show (priv->sidebar);
 		} else {
-			gtk_widget_hide (priv->sidebar);
+			ctk_widget_hide (priv->sidebar);
 		}
 		g_settings_set_boolean (priv->ui_settings, EOC_CONF_UI_SIDEBAR, visible);
 	}
@@ -2749,7 +2749,7 @@ wallpaper_info_bar_response (GtkInfoBar *bar, gint response, EocWindow *window)
 			GdkAppLaunchContext *context;
 			GdkDisplay *display;
 
-			display = gtk_widget_get_display (GTK_WIDGET (window));
+			display = ctk_widget_get_display (GTK_WIDGET (window));
 			context = gdk_display_get_app_launch_context (display);
 			g_app_info_launch (app_info, NULL, G_APP_LAUNCH_CONTEXT (context), &error);
 
@@ -2789,16 +2789,16 @@ eoc_window_set_wallpaper (EocWindow *window, const gchar *filename, const gchar 
 
 	/* I18N: When setting mnemonics for these strings, watch out to not
 	   clash with mnemonics from eoc's menubar */
-	info_bar = gtk_info_bar_new_with_buttons (_("_Open Background Preferences"),
+	info_bar = ctk_info_bar_new_with_buttons (_("_Open Background Preferences"),
 						  GTK_RESPONSE_YES,
 						  C_("MessageArea","Hi_de"),
 						  GTK_RESPONSE_NO, NULL);
-	gtk_info_bar_set_message_type (GTK_INFO_BAR (info_bar),
+	ctk_info_bar_set_message_type (GTK_INFO_BAR (info_bar),
 				       GTK_MESSAGE_QUESTION);
 
-	image = gtk_image_new_from_icon_name ("dialog-question",
+	image = ctk_image_new_from_icon_name ("dialog-question",
 					  GTK_ICON_SIZE_DIALOG);
-	label = gtk_label_new (NULL);
+	label = ctk_label_new (NULL);
 
 	if (!visible_filename)
 		basename = g_path_get_basename (filename);
@@ -2809,25 +2809,25 @@ eoc_window_set_wallpaper (EocWindow *window, const gchar *filename, const gchar 
 				  "\nWould you like to modify its appearance?"),
 				visible_filename ? visible_filename : basename);
 	markup = g_markup_printf_escaped ("<b>%s</b>", text);
-	gtk_label_set_markup (GTK_LABEL (label), markup);
+	ctk_label_set_markup (GTK_LABEL (label), markup);
 	g_free (markup);
 	g_free (text);
 	if (!visible_filename)
 		g_free (basename);
 
-	hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 8);
-	gtk_box_pack_start (GTK_BOX (hbox), image, FALSE, FALSE, 0);
-	gtk_widget_set_halign (image, GTK_ALIGN_START);
-	gtk_widget_set_valign (image, GTK_ALIGN_END);
-	gtk_box_pack_start (GTK_BOX (hbox), label, TRUE, TRUE, 0);
-	gtk_label_set_xalign (GTK_LABEL (label), 0.0);
-	gtk_box_pack_start (GTK_BOX (gtk_info_bar_get_content_area (GTK_INFO_BAR (info_bar))), hbox, TRUE, TRUE, 0);
-	gtk_widget_show_all (hbox);
-	gtk_widget_show (info_bar);
+	hbox = ctk_box_new (GTK_ORIENTATION_HORIZONTAL, 8);
+	ctk_box_pack_start (GTK_BOX (hbox), image, FALSE, FALSE, 0);
+	ctk_widget_set_halign (image, GTK_ALIGN_START);
+	ctk_widget_set_valign (image, GTK_ALIGN_END);
+	ctk_box_pack_start (GTK_BOX (hbox), label, TRUE, TRUE, 0);
+	ctk_label_set_xalign (GTK_LABEL (label), 0.0);
+	ctk_box_pack_start (GTK_BOX (ctk_info_bar_get_content_area (GTK_INFO_BAR (info_bar))), hbox, TRUE, TRUE, 0);
+	ctk_widget_show_all (hbox);
+	ctk_widget_show (info_bar);
 
 
 	eoc_window_set_message_area (window, info_bar);
-	gtk_info_bar_set_default_response (GTK_INFO_BAR (info_bar),
+	ctk_info_bar_set_default_response (GTK_INFO_BAR (info_bar),
 					   GTK_RESPONSE_YES);
 	g_signal_connect (info_bar, "response",
 			  G_CALLBACK (wallpaper_info_bar_response), window);
@@ -2852,9 +2852,9 @@ eoc_job_save_cb (EocJobSave *job, gpointer user_data)
 
 	update_status_bar (window);
 	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
-	action_save = gtk_action_group_get_action (window->priv->actions_image,
+	action_save = ctk_action_group_get_action (window->priv->actions_image,
 						   "ImageSave");
-	gtk_action_set_sensitive (action_save, FALSE);
+	ctk_action_set_sensitive (action_save, FALSE);
 	G_GNUC_END_IGNORE_DEPRECATIONS;
 }
 
@@ -2889,12 +2889,12 @@ eoc_job_copy_cb (EocJobCopy *job, gpointer user_data)
 	g_free (basename);
 	g_free (filepath);
 
-	gtk_statusbar_pop (GTK_STATUSBAR (window->priv->statusbar),
+	ctk_statusbar_pop (GTK_STATUSBAR (window->priv->statusbar),
 			   window->priv->copy_file_cid);
 	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
-	action = gtk_action_group_get_action (window->priv->actions_image,
+	action = ctk_action_group_get_action (window->priv->actions_image,
 					      "ImageSetAsWallpaper");
-	gtk_action_set_sensitive (action, TRUE);
+	ctk_action_set_sensitive (action, TRUE);
 	G_GNUC_END_IGNORE_DEPRECATIONS;
 
 	window->priv->copy_job = NULL;
@@ -2966,29 +2966,29 @@ eoc_window_retrieve_save_as_file (EocWindow *window, EocImage *image)
 	last_dest_folder = window->priv->last_save_as_folder;
 
 	if (last_dest_folder && g_file_query_exists (last_dest_folder, NULL)) {
-		gtk_file_chooser_set_current_folder_file (GTK_FILE_CHOOSER (dialog), last_dest_folder, NULL);
-		gtk_file_chooser_set_current_name (GTK_FILE_CHOOSER (dialog),
+		ctk_file_chooser_set_current_folder_file (GTK_FILE_CHOOSER (dialog), last_dest_folder, NULL);
+		ctk_file_chooser_set_current_name (GTK_FILE_CHOOSER (dialog),
 						 eoc_image_get_caption (image));
 	} else {
 		GFile *image_file;
 
 		image_file = eoc_image_get_file (image);
 		/* Setting the file will also navigate to its parent folder */
-		gtk_file_chooser_set_file (GTK_FILE_CHOOSER (dialog),
+		ctk_file_chooser_set_file (GTK_FILE_CHOOSER (dialog),
 					   image_file, NULL);
 		g_object_unref (image_file);
 	}
 
-	response = gtk_dialog_run (GTK_DIALOG (dialog));
-	gtk_widget_hide (dialog);
+	response = ctk_dialog_run (GTK_DIALOG (dialog));
+	ctk_widget_hide (dialog);
 
 	if (response == GTK_RESPONSE_OK) {
-		save_file = gtk_file_chooser_get_file (GTK_FILE_CHOOSER (dialog));
+		save_file = ctk_file_chooser_get_file (GTK_FILE_CHOOSER (dialog));
 		if (window->priv->last_save_as_folder)
 			g_object_unref (window->priv->last_save_as_folder);
 		window->priv->last_save_as_folder = g_file_get_parent (save_file);
 	}
-	gtk_widget_destroy (dialog);
+	ctk_widget_destroy (dialog);
 
 	return save_file;
 }
@@ -3037,12 +3037,12 @@ eoc_window_cmd_save_as (GtkAction *action, gpointer user_data)
 						 images,
 						 base_file);
 
-		gtk_widget_show_all (dialog);
+		ctk_widget_show_all (dialog);
 
-		if (gtk_dialog_run (GTK_DIALOG (dialog)) != GTK_RESPONSE_OK) {
+		if (ctk_dialog_run (GTK_DIALOG (dialog)) != GTK_RESPONSE_OK) {
 			g_object_unref (base_file);
 			g_list_free (images);
-			gtk_widget_destroy (dialog);
+			ctk_widget_destroy (dialog);
 
 			return;
 		}
@@ -3053,7 +3053,7 @@ eoc_window_cmd_save_as (GtkAction *action, gpointer user_data)
 
 		priv->save_job = eoc_job_save_as_new (images, converter, NULL);
 
-		gtk_widget_destroy (dialog);
+		ctk_widget_destroy (dialog);
 
 		g_object_unref (converter);
 		g_object_unref (base_file);
@@ -3126,11 +3126,11 @@ eoc_window_get_properties_dialog (EocWindow *window)
 
 		G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
 		next_image_action =
-			gtk_action_group_get_action (priv->actions_collection,
+			ctk_action_group_get_action (priv->actions_collection,
 						     "GoNext");
 
 		previous_image_action =
-			gtk_action_group_get_action (priv->actions_collection,
+			ctk_action_group_get_action (priv->actions_collection,
 						     "GoPrevious");
 		G_GNUC_END_IGNORE_DEPRECATIONS;
 		priv->properties_dlg =
@@ -3157,7 +3157,7 @@ eoc_window_cmd_properties (GtkAction *action, gpointer user_data)
 	GtkWidget *dialog;
 
 	dialog = eoc_window_get_properties_dialog (window);
-	gtk_widget_show (dialog);
+	ctk_widget_show (dialog);
 }
 
 static void
@@ -3237,14 +3237,14 @@ eoc_window_cmd_wallpaper (GtkAction *action, gpointer user_data)
 		GtkAction *action;
 
 		G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
-		action = gtk_action_group_get_action (window->priv->actions_image,
+		action = ctk_action_group_get_action (window->priv->actions_image,
 						      "ImageSetAsWallpaper");
-		gtk_action_set_sensitive (action, FALSE);
+		ctk_action_set_sensitive (action, FALSE);
 		G_GNUC_END_IGNORE_DEPRECATIONS;
 
-		priv->copy_file_cid = gtk_statusbar_get_context_id (GTK_STATUSBAR (priv->statusbar),
+		priv->copy_file_cid = ctk_statusbar_get_context_id (GTK_STATUSBAR (priv->statusbar),
 								    "copy_file_cid");
-		gtk_statusbar_push (GTK_STATUSBAR (priv->statusbar),
+		ctk_statusbar_push (GTK_STATUSBAR (priv->statusbar),
 				    priv->copy_file_cid,
 				    _("Saving image locally…"));
 
@@ -3345,7 +3345,7 @@ show_move_to_trash_confirm_dialog (EocWindow *window, GList *images, gboolean ca
 		}
 	}
 
-	dlg = gtk_message_dialog_new_with_markup (GTK_WINDOW (window),
+	dlg = ctk_message_dialog_new_with_markup (GTK_WINDOW (window),
 						  GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
 						  GTK_MESSAGE_WARNING,
 						  GTK_BUTTONS_NONE,
@@ -3353,35 +3353,35 @@ show_move_to_trash_confirm_dialog (EocWindow *window, GList *images, gboolean ca
 						  prompt);
 	g_free (prompt);
 
-	gtk_dialog_add_button (GTK_DIALOG (dlg), "gtk-cancel", GTK_RESPONSE_CANCEL);
+	ctk_dialog_add_button (GTK_DIALOG (dlg), "ctk-cancel", GTK_RESPONSE_CANCEL);
 
 	if (can_trash) {
-		gtk_dialog_add_button (GTK_DIALOG (dlg), _("Move to _Trash"), GTK_RESPONSE_OK);
+		ctk_dialog_add_button (GTK_DIALOG (dlg), _("Move to _Trash"), GTK_RESPONSE_OK);
 
-		dontask_cbutton = gtk_check_button_new_with_mnemonic (_("_Do not ask again during this session"));
-		gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dontask_cbutton), FALSE);
+		dontask_cbutton = ctk_check_button_new_with_mnemonic (_("_Do not ask again during this session"));
+		ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dontask_cbutton), FALSE);
 
-		gtk_box_pack_end (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dlg))), dontask_cbutton, TRUE, TRUE, 0);
+		ctk_box_pack_end (GTK_BOX (ctk_dialog_get_content_area (GTK_DIALOG (dlg))), dontask_cbutton, TRUE, TRUE, 0);
 	} else {
 		if (n_images == 1) {
-			gtk_dialog_add_button (GTK_DIALOG (dlg), "gtk-delete", GTK_RESPONSE_OK);
+			ctk_dialog_add_button (GTK_DIALOG (dlg), "ctk-delete", GTK_RESPONSE_OK);
 		} else {
-			gtk_dialog_add_button (GTK_DIALOG (dlg), "gtk-yes", GTK_RESPONSE_OK);
+			ctk_dialog_add_button (GTK_DIALOG (dlg), "ctk-yes", GTK_RESPONSE_OK);
 		}
 	}
 
-	gtk_dialog_set_default_response (GTK_DIALOG (dlg), GTK_RESPONSE_OK);
-	gtk_window_set_title (GTK_WINDOW (dlg), "");
-	gtk_widget_show_all (dlg);
+	ctk_dialog_set_default_response (GTK_DIALOG (dlg), GTK_RESPONSE_OK);
+	ctk_window_set_title (GTK_WINDOW (dlg), "");
+	ctk_widget_show_all (dlg);
 
-	response = gtk_dialog_run (GTK_DIALOG (dlg));
+	response = ctk_dialog_run (GTK_DIALOG (dlg));
 
 	/* Only update the property if the user has accepted */
 	if (can_trash && response == GTK_RESPONSE_OK)
-		dontaskagain = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (dontask_cbutton));
+		dontaskagain = ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (dontask_cbutton));
 
 	/* The checkbutton is destroyed together with the dialog */
-	gtk_widget_destroy (dlg);
+	ctk_widget_destroy (dlg);
 
 	return response;
 }
@@ -3452,7 +3452,7 @@ eoc_window_cmd_copy_image (GtkAction *action, gpointer user_data)
 
 	g_return_if_fail (EOC_IS_IMAGE (image));
 
-	clipboard = gtk_clipboard_get (GDK_SELECTION_CLIPBOARD);
+	clipboard = ctk_clipboard_get (GDK_SELECTION_CLIPBOARD);
 
 	cbhandler = eoc_clipboard_handler_new (image);
 	// cbhandler will self-destruct when it's not needed anymore
@@ -3497,7 +3497,7 @@ eoc_window_cmd_move_to_trash (GtkAction *action, gpointer user_data)
 	can_trash = eoc_window_all_images_trasheable (images);
 
 	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
-	action_name = gtk_action_get_name (action);
+	action_name = ctk_action_get_name (action);
 	G_GNUC_END_IGNORE_DEPRECATIONS;
 
 	if (g_ascii_strcasecmp (action_name, "Delete") == 0 ||
@@ -3530,18 +3530,18 @@ eoc_window_cmd_move_to_trash (GtkAction *action, gpointer user_data)
 			header = g_strdup_printf (_("Error on deleting image %s"),
 						  eoc_image_get_caption (image));
 
-			dlg = gtk_message_dialog_new (GTK_WINDOW (window),
+			dlg = ctk_message_dialog_new (GTK_WINDOW (window),
 						      GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
 						      GTK_MESSAGE_ERROR,
 						      GTK_BUTTONS_OK,
 						      "%s", header);
 
-			gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dlg),
+			ctk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dlg),
 								  "%s", error->message);
 
-			gtk_dialog_run (GTK_DIALOG (dlg));
+			ctk_dialog_run (GTK_DIALOG (dlg));
 
-			gtk_widget_destroy (dlg);
+			ctk_widget_destroy (dlg);
 
 			g_free (header);
 		}
@@ -3580,7 +3580,7 @@ eoc_window_cmd_fullscreen (GtkAction *action, gpointer user_data)
 	window = EOC_WINDOW (user_data);
 
 	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
-	fullscreen = gtk_toggle_action_get_active (GTK_TOGGLE_ACTION (action));
+	fullscreen = ctk_toggle_action_get_active (GTK_TOGGLE_ACTION (action));
 	G_GNUC_END_IGNORE_DEPRECATIONS;
 
 	if (fullscreen) {
@@ -3603,7 +3603,7 @@ eoc_window_cmd_slideshow (GtkAction *action, gpointer user_data)
 	window = EOC_WINDOW (user_data);
 
 	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
-	slideshow = gtk_toggle_action_get_active (GTK_TOGGLE_ACTION (action));
+	slideshow = ctk_toggle_action_get_active (GTK_TOGGLE_ACTION (action));
 	G_GNUC_END_IGNORE_DEPRECATIONS;
 
 	if (slideshow) {
@@ -3933,7 +3933,7 @@ menu_item_select_cb (GtkMenuItem *proxy, EocWindow *window)
 	char *message;
 
 	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
-	action = gtk_activatable_get_related_action (GTK_ACTIVATABLE (proxy));
+	action = ctk_activatable_get_related_action (GTK_ACTIVATABLE (proxy));
 	G_GNUC_END_IGNORE_DEPRECATIONS;
 
 	g_return_if_fail (action != NULL);
@@ -3941,7 +3941,7 @@ menu_item_select_cb (GtkMenuItem *proxy, EocWindow *window)
 	g_object_get (G_OBJECT (action), "tooltip", &message, NULL);
 
 	if (message) {
-		gtk_statusbar_push (GTK_STATUSBAR (window->priv->statusbar),
+		ctk_statusbar_push (GTK_STATUSBAR (window->priv->statusbar),
 				    window->priv->tip_message_cid, message);
 		g_free (message);
 	}
@@ -3950,7 +3950,7 @@ menu_item_select_cb (GtkMenuItem *proxy, EocWindow *window)
 static void
 menu_item_deselect_cb (GtkMenuItem *proxy, EocWindow *window)
 {
-	gtk_statusbar_pop (GTK_STATUSBAR (window->priv->statusbar),
+	ctk_statusbar_pop (GTK_STATUSBAR (window->priv->statusbar),
 			   window->priv->tip_message_cid);
 }
 
@@ -3991,39 +3991,39 @@ set_action_properties (GtkActionGroup *window_group,
         GtkAction *action;
 
 	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
-        action = gtk_action_group_get_action (collection_group, "GoPrevious");
+        action = ctk_action_group_get_action (collection_group, "GoPrevious");
         g_object_set (action, "short_label", _("Previous"), NULL);
         g_object_set (action, "is-important", TRUE, NULL);
 
-        action = gtk_action_group_get_action (collection_group, "GoNext");
+        action = ctk_action_group_get_action (collection_group, "GoNext");
         g_object_set (action, "short_label", _("Next"), NULL);
         g_object_set (action, "is-important", TRUE, NULL);
 
-        action = gtk_action_group_get_action (image_group, "EditRotate90");
+        action = ctk_action_group_get_action (image_group, "EditRotate90");
         g_object_set (action, "short_label", _("Right"), NULL);
 
-        action = gtk_action_group_get_action (image_group, "EditRotate270");
+        action = ctk_action_group_get_action (image_group, "EditRotate270");
         g_object_set (action, "short_label", _("Left"), NULL);
 
-        action = gtk_action_group_get_action (image_group, "ImageOpenContainingFolder");
+        action = ctk_action_group_get_action (image_group, "ImageOpenContainingFolder");
         g_object_set (action, "short_label", _("Open Folder"), NULL);
 
-        action = gtk_action_group_get_action (image_group, "ViewZoomIn");
+        action = ctk_action_group_get_action (image_group, "ViewZoomIn");
         g_object_set (action, "short_label", _("In"), NULL);
 
-        action = gtk_action_group_get_action (image_group, "ViewZoomOut");
+        action = ctk_action_group_get_action (image_group, "ViewZoomOut");
         g_object_set (action, "short_label", _("Out"), NULL);
 
-        action = gtk_action_group_get_action (image_group, "ViewZoomNormal");
+        action = ctk_action_group_get_action (image_group, "ViewZoomNormal");
         g_object_set (action, "short_label", _("Normal"), NULL);
 
-        action = gtk_action_group_get_action (image_group, "ViewZoomFit");
+        action = ctk_action_group_get_action (image_group, "ViewZoomFit");
         g_object_set (action, "short_label", _("Fit"), NULL);
 
-        action = gtk_action_group_get_action (window_group, "ViewImageCollection");
+        action = ctk_action_group_get_action (window_group, "ViewImageCollection");
         g_object_set (action, "short_label", _("Collection"), NULL);
 
-        action = gtk_action_group_get_action (image_group, "EditMoveToTrash");
+        action = ctk_action_group_get_action (image_group, "EditMoveToTrash");
         g_object_set (action, "short_label", C_("action (to trash)", "Trash"), NULL);
 	G_GNUC_END_IGNORE_DEPRECATIONS;
 }
@@ -4033,24 +4033,24 @@ sort_recents_mru (GtkRecentInfo *a, GtkRecentInfo *b)
 {
 	gboolean has_eoc_a, has_eoc_b;
 
-	/* We need to check this first as gtk_recent_info_get_application_info
+	/* We need to check this first as ctk_recent_info_get_application_info
 	 * will treat it as a non-fatal error when the GtkRecentInfo doesn't
 	 * have the application registered. */
-	has_eoc_a = gtk_recent_info_has_application (a,
+	has_eoc_a = ctk_recent_info_has_application (a,
 						     EOC_RECENT_FILES_APP_NAME);
-	has_eoc_b = gtk_recent_info_has_application (b,
+	has_eoc_b = ctk_recent_info_has_application (b,
 						     EOC_RECENT_FILES_APP_NAME);
 	if (has_eoc_a && has_eoc_b) {
 		time_t time_a, time_b;
 
 		/* These should not fail as we already checked that
 		 * the application is registered with the info objects */
-		gtk_recent_info_get_application_info (a,
+		ctk_recent_info_get_application_info (a,
 						      EOC_RECENT_FILES_APP_NAME,
 						      NULL,
 						      NULL,
 						      &time_a);
-		gtk_recent_info_get_application_info (b,
+		ctk_recent_info_get_application_info (b,
 						      EOC_RECENT_FILES_APP_NAME,
 						      NULL,
 						      NULL,
@@ -4076,25 +4076,25 @@ eoc_window_update_recent_files_menu (EocWindow *window)
 	priv = window->priv;
 
 	if (priv->recent_menu_id != 0)
-		gtk_ui_manager_remove_ui (priv->ui_mgr, priv->recent_menu_id);
+		ctk_ui_manager_remove_ui (priv->ui_mgr, priv->recent_menu_id);
 
 	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
-	actions = gtk_action_group_list_actions (priv->actions_recent);
+	actions = ctk_action_group_list_actions (priv->actions_recent);
 
 	for (li = actions; li != NULL; li = li->next) {
 		g_signal_handlers_disconnect_by_func (GTK_ACTION (li->data),
 						      G_CALLBACK(eoc_window_open_recent_cb),
 						      window);
 
-		gtk_action_group_remove_action (priv->actions_recent,
+		ctk_action_group_remove_action (priv->actions_recent,
 						GTK_ACTION (li->data));
 	}
 	G_GNUC_END_IGNORE_DEPRECATIONS;
 
 	g_list_free (actions);
 
-	priv->recent_menu_id = gtk_ui_manager_new_merge_id (priv->ui_mgr);
-	items = gtk_recent_manager_get_items (gtk_recent_manager_get_default());
+	priv->recent_menu_id = ctk_ui_manager_new_merge_id (priv->ui_mgr);
+	items = ctk_recent_manager_get_items (ctk_recent_manager_get_default());
 	items = g_list_sort (items, (GCompareFunc) sort_recents_mru);
 
 	for (li = items; li != NULL && count_recent < EOC_RECENT_FILES_LIMIT; li = li->next) {
@@ -4108,37 +4108,37 @@ eoc_window_update_recent_files_menu (EocWindow *window)
 
 		/* Sorting moves non-EOC files to the end of the list.
 		 * So no file of interest will follow if this test fails */
-		if (!gtk_recent_info_has_application (info, EOC_RECENT_FILES_APP_NAME))
+		if (!ctk_recent_info_has_application (info, EOC_RECENT_FILES_APP_NAME))
 			break;
 
 		count_recent++;
 
 		action_name = g_strdup_printf ("recent-info-%d", count_recent);
-		display_name = g_strsplit (gtk_recent_info_get_display_name (info), "_", -1);
+		display_name = g_strsplit (ctk_recent_info_get_display_name (info), "_", -1);
 		label_filename = g_strjoinv ("__", display_name);
 		label = g_strdup_printf ("%s_%d. %s",
 				(is_rtl ? "\xE2\x80\x8F" : ""), count_recent, label_filename);
 		g_free (label_filename);
 		g_strfreev (display_name);
 
-		tip = gtk_recent_info_get_uri_display (info);
+		tip = ctk_recent_info_get_uri_display (info);
 
 		/* This is a workaround for a bug (#351945) regarding
-		 * gtk_recent_info_get_uri_display() and remote URIs.
+		 * ctk_recent_info_get_uri_display() and remote URIs.
 		 * cafe_vfs_format_uri_for_display is sufficient here
 		 * since the password gets stripped when adding the
 		 * file to the recently used list. */
 		if (tip == NULL)
-			tip = g_uri_unescape_string (gtk_recent_info_get_uri (info), NULL);
+			tip = g_uri_unescape_string (ctk_recent_info_get_uri (info), NULL);
 
 		G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
-		action = gtk_action_new (action_name, label, tip, NULL);
-		gtk_action_set_always_show_image (action, TRUE);
+		action = ctk_action_new (action_name, label, tip, NULL);
+		ctk_action_set_always_show_image (action, TRUE);
 		G_GNUC_END_IGNORE_DEPRECATIONS;
 
-		g_object_set_data_full (G_OBJECT (action), "gtk-recent-info",
-					gtk_recent_info_ref (info),
-					(GDestroyNotify) gtk_recent_info_unref);
+		g_object_set_data_full (G_OBJECT (action), "ctk-recent-info",
+					ctk_recent_info_ref (info),
+					(GDestroyNotify) ctk_recent_info_unref);
 
 		g_object_set (G_OBJECT (action), "icon-name", "image-x-generic", NULL);
 
@@ -4147,12 +4147,12 @@ eoc_window_update_recent_files_menu (EocWindow *window)
 				  window);
 
 		G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
-		gtk_action_group_add_action (priv->actions_recent, action);
+		ctk_action_group_add_action (priv->actions_recent, action);
 		G_GNUC_END_IGNORE_DEPRECATIONS;
 
 		g_object_unref (action);
 
-		gtk_ui_manager_add_ui (priv->ui_mgr, priv->recent_menu_id,
+		ctk_ui_manager_add_ui (priv->ui_mgr, priv->recent_menu_id,
 				       "/MainMenu/Image/RecentDocuments",
 				       action_name, action_name,
 				       GTK_UI_MANAGER_AUTO, FALSE);
@@ -4162,7 +4162,7 @@ eoc_window_update_recent_files_menu (EocWindow *window)
 		g_free (tip);
 	}
 
-	g_list_foreach (items, (GFunc) gtk_recent_info_unref, NULL);
+	g_list_foreach (items, (GFunc) ctk_recent_info_unref, NULL);
 	g_list_free (items);
 }
 
@@ -4184,18 +4184,18 @@ eoc_window_drag_data_received (GtkWidget *widget,
 	GdkAtom target;
 	GtkWidget *src;
 
-	target = gtk_selection_data_get_target (selection_data);
+	target = ctk_selection_data_get_target (selection_data);
 
-	if (!gtk_targets_include_uri (&target, 1))
+	if (!ctk_targets_include_uri (&target, 1))
 		return;
 
 	/* if the request is from another process this will return NULL */
-	src = gtk_drag_get_source_widget (context);
+	src = ctk_drag_get_source_widget (context);
 
 	/* if the drag request originates from the current eoc instance, ignore
 	   the request if the source window is the same as the dest window */
 	if (src &&
-	    gtk_widget_get_toplevel (src) == gtk_widget_get_toplevel (widget))
+	    ctk_widget_get_toplevel (src) == ctk_widget_get_toplevel (widget))
 	{
 		gdk_drag_status (context, 0, time);
 		return;
@@ -4204,7 +4204,7 @@ eoc_window_drag_data_received (GtkWidget *widget,
 	if (gdk_drag_context_get_suggested_action (context) == GDK_ACTION_COPY) {
 		window = EOC_WINDOW (widget);
 
-		file_list = eoc_util_parse_uri_string_list_to_file_list ((const gchar *) gtk_selection_data_get_data (selection_data));
+		file_list = eoc_util_parse_uri_string_list_to_file_list ((const gchar *) ctk_selection_data_get_data (selection_data));
 
 		eoc_window_open_file_list (window, file_list);
 	}
@@ -4213,11 +4213,11 @@ eoc_window_drag_data_received (GtkWidget *widget,
 static void
 eoc_window_set_drag_dest (EocWindow *window)
 {
-	gtk_drag_dest_set (GTK_WIDGET (window),
+	ctk_drag_dest_set (GTK_WIDGET (window),
                            GTK_DEST_DEFAULT_MOTION | GTK_DEST_DEFAULT_DROP,
                            NULL, 0,
                            GDK_ACTION_COPY | GDK_ACTION_ASK);
-	gtk_drag_dest_add_uri_targets (GTK_WIDGET (window));
+	ctk_drag_dest_add_uri_targets (GTK_WIDGET (window));
 }
 
 static void
@@ -4227,18 +4227,18 @@ eoc_window_sidebar_visibility_changed (GtkWidget *widget, EocWindow *window)
 	gboolean visible;
 
 	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
-	visible = gtk_widget_get_visible (window->priv->sidebar);
+	visible = ctk_widget_get_visible (window->priv->sidebar);
 
-	action = gtk_action_group_get_action (window->priv->actions_window,
+	action = ctk_action_group_get_action (window->priv->actions_window,
 					      "ViewSidebar");
 
-	if (gtk_toggle_action_get_active (GTK_TOGGLE_ACTION (action)) != visible)
-		gtk_toggle_action_set_active (GTK_TOGGLE_ACTION (action), visible);
+	if (ctk_toggle_action_get_active (GTK_TOGGLE_ACTION (action)) != visible)
+		ctk_toggle_action_set_active (GTK_TOGGLE_ACTION (action), visible);
 	G_GNUC_END_IGNORE_DEPRECATIONS;
 
 	/* Focus the image */
 	if (!visible && window->priv->image != NULL)
-		gtk_widget_grab_focus (window->priv->view);
+		ctk_widget_grab_focus (window->priv->view);
 }
 
 static void
@@ -4251,16 +4251,16 @@ eoc_window_sidebar_page_added (EocSidebar  *sidebar,
 		gboolean show;
 
 		G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
-		action = gtk_action_group_get_action (window->priv->actions_window,
+		action = ctk_action_group_get_action (window->priv->actions_window,
 						      "ViewSidebar");
 
-		gtk_action_set_sensitive (action, TRUE);
+		ctk_action_set_sensitive (action, TRUE);
 
-		show = gtk_toggle_action_get_active (GTK_TOGGLE_ACTION (action));
+		show = ctk_toggle_action_get_active (GTK_TOGGLE_ACTION (action));
 		G_GNUC_END_IGNORE_DEPRECATIONS;
 
 		if (show)
-			gtk_widget_show (GTK_WIDGET (sidebar));
+			ctk_widget_show (GTK_WIDGET (sidebar));
 	}
 }
 static void
@@ -4271,13 +4271,13 @@ eoc_window_sidebar_page_removed (EocSidebar  *sidebar,
 	if (eoc_sidebar_is_empty (sidebar)) {
 		GtkAction *action;
 
-		gtk_widget_hide (GTK_WIDGET (sidebar));
+		ctk_widget_hide (GTK_WIDGET (sidebar));
 
 		G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
-		action = gtk_action_group_get_action (window->priv->actions_window,
+		action = ctk_action_group_get_action (window->priv->actions_window,
 						      "ViewSidebar");
 
-		gtk_action_set_sensitive (action, FALSE);
+		ctk_action_set_sensitive (action, FALSE);
 		G_GNUC_END_IGNORE_DEPRECATIONS;
 	}
 }
@@ -4287,10 +4287,10 @@ eoc_window_finish_saving (EocWindow *window)
 {
 	EocWindowPrivate *priv = window->priv;
 
-	gtk_widget_set_sensitive (GTK_WIDGET (window), FALSE);
+	ctk_widget_set_sensitive (GTK_WIDGET (window), FALSE);
 
 	do {
-		gtk_main_iteration ();
+		ctk_main_iteration ();
 	} while (priv->save_job != NULL);
 }
 
@@ -4345,13 +4345,13 @@ eoc_window_open_editor (GtkAction *action,
 		return;
 
 	context = gdk_display_get_app_launch_context (
-	  gtk_widget_get_display (GTK_WIDGET (window)));
+	  ctk_widget_get_display (GTK_WIDGET (window)));
 	gdk_app_launch_context_set_screen (context,
-	  gtk_widget_get_screen (GTK_WIDGET (window)));
+	  ctk_widget_get_screen (GTK_WIDGET (window)));
 	gdk_app_launch_context_set_icon (context,
 	  g_app_info_get_icon (app_info));
 	gdk_app_launch_context_set_timestamp (context,
-	  gtk_get_current_event_time ());
+	  ctk_get_current_event_time ());
 
 	{
 		GList f = { eoc_image_get_file (window->priv->image) };
@@ -4385,14 +4385,14 @@ eoc_window_add_open_editor_action (EocWindow *window)
 	tooltip = g_strdup_printf (_("Edit the current image using %s"),
 	                           g_app_info_get_name (app_info));
 	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
-	action = gtk_action_new ("OpenEditor", _("Edit Image"), tooltip, NULL);
-	gtk_action_set_gicon (action, g_app_info_get_icon (app_info));
-	gtk_action_set_is_important (action, TRUE);
+	action = ctk_action_new ("OpenEditor", _("Edit Image"), tooltip, NULL);
+	ctk_action_set_gicon (action, g_app_info_get_icon (app_info));
+	ctk_action_set_is_important (action, TRUE);
 
 	g_signal_connect (action, "activate",
 	                  G_CALLBACK (eoc_window_open_editor), window);
 
-	gtk_action_group_add_action (window->priv->actions_image, action);
+	ctk_action_group_add_action (window->priv->actions_image, action);
 	G_GNUC_END_IGNORE_DEPRECATIONS;
 
 	g_object_unref (action);
@@ -4416,62 +4416,62 @@ eoc_window_construct_ui (EocWindow *window)
 
 	priv = window->priv;
 
-	priv->box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
-	gtk_container_add (GTK_CONTAINER (window), priv->box);
-	gtk_widget_show (priv->box);
+	priv->box = ctk_box_new (GTK_ORIENTATION_VERTICAL, 0);
+	ctk_container_add (GTK_CONTAINER (window), priv->box);
+	ctk_widget_show (priv->box);
 
-	priv->ui_mgr = gtk_ui_manager_new ();
+	priv->ui_mgr = ctk_ui_manager_new ();
 
 	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
-	priv->actions_window = gtk_action_group_new ("MenuActionsWindow");
+	priv->actions_window = ctk_action_group_new ("MenuActionsWindow");
 
-	gtk_action_group_set_translation_domain (priv->actions_window,
+	ctk_action_group_set_translation_domain (priv->actions_window,
 						 GETTEXT_PACKAGE);
 
-	gtk_action_group_add_actions (priv->actions_window,
+	ctk_action_group_add_actions (priv->actions_window,
 				      action_entries_window,
 				      G_N_ELEMENTS (action_entries_window),
 				      window);
 
-	gtk_action_group_add_toggle_actions (priv->actions_window,
+	ctk_action_group_add_toggle_actions (priv->actions_window,
 					     toggle_entries_window,
 					     G_N_ELEMENTS (toggle_entries_window),
 					     window);
 	G_GNUC_END_IGNORE_DEPRECATIONS;
 
-	gtk_ui_manager_insert_action_group (priv->ui_mgr, priv->actions_window, 0);
+	ctk_ui_manager_insert_action_group (priv->ui_mgr, priv->actions_window, 0);
 
 	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
-	priv->actions_image = gtk_action_group_new ("MenuActionsImage");
-	gtk_action_group_set_translation_domain (priv->actions_image,
+	priv->actions_image = ctk_action_group_new ("MenuActionsImage");
+	ctk_action_group_set_translation_domain (priv->actions_image,
 						 GETTEXT_PACKAGE);
 
-	gtk_action_group_add_actions (priv->actions_image,
+	ctk_action_group_add_actions (priv->actions_image,
 				      action_entries_image,
 				      G_N_ELEMENTS (action_entries_image),
 				      window);
 
 	eoc_window_add_open_editor_action (window);
 
-	gtk_action_group_add_toggle_actions (priv->actions_image,
+	ctk_action_group_add_toggle_actions (priv->actions_image,
 					     toggle_entries_image,
 					     G_N_ELEMENTS (toggle_entries_image),
 					     window);
 	G_GNUC_END_IGNORE_DEPRECATIONS;
 
-	gtk_ui_manager_insert_action_group (priv->ui_mgr, priv->actions_image, 0);
+	ctk_ui_manager_insert_action_group (priv->ui_mgr, priv->actions_image, 0);
 
 	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
-	priv->actions_collection = gtk_action_group_new ("MenuActionsCollection");
-	gtk_action_group_set_translation_domain (priv->actions_collection,
+	priv->actions_collection = ctk_action_group_new ("MenuActionsCollection");
+	ctk_action_group_set_translation_domain (priv->actions_collection,
 						 GETTEXT_PACKAGE);
 
-	gtk_action_group_add_actions (priv->actions_collection,
+	ctk_action_group_add_actions (priv->actions_collection,
 				      action_entries_collection,
 				      G_N_ELEMENTS (action_entries_collection),
 				      window);
 
-	gtk_action_group_add_toggle_actions (priv->actions_collection,
+	ctk_action_group_add_toggle_actions (priv->actions_collection,
 					     toggle_entries_collection,
 					     G_N_ELEMENTS (toggle_entries_collection),
 					     window);
@@ -4481,9 +4481,9 @@ eoc_window_construct_ui (EocWindow *window)
 			       priv->actions_image,
 			       priv->actions_collection);
 
-	gtk_ui_manager_insert_action_group (priv->ui_mgr, priv->actions_collection, 0);
+	ctk_ui_manager_insert_action_group (priv->ui_mgr, priv->actions_collection, 0);
 
-	if (!gtk_ui_manager_add_ui_from_resource (priv->ui_mgr,
+	if (!ctk_ui_manager_add_ui_from_resource (priv->ui_mgr,
 	                                          "/org/cafe/eoc/ui/eoc-ui.xml",
 	                                          &error)) {
 		g_warning ("building menus failed: %s", error->message);
@@ -4495,29 +4495,29 @@ eoc_window_construct_ui (EocWindow *window)
 	g_signal_connect (priv->ui_mgr, "disconnect_proxy",
 			  G_CALLBACK (disconnect_proxy_cb), window);
 
-	menubar = gtk_ui_manager_get_widget (priv->ui_mgr, "/MainMenu");
+	menubar = ctk_ui_manager_get_widget (priv->ui_mgr, "/MainMenu");
 	g_assert (GTK_IS_WIDGET (menubar));
-	gtk_box_pack_start (GTK_BOX (priv->box), menubar, FALSE, FALSE, 0);
-	gtk_widget_show (menubar);
+	ctk_box_pack_start (GTK_BOX (priv->box), menubar, FALSE, FALSE, 0);
+	ctk_widget_show (menubar);
 
-	menuitem = gtk_ui_manager_get_widget (priv->ui_mgr,
+	menuitem = ctk_ui_manager_get_widget (priv->ui_mgr,
 			"/MainMenu/Edit/EditFlipHorizontal");
-	gtk_image_menu_item_set_always_show_image (
+	ctk_image_menu_item_set_always_show_image (
 			GTK_IMAGE_MENU_ITEM (menuitem), TRUE);
 
-	menuitem = gtk_ui_manager_get_widget (priv->ui_mgr,
+	menuitem = ctk_ui_manager_get_widget (priv->ui_mgr,
 			"/MainMenu/Edit/EditFlipVertical");
-	gtk_image_menu_item_set_always_show_image (
+	ctk_image_menu_item_set_always_show_image (
 			GTK_IMAGE_MENU_ITEM (menuitem), TRUE);
 
-	menuitem = gtk_ui_manager_get_widget (priv->ui_mgr,
+	menuitem = ctk_ui_manager_get_widget (priv->ui_mgr,
 			"/MainMenu/Edit/EditRotate90");
-	gtk_image_menu_item_set_always_show_image (
+	ctk_image_menu_item_set_always_show_image (
 			GTK_IMAGE_MENU_ITEM (menuitem), TRUE);
 
-	menuitem = gtk_ui_manager_get_widget (priv->ui_mgr,
+	menuitem = ctk_ui_manager_get_widget (priv->ui_mgr,
 			"/MainMenu/Edit/EditRotate270");
-	gtk_image_menu_item_set_always_show_image (
+	ctk_image_menu_item_set_always_show_image (
 			GTK_IMAGE_MENU_ITEM (menuitem), TRUE);
 
 	priv->toolbar = GTK_WIDGET
@@ -4527,64 +4527,64 @@ eoc_window_construct_ui (EocWindow *window)
 			       "model", eoc_application_get_toolbars_model (EOC_APP),
 			       NULL));
 
-	gtk_style_context_add_class (gtk_widget_get_style_context (GTK_WIDGET (priv->toolbar)),
+	ctk_style_context_add_class (ctk_widget_get_style_context (GTK_WIDGET (priv->toolbar)),
 				     GTK_STYLE_CLASS_PRIMARY_TOOLBAR);
 
 	egg_editable_toolbar_show (EGG_EDITABLE_TOOLBAR (priv->toolbar),
 				   "Toolbar");
 
-	gtk_box_pack_start (GTK_BOX (priv->box),
+	ctk_box_pack_start (GTK_BOX (priv->box),
 			    priv->toolbar,
 			    FALSE,
 			    FALSE,
 			    0);
 
-	gtk_widget_show (priv->toolbar);
+	ctk_widget_show (priv->toolbar);
 
-	gtk_window_add_accel_group (GTK_WINDOW (window),
-				    gtk_ui_manager_get_accel_group (priv->ui_mgr));
+	ctk_window_add_accel_group (GTK_WINDOW (window),
+				    ctk_ui_manager_get_accel_group (priv->ui_mgr));
 
 	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
-	priv->actions_recent = gtk_action_group_new ("RecentFilesActions");
-	gtk_action_group_set_translation_domain (priv->actions_recent,
+	priv->actions_recent = ctk_action_group_new ("RecentFilesActions");
+	ctk_action_group_set_translation_domain (priv->actions_recent,
 						 GETTEXT_PACKAGE);
 	G_GNUC_END_IGNORE_DEPRECATIONS;
 
-	g_signal_connect (gtk_recent_manager_get_default (), "changed",
+	g_signal_connect (ctk_recent_manager_get_default (), "changed",
 			  G_CALLBACK (eoc_window_recent_manager_changed_cb),
 			  window);
 
 	eoc_window_update_recent_files_menu (window);
 
-	gtk_ui_manager_insert_action_group (priv->ui_mgr, priv->actions_recent, 0);
+	ctk_ui_manager_insert_action_group (priv->ui_mgr, priv->actions_recent, 0);
 
-	priv->cbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
-	gtk_box_pack_start (GTK_BOX (priv->box), priv->cbox, TRUE, TRUE, 0);
-	gtk_widget_show (priv->cbox);
+	priv->cbox = ctk_box_new (GTK_ORIENTATION_VERTICAL, 0);
+	ctk_box_pack_start (GTK_BOX (priv->box), priv->cbox, TRUE, TRUE, 0);
+	ctk_widget_show (priv->cbox);
 
 	priv->statusbar = eoc_statusbar_new ();
-	gtk_box_pack_end (GTK_BOX (priv->box),
+	ctk_box_pack_end (GTK_BOX (priv->box),
 			  GTK_WIDGET (priv->statusbar),
 			  FALSE, FALSE, 0);
-	gtk_widget_show (priv->statusbar);
+	ctk_widget_show (priv->statusbar);
 
 	priv->image_info_message_cid =
-		gtk_statusbar_get_context_id (GTK_STATUSBAR (priv->statusbar),
+		ctk_statusbar_get_context_id (GTK_STATUSBAR (priv->statusbar),
 					      "image_info_message");
 	priv->tip_message_cid =
-		gtk_statusbar_get_context_id (GTK_STATUSBAR (priv->statusbar),
+		ctk_statusbar_get_context_id (GTK_STATUSBAR (priv->statusbar),
 					      "tip_message");
 
-	priv->layout = gtk_box_new (GTK_ORIENTATION_VERTICAL, 2);
+	priv->layout = ctk_box_new (GTK_ORIENTATION_VERTICAL, 2);
 
-	hpaned = gtk_paned_new (GTK_ORIENTATION_HORIZONTAL);
+	hpaned = ctk_paned_new (GTK_ORIENTATION_HORIZONTAL);
 
 	priv->sidebar = eoc_sidebar_new ();
 	/* The sidebar shouldn't be shown automatically on show_all(),
 	   but only when the user actually wants it. */
-	gtk_widget_set_no_show_all (priv->sidebar, TRUE);
+	ctk_widget_set_no_show_all (priv->sidebar, TRUE);
 
-	gtk_widget_set_size_request (priv->sidebar, 210, -1);
+	ctk_widget_set_size_request (priv->sidebar, 210, -1);
 
 	g_signal_connect_after (priv->sidebar,
 				"show",
@@ -4612,7 +4612,7 @@ eoc_window_construct_ui (EocWindow *window)
 			      _("Properties"),
 			      GTK_WIDGET (eoc_metadata_sidebar_new (window)));
 
-	gtk_widget_set_size_request (GTK_WIDGET (priv->view), 100, 100);
+	ctk_widget_set_size_request (GTK_WIDGET (priv->view), 100, 100);
 	g_signal_connect (G_OBJECT (priv->view),
 			  "zoom_changed",
 			  G_CALLBACK (view_zoom_changed_cb),
@@ -4623,29 +4623,29 @@ eoc_window_construct_ui (EocWindow *window)
 	g_settings_bind (priv->view_settings, EOC_CONF_VIEW_ZOOM_MULTIPLIER,
 			 priv->view, "zoom-multiplier", G_SETTINGS_BIND_GET);
 
-	view_popup = gtk_ui_manager_get_widget (priv->ui_mgr, "/ViewPopup");
+	view_popup = ctk_ui_manager_get_widget (priv->ui_mgr, "/ViewPopup");
 	eoc_scroll_view_set_popup (EOC_SCROLL_VIEW (priv->view),
 				   GTK_MENU (view_popup));
 
-	gtk_paned_pack1 (GTK_PANED (hpaned),
+	ctk_paned_pack1 (GTK_PANED (hpaned),
 			 priv->sidebar,
 			 FALSE,
 			 FALSE);
 
-	gtk_paned_pack2 (GTK_PANED (hpaned),
+	ctk_paned_pack2 (GTK_PANED (hpaned),
 			 priv->view,
 			 TRUE,
 			 FALSE);
 
-	gtk_widget_show_all (hpaned);
+	ctk_widget_show_all (hpaned);
 
-	gtk_box_pack_start (GTK_BOX (priv->layout), hpaned, TRUE, TRUE, 0);
+	ctk_box_pack_start (GTK_BOX (priv->layout), hpaned, TRUE, TRUE, 0);
 
 	priv->thumbview = g_object_ref (eoc_thumb_view_new ());
 
 	/* giving shape to the view */
-	gtk_icon_view_set_margin (GTK_ICON_VIEW (priv->thumbview), 4);
-	gtk_icon_view_set_row_spacing (GTK_ICON_VIEW (priv->thumbview), 0);
+	ctk_icon_view_set_margin (GTK_ICON_VIEW (priv->thumbview), 4);
+	ctk_icon_view_set_row_spacing (GTK_ICON_VIEW (priv->thumbview), 0);
 
 	g_signal_connect (G_OBJECT (priv->thumbview), "selection_changed",
 			  G_CALLBACK (handle_image_selection_changed_cb), window);
@@ -4659,13 +4659,13 @@ eoc_window_construct_ui (EocWindow *window)
 	g_settings_bind (priv->ui_settings, EOC_CONF_UI_SCROLL_BUTTONS,
 			 priv->nav, "show-buttons", G_SETTINGS_BIND_GET);
 
-	thumb_popup = gtk_ui_manager_get_widget (priv->ui_mgr, "/ThumbnailPopup");
+	thumb_popup = ctk_ui_manager_get_widget (priv->ui_mgr, "/ThumbnailPopup");
 	eoc_thumb_view_set_thumbnail_popup (EOC_THUMB_VIEW (priv->thumbview),
 					    GTK_MENU (thumb_popup));
 
-	gtk_box_pack_start (GTK_BOX (priv->layout), priv->nav, FALSE, FALSE, 0);
+	ctk_box_pack_start (GTK_BOX (priv->layout), priv->nav, FALSE, FALSE, 0);
 
-	gtk_box_pack_end (GTK_BOX (priv->cbox), priv->layout, TRUE, TRUE, 0);
+	ctk_box_pack_end (GTK_BOX (priv->cbox), priv->layout, TRUE, TRUE, 0);
 
 	eoc_window_can_save_changed_cb (priv->lockdown_settings,
 					EOC_CONF_LOCKDOWN_CAN_SAVE,
@@ -4699,13 +4699,13 @@ eoc_window_init (EocWindow *window)
 
 	GtkStyleContext *context;
 
-	context = gtk_widget_get_style_context (GTK_WIDGET (window));
-	gtk_style_context_add_class (context, "eoc-window");
+	context = ctk_widget_get_style_context (GTK_WIDGET (window));
+	ctk_style_context_add_class (context, "eoc-window");
 
 	hints.min_width  = EOC_WINDOW_MIN_WIDTH;
 	hints.min_height = EOC_WINDOW_MIN_HEIGHT;
 
-	screen = gtk_widget_get_screen (GTK_WIDGET (window));
+	screen = ctk_widget_get_screen (GTK_WIDGET (window));
 
 	priv = window->priv = eoc_window_get_instance_private (window);
 
@@ -4730,16 +4730,16 @@ eoc_window_init (EocWindow *window)
 	window->priv->slideshow_switch_source = NULL;
 	window->priv->fullscreen_idle_inhibit_cookie = 0;
 
-	gtk_window_set_geometry_hints (GTK_WINDOW (window),
+	ctk_window_set_geometry_hints (GTK_WINDOW (window),
 				       GTK_WIDGET (window),
 				       &hints,
 				       GDK_HINT_MIN_SIZE);
 
-	gtk_window_set_default_size (GTK_WINDOW (window),
+	ctk_window_set_default_size (GTK_WINDOW (window),
 				     EOC_WINDOW_DEFAULT_WIDTH,
 				     EOC_WINDOW_DEFAULT_HEIGHT);
 
-	gtk_window_set_position (GTK_WINDOW (window), GTK_WIN_POS_CENTER);
+	ctk_window_set_position (GTK_WINDOW (window), GTK_WIN_POS_CENTER);
 
 	window->priv->mode = EOC_WINDOW_MODE_UNKNOWN;
 	window->priv->status = EOC_WINDOW_STATUS_UNKNOWN;
@@ -4758,7 +4758,7 @@ eoc_window_init (EocWindow *window)
 
 	window->priv->page_setup = NULL;
 
-	gtk_window_set_application (GTK_WINDOW (window), GTK_APPLICATION (EOC_APP));
+	ctk_window_set_application (GTK_WINDOW (window), GTK_APPLICATION (EOC_APP));
 }
 
 static void
@@ -4848,14 +4848,14 @@ eoc_window_dispose (GObject *object)
 	fullscreen_clear_timeout (window);
 
 	if (window->priv->fullscreen_popup != NULL) {
-		gtk_widget_destroy (priv->fullscreen_popup);
+		ctk_widget_destroy (priv->fullscreen_popup);
 		priv->fullscreen_popup = NULL;
 	}
 
 	slideshow_clear_timeout (window);
 	eoc_window_uninhibit_screensaver (window);
 
-	g_signal_handlers_disconnect_by_func (gtk_recent_manager_get_default (),
+	g_signal_handlers_disconnect_by_func (ctk_recent_manager_get_default (),
 					      G_CALLBACK (eoc_window_recent_manager_changed_cb),
 					      window);
 
@@ -4924,7 +4924,7 @@ eoc_window_delete (GtkWidget *widget, GdkEventAny *event)
 		return TRUE;
 	}
 
-	gtk_widget_destroy (widget);
+	ctk_widget_destroy (widget);
 
 	return TRUE;
 }
@@ -4943,7 +4943,7 @@ eoc_window_key_press (GtkWidget *widget, GdkEventKey *event)
 			break;
 		}
 	case GDK_KEY_Return:
-		if (gtk_container_get_focus_child (tbcontainer) == NULL) {
+		if (ctk_container_get_focus_child (tbcontainer) == NULL) {
 			/* Image properties dialog case */
 			if (event->state & GDK_MOD1_MASK) {
 				result = FALSE;
@@ -4995,9 +4995,9 @@ eoc_window_key_press (GtkWidget *widget, GdkEventKey *event)
 			/* break to let scrollview handle the key */
 			break;
 		}
-		if (gtk_container_get_focus_child (tbcontainer) != NULL)
+		if (ctk_container_get_focus_child (tbcontainer) != NULL)
 			break;
-		if (!gtk_widget_get_visible (EOC_WINDOW (widget)->priv->nav)) {
+		if (!ctk_widget_get_visible (EOC_WINDOW (widget)->priv->nav)) {
 			if (is_rtl && event->keyval == GDK_KEY_Left) {
 				/* handle RTL fall-through,
 				 * need to behave like GDK_Down then */
@@ -5026,9 +5026,9 @@ eoc_window_key_press (GtkWidget *widget, GdkEventKey *event)
 			/* break to let scrollview handle the key */
 			break;
 		}
-		if (gtk_container_get_focus_child (tbcontainer) != NULL)
+		if (ctk_container_get_focus_child (tbcontainer) != NULL)
 			break;
-		if (!gtk_widget_get_visible (EOC_WINDOW (widget)->priv->nav)) {
+		if (!ctk_widget_get_visible (EOC_WINDOW (widget)->priv->nav)) {
 			if (is_rtl && event->keyval == GDK_KEY_Right) {
 				/* handle RTL fall-through,
 				 * need to behave like GDK_Up then */
@@ -5043,7 +5043,7 @@ eoc_window_key_press (GtkWidget *widget, GdkEventKey *event)
 		}
 	case GDK_KEY_Page_Up:
 		if (!eoc_scroll_view_scrollbars_visible (EOC_SCROLL_VIEW (EOC_WINDOW (widget)->priv->view))) {
-			if (!gtk_widget_get_visible (EOC_WINDOW (widget)->priv->nav)) {
+			if (!ctk_widget_get_visible (EOC_WINDOW (widget)->priv->nav)) {
 				/* If the iconview is not visible skip to the
 				 * previous image manually as it won't handle
 				 * the keypress then. */
@@ -5056,7 +5056,7 @@ eoc_window_key_press (GtkWidget *widget, GdkEventKey *event)
 		break;
 	case GDK_KEY_Page_Down:
 		if (!eoc_scroll_view_scrollbars_visible (EOC_SCROLL_VIEW (EOC_WINDOW (widget)->priv->view))) {
-			if (!gtk_widget_get_visible (EOC_WINDOW (widget)->priv->nav)) {
+			if (!ctk_widget_get_visible (EOC_WINDOW (widget)->priv->nav)) {
 				/* If the iconview is not visible skip to the
 				 * next image manually as it won't handle
 				 * the keypress then. */
@@ -5075,17 +5075,17 @@ eoc_window_key_press (GtkWidget *widget, GdkEventKey *event)
 	}
 
 	if (handle_selection == TRUE && result == FALSE) {
-		gtk_widget_grab_focus (GTK_WIDGET (EOC_WINDOW (widget)->priv->thumbview));
+		ctk_widget_grab_focus (GTK_WIDGET (EOC_WINDOW (widget)->priv->thumbview));
 
-		result = gtk_widget_event (GTK_WIDGET (EOC_WINDOW (widget)->priv->thumbview),
+		result = ctk_widget_event (GTK_WIDGET (EOC_WINDOW (widget)->priv->thumbview),
 					   (GdkEvent *) event);
 	}
 
 	/* If the focus is not in the toolbar and we still haven't handled the
 	   event, give the scrollview a chance to do it.  */
-	if (!gtk_container_get_focus_child (tbcontainer) && result == FALSE &&
-		gtk_widget_get_realized (GTK_WIDGET (EOC_WINDOW (widget)->priv->view))) {
-			result = gtk_widget_event (GTK_WIDGET (EOC_WINDOW (widget)->priv->view),
+	if (!ctk_container_get_focus_child (tbcontainer) && result == FALSE &&
+		ctk_widget_get_realized (GTK_WIDGET (EOC_WINDOW (widget)->priv->view))) {
+			result = ctk_widget_event (GTK_WIDGET (EOC_WINDOW (widget)->priv->view),
 						   (GdkEvent *) event);
 	}
 
@@ -5137,7 +5137,7 @@ eoc_window_focus_out_event (GtkWidget *widget, GdkEventFocus *event)
 		     priv->mode == EOC_WINDOW_MODE_SLIDESHOW;
 
 	if (fullscreen) {
-		gtk_widget_hide (priv->fullscreen_popup);
+		ctk_widget_hide (priv->fullscreen_popup);
 	}
 
 	return GTK_WIDGET_CLASS (eoc_window_parent_class)->focus_out_event (widget, event);
@@ -5448,7 +5448,7 @@ eoc_job_model_cb (EocJobModel *job, gpointer data)
 
 			eoc_window_set_message_area (window, message_area);
 
-			gtk_widget_show (message_area);
+			ctk_widget_show (message_area);
 		}
 
 		g_signal_emit (window, signals[SIGNAL_PREPARED], 0);

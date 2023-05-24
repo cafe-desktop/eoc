@@ -23,7 +23,7 @@
 #define __EOC_PRINT_H__
 
 #include "eoc-image.h"
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 G_BEGIN_DECLS
 

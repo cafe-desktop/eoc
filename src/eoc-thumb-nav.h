@@ -24,7 +24,7 @@
 
 #include "eoc-thumb-view.h"
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include <glib.h>
 #include <glib-object.h>
 

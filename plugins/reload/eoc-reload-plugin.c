@@ -117,17 +117,17 @@ eoc_reload_plugin_activate (EocWindowActivatable *activatable)
 	manager = eoc_window_get_ui_manager (plugin->window);
 
 	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
-	plugin->ui_action_group = gtk_action_group_new ("EocReloadPluginActions");
+	plugin->ui_action_group = ctk_action_group_new ("EocReloadPluginActions");
 
-	gtk_action_group_set_translation_domain (plugin->ui_action_group, GETTEXT_PACKAGE);
+	ctk_action_group_set_translation_domain (plugin->ui_action_group, GETTEXT_PACKAGE);
 
-	gtk_action_group_add_actions (plugin->ui_action_group, action_entries,
+	ctk_action_group_add_actions (plugin->ui_action_group, action_entries,
 	                              G_N_ELEMENTS (action_entries), plugin->window);
 	G_GNUC_END_IGNORE_DEPRECATIONS;
 
-	gtk_ui_manager_insert_action_group (manager, plugin->ui_action_group, -1);
+	ctk_ui_manager_insert_action_group (manager, plugin->ui_action_group, -1);
 
-	plugin->ui_id = gtk_ui_manager_add_ui_from_string (manager, ui_definition, -1, NULL);
+	plugin->ui_id = ctk_ui_manager_add_ui_from_string (manager, ui_definition, -1, NULL);
 	g_warn_if_fail (plugin->ui_id != 0);
 }
 
@@ -141,11 +141,11 @@ eoc_reload_plugin_deactivate (EocWindowActivatable *activatable)
 
 	manager = eoc_window_get_ui_manager (plugin->window);
 
-	gtk_ui_manager_remove_ui (manager, plugin->ui_id);
+	ctk_ui_manager_remove_ui (manager, plugin->ui_id);
 
-	gtk_ui_manager_remove_action_group (manager, plugin->ui_action_group);
+	ctk_ui_manager_remove_action_group (manager, plugin->ui_action_group);
 
-	gtk_ui_manager_ensure_update (manager);
+	ctk_ui_manager_ensure_update (manager);
 }
 
 static void
