@@ -1304,7 +1304,7 @@ eoc_image_set_thumbnail (EocImage *img, GdkPixbuf *thumbnail)
 	EocImagePrivate *priv;
 
 	g_return_if_fail (EOC_IS_IMAGE (img));
-	g_return_if_fail (CDK_IS_PIXBUF (thumbnail) || thumbnail == NULL);
+	g_return_if_fail (GDK_IS_PIXBUF (thumbnail) || thumbnail == NULL);
 
 	priv = img->priv;
 
@@ -2276,7 +2276,7 @@ eoc_image_iter_advance (EocImage *img)
  	gboolean new_frame;
 
 	g_return_val_if_fail (EOC_IS_IMAGE (img), FALSE);
-	g_return_val_if_fail (CDK_IS_PIXBUF_ANIMATION_ITER (img->priv->anim_iter), FALSE);
+	g_return_val_if_fail (GDK_IS_PIXBUF_ANIMATION_ITER (img->priv->anim_iter), FALSE);
 
 	priv = img->priv;
 
