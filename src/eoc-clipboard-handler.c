@@ -27,7 +27,7 @@
 
 #include <glib.h>
 #include <gdk-pixbuf/gdk-pixbuf.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include "eoc-clipboard-handler.h"
 
 enum {
@@ -241,13 +241,13 @@ eoc_clipboard_handler_get_func (GtkClipboard *clipboard,
 	{
 		GdkPixbuf *pixbuf = eoc_clipboard_handler_get_pixbuf (handler);
 		g_object_ref (pixbuf);
-		gtk_selection_data_set_pixbuf (selection, pixbuf);
+		ctk_selection_data_set_pixbuf (selection, pixbuf);
 		g_object_unref (pixbuf);
 		break;
 	}
 	case TARGET_TEXT:
 	{
-		gtk_selection_data_set_text (selection,
+		ctk_selection_data_set_text (selection,
 					     eoc_clipboard_handler_get_uri (handler),
 					     -1);
 		break;
@@ -258,7 +258,7 @@ eoc_clipboard_handler_get_func (GtkClipboard *clipboard,
 		uris[0] = g_strdup (eoc_clipboard_handler_get_uri (handler));
 		uris[1] = NULL;
 
-		gtk_selection_data_set_uris (selection, uris);
+		ctk_selection_data_set_uris (selection, uris);
 		g_free (uris[0]);
 		break;
 	}
@@ -285,23 +285,23 @@ eoc_clipboard_handler_copy_to_clipboard (EocClipboardHandler *handler,
 	gint n_targets = 0;
 	gboolean set = FALSE;
 
-	tlist = gtk_target_list_new (NULL, 0);
+	tlist = ctk_target_list_new (NULL, 0);
 
 	if (handler->priv->pixbuf != NULL)
-		gtk_target_list_add_image_targets (tlist, TARGET_PIXBUF, TRUE);
+		ctk_target_list_add_image_targets (tlist, TARGET_PIXBUF, TRUE);
 
 	if (handler->priv->uri != NULL) {
-		gtk_target_list_add_text_targets (tlist, TARGET_TEXT);
-		gtk_target_list_add_uri_targets (tlist, TARGET_URI);
+		ctk_target_list_add_text_targets (tlist, TARGET_TEXT);
+		ctk_target_list_add_uri_targets (tlist, TARGET_URI);
 	}
 
-	targets = gtk_target_table_new_from_list (tlist, &n_targets);
+	targets = ctk_target_table_new_from_list (tlist, &n_targets);
 
 	// We need to take ownership here if nobody else did
 	g_object_ref_sink (handler);
 
 	if (n_targets > 0) {
-		set = gtk_clipboard_set_with_owner (clipboard,
+		set = ctk_clipboard_set_with_owner (clipboard,
 						    targets, n_targets,
 						    eoc_clipboard_handler_get_func,
 						    eoc_clipboard_handler_clear_func,
@@ -310,10 +310,10 @@ eoc_clipboard_handler_copy_to_clipboard (EocClipboardHandler *handler,
 	}
 
 	if (!set) {
-		gtk_clipboard_clear (clipboard);
+		ctk_clipboard_clear (clipboard);
 		g_object_unref (handler);
 	}
 
-	gtk_target_table_free (targets, n_targets);
-	gtk_target_list_unref (tlist);
+	ctk_target_table_free (targets, n_targets);
+	ctk_target_list_unref (tlist);
 }

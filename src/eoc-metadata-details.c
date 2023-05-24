@@ -36,7 +36,7 @@
 #endif
 
 #include <glib/gi18n.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 #include <string.h>
 #include <math.h>
@@ -242,30 +242,30 @@ eoc_metadata_details_init (EocMetadataDetails *details)
 
     priv = details->priv;
 
-    priv->model = GTK_TREE_MODEL (gtk_tree_store_new (2, G_TYPE_STRING, G_TYPE_STRING));
+    priv->model = GTK_TREE_MODEL (ctk_tree_store_new (2, G_TYPE_STRING, G_TYPE_STRING));
     priv->id_path_hash = g_hash_table_new_full (g_direct_hash, g_direct_equal, NULL, g_free);
     priv->id_path_hash_mnote = g_hash_table_new_full (g_direct_hash, g_direct_equal, NULL, g_free);
 
     /* Tag name column */
-    cell = gtk_cell_renderer_text_new ();
-    column = gtk_tree_view_column_new_with_attributes (_("Tag"), cell,
+    cell = ctk_cell_renderer_text_new ();
+    column = ctk_tree_view_column_new_with_attributes (_("Tag"), cell,
                                                        "text", MODEL_COLUMN_ATTRIBUTE,
                                                        NULL);
-    gtk_tree_view_append_column (GTK_TREE_VIEW (details), column);
+    ctk_tree_view_append_column (GTK_TREE_VIEW (details), column);
 
     /* Value column */
-    cell = gtk_cell_renderer_text_new ();
+    cell = ctk_cell_renderer_text_new ();
     g_object_set (cell,
                   "editable", TRUE,
                   NULL);
-    column = gtk_tree_view_column_new_with_attributes (_("Value"), cell,
+    column = ctk_tree_view_column_new_with_attributes (_("Value"), cell,
                                                        "text", MODEL_COLUMN_VALUE,
                                                        NULL);
-    gtk_tree_view_append_column (GTK_TREE_VIEW (details), column);
+    ctk_tree_view_append_column (GTK_TREE_VIEW (details), column);
 
     eoc_metadata_details_reset (details);
 
-    gtk_tree_view_set_model (GTK_TREE_VIEW (details),
+    ctk_tree_view_set_model (GTK_TREE_VIEW (details),
                              GTK_TREE_MODEL (priv->model));
 }
 
@@ -311,7 +311,7 @@ set_row_data (GtkTreeStore *store, char *path, char *parent, const char *attribu
     if (!attribute) return NULL;
 
     if (path != NULL) {
-        iter_valid = gtk_tree_model_get_iter_from_string (GTK_TREE_MODEL (store), &iter, path);
+        iter_valid = ctk_tree_model_get_iter_from_string (GTK_TREE_MODEL (store), &iter, path);
     }
 
     if (!iter_valid) {
@@ -320,31 +320,31 @@ set_row_data (GtkTreeStore *store, char *path, char *parent, const char *attribu
         gboolean parent_valid = FALSE;
 
         if (parent != NULL) {
-            parent_valid = gtk_tree_model_get_iter_from_string (GTK_TREE_MODEL (store),
+            parent_valid = ctk_tree_model_get_iter_from_string (GTK_TREE_MODEL (store),
                                                                 &parent_iter,
                                                                 parent);
         }
 
-        gtk_tree_store_append (store, &iter, parent_valid ? &parent_iter : NULL);
+        ctk_tree_store_append (store, &iter, parent_valid ? &parent_iter : NULL);
 
         if (path == NULL) {
-            tree_path = gtk_tree_model_get_path (GTK_TREE_MODEL (store), &iter);
+            tree_path = ctk_tree_model_get_path (GTK_TREE_MODEL (store), &iter);
 
             if (tree_path != NULL) {
-                path = gtk_tree_path_to_string (tree_path);
-                gtk_tree_path_free (tree_path);
+                path = ctk_tree_path_to_string (tree_path);
+                ctk_tree_path_free (tree_path);
             }
         }
     }
 
     utf_attribute = eoc_util_make_valid_utf8 (attribute);
 
-    gtk_tree_store_set (store, &iter, MODEL_COLUMN_ATTRIBUTE, utf_attribute, -1);
+    ctk_tree_store_set (store, &iter, MODEL_COLUMN_ATTRIBUTE, utf_attribute, -1);
     g_free (utf_attribute);
 
     if (value != NULL) {
         utf_value = eoc_util_make_valid_utf8 (value);
-        gtk_tree_store_set (store, &iter, MODEL_COLUMN_VALUE, utf_value, -1);
+        ctk_tree_store_set (store, &iter, MODEL_COLUMN_VALUE, utf_value, -1);
         g_free (utf_value);
     }
 
@@ -476,7 +476,7 @@ exif_entry_cb (ExifEntry *entry, gpointer data)
     view = EOC_METADATA_DETAILS (data);
     priv = view->priv;
 
-    store = GTK_TREE_STORE (gtk_tree_view_get_model (GTK_TREE_VIEW (view)));
+    store = GTK_TREE_STORE (ctk_tree_view_get_model (GTK_TREE_VIEW (view)));
 
     /* Take the tag's IFD into account when caching their GtkTreePaths.
      * That should fix key collisions for tags that have the same number
@@ -557,7 +557,7 @@ eoc_metadata_details_reset (EocMetadataDetails *details)
     EocMetadataDetailsPrivate *priv = details->priv;
     int i;
 
-    gtk_tree_store_clear (GTK_TREE_STORE (priv->model));
+    ctk_tree_store_clear (GTK_TREE_STORE (priv->model));
 
     g_hash_table_remove_all (priv->id_path_hash);
     g_hash_table_remove_all (priv->id_path_hash_mnote);
@@ -638,7 +638,7 @@ xmp_entry_insert (EocMetadataDetails *view, XmpStringPtr xmp_schema,
     key = g_strconcat (xmp_string_cstr (xmp_schema), ":",
                        xmp_string_cstr (xmp_path), NULL);
 
-    store = GTK_TREE_STORE (gtk_tree_view_get_model (GTK_TREE_VIEW (view)));
+    store = GTK_TREE_STORE (ctk_tree_view_get_model (GTK_TREE_VIEW (view)));
 
     path = g_hash_table_lookup (priv->id_path_hash, key);
 

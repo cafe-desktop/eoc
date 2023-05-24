@@ -28,7 +28,7 @@
 #endif
 
 #include <string.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include <gdk/gdkkeysyms.h>
 
 #include "eoc-sidebar.h"
@@ -73,7 +73,7 @@ eoc_sidebar_destroy (GtkWidget *object)
 	EocSidebar *eoc_sidebar = EOC_SIDEBAR (object);
 
 	if (eoc_sidebar->priv->menu) {
-		gtk_menu_detach (GTK_MENU (eoc_sidebar->priv->menu));
+		ctk_menu_detach (GTK_MENU (eoc_sidebar->priv->menu));
 		eoc_sidebar->priv->menu = NULL;
 	}
 
@@ -91,13 +91,13 @@ eoc_sidebar_select_page (EocSidebar *eoc_sidebar, GtkTreeIter *iter)
 	gchar *title;
 	gint index;
 
-	gtk_tree_model_get (eoc_sidebar->priv->page_model, iter,
+	ctk_tree_model_get (eoc_sidebar->priv->page_model, iter,
 			    PAGE_COLUMN_TITLE, &title,
 			    PAGE_COLUMN_NOTEBOOK_INDEX, &index,
 			    -1);
 
-	gtk_notebook_set_current_page (GTK_NOTEBOOK (eoc_sidebar->priv->notebook), index);
-	gtk_label_set_text (GTK_LABEL (eoc_sidebar->priv->label), title);
+	ctk_notebook_set_current_page (GTK_NOTEBOOK (eoc_sidebar->priv->notebook), index);
+	ctk_label_set_text (GTK_LABEL (eoc_sidebar->priv->label), title);
 
 	g_free (title);
 }
@@ -109,12 +109,12 @@ eoc_sidebar_set_page (EocSidebar   *eoc_sidebar,
 	GtkTreeIter iter;
 	gboolean valid;
 
-	valid = gtk_tree_model_get_iter_first (eoc_sidebar->priv->page_model, &iter);
+	valid = ctk_tree_model_get_iter_first (eoc_sidebar->priv->page_model, &iter);
 
 	while (valid) {
 		GtkWidget *widget;
 
-		gtk_tree_model_get (eoc_sidebar->priv->page_model, &iter,
+		ctk_tree_model_get (eoc_sidebar->priv->page_model, &iter,
 				    PAGE_COLUMN_MAIN_WIDGET, &widget,
 				    -1);
 
@@ -122,7 +122,7 @@ eoc_sidebar_set_page (EocSidebar   *eoc_sidebar,
 			eoc_sidebar_select_page (eoc_sidebar, &iter);
 			valid = FALSE;
 		} else {
-			valid = gtk_tree_model_iter_next (eoc_sidebar->priv->page_model, &iter);
+			valid = ctk_tree_model_iter_next (eoc_sidebar->priv->page_model, &iter);
 		}
 
 		g_object_unref (widget);
@@ -136,8 +136,8 @@ eoc_sidebar_get_current_page (EocSidebar *sidebar)
 {
 	GtkNotebook *notebook = GTK_NOTEBOOK (sidebar->priv->notebook);
 
-	return gtk_notebook_get_nth_page
-		(notebook, gtk_notebook_get_current_page (notebook));
+	return ctk_notebook_get_nth_page
+		(notebook, ctk_notebook_get_current_page (notebook));
 }
 
 static void
@@ -229,19 +229,19 @@ eoc_sidebar_select_button_press_cb (GtkWidget      *widget,
 		GtkRequisition requisition;
 		GtkAllocation allocation;
 
-		gtk_widget_get_allocation (widget, &allocation);
+		ctk_widget_get_allocation (widget, &allocation);
 
-		gtk_widget_set_size_request (eoc_sidebar->priv->menu, -1, -1);
-		gtk_widget_get_preferred_size (eoc_sidebar->priv->menu, &requisition, NULL);
-		gtk_widget_set_size_request (eoc_sidebar->priv->menu,
+		ctk_widget_set_size_request (eoc_sidebar->priv->menu, -1, -1);
+		ctk_widget_get_preferred_size (eoc_sidebar->priv->menu, &requisition, NULL);
+		ctk_widget_set_size_request (eoc_sidebar->priv->menu,
 					     MAX (allocation.width,
 						  requisition.width), -1);
 
-		gtk_widget_grab_focus (widget);
+		ctk_widget_grab_focus (widget);
 
-		gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (widget), TRUE);
+		ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (widget), TRUE);
 
-		gtk_menu_popup_at_widget (GTK_MENU (eoc_sidebar->priv->menu),
+		ctk_menu_popup_at_widget (GTK_MENU (eoc_sidebar->priv->menu),
 		                          widget,
 		                          GDK_GRAVITY_SOUTH_WEST,
 		                          GDK_GRAVITY_NORTH_WEST,
@@ -264,9 +264,9 @@ eoc_sidebar_select_button_key_press_cb (GtkWidget   *widget,
 	    event->keyval == GDK_KEY_KP_Space ||
 	    event->keyval == GDK_KEY_Return ||
 	    event->keyval == GDK_KEY_KP_Enter) {
-		gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (widget), TRUE);
+		ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (widget), TRUE);
 
-		gtk_menu_popup_at_widget (GTK_MENU (eoc_sidebar->priv->menu),
+		ctk_menu_popup_at_widget (GTK_MENU (eoc_sidebar->priv->menu),
 		                          widget,
 		                          GDK_GRAVITY_SOUTH_WEST,
 		                          GDK_GRAVITY_NORTH_WEST,
@@ -284,7 +284,7 @@ eoc_sidebar_close_clicked_cb (GtkWidget *widget,
 {
 	EocSidebar *eoc_sidebar = EOC_SIDEBAR (user_data);
 
-	gtk_widget_hide (GTK_WIDGET (eoc_sidebar));
+	ctk_widget_hide (GTK_WIDGET (eoc_sidebar));
 }
 
 static void
@@ -295,7 +295,7 @@ eoc_sidebar_menu_deactivate_cb (GtkWidget *widget,
 
 	menu_button = GTK_WIDGET (user_data);
 
-	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (menu_button), FALSE);
+	ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (menu_button), FALSE);
 }
 
 static void
@@ -316,11 +316,11 @@ eoc_sidebar_menu_item_activate_cb (GtkWidget *widget,
 	GtkWidget *menu_item, *item;
 	gboolean valid;
 
-	menu_item = gtk_menu_get_active (GTK_MENU (eoc_sidebar->priv->menu));
-	valid = gtk_tree_model_get_iter_first (eoc_sidebar->priv->page_model, &iter);
+	menu_item = ctk_menu_get_active (GTK_MENU (eoc_sidebar->priv->menu));
+	valid = ctk_tree_model_get_iter_first (eoc_sidebar->priv->page_model, &iter);
 
 	while (valid) {
-		gtk_tree_model_get (eoc_sidebar->priv->page_model, &iter,
+		ctk_tree_model_get (eoc_sidebar->priv->page_model, &iter,
 				    PAGE_COLUMN_MENU_ITEM, &item,
 				    -1);
 
@@ -328,7 +328,7 @@ eoc_sidebar_menu_item_activate_cb (GtkWidget *widget,
 			eoc_sidebar_select_page (eoc_sidebar, &iter);
 			valid = FALSE;
 		} else {
-			valid = gtk_tree_model_iter_next (eoc_sidebar->priv->page_model, &iter);
+			valid = ctk_tree_model_iter_next (eoc_sidebar->priv->page_model, &iter);
 		}
 
 		g_object_unref (item);
@@ -343,7 +343,7 @@ eoc_sidebar_update_arrow_visibility (EocSidebar *sidebar)
 	EocSidebarPrivate *priv = sidebar->priv;
 	const gint n_pages = eoc_sidebar_get_n_pages (sidebar);
 
-	gtk_widget_set_visible (GTK_WIDGET (priv->arrow),
+	ctk_widget_set_visible (GTK_WIDGET (priv->arrow),
 				n_pages > 1);
 }
 
@@ -358,27 +358,27 @@ eoc_sidebar_init (EocSidebar *eoc_sidebar)
 
 	eoc_sidebar->priv = eoc_sidebar_get_instance_private (eoc_sidebar);
 
-	gtk_style_context_add_class (
-	        gtk_widget_get_style_context (GTK_WIDGET (eoc_sidebar)),
+	ctk_style_context_add_class (
+	        ctk_widget_get_style_context (GTK_WIDGET (eoc_sidebar)),
 	                                      GTK_STYLE_CLASS_SIDEBAR);
 
 	/* data model */
 	eoc_sidebar->priv->page_model = (GtkTreeModel *)
-			gtk_list_store_new (PAGE_COLUMN_NUM_COLS,
+			ctk_list_store_new (PAGE_COLUMN_NUM_COLS,
 					    G_TYPE_STRING,
 					    GTK_TYPE_WIDGET,
 					    GTK_TYPE_WIDGET,
 					    G_TYPE_INT);
 
 	/* top option menu */
-	hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
+	hbox = ctk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
 	g_object_set (hbox, "border-width", 6, NULL);
 	eoc_sidebar->priv->hbox = hbox;
-	gtk_box_pack_start (GTK_BOX (eoc_sidebar), hbox, FALSE, FALSE, 0);
-	gtk_widget_show (hbox);
+	ctk_box_pack_start (GTK_BOX (eoc_sidebar), hbox, FALSE, FALSE, 0);
+	ctk_widget_show (hbox);
 
-	eoc_sidebar->priv->select_button = gtk_toggle_button_new ();
-	gtk_button_set_relief (GTK_BUTTON (eoc_sidebar->priv->select_button),
+	eoc_sidebar->priv->select_button = ctk_toggle_button_new ();
+	ctk_button_set_relief (GTK_BUTTON (eoc_sidebar->priv->select_button),
 			       GTK_RELIEF_NONE);
 
 	g_signal_connect (eoc_sidebar->priv->select_button, "button_press_event",
@@ -389,65 +389,65 @@ eoc_sidebar_init (EocSidebar *eoc_sidebar)
 			  G_CALLBACK (eoc_sidebar_select_button_key_press_cb),
 			  eoc_sidebar);
 
-	select_hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 6);
+	select_hbox = ctk_box_new (GTK_ORIENTATION_HORIZONTAL, 6);
 
-	eoc_sidebar->priv->label = gtk_label_new ("");
-	gtk_widget_set_name (eoc_sidebar->priv->label, "eoc-sidebar-title");
+	eoc_sidebar->priv->label = ctk_label_new ("");
+	ctk_widget_set_name (eoc_sidebar->priv->label, "eoc-sidebar-title");
 
-	gtk_box_pack_start (GTK_BOX (select_hbox),
+	ctk_box_pack_start (GTK_BOX (select_hbox),
 			    eoc_sidebar->priv->label,
 			    FALSE, FALSE, 0);
 
-	gtk_widget_show (eoc_sidebar->priv->label);
+	ctk_widget_show (eoc_sidebar->priv->label);
 
-	arrow = gtk_image_new_from_icon_name ("pan-down-symbolic", GTK_ICON_SIZE_BUTTON);
-	gtk_box_pack_end (GTK_BOX (select_hbox), arrow, FALSE, FALSE, 0);
+	arrow = ctk_image_new_from_icon_name ("pan-down-symbolic", GTK_ICON_SIZE_BUTTON);
+	ctk_box_pack_end (GTK_BOX (select_hbox), arrow, FALSE, FALSE, 0);
 	eoc_sidebar->priv->arrow = arrow;
-	gtk_widget_set_visible (arrow, FALSE);
+	ctk_widget_set_visible (arrow, FALSE);
 
-	gtk_container_add (GTK_CONTAINER (eoc_sidebar->priv->select_button), select_hbox);
-	gtk_widget_show (select_hbox);
+	ctk_container_add (GTK_CONTAINER (eoc_sidebar->priv->select_button), select_hbox);
+	ctk_widget_show (select_hbox);
 
-	gtk_box_set_center_widget (GTK_BOX (hbox), eoc_sidebar->priv->select_button);
-	gtk_widget_show (eoc_sidebar->priv->select_button);
+	ctk_box_set_center_widget (GTK_BOX (hbox), eoc_sidebar->priv->select_button);
+	ctk_widget_show (eoc_sidebar->priv->select_button);
 
-	close_button = gtk_button_new ();
+	close_button = ctk_button_new ();
 
-	gtk_button_set_relief (GTK_BUTTON (close_button), GTK_RELIEF_NONE);
+	ctk_button_set_relief (GTK_BUTTON (close_button), GTK_RELIEF_NONE);
 
 	g_signal_connect (close_button, "clicked",
 			  G_CALLBACK (eoc_sidebar_close_clicked_cb),
 			  eoc_sidebar);
 
-	image = gtk_image_new_from_icon_name ("window-close",
+	image = ctk_image_new_from_icon_name ("window-close",
 					  GTK_ICON_SIZE_MENU);
-	gtk_container_add (GTK_CONTAINER (close_button), image);
-	gtk_widget_show (image);
+	ctk_container_add (GTK_CONTAINER (close_button), image);
+	ctk_widget_show (image);
 
-	gtk_box_pack_end (GTK_BOX (hbox), close_button, FALSE, FALSE, 0);
-	gtk_widget_show (close_button);
+	ctk_box_pack_end (GTK_BOX (hbox), close_button, FALSE, FALSE, 0);
+	ctk_widget_show (close_button);
 
-	eoc_sidebar->priv->menu = gtk_menu_new ();
+	eoc_sidebar->priv->menu = ctk_menu_new ();
 
 	g_signal_connect (eoc_sidebar->priv->menu, "deactivate",
 			  G_CALLBACK (eoc_sidebar_menu_deactivate_cb),
 			  eoc_sidebar->priv->select_button);
 
-	gtk_menu_attach_to_widget (GTK_MENU (eoc_sidebar->priv->menu),
+	ctk_menu_attach_to_widget (GTK_MENU (eoc_sidebar->priv->menu),
 				   GTK_WIDGET (eoc_sidebar),
 				   eoc_sidebar_menu_detach_cb);
 
-	gtk_widget_show (eoc_sidebar->priv->menu);
+	ctk_widget_show (eoc_sidebar->priv->menu);
 
-	eoc_sidebar->priv->notebook = gtk_notebook_new ();
+	eoc_sidebar->priv->notebook = ctk_notebook_new ();
 
-	gtk_notebook_set_show_border (GTK_NOTEBOOK (eoc_sidebar->priv->notebook), FALSE);
-	gtk_notebook_set_show_tabs (GTK_NOTEBOOK (eoc_sidebar->priv->notebook), FALSE);
+	ctk_notebook_set_show_border (GTK_NOTEBOOK (eoc_sidebar->priv->notebook), FALSE);
+	ctk_notebook_set_show_tabs (GTK_NOTEBOOK (eoc_sidebar->priv->notebook), FALSE);
 
-	gtk_box_pack_start (GTK_BOX (eoc_sidebar), eoc_sidebar->priv->notebook,
+	ctk_box_pack_start (GTK_BOX (eoc_sidebar), eoc_sidebar->priv->notebook,
 			    TRUE, TRUE, 0);
 
-	gtk_widget_show (eoc_sidebar->priv->notebook);
+	ctk_widget_show (eoc_sidebar->priv->notebook);
 }
 
 GtkWidget *
@@ -475,22 +475,22 @@ eoc_sidebar_add_page (EocSidebar   *eoc_sidebar,
 	g_return_if_fail (EOC_IS_SIDEBAR (eoc_sidebar));
 	g_return_if_fail (GTK_IS_WIDGET (main_widget));
 
-	index = gtk_notebook_append_page (GTK_NOTEBOOK (eoc_sidebar->priv->notebook),
+	index = ctk_notebook_append_page (GTK_NOTEBOOK (eoc_sidebar->priv->notebook),
 					  main_widget, NULL);
 
-	menu_item = gtk_menu_item_new_with_label (title);
+	menu_item = ctk_menu_item_new_with_label (title);
 
 	g_signal_connect (menu_item, "activate",
 			  G_CALLBACK (eoc_sidebar_menu_item_activate_cb),
 			  eoc_sidebar);
 
-	gtk_widget_show (menu_item);
+	ctk_widget_show (menu_item);
 
-	gtk_menu_shell_append (GTK_MENU_SHELL (eoc_sidebar->priv->menu),
+	ctk_menu_shell_append (GTK_MENU_SHELL (eoc_sidebar->priv->menu),
 			       menu_item);
 
 	/* Insert and move to end */
-	gtk_list_store_insert_with_values (GTK_LIST_STORE (eoc_sidebar->priv->page_model),
+	ctk_list_store_insert_with_values (GTK_LIST_STORE (eoc_sidebar->priv->page_model),
 					   &iter, 0,
 					   PAGE_COLUMN_TITLE, title,
 					   PAGE_COLUMN_MENU_ITEM, menu_item,
@@ -498,23 +498,23 @@ eoc_sidebar_add_page (EocSidebar   *eoc_sidebar,
 					   PAGE_COLUMN_NOTEBOOK_INDEX, index,
 					   -1);
 
-	gtk_list_store_move_before (GTK_LIST_STORE(eoc_sidebar->priv->page_model),
+	ctk_list_store_move_before (GTK_LIST_STORE(eoc_sidebar->priv->page_model),
 				    &iter,
 				    NULL);
 
 	/* Set the first item added as active */
-	gtk_tree_model_get_iter_first (eoc_sidebar->priv->page_model, &iter);
-	gtk_tree_model_get (eoc_sidebar->priv->page_model,
+	ctk_tree_model_get_iter_first (eoc_sidebar->priv->page_model, &iter);
+	ctk_tree_model_get (eoc_sidebar->priv->page_model,
 			    &iter,
 			    PAGE_COLUMN_TITLE, &label_title,
 			    PAGE_COLUMN_NOTEBOOK_INDEX, &index,
 			    -1);
 
-	gtk_menu_set_active (GTK_MENU (eoc_sidebar->priv->menu), index);
+	ctk_menu_set_active (GTK_MENU (eoc_sidebar->priv->menu), index);
 
-	gtk_label_set_text (GTK_LABEL (eoc_sidebar->priv->label), label_title);
+	ctk_label_set_text (GTK_LABEL (eoc_sidebar->priv->label), label_title);
 
-	gtk_notebook_set_current_page (GTK_NOTEBOOK (eoc_sidebar->priv->notebook),
+	ctk_notebook_set_current_page (GTK_NOTEBOOK (eoc_sidebar->priv->notebook),
 				       index);
 
 	g_free (label_title);
@@ -536,10 +536,10 @@ eoc_sidebar_remove_page (EocSidebar *eoc_sidebar, GtkWidget *main_widget)
 	g_return_if_fail (EOC_IS_SIDEBAR (eoc_sidebar));
 	g_return_if_fail (GTK_IS_WIDGET (main_widget));
 
-	valid = gtk_tree_model_get_iter_first (eoc_sidebar->priv->page_model, &iter);
+	valid = ctk_tree_model_get_iter_first (eoc_sidebar->priv->page_model, &iter);
 
 	while (valid) {
-		gtk_tree_model_get (eoc_sidebar->priv->page_model, &iter,
+		ctk_tree_model_get (eoc_sidebar->priv->page_model, &iter,
 				    PAGE_COLUMN_NOTEBOOK_INDEX, &index,
 				    PAGE_COLUMN_MENU_ITEM, &menu_item,
 				    PAGE_COLUMN_MAIN_WIDGET, &widget,
@@ -548,7 +548,7 @@ eoc_sidebar_remove_page (EocSidebar *eoc_sidebar, GtkWidget *main_widget)
 		if (widget == main_widget) {
 			break;
 		} else {
-			valid = gtk_tree_model_iter_next (eoc_sidebar->priv->page_model,
+			valid = ctk_tree_model_iter_next (eoc_sidebar->priv->page_model,
 							  &iter);
 		}
 
@@ -557,12 +557,12 @@ eoc_sidebar_remove_page (EocSidebar *eoc_sidebar, GtkWidget *main_widget)
 	}
 
 	if (valid) {
-		gtk_notebook_remove_page (GTK_NOTEBOOK (eoc_sidebar->priv->notebook),
+		ctk_notebook_remove_page (GTK_NOTEBOOK (eoc_sidebar->priv->notebook),
 					  index);
 
-		gtk_container_remove (GTK_CONTAINER (eoc_sidebar->priv->menu), menu_item);
+		ctk_container_remove (GTK_CONTAINER (eoc_sidebar->priv->menu), menu_item);
 
-		gtk_list_store_remove (GTK_LIST_STORE (eoc_sidebar->priv->page_model),
+		ctk_list_store_remove (GTK_LIST_STORE (eoc_sidebar->priv->page_model),
 				       &iter);
 
 		eoc_sidebar_update_arrow_visibility (eoc_sidebar);
@@ -577,7 +577,7 @@ eoc_sidebar_get_n_pages (EocSidebar *eoc_sidebar)
 {
 	g_return_val_if_fail (EOC_IS_SIDEBAR (eoc_sidebar), TRUE);
 
-	return gtk_tree_model_iter_n_children (
+	return ctk_tree_model_iter_n_children (
 		GTK_TREE_MODEL (eoc_sidebar->priv->page_model), NULL);
 }
 
@@ -586,6 +586,6 @@ eoc_sidebar_is_empty (EocSidebar *eoc_sidebar)
 {
 	g_return_val_if_fail (EOC_IS_SIDEBAR (eoc_sidebar), TRUE);
 
-	return gtk_tree_model_iter_n_children (
+	return ctk_tree_model_iter_n_children (
 		GTK_TREE_MODEL (eoc_sidebar->priv->page_model), NULL) == 0;
 }

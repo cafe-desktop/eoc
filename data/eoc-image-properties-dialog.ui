@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Generated with glade 3.22.1 -->
 <interface>
-  <requires lib="gtk+" version="3.22"/>
+  <requires lib="ctk+" version="3.22"/>
   <template class="EocPropertiesDialog" parent="GtkDialog">
     <property name="can_focus">False</property>
     <property name="border_width">5</property>
     <property name="title" translatable="yes">Image Properties</property>
-    <property name="icon_name">gtk-properties</property>
+    <property name="icon_name">ctk-properties</property>
     <property name="type_hint">dialog</property>
     <child>
       <placeholder/>
@@ -39,7 +39,7 @@
                       <object class="GtkImage" id="image2">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="stock">gtk-go-back</property>
+                        <property name="stock">ctk-go-back</property>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -86,7 +86,7 @@
                       <object class="GtkImage" id="image1">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="stock">gtk-go-forward</property>
+                        <property name="stock">ctk-go-forward</property>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -118,7 +118,7 @@
             </child>
             <child>
               <object class="GtkButton" id="close_button">
-                <property name="label">gtk-close</property>
+                <property name="label">ctk-close</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
@@ -161,7 +161,7 @@
                         <property name="height_request">100</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="stock">gtk-missing-image</property>
+                        <property name="stock">ctk-missing-image</property>
                       </object>
                       <packing>
                         <property name="expand">False</property>

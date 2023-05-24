@@ -66,13 +66,13 @@ statusbar_set_date (GtkStatusbar *statusbar,
 
 	image = eoc_thumb_view_get_first_selected_image (view);
 
-	gtk_statusbar_pop (statusbar, 0);
+	ctk_statusbar_pop (statusbar, 0);
 
 	if (!eoc_image_has_data (image, EOC_IMAGE_DATA_EXIF))
 	{
 		if (!eoc_image_load (image, EOC_IMAGE_DATA_EXIF, NULL, NULL))
 		{
-			gtk_widget_hide (GTK_WIDGET (statusbar));
+			ctk_widget_hide (GTK_WIDGET (statusbar));
 		}
 	}
 
@@ -86,13 +86,13 @@ statusbar_set_date (GtkStatusbar *statusbar,
 
 	if (date)
 	{
-		gtk_statusbar_push (statusbar, 0, date);
-		gtk_widget_show (GTK_WIDGET (statusbar));
+		ctk_statusbar_push (statusbar, 0, date);
+		ctk_widget_show (GTK_WIDGET (statusbar));
 		g_free (date);
 	}
 	else
 	{
-		gtk_widget_hide (GTK_WIDGET (statusbar));
+		ctk_widget_hide (GTK_WIDGET (statusbar));
 	}
 }
 
@@ -174,11 +174,11 @@ eoc_statusbar_date_plugin_activate (EocWindowActivatable *activatable)
 
 	eoc_debug (DEBUG_PLUGINS);
 
-	plugin->statusbar_date = gtk_statusbar_new ();
-	gtk_widget_set_size_request (plugin->statusbar_date, 200, 10);
-	gtk_widget_set_margin_top (GTK_WIDGET (plugin->statusbar_date), 0);
-	gtk_widget_set_margin_bottom (GTK_WIDGET (plugin->statusbar_date), 0);
-	gtk_box_pack_end (GTK_BOX (statusbar), plugin->statusbar_date, FALSE, FALSE, 0);
+	plugin->statusbar_date = ctk_statusbar_new ();
+	ctk_widget_set_size_request (plugin->statusbar_date, 200, 10);
+	ctk_widget_set_margin_top (GTK_WIDGET (plugin->statusbar_date), 0);
+	ctk_widget_set_margin_bottom (GTK_WIDGET (plugin->statusbar_date), 0);
+	ctk_box_pack_end (GTK_BOX (statusbar), plugin->statusbar_date, FALSE, FALSE, 0);
 
 	plugin->signal_id = g_signal_connect_after (G_OBJECT (thumbview), "selection_changed",
 	                                            G_CALLBACK (selection_changed_cb), plugin);
@@ -197,7 +197,7 @@ eoc_statusbar_date_plugin_deactivate (EocWindowActivatable *activatable)
 
 	g_signal_handler_disconnect (view, plugin->signal_id);
 
-	gtk_container_remove (GTK_CONTAINER (statusbar), plugin->statusbar_date);
+	ctk_container_remove (GTK_CONTAINER (statusbar), plugin->statusbar_date);
 }
 
 static void

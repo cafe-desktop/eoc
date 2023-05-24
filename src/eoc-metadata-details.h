@@ -23,7 +23,7 @@
 #define __EOC_METADATA_DETAILS__
 
 #include <glib-object.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #if HAVE_EXIF
 #include <libexif/exif-data.h>
 #endif

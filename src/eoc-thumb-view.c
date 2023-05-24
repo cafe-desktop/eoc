@@ -33,7 +33,7 @@
 #include <libexif/exif-data.h>
 #endif
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include <glib/gi18n.h>
 #include <stdlib.h>
 #include <string.h>
@@ -102,9 +102,9 @@ eoc_thumb_view_constructed (GObject *object)
 
 	thumbview = EOC_THUMB_VIEW (object);
 
-	thumbview->priv->pixbuf_cell = gtk_cell_renderer_pixbuf_new ();
+	thumbview->priv->pixbuf_cell = ctk_cell_renderer_pixbuf_new ();
 
-	gtk_cell_layout_pack_start (GTK_CELL_LAYOUT (thumbview),
+	ctk_cell_layout_pack_start (GTK_CELL_LAYOUT (thumbview),
 				    thumbview->priv->pixbuf_cell,
 				    FALSE);
 
@@ -115,18 +115,18 @@ eoc_thumb_view_constructed (GObject *object)
 	              "xalign", 0.5,
 	              NULL);
 
-	gtk_cell_layout_set_attributes (GTK_CELL_LAYOUT (thumbview),
+	ctk_cell_layout_set_attributes (GTK_CELL_LAYOUT (thumbview),
 					thumbview->priv->pixbuf_cell,
 					"pixbuf", EOC_LIST_STORE_THUMBNAIL,
 					NULL);
 
-	gtk_icon_view_set_selection_mode (GTK_ICON_VIEW (thumbview),
+	ctk_icon_view_set_selection_mode (GTK_ICON_VIEW (thumbview),
 					  GTK_SELECTION_MULTIPLE);
 
-	gtk_icon_view_set_column_spacing (GTK_ICON_VIEW (thumbview),
+	ctk_icon_view_set_column_spacing (GTK_ICON_VIEW (thumbview),
 					  EOC_THUMB_VIEW_SPACING);
 
-	gtk_icon_view_set_row_spacing (GTK_ICON_VIEW (thumbview),
+	ctk_icon_view_set_row_spacing (GTK_ICON_VIEW (thumbview),
 				       EOC_THUMB_VIEW_SPACING);
 
 	g_object_set (thumbview, "has-tooltip", TRUE, NULL);
@@ -143,13 +143,13 @@ eoc_thumb_view_constructed (GObject *object)
 	g_signal_connect (G_OBJECT (thumbview), "parent-set",
 			  G_CALLBACK (thumbview_on_parent_set_cb), NULL);
 
-	gtk_icon_view_enable_model_drag_source (GTK_ICON_VIEW (thumbview), 0,
+	ctk_icon_view_enable_model_drag_source (GTK_ICON_VIEW (thumbview), 0,
 						NULL, 0,
 						GDK_ACTION_COPY |
 						GDK_ACTION_MOVE |
 						GDK_ACTION_LINK |
 						GDK_ACTION_ASK);
-	gtk_drag_source_add_uri_targets (GTK_WIDGET (thumbview));
+	ctk_drag_source_add_uri_targets (GTK_WIDGET (thumbview));
 
 	g_signal_connect (G_OBJECT (thumbview), "drag-data-get",
 			  G_CALLBACK (thumbview_on_drag_data_get_cb), NULL);
@@ -166,7 +166,7 @@ eoc_thumb_view_dispose (GObject *object)
 		priv->visible_range_changed_id = 0;
 	}
 
-	model = gtk_icon_view_get_model (GTK_ICON_VIEW (object));
+	model = ctk_icon_view_get_model (GTK_ICON_VIEW (object));
 
 	if (model && priv->image_add_id != 0) {
 		g_signal_handler_disconnect (model, priv->image_add_id);
@@ -242,19 +242,19 @@ eoc_thumb_view_clear_range (EocThumbView *thumbview,
 {
 	GtkTreePath *path;
 	GtkTreeIter iter;
-	EocListStore *store = EOC_LIST_STORE (gtk_icon_view_get_model (GTK_ICON_VIEW (thumbview)));
+	EocListStore *store = EOC_LIST_STORE (ctk_icon_view_get_model (GTK_ICON_VIEW (thumbview)));
 	gint thumb = start_thumb;
 	gboolean result;
 
 	g_assert (start_thumb <= end_thumb);
 
-	path = gtk_tree_path_new_from_indices (start_thumb, -1);
-	for (result = gtk_tree_model_get_iter (GTK_TREE_MODEL (store), &iter, path);
+	path = ctk_tree_path_new_from_indices (start_thumb, -1);
+	for (result = ctk_tree_model_get_iter (GTK_TREE_MODEL (store), &iter, path);
 	     result && thumb <= end_thumb;
-	     result = gtk_tree_model_iter_next (GTK_TREE_MODEL (store), &iter), thumb++) {
+	     result = ctk_tree_model_iter_next (GTK_TREE_MODEL (store), &iter), thumb++) {
 		eoc_list_store_thumbnail_unset (store, &iter);
 	}
-	gtk_tree_path_free (path);
+	ctk_tree_path_free (path);
 }
 
 static void
@@ -264,19 +264,19 @@ eoc_thumb_view_add_range (EocThumbView *thumbview,
 {
 	GtkTreePath *path;
 	GtkTreeIter iter;
-	EocListStore *store = EOC_LIST_STORE (gtk_icon_view_get_model (GTK_ICON_VIEW (thumbview)));
+	EocListStore *store = EOC_LIST_STORE (ctk_icon_view_get_model (GTK_ICON_VIEW (thumbview)));
 	gint thumb = start_thumb;
 	gboolean result;
 
 	g_assert (start_thumb <= end_thumb);
 
-	path = gtk_tree_path_new_from_indices (start_thumb, -1);
-	for (result = gtk_tree_model_get_iter (GTK_TREE_MODEL (store), &iter, path);
+	path = ctk_tree_path_new_from_indices (start_thumb, -1);
+	for (result = ctk_tree_model_get_iter (GTK_TREE_MODEL (store), &iter, path);
 	     result && thumb <= end_thumb;
-	     result = gtk_tree_model_iter_next (GTK_TREE_MODEL (store), &iter), thumb++) {
+	     result = ctk_tree_model_iter_next (GTK_TREE_MODEL (store), &iter), thumb++) {
 		eoc_list_store_thumbnail_set (store, &iter);
 	}
-	gtk_tree_path_free (path);
+	ctk_tree_path_free (path);
 }
 
 static void
@@ -314,23 +314,23 @@ visible_range_changed_cb (EocThumbView *thumbview)
 
 	thumbview->priv->visible_range_changed_id = 0;
 
-	if (!gtk_icon_view_get_visible_range (GTK_ICON_VIEW (thumbview), &path1, &path2)) {
+	if (!ctk_icon_view_get_visible_range (GTK_ICON_VIEW (thumbview), &path1, &path2)) {
 		return FALSE;
 	}
 
 	if (path1 == NULL) {
-		path1 = gtk_tree_path_new_first ();
+		path1 = ctk_tree_path_new_first ();
 	}
 	if (path2 == NULL) {
-		gint n_items = gtk_tree_model_iter_n_children (gtk_icon_view_get_model (GTK_ICON_VIEW (thumbview)), NULL);
-		path2 = gtk_tree_path_new_from_indices (n_items - 1 , -1);
+		gint n_items = ctk_tree_model_iter_n_children (ctk_icon_view_get_model (GTK_ICON_VIEW (thumbview)), NULL);
+		path2 = ctk_tree_path_new_from_indices (n_items - 1 , -1);
 	}
 
-	eoc_thumb_view_update_visible_range (thumbview, gtk_tree_path_get_indices (path1) [0],
-					     gtk_tree_path_get_indices (path2) [0]);
+	eoc_thumb_view_update_visible_range (thumbview, ctk_tree_path_get_indices (path1) [0],
+					     ctk_tree_path_get_indices (path2) [0]);
 
-	gtk_tree_path_free (path1);
-	gtk_tree_path_free (path2);
+	ctk_tree_path_free (path1);
+	ctk_tree_path_free (path2);
 
 	return FALSE;
 }
@@ -368,7 +368,7 @@ thumbview_on_parent_set_cb (GtkWidget *widget,
 	GtkAdjustment *hadjustment;
 	GtkAdjustment *vadjustment;
 
-	GtkWidget *parent = gtk_widget_get_parent (GTK_WIDGET (thumbview));
+	GtkWidget *parent = ctk_widget_get_parent (GTK_WIDGET (thumbview));
 	if (!GTK_IS_SCROLLED_WINDOW (parent)) {
 		return;
 	}
@@ -376,8 +376,8 @@ thumbview_on_parent_set_cb (GtkWidget *widget,
 	/* if we have been set to a ScrolledWindow, we connect to the callback
 	   to set and unset thumbnails. */
 	sw = GTK_SCROLLED_WINDOW (parent);
-	hadjustment = gtk_scrolled_window_get_hadjustment (GTK_SCROLLED_WINDOW (sw));
-	vadjustment = gtk_scrolled_window_get_vadjustment (GTK_SCROLLED_WINDOW (sw));
+	hadjustment = ctk_scrolled_window_get_hadjustment (GTK_SCROLLED_WINDOW (sw));
+	vadjustment = ctk_scrolled_window_get_vadjustment (GTK_SCROLLED_WINDOW (sw));
 
 	/* when scrolling */
 	g_signal_connect_data (G_OBJECT (hadjustment), "value-changed",
@@ -410,21 +410,21 @@ thumbview_on_button_press_event_cb (GtkWidget *thumbview, GdkEventButton *event,
 	/* Ignore double-clicks and triple-clicks */
 	if (event->button == 3 && event->type == GDK_BUTTON_PRESS)
 	{
-		path = gtk_icon_view_get_path_at_pos (GTK_ICON_VIEW (thumbview),
+		path = ctk_icon_view_get_path_at_pos (GTK_ICON_VIEW (thumbview),
 						      (gint) event->x, (gint) event->y);
 		if (path == NULL) {
 			return FALSE;
 		}
 
-		if (!gtk_icon_view_path_is_selected (GTK_ICON_VIEW (thumbview), path) ||
+		if (!ctk_icon_view_path_is_selected (GTK_ICON_VIEW (thumbview), path) ||
 		    eoc_thumb_view_get_n_selected (EOC_THUMB_VIEW (thumbview)) != 1) {
-			gtk_icon_view_unselect_all (GTK_ICON_VIEW (thumbview));
-			gtk_icon_view_select_path (GTK_ICON_VIEW (thumbview), path);
-			gtk_icon_view_set_cursor (GTK_ICON_VIEW (thumbview), path, NULL, FALSE);
+			ctk_icon_view_unselect_all (GTK_ICON_VIEW (thumbview));
+			ctk_icon_view_select_path (GTK_ICON_VIEW (thumbview), path);
+			ctk_icon_view_set_cursor (GTK_ICON_VIEW (thumbview), path, NULL, FALSE);
 		}
 		eoc_thumb_view_popup_menu (EOC_THUMB_VIEW (thumbview), event);
 
-		gtk_tree_path_free (path);
+		ctk_tree_path_free (path);
 
 		return TRUE;
 	}
@@ -461,7 +461,7 @@ thumbview_on_drag_data_get_cb (GtkWidget        *widget,
 	}
 	uris[i] = NULL;
 
-	gtk_selection_data_set_uris (data, uris);
+	ctk_selection_data_set_uris (data, uris);
 	g_strfreev (uris);
 	g_list_free (list);
 }
@@ -565,7 +565,7 @@ static void
 on_data_loaded_cb (EocJob *job, gpointer data)
 {
 	if (!job->error) {
-		gtk_tooltip_trigger_tooltip_query (gdk_display_get_default());
+		ctk_tooltip_trigger_tooltip_query (gdk_display_get_default());
 	}
 }
 
@@ -582,7 +582,7 @@ thumbview_on_query_tooltip_cb (GtkWidget  *widget,
 	gchar *tooltip_string;
 	EocImageData data = 0;
 
-	if (!gtk_icon_view_get_tooltip_context (GTK_ICON_VIEW (widget),
+	if (!ctk_icon_view_get_tooltip_context (GTK_ICON_VIEW (widget),
 						&x, &y, keyboard_mode,
 						NULL, &path, NULL)) {
 		return FALSE;
@@ -590,7 +590,7 @@ thumbview_on_query_tooltip_cb (GtkWidget  *widget,
 
 	image = eoc_thumb_view_get_image_from_path (EOC_THUMB_VIEW (widget),
 						    path);
-	gtk_tree_path_free (path);
+	ctk_tree_path_free (path);
 
 	if (image == NULL) {
 		return FALSE;
@@ -625,7 +625,7 @@ thumbview_on_query_tooltip_cb (GtkWidget  *widget,
 		return FALSE;
 	}
 
-	gtk_tooltip_set_markup (tooltip, tooltip_string);
+	ctk_tooltip_set_markup (tooltip, tooltip_string);
 	g_free (tooltip_string);
 
 	return TRUE;
@@ -668,7 +668,7 @@ eoc_thumb_view_update_columns (EocThumbView *view)
 	priv = view->priv;
 
 	if (priv->orientation == GTK_ORIENTATION_HORIZONTAL)
-			gtk_icon_view_set_columns (GTK_ICON_VIEW (view),
+			ctk_icon_view_set_columns (GTK_ICON_VIEW (view),
 			                           priv->n_images);
 }
 
@@ -716,7 +716,7 @@ eoc_thumb_view_set_model (EocThumbView *thumbview, EocListStore *store)
 
 	priv = thumbview->priv;
 
-	existing = gtk_icon_view_get_model (GTK_ICON_VIEW (thumbview));
+	existing = ctk_icon_view_get_model (GTK_ICON_VIEW (thumbview));
 
 	if (existing != NULL) {
 		if (priv->image_add_id != 0) {
@@ -742,17 +742,17 @@ eoc_thumb_view_set_model (EocThumbView *thumbview, EocListStore *store)
 
 	index = eoc_list_store_get_initial_pos (store);
 
-	gtk_icon_view_set_model (GTK_ICON_VIEW (thumbview),
+	ctk_icon_view_set_model (GTK_ICON_VIEW (thumbview),
 	                         GTK_TREE_MODEL (store));
 
 	eoc_thumb_view_update_columns (thumbview);
 
 	if (index >= 0) {
-		GtkTreePath *path = gtk_tree_path_new_from_indices (index, -1);
-		gtk_icon_view_select_path (GTK_ICON_VIEW (thumbview), path);
-		gtk_icon_view_set_cursor (GTK_ICON_VIEW (thumbview), path, NULL, FALSE);
-		gtk_icon_view_scroll_to_path (GTK_ICON_VIEW (thumbview), path, FALSE, 0, 0);
-		gtk_tree_path_free (path);
+		GtkTreePath *path = ctk_tree_path_new_from_indices (index, -1);
+		ctk_icon_view_select_path (GTK_ICON_VIEW (thumbview), path);
+		ctk_icon_view_set_cursor (GTK_ICON_VIEW (thumbview), path, NULL, FALSE);
+		ctk_icon_view_scroll_to_path (GTK_ICON_VIEW (thumbview), path, FALSE, 0, 0);
+		ctk_tree_path_free (path);
 	}
 }
 
@@ -795,7 +795,7 @@ guint
 eoc_thumb_view_get_n_selected (EocThumbView *thumbview)
 {
 	guint count = 0;
-	gtk_icon_view_selected_foreach (GTK_ICON_VIEW (thumbview),
+	ctk_icon_view_selected_foreach (GTK_ICON_VIEW (thumbview),
 					eoc_thumb_view_get_n_selected_helper,
 					(&count));
 	return count;
@@ -818,10 +818,10 @@ eoc_thumb_view_get_image_from_path (EocThumbView *thumbview, GtkTreePath *path)
 	GtkTreeIter iter;
 	EocImage *image;
 
-	model = gtk_icon_view_get_model (GTK_ICON_VIEW (thumbview));
-	gtk_tree_model_get_iter (model, &iter, path);
+	model = ctk_icon_view_get_model (GTK_ICON_VIEW (thumbview));
+	ctk_tree_model_get_iter (model, &iter, path);
 
-	gtk_tree_model_get (model, &iter,
+	ctk_tree_model_get (model, &iter,
 			    EOC_LIST_STORE_EOC_IMAGE, &image,
 			    -1);
 
@@ -846,7 +846,7 @@ eoc_thumb_view_get_first_selected_image (EocThumbView *thumbview)
 	*/
 	EocImage *image;
 	GtkTreePath *path;
-	GList *list = gtk_icon_view_get_selected_items (GTK_ICON_VIEW (thumbview));
+	GList *list = ctk_icon_view_get_selected_items (GTK_ICON_VIEW (thumbview));
 
 	if (list == NULL) {
 		return NULL;
@@ -856,7 +856,7 @@ eoc_thumb_view_get_first_selected_image (EocThumbView *thumbview)
 
 	image = eoc_thumb_view_get_image_from_path (thumbview, path);
 
-	g_list_foreach (list, (GFunc) gtk_tree_path_free , NULL);
+	g_list_foreach (list, (GFunc) ctk_tree_path_free , NULL);
 	g_list_free (list);
 
 	return image;
@@ -879,12 +879,12 @@ eoc_thumb_view_get_selected_images (EocThumbView *thumbview)
 
 	GtkTreePath *path;
 
-	l = gtk_icon_view_get_selected_items (GTK_ICON_VIEW (thumbview));
+	l = ctk_icon_view_get_selected_items (GTK_ICON_VIEW (thumbview));
 
 	for (item = l; item != NULL; item = item->next) {
 		path = (GtkTreePath *) item->data;
 		list = g_list_prepend (list, eoc_thumb_view_get_image_from_path (thumbview, path));
-		gtk_tree_path_free (path);
+		ctk_tree_path_free (path);
 	}
 
 	g_list_free (l);
@@ -912,23 +912,23 @@ eoc_thumb_view_set_current_image (EocThumbView *thumbview, EocImage *image,
 	EocListStore *store;
 	gint pos;
 
-	store = EOC_LIST_STORE (gtk_icon_view_get_model (GTK_ICON_VIEW (thumbview)));
+	store = EOC_LIST_STORE (ctk_icon_view_get_model (GTK_ICON_VIEW (thumbview)));
 	pos = eoc_list_store_get_pos_by_image (store, image);
-	path = gtk_tree_path_new_from_indices (pos, -1);
+	path = ctk_tree_path_new_from_indices (pos, -1);
 
 	if (path == NULL) {
 		return;
 	}
 
 	if (deselect_other) {
-		gtk_icon_view_unselect_all (GTK_ICON_VIEW (thumbview));
+		ctk_icon_view_unselect_all (GTK_ICON_VIEW (thumbview));
 	}
 
-	gtk_icon_view_select_path (GTK_ICON_VIEW (thumbview), path);
-	gtk_icon_view_set_cursor (GTK_ICON_VIEW (thumbview), path, NULL, FALSE);
-	gtk_icon_view_scroll_to_path (GTK_ICON_VIEW (thumbview), path, FALSE, 0, 0);
+	ctk_icon_view_select_path (GTK_ICON_VIEW (thumbview), path);
+	ctk_icon_view_set_cursor (GTK_ICON_VIEW (thumbview), path, NULL, FALSE);
+	ctk_icon_view_scroll_to_path (GTK_ICON_VIEW (thumbview), path, FALSE, 0, 0);
 
-	gtk_tree_path_free (path);
+	ctk_tree_path_free (path);
 }
 
 /**
@@ -956,7 +956,7 @@ eoc_thumb_view_select_single (EocThumbView *thumbview,
 
 	g_return_if_fail (EOC_IS_THUMB_VIEW (thumbview));
 
-	model = gtk_icon_view_get_model (GTK_ICON_VIEW (thumbview));
+	model = ctk_icon_view_get_model (GTK_ICON_VIEW (thumbview));
 
 	n_items = eoc_list_store_length (EOC_LIST_STORE (model));
 
@@ -970,60 +970,60 @@ eoc_thumb_view_select_single (EocThumbView *thumbview,
 			break;
 		case EOC_THUMB_VIEW_SELECT_RIGHT:
 		case EOC_THUMB_VIEW_SELECT_FIRST:
-			path = gtk_tree_path_new_first ();
+			path = ctk_tree_path_new_first ();
 			break;
 		case EOC_THUMB_VIEW_SELECT_LEFT:
 		case EOC_THUMB_VIEW_SELECT_LAST:
-			path = gtk_tree_path_new_from_indices (n_items - 1, -1);
+			path = ctk_tree_path_new_from_indices (n_items - 1, -1);
 			break;
 		case EOC_THUMB_VIEW_SELECT_RANDOM:
-			path = gtk_tree_path_new_from_indices (g_random_int_range (0, n_items), -1);
+			path = ctk_tree_path_new_from_indices (g_random_int_range (0, n_items), -1);
 			break;
 		}
 	} else {
-		list = gtk_icon_view_get_selected_items (GTK_ICON_VIEW (thumbview));
-		path = gtk_tree_path_copy ((GtkTreePath *) list->data);
-		g_list_foreach (list, (GFunc) gtk_tree_path_free , NULL);
+		list = ctk_icon_view_get_selected_items (GTK_ICON_VIEW (thumbview));
+		path = ctk_tree_path_copy ((GtkTreePath *) list->data);
+		g_list_foreach (list, (GFunc) ctk_tree_path_free , NULL);
 		g_list_free (list);
 
-		gtk_icon_view_unselect_all (GTK_ICON_VIEW (thumbview));
+		ctk_icon_view_unselect_all (GTK_ICON_VIEW (thumbview));
 
 		switch (change) {
 		case EOC_THUMB_VIEW_SELECT_CURRENT:
 			break;
 		case EOC_THUMB_VIEW_SELECT_LEFT:
-			if (!gtk_tree_path_prev (path)) {
-				gtk_tree_path_free (path);
-				path = gtk_tree_path_new_from_indices (n_items - 1, -1);
+			if (!ctk_tree_path_prev (path)) {
+				ctk_tree_path_free (path);
+				path = ctk_tree_path_new_from_indices (n_items - 1, -1);
 			}
 			break;
 		case EOC_THUMB_VIEW_SELECT_RIGHT:
-			if (gtk_tree_path_get_indices (path) [0] == n_items - 1) {
-				gtk_tree_path_free (path);
-				path = gtk_tree_path_new_first ();
+			if (ctk_tree_path_get_indices (path) [0] == n_items - 1) {
+				ctk_tree_path_free (path);
+				path = ctk_tree_path_new_first ();
 			} else {
-				gtk_tree_path_next (path);
+				ctk_tree_path_next (path);
 			}
 			break;
 		case EOC_THUMB_VIEW_SELECT_FIRST:
-			gtk_tree_path_free (path);
-			path = gtk_tree_path_new_first ();
+			ctk_tree_path_free (path);
+			path = ctk_tree_path_new_first ();
 			break;
 		case EOC_THUMB_VIEW_SELECT_LAST:
-			gtk_tree_path_free (path);
-			path = gtk_tree_path_new_from_indices (n_items - 1, -1);
+			ctk_tree_path_free (path);
+			path = ctk_tree_path_new_from_indices (n_items - 1, -1);
 			break;
 		case EOC_THUMB_VIEW_SELECT_RANDOM:
-			gtk_tree_path_free (path);
-			path = gtk_tree_path_new_from_indices (g_random_int_range (0, n_items), -1);
+			ctk_tree_path_free (path);
+			path = ctk_tree_path_new_from_indices (g_random_int_range (0, n_items), -1);
 			break;
 		}
 	}
 
-	gtk_icon_view_select_path (GTK_ICON_VIEW (thumbview), path);
-	gtk_icon_view_set_cursor (GTK_ICON_VIEW (thumbview), path, NULL, FALSE);
-	gtk_icon_view_scroll_to_path (GTK_ICON_VIEW (thumbview), path, FALSE, 0, 0);
-	gtk_tree_path_free (path);
+	ctk_icon_view_select_path (GTK_ICON_VIEW (thumbview), path);
+	ctk_icon_view_set_cursor (GTK_ICON_VIEW (thumbview), path, NULL, FALSE);
+	ctk_icon_view_scroll_to_path (GTK_ICON_VIEW (thumbview), path, FALSE, 0, 0);
+	ctk_tree_path_free (path);
 }
 
 
@@ -1045,7 +1045,7 @@ eoc_thumb_view_set_thumbnail_popup (EocThumbView *thumbview,
 
 	thumbview->priv->menu = g_object_ref (GTK_WIDGET (menu));
 
-	gtk_menu_attach_to_widget (GTK_MENU (thumbview->priv->menu),
+	ctk_menu_attach_to_widget (GTK_MENU (thumbview->priv->menu),
 				   GTK_WIDGET (thumbview),
 				   NULL);
 
@@ -1060,6 +1060,6 @@ eoc_thumb_view_popup_menu (EocThumbView *thumbview, GdkEventButton *event)
 {
 	g_return_if_fail (event != NULL);
 
-	gtk_menu_popup_at_pointer (GTK_MENU (thumbview->priv->menu),
+	ctk_menu_popup_at_pointer (GTK_MENU (thumbview->priv->menu),
 	                           (const GdkEvent*) event);
 }

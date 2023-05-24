@@ -33,7 +33,7 @@
 #include <glib.h>
 #include <glib/gi18n.h>
 #include <glib-object.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 static void
 set_message_area_text_and_icon (GtkInfoBar   *message_area,
@@ -49,52 +49,52 @@ set_message_area_text_and_icon (GtkInfoBar   *message_area,
 	GtkWidget *primary_label;
 	GtkWidget *secondary_label;
 
-	hbox_content = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 8);
-	gtk_widget_show (hbox_content);
+	hbox_content = ctk_box_new (GTK_ORIENTATION_HORIZONTAL, 8);
+	ctk_widget_show (hbox_content);
 
-	image = gtk_image_new_from_icon_name (icon_name, GTK_ICON_SIZE_DIALOG);
-	gtk_widget_show (image);
-	gtk_box_pack_start (GTK_BOX (hbox_content), image, FALSE, FALSE, 0);
-	gtk_widget_set_valign (image, GTK_ALIGN_START);
+	image = ctk_image_new_from_icon_name (icon_name, GTK_ICON_SIZE_DIALOG);
+	ctk_widget_show (image);
+	ctk_box_pack_start (GTK_BOX (hbox_content), image, FALSE, FALSE, 0);
+	ctk_widget_set_valign (image, GTK_ALIGN_START);
 
-	vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
-	gtk_widget_show (vbox);
-	gtk_box_pack_start (GTK_BOX (hbox_content), vbox, TRUE, TRUE, 0);
+	vbox = ctk_box_new (GTK_ORIENTATION_VERTICAL, 6);
+	ctk_widget_show (vbox);
+	ctk_box_pack_start (GTK_BOX (hbox_content), vbox, TRUE, TRUE, 0);
 
 	primary_markup = g_markup_printf_escaped ("<b>%s</b>", primary_text);
-	primary_label = gtk_label_new (primary_markup);
+	primary_label = ctk_label_new (primary_markup);
 	g_free (primary_markup);
 
-	gtk_widget_show (primary_label);
+	ctk_widget_show (primary_label);
 
-	gtk_box_pack_start (GTK_BOX (vbox), primary_label, TRUE, TRUE, 0);
-	gtk_label_set_use_markup (GTK_LABEL (primary_label), TRUE);
-	gtk_label_set_line_wrap (GTK_LABEL (primary_label), FALSE);
-	gtk_label_set_xalign (GTK_LABEL (primary_label), 0.0);
+	ctk_box_pack_start (GTK_BOX (vbox), primary_label, TRUE, TRUE, 0);
+	ctk_label_set_use_markup (GTK_LABEL (primary_label), TRUE);
+	ctk_label_set_line_wrap (GTK_LABEL (primary_label), FALSE);
+	ctk_label_set_xalign (GTK_LABEL (primary_label), 0.0);
 
-	gtk_widget_set_can_focus (primary_label, TRUE);
+	ctk_widget_set_can_focus (primary_label, TRUE);
 
-	gtk_label_set_selectable (GTK_LABEL (primary_label), TRUE);
+	ctk_label_set_selectable (GTK_LABEL (primary_label), TRUE);
 
 	if (secondary_text != NULL) {
 		secondary_markup = g_markup_printf_escaped ("<small>%s</small>",
 		                                            secondary_text);
-		secondary_label = gtk_label_new (secondary_markup);
+		secondary_label = ctk_label_new (secondary_markup);
 		g_free (secondary_markup);
 
-		gtk_widget_show (secondary_label);
+		ctk_widget_show (secondary_label);
 
-		gtk_box_pack_start (GTK_BOX (vbox), secondary_label, TRUE, TRUE, 0);
+		ctk_box_pack_start (GTK_BOX (vbox), secondary_label, TRUE, TRUE, 0);
 
-		gtk_widget_set_can_focus (secondary_label, TRUE);
+		ctk_widget_set_can_focus (secondary_label, TRUE);
 
-		gtk_label_set_use_markup (GTK_LABEL (secondary_label), TRUE);
-		gtk_label_set_line_wrap (GTK_LABEL (secondary_label), TRUE);
-		gtk_label_set_selectable (GTK_LABEL (secondary_label), TRUE);
-		gtk_label_set_xalign (GTK_LABEL (secondary_label), 0.0);
+		ctk_label_set_use_markup (GTK_LABEL (secondary_label), TRUE);
+		ctk_label_set_line_wrap (GTK_LABEL (secondary_label), TRUE);
+		ctk_label_set_selectable (GTK_LABEL (secondary_label), TRUE);
+		ctk_label_set_xalign (GTK_LABEL (secondary_label), 0.0);
 	}
 
-	gtk_box_pack_start (GTK_BOX (gtk_info_bar_get_content_area (GTK_INFO_BAR (message_area))), hbox_content, TRUE, TRUE, 0);
+	ctk_box_pack_start (GTK_BOX (ctk_info_bar_get_content_area (GTK_INFO_BAR (message_area))), hbox_content, TRUE, TRUE, 0);
 }
 
 static GtkWidget *
@@ -105,13 +105,13 @@ create_error_message_area (const gchar *primary_text,
 	GtkWidget *message_area;
 
 	if (recoverable)
-		message_area = gtk_info_bar_new_with_buttons (_("_Retry"),
+		message_area = ctk_info_bar_new_with_buttons (_("_Retry"),
 							      GTK_RESPONSE_OK,
 							      NULL);
 	else
-		message_area = gtk_info_bar_new ();
+		message_area = ctk_info_bar_new ();
 
-	gtk_info_bar_set_message_type (GTK_INFO_BAR (message_area),
+	ctk_info_bar_set_message_type (GTK_INFO_BAR (message_area),
 				       GTK_MESSAGE_ERROR);
 
 	set_message_area_text_and_icon (GTK_INFO_BAR (message_area),

@@ -3465,7 +3465,7 @@
 
 2006-01-08  Kjartan Maraas  <kmaraas@gnome.org>
 
-	* POTFILES.in: Add egg-recent-view-gtk.c
+	* POTFILES.in: Add egg-recent-view-ctk.c
 	* nb.po: Updated Norwegian bokmal translation.
 	* no.po: Same.
 

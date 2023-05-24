@@ -25,7 +25,7 @@
 #define __EOC_CLIPBOARD_HANDLER_H__
 
 #include <glib-object.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 #include "eoc-image.h"
 

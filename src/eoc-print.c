@@ -21,7 +21,7 @@
 
 #include "config.h"
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include <glib/gi18n.h>
 #include "eoc-image.h"
 #include "eoc-print.h"
@@ -89,8 +89,8 @@ eoc_print_draw_page (GtkPrintOperation *operation,
 
 	scale_factor = data->scale_factor/100;
 
-	dpi_x = gtk_print_context_get_dpi_x (context);
-	dpi_y = gtk_print_context_get_dpi_y (context);
+	dpi_x = ctk_print_context_get_dpi_x (context);
+	dpi_y = ctk_print_context_get_dpi_y (context);
 
 	switch (data->unit) {
 	case GTK_UNIT_INCH:
@@ -105,13 +105,13 @@ eoc_print_draw_page (GtkPrintOperation *operation,
 		g_assert_not_reached ();
 	}
 
-	cr = gtk_print_context_get_cairo_context (context);
+	cr = ctk_print_context_get_cairo_context (context);
 
 	cairo_translate (cr, x0, y0);
 
-	page_setup = gtk_print_context_get_page_setup (context);
-	p_width =  gtk_page_setup_get_page_width (page_setup, GTK_UNIT_POINTS);
-	p_height = gtk_page_setup_get_page_height (page_setup, GTK_UNIT_POINTS);
+	page_setup = ctk_print_context_get_page_setup (context);
+	p_width =  ctk_page_setup_get_page_width (page_setup, GTK_UNIT_POINTS);
+	p_height = ctk_page_setup_get_page_height (page_setup, GTK_UNIT_POINTS);
 
 	eoc_image_get_size (data->image, &width, &height);
 
@@ -266,10 +266,10 @@ eoc_print_create_custom_widget (GtkPrintOperation *operation,
 
 	data = (EocPrintData *)user_data;
 
-	page_setup = gtk_print_operation_get_default_page_setup (operation);
+	page_setup = ctk_print_operation_get_default_page_setup (operation);
 
 	if (page_setup == NULL)
-		page_setup = gtk_page_setup_new ();
+		page_setup = ctk_page_setup_new ();
 
 	return G_OBJECT (eoc_print_image_setup_new (data->image, page_setup));
 }
@@ -321,7 +321,7 @@ eoc_print_operation_new (EocImage *image,
 
 	eoc_debug (DEBUG_PRINTING);
 
-	print = gtk_print_operation_new ();
+	print = ctk_print_operation_new ();
 
 	data = g_slice_new0 (EocPrintData);
 
@@ -334,23 +334,23 @@ eoc_print_operation_new (EocImage *image,
 	eoc_image_get_size (image, &width, &height);
 
 	if (page_setup == NULL)
-		page_setup = gtk_page_setup_new ();
+		page_setup = ctk_page_setup_new ();
 
 	if (height >= width) {
-		gtk_page_setup_set_orientation (page_setup,
+		ctk_page_setup_set_orientation (page_setup,
 						GTK_PAGE_ORIENTATION_PORTRAIT);
 	} else {
-		gtk_page_setup_set_orientation (page_setup,
+		ctk_page_setup_set_orientation (page_setup,
 						GTK_PAGE_ORIENTATION_LANDSCAPE);
 	}
 
-	gtk_print_operation_set_print_settings (print, print_settings);
-	gtk_print_operation_set_default_page_setup (print,
+	ctk_print_operation_set_print_settings (print, print_settings);
+	ctk_print_operation_set_default_page_setup (print,
 						    page_setup);
-	gtk_print_operation_set_n_pages (print, 1);
-	gtk_print_operation_set_job_name (print,
+	ctk_print_operation_set_n_pages (print, 1);
+	ctk_print_operation_set_job_name (print,
 					  eoc_image_get_caption (image));
-	gtk_print_operation_set_embed_page_setup (print, TRUE);
+	ctk_print_operation_set_embed_page_setup (print, TRUE);
 
 	g_signal_connect (print, "draw_page",
 			  G_CALLBACK (eoc_print_draw_page),
@@ -368,7 +368,7 @@ eoc_print_operation_new (EocImage *image,
 			  G_CALLBACK (eoc_print_image_setup_update),
 			  data);
 
-	gtk_print_operation_set_custom_tab_label (print, _("Image Settings"));
+	ctk_print_operation_set_custom_tab_label (print, _("Image Settings"));
 
 	return print;
 }
@@ -417,13 +417,13 @@ eoc_print_get_page_setup (void)
 	key_file = eoc_print_get_key_file ();
 
 	if (key_file && g_key_file_has_group (key_file, EOC_PAGE_SETUP_GROUP)) {
-		page_setup = gtk_page_setup_new_from_key_file (key_file, EOC_PAGE_SETUP_GROUP, &error);
+		page_setup = ctk_page_setup_new_from_key_file (key_file, EOC_PAGE_SETUP_GROUP, &error);
 	} else {
-		page_setup = gtk_page_setup_new ();
+		page_setup = ctk_page_setup_new ();
 	}
 
 	if (error) {
-		page_setup = gtk_page_setup_new ();
+		page_setup = ctk_page_setup_new ();
 
 		g_warning ("Error loading print settings file: %s", error->message);
 		g_error_free (error);
@@ -469,7 +469,7 @@ eoc_print_set_page_setup (GtkPageSetup *page_setup)
 		key_file = g_key_file_new ();
 	}
 
-	gtk_page_setup_to_key_file (page_setup, key_file, EOC_PAGE_SETUP_GROUP);
+	ctk_page_setup_to_key_file (page_setup, key_file, EOC_PAGE_SETUP_GROUP);
 	eoc_print_save_key_file (key_file);
 
 	g_key_file_free (key_file);
@@ -485,13 +485,13 @@ eoc_print_get_print_settings (void)
 	key_file = eoc_print_get_key_file ();
 
 	if (key_file && g_key_file_has_group (key_file, EOC_PRINT_SETTINGS_GROUP)) {
-		print_settings = gtk_print_settings_new_from_key_file (key_file, EOC_PRINT_SETTINGS_GROUP, &error);
+		print_settings = ctk_print_settings_new_from_key_file (key_file, EOC_PRINT_SETTINGS_GROUP, &error);
 	} else {
-		print_settings = gtk_print_settings_new ();
+		print_settings = ctk_print_settings_new ();
 	}
 
 	if (error) {
-		print_settings = gtk_print_settings_new ();
+		print_settings = ctk_print_settings_new ();
 
 		g_warning ("Error loading print settings file: %s", error->message);
 		g_error_free (error);
@@ -514,7 +514,7 @@ eoc_print_set_print_settings (GtkPrintSettings *print_settings)
 		key_file = g_key_file_new ();
 	}
 
-	gtk_print_settings_to_key_file (print_settings, key_file, EOC_PRINT_SETTINGS_GROUP);
+	ctk_print_settings_to_key_file (print_settings, key_file, EOC_PRINT_SETTINGS_GROUP);
 	eoc_print_save_key_file (key_file);
 
 	g_key_file_free (key_file);

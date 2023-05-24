@@ -38,7 +38,7 @@
 #include <glib.h>
 #include <glib/gi18n.h>
 #include <glib-object.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include <gdk/gdkx.h>
 
 #define APPLICATION_SERVICE_NAME "org.cafe.eoc.ApplicationService"
@@ -245,7 +245,7 @@ eoc_application_get_empty_window (EocApplication *application)
 
 	g_return_val_if_fail (EOC_IS_APPLICATION (application), NULL);
 
-	windows = gtk_application_get_windows (GTK_APPLICATION (application));
+	windows = ctk_application_get_windows (GTK_APPLICATION (application));
 
 	for (l = windows; l != NULL; l = l->next) {
 		EocWindow *window = EOC_WINDOW (l->data);
@@ -263,7 +263,7 @@ eoc_application_get_empty_window (EocApplication *application)
  * eoc_application_open_window:
  * @application: An #EocApplication.
  * @timestamp: The timestamp of the user interaction which triggered this call
- * (see gtk_window_present_with_time()).
+ * (see ctk_window_present_with_time()).
  * @flags: A set of #EocStartupFlags influencing a new windows' state.
  * @error: Return location for a #GError, or NULL to ignore errors.
  *
@@ -289,7 +289,7 @@ eoc_application_open_window (EocApplication  *application,
 
 	g_return_val_if_fail (EOC_IS_APPLICATION (application), FALSE);
 
-	gtk_window_present_with_time (GTK_WINDOW (new_window),
+	ctk_window_present_with_time (GTK_WINDOW (new_window),
 				      timestamp);
 
 	return TRUE;
@@ -305,7 +305,7 @@ eoc_application_get_file_window (EocApplication *application, GFile *file)
 	g_return_val_if_fail (file != NULL, NULL);
 	g_return_val_if_fail (EOC_IS_APPLICATION (application), NULL);
 
-	windows = gtk_window_list_toplevels ();
+	windows = ctk_window_list_toplevels ();
 
 	for (l = windows; l != NULL; l = l->next) {
 		if (EOC_IS_WINDOW (l->data)) {
@@ -332,10 +332,10 @@ eoc_application_get_file_window (EocApplication *application, GFile *file)
 static void
 eoc_application_show_window (EocWindow *window, gpointer user_data)
 {
-	if (!gtk_widget_get_realized (GTK_WIDGET (window)))
-		gtk_widget_realize (GTK_WIDGET (window));
+	if (!ctk_widget_get_realized (GTK_WIDGET (window)))
+		ctk_widget_realize (GTK_WIDGET (window));
 
-	gtk_window_present_with_time (GTK_WINDOW (window),
+	ctk_window_present_with_time (GTK_WINDOW (window),
 				      GPOINTER_TO_UINT (user_data));
 }
 
@@ -344,7 +344,7 @@ eoc_application_show_window (EocWindow *window, gpointer user_data)
  * @application: An #EocApplication.
  * @file_list: (element-type GFile): A list of #GFile<!-- -->s
  * @timestamp: The timestamp of the user interaction which triggered this call
- * (see gtk_window_present_with_time()).
+ * (see ctk_window_present_with_time()).
  * @flags: A set of #EocStartupFlags influencing a new windows' state.
  * @error: Return location for a #GError, or NULL to ignore errors.
  *
@@ -368,7 +368,7 @@ eoc_application_open_file_list (EocApplication  *application,
 							      (GFile *) file_list->data);
 
 	if (new_window != NULL) {
-		gtk_window_present_with_time (GTK_WINDOW (new_window),
+		ctk_window_present_with_time (GTK_WINDOW (new_window),
 					      timestamp);
 		return TRUE;
 	}
@@ -394,7 +394,7 @@ eoc_application_open_file_list (EocApplication  *application,
  * @application: An #EocApplication.
  * @uri_list: (element-type utf8): A list of URIs.
  * @timestamp: The timestamp of the user interaction which triggered this call
- * (see gtk_window_present_with_time()).
+ * (see ctk_window_present_with_time()).
  * @flags: A set of #EocStartupFlags influencing a new windows' state.
  * @error: Return location for a #GError, or NULL to ignore errors.
  *
@@ -428,7 +428,7 @@ eoc_application_open_uri_list (EocApplication  *application,
  * @application: an #EocApplication
  * @uris:  A #GList of URI strings.
  * @timestamp: The timestamp of the user interaction which triggered this call
- * (see gtk_window_present_with_time()).
+ * (see ctk_window_present_with_time()).
  * @flags: A set of #EocStartupFlags influencing a new windows' state.
  * @error: Return location for a #GError, or NULL to ignore errors.
  *
@@ -514,8 +514,8 @@ eoc_application_load_accelerators (void)
 {
 		gchar* accelfile = g_build_filename(g_get_user_config_dir(), "cafe", "accels", "eoc", NULL);
 
-	/* gtk_accel_map_load does nothing if the file does not exist */
-	gtk_accel_map_load (accelfile);
+	/* ctk_accel_map_load does nothing if the file does not exist */
+	ctk_accel_map_load (accelfile);
 	g_free (accelfile);
 }
 
@@ -524,6 +524,6 @@ eoc_application_save_accelerators (void)
 {
 		gchar* accelfile = g_build_filename(g_get_user_config_dir(), "cafe", "accels", "eoc", NULL);
 
-	gtk_accel_map_save (accelfile);
+	ctk_accel_map_save (accelfile);
 	g_free (accelfile);
 }

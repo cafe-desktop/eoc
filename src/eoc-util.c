@@ -40,7 +40,7 @@
 #include <glib.h>
 #include <glib/gprintf.h>
 #include <glib/gstdio.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include <gio/gio.h>
 #include <glib/gi18n.h>
 
@@ -53,27 +53,27 @@ eoc_util_show_help (const gchar *section, GtkWindow *parent)
 	if (section)
 		uri = g_strdup_printf ("help:eoc/%s", section);
 
-	gtk_show_uri_on_window (parent, ((uri != NULL) ? uri : "help:eoc"),
-		      gtk_get_current_event_time (), &error);
+	ctk_show_uri_on_window (parent, ((uri != NULL) ? uri : "help:eoc"),
+		      ctk_get_current_event_time (), &error);
 
 	g_free (uri);
 
 	if (error) {
 		GtkWidget *dialog;
 
-		dialog = gtk_message_dialog_new (parent,
+		dialog = ctk_message_dialog_new (parent,
 						 0,
 						 GTK_MESSAGE_ERROR,
 						 GTK_BUTTONS_OK,
 						 _("Could not display help for Eye of CAFE"));
 
-		gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
+		ctk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
 							  "%s", error->message);
 
 		g_signal_connect_swapped (dialog, "response",
-					  G_CALLBACK (gtk_widget_destroy),
+					  G_CALLBACK (ctk_widget_destroy),
 					  dialog);
-		gtk_widget_show (dialog);
+		ctk_widget_show (dialog);
 
 		g_error_free (error);
 	}
@@ -347,7 +347,7 @@ _eoc_util_show_file_in_filemanager_fallback (GFile *file, GtkWindow *toplevel)
 {
 	gchar *uri = NULL;
 	GError *error = NULL;
-	guint32 timestamp = gtk_get_current_event_time ();
+	guint32 timestamp = ctk_get_current_event_time ();
 
 	if (g_file_query_file_type (file, 0, NULL) == G_FILE_TYPE_DIRECTORY) {
 		uri = g_file_get_uri (file);
@@ -362,7 +362,7 @@ _eoc_util_show_file_in_filemanager_fallback (GFile *file, GtkWindow *toplevel)
 		g_object_unref (parent_file);
 	}
 
-	if (uri && !gtk_show_uri_on_window (toplevel, uri, timestamp, &error)) {
+	if (uri && !ctk_show_uri_on_window (toplevel, uri, timestamp, &error)) {
 		g_warning ("Couldn't show containing folder \"%s\": %s", uri,
 			   error->message);
 		g_error_free (error);
@@ -400,7 +400,7 @@ eoc_util_show_file_in_filemanager (GFile *file, GtkWindow *toplevel)
 		/* This seems to be the expected format, as other values
 		   cause the filemanager window not to get focus. */
 		startup_id = g_strdup_printf("_TIME%u",
-					     gtk_get_current_event_time());
+					     ctk_get_current_event_time());
 
 		/* params is floating! */
 		params = g_variant_new ("(ass)", &builder, startup_id);
@@ -423,7 +423,7 @@ eoc_util_show_file_in_filemanager (GFile *file, GtkWindow *toplevel)
 		g_object_unref (proxy);
 	}
 
-	/* Fallback to gtk_show_uri() if launch over DBus is not possible */
+	/* Fallback to ctk_show_uri() if launch over DBus is not possible */
 	if (!done)
 		_eoc_util_show_file_in_filemanager_fallback (file, toplevel);
 }

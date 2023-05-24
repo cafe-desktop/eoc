@@ -25,7 +25,7 @@
 #ifndef __EOC_UTIL_H__
 #define __EOC_UTIL_H__
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 G_BEGIN_DECLS
 

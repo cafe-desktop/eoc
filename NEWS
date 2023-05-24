@@ -104,7 +104,7 @@
   * EocPropertiesDialog: Use standard::display-name when showing the parent
   * EocMetadataSidebar: Use standard::display-name when showing the parent
   * Fix GResource dependency calculation for out-of-tree builds
-  * Make sure the libpeas-gtk dependency isn't optimized away
+  * Make sure the libpeas-ctk dependency isn't optimized away
   * Remove EocDialog helper class
   * EocPreferencesDialog: Convert to GtkBuilder template
   * EocThumbnail: Load thumbnail frame from a GResource
@@ -112,7 +112,7 @@
   * eoc-window: fix deprecated GtkStock usage
   * Fix build without XMP support
   * Load eoc-image-properties-dialog.ui with a gresource
-  * properties-dialog: Port to gtk_show_uri_on_window
+  * properties-dialog: Port to ctk_show_uri_on_window
   * EocPropertiesDialog: Convert to GtkBuilder template
   * EocPropertiesDialog: Remove unused private members
   * Fix metadata sidebar with libexif disabled
@@ -136,11 +136,11 @@
   * EocExifDetails: Rename to EocMetadataDetails
   * Drop eoc_close_confirmation_dialog_set_sensitive
   * scroll-view: Remove a gdk_window_process_updates call
-  * util: Port to gtk_show_uri_on_window
+  * util: Port to ctk_show_uri_on_window
   * EocImage: Make sure to emit size-prepared after applying orientation
   * EocImage: Fix too early size-prepared emission
   * EocImage: Slight optimization of private data structure
-  * drop forgotten gtkrc file
+  * drop forgotten ctkrc file
   * css: drop obsolete old css language
 
 ### eoc 1.21.1
@@ -165,7 +165,7 @@
   * Update plugins to use EocWindowActivatable interface
   * Add our own activatable interface to EocWindow
   * Replace gdk_spawn_command_line_on_screen()
-  * sidebar: replace deprecated gtk_misc_set_alignment
+  * sidebar: replace deprecated ctk_misc_set_alignment
   * EocWindow: Simplify metadata sidebar title
   * EocSidebar: Set orientation property via g_object_new
   * Replace remaining uses of margin-left and margin-right properties
@@ -195,9 +195,9 @@
 
   * Translations update
   * toolbar: add missing popup menu for launching toolbar editor
-  * sidebar: replace deprecated gtk_menu_popup
-  * editable-toolbar: replace deprecated gtk_menu_popup
-  * editable-toolbar: replace deprecated gtk_drag_begin
+  * sidebar: replace deprecated ctk_menu_popup
+  * editable-toolbar: replace deprecated ctk_menu_popup
+  * editable-toolbar: replace deprecated ctk_drag_begin
   * svg: Fix offset coordinates when transforming SVG images on HiDPI displays
   * require libpeas 1.8.0
   * plugins: Use Python 3.x for Python plugins
@@ -219,25 +219,25 @@
 ### eoc 1.19.1
 
   * Translations update
-  * gtk 3.22: avoid deprecated gdk_screen_get_monitor... functions:
-  * don't use deprecated gtk_show_uri
+  * ctk 3.22: avoid deprecated gdk_screen_get_monitor... functions:
+  * don't use deprecated ctk_show_uri
   * avoid deprecated gdk_screen_get_number
   * Restore Polish translation credits from GNOME
   * fix warning on closing empty window with multiple eoc windows
 
 ### eoc 1.19.0
 
-  * EocThumbView: Replace deprecated gtk_menu_popup function
+  * EocThumbView: Replace deprecated ctk_menu_popup function
   * multiple-save-as-dialog.ui: avoid deprecated widgets
   * error-message: replace usage of GtkStock
   * A bunch of instrospection warning fixes
   * EocScrollView: fix override_background deprecated call
   * EocPropertiesDialog: Fix deprecation warnings
   * EocThumbNav: Fix deprecated function warning
-  * EocScrollView: Replace deprecated gtk_menu_popup function
+  * EocScrollView: Replace deprecated ctk_menu_popup function
   * EocScrollView: Switch from GtkDeviceManager to GdkSeat
   * fix typo in function annotation
-  * use different css files for < gtk+=3.20
+  * use different css files for < ctk+=3.20
   * Translations update
   * EocWindow: Set file open dialog transient for its parent window
   * update copyright year to 2017
@@ -264,7 +264,7 @@
     to make generating release announcements easier
   * Build: require libcafe-desktop >= 1.17
   * Move to GTK+3 (require GTK+ >= 3.14), drop GTK+2 code and
-    --with-gtk build option
+    --with-ctk build option
   * Drop Python bindings and --enable-python build option
   * Port plugin system and plugins to libpeas
   * Some code and docs cleanups
@@ -327,7 +327,7 @@
 
 ### eoc 1.10.5
 
-  * fix gtk3 build
+  * fix ctk3 build
 
 ### eoc 1.10.4
 

@@ -30,7 +30,7 @@
 
 #include <glib.h>
 #include <glib/gi18n.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 #include "eoc-image.h"
 #include "eoc-metadata-sidebar.h"
@@ -117,14 +117,14 @@ parent_file_display_name_query_info_cb (GObject *source_object,
 	str = g_markup_printf_escaped ("<a href=\"%s\">%s</a>",
 				       baseuri,
 				       display_name);
-	gtk_label_set_markup (GTK_LABEL (sidebar->priv->folder_label), str);
+	ctk_label_set_markup (GTK_LABEL (sidebar->priv->folder_label), str);
 
 	g_free (str);
 	g_free (baseuri);
 	g_free (display_name);
 
 	str = g_file_get_path (parent_file);
-	gtk_widget_set_tooltip_text (GTK_WIDGET (sidebar->priv->folder_label), str);
+	ctk_widget_set_tooltip_text (GTK_WIDGET (sidebar->priv->folder_label), str);
 	g_free (str);
 
 	g_object_unref (sidebar);
@@ -142,10 +142,10 @@ eoc_metadata_sidebar_update_general_section (EocMetadataSidebar *sidebar)
 	gint width, height;
 
 	if (G_UNLIKELY (img == NULL)) {
-		gtk_label_set_text (GTK_LABEL (priv->size_label), NULL);
-		gtk_label_set_text (GTK_LABEL (priv->type_label), NULL);
-		gtk_label_set_text (GTK_LABEL (priv->filesize_label), NULL);
-		gtk_label_set_text (GTK_LABEL (priv->folder_label), NULL);
+		ctk_label_set_text (GTK_LABEL (priv->size_label), NULL);
+		ctk_label_set_text (GTK_LABEL (priv->type_label), NULL);
+		ctk_label_set_text (GTK_LABEL (priv->filesize_label), NULL);
+		ctk_label_set_text (GTK_LABEL (priv->folder_label), NULL);
 		return;
 	}
 
@@ -153,7 +153,7 @@ eoc_metadata_sidebar_update_general_section (EocMetadataSidebar *sidebar)
 	str = g_strdup_printf (ngettext("%i × %i pixel",
 					"%i × %i pixels", height),
 			       width, height);
-	gtk_label_set_text (GTK_LABEL (priv->size_label), str);
+	ctk_label_set_text (GTK_LABEL (priv->size_label), str);
 	g_free (str);
 
 	file = eoc_image_get_file (img);
@@ -169,12 +169,12 @@ eoc_metadata_sidebar_update_general_section (EocMetadataSidebar *sidebar)
 		str = g_content_type_get_description (mime_str);
 		g_object_unref (file_info);
 	}
-	gtk_label_set_text (GTK_LABEL (priv->type_label), str);
+	ctk_label_set_text (GTK_LABEL (priv->type_label), str);
 	g_free (str);
 
 	bytes = eoc_image_get_bytes (img);
 	str = g_format_size (bytes);
-	gtk_label_set_text (GTK_LABEL (priv->filesize_label), str);
+	ctk_label_set_text (GTK_LABEL (priv->filesize_label), str);
 	g_free (str);
 
 	parent_file = g_file_get_parent (file);
@@ -182,7 +182,7 @@ eoc_metadata_sidebar_update_general_section (EocMetadataSidebar *sidebar)
 		/* file is root directory itself */
 		parent_file = g_object_ref (file);
 	}
-	gtk_label_set_markup (GTK_LABEL (sidebar->priv->folder_label), NULL);
+	ctk_label_set_markup (GTK_LABEL (sidebar->priv->folder_label), NULL);
 	g_file_query_info_async (parent_file,
 				 G_FILE_ATTRIBUTE_STANDARD_DISPLAY_NAME,
 				 G_FILE_QUERY_INFO_NONE,
@@ -318,7 +318,7 @@ _folder_label_clicked_cb (GtkLabel *label, const gchar *uri, gpointer user_data)
 	img = eoc_window_get_image (priv->parent_window);
 	file = eoc_image_get_file (img);
 
-	toplevel = gtk_widget_get_toplevel (GTK_WIDGET (label));
+	toplevel = ctk_widget_get_toplevel (GTK_WIDGET (label));
 	if (GTK_IS_WINDOW (toplevel))
 		window = GTK_WINDOW (toplevel);
 	else
@@ -343,7 +343,7 @@ _details_button_clicked_cb (GtkButton *button, gpointer user_data)
 	g_return_if_fail (dlg != NULL);
 	eoc_properties_dialog_set_page (EOC_PROPERTIES_DIALOG (dlg),
 					EOC_PROPERTIES_DIALOG_PAGE_DETAILS);
-	gtk_widget_show (dlg);
+	ctk_widget_show (dlg);
 }
 #endif /* HAVE_METADATA */
 
@@ -376,7 +376,7 @@ eoc_metadata_sidebar_init (EocMetadataSidebar *sidebar)
 
 	priv = sidebar->priv = eoc_metadata_sidebar_get_instance_private (sidebar);
 
-	gtk_widget_init_template (GTK_WIDGET (sidebar));
+	ctk_widget_init_template (GTK_WIDGET (sidebar));
 
 	g_signal_connect (priv->folder_label, "activate-link",
 	                  G_CALLBACK (_folder_label_clicked_cb), sidebar);
@@ -393,7 +393,7 @@ eoc_metadata_sidebar_init (EocMetadataSidebar *sidebar)
 
 		for (i = 11; i > 3; i--)
 		{
-			gtk_grid_remove_row (GTK_GRID (priv->metadata_grid), i);
+			ctk_grid_remove_row (GTK_GRID (priv->metadata_grid), i);
 		}
 	}
 #endif /* !HAVE_EXIF */
@@ -473,53 +473,53 @@ eoc_metadata_sidebar_class_init (EocMetadataSidebarClass *klass)
 				     G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS)
 				    );
 
-	gtk_widget_class_set_template_from_resource (widget_class,
+	ctk_widget_class_set_template_from_resource (widget_class,
 						     "/org/cafe/eoc/ui/metadata-sidebar.ui");
 
-	gtk_widget_class_bind_template_child_private (widget_class,
+	ctk_widget_class_bind_template_child_private (widget_class,
 						      EocMetadataSidebar,
 						      size_label);
-	gtk_widget_class_bind_template_child_private (widget_class,
+	ctk_widget_class_bind_template_child_private (widget_class,
 						      EocMetadataSidebar,
 						      type_label);
-	gtk_widget_class_bind_template_child_private (widget_class,
+	ctk_widget_class_bind_template_child_private (widget_class,
 						      EocMetadataSidebar,
 						      filesize_label);
-	gtk_widget_class_bind_template_child_private (widget_class,
+	ctk_widget_class_bind_template_child_private (widget_class,
 						      EocMetadataSidebar,
 						      folder_label);
 #if HAVE_EXIF
-	gtk_widget_class_bind_template_child_private (widget_class,
+	ctk_widget_class_bind_template_child_private (widget_class,
 						      EocMetadataSidebar,
 						      aperture_label);
-	gtk_widget_class_bind_template_child_private (widget_class,
+	ctk_widget_class_bind_template_child_private (widget_class,
 						      EocMetadataSidebar,
 						      exposure_label);
-	gtk_widget_class_bind_template_child_private (widget_class,
+	ctk_widget_class_bind_template_child_private (widget_class,
 						      EocMetadataSidebar,
 						      focallen_label);
-	gtk_widget_class_bind_template_child_private (widget_class,
+	ctk_widget_class_bind_template_child_private (widget_class,
 						      EocMetadataSidebar,
 						      iso_label);
-	gtk_widget_class_bind_template_child_private (widget_class,
+	ctk_widget_class_bind_template_child_private (widget_class,
 						      EocMetadataSidebar,
 						      metering_label);
-	gtk_widget_class_bind_template_child_private (widget_class,
+	ctk_widget_class_bind_template_child_private (widget_class,
 						      EocMetadataSidebar,
 						      model_label);
-	gtk_widget_class_bind_template_child_private (widget_class,
+	ctk_widget_class_bind_template_child_private (widget_class,
 						      EocMetadataSidebar,
 						      date_label);
-	gtk_widget_class_bind_template_child_private (widget_class,
+	ctk_widget_class_bind_template_child_private (widget_class,
 						      EocMetadataSidebar,
 						      time_label);
 #else
-	gtk_widget_class_bind_template_child_private (widget_class,
+	ctk_widget_class_bind_template_child_private (widget_class,
 						      EocMetadataSidebar,
 						      metadata_grid);
 #endif /* HAVE_EXIF */
 #if HAVE_METADATA
-	gtk_widget_class_bind_template_child_private (widget_class,
+	ctk_widget_class_bind_template_child_private (widget_class,
 						      EocMetadataSidebar,
 						      details_button);
 #endif /* HAVE_METADATA */
@@ -529,7 +529,7 @@ eoc_metadata_sidebar_class_init (EocMetadataSidebarClass *klass)
 GtkWidget*
 eoc_metadata_sidebar_new (EocWindow *window)
 {
-	return gtk_widget_new (EOC_TYPE_METADATA_SIDEBAR,
+	return ctk_widget_new (EOC_TYPE_METADATA_SIDEBAR,
 			       "hadjustment", NULL,
 			       "vadjustment", NULL,
 			       "hscrollbar-policy", GTK_POLICY_NEVER,

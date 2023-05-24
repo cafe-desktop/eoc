@@ -24,7 +24,7 @@
 #ifndef EOC_LIST_STORE_H
 #define EOC_LIST_STORE_H
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include <glib-object.h>
 #include <gio/gio.h>
 

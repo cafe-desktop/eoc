@@ -29,7 +29,7 @@
 #include <glib-object.h>
 
 #include <libpeas/peas-extension-set.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include "eoc-window.h"
 
 G_BEGIN_DECLS
