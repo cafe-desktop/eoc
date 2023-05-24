@@ -41,7 +41,7 @@ AC_PATH_PROG([GLIB_COMPILE_RESOURCES], [glib-compile-resources])
 AC_PATH_PROG([GLIB_GENMARSHAL], [glib-genmarshal])
 AC_PATH_PROG([GLIB_MKENUMS],[glib-mkenums])
 
-CTK_DOC_CHECK(1.9)
+GTK_DOC_CHECK(1.9)
 
 AC_CHECK_FUNCS(strptime)
 
