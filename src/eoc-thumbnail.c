@@ -126,7 +126,7 @@ create_thumbnail_from_pixbuf (EocThumbData *data,
 	thumb = gdk_pixbuf_scale_simple (pixbuf,
 	                                 width*perc,
 	                                 height*perc,
-	                                 CDK_INTERP_HYPER);
+	                                 GDK_INTERP_HYPER);
 
 	return thumb;
 }
@@ -445,7 +445,7 @@ eoc_thumbnail_fit_to_size (GdkPixbuf *thumbnail, gint dimension)
 		width  = MAX (width  * factor, 1);
 		height = MAX (height * factor, 1);
 
-		result_pixbuf = gdk_pixbuf_scale_simple (thumbnail, width, height, CDK_INTERP_HYPER);
+		result_pixbuf = gdk_pixbuf_scale_simple (thumbnail, width, height, GDK_INTERP_HYPER);
 
 		return result_pixbuf;
 	}
