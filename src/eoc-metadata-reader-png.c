@@ -478,7 +478,7 @@ eoc_metadata_reader_png_get_xmp_data (EocMetadataReaderPng *emr )
 }
 #endif
 
-#if defined(HAVE_LCMS) && defined(GDK_WINDOWING_X11)
+#if defined(HAVE_LCMS) && defined(CDK_WINDOWING_X11)
 
 #define EXTRACT_DOUBLE_UINT_BLOCK_OFFSET(chunk,offset,divider) \
 		(double)(GUINT32_FROM_BE(*((guint32*)((chunk)+((offset)*4))))/(double)(divider))
@@ -586,7 +586,7 @@ eoc_metadata_reader_png_get_icc_profile (EocMetadataReaderPng *emr)
 			return NULL;
 		}
 
-		if (GDK_IS_X11_DISPLAY (cdk_display_get_default ())) {
+		if (CDK_IS_X11_DISPLAY (cdk_display_get_default ())) {
 			profile = cmsOpenProfileFromMem(outbuf, zstr.total_out);
 		}
 		inflateEnd (&zstr);
@@ -600,7 +600,7 @@ eoc_metadata_reader_png_get_icc_profile (EocMetadataReaderPng *emr)
 		/* If the file has an sRGB chunk the image data is in the sRGB
 		 * colorspace. lcms has a built-in sRGB profile. */
 
-		if (GDK_IS_X11_DISPLAY (cdk_display_get_default ())) {
+		if (CDK_IS_X11_DISPLAY (cdk_display_get_default ())) {
 			profile = cmsCreate_sRGBProfile ();
 		}
 	}
@@ -637,13 +637,13 @@ eoc_metadata_reader_png_get_icc_profile (EocMetadataReaderPng *emr)
 		 * profile instead of computing one that "gets close". */
 		if(_chrm_matches_srgb (&whitepoint, &primaries, gammaValue)) {
 			eoc_debug_message (DEBUG_LCMS, "gAMA and cHRM match sRGB");
-			if (GDK_IS_X11_DISPLAY (cdk_display_get_default ())) {
+			if (CDK_IS_X11_DISPLAY (cdk_display_get_default ())) {
 				profile = cmsCreate_sRGBProfile ();
 			}
 		} else {
 			gamma[0] = gamma[1] = gamma[2] =
 				cmsBuildGamma (NULL, gammaValue);
-			if (GDK_IS_X11_DISPLAY (cdk_display_get_default ())) {
+			if (CDK_IS_X11_DISPLAY (cdk_display_get_default ())) {
 				profile = cmsCreateRGBProfile (&whitepoint, &primaries,
 						gamma);
 				cmsFreeToneCurve(gamma[0]);
@@ -668,7 +668,7 @@ eoc_metadata_reader_png_init_emr_iface (gpointer g_iface, gpointer iface_data)
 	iface->finished =
 		(gboolean (*) (EocMetadataReader *self))
 			eoc_metadata_reader_png_finished;
-#if defined(HAVE_LCMS) && defined(GDK_WINDOWING_X11)
+#if defined(HAVE_LCMS) && defined(CDK_WINDOWING_X11)
 	iface->get_icc_profile =
 		(cmsHPROFILE (*) (EocMetadataReader *self))
 			eoc_metadata_reader_png_get_icc_profile;

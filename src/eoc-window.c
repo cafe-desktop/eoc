@@ -76,7 +76,7 @@
 #if HAVE_LCMS
 #include <X11/Xlib.h>
 #include <X11/Xatom.h>
-#ifdef GDK_WINDOWING_X11
+#ifdef CDK_WINDOWING_X11
 #include <cdk/cdkx.h>
 #endif
 #include <lcms2.h>
@@ -189,7 +189,7 @@ struct _EocWindowPrivate {
 
 	PeasExtensionSet    *extensions;
 
-#if defined(HAVE_LCMS) && defined(GDK_WINDOWING_X11)
+#if defined(HAVE_LCMS) && defined(CDK_WINDOWING_X11)
 	cmsHPROFILE         *display_profile;
 #endif
 };
@@ -378,7 +378,7 @@ eoc_window_can_save_changed_cb (GSettings *settings, gchar *key, gpointer user_d
 	G_GNUC_END_IGNORE_DEPRECATIONS;
 }
 
-#if defined(HAVE_LCMS) && defined(GDK_WINDOWING_X11)
+#if defined(HAVE_LCMS) && defined(CDK_WINDOWING_X11)
 static cmsHPROFILE *
 eoc_window_get_display_profile (CdkScreen *screen)
 {
@@ -393,11 +393,11 @@ eoc_window_get_display_profile (CdkScreen *screen)
 	cmsHPROFILE *profile = NULL;
 	char *atom_name;
 
-	if (!GDK_IS_X11_SCREEN (screen)) {
+	if (!CDK_IS_X11_SCREEN (screen)) {
 		return NULL;
 	}
 
-	dpy = GDK_DISPLAY_XDISPLAY (cdk_screen_get_display (screen));
+	dpy = CDK_DISPLAY_XDISPLAY (cdk_screen_get_display (screen));
 
 	if (cdk_x11_screen_get_screen_number (screen) > 0)
 		atom_name = g_strdup_printf ("_ICC_PROFILE_%d", cdk_x11_screen_get_screen_number (screen));
@@ -409,7 +409,7 @@ eoc_window_get_display_profile (CdkScreen *screen)
 	g_free (atom_name);
 
 	result = XGetWindowProperty (dpy,
-				     GDK_WINDOW_XID (cdk_screen_get_root_window (screen)),
+				     CDK_WINDOW_XID (cdk_screen_get_root_window (screen)),
 				     icc_atom,
 				     0,
 				     G_MAXLONG,
@@ -1320,7 +1320,7 @@ eoc_job_load_cb (EocJobLoad *job, gpointer data)
 	priv->image = g_object_ref (job->image);
 
 	if (EOC_JOB (job)->error == NULL) {
-#if defined(HAVE_LCMS) && defined(GDK_WINDOWING_X11)
+#if defined(HAVE_LCMS) && defined(CDK_WINDOWING_X11)
 		eoc_image_apply_display_profile (job->image,
 						 priv->display_profile);
 #endif
@@ -1595,7 +1595,7 @@ eoc_window_open_recent_cb (CtkAction *action, EocWindow *window)
 
 	eoc_application_open_uri_list (EOC_APP,
 				       list,
-				       GDK_CURRENT_TIME,
+				       CDK_CURRENT_TIME,
 				       0,
 				       NULL);
 
@@ -1615,7 +1615,7 @@ file_open_dialog_response_cb (CtkWidget *chooser,
 
 		eoc_application_open_uri_list (EOC_APP,
 					       uris,
-					       GDK_CURRENT_TIME,
+					       CDK_CURRENT_TIME,
 					       0,
 					       NULL);
 
@@ -3452,7 +3452,7 @@ eoc_window_cmd_copy_image (CtkAction *action, gpointer user_data)
 
 	g_return_if_fail (EOC_IS_IMAGE (image));
 
-	clipboard = ctk_clipboard_get (GDK_SELECTION_CLIPBOARD);
+	clipboard = ctk_clipboard_get (CDK_SELECTION_CLIPBOARD);
 
 	cbhandler = eoc_clipboard_handler_new (image);
 	// cbhandler will self-destruct when it's not needed anymore
@@ -4201,7 +4201,7 @@ eoc_window_drag_data_received (CtkWidget *widget,
 		return;
 	}
 
-	if (cdk_drag_context_get_suggested_action (context) == GDK_ACTION_COPY) {
+	if (cdk_drag_context_get_suggested_action (context) == CDK_ACTION_COPY) {
 		window = EOC_WINDOW (widget);
 
 		file_list = eoc_util_parse_uri_string_list_to_file_list ((const gchar *) ctk_selection_data_get_data (selection_data));
@@ -4216,7 +4216,7 @@ eoc_window_set_drag_dest (EocWindow *window)
 	ctk_drag_dest_set (CTK_WIDGET (window),
                            CTK_DEST_DEFAULT_MOTION | CTK_DEST_DEFAULT_DROP,
                            NULL, 0,
-                           GDK_ACTION_COPY | GDK_ACTION_ASK);
+                           CDK_ACTION_COPY | CDK_ACTION_ASK);
 	ctk_drag_dest_add_uri_targets (CTK_WIDGET (window));
 }
 
@@ -4733,7 +4733,7 @@ eoc_window_init (EocWindow *window)
 	ctk_window_set_geometry_hints (CTK_WINDOW (window),
 				       CTK_WIDGET (window),
 				       &hints,
-				       GDK_HINT_MIN_SIZE);
+				       CDK_HINT_MIN_SIZE);
 
 	ctk_window_set_default_size (CTK_WINDOW (window),
 				     EOC_WINDOW_DEFAULT_WIDTH,
@@ -4744,7 +4744,7 @@ eoc_window_init (EocWindow *window)
 	window->priv->mode = EOC_WINDOW_MODE_UNKNOWN;
 	window->priv->status = EOC_WINDOW_STATUS_UNKNOWN;
 
-#if defined(HAVE_LCMS) && defined(GDK_WINDOWING_X11)
+#if defined(HAVE_LCMS) && defined(CDK_WINDOWING_X11)
 	window->priv->display_profile =
 		eoc_window_get_display_profile (screen);
 #endif
@@ -4888,7 +4888,7 @@ eoc_window_dispose (GObject *object)
 		priv->file_list = NULL;
 	}
 
-#if defined(HAVE_LCMS) && defined(GDK_WINDOWING_X11)
+#if defined(HAVE_LCMS) && defined(CDK_WINDOWING_X11)
 	if (priv->display_profile != NULL) {
 		cmsCloseProfile (priv->display_profile);
 		priv->display_profile = NULL;
@@ -4937,20 +4937,20 @@ eoc_window_key_press (CtkWidget *widget, CdkEventKey *event)
 	gboolean handle_selection = FALSE;
 
 	switch (event->keyval) {
-	case GDK_KEY_space:
-		if (event->state & GDK_CONTROL_MASK) {
+	case CDK_KEY_space:
+		if (event->state & CDK_CONTROL_MASK) {
 			handle_selection = TRUE;
 			break;
 		}
-	case GDK_KEY_Return:
+	case CDK_KEY_Return:
 		if (ctk_container_get_focus_child (tbcontainer) == NULL) {
 			/* Image properties dialog case */
-			if (event->state & GDK_MOD1_MASK) {
+			if (event->state & CDK_MOD1_MASK) {
 				result = FALSE;
 				break;
 			}
 
-			if (event->state & GDK_SHIFT_MASK) {
+			if (event->state & CDK_SHIFT_MASK) {
 				eoc_window_cmd_go_prev (NULL, EOC_WINDOW (widget));
 			} else {
 				eoc_window_cmd_go_next (NULL, EOC_WINDOW (widget));
@@ -4958,8 +4958,8 @@ eoc_window_key_press (CtkWidget *widget, CdkEventKey *event)
 			result = TRUE;
 		}
 		break;
-	case GDK_KEY_p:
-	case GDK_KEY_P:
+	case CDK_KEY_p:
+	case CDK_KEY_P:
 		if (EOC_WINDOW (widget)->priv->mode == EOC_WINDOW_MODE_FULLSCREEN || EOC_WINDOW (widget)->priv->mode == EOC_WINDOW_MODE_SLIDESHOW) {
 			gboolean slideshow;
 
@@ -4967,9 +4967,9 @@ eoc_window_key_press (CtkWidget *widget, CdkEventKey *event)
 			eoc_window_run_fullscreen (EOC_WINDOW (widget), !slideshow);
 		}
 		break;
-	case GDK_KEY_Q:
-	case GDK_KEY_q:
-	case GDK_KEY_Escape:
+	case CDK_KEY_Q:
+	case CDK_KEY_q:
+	case CDK_KEY_Escape:
 		if (EOC_WINDOW (widget)->priv->mode == EOC_WINDOW_MODE_FULLSCREEN) {
 			eoc_window_stop_fullscreen (EOC_WINDOW (widget), FALSE);
 		} else if (EOC_WINDOW (widget)->priv->mode == EOC_WINDOW_MODE_SLIDESHOW) {
@@ -4979,8 +4979,8 @@ eoc_window_key_press (CtkWidget *widget, CdkEventKey *event)
 			return TRUE;
 		}
 		break;
-	case GDK_KEY_Left:
-		if (event->state & GDK_MOD1_MASK) {
+	case CDK_KEY_Left:
+		if (event->state & CDK_MOD1_MASK) {
 			/* Alt+Left moves to previous image */
 			if (is_rtl) { /* move to next in RTL mode */
 				eoc_window_cmd_go_next (NULL, EOC_WINDOW (widget));
@@ -4990,7 +4990,7 @@ eoc_window_key_press (CtkWidget *widget, CdkEventKey *event)
 			result = TRUE;
 			break;
 		} /* else fall-trough is intended */
-	case GDK_KEY_Up:
+	case CDK_KEY_Up:
 		if (eoc_scroll_view_scrollbars_visible (EOC_SCROLL_VIEW (EOC_WINDOW (widget)->priv->view))) {
 			/* break to let scrollview handle the key */
 			break;
@@ -4998,9 +4998,9 @@ eoc_window_key_press (CtkWidget *widget, CdkEventKey *event)
 		if (ctk_container_get_focus_child (tbcontainer) != NULL)
 			break;
 		if (!ctk_widget_get_visible (EOC_WINDOW (widget)->priv->nav)) {
-			if (is_rtl && event->keyval == GDK_KEY_Left) {
+			if (is_rtl && event->keyval == CDK_KEY_Left) {
 				/* handle RTL fall-through,
-				 * need to behave like GDK_Down then */
+				 * need to behave like CDK_Down then */
 				eoc_window_cmd_go_next (NULL,
 							EOC_WINDOW (widget));
 			} else {
@@ -5010,8 +5010,8 @@ eoc_window_key_press (CtkWidget *widget, CdkEventKey *event)
 			result = TRUE;
 			break;
 		}
-	case GDK_KEY_Right:
-		if (event->state & GDK_MOD1_MASK) {
+	case CDK_KEY_Right:
+		if (event->state & CDK_MOD1_MASK) {
 			/* Alt+Right moves to next image */
 			if (is_rtl) { /* move to previous in RTL mode */
 				eoc_window_cmd_go_prev (NULL, EOC_WINDOW (widget));
@@ -5021,7 +5021,7 @@ eoc_window_key_press (CtkWidget *widget, CdkEventKey *event)
 			result = TRUE;
 			break;
 		} /* else fall-trough is intended */
-	case GDK_KEY_Down:
+	case CDK_KEY_Down:
 		if (eoc_scroll_view_scrollbars_visible (EOC_SCROLL_VIEW (EOC_WINDOW (widget)->priv->view))) {
 			/* break to let scrollview handle the key */
 			break;
@@ -5029,9 +5029,9 @@ eoc_window_key_press (CtkWidget *widget, CdkEventKey *event)
 		if (ctk_container_get_focus_child (tbcontainer) != NULL)
 			break;
 		if (!ctk_widget_get_visible (EOC_WINDOW (widget)->priv->nav)) {
-			if (is_rtl && event->keyval == GDK_KEY_Right) {
+			if (is_rtl && event->keyval == CDK_KEY_Right) {
 				/* handle RTL fall-through,
-				 * need to behave like GDK_Up then */
+				 * need to behave like CDK_Up then */
 				eoc_window_cmd_go_prev (NULL,
 							EOC_WINDOW (widget));
 			} else {
@@ -5041,7 +5041,7 @@ eoc_window_key_press (CtkWidget *widget, CdkEventKey *event)
 			result = TRUE;
 			break;
 		}
-	case GDK_KEY_Page_Up:
+	case CDK_KEY_Page_Up:
 		if (!eoc_scroll_view_scrollbars_visible (EOC_SCROLL_VIEW (EOC_WINDOW (widget)->priv->view))) {
 			if (!ctk_widget_get_visible (EOC_WINDOW (widget)->priv->nav)) {
 				/* If the iconview is not visible skip to the
@@ -5054,7 +5054,7 @@ eoc_window_key_press (CtkWidget *widget, CdkEventKey *event)
 				handle_selection = TRUE;
 		}
 		break;
-	case GDK_KEY_Page_Down:
+	case CDK_KEY_Page_Down:
 		if (!eoc_scroll_view_scrollbars_visible (EOC_SCROLL_VIEW (EOC_WINDOW (widget)->priv->view))) {
 			if (!ctk_widget_get_visible (EOC_WINDOW (widget)->priv->nav)) {
 				/* If the iconview is not visible skip to the
@@ -5102,7 +5102,7 @@ eoc_window_button_press (CtkWidget *widget, CdkEventButton *event)
 	EocWindow *window = EOC_WINDOW (widget);
 	gint result = FALSE;
 
-	if (event->type == GDK_BUTTON_PRESS) {
+	if (event->type == CDK_BUTTON_PRESS) {
 		switch (event->button) {
 		case 6:
 			eoc_thumb_view_select_single (EOC_THUMB_VIEW (window->priv->thumbview),

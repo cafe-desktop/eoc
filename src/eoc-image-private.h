@@ -73,7 +73,7 @@ struct _EocImagePrivate {
  	XmpPtr   xmp;
 #endif
 
-#if defined(HAVE_LCMS) && defined(GDK_WINDOWING_X11)
+#if defined(HAVE_LCMS) && defined(CDK_WINDOWING_X11)
 	cmsHPROFILE       profile;
 #endif
 

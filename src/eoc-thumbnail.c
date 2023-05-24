@@ -126,7 +126,7 @@ create_thumbnail_from_pixbuf (EocThumbData *data,
 	thumb = cdk_pixbuf_scale_simple (pixbuf,
 	                                 width*perc,
 	                                 height*perc,
-	                                 GDK_INTERP_HYPER);
+	                                 CDK_INTERP_HYPER);
 
 	return thumb;
 }
@@ -287,9 +287,9 @@ eoc_thumbnail_stretch_frame_image (CdkPixbuf *frame_image,
 		result_pixbuf = cdk_pixbuf_scale_simple (frame_image,
 							 dest_width,
 							 dest_height,
-							 GDK_INTERP_NEAREST);
+							 CDK_INTERP_NEAREST);
         } else {
-                result_pixbuf = cdk_pixbuf_new (GDK_COLORSPACE_RGB,
+                result_pixbuf = cdk_pixbuf_new (CDK_COLORSPACE_RGB,
 						TRUE,
 						8,
 						dest_width,
@@ -445,7 +445,7 @@ eoc_thumbnail_fit_to_size (CdkPixbuf *thumbnail, gint dimension)
 		width  = MAX (width  * factor, 1);
 		height = MAX (height * factor, 1);
 
-		result_pixbuf = cdk_pixbuf_scale_simple (thumbnail, width, height, GDK_INTERP_HYPER);
+		result_pixbuf = cdk_pixbuf_scale_simple (thumbnail, width, height, CDK_INTERP_HYPER);
 
 		return result_pixbuf;
 	}

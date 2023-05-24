@@ -52,7 +52,7 @@ static void
 eoc_application_activate (GApplication *application)
 {
 	eoc_application_open_window (EOC_APPLICATION (application),
-				     GDK_CURRENT_TIME,
+				     CDK_CURRENT_TIME,
 				     EOC_APPLICATION (application)->priv->flags,
 				     NULL);
 }
@@ -69,7 +69,7 @@ eoc_application_open (GApplication *application,
 		list = g_slist_prepend (list, files[n_files]);
 
 	eoc_application_open_file_list (EOC_APPLICATION (application),
-					list, GDK_CURRENT_TIME,
+					list, CDK_CURRENT_TIME,
 					EOC_APPLICATION (application)->priv->flags,
 					NULL);
 }

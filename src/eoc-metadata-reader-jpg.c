@@ -498,7 +498,7 @@ eoc_metadata_reader_jpg_get_xmp_data (EocMetadataReaderJpg *emr )
  * parse the sections and construct a single memory chunk, or maybe even parse
  * the profile.
  */
-#if defined(HAVE_LCMS) && defined(GDK_WINDOWING_X11)
+#if defined(HAVE_LCMS) && defined(CDK_WINDOWING_X11)
 static gpointer
 eoc_metadata_reader_jpg_get_icc_profile (EocMetadataReaderJpg *emr)
 {
@@ -510,7 +510,7 @@ eoc_metadata_reader_jpg_get_icc_profile (EocMetadataReaderJpg *emr)
 	priv = emr->priv;
 
 	if (priv->icc_chunk) {
-		if (GDK_IS_X11_DISPLAY (cdk_display_get_default ())) {
+		if (CDK_IS_X11_DISPLAY (cdk_display_get_default ())) {
 			profile = cmsOpenProfileFromMem(priv->icc_chunk + 14, priv->icc_len - 14);
 		}
 
@@ -656,7 +656,7 @@ eoc_metadata_reader_jpg_init_emr_iface (gpointer g_iface, gpointer iface_data)
 		(gpointer (*) (EocMetadataReader *self))
 			eoc_metadata_reader_jpg_get_exif_data;
 #endif
-#if defined(HAVE_LCMS) && defined(GDK_WINDOWING_X11)
+#if defined(HAVE_LCMS) && defined(CDK_WINDOWING_X11)
 	iface->get_icc_profile =
 		(gpointer (*) (EocMetadataReader *self))
 			eoc_metadata_reader_jpg_get_icc_profile;

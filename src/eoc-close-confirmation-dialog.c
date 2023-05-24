@@ -108,7 +108,7 @@ get_nothumb_pixbuf (void)
 {
 	static GOnce nothumb_once = G_ONCE_INIT;
 	g_once (&nothumb_once, (GThreadFunc) eoc_close_confirmation_dialog_get_icon, "image-x-generic");
-	return GDK_PIXBUF (g_object_ref (nothumb_once.retval));
+	return CDK_PIXBUF (g_object_ref (nothumb_once.retval));
 }
 
 /*  Since we connect in the costructor we are sure this handler will be called
@@ -462,7 +462,7 @@ populate_model (CtkTreeModel *store, GList *imgs)
 		if (buf) {
 			ratio = IMAGE_COLUMN_HEIGHT / (double) cdk_pixbuf_get_height (buf);
 			width = (int) (cdk_pixbuf_get_width (buf) * ratio);
-			buf_scaled = cdk_pixbuf_scale_simple (buf, width, IMAGE_COLUMN_HEIGHT, GDK_INTERP_BILINEAR);
+			buf_scaled = cdk_pixbuf_scale_simple (buf, width, IMAGE_COLUMN_HEIGHT, CDK_INTERP_BILINEAR);
 		} else
 			buf_scaled = get_nothumb_pixbuf ();
 
@@ -510,7 +510,7 @@ create_treeview (EocCloseConfirmationDialogPrivate *priv)
 	ctk_tree_view_set_enable_search (CTK_TREE_VIEW (treeview), FALSE);
 
 	/* Create and populate the model */
-	store = ctk_list_store_new (N_COLUMNS, G_TYPE_BOOLEAN, GDK_TYPE_PIXBUF, G_TYPE_STRING, G_TYPE_POINTER);
+	store = ctk_list_store_new (N_COLUMNS, G_TYPE_BOOLEAN, CDK_TYPE_PIXBUF, G_TYPE_STRING, G_TYPE_POINTER);
 	populate_model (CTK_TREE_MODEL (store), priv->unsaved_images);
 
 	/* Set model to the treeview */

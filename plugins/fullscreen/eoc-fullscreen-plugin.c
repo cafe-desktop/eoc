@@ -31,7 +31,7 @@ on_button_press (CtkWidget      *button,
                  CdkEventButton *event,
                  EocWindow      *window)
 {
-	if (event->button == 1 && event->type == GDK_2BUTTON_PRESS)
+	if (event->button == 1 && event->type == CDK_2BUTTON_PRESS)
 	{
 		EocWindowMode mode = eoc_window_get_mode (window);
 
