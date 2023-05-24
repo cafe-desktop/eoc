@@ -2,7 +2,7 @@
 <!-- Generated with glade 3.20.0 -->
 <interface>
   <requires lib="ctk+" version="3.14"/>
-  <requires lib="libpeas-ctk" version="1.0"/>
+  <requires lib="libbean-ctk" version="1.0"/>
   <object class="CtkAdjustment" id="adjustment1">
     <property name="lower">1</property>
     <property name="upper">100</property>

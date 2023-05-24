@@ -36,7 +36,7 @@
 #include <glib-object.h>
 #include <ctk/ctk.h>
 #include <gio/gio.h>
-#include <libpeas-ctk/peas-ctk-plugin-manager.h>
+#include <libbean-ctk/bean-ctk-plugin-manager.h>
 
 #define GSETTINGS_OBJECT_KEY		"GSETTINGS_KEY"
 #define GSETTINGS_OBJECT_VALUE		"GSETTINGS_VALUE"
@@ -145,7 +145,7 @@ eoc_preferences_dialog_class_init (EocPreferencesDialogClass *klass)
 {
 	CtkWidgetClass *widget_class = (CtkWidgetClass*) klass;
 
-	/* This should make sure the libpeas-ctk dependency isn't
+	/* This should make sure the libbean-ctk dependency isn't
 	 * dropped by aggressive linkers (#739618) */
 	g_type_ensure (PEAS_CTK_TYPE_PLUGIN_MANAGER);
 

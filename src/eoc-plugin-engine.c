@@ -86,7 +86,7 @@ eoc_plugin_engine_new (void)
 
 	private_path = g_build_filename (LIBDIR, "girepository-1.0", NULL);
 
-	/* This should be moved to libpeas */
+	/* This should be moved to libbean */
 	if (g_irepository_require (g_irepository_get_default (),
 	                           "Peas", "1.0", 0, &error) == NULL)
 	{
@@ -116,15 +116,15 @@ eoc_plugin_engine_new (void)
 
 	engine = EOC_PLUGIN_ENGINE (g_object_new (EOC_TYPE_PLUGIN_ENGINE, NULL));
 
-	peas_engine_enable_loader (PEAS_ENGINE (engine), "python3");
+	bean_engine_enable_loader (PEAS_ENGINE (engine), "python3");
 
 	user_plugin_path = g_build_filename (eoc_util_dot_dir (),
 	                                     USER_EOC_PLUGINS_LOCATION, NULL);
 
-	peas_engine_add_search_path (PEAS_ENGINE (engine),
+	bean_engine_add_search_path (PEAS_ENGINE (engine),
 	                             user_plugin_path, user_plugin_path);
 
-	peas_engine_add_search_path (PEAS_ENGINE (engine),
+	bean_engine_add_search_path (PEAS_ENGINE (engine),
 	                             EOC_PLUGIN_DIR, EOC_PLUGIN_DIR);
 
 	g_settings_bind (engine->priv->plugins_settings,

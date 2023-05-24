@@ -26,7 +26,7 @@
 #define __EOC_PLUGIN_ENGINE_H__
 
 #include <glib.h>
-#include <libpeas/peas-engine.h>
+#include <libbean/bean-engine.h>
 
 G_BEGIN_DECLS
 

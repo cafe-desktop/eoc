@@ -28,7 +28,7 @@
 #include <glib.h>
 #include <glib-object.h>
 
-#include <libpeas/peas-extension-set.h>
+#include <libbean/bean-extension-set.h>
 #include <ctk/ctk.h>
 #include "eoc-window.h"
 

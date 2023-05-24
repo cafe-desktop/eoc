@@ -201,12 +201,12 @@ eoc_application_init (EocApplication *eoc_application)
 
 	eoc_application_load_accelerators ();
 
-	priv->extensions = peas_extension_set_new (
+	priv->extensions = bean_extension_set_new (
 	                           PEAS_ENGINE (priv->plugin_engine),
 	                           EOC_TYPE_APPLICATION_ACTIVATABLE,
 	                           "app",  EOC_APPLICATION (eoc_application),
 	                           NULL);
-	peas_extension_set_call (priv->extensions, "activate");
+	bean_extension_set_call (priv->extensions, "activate");
 	g_signal_connect (priv->extensions, "extension-added",
 	                  G_CALLBACK (on_extension_added), eoc_application);
 	g_signal_connect (priv->extensions, "extension-removed",

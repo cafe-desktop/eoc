@@ -6,7 +6,7 @@
 
 #include <gmodule.h>
 #include <glib/gi18n-lib.h>
-#include <libpeas/peas-activatable.h>
+#include <libbean/bean-activatable.h>
 
 #include <eoc-debug.h>
 #include <eoc-window.h>
@@ -160,10 +160,10 @@ eoc_window_activatable_iface_init (EocWindowActivatableInterface *iface)
 }
 
 G_MODULE_EXPORT void
-peas_register_types (PeasObjectModule *module)
+bean_register_types (PeasObjectModule *module)
 {
 	eoc_fullscreen_plugin_register_type (G_TYPE_MODULE (module));
-	peas_object_module_register_extension_type (module,
+	bean_object_module_register_extension_type (module,
 	                                            EOC_TYPE_WINDOW_ACTIVATABLE,
 	                                            EOC_TYPE_FULLSCREEN_PLUGIN);
 }

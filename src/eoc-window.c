@@ -70,8 +70,8 @@
 #include <gio/gdesktopappinfo.h>
 #include <ctk/ctk.h>
 
-#include <libpeas/peas-extension-set.h>
-#include <libpeas/peas-activatable.h>
+#include <libbean/bean-extension-set.h>
+#include <libbean/bean-activatable.h>
 
 #if HAVE_LCMS
 #include <X11/Xlib.h>
@@ -4775,12 +4775,12 @@ eoc_window_dispose (GObject *object)
 	window = EOC_WINDOW (object);
 	priv = window->priv;
 
-	peas_engine_garbage_collect (PEAS_ENGINE (EOC_APP->priv->plugin_engine));
+	bean_engine_garbage_collect (PEAS_ENGINE (EOC_APP->priv->plugin_engine));
 
 	if (priv->extensions != NULL) {
 		g_object_unref (priv->extensions);
 		priv->extensions = NULL;
-		peas_engine_garbage_collect (PEAS_ENGINE (EOC_APP->priv->plugin_engine));
+		bean_engine_garbage_collect (PEAS_ENGINE (EOC_APP->priv->plugin_engine));
 	}
 
 	if (priv->page_setup != NULL) {
@@ -4900,7 +4900,7 @@ eoc_window_dispose (GObject *object)
 		priv->last_save_as_folder = NULL;
 	}
 
-	peas_engine_garbage_collect (PEAS_ENGINE (EOC_APP->priv->plugin_engine));
+	bean_engine_garbage_collect (PEAS_ENGINE (EOC_APP->priv->plugin_engine));
 
 	G_OBJECT_CLASS (eoc_window_parent_class)->dispose (object);
 }
@@ -5211,7 +5211,7 @@ on_extension_added (PeasExtensionSet *set,
 		    PeasExtension    *exten,
 		    CtkWindow        *window)
 {
-	peas_extension_call (exten, "activate", window);
+	bean_extension_call (exten, "activate", window);
 }
 
 static void
@@ -5220,7 +5220,7 @@ on_extension_removed (PeasExtensionSet *set,
 		      PeasExtension    *exten,
 		      CtkWindow        *window)
 {
-	peas_extension_call (exten, "deactivate", window);
+	bean_extension_call (exten, "deactivate", window);
 }
 
 static GObject *
@@ -5238,12 +5238,12 @@ eoc_window_constructor (GType type,
 
 	eoc_window_construct_ui (EOC_WINDOW (object));
 
-	priv->extensions = peas_extension_set_new (PEAS_ENGINE (EOC_APP->priv->plugin_engine),
+	priv->extensions = bean_extension_set_new (PEAS_ENGINE (EOC_APP->priv->plugin_engine),
 	                                           EOC_TYPE_WINDOW_ACTIVATABLE,
 	                                           "window",
 	                                           EOC_WINDOW (object), NULL);
 
-	peas_extension_set_call (priv->extensions, "activate");
+	bean_extension_set_call (priv->extensions, "activate");
 
 	g_signal_connect (priv->extensions, "extension-added",
 			  G_CALLBACK (on_extension_added), object);
