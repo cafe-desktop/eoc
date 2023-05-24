@@ -77,7 +77,7 @@ expand_content_files=
 # Only needed if you are using ctkdoc-scangobj to dynamically query widget
 # signals and properties.
 # e.g. INCLUDES=-I$(top_srcdir) -I$(top_builddir) $(CTK_DEBUG_FLAGS)
-# e.g. CTKDOC_LIBS=$(top_builddir)/ctk/$(ctktargetlib)
+# e.g. GTKDOC_LIBS=$(top_builddir)/ctk/$(ctktargetlib)
 AM_CPPFLAGS= \
 	-I$(top_srcdir)		\
 	-I$(top_builddir)	\
@@ -91,7 +91,7 @@ if ENABLE_JPEG
 jpeg_LIB = $(top_builddir)/jpegutils/libeoc-jpegutils.la
 endif
 
-CTKDOC_LIBS=\
+GTKDOC_LIBS=\
 	$(top_builddir)/src/libeoc.la 	\
 	$(top_builddir)/cut-n-paste/toolbar-editor/libtoolbareditor.la \
 	$(BINDING_LIBS)			\
@@ -99,7 +99,7 @@ CTKDOC_LIBS=\
 	$(X_LIBS)			\
 	$(EOC_LIBS)			\
 	$(jpeg_LIB)			\
-	$(MORE_CTKDOC_LIBS)
+	$(MORE_GTKDOC_LIBS)
 
 # This includes the standard gtk-doc make rules, copied by ctkdocize.
 include $(top_srcdir)/gtk-doc.make
@@ -115,6 +115,6 @@ EXTRA_DIST += version.xml.in \
 DISTCLEANFILES = $(DOC_MODULE).types
 
 # Comment this out if you want your docs-status tested during 'make check'
-#TESTS = $(CTKDOC_CHECK)
+#TESTS = $(GTKDOC_CHECK)
 
 -include $(top_srcdir)/git.mk
