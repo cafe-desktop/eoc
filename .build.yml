@@ -13,7 +13,7 @@ requires:
     - expect #required for unbuffer
     - git
     - gobject-introspection
-    - ctk-doc-tools
+    - gtk-doc-tools
     - libdconf-dev
     - libexempi-dev
     - libexif-dev
