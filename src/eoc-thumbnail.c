@@ -95,7 +95,7 @@ get_valid_thumbnail (EocThumbData *data, GError **error)
 
 	/* does a thumbnail under the path exists? */
 	if (data->thumb_exists) {
-		thumb = cdk_pixbuf_new_from_file (data->thumb_path, error);
+		thumb = gdk_pixbuf_new_from_file (data->thumb_path, error);
 
 		/* is this thumbnail file up to date? */
 		if (thumb != NULL && !cafe_desktop_thumbnail_is_valid (thumb, data->uri_str, data->mtime)) {
@@ -118,12 +118,12 @@ create_thumbnail_from_pixbuf (EocThumbData *data,
 
 	g_assert (factory != NULL);
 
-	width = cdk_pixbuf_get_width (pixbuf);
-	height = cdk_pixbuf_get_height (pixbuf);
+	width = gdk_pixbuf_get_width (pixbuf);
+	height = gdk_pixbuf_get_height (pixbuf);
 
 	perc = CLAMP (128.0/(MAX (width, height)), 0, 1);
 
-	thumb = cdk_pixbuf_scale_simple (pixbuf,
+	thumb = gdk_pixbuf_scale_simple (pixbuf,
 	                                 width*perc,
 	                                 height*perc,
 	                                 CDK_INTERP_HYPER);
@@ -218,7 +218,7 @@ draw_frame_row (GdkPixbuf *frame_image,
 		slab_width = remaining_width > source_width ?
 			     source_width : remaining_width;
 
-		cdk_pixbuf_copy_area (frame_image,
+		gdk_pixbuf_copy_area (frame_image,
 				      left_offset,
 				      source_v_position,
 				      slab_width,
@@ -251,7 +251,7 @@ draw_frame_column (GdkPixbuf *frame_image,
 		slab_height = remaining_height > source_height ?
 			      source_height : remaining_height;
 
-		cdk_pixbuf_copy_area (frame_image,
+		gdk_pixbuf_copy_area (frame_image,
 				      source_h_position,
 				      top_offset,
 				      width,
@@ -280,23 +280,23 @@ eoc_thumbnail_stretch_frame_image (GdkPixbuf *frame_image,
         gint target_width, target_frame_width;
         gint target_height, target_frame_height;
 
-        frame_width  = cdk_pixbuf_get_width  (frame_image);
-        frame_height = cdk_pixbuf_get_height (frame_image);
+        frame_width  = gdk_pixbuf_get_width  (frame_image);
+        frame_height = gdk_pixbuf_get_height (frame_image);
 
         if (fill_flag) {
-		result_pixbuf = cdk_pixbuf_scale_simple (frame_image,
+		result_pixbuf = gdk_pixbuf_scale_simple (frame_image,
 							 dest_width,
 							 dest_height,
 							 CDK_INTERP_NEAREST);
         } else {
-                result_pixbuf = cdk_pixbuf_new (CDK_COLORSPACE_RGB,
+                result_pixbuf = gdk_pixbuf_new (CDK_COLORSPACE_RGB,
 						TRUE,
 						8,
 						dest_width,
 						dest_height);
 
 		/* Clear pixbuf to fully opaque white */
-		cdk_pixbuf_fill (result_pixbuf, 0xffffffff);
+		gdk_pixbuf_fill (result_pixbuf, 0xffffffff);
         }
 
         target_width  = dest_width - left_offset - right_offset;
@@ -306,7 +306,7 @@ eoc_thumbnail_stretch_frame_image (GdkPixbuf *frame_image,
         target_frame_height = frame_height - top_offset - bottom_offset;
 
         /* Draw the left top corner  and top row */
-        cdk_pixbuf_copy_area (frame_image,
+        gdk_pixbuf_copy_area (frame_image,
 			      0, 0,
 			      left_offset,
 			      top_offset,
@@ -322,7 +322,7 @@ eoc_thumbnail_stretch_frame_image (GdkPixbuf *frame_image,
 			top_offset);
 
         /* Draw the right top corner and left column */
-        cdk_pixbuf_copy_area (frame_image,
+        gdk_pixbuf_copy_area (frame_image,
 			      frame_width - right_offset,
 			      0,
 			      right_offset,
@@ -340,7 +340,7 @@ eoc_thumbnail_stretch_frame_image (GdkPixbuf *frame_image,
 			   left_offset);
 
         /* Draw the bottom right corner and bottom row */
-        cdk_pixbuf_copy_area (frame_image,
+        gdk_pixbuf_copy_area (frame_image,
 			      frame_width - right_offset,
 			      frame_height - bottom_offset,
 			      right_offset,
@@ -358,7 +358,7 @@ eoc_thumbnail_stretch_frame_image (GdkPixbuf *frame_image,
 			left_offset, bottom_offset);
 
         /* Draw the bottom left corner and the right column */
-        cdk_pixbuf_copy_area (frame_image,
+        gdk_pixbuf_copy_area (frame_image,
 			      0,
 			      frame_height - bottom_offset,
 			      left_offset,
@@ -393,8 +393,8 @@ eoc_thumbnail_add_frame (GdkPixbuf *thumbnail)
 	gint source_width, source_height;
 	gint dest_width, dest_height;
 
-	source_width  = cdk_pixbuf_get_width  (thumbnail);
-	source_height = cdk_pixbuf_get_height (thumbnail);
+	source_width  = gdk_pixbuf_get_width  (thumbnail);
+	source_height = gdk_pixbuf_get_height (thumbnail);
 
 	dest_width  = source_width  + 9;
 	dest_height = source_height + 9;
@@ -405,7 +405,7 @@ eoc_thumbnail_add_frame (GdkPixbuf *thumbnail)
 							   dest_height,
 							   FALSE);
 
-	cdk_pixbuf_copy_area (thumbnail,
+	gdk_pixbuf_copy_area (thumbnail,
 			      0, 0,
 			      source_width,
 			      source_height,
@@ -429,8 +429,8 @@ eoc_thumbnail_fit_to_size (GdkPixbuf *thumbnail, gint dimension)
 {
 	gint width, height;
 
-	width = cdk_pixbuf_get_width (thumbnail);
-	height = cdk_pixbuf_get_height (thumbnail);
+	width = gdk_pixbuf_get_width (thumbnail);
+	height = gdk_pixbuf_get_height (thumbnail);
 
 	if (width > dimension || height > dimension) {
 		GdkPixbuf *result_pixbuf;
@@ -445,11 +445,11 @@ eoc_thumbnail_fit_to_size (GdkPixbuf *thumbnail, gint dimension)
 		width  = MAX (width  * factor, 1);
 		height = MAX (height * factor, 1);
 
-		result_pixbuf = cdk_pixbuf_scale_simple (thumbnail, width, height, CDK_INTERP_HYPER);
+		result_pixbuf = gdk_pixbuf_scale_simple (thumbnail, width, height, CDK_INTERP_HYPER);
 
 		return result_pixbuf;
 	}
-	return cdk_pixbuf_copy (thumbnail);
+	return gdk_pixbuf_copy (thumbnail);
 }
 
 /**
@@ -535,7 +535,7 @@ eoc_thumbnail_init (void)
 	}
 
 	if (frame == NULL) {
-		frame = cdk_pixbuf_new_from_resource (
+		frame = gdk_pixbuf_new_from_resource (
 	                    "/org/cafe/eoc/ui/pixmaps/thumbnail-frame.png",
 	                    NULL);
 	}

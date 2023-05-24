@@ -418,8 +418,8 @@ eoc_image_real_transform (EocImage     *img,
 		g_object_unref (priv->image);
 		priv->image = transformed;
 
-		priv->width = cdk_pixbuf_get_width (transformed);
-		priv->height = cdk_pixbuf_get_height (transformed);
+		priv->width = gdk_pixbuf_get_width (transformed);
+		priv->height = gdk_pixbuf_get_height (transformed);
 
 		modified = TRUE;
 	}
@@ -571,8 +571,8 @@ eoc_image_apply_transformations (EocImage *img, GError **error)
 	priv->image = transformed;
 
 	if (transformed != NULL) {
-		priv->width = cdk_pixbuf_get_width (priv->image);
-		priv->height = cdk_pixbuf_get_height (priv->image);
+		priv->width = gdk_pixbuf_get_width (priv->image);
+		priv->height = gdk_pixbuf_get_height (priv->image);
 	} else {
 		g_set_error (error,
 			     EOC_IMAGE_ERROR,
@@ -639,7 +639,7 @@ eoc_image_apply_display_profile (EocImage *img, cmsHPROFILE screen)
 
 	if (priv->profile == NULL) {
 		/* Check whether GdkPixbuf was able to extract a profile */
-		const char* data = cdk_pixbuf_get_option (priv->image,
+		const char* data = gdk_pixbuf_get_option (priv->image,
 		                                          "icc-profile");
 
 		if(data) {
@@ -675,7 +675,7 @@ eoc_image_apply_display_profile (EocImage *img, cmsHPROFILE screen)
 
 	cmsUInt32Number color_type = TYPE_RGB_8;
 
-	if (cdk_pixbuf_get_has_alpha (priv->image))
+	if (gdk_pixbuf_get_has_alpha (priv->image))
 		color_type = TYPE_RGBA_8;
 
 	transform = cmsCreateTransform (priv->profile,
@@ -686,10 +686,10 @@ eoc_image_apply_display_profile (EocImage *img, cmsHPROFILE screen)
 	                                0);
 
 	if (G_LIKELY (transform != NULL)) {
-		rows = cdk_pixbuf_get_height (priv->image);
-		width = cdk_pixbuf_get_width (priv->image);
-		stride = cdk_pixbuf_get_rowstride (priv->image);
-		p = cdk_pixbuf_get_pixels (priv->image);
+		rows = gdk_pixbuf_get_height (priv->image);
+		width = gdk_pixbuf_get_width (priv->image);
+		stride = gdk_pixbuf_get_rowstride (priv->image);
+		p = gdk_pixbuf_get_pixels (priv->image);
 
 		for (row = 0; row < rows; ++row) {
 			cmsDoTransform (transform, p, p, width);
@@ -745,7 +745,7 @@ eoc_image_set_orientation (EocImage *img)
 		if (pbuf) {
 			const gchar *o_str;
 
-			o_str = cdk_pixbuf_get_option (pbuf, "orientation");
+			o_str = gdk_pixbuf_get_option (pbuf, "orientation");
 			if (o_str) {
 				short t = (short) g_ascii_strtoll (o_str,
 								   NULL, 10);
@@ -977,13 +977,13 @@ eoc_image_real_load (EocImage *img,
 #endif
 
                 if (!use_rsvg) {
-		        loader = cdk_pixbuf_loader_new_with_mime_type (mime_type, error);
+		        loader = gdk_pixbuf_loader_new_with_mime_type (mime_type, error);
 
 		        if (error && *error) {
 			        g_error_free (*error);
 			        *error = NULL;
 
-			        loader = cdk_pixbuf_loader_new ();
+			        loader = gdk_pixbuf_loader_new ();
 		        }
 
 		        g_signal_connect_object (G_OBJECT (loader),
@@ -1030,7 +1030,7 @@ eoc_image_real_load (EocImage *img,
                             }
 			} else
 #endif
-			if (!cdk_pixbuf_loader_write (loader, buffer, bytes_read, error)) {
+			if (!gdk_pixbuf_loader_write (loader, buffer, bytes_read, error)) {
 				failed = TRUE;
 				break;
 			}
@@ -1100,9 +1100,9 @@ eoc_image_real_load (EocImage *img,
                 } else
 #endif
 		if (failed) {
-			cdk_pixbuf_loader_close (loader, NULL);
-		} else if (!cdk_pixbuf_loader_close (loader, error)) {
-			if (cdk_pixbuf_loader_get_pixbuf (loader) != NULL) {
+			gdk_pixbuf_loader_close (loader, NULL);
+		} else if (!gdk_pixbuf_loader_close (loader, error)) {
+			if (gdk_pixbuf_loader_get_pixbuf (loader) != NULL) {
 				/* Clear error in order to support partial
 				 * images as well. */
 				g_clear_error (error);
@@ -1139,14 +1139,14 @@ eoc_image_real_load (EocImage *img,
 
                 {
 
-		priv->anim = cdk_pixbuf_loader_get_animation (loader);
+		priv->anim = gdk_pixbuf_loader_get_animation (loader);
 
-		if (cdk_pixbuf_animation_is_static_image (priv->anim)) {
-			priv->image = cdk_pixbuf_animation_get_static_image (priv->anim);
+		if (gdk_pixbuf_animation_is_static_image (priv->anim)) {
+			priv->image = gdk_pixbuf_animation_get_static_image (priv->anim);
 			priv->anim = NULL;
 		} else {
-			priv->anim_iter = cdk_pixbuf_animation_get_iter (priv->anim,NULL);
-			priv->image = cdk_pixbuf_animation_iter_get_pixbuf (priv->anim_iter);
+			priv->anim_iter = gdk_pixbuf_animation_get_iter (priv->anim,NULL);
+			priv->image = gdk_pixbuf_animation_iter_get_pixbuf (priv->anim_iter);
 		}
 
                 }
@@ -1155,18 +1155,18 @@ eoc_image_real_load (EocImage *img,
                         if (!use_rsvg)
 			        g_object_ref (priv->image);
 
-			priv->width = cdk_pixbuf_get_width (priv->image);
-			priv->height = cdk_pixbuf_get_height (priv->image);
+			priv->width = gdk_pixbuf_get_width (priv->image);
+			priv->height = gdk_pixbuf_get_height (priv->image);
 
                         if (use_rsvg) {
                                 format = NULL;
                                 priv->file_type = g_strdup ("svg");
                         } else {
-			        format = cdk_pixbuf_loader_get_format (loader);
+			        format = gdk_pixbuf_loader_get_format (loader);
                         }
 
 			if (format != NULL) {
-				priv->file_type = cdk_pixbuf_format_get_name (format);
+				priv->file_type = gdk_pixbuf_format_get_name (format);
 			}
 
 			priv->file_is_changed = FALSE;
@@ -1755,7 +1755,7 @@ eoc_image_save_by_info (EocImage *img, EocImageSaveInfo *source, GError **error)
 #endif
 
 	if (!success && (*error == NULL)) {
-		success = cdk_pixbuf_save (priv->image, tmp_file_path, source->format, error, NULL);
+		success = gdk_pixbuf_save (priv->image, tmp_file_path, source->format, error, NULL);
 	}
 
 	if (success) {
@@ -1864,7 +1864,7 @@ eoc_image_save_as_by_info (EocImage *img, EocImageSaveInfo *source, EocImageSave
 #endif
 
 	if (!success && (*error == NULL)) {
-		success = cdk_pixbuf_save (priv->image, tmp_file_path, target->format, error, NULL);
+		success = gdk_pixbuf_save (priv->image, tmp_file_path, target->format, error, NULL);
 	}
 
 	if (success && !direct_copy) { /* not required if we alredy copied the file directly */
@@ -2224,11 +2224,11 @@ eoc_image_get_supported_mime_types (void)
 	int i;
 
 	if (!supported_mime_types) {
-		format_list = cdk_pixbuf_get_formats ();
+		format_list = gdk_pixbuf_get_formats ();
 
 		for (it = format_list; it != NULL; it = it->next) {
 			mime_types =
-				cdk_pixbuf_format_get_mime_types ((GdkPixbufFormat *) it->data);
+				gdk_pixbuf_format_get_mime_types ((GdkPixbufFormat *) it->data);
 
 			for (i = 0; mime_types[i] != NULL; i++) {
 				supported_mime_types =
@@ -2280,23 +2280,23 @@ eoc_image_iter_advance (EocImage *img)
 
 	priv = img->priv;
 
-	if ((new_frame = cdk_pixbuf_animation_iter_advance (img->priv->anim_iter, NULL)) == TRUE) {
+	if ((new_frame = gdk_pixbuf_animation_iter_advance (img->priv->anim_iter, NULL)) == TRUE) {
 		g_mutex_lock (&priv->status_mutex);
 		g_object_unref (priv->image);
-		priv->image = cdk_pixbuf_animation_iter_get_pixbuf (priv->anim_iter);
+		priv->image = gdk_pixbuf_animation_iter_get_pixbuf (priv->anim_iter);
 	 	g_object_ref (priv->image);
 		/* keep the transformation over time */
 		if (EOC_IS_TRANSFORM (priv->trans)) {
 			GdkPixbuf* transformed = eoc_transform_apply (priv->trans, priv->image, NULL);
 			g_object_unref (priv->image);
 			priv->image = transformed;
-			priv->width = cdk_pixbuf_get_width (transformed);
-			priv->height = cdk_pixbuf_get_height (transformed);
+			priv->width = gdk_pixbuf_get_width (transformed);
+			priv->height = gdk_pixbuf_get_height (transformed);
 		}
 		g_mutex_unlock (&priv->status_mutex);
 		/* Emit next frame signal so we can update the display */
 		g_signal_emit (img, signals[SIGNAL_NEXT_FRAME], 0,
-			       cdk_pixbuf_animation_iter_get_delay_time (priv->anim_iter));
+			       gdk_pixbuf_animation_iter_get_delay_time (priv->anim_iter));
 	}
 
 	return new_frame;
@@ -2328,7 +2328,7 @@ private_timeout (gpointer data)
 	    !g_source_is_destroyed (g_main_current_source ()) &&
 	    priv->is_playing) {
 		while (eoc_image_iter_advance (img) != TRUE) {}; /* cpu-sucking ? */
-			g_timeout_add (cdk_pixbuf_animation_iter_get_delay_time (priv->anim_iter), private_timeout, img);
+			g_timeout_add (gdk_pixbuf_animation_iter_get_delay_time (priv->anim_iter), private_timeout, img);
 	 		return FALSE;
  	}
 	priv->is_playing = FALSE;
@@ -2359,7 +2359,7 @@ eoc_image_start_animation (EocImage *img)
 	priv->is_playing = TRUE;
 	g_mutex_unlock (&priv->status_mutex);
 
- 	g_timeout_add (cdk_pixbuf_animation_iter_get_delay_time (priv->anim_iter), private_timeout, img);
+ 	g_timeout_add (gdk_pixbuf_animation_iter_get_delay_time (priv->anim_iter), private_timeout, img);
 
 	return TRUE;
 }
