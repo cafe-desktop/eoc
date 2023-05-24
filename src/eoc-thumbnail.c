@@ -289,7 +289,7 @@ eoc_thumbnail_stretch_frame_image (GdkPixbuf *frame_image,
 							 dest_height,
 							 CDK_INTERP_NEAREST);
         } else {
-                result_pixbuf = gdk_pixbuf_new (CDK_COLORSPACE_RGB,
+                result_pixbuf = gdk_pixbuf_new (GDK_COLORSPACE_RGB,
 						TRUE,
 						8,
 						dest_width,

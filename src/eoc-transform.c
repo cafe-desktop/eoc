@@ -135,7 +135,7 @@ eoc_transform_apply (EocTransform *trans, GdkPixbuf *pixbuf, EocJob *job)
 	dest_width = abs ((int) (dest_bottom_right.x - dest_top_left.x + 1));
 	dest_height = abs ((int) (dest_bottom_right.y - dest_top_left.y + 1));
 
-	dest_pixbuf = gdk_pixbuf_new (CDK_COLORSPACE_RGB,
+	dest_pixbuf = gdk_pixbuf_new (GDK_COLORSPACE_RGB,
 			       gdk_pixbuf_get_has_alpha (pixbuf),
 			       gdk_pixbuf_get_bits_per_sample (pixbuf),
 			       dest_width,
