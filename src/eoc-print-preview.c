@@ -647,7 +647,7 @@ create_preview_buffer (EocPrintPreview *preview)
 {
 	GdkPixbuf *pixbuf;
 	gint width, height, widget_scale;
-	CdkInterpType type = GDK_INTERP_TILES;
+	GdkInterpType type = GDK_INTERP_TILES;
 
 	if (preview->priv->image == NULL) {
 		return NULL;
