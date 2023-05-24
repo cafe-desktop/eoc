@@ -60,7 +60,7 @@ struct _EocThumbNavPrivate {
 	CtkAdjustment    *adj;
 };
 
-G_DEFINE_TYPE_WITH_PRIVATE (EocThumbNav, eoc_thumb_nav, GTK_TYPE_BOX);
+G_DEFINE_TYPE_WITH_PRIVATE (EocThumbNav, eoc_thumb_nav, CTK_TYPE_BOX);
 
 static gboolean
 eoc_thumb_nav_scroll_event (CtkWidget *widget, GdkEventScroll *event, gpointer user_data)
@@ -120,7 +120,7 @@ eoc_thumb_nav_adj_changed (CtkAdjustment *adj, gpointer user_data)
 
 	nav = EOC_THUMB_NAV (user_data);
 	priv = eoc_thumb_nav_get_instance_private (nav);
-	ltr = ctk_widget_get_direction (priv->sw) == GTK_TEXT_DIR_LTR;
+	ltr = ctk_widget_get_direction (priv->sw) == CTK_TEXT_DIR_LTR;
 
 	ctk_widget_set_sensitive (ltr ? priv->button_right : priv->button_left,
 				  ctk_adjustment_get_value (adj)
@@ -137,7 +137,7 @@ eoc_thumb_nav_adj_value_changed (CtkAdjustment *adj, gpointer user_data)
 
 	nav = EOC_THUMB_NAV (user_data);
 	priv = eoc_thumb_nav_get_instance_private (nav);
-	ltr = ctk_widget_get_direction (priv->sw) == GTK_TEXT_DIR_LTR;
+	ltr = ctk_widget_get_direction (priv->sw) == CTK_TEXT_DIR_LTR;
 
 	ctk_widget_set_sensitive (ltr ? priv->button_left : priv->button_right,
 				  ctk_adjustment_get_value (adj) > 0);
@@ -192,9 +192,9 @@ eoc_thumb_nav_button_clicked (CtkButton *button, EocThumbNav *nav)
 {
 	nav->priv->scroll_pos = 0;
 
-	nav->priv->scroll_dir = ctk_widget_get_direction (GTK_WIDGET (button)) == GTK_TEXT_DIR_LTR ?
-		GTK_WIDGET (button) == nav->priv->button_right :
-		GTK_WIDGET (button) == nav->priv->button_left;
+	nav->priv->scroll_dir = ctk_widget_get_direction (CTK_WIDGET (button)) == CTK_TEXT_DIR_LTR ?
+		CTK_WIDGET (button) == nav->priv->button_right :
+		CTK_WIDGET (button) == nav->priv->button_left;
 
 	eoc_thumb_nav_scroll_step (nav);
 }
@@ -202,9 +202,9 @@ eoc_thumb_nav_button_clicked (CtkButton *button, EocThumbNav *nav)
 static void
 eoc_thumb_nav_start_scroll (CtkButton *button, EocThumbNav *nav)
 {
-	nav->priv->scroll_dir = ctk_widget_get_direction (GTK_WIDGET (button)) == GTK_TEXT_DIR_LTR ?
-		GTK_WIDGET (button) == nav->priv->button_right :
-		GTK_WIDGET (button) == nav->priv->button_left;
+	nav->priv->scroll_dir = ctk_widget_get_direction (CTK_WIDGET (button)) == CTK_TEXT_DIR_LTR ?
+		CTK_WIDGET (button) == nav->priv->button_right :
+		CTK_WIDGET (button) == nav->priv->button_left;
 
 	nav->priv->scroll_id = g_timeout_add (EOC_THUMB_NAV_SCROLL_TIMEOUT,
 					      eoc_thumb_nav_scroll_step,
@@ -264,7 +264,7 @@ eoc_thumb_nav_set_property (GObject      *object,
 
 	case PROP_THUMB_VIEW:
 		nav->priv->thumbview =
-			GTK_WIDGET (g_value_get_object (value));
+			CTK_WIDGET (g_value_get_object (value));
 		break;
 
 	case PROP_MODE:
@@ -288,7 +288,7 @@ eoc_thumb_nav_constructor (GType type,
 	priv = EOC_THUMB_NAV (object)->priv;
 
 	if (priv->thumbview != NULL) {
-		ctk_container_add (GTK_CONTAINER (priv->sw), priv->thumbview);
+		ctk_container_add (CTK_CONTAINER (priv->sw), priv->thumbview);
 		ctk_widget_show_all (priv->sw);
 	}
 
@@ -339,8 +339,8 @@ eoc_thumb_nav_init (EocThumbNav *nav)
 	EocThumbNavPrivate *priv;
 	CtkWidget *arrow;
 
-	ctk_orientable_set_orientation (GTK_ORIENTABLE (nav),
-					GTK_ORIENTATION_HORIZONTAL);
+	ctk_orientable_set_orientation (CTK_ORIENTABLE (nav),
+					CTK_ORIENTATION_HORIZONTAL);
 
 	nav->priv = eoc_thumb_nav_get_instance_private (nav);
 
@@ -351,14 +351,14 @@ eoc_thumb_nav_init (EocThumbNav *nav)
 	priv->show_buttons = TRUE;
 
 	priv->button_left = ctk_button_new ();
-	ctk_button_set_relief (GTK_BUTTON (priv->button_left), GTK_RELIEF_NONE);
+	ctk_button_set_relief (CTK_BUTTON (priv->button_left), CTK_RELIEF_NONE);
 
-	arrow = ctk_image_new_from_icon_name ("pan-start-symbolic", GTK_ICON_SIZE_BUTTON);
-	ctk_container_add (GTK_CONTAINER (priv->button_left), arrow);
+	arrow = ctk_image_new_from_icon_name ("pan-start-symbolic", CTK_ICON_SIZE_BUTTON);
+	ctk_container_add (CTK_CONTAINER (priv->button_left), arrow);
 
-	ctk_widget_set_size_request (GTK_WIDGET (priv->button_left), 25, 0);
+	ctk_widget_set_size_request (CTK_WIDGET (priv->button_left), 25, 0);
 
-	ctk_box_pack_start (GTK_BOX (nav), priv->button_left, FALSE, FALSE, 0);
+	ctk_box_pack_start (CTK_BOX (nav), priv->button_left, FALSE, FALSE, 0);
 
 	g_signal_connect (priv->button_left,
 			  "clicked",
@@ -377,21 +377,21 @@ eoc_thumb_nav_init (EocThumbNav *nav)
 
 	priv->sw = ctk_scrolled_window_new (NULL, NULL);
 
-	ctk_widget_set_name (ctk_scrolled_window_get_hscrollbar (GTK_SCROLLED_WINDOW (priv->sw)), "eoc-image-collection-scrollbar");
+	ctk_widget_set_name (ctk_scrolled_window_get_hscrollbar (CTK_SCROLLED_WINDOW (priv->sw)), "eoc-image-collection-scrollbar");
 
-	ctk_scrolled_window_set_shadow_type (GTK_SCROLLED_WINDOW (priv->sw),
-					     GTK_SHADOW_IN);
+	ctk_scrolled_window_set_shadow_type (CTK_SCROLLED_WINDOW (priv->sw),
+					     CTK_SHADOW_IN);
 
-	ctk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (priv->sw),
-					GTK_POLICY_AUTOMATIC,
-					GTK_POLICY_NEVER);
+	ctk_scrolled_window_set_policy (CTK_SCROLLED_WINDOW (priv->sw),
+					CTK_POLICY_AUTOMATIC,
+					CTK_POLICY_NEVER);
 
 	g_signal_connect (priv->sw,
 			  "scroll-event",
 			  G_CALLBACK (eoc_thumb_nav_scroll_event),
 			  nav);
 
-	priv->adj = ctk_scrolled_window_get_hadjustment (GTK_SCROLLED_WINDOW (priv->sw));
+	priv->adj = ctk_scrolled_window_get_hadjustment (CTK_SCROLLED_WINDOW (priv->sw));
 
 	g_signal_connect (priv->adj,
 			  "changed",
@@ -403,17 +403,17 @@ eoc_thumb_nav_init (EocThumbNav *nav)
 			  G_CALLBACK (eoc_thumb_nav_adj_value_changed),
 			  nav);
 
-	ctk_box_pack_start (GTK_BOX (nav), priv->sw, TRUE, TRUE, 0);
+	ctk_box_pack_start (CTK_BOX (nav), priv->sw, TRUE, TRUE, 0);
 
 	priv->button_right = ctk_button_new ();
-	ctk_button_set_relief (GTK_BUTTON (priv->button_right), GTK_RELIEF_NONE);
+	ctk_button_set_relief (CTK_BUTTON (priv->button_right), CTK_RELIEF_NONE);
 
-	arrow = ctk_image_new_from_icon_name ("pan-end-symbolic", GTK_ICON_SIZE_BUTTON);
-	ctk_container_add (GTK_CONTAINER (priv->button_right), arrow);
+	arrow = ctk_image_new_from_icon_name ("pan-end-symbolic", CTK_ICON_SIZE_BUTTON);
+	ctk_container_add (CTK_CONTAINER (priv->button_right), arrow);
 
-	ctk_widget_set_size_request (GTK_WIDGET (priv->button_right), 25, 0);
+	ctk_widget_set_size_request (CTK_WIDGET (priv->button_right), 25, 0);
 
-	ctk_box_pack_start (GTK_BOX (nav), priv->button_right, FALSE, FALSE, 0);
+	ctk_box_pack_start (CTK_BOX (nav), priv->button_right, FALSE, FALSE, 0);
 
 	g_signal_connect (priv->button_right,
 			  "clicked",
@@ -459,7 +459,7 @@ eoc_thumb_nav_new (CtkWidget       *thumbview,
 		            "spacing", 0,
 			    NULL);
 
-	return GTK_WIDGET (nav);
+	return CTK_WIDGET (nav);
 }
 
 /**
@@ -543,32 +543,32 @@ eoc_thumb_nav_set_mode (EocThumbNav *nav, EocThumbNavMode mode)
 	switch (mode)
 	{
 	case EOC_THUMB_NAV_MODE_ONE_ROW:
-		ctk_orientable_set_orientation (GTK_ORIENTABLE(priv->thumbview),
-		                                GTK_ORIENTATION_HORIZONTAL);
+		ctk_orientable_set_orientation (CTK_ORIENTABLE(priv->thumbview),
+		                                CTK_ORIENTATION_HORIZONTAL);
 
 		ctk_widget_set_size_request (priv->thumbview, -1, -1);
 		eoc_thumb_view_set_item_height (EOC_THUMB_VIEW (priv->thumbview),
 						115);
 
-		ctk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (priv->sw),
-						GTK_POLICY_AUTOMATIC,
-						GTK_POLICY_NEVER);
+		ctk_scrolled_window_set_policy (CTK_SCROLLED_WINDOW (priv->sw),
+						CTK_POLICY_AUTOMATIC,
+						CTK_POLICY_NEVER);
 
 		eoc_thumb_nav_set_show_buttons (nav, priv->show_buttons);
 
 		break;
 
 	case EOC_THUMB_NAV_MODE_ONE_COLUMN:
-		ctk_orientable_set_orientation (GTK_ORIENTABLE(priv->thumbview),
-		                                GTK_ORIENTATION_VERTICAL);
+		ctk_orientable_set_orientation (CTK_ORIENTABLE(priv->thumbview),
+		                                CTK_ORIENTATION_VERTICAL);
 
 		ctk_widget_set_size_request (priv->thumbview, -1, -1);
 		eoc_thumb_view_set_item_height (EOC_THUMB_VIEW (priv->thumbview),
 						-1);
 
-		ctk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (priv->sw),
-						GTK_POLICY_NEVER,
-						GTK_POLICY_AUTOMATIC);
+		ctk_scrolled_window_set_policy (CTK_SCROLLED_WINDOW (priv->sw),
+						CTK_POLICY_NEVER,
+						CTK_POLICY_AUTOMATIC);
 
 		ctk_widget_hide (priv->button_left);
 		ctk_widget_hide (priv->button_right);
@@ -576,16 +576,16 @@ eoc_thumb_nav_set_mode (EocThumbNav *nav, EocThumbNavMode mode)
 		break;
 
 	case EOC_THUMB_NAV_MODE_MULTIPLE_ROWS:
-		ctk_orientable_set_orientation (GTK_ORIENTABLE(priv->thumbview),
-		                                GTK_ORIENTATION_VERTICAL);
+		ctk_orientable_set_orientation (CTK_ORIENTABLE(priv->thumbview),
+		                                CTK_ORIENTATION_VERTICAL);
 
 		ctk_widget_set_size_request (priv->thumbview, -1, 220);
 		eoc_thumb_view_set_item_height (EOC_THUMB_VIEW (priv->thumbview),
 						-1);
 
-		ctk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (priv->sw),
-						GTK_POLICY_NEVER,
-						GTK_POLICY_AUTOMATIC);
+		ctk_scrolled_window_set_policy (CTK_SCROLLED_WINDOW (priv->sw),
+						CTK_POLICY_NEVER,
+						CTK_POLICY_AUTOMATIC);
 
 		ctk_widget_hide (priv->button_left);
 		ctk_widget_hide (priv->button_right);
@@ -593,16 +593,16 @@ eoc_thumb_nav_set_mode (EocThumbNav *nav, EocThumbNavMode mode)
 		break;
 
 	case EOC_THUMB_NAV_MODE_MULTIPLE_COLUMNS:
-		ctk_orientable_set_orientation (GTK_ORIENTABLE(priv->thumbview),
-		                                GTK_ORIENTATION_VERTICAL);
+		ctk_orientable_set_orientation (CTK_ORIENTABLE(priv->thumbview),
+		                                CTK_ORIENTATION_VERTICAL);
 
 		ctk_widget_set_size_request (priv->thumbview, 230, -1);
 		eoc_thumb_view_set_item_height (EOC_THUMB_VIEW (priv->thumbview),
 						-1);
 
-		ctk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (priv->sw),
-						GTK_POLICY_NEVER,
-						GTK_POLICY_AUTOMATIC);
+		ctk_scrolled_window_set_policy (CTK_SCROLLED_WINDOW (priv->sw),
+						CTK_POLICY_NEVER,
+						CTK_POLICY_AUTOMATIC);
 
 		ctk_widget_hide (priv->button_left);
 		ctk_widget_hide (priv->button_right);

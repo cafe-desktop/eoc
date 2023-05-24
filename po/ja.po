@@ -397,10 +397,10 @@ msgstr "EXIF の向きに応じて自動的に画像の向きを調整します�
 #: data/org.cafe.eoc.gschema.xml.in:17
 msgid ""
 "The color that is used to fill the area behind the image. If the use-"
-"background-color key is not set, the color is determined by the active GTK+ "
+"background-color key is not set, the color is determined by the active CTK+ "
 "theme instead."
 msgstr ""
-"画像の後ろの領域を塗りつぶすのに使われる色です。use-background-color キーが設定されていなければ、代わりにアクティブな GTK+ "
+"画像の後ろの領域を塗りつぶすのに使われる色です。use-background-color キーが設定されていなければ、代わりにアクティブな CTK+ "
 "のテーマによって決定されます。"
 
 #: data/org.cafe.eoc.gschema.xml.in:21
@@ -410,11 +410,11 @@ msgstr "背景にカスタム色を使用する"
 #: data/org.cafe.eoc.gschema.xml.in:22
 msgid ""
 "If this is active, the color set by the background-color key will be used to"
-" fill the area behind the image. If it is not set, the current GTK+ theme "
+" fill the area behind the image. If it is not set, the current CTK+ theme "
 "will determine the fill color."
 msgstr ""
 "これがアクティブならば、background-color キーで設定された色が画像の後ろのエリアを満たすのに使われます。設定されてない場合、現在の "
-"GTK+ のテーマが色を決定します。"
+"CTK+ のテーマが色を決定します。"
 
 #: data/org.cafe.eoc.gschema.xml.in:26
 msgid "Interpolate Image"

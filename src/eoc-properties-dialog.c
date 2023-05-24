@@ -108,7 +108,7 @@ struct _EocPropertiesDialogPrivate {
 	gboolean        netbook_mode;
 };
 
-G_DEFINE_TYPE_WITH_PRIVATE (EocPropertiesDialog, eoc_properties_dialog, GTK_TYPE_DIALOG);
+G_DEFINE_TYPE_WITH_PRIVATE (EocPropertiesDialog, eoc_properties_dialog, CTK_TYPE_DIALOG);
 
 static void
 parent_file_display_name_query_info_cb (GObject *source_object,
@@ -129,7 +129,7 @@ parent_file_display_name_query_info_cb (GObject *source_object,
 			g_file_info_get_display_name (file_info));
 		g_object_unref (file_info);
 	}
-	ctk_button_set_label (GTK_BUTTON (prop_dlg->priv->folder_button),
+	ctk_button_set_label (CTK_BUTTON (prop_dlg->priv->folder_button),
 			      display_name);
 	ctk_widget_set_sensitive (prop_dlg->priv->folder_button, TRUE);
 
@@ -154,7 +154,7 @@ pd_update_general_tab (EocPropertiesDialog *prop_dlg,
 		      "pixbuf", eoc_image_get_thumbnail (image),
 		      NULL);
 
-	ctk_label_set_text (GTK_LABEL (prop_dlg->priv->name_label),
+	ctk_label_set_text (CTK_LABEL (prop_dlg->priv->name_label),
 			    eoc_image_get_caption (image));
 
 	eoc_image_get_size (image, &width, &height);
@@ -164,9 +164,9 @@ pd_update_general_tab (EocPropertiesDialog *prop_dlg,
 	height_str = g_strdup_printf ("%d %s", height,
 				      ngettext ("pixel", "pixels", height));
 
-	ctk_label_set_text (GTK_LABEL (prop_dlg->priv->width_label), width_str);
+	ctk_label_set_text (CTK_LABEL (prop_dlg->priv->width_label), width_str);
 
-	ctk_label_set_text (GTK_LABEL (prop_dlg->priv->height_label),
+	ctk_label_set_text (CTK_LABEL (prop_dlg->priv->height_label),
 			    height_str);
 
 	g_free (height_str);
@@ -184,12 +184,12 @@ pd_update_general_tab (EocPropertiesDialog *prop_dlg,
 		g_object_unref (file_info);
 	}
 
-	ctk_label_set_text (GTK_LABEL (prop_dlg->priv->type_label), type_str);
+	ctk_label_set_text (CTK_LABEL (prop_dlg->priv->type_label), type_str);
 
 	bytes = eoc_image_get_bytes (image);
 	bytes_str = g_format_size (bytes);
 
-	ctk_label_set_text (GTK_LABEL (prop_dlg->priv->bytes_label), bytes_str);
+	ctk_label_set_text (CTK_LABEL (prop_dlg->priv->bytes_label), bytes_str);
 
 	parent_file = g_file_get_parent (file);
 	if (parent_file == NULL) {
@@ -198,10 +198,10 @@ pd_update_general_tab (EocPropertiesDialog *prop_dlg,
 	}
 
 	ctk_widget_set_sensitive (prop_dlg->priv->folder_button, FALSE);
-	ctk_button_set_label (GTK_BUTTON (prop_dlg->priv->folder_button), NULL);
+	ctk_button_set_label (CTK_BUTTON (prop_dlg->priv->folder_button), NULL);
 
 	dir_str_long = g_file_get_path (parent_file);
-	ctk_widget_set_tooltip_text (GTK_WIDGET (prop_dlg->priv->folder_button),
+	ctk_widget_set_tooltip_text (CTK_WIDGET (prop_dlg->priv->folder_button),
 	                             dir_str_long);
 
 	g_free (prop_dlg->priv->folder_button_uri);
@@ -235,7 +235,7 @@ eoc_xmp_set_label (XmpPtr xmp,
 
 	if (xmp_get_property (xmp, ns, propname, value, &options)) {
 		if (XMP_IS_PROP_SIMPLE (options)) {
-			ctk_label_set_text (GTK_LABEL (w), xmp_string_cstr (value));
+			ctk_label_set_text (CTK_LABEL (w), xmp_string_cstr (value));
 		} else if (XMP_IS_PROP_ARRAY (options)) {
 			XmpIteratorPtr iter = xmp_iterator_new (xmp,
 							        ns,
@@ -264,13 +264,13 @@ eoc_xmp_set_label (XmpPtr xmp,
 				xmp_iterator_free (iter);
 			}
 
-			ctk_label_set_text (GTK_LABEL (w), string->str);
+			ctk_label_set_text (CTK_LABEL (w), string->str);
 			g_string_free (string, TRUE);
 		}
 	} else {
 		/* Property was not found */
 		/* Clear label so it won't show bogus data */
-		ctk_label_set_text (GTK_LABEL (w), NULL);
+		ctk_label_set_text (CTK_LABEL (w), NULL);
 	}
 
 	xmp_string_free (value);
@@ -295,7 +295,7 @@ pd_update_metadata_tab (EocPropertiesDialog *prop_dlg,
 
 	priv = prop_dlg->priv;
 
-	notebook = GTK_NOTEBOOK (priv->notebook);
+	notebook = CTK_NOTEBOOK (priv->notebook);
 
 	if (TRUE
 #if HAVE_EXIF
@@ -332,28 +332,28 @@ pd_update_metadata_tab (EocPropertiesDialog *prop_dlg,
 #if HAVE_EXIF
 	exif_data = (ExifData *) eoc_image_get_exif_info (image);
 
-	eoc_exif_util_set_label_text (GTK_LABEL (priv->exif_aperture_label),
+	eoc_exif_util_set_label_text (CTK_LABEL (priv->exif_aperture_label),
 				      exif_data, EXIF_TAG_FNUMBER);
 
-	eoc_exif_util_set_label_text (GTK_LABEL (priv->exif_exposure_label),
+	eoc_exif_util_set_label_text (CTK_LABEL (priv->exif_exposure_label),
 				      exif_data, EXIF_TAG_EXPOSURE_TIME);
 
-	eoc_exif_util_set_focal_length_label_text (GTK_LABEL (priv->exif_focal_label), exif_data);
+	eoc_exif_util_set_focal_length_label_text (CTK_LABEL (priv->exif_focal_label), exif_data);
 
-	eoc_exif_util_set_label_text (GTK_LABEL (priv->exif_flash_label),
+	eoc_exif_util_set_label_text (CTK_LABEL (priv->exif_flash_label),
 				      exif_data, EXIF_TAG_FLASH);
 
-	eoc_exif_util_set_label_text (GTK_LABEL (priv->exif_iso_label),
+	eoc_exif_util_set_label_text (CTK_LABEL (priv->exif_iso_label),
 				      exif_data, EXIF_TAG_ISO_SPEED_RATINGS);
 
 
-	eoc_exif_util_set_label_text (GTK_LABEL (priv->exif_metering_label),
+	eoc_exif_util_set_label_text (CTK_LABEL (priv->exif_metering_label),
 				      exif_data, EXIF_TAG_METERING_MODE);
 
-	eoc_exif_util_set_label_text (GTK_LABEL (priv->exif_model_label),
+	eoc_exif_util_set_label_text (CTK_LABEL (priv->exif_model_label),
 				      exif_data, EXIF_TAG_MODEL);
 
-	eoc_exif_util_set_label_text (GTK_LABEL (priv->exif_date_label),
+	eoc_exif_util_set_label_text (CTK_LABEL (priv->exif_date_label),
 				      exif_data, EXIF_TAG_DATE_TIME_ORIGINAL);
 
 	eoc_metadata_details_update (EOC_METADATA_DETAILS (priv->metadata_details),
@@ -400,12 +400,12 @@ pd_update_metadata_tab (EocPropertiesDialog *prop_dlg,
 
 		/* Clear the labels so they won't display foreign data.*/
 
-		ctk_label_set_text (GTK_LABEL (priv->xmp_location_label), NULL);
-		ctk_label_set_text (GTK_LABEL (priv->xmp_description_label),
+		ctk_label_set_text (CTK_LABEL (priv->xmp_location_label), NULL);
+		ctk_label_set_text (CTK_LABEL (priv->xmp_description_label),
 				    NULL);
-		ctk_label_set_text (GTK_LABEL (priv->xmp_keywords_label), NULL);
-		ctk_label_set_text (GTK_LABEL (priv->xmp_creator_label), NULL);
-		ctk_label_set_text (GTK_LABEL (priv->xmp_rights_label), NULL);
+		ctk_label_set_text (CTK_LABEL (priv->xmp_keywords_label), NULL);
+		ctk_label_set_text (CTK_LABEL (priv->xmp_creator_label), NULL);
+		ctk_label_set_text (CTK_LABEL (priv->xmp_rights_label), NULL);
 	}
 #endif
 }
@@ -415,11 +415,11 @@ pd_resize_dialog (gpointer user_data)
 {
 	gint width, height;
 
-	ctk_window_get_size (GTK_WINDOW (user_data),
+	ctk_window_get_size (CTK_WINDOW (user_data),
 			     &width,
 			     &height);
 
-	ctk_window_resize (GTK_WINDOW (user_data), width, 1);
+	ctk_window_resize (CTK_WINDOW (user_data), width, 1);
 
 	return FALSE;
 }
@@ -452,7 +452,7 @@ pd_folder_button_clicked_cb (CtkButton *button, gpointer data)
 
 	timestamp = ctk_get_current_event_time ();
 
-	window = GTK_WINDOW (data);
+	window = CTK_WINDOW (data);
 	ctk_show_uri_on_window (window, priv->folder_button_uri, timestamp, NULL);
 }
 
@@ -486,9 +486,9 @@ eoc_properties_dialog_set_netbook_mode (EocPropertiesDialog *dlg,
 #ifdef HAVE_METADATA
 	if (enable) {
 		g_object_ref (priv->metadata_details_sw);
-		ctk_container_remove (GTK_CONTAINER (ctk_widget_get_parent (priv->metadata_details_sw)),
+		ctk_container_remove (CTK_CONTAINER (ctk_widget_get_parent (priv->metadata_details_sw)),
 				      priv->metadata_details_sw);
-		ctk_container_add (GTK_CONTAINER (priv->metadata_details_box), priv->metadata_details_sw);
+		ctk_container_add (CTK_CONTAINER (priv->metadata_details_box), priv->metadata_details_sw);
 		g_object_unref (priv->metadata_details_sw);
 		// Only show details box if metadata is being displayed
 		if (ctk_widget_get_visible (priv->metadata_box))
@@ -497,14 +497,14 @@ eoc_properties_dialog_set_netbook_mode (EocPropertiesDialog *dlg,
 		ctk_widget_hide (priv->metadata_details_expander);
 	} else {
 		g_object_ref (priv->metadata_details_sw);
-		ctk_container_remove (GTK_CONTAINER (ctk_widget_get_parent (priv->metadata_details_sw)),
+		ctk_container_remove (CTK_CONTAINER (ctk_widget_get_parent (priv->metadata_details_sw)),
 				      priv->metadata_details_sw);
-		ctk_container_add (GTK_CONTAINER (priv->metadata_details_expander), priv->metadata_details_sw);
+		ctk_container_add (CTK_CONTAINER (priv->metadata_details_expander), priv->metadata_details_sw);
 		g_object_unref (priv->metadata_details_sw);
 		ctk_widget_show_all (priv->metadata_details_expander);
 
-		if (ctk_notebook_get_current_page (GTK_NOTEBOOK (priv->notebook)) == EOC_PROPERTIES_DIALOG_PAGE_DETAILS)
-			ctk_notebook_prev_page (GTK_NOTEBOOK (priv->notebook));
+		if (ctk_notebook_get_current_page (CTK_NOTEBOOK (priv->notebook)) == EOC_PROPERTIES_DIALOG_PAGE_DETAILS)
+			ctk_notebook_prev_page (CTK_NOTEBOOK (priv->notebook));
 		ctk_widget_hide (priv->metadata_details_box);
 	}
 #endif
@@ -733,7 +733,7 @@ eoc_properties_dialog_init (EocPropertiesDialog *prop_dlg)
 
 	priv->update_page = FALSE;
 
-	ctk_widget_init_template (GTK_WIDGET (prop_dlg));
+	ctk_widget_init_template (CTK_WIDGET (prop_dlg));
 
 	g_signal_connect (prop_dlg,
 	                  "delete-event",
@@ -750,29 +750,29 @@ eoc_properties_dialog_init (EocPropertiesDialog *prop_dlg)
 #ifdef HAVE_METADATA
  	sw = ctk_scrolled_window_new (NULL, NULL);
 
-	ctk_scrolled_window_set_shadow_type (GTK_SCROLLED_WINDOW (sw),
-					     GTK_SHADOW_IN);
+	ctk_scrolled_window_set_shadow_type (CTK_SCROLLED_WINDOW (sw),
+					     CTK_SHADOW_IN);
 
-	ctk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (sw),
-					GTK_POLICY_AUTOMATIC,
-					GTK_POLICY_AUTOMATIC);
+	ctk_scrolled_window_set_policy (CTK_SCROLLED_WINDOW (sw),
+					CTK_POLICY_AUTOMATIC,
+					CTK_POLICY_AUTOMATIC);
 
 	priv->metadata_details = eoc_metadata_details_new ();
 	ctk_widget_set_size_request (priv->metadata_details, -1, 170);
-	ctk_container_set_border_width (GTK_CONTAINER (sw), 6);
+	ctk_container_set_border_width (CTK_CONTAINER (sw), 6);
 	ctk_widget_set_vexpand (priv->metadata_details, TRUE);
 
-	ctk_container_add (GTK_CONTAINER (sw), priv->metadata_details);
+	ctk_container_add (CTK_CONTAINER (sw), priv->metadata_details);
 	ctk_widget_show_all (sw);
 
 	priv->metadata_details_sw = sw;
 
 	if (priv->netbook_mode) {
 		ctk_widget_hide (priv->metadata_details_expander);
-		ctk_box_pack_start (GTK_BOX (priv->metadata_details_box),
+		ctk_box_pack_start (CTK_BOX (priv->metadata_details_box),
 				    sw, TRUE, TRUE, 6);
 	} else {
-		ctk_container_add (GTK_CONTAINER (priv->metadata_details_expander),
+		ctk_container_add (CTK_CONTAINER (priv->metadata_details_expander),
 				   sw);
 	}
 
@@ -784,9 +784,9 @@ eoc_properties_dialog_init (EocPropertiesDialog *prop_dlg)
 #else
 	/* Remove pages from back to front. Otherwise the page index
 	 * needs to be adjusted when deleting the next page. */
-	ctk_notebook_remove_page (GTK_NOTEBOOK (priv->notebook),
+	ctk_notebook_remove_page (CTK_NOTEBOOK (priv->notebook),
 				  EOC_PROPERTIES_DIALOG_PAGE_DETAILS);
-	ctk_notebook_remove_page (GTK_NOTEBOOK (priv->notebook),
+	ctk_notebook_remove_page (CTK_NOTEBOOK (priv->notebook),
 				  EOC_PROPERTIES_DIALOG_PAGE_EXIF);
 #endif
 }
@@ -811,26 +811,26 @@ eoc_properties_dialog_new (CtkWindow    *parent,
 {
 	GObject *prop_dlg;
 
-	g_return_val_if_fail (GTK_IS_WINDOW (parent), NULL);
+	g_return_val_if_fail (CTK_IS_WINDOW (parent), NULL);
 	g_return_val_if_fail (EOC_IS_THUMB_VIEW (thumbview), NULL);
 	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
-	g_return_val_if_fail (GTK_IS_ACTION (next_image_action), NULL);
-	g_return_val_if_fail (GTK_IS_ACTION (previous_image_action), NULL);
+	g_return_val_if_fail (CTK_IS_ACTION (next_image_action), NULL);
+	g_return_val_if_fail (CTK_IS_ACTION (previous_image_action), NULL);
 
 	prop_dlg = g_object_new (EOC_TYPE_PROPERTIES_DIALOG,
 	                         "thumbview", thumbview,
 	                         NULL);
 
 	if (parent) {
-		ctk_window_set_transient_for (GTK_WINDOW (prop_dlg), parent);
+		ctk_window_set_transient_for (CTK_WINDOW (prop_dlg), parent);
 	}
 
-	ctk_activatable_set_related_action (GTK_ACTIVATABLE (EOC_PROPERTIES_DIALOG (prop_dlg)->priv->next_button), next_image_action);
+	ctk_activatable_set_related_action (CTK_ACTIVATABLE (EOC_PROPERTIES_DIALOG (prop_dlg)->priv->next_button), next_image_action);
 
-	ctk_activatable_set_related_action (GTK_ACTIVATABLE (EOC_PROPERTIES_DIALOG (prop_dlg)->priv->previous_button), previous_image_action);
+	ctk_activatable_set_related_action (CTK_ACTIVATABLE (EOC_PROPERTIES_DIALOG (prop_dlg)->priv->previous_button), previous_image_action);
 	G_GNUC_END_IGNORE_DEPRECATIONS;
 
-	return GTK_WIDGET (prop_dlg);
+	return CTK_WIDGET (prop_dlg);
 }
 
 void
@@ -846,7 +846,7 @@ eoc_properties_dialog_update (EocPropertiesDialog *prop_dlg,
 #ifdef HAVE_METADATA
 	pd_update_metadata_tab (prop_dlg, image);
 #endif
-	ctk_notebook_set_current_page (GTK_NOTEBOOK (prop_dlg->priv->notebook),
+	ctk_notebook_set_current_page (CTK_NOTEBOOK (prop_dlg->priv->notebook),
 				       prop_dlg->priv->current_page);
 
 	prop_dlg->priv->update_page = TRUE;
@@ -860,6 +860,6 @@ eoc_properties_dialog_set_page (EocPropertiesDialog *prop_dlg,
 
 	prop_dlg->priv->current_page = page;
 
-	ctk_notebook_set_current_page (GTK_NOTEBOOK (prop_dlg->priv->notebook),
+	ctk_notebook_set_current_page (CTK_NOTEBOOK (prop_dlg->priv->notebook),
 				       page);
 }

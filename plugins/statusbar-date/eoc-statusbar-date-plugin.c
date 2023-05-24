@@ -72,7 +72,7 @@ statusbar_set_date (CtkStatusbar *statusbar,
 	{
 		if (!eoc_image_load (image, EOC_IMAGE_DATA_EXIF, NULL, NULL))
 		{
-			ctk_widget_hide (GTK_WIDGET (statusbar));
+			ctk_widget_hide (CTK_WIDGET (statusbar));
 		}
 	}
 
@@ -87,12 +87,12 @@ statusbar_set_date (CtkStatusbar *statusbar,
 	if (date)
 	{
 		ctk_statusbar_push (statusbar, 0, date);
-		ctk_widget_show (GTK_WIDGET (statusbar));
+		ctk_widget_show (CTK_WIDGET (statusbar));
 		g_free (date);
 	}
 	else
 	{
-		ctk_widget_hide (GTK_WIDGET (statusbar));
+		ctk_widget_hide (CTK_WIDGET (statusbar));
 	}
 }
 
@@ -100,7 +100,7 @@ static void
 selection_changed_cb (EocThumbView           *view,
                       EocStatusbarDatePlugin *plugin)
 {
-	statusbar_set_date (GTK_STATUSBAR (plugin->statusbar_date), view);
+	statusbar_set_date (CTK_STATUSBAR (plugin->statusbar_date), view);
 }
 
 static void
@@ -176,14 +176,14 @@ eoc_statusbar_date_plugin_activate (EocWindowActivatable *activatable)
 
 	plugin->statusbar_date = ctk_statusbar_new ();
 	ctk_widget_set_size_request (plugin->statusbar_date, 200, 10);
-	ctk_widget_set_margin_top (GTK_WIDGET (plugin->statusbar_date), 0);
-	ctk_widget_set_margin_bottom (GTK_WIDGET (plugin->statusbar_date), 0);
-	ctk_box_pack_end (GTK_BOX (statusbar), plugin->statusbar_date, FALSE, FALSE, 0);
+	ctk_widget_set_margin_top (CTK_WIDGET (plugin->statusbar_date), 0);
+	ctk_widget_set_margin_bottom (CTK_WIDGET (plugin->statusbar_date), 0);
+	ctk_box_pack_end (CTK_BOX (statusbar), plugin->statusbar_date, FALSE, FALSE, 0);
 
 	plugin->signal_id = g_signal_connect_after (G_OBJECT (thumbview), "selection_changed",
 	                                            G_CALLBACK (selection_changed_cb), plugin);
 
-	statusbar_set_date (GTK_STATUSBAR (plugin->statusbar_date),
+	statusbar_set_date (CTK_STATUSBAR (plugin->statusbar_date),
 	                    EOC_THUMB_VIEW (eoc_window_get_thumb_view (window)));
 }
 
@@ -197,7 +197,7 @@ eoc_statusbar_date_plugin_deactivate (EocWindowActivatable *activatable)
 
 	g_signal_handler_disconnect (view, plugin->signal_id);
 
-	ctk_container_remove (GTK_CONTAINER (statusbar), plugin->statusbar_date);
+	ctk_container_remove (CTK_CONTAINER (statusbar), plugin->statusbar_date);
 }
 
 static void

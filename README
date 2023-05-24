@@ -22,7 +22,7 @@ Requirements
 ------------
 
 This package requires the following modules to be installed: glib,
-GTK+, cafe-desktop, gio, gdk-pixbuf, shared-mime-info.
+CTK+, cafe-desktop, gio, gdk-pixbuf, shared-mime-info.
 
 You can get these packages from your favourite CAFE FTP mirror or at
 http://pub.cafe-desktop.org/ or from other sources where CAFE

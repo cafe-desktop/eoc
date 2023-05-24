@@ -86,8 +86,8 @@ struct _EocThumbViewPrivate {
 	gulong image_removed_id;
 };
 
-G_DEFINE_TYPE_WITH_CODE (EocThumbView, eoc_thumb_view, GTK_TYPE_ICON_VIEW,
-			 G_IMPLEMENT_INTERFACE (GTK_TYPE_ORIENTABLE, NULL) \
+G_DEFINE_TYPE_WITH_CODE (EocThumbView, eoc_thumb_view, CTK_TYPE_ICON_VIEW,
+			 G_IMPLEMENT_INTERFACE (CTK_TYPE_ORIENTABLE, NULL) \
 			 G_ADD_PRIVATE (EocThumbView));
 
 /* Drag 'n Drop */
@@ -104,7 +104,7 @@ eoc_thumb_view_constructed (GObject *object)
 
 	thumbview->priv->pixbuf_cell = ctk_cell_renderer_pixbuf_new ();
 
-	ctk_cell_layout_pack_start (GTK_CELL_LAYOUT (thumbview),
+	ctk_cell_layout_pack_start (CTK_CELL_LAYOUT (thumbview),
 				    thumbview->priv->pixbuf_cell,
 				    FALSE);
 
@@ -115,18 +115,18 @@ eoc_thumb_view_constructed (GObject *object)
 	              "xalign", 0.5,
 	              NULL);
 
-	ctk_cell_layout_set_attributes (GTK_CELL_LAYOUT (thumbview),
+	ctk_cell_layout_set_attributes (CTK_CELL_LAYOUT (thumbview),
 					thumbview->priv->pixbuf_cell,
 					"pixbuf", EOC_LIST_STORE_THUMBNAIL,
 					NULL);
 
-	ctk_icon_view_set_selection_mode (GTK_ICON_VIEW (thumbview),
-					  GTK_SELECTION_MULTIPLE);
+	ctk_icon_view_set_selection_mode (CTK_ICON_VIEW (thumbview),
+					  CTK_SELECTION_MULTIPLE);
 
-	ctk_icon_view_set_column_spacing (GTK_ICON_VIEW (thumbview),
+	ctk_icon_view_set_column_spacing (CTK_ICON_VIEW (thumbview),
 					  EOC_THUMB_VIEW_SPACING);
 
-	ctk_icon_view_set_row_spacing (GTK_ICON_VIEW (thumbview),
+	ctk_icon_view_set_row_spacing (CTK_ICON_VIEW (thumbview),
 				       EOC_THUMB_VIEW_SPACING);
 
 	g_object_set (thumbview, "has-tooltip", TRUE, NULL);
@@ -143,13 +143,13 @@ eoc_thumb_view_constructed (GObject *object)
 	g_signal_connect (G_OBJECT (thumbview), "parent-set",
 			  G_CALLBACK (thumbview_on_parent_set_cb), NULL);
 
-	ctk_icon_view_enable_model_drag_source (GTK_ICON_VIEW (thumbview), 0,
+	ctk_icon_view_enable_model_drag_source (CTK_ICON_VIEW (thumbview), 0,
 						NULL, 0,
 						GDK_ACTION_COPY |
 						GDK_ACTION_MOVE |
 						GDK_ACTION_LINK |
 						GDK_ACTION_ASK);
-	ctk_drag_source_add_uri_targets (GTK_WIDGET (thumbview));
+	ctk_drag_source_add_uri_targets (CTK_WIDGET (thumbview));
 
 	g_signal_connect (G_OBJECT (thumbview), "drag-data-get",
 			  G_CALLBACK (thumbview_on_drag_data_get_cb), NULL);
@@ -166,7 +166,7 @@ eoc_thumb_view_dispose (GObject *object)
 		priv->visible_range_changed_id = 0;
 	}
 
-	model = ctk_icon_view_get_model (GTK_ICON_VIEW (object));
+	model = ctk_icon_view_get_model (CTK_ICON_VIEW (object));
 
 	if (model && priv->image_add_id != 0) {
 		g_signal_handler_disconnect (model, priv->image_add_id);
@@ -242,16 +242,16 @@ eoc_thumb_view_clear_range (EocThumbView *thumbview,
 {
 	CtkTreePath *path;
 	CtkTreeIter iter;
-	EocListStore *store = EOC_LIST_STORE (ctk_icon_view_get_model (GTK_ICON_VIEW (thumbview)));
+	EocListStore *store = EOC_LIST_STORE (ctk_icon_view_get_model (CTK_ICON_VIEW (thumbview)));
 	gint thumb = start_thumb;
 	gboolean result;
 
 	g_assert (start_thumb <= end_thumb);
 
 	path = ctk_tree_path_new_from_indices (start_thumb, -1);
-	for (result = ctk_tree_model_get_iter (GTK_TREE_MODEL (store), &iter, path);
+	for (result = ctk_tree_model_get_iter (CTK_TREE_MODEL (store), &iter, path);
 	     result && thumb <= end_thumb;
-	     result = ctk_tree_model_iter_next (GTK_TREE_MODEL (store), &iter), thumb++) {
+	     result = ctk_tree_model_iter_next (CTK_TREE_MODEL (store), &iter), thumb++) {
 		eoc_list_store_thumbnail_unset (store, &iter);
 	}
 	ctk_tree_path_free (path);
@@ -264,16 +264,16 @@ eoc_thumb_view_add_range (EocThumbView *thumbview,
 {
 	CtkTreePath *path;
 	CtkTreeIter iter;
-	EocListStore *store = EOC_LIST_STORE (ctk_icon_view_get_model (GTK_ICON_VIEW (thumbview)));
+	EocListStore *store = EOC_LIST_STORE (ctk_icon_view_get_model (CTK_ICON_VIEW (thumbview)));
 	gint thumb = start_thumb;
 	gboolean result;
 
 	g_assert (start_thumb <= end_thumb);
 
 	path = ctk_tree_path_new_from_indices (start_thumb, -1);
-	for (result = ctk_tree_model_get_iter (GTK_TREE_MODEL (store), &iter, path);
+	for (result = ctk_tree_model_get_iter (CTK_TREE_MODEL (store), &iter, path);
 	     result && thumb <= end_thumb;
-	     result = ctk_tree_model_iter_next (GTK_TREE_MODEL (store), &iter), thumb++) {
+	     result = ctk_tree_model_iter_next (CTK_TREE_MODEL (store), &iter), thumb++) {
 		eoc_list_store_thumbnail_set (store, &iter);
 	}
 	ctk_tree_path_free (path);
@@ -314,7 +314,7 @@ visible_range_changed_cb (EocThumbView *thumbview)
 
 	thumbview->priv->visible_range_changed_id = 0;
 
-	if (!ctk_icon_view_get_visible_range (GTK_ICON_VIEW (thumbview), &path1, &path2)) {
+	if (!ctk_icon_view_get_visible_range (CTK_ICON_VIEW (thumbview), &path1, &path2)) {
 		return FALSE;
 	}
 
@@ -322,7 +322,7 @@ visible_range_changed_cb (EocThumbView *thumbview)
 		path1 = ctk_tree_path_new_first ();
 	}
 	if (path2 == NULL) {
-		gint n_items = ctk_tree_model_iter_n_children (ctk_icon_view_get_model (GTK_ICON_VIEW (thumbview)), NULL);
+		gint n_items = ctk_tree_model_iter_n_children (ctk_icon_view_get_model (CTK_ICON_VIEW (thumbview)), NULL);
 		path2 = ctk_tree_path_new_from_indices (n_items - 1 , -1);
 	}
 
@@ -368,16 +368,16 @@ thumbview_on_parent_set_cb (CtkWidget *widget,
 	CtkAdjustment *hadjustment;
 	CtkAdjustment *vadjustment;
 
-	CtkWidget *parent = ctk_widget_get_parent (GTK_WIDGET (thumbview));
-	if (!GTK_IS_SCROLLED_WINDOW (parent)) {
+	CtkWidget *parent = ctk_widget_get_parent (CTK_WIDGET (thumbview));
+	if (!CTK_IS_SCROLLED_WINDOW (parent)) {
 		return;
 	}
 
 	/* if we have been set to a ScrolledWindow, we connect to the callback
 	   to set and unset thumbnails. */
-	sw = GTK_SCROLLED_WINDOW (parent);
-	hadjustment = ctk_scrolled_window_get_hadjustment (GTK_SCROLLED_WINDOW (sw));
-	vadjustment = ctk_scrolled_window_get_vadjustment (GTK_SCROLLED_WINDOW (sw));
+	sw = CTK_SCROLLED_WINDOW (parent);
+	hadjustment = ctk_scrolled_window_get_hadjustment (CTK_SCROLLED_WINDOW (sw));
+	vadjustment = ctk_scrolled_window_get_vadjustment (CTK_SCROLLED_WINDOW (sw));
 
 	/* when scrolling */
 	g_signal_connect_data (G_OBJECT (hadjustment), "value-changed",
@@ -410,17 +410,17 @@ thumbview_on_button_press_event_cb (CtkWidget *thumbview, GdkEventButton *event,
 	/* Ignore double-clicks and triple-clicks */
 	if (event->button == 3 && event->type == GDK_BUTTON_PRESS)
 	{
-		path = ctk_icon_view_get_path_at_pos (GTK_ICON_VIEW (thumbview),
+		path = ctk_icon_view_get_path_at_pos (CTK_ICON_VIEW (thumbview),
 						      (gint) event->x, (gint) event->y);
 		if (path == NULL) {
 			return FALSE;
 		}
 
-		if (!ctk_icon_view_path_is_selected (GTK_ICON_VIEW (thumbview), path) ||
+		if (!ctk_icon_view_path_is_selected (CTK_ICON_VIEW (thumbview), path) ||
 		    eoc_thumb_view_get_n_selected (EOC_THUMB_VIEW (thumbview)) != 1) {
-			ctk_icon_view_unselect_all (GTK_ICON_VIEW (thumbview));
-			ctk_icon_view_select_path (GTK_ICON_VIEW (thumbview), path);
-			ctk_icon_view_set_cursor (GTK_ICON_VIEW (thumbview), path, NULL, FALSE);
+			ctk_icon_view_unselect_all (CTK_ICON_VIEW (thumbview));
+			ctk_icon_view_select_path (CTK_ICON_VIEW (thumbview), path);
+			ctk_icon_view_set_cursor (CTK_ICON_VIEW (thumbview), path, NULL, FALSE);
 		}
 		eoc_thumb_view_popup_menu (EOC_THUMB_VIEW (thumbview), event);
 
@@ -582,7 +582,7 @@ thumbview_on_query_tooltip_cb (CtkWidget  *widget,
 	gchar *tooltip_string;
 	EocImageData data = 0;
 
-	if (!ctk_icon_view_get_tooltip_context (GTK_ICON_VIEW (widget),
+	if (!ctk_icon_view_get_tooltip_context (CTK_ICON_VIEW (widget),
 						&x, &y, keyboard_mode,
 						NULL, &path, NULL)) {
 		return FALSE;
@@ -655,7 +655,7 @@ eoc_thumb_view_new (void)
 
 	thumbview = g_object_new (EOC_TYPE_THUMB_VIEW, NULL);
 
-	return GTK_WIDGET (thumbview);
+	return CTK_WIDGET (thumbview);
 }
 
 static void
@@ -667,8 +667,8 @@ eoc_thumb_view_update_columns (EocThumbView *view)
 
 	priv = view->priv;
 
-	if (priv->orientation == GTK_ORIENTATION_HORIZONTAL)
-			ctk_icon_view_set_columns (GTK_ICON_VIEW (view),
+	if (priv->orientation == CTK_ORIENTATION_HORIZONTAL)
+			ctk_icon_view_set_columns (CTK_ICON_VIEW (view),
 			                           priv->n_images);
 }
 
@@ -716,7 +716,7 @@ eoc_thumb_view_set_model (EocThumbView *thumbview, EocListStore *store)
 
 	priv = thumbview->priv;
 
-	existing = ctk_icon_view_get_model (GTK_ICON_VIEW (thumbview));
+	existing = ctk_icon_view_get_model (CTK_ICON_VIEW (thumbview));
 
 	if (existing != NULL) {
 		if (priv->image_add_id != 0) {
@@ -742,16 +742,16 @@ eoc_thumb_view_set_model (EocThumbView *thumbview, EocListStore *store)
 
 	index = eoc_list_store_get_initial_pos (store);
 
-	ctk_icon_view_set_model (GTK_ICON_VIEW (thumbview),
-	                         GTK_TREE_MODEL (store));
+	ctk_icon_view_set_model (CTK_ICON_VIEW (thumbview),
+	                         CTK_TREE_MODEL (store));
 
 	eoc_thumb_view_update_columns (thumbview);
 
 	if (index >= 0) {
 		CtkTreePath *path = ctk_tree_path_new_from_indices (index, -1);
-		ctk_icon_view_select_path (GTK_ICON_VIEW (thumbview), path);
-		ctk_icon_view_set_cursor (GTK_ICON_VIEW (thumbview), path, NULL, FALSE);
-		ctk_icon_view_scroll_to_path (GTK_ICON_VIEW (thumbview), path, FALSE, 0, 0);
+		ctk_icon_view_select_path (CTK_ICON_VIEW (thumbview), path);
+		ctk_icon_view_set_cursor (CTK_ICON_VIEW (thumbview), path, NULL, FALSE);
+		ctk_icon_view_scroll_to_path (CTK_ICON_VIEW (thumbview), path, FALSE, 0, 0);
 		ctk_tree_path_free (path);
 	}
 }
@@ -795,7 +795,7 @@ guint
 eoc_thumb_view_get_n_selected (EocThumbView *thumbview)
 {
 	guint count = 0;
-	ctk_icon_view_selected_foreach (GTK_ICON_VIEW (thumbview),
+	ctk_icon_view_selected_foreach (CTK_ICON_VIEW (thumbview),
 					eoc_thumb_view_get_n_selected_helper,
 					(&count));
 	return count;
@@ -818,7 +818,7 @@ eoc_thumb_view_get_image_from_path (EocThumbView *thumbview, CtkTreePath *path)
 	CtkTreeIter iter;
 	EocImage *image;
 
-	model = ctk_icon_view_get_model (GTK_ICON_VIEW (thumbview));
+	model = ctk_icon_view_get_model (CTK_ICON_VIEW (thumbview));
 	ctk_tree_model_get_iter (model, &iter, path);
 
 	ctk_tree_model_get (model, &iter,
@@ -846,7 +846,7 @@ eoc_thumb_view_get_first_selected_image (EocThumbView *thumbview)
 	*/
 	EocImage *image;
 	CtkTreePath *path;
-	GList *list = ctk_icon_view_get_selected_items (GTK_ICON_VIEW (thumbview));
+	GList *list = ctk_icon_view_get_selected_items (CTK_ICON_VIEW (thumbview));
 
 	if (list == NULL) {
 		return NULL;
@@ -879,7 +879,7 @@ eoc_thumb_view_get_selected_images (EocThumbView *thumbview)
 
 	CtkTreePath *path;
 
-	l = ctk_icon_view_get_selected_items (GTK_ICON_VIEW (thumbview));
+	l = ctk_icon_view_get_selected_items (CTK_ICON_VIEW (thumbview));
 
 	for (item = l; item != NULL; item = item->next) {
 		path = (CtkTreePath *) item->data;
@@ -912,7 +912,7 @@ eoc_thumb_view_set_current_image (EocThumbView *thumbview, EocImage *image,
 	EocListStore *store;
 	gint pos;
 
-	store = EOC_LIST_STORE (ctk_icon_view_get_model (GTK_ICON_VIEW (thumbview)));
+	store = EOC_LIST_STORE (ctk_icon_view_get_model (CTK_ICON_VIEW (thumbview)));
 	pos = eoc_list_store_get_pos_by_image (store, image);
 	path = ctk_tree_path_new_from_indices (pos, -1);
 
@@ -921,12 +921,12 @@ eoc_thumb_view_set_current_image (EocThumbView *thumbview, EocImage *image,
 	}
 
 	if (deselect_other) {
-		ctk_icon_view_unselect_all (GTK_ICON_VIEW (thumbview));
+		ctk_icon_view_unselect_all (CTK_ICON_VIEW (thumbview));
 	}
 
-	ctk_icon_view_select_path (GTK_ICON_VIEW (thumbview), path);
-	ctk_icon_view_set_cursor (GTK_ICON_VIEW (thumbview), path, NULL, FALSE);
-	ctk_icon_view_scroll_to_path (GTK_ICON_VIEW (thumbview), path, FALSE, 0, 0);
+	ctk_icon_view_select_path (CTK_ICON_VIEW (thumbview), path);
+	ctk_icon_view_set_cursor (CTK_ICON_VIEW (thumbview), path, NULL, FALSE);
+	ctk_icon_view_scroll_to_path (CTK_ICON_VIEW (thumbview), path, FALSE, 0, 0);
 
 	ctk_tree_path_free (path);
 }
@@ -956,7 +956,7 @@ eoc_thumb_view_select_single (EocThumbView *thumbview,
 
 	g_return_if_fail (EOC_IS_THUMB_VIEW (thumbview));
 
-	model = ctk_icon_view_get_model (GTK_ICON_VIEW (thumbview));
+	model = ctk_icon_view_get_model (CTK_ICON_VIEW (thumbview));
 
 	n_items = eoc_list_store_length (EOC_LIST_STORE (model));
 
@@ -981,12 +981,12 @@ eoc_thumb_view_select_single (EocThumbView *thumbview,
 			break;
 		}
 	} else {
-		list = ctk_icon_view_get_selected_items (GTK_ICON_VIEW (thumbview));
+		list = ctk_icon_view_get_selected_items (CTK_ICON_VIEW (thumbview));
 		path = ctk_tree_path_copy ((CtkTreePath *) list->data);
 		g_list_foreach (list, (GFunc) ctk_tree_path_free , NULL);
 		g_list_free (list);
 
-		ctk_icon_view_unselect_all (GTK_ICON_VIEW (thumbview));
+		ctk_icon_view_unselect_all (CTK_ICON_VIEW (thumbview));
 
 		switch (change) {
 		case EOC_THUMB_VIEW_SELECT_CURRENT:
@@ -1020,9 +1020,9 @@ eoc_thumb_view_select_single (EocThumbView *thumbview,
 		}
 	}
 
-	ctk_icon_view_select_path (GTK_ICON_VIEW (thumbview), path);
-	ctk_icon_view_set_cursor (GTK_ICON_VIEW (thumbview), path, NULL, FALSE);
-	ctk_icon_view_scroll_to_path (GTK_ICON_VIEW (thumbview), path, FALSE, 0, 0);
+	ctk_icon_view_select_path (CTK_ICON_VIEW (thumbview), path);
+	ctk_icon_view_set_cursor (CTK_ICON_VIEW (thumbview), path, NULL, FALSE);
+	ctk_icon_view_scroll_to_path (CTK_ICON_VIEW (thumbview), path, FALSE, 0, 0);
 	ctk_tree_path_free (path);
 }
 
@@ -1043,10 +1043,10 @@ eoc_thumb_view_set_thumbnail_popup (EocThumbView *thumbview,
 	g_return_if_fail (EOC_IS_THUMB_VIEW (thumbview));
 	g_return_if_fail (thumbview->priv->menu == NULL);
 
-	thumbview->priv->menu = g_object_ref (GTK_WIDGET (menu));
+	thumbview->priv->menu = g_object_ref (CTK_WIDGET (menu));
 
-	ctk_menu_attach_to_widget (GTK_MENU (thumbview->priv->menu),
-				   GTK_WIDGET (thumbview),
+	ctk_menu_attach_to_widget (CTK_MENU (thumbview->priv->menu),
+				   CTK_WIDGET (thumbview),
 				   NULL);
 
 	g_signal_connect (G_OBJECT (thumbview), "button_press_event",
@@ -1060,6 +1060,6 @@ eoc_thumb_view_popup_menu (EocThumbView *thumbview, GdkEventButton *event)
 {
 	g_return_if_fail (event != NULL);
 
-	ctk_menu_popup_at_pointer (GTK_MENU (thumbview->priv->menu),
+	ctk_menu_popup_at_pointer (CTK_MENU (thumbview->priv->menu),
 	                           (const GdkEvent*) event);
 }

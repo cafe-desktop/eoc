@@ -407,11 +407,11 @@ msgstr "Gira ou não a imagem automaticamente com base na orientação EXIF."
 #: data/org.cafe.eoc.gschema.xml.in:17
 msgid ""
 "The color that is used to fill the area behind the image. If the use-"
-"background-color key is not set, the color is determined by the active GTK+ "
+"background-color key is not set, the color is determined by the active CTK+ "
 "theme instead."
 msgstr ""
 "A cor que é usada para preencher a área atrás da imagem. Se a chave use-"
-"background-color não estiver definida, a cor é determinada pelo tema GTK+ "
+"background-color não estiver definida, a cor é determinada pelo tema CTK+ "
 "ativo."
 
 #: data/org.cafe.eoc.gschema.xml.in:21
@@ -421,11 +421,11 @@ msgstr "Usar uma cor de plano de fundo personalizada"
 #: data/org.cafe.eoc.gschema.xml.in:22
 msgid ""
 "If this is active, the color set by the background-color key will be used to"
-" fill the area behind the image. If it is not set, the current GTK+ theme "
+" fill the area behind the image. If it is not set, the current CTK+ theme "
 "will determine the fill color."
 msgstr ""
 "Se está ativo, a cor definida pela chave background-color será usada para "
-"preencher a área atrás da imagem. Se não definida, o tema GTK+ atual "
+"preencher a área atrás da imagem. Se não definida, o tema CTK+ atual "
 "determinará a cor de preenchimento."
 
 #: data/org.cafe.eoc.gschema.xml.in:26

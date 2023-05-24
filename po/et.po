@@ -394,11 +394,11 @@ msgstr ""
 #: data/org.cafe.eoc.gschema.xml.in:17
 msgid ""
 "The color that is used to fill the area behind the image. If the use-"
-"background-color key is not set, the color is determined by the active GTK+ "
+"background-color key is not set, the color is determined by the active CTK+ "
 "theme instead."
 msgstr ""
 "Pildi taha jääva piirkonna katmise värvus. Kui võtmega use-background-color "
-"pole ühtegi värvust määratud, siis võetakse värvus aktiivsest GTK+ teemast."
+"pole ühtegi värvust määratud, siis võetakse värvus aktiivsest CTK+ teemast."
 
 #: data/org.cafe.eoc.gschema.xml.in:21
 msgid "Use a custom background color"
@@ -407,12 +407,12 @@ msgstr "Kohandatud taustavärvuse kasutamine"
 #: data/org.cafe.eoc.gschema.xml.in:22
 msgid ""
 "If this is active, the color set by the background-color key will be used to"
-" fill the area behind the image. If it is not set, the current GTK+ theme "
+" fill the area behind the image. If it is not set, the current CTK+ theme "
 "will determine the fill color."
 msgstr ""
 "Kui see on märgitud. siis kasutatakse pildi taha jääva piirkonna katmiseks "
 "võtmega background-color määratud värvust. Kui see pole määratud, siis "
-"otsustab selle värvuse aktiivne GTK+ teema."
+"otsustab selle värvuse aktiivne CTK+ teema."
 
 #: data/org.cafe.eoc.gschema.xml.in:26
 msgid "Interpolate Image"

@@ -66,7 +66,7 @@ struct _EocPreferencesDialogPrivate {
 
 static GObject *instance = NULL;
 
-G_DEFINE_TYPE_WITH_PRIVATE (EocPreferencesDialog, eoc_preferences_dialog, GTK_TYPE_DIALOG);
+G_DEFINE_TYPE_WITH_PRIVATE (EocPreferencesDialog, eoc_preferences_dialog, CTK_TYPE_DIALOG);
 
 static gboolean
 pd_string_to_rgba_mapping (GValue   *value,
@@ -112,7 +112,7 @@ pd_transp_radio_toggle_cb (CtkWidget *widget, gpointer data)
 {
 	gpointer value = NULL;
 
-	if (!ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (widget)))
+	if (!ctk_toggle_button_get_active (CTK_TOGGLE_BUTTON (widget)))
 	    return;
 
 	value = g_object_get_data (G_OBJECT (widget), GSETTINGS_OBJECT_VALUE);
@@ -131,11 +131,11 @@ static void
 eoc_preferences_response_cb (CtkDialog *dlg, gint res_id, gpointer data)
 {
 	switch (res_id) {
-		case GTK_RESPONSE_HELP:
+		case CTK_RESPONSE_HELP:
 			eoc_util_show_help ("eoc-prefs", NULL);
 			break;
 		default:
-			ctk_widget_destroy (GTK_WIDGET (dlg));
+			ctk_widget_destroy (CTK_WIDGET (dlg));
 			instance = NULL;
 	}
 }
@@ -147,7 +147,7 @@ eoc_preferences_dialog_class_init (EocPreferencesDialogClass *klass)
 
 	/* This should make sure the libpeas-ctk dependency isn't
 	 * dropped by aggressive linkers (#739618) */
-	g_type_ensure (PEAS_GTK_TYPE_PLUGIN_MANAGER);
+	g_type_ensure (PEAS_CTK_TYPE_PLUGIN_MANAGER);
 
 	ctk_widget_class_set_template_from_resource (widget_class,
 	                                             "/org/cafe/eoc/ui/eoc-preferences-dialog.ui");
@@ -205,7 +205,7 @@ eoc_preferences_dialog_init (EocPreferencesDialog *pref_dlg)
 	pref_dlg->priv = eoc_preferences_dialog_get_instance_private (pref_dlg);
 	priv = pref_dlg->priv;
 
-	ctk_widget_init_template (GTK_WIDGET (pref_dlg));
+	ctk_widget_init_template (CTK_WIDGET (pref_dlg));
 
 	priv->view_settings = g_settings_new (EOC_CONF_VIEW);
 	priv->fullscreen_settings = g_settings_new (EOC_CONF_FULLSCREEN);
@@ -270,16 +270,16 @@ eoc_preferences_dialog_init (EocPreferencesDialog *pref_dlg)
 				    EOC_CONF_VIEW_TRANSPARENCY))
 	{
 	case EOC_TRANSP_COLOR:
-		ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (priv->color_radio), TRUE);
+		ctk_toggle_button_set_active (CTK_TOGGLE_BUTTON (priv->color_radio), TRUE);
 		break;
 	case EOC_TRANSP_CHECKED:
-		ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (priv->checkpattern_radio), TRUE);
+		ctk_toggle_button_set_active (CTK_TOGGLE_BUTTON (priv->checkpattern_radio), TRUE);
 		break;
 	default:
 		// Log a warning and use EOC_TRANSP_BACKGROUND as fallback
 		g_warn_if_reached ();
 	case EOC_TRANSP_BACKGROUND:
-		ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (priv->background_radio), TRUE);
+		ctk_toggle_button_set_active (CTK_TOGGLE_BUTTON (priv->background_radio), TRUE);
 		break;
 	}
 
@@ -328,7 +328,7 @@ CtkWidget *eoc_preferences_dialog_get_instance (CtkWindow *parent)
 	}
 
 	if (parent)
-		ctk_window_set_transient_for (GTK_WINDOW (instance), parent);
+		ctk_window_set_transient_for (CTK_WINDOW (instance), parent);
 
-	return GTK_WIDGET(instance);
+	return CTK_WIDGET(instance);
 }

@@ -391,11 +391,11 @@ msgstr "ራሱ በራሱ ምስሉ ይዞር እንደሆን የ EXIF አቅጣ�
 #: data/org.cafe.eoc.gschema.xml.in:17
 msgid ""
 "The color that is used to fill the area behind the image. If the use-"
-"background-color key is not set, the color is determined by the active GTK+ "
+"background-color key is not set, the color is determined by the active CTK+ "
 "theme instead."
 msgstr ""
 "እርስዎ የ ተጠቀሙት የ ምስሉ መደብ ቀለም: ይህ የ ተጠቀሙት-መደብ-ቀለም ቁልፍ አልተሰናዳም: ቀለሙ የሚወሰነው በ ንቁ "
-"GTK+ ገጽታ ነው"
+"CTK+ ገጽታ ነው"
 
 #: data/org.cafe.eoc.gschema.xml.in:21
 msgid "Use a custom background color"
@@ -404,11 +404,11 @@ msgstr "የ መደብ ቀለም ማስተካከያ መጠቀሚያ"
 #: data/org.cafe.eoc.gschema.xml.in:22
 msgid ""
 "If this is active, the color set by the background-color key will be used to"
-" fill the area behind the image. If it is not set, the current GTK+ theme "
+" fill the area behind the image. If it is not set, the current CTK+ theme "
 "will determine the fill color."
 msgstr ""
 "ይህ ንቁ ከሆነ የ መደብ-ቀለም ቁልፍ የሚሰናዳውን ይጠቀማል ከ መደቡ ጀርባ ያለውን ቦታ ለ መሙላት: ይህ ካልተሰናዳ: የ"
-" አሁኑ GTK+ ገጽታ የሚሞላውን ቀለም ይወስናል"
+" አሁኑ CTK+ ገጽታ የሚሞላውን ቀለም ይወስናል"
 
 #: data/org.cafe.eoc.gschema.xml.in:26
 msgid "Interpolate Image"

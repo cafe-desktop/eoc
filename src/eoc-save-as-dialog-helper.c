@@ -53,13 +53,13 @@ update_preview (gpointer user_data)
 	if (data->image == NULL) return FALSE;
 
 	/* obtain required dialog data */
-	token_str = ctk_entry_get_text (GTK_ENTRY (data->token_entry));
+	token_str = ctk_entry_get_text (CTK_ENTRY (data->token_entry));
 	convert_spaces = ctk_toggle_button_get_active
-		(GTK_TOGGLE_BUTTON (data->replace_spaces_check));
+		(CTK_TOGGLE_BUTTON (data->replace_spaces_check));
 	counter_start = ctk_spin_button_get_value_as_int
-		(GTK_SPIN_BUTTON (data->counter_spin));
+		(CTK_SPIN_BUTTON (data->counter_spin));
 
-	format = get_selected_format (GTK_COMBO_BOX (data->format_combobox));
+	format = get_selected_format (CTK_COMBO_BOX (data->format_combobox));
 
 	if (token_str != NULL) {
 		/* generate preview filename */
@@ -69,7 +69,7 @@ update_preview (gpointer user_data)
 							 convert_spaces, '_' /* FIXME: make this editable */);
 	}
 
-	ctk_label_set_text (GTK_LABEL (data->preview_label), preview_str);
+	ctk_label_set_text (CTK_LABEL (data->preview_label), preview_str);
 
 	g_free (preview_str);
 
@@ -95,7 +95,7 @@ request_preview_update (CtkWidget *dlg)
 static void
 on_format_combobox_changed (CtkComboBox *widget, gpointer data)
 {
-	request_preview_update (GTK_WIDGET (data));
+	request_preview_update (CTK_WIDGET (data));
 }
 
 static void
@@ -107,23 +107,23 @@ on_token_entry_changed (CtkWidget *widget, gpointer user_data)
 	data = g_object_get_data (G_OBJECT (user_data), "data");
 	g_assert (data != NULL);
 
-	request_preview_update (GTK_WIDGET (user_data));
+	request_preview_update (CTK_WIDGET (user_data));
 
-	enable_save = (strlen (ctk_entry_get_text (GTK_ENTRY (data->token_entry))) > 0);
-	ctk_dialog_set_response_sensitive (GTK_DIALOG (user_data), GTK_RESPONSE_OK,
+	enable_save = (strlen (ctk_entry_get_text (CTK_ENTRY (data->token_entry))) > 0);
+	ctk_dialog_set_response_sensitive (CTK_DIALOG (user_data), CTK_RESPONSE_OK,
 					   enable_save);
 }
 
 static void
 on_replace_spaces_check_clicked (CtkWidget *widget, gpointer data)
 {
-	request_preview_update (GTK_WIDGET (data));
+	request_preview_update (CTK_WIDGET (data));
 }
 
 static void
 on_counter_spin_changed (CtkWidget *widget, gpointer data)
 {
-	request_preview_update (GTK_WIDGET (data));
+	request_preview_update (CTK_WIDGET (data));
 }
 
 static void
@@ -136,14 +136,14 @@ prepare_format_combobox (SaveAsData *data)
 	GSList *it;
 	CtkTreeIter iter;
 
-	combobox = GTK_COMBO_BOX (data->format_combobox);
+	combobox = CTK_COMBO_BOX (data->format_combobox);
 
 	store = ctk_list_store_new (2, G_TYPE_STRING, G_TYPE_POINTER);
-	ctk_combo_box_set_model (combobox, GTK_TREE_MODEL (store));
+	ctk_combo_box_set_model (combobox, CTK_TREE_MODEL (store));
 
 	cell = ctk_cell_renderer_text_new ();
-	ctk_cell_layout_pack_start (GTK_CELL_LAYOUT (combobox), cell, TRUE);
-	ctk_cell_layout_add_attribute (GTK_CELL_LAYOUT (combobox), cell,
+	ctk_cell_layout_pack_start (CTK_CELL_LAYOUT (combobox), cell, TRUE);
+	ctk_cell_layout_add_attribute (CTK_CELL_LAYOUT (combobox), cell,
 				 	"text", 0);
 
 	formats = eoc_pixbuf_get_savable_formats ();
@@ -160,7 +160,7 @@ prepare_format_combobox (SaveAsData *data)
 	ctk_list_store_append (store, &iter);
 	ctk_list_store_set (store, &iter, 0, _("as is"), 1, NULL, -1);
 	ctk_combo_box_set_active_iter (combobox, &iter);
-	ctk_widget_show_all (GTK_WIDGET (combobox));
+	ctk_widget_show_all (CTK_WIDGET (combobox));
 }
 
 static void
@@ -186,14 +186,14 @@ set_default_values (CtkWidget *dlg, GFile *base_file)
 
 	sd = (SaveAsData*) g_object_get_data (G_OBJECT (dlg), "data");
 
-	ctk_spin_button_set_value (GTK_SPIN_BUTTON (sd->counter_spin), 0.0);
-	ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (sd->replace_spaces_check),
+	ctk_spin_button_set_value (CTK_SPIN_BUTTON (sd->counter_spin), 0.0);
+	ctk_toggle_button_set_active (CTK_TOGGLE_BUTTON (sd->replace_spaces_check),
 				      FALSE);
 	if (base_file != NULL) {
-		ctk_file_chooser_set_current_folder_file (GTK_FILE_CHOOSER (sd->dir_chooser), base_file, NULL);
+		ctk_file_chooser_set_current_folder_file (CTK_FILE_CHOOSER (sd->dir_chooser), base_file, NULL);
 	}
 
-	/*ctk_dialog_set_response_sensitive (GTK_DIALOG (dlg), GTK_RESPONSE_OK, FALSE);*/
+	/*ctk_dialog_set_response_sensitive (CTK_DIALOG (dlg), CTK_RESPONSE_OK, FALSE);*/
 
 	request_preview_update (dlg);
 }
@@ -209,23 +209,23 @@ eoc_save_as_dialog_new (CtkWindow *main, GList *images, GFile *base_file)
 	xml = ctk_builder_new_from_resource ("/org/gnome/eog/ui/eoc-multiple-save-as-dialog.ui");
 	ctk_builder_set_translation_domain (xml, GETTEXT_PACKAGE);
 
-	dlg = GTK_WIDGET (g_object_ref (ctk_builder_get_object (xml, "eoc_multiple_save_as_dialog")));
-	ctk_window_set_transient_for (GTK_WINDOW (dlg), GTK_WINDOW (main));
-	ctk_window_set_position (GTK_WINDOW (dlg), GTK_WIN_POS_CENTER_ON_PARENT);
+	dlg = CTK_WIDGET (g_object_ref (ctk_builder_get_object (xml, "eoc_multiple_save_as_dialog")));
+	ctk_window_set_transient_for (CTK_WINDOW (dlg), CTK_WINDOW (main));
+	ctk_window_set_position (CTK_WINDOW (dlg), CTK_WIN_POS_CENTER_ON_PARENT);
 
 	data = g_slice_new0 (SaveAsData);
 	/* init widget references */
-	data->dir_chooser = GTK_WIDGET (ctk_builder_get_object (xml,
+	data->dir_chooser = CTK_WIDGET (ctk_builder_get_object (xml,
 								"dir_chooser"));
-	data->token_entry = GTK_WIDGET (ctk_builder_get_object (xml,
+	data->token_entry = CTK_WIDGET (ctk_builder_get_object (xml,
 								"token_entry"));
-	data->replace_spaces_check = GTK_WIDGET (ctk_builder_get_object (xml,
+	data->replace_spaces_check = CTK_WIDGET (ctk_builder_get_object (xml,
 						       "replace_spaces_check"));
-	data->counter_spin = GTK_WIDGET (ctk_builder_get_object (xml,
+	data->counter_spin = CTK_WIDGET (ctk_builder_get_object (xml,
 							       "counter_spin"));
-	data->preview_label = GTK_WIDGET (ctk_builder_get_object (xml,
+	data->preview_label = CTK_WIDGET (ctk_builder_get_object (xml,
 							      "preview_label"));
-	data->format_combobox = GTK_WIDGET (ctk_builder_get_object (xml,
+	data->format_combobox = CTK_WIDGET (ctk_builder_get_object (xml,
 							    "format_combobox"));
 
 	/* init preview information */
@@ -248,8 +248,8 @@ eoc_save_as_dialog_new (CtkWindow *main, GList *images, GFile *base_file)
 	g_signal_connect (G_OBJECT (data->counter_spin), "changed",
 			  (GCallback) on_counter_spin_changed, dlg);
 
-	label = GTK_WIDGET (ctk_builder_get_object (xml, "preview_label_from"));
-	ctk_label_set_text (GTK_LABEL (label), eoc_image_get_caption (data->image));
+	label = CTK_WIDGET (ctk_builder_get_object (xml, "preview_label_from"));
+	ctk_label_set_text (CTK_LABEL (label), eoc_image_get_caption (data->image));
 
 	prepare_format_combobox (data);
 
@@ -274,17 +274,17 @@ eoc_save_as_dialog_get_converter (CtkWidget *dlg)
 	g_assert (data != NULL);
 
 	/* obtain required dialog data */
-	format_str = ctk_entry_get_text (GTK_ENTRY (data->token_entry));
+	format_str = ctk_entry_get_text (CTK_ENTRY (data->token_entry));
 
 	convert_spaces = ctk_toggle_button_get_active
-		(GTK_TOGGLE_BUTTON (data->replace_spaces_check));
+		(CTK_TOGGLE_BUTTON (data->replace_spaces_check));
 
 	counter_start = ctk_spin_button_get_value_as_int
-		(GTK_SPIN_BUTTON (data->counter_spin));
+		(CTK_SPIN_BUTTON (data->counter_spin));
 
-	format = get_selected_format (GTK_COMBO_BOX (data->format_combobox));
+	format = get_selected_format (CTK_COMBO_BOX (data->format_combobox));
 
-	base_file = ctk_file_chooser_get_file (GTK_FILE_CHOOSER (data->dir_chooser));
+	base_file = ctk_file_chooser_get_file (CTK_FILE_CHOOSER (data->dir_chooser));
 
 	/* create converter object */
 	conv = eoc_uri_converter_new (base_file, format, format_str);

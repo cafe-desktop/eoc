@@ -395,12 +395,12 @@ msgstr ""
 #: data/org.cafe.eoc.gschema.xml.in:17
 msgid ""
 "The color that is used to fill the area behind the image. If the use-"
-"background-color key is not set, the color is determined by the active GTK+ "
+"background-color key is not set, the color is determined by the active CTK+ "
 "theme instead."
 msgstr ""
 "Culoarea care este folosită pentru a umple zona din spatele imaginii. Dacă "
 "tasta folosește-culoarea-de-fundal nu este setată, culoarea este determinată"
-" în schimb de tema GTK+ activă."
+" în schimb de tema CTK+ activă."
 
 #: data/org.cafe.eoc.gschema.xml.in:21
 msgid "Use a custom background color"
@@ -409,12 +409,12 @@ msgstr "Utilizează o culoare de fundal personalizată"
 #: data/org.cafe.eoc.gschema.xml.in:22
 msgid ""
 "If this is active, the color set by the background-color key will be used to"
-" fill the area behind the image. If it is not set, the current GTK+ theme "
+" fill the area behind the image. If it is not set, the current CTK+ theme "
 "will determine the fill color."
 msgstr ""
 "Dacă acesta este activă, culoarea setată de către tasta culoare-fundal va fi"
 " folosită pentru a umple zona din spatele imaginii. Dacă nu este setată, "
-"tema GTK+ curentă va determina culoarea de umplere."
+"tema CTK+ curentă va determina culoarea de umplere."
 
 #: data/org.cafe.eoc.gschema.xml.in:26
 msgid "Interpolate Image"
