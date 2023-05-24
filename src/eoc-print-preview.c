@@ -622,8 +622,8 @@ create_image_scaled (EocPrintPreview *preview)
 		CtkAllocation allocation;
 
 		ctk_widget_get_allocation (priv->area, &allocation);
-		i_width = cdk_pixbuf_get_width (priv->image);
-		i_height = cdk_pixbuf_get_height (priv->image);
+		i_width = gdk_pixbuf_get_width (priv->image);
+		i_height = gdk_pixbuf_get_height (priv->image);
 
                 if ((i_width > allocation.width) ||
 		    (i_height > allocation.height)) {
@@ -631,7 +631,7 @@ create_image_scaled (EocPrintPreview *preview)
 			scale = MIN ((gdouble) allocation.width/i_width,
 				     (gdouble) allocation.height/i_height);
 			scale *= ctk_widget_get_scale_factor (CTK_WIDGET (priv->area));
-			priv->image_scaled = cdk_pixbuf_scale_simple (priv->image,
+			priv->image_scaled = gdk_pixbuf_scale_simple (priv->image,
 								      i_width*scale,
 								      i_height*scale,
 								      CDK_INTERP_TILES);
@@ -655,8 +655,8 @@ create_preview_buffer (EocPrintPreview *preview)
 
 	create_image_scaled (preview);
 
-	width  = cdk_pixbuf_get_width (preview->priv->image);
-	height = cdk_pixbuf_get_height (preview->priv->image);
+	width  = gdk_pixbuf_get_width (preview->priv->image);
+	height = gdk_pixbuf_get_height (preview->priv->image);
 	widget_scale = ctk_widget_get_scale_factor (CTK_WIDGET (preview->priv->area));
 
 	width   *= preview->priv->i_scale * preview->priv->p_scale
@@ -672,10 +672,10 @@ create_preview_buffer (EocPrintPreview *preview)
 		type = CDK_INTERP_NEAREST;
 
 	if (preview->priv->image_scaled) {
-		pixbuf = cdk_pixbuf_scale_simple (preview->priv->image_scaled,
+		pixbuf = gdk_pixbuf_scale_simple (preview->priv->image_scaled,
 						  width, height, type);
 	} else {
-		pixbuf = cdk_pixbuf_scale_simple (preview->priv->image,
+		pixbuf = gdk_pixbuf_scale_simple (preview->priv->image,
 						  width, height, type);
 	}
 
@@ -928,7 +928,7 @@ eoc_print_preview_draw (EocPrintPreview *preview, cairo_t *cr)
 
 		/* adjust (x0, y0) to the new scale */
 		gdouble scale = priv->i_scale * priv->p_scale *
-			cdk_pixbuf_get_width (priv->image) / cdk_pixbuf_get_width (priv->image_scaled);
+			gdk_pixbuf_get_width (priv->image) / gdk_pixbuf_get_width (priv->image_scaled);
 		x0 /= scale;
 		y0 /= scale;
 
@@ -966,8 +966,8 @@ update_relative_sizes (EocPrintPreview *preview)
 	priv = preview->priv;
 
 	if (priv->image != NULL) {
-		i_width = cdk_pixbuf_get_width (priv->image);
-		i_height = cdk_pixbuf_get_height (priv->image);
+		i_width = gdk_pixbuf_get_width (priv->image);
+		i_height = gdk_pixbuf_get_height (priv->image);
 	} else {
 		i_width = i_height = 0;
 	}
@@ -1060,11 +1060,11 @@ eoc_print_preview_get_image_position (EocPrintPreview *preview,
 	priv = preview->priv;
 
 	if (x != NULL) {
-		width  = cdk_pixbuf_get_width (priv->image)  * priv->i_scale / 72.;
+		width  = gdk_pixbuf_get_width (priv->image)  * priv->i_scale / 72.;
 		*x = priv->image_x_align * (priv->p_width  - priv->l_margin - priv->r_margin - width);
 	}
 	if (y != NULL) {
-		height = cdk_pixbuf_get_height (priv->image) * priv->i_scale / 72.;
+		height = gdk_pixbuf_get_height (priv->image) * priv->i_scale / 72.;
 		*y = priv->image_y_align * (priv->p_height - priv->t_margin - priv->b_margin - height);
 	}
 }
@@ -1092,13 +1092,13 @@ eoc_print_preview_set_image_position (EocPrintPreview *preview,
 	priv = preview->priv;
 
 	if (x != -1) {
-		width  = cdk_pixbuf_get_width (priv->image) * priv->i_scale / 72.;
+		width  = gdk_pixbuf_get_width (priv->image) * priv->i_scale / 72.;
 		x_align = CLAMP (x/(priv->p_width - priv->l_margin - priv->r_margin - width), 0, 1);
 		g_object_set (preview, "image-x-align", x_align, NULL);
 	}
 
 	if (y != -1) {
-		height  = cdk_pixbuf_get_height (priv->image) * priv->i_scale / 72.;
+		height  = gdk_pixbuf_get_height (priv->image) * priv->i_scale / 72.;
 		y_align = CLAMP (y/(priv->p_height - priv->t_margin - priv->b_margin - height), 0, 1);
 		g_object_set (preview, "image-y-align", y_align, NULL);
 	}

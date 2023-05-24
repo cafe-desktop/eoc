@@ -110,7 +110,7 @@ save_response_cb (CtkDialog *dlg, gint id, gpointer data)
 	format = eoc_pixbuf_get_format (file);
 	g_object_unref (file);
 
-	if (!format || !cdk_pixbuf_format_is_writable (format)) {
+	if (!format || !gdk_pixbuf_format_is_writable (format)) {
 		CtkWidget *msg_dialog;
 
 		msg_dialog = ctk_message_dialog_new (
@@ -167,7 +167,7 @@ eoc_file_chooser_add_filter (EocFileChooser *chooser)
 		formats = eoc_pixbuf_get_savable_formats ();
 	}
 	else {
-		formats = cdk_pixbuf_get_formats ();
+		formats = gdk_pixbuf_get_formats ();
 	}
 
 	/* Image filters */
@@ -178,8 +178,8 @@ eoc_file_chooser_add_filter (EocFileChooser *chooser)
 		filter = ctk_file_filter_new ();
 
 		format = (GdkPixbufFormat*) it->data;
-		description = cdk_pixbuf_format_get_description (format);
-		extension = cdk_pixbuf_format_get_name (format);
+		description = gdk_pixbuf_format_get_description (format);
+		extension = gdk_pixbuf_format_get_name (format);
 
 		/* Filter name: First description then file extension, eg. "The PNG-Format (*.png)".*/
 		filter_name = g_strdup_printf (_("%s (*.%s)"), description, extension);
@@ -189,14 +189,14 @@ eoc_file_chooser_add_filter (EocFileChooser *chooser)
 		ctk_file_filter_set_name (filter, filter_name);
 		g_free (filter_name);
 
-		mime_types = cdk_pixbuf_format_get_mime_types ((GdkPixbufFormat *) it->data);
+		mime_types = gdk_pixbuf_format_get_mime_types ((GdkPixbufFormat *) it->data);
 		for (i = 0; mime_types[i] != NULL; i++) {
 			ctk_file_filter_add_mime_type (filter, mime_types[i]);
 			ctk_file_filter_add_mime_type (all_img_filter, mime_types[i]);
 		}
 		g_strfreev (mime_types);
 
-		pattern = cdk_pixbuf_format_get_extensions ((GdkPixbufFormat *) it->data);
+		pattern = gdk_pixbuf_format_get_extensions ((GdkPixbufFormat *) it->data);
 		for (i = 0; pattern[i] != NULL; i++) {
 			tmp = g_strconcat ("*.", pattern[i], NULL);
 			ctk_file_filter_add_pattern (filter, tmp);
@@ -262,7 +262,7 @@ set_preview_pixbuf (EocFileChooser *chooser, GdkPixbuf *pixbuf, goffset size)
 
 	if (pixbuf != NULL) {
 		/* try to read file size */
-		bytes_str = cdk_pixbuf_get_option (pixbuf, "tEXt::Thumb::Size");
+		bytes_str = gdk_pixbuf_get_option (pixbuf, "tEXt::Thumb::Size");
 		if (bytes_str != NULL) {
 			bytes = atoi (bytes_str);
 			size_str = g_format_size (bytes);
@@ -272,8 +272,8 @@ set_preview_pixbuf (EocFileChooser *chooser, GdkPixbuf *pixbuf, goffset size)
 		}
 
 		/* try to read image dimensions */
-		width  = cdk_pixbuf_get_option (pixbuf, "tEXt::Thumb::Image::Width");
-		height = cdk_pixbuf_get_option (pixbuf, "tEXt::Thumb::Image::Height");
+		width  = gdk_pixbuf_get_option (pixbuf, "tEXt::Thumb::Image::Width");
+		height = gdk_pixbuf_get_option (pixbuf, "tEXt::Thumb::Image::Height");
 
 		if ((width != NULL) && (height != NULL)) {
 			pixels = atoi (height);
@@ -285,7 +285,7 @@ set_preview_pixbuf (EocFileChooser *chooser, GdkPixbuf *pixbuf, goffset size)
 		/* Not sure, if this is really useful, therefore its commented out for now. */
 
 		/* try to read creator of the thumbnail */
-		creator = cdk_pixbuf_get_option (pixbuf, "tEXt::Software");
+		creator = gdk_pixbuf_get_option (pixbuf, "tEXt::Software");
 
 		/* stupid workaround to display nicer string if the
 		 * thumbnail is created through the cafe libraries.
@@ -347,7 +347,7 @@ update_preview_cb (CtkFileChooser *file_chooser, gpointer data)
 
 		if (thumb_path != NULL && g_file_test (thumb_path, G_FILE_TEST_EXISTS)) {
 			/* try to load and display preview thumbnail */
-			pixbuf = cdk_pixbuf_new_from_file (thumb_path, NULL);
+			pixbuf = gdk_pixbuf_new_from_file (thumb_path, NULL);
 		} else if (g_file_info_get_size (file_info) <= 100000) {
 			/* read files smaller than 100kb directly */
 

@@ -12,13 +12,13 @@ eoc_pixbuf_get_savable_formats (void)
 	GSList *write_list = NULL;
 	GSList *it;
 
-	list = cdk_pixbuf_get_formats ();
+	list = gdk_pixbuf_get_formats ();
 
 	for (it = list; it != NULL; it = it->next) {
 		GdkPixbufFormat *format;
 
 		format = (GdkPixbufFormat*) it->data;
-		if (cdk_pixbuf_format_is_writable (format)) {
+		if (gdk_pixbuf_format_is_writable (format)) {
 			write_list = g_slist_prepend (write_list, format);
 		}
 	}
@@ -38,7 +38,7 @@ eoc_pixbuf_get_format_by_suffix (const char *suffix)
 
 	g_return_val_if_fail (suffix != NULL, NULL);
 
-	list = cdk_pixbuf_get_formats ();
+	list = gdk_pixbuf_get_formats ();
 
 	for (it = list; (it != NULL) && (result == NULL); it = it->next) {
 		GdkPixbufFormat *format;
@@ -47,7 +47,7 @@ eoc_pixbuf_get_format_by_suffix (const char *suffix)
 
 		format = (GdkPixbufFormat*) it->data;
 
-		extensions = cdk_pixbuf_format_get_extensions (format);
+		extensions = gdk_pixbuf_format_get_extensions (format);
 		for (i = 0; extensions[i] != NULL; i++) {
 			/* g_print ("check extension: %s against %s\n", extensions[i], suffix); */
 			if (g_ascii_strcasecmp (suffix, extensions[i]) == 0) {
@@ -73,7 +73,7 @@ eoc_pixbuf_get_common_suffix (GdkPixbufFormat *format)
 
 	if (format == NULL) return NULL;
 
-	extensions = cdk_pixbuf_format_get_extensions (format);
+	extensions = gdk_pixbuf_format_get_extensions (format);
 	if (extensions[0] == NULL) return NULL;
 
 	/* try to find 3-char suffix first, use the last occurence */

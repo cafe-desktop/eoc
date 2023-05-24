@@ -72,7 +72,7 @@ get_save_file_type_by_file (GFile *file)
 
 	format = eoc_pixbuf_get_format (file);
 	if (format != NULL) {
-		type = cdk_pixbuf_format_get_name (format);
+		type = gdk_pixbuf_format_get_name (format);
 	}
 
 	return type;
@@ -131,7 +131,7 @@ eoc_image_save_info_new_from_file (GFile *file, GdkPixbufFormat *format)
 		info->format = get_save_file_type_by_file (info->file);
 	}
 	else {
-		info->format = cdk_pixbuf_format_get_name (format);
+		info->format = gdk_pixbuf_format_get_name (format);
 	}
 	info->exists       = g_file_query_exists (file, NULL);
 	info->local        = is_local_file (file);

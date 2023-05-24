@@ -105,11 +105,11 @@ eoc_transform_apply (EocTransform *trans, GdkPixbuf *pixbuf, EocJob *job)
 
 	g_object_ref (pixbuf);
 
-	src_width = cdk_pixbuf_get_width (pixbuf);
-	src_height = cdk_pixbuf_get_height (pixbuf);
-	src_rowstride = cdk_pixbuf_get_rowstride (pixbuf);
-	src_n_channels = cdk_pixbuf_get_n_channels (pixbuf);
-	src_buffer = cdk_pixbuf_get_pixels (pixbuf);
+	src_width = gdk_pixbuf_get_width (pixbuf);
+	src_height = gdk_pixbuf_get_height (pixbuf);
+	src_rowstride = gdk_pixbuf_get_rowstride (pixbuf);
+	src_n_channels = gdk_pixbuf_get_n_channels (pixbuf);
+	src_buffer = gdk_pixbuf_get_pixels (pixbuf);
 
 	/* find out the dimension of the destination pixbuf */
 	dest_top_left.x = 100000;
@@ -135,14 +135,14 @@ eoc_transform_apply (EocTransform *trans, GdkPixbuf *pixbuf, EocJob *job)
 	dest_width = abs ((int) (dest_bottom_right.x - dest_top_left.x + 1));
 	dest_height = abs ((int) (dest_bottom_right.y - dest_top_left.y + 1));
 
-	dest_pixbuf = cdk_pixbuf_new (CDK_COLORSPACE_RGB,
-			       cdk_pixbuf_get_has_alpha (pixbuf),
-			       cdk_pixbuf_get_bits_per_sample (pixbuf),
+	dest_pixbuf = gdk_pixbuf_new (CDK_COLORSPACE_RGB,
+			       gdk_pixbuf_get_has_alpha (pixbuf),
+			       gdk_pixbuf_get_bits_per_sample (pixbuf),
 			       dest_width,
 			       dest_height);
-	dest_rowstride = cdk_pixbuf_get_rowstride (dest_pixbuf);
-	dest_n_channels = cdk_pixbuf_get_n_channels (dest_pixbuf);
-	dest_buffer = cdk_pixbuf_get_pixels (dest_pixbuf);
+	dest_rowstride = gdk_pixbuf_get_rowstride (dest_pixbuf);
+	dest_n_channels = gdk_pixbuf_get_n_channels (dest_pixbuf);
+	dest_buffer = gdk_pixbuf_get_pixels (dest_pixbuf);
 
 	/* invert the matrix so that we can compute the source pixel
 	   from the target pixel and convert the values to integer

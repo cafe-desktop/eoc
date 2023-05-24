@@ -368,12 +368,12 @@ _save_any_as_jpeg (EocImage *image, const char *file, EocImageSaveInfo *source,
 	priv = image->priv;
 	pixbuf = priv->image;
 
-	rowstride = cdk_pixbuf_get_rowstride (pixbuf);
-	w = cdk_pixbuf_get_width (pixbuf);
-	h = cdk_pixbuf_get_height (pixbuf);
+	rowstride = gdk_pixbuf_get_rowstride (pixbuf);
+	w = gdk_pixbuf_get_width (pixbuf);
+	h = gdk_pixbuf_get_height (pixbuf);
 
 	/* no image data? abort */
-	pixels = cdk_pixbuf_get_pixels (pixbuf);
+	pixels = gdk_pixbuf_get_pixels (pixbuf);
 	g_return_val_if_fail (pixels != NULL, FALSE);
 
 	outfile = fopen (file, "wb");

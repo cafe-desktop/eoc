@@ -301,11 +301,11 @@ AC_ARG_WITH(gdk-pixbuf-thumbnailer,
 	[AS_HELP_STRING([--without-gdk-pixbuf-thumbnailer],
 		[Disable the use of gdk-pixbuf-thumbnailer])],
 	[],
-	[with_cdk_pixbuf_thumbnailer=yes])
-AM_CONDITIONAL(USE_INTERNAL_THUMBNAILER, test x$with_cdk_pixbuf_thumbnailer != xyes)
+	[with_gdk_pixbuf_thumbnailer=yes])
+AM_CONDITIONAL(USE_INTERNAL_THUMBNAILER, test x$with_gdk_pixbuf_thumbnailer != xyes)
 
 if test "x$enable_thumbnailer" != "xno"; then
-	if test "x$with_cdk_pixbuf_thumbnailer" = "xyes"; then
+	if test "x$with_gdk_pixbuf_thumbnailer" = "xyes"; then
 		AC_PATH_PROG([GDK_PIXBUF_THUMBNAILER],[gdk-pixbuf-thumbnailer],[])
 		if test -z "$GDK_PIXBUF_THUMBNAILER"; then
 			AC_MSG_ERROR([gdk-pixbuf-thumbnailer not found])

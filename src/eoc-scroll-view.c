@@ -229,8 +229,8 @@ compute_scaled_size (EocScrollView *view, double zoom, int *width, int *height)
 	priv = view->priv;
 
 	if (priv->pixbuf) {
-		*width = floor (cdk_pixbuf_get_width (priv->pixbuf) / priv->scale * zoom + 0.5);
-		*height = floor (cdk_pixbuf_get_height (priv->pixbuf) / priv->scale * zoom + 0.5);
+		*width = floor (gdk_pixbuf_get_width (priv->pixbuf) / priv->scale * zoom + 0.5);
+		*height = floor (gdk_pixbuf_get_height (priv->pixbuf) / priv->scale * zoom + 0.5);
 	} else
 		*width = *height = 0;
 }
@@ -685,8 +685,8 @@ set_minimum_zoom_factor (EocScrollView *view)
 {
 	g_return_if_fail (EOC_IS_SCROLL_VIEW (view));
 
-	view->priv->min_zoom = MAX (1.0 / cdk_pixbuf_get_width (view->priv->pixbuf) / view->priv->scale,
-				    MAX(1.0 / cdk_pixbuf_get_height (view->priv->pixbuf) / view->priv->scale,
+	view->priv->min_zoom = MAX (1.0 / gdk_pixbuf_get_width (view->priv->pixbuf) / view->priv->scale,
+				    MAX(1.0 / gdk_pixbuf_get_height (view->priv->pixbuf) / view->priv->scale,
 					MIN_ZOOM_FACTOR) );
 	return;
 }
@@ -790,8 +790,8 @@ set_zoom_fit (EocScrollView *view)
 	ctk_widget_get_allocation (CTK_WIDGET(priv->display), &allocation);
 
 	new_zoom = zoom_fit_scale (allocation.width, allocation.height,
-				   cdk_pixbuf_get_width (priv->pixbuf) / priv->scale,
-				   cdk_pixbuf_get_height (priv->pixbuf) / priv->scale,
+				   gdk_pixbuf_get_width (priv->pixbuf) / priv->scale,
+				   gdk_pixbuf_get_height (priv->pixbuf) / priv->scale,
 				   priv->upscale);
 
 	if (new_zoom > MAX_ZOOM_FACTOR)
@@ -1279,7 +1279,7 @@ display_draw (CtkWidget *widget, cairo_t *cr, gpointer data)
 	cairo_set_fill_rule (cr, CAIRO_FILL_RULE_EVEN_ODD);
 	cairo_fill (cr);
 
-	if (cdk_pixbuf_get_has_alpha (priv->pixbuf)) {
+	if (gdk_pixbuf_get_has_alpha (priv->pixbuf)) {
 		if (priv->background_surface == NULL) {
 			priv->background_surface = create_background_surface (view);
 		}
@@ -1311,17 +1311,17 @@ display_draw (CtkWidget *widget, cairo_t *cr, gpointer data)
 			switch (eoc_transform_get_transform_type (transform)) {
 			case EOC_TRANSFORM_ROT_90:
 			case EOC_TRANSFORM_FLIP_HORIZONTAL:
-				image_offset_x = (double) cdk_pixbuf_get_width (priv->pixbuf);
+				image_offset_x = (double) gdk_pixbuf_get_width (priv->pixbuf);
 				break;
 			case EOC_TRANSFORM_ROT_270:
 			case EOC_TRANSFORM_FLIP_VERTICAL:
-				image_offset_y = (double) cdk_pixbuf_get_height (priv->pixbuf);
+				image_offset_y = (double) gdk_pixbuf_get_height (priv->pixbuf);
 				break;
 			case EOC_TRANSFORM_ROT_180:
 			case EOC_TRANSFORM_TRANSPOSE:
 			case EOC_TRANSFORM_TRANSVERSE:
-				image_offset_x = (double) cdk_pixbuf_get_width (priv->pixbuf);
-				image_offset_y = (double) cdk_pixbuf_get_height (priv->pixbuf);
+				image_offset_x = (double) gdk_pixbuf_get_width (priv->pixbuf);
+				image_offset_y = (double) gdk_pixbuf_get_height (priv->pixbuf);
 				break;
 			case EOC_TRANSFORM_NONE:
 				default:
@@ -1498,7 +1498,7 @@ _transp_background_changed (EocScrollView *view)
 {
 	EocScrollViewPrivate *priv = view->priv;
 
-	if (priv->pixbuf != NULL && cdk_pixbuf_get_has_alpha (priv->pixbuf)) {
+	if (priv->pixbuf != NULL && gdk_pixbuf_get_has_alpha (priv->pixbuf)) {
 		if (priv->background_surface) {
 			cairo_surface_destroy (priv->background_surface);
 			/* Will be recreated if needed during redraw */
@@ -2183,8 +2183,8 @@ view_on_drag_begin_cb (CtkWidget        *widget,
 	thumbnail = eoc_image_get_thumbnail (image);
 
 	if  (thumbnail) {
-		width = cdk_pixbuf_get_width (thumbnail) / view->priv->scale;
-		height = cdk_pixbuf_get_height (thumbnail) / view->priv->scale;
+		width = gdk_pixbuf_get_width (thumbnail) / view->priv->scale;
+		height = gdk_pixbuf_get_height (thumbnail) / view->priv->scale;
 		ctk_drag_set_icon_pixbuf (context, thumbnail, width/2, height/2);
 		g_object_unref (thumbnail);
 	}
