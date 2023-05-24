@@ -147,7 +147,7 @@ eoc_preferences_dialog_class_init (EocPreferencesDialogClass *klass)
 
 	/* This should make sure the libbean-ctk dependency isn't
 	 * dropped by aggressive linkers (#739618) */
-	g_type_ensure (PEAS_CTK_TYPE_PLUGIN_MANAGER);
+	g_type_ensure (BEAN_CTK_TYPE_PLUGIN_MANAGER);
 
 	ctk_widget_class_set_template_from_resource (widget_class,
 	                                             "/org/cafe/eoc/ui/eoc-preferences-dialog.ui");

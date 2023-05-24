@@ -202,7 +202,7 @@ eoc_application_init (EocApplication *eoc_application)
 	eoc_application_load_accelerators ();
 
 	priv->extensions = bean_extension_set_new (
-	                           PEAS_ENGINE (priv->plugin_engine),
+	                           BEAN_ENGINE (priv->plugin_engine),
 	                           EOC_TYPE_APPLICATION_ACTIVATABLE,
 	                           "app",  EOC_APPLICATION (eoc_application),
 	                           NULL);
