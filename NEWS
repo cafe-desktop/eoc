@@ -104,7 +104,7 @@
   * EocPropertiesDialog: Use standard::display-name when showing the parent
   * EocMetadataSidebar: Use standard::display-name when showing the parent
   * Fix GResource dependency calculation for out-of-tree builds
-  * Make sure the libpeas-ctk dependency isn't optimized away
+  * Make sure the libbean-ctk dependency isn't optimized away
   * Remove EocDialog helper class
   * EocPreferencesDialog: Convert to CtkBuilder template
   * EocThumbnail: Load thumbnail frame from a GResource
@@ -199,7 +199,7 @@
   * editable-toolbar: replace deprecated ctk_menu_popup
   * editable-toolbar: replace deprecated ctk_drag_begin
   * svg: Fix offset coordinates when transforming SVG images on HiDPI displays
-  * require libpeas 1.8.0
+  * require libbean 1.8.0
   * plugins: Use Python 3.x for Python plugins
   * replace deprecated cdk_flush
   * fix some -Wincompatible-pointer-types warnings
@@ -266,7 +266,7 @@
   * Move to CTK+3 (require CTK+ >= 3.14), drop CTK+2 code and
     --with-ctk build option
   * Drop Python bindings and --enable-python build option
-  * Port plugin system and plugins to libpeas
+  * Port plugin system and plugins to libbean
   * Some code and docs cleanups
   * Translations update
 

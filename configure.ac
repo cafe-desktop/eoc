@@ -107,8 +107,8 @@ EOC_MODULES="ctk+-3.0 >= $CTK_REQUIRED \
              gio-2.0 >= $GIO_REQUIRED \
              ctk+-unix-print-3.0 >= $CTK_REQUIRED \
              shared-mime-info >= $SHARED_MIME_INFO_REQUIRED \
-             libpeas-1.0 >= $LIBPEAS_REQUIRED \
-             libpeas-ctk-1.0 >= $LIBPEAS_REQUIRED"
+             libbean-1.0 >= $LIBPEAS_REQUIRED \
+             libbean-ctk-1.0 >= $LIBPEAS_REQUIRED"
 
 # Introspection
 GOBJECT_INTROSPECTION_CHECK([0.9.3])

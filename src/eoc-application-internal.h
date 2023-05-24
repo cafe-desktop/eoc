@@ -28,7 +28,7 @@
 #include <glib.h>
 #include <glib-object.h>
 
-#include <libpeas/peas-extension-set.h>
+#include <libbean/bean-extension-set.h>
 
 #include "eoc-application.h"
 #include "eoc-plugin-engine.h"
