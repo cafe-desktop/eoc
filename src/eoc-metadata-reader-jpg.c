@@ -26,7 +26,7 @@
 #endif
 
 #include <string.h>
-#include <gdk/gdkx.h>
+#include <cdk/cdkx.h>
 
 #include "eoc-metadata-reader.h"
 #include "eoc-metadata-reader-jpg.h"
@@ -510,7 +510,7 @@ eoc_metadata_reader_jpg_get_icc_profile (EocMetadataReaderJpg *emr)
 	priv = emr->priv;
 
 	if (priv->icc_chunk) {
-		if (GDK_IS_X11_DISPLAY (gdk_display_get_default ())) {
+		if (GDK_IS_X11_DISPLAY (cdk_display_get_default ())) {
 			profile = cmsOpenProfileFromMem(priv->icc_chunk + 14, priv->icc_len - 14);
 		}
 

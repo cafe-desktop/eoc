@@ -4,8 +4,8 @@
 
 #include <stdlib.h>
 #include <math.h>
-#include <gdk-pixbuf/gdk-pixbuf.h>
-#include <gdk/gdkkeysyms.h>
+#include <cdk-pixbuf/cdk-pixbuf.h>
+#include <cdk/cdkkeysyms.h>
 #ifdef HAVE_RSVG
 #include <librsvg/rsvg.h>
 #endif
@@ -17,7 +17,7 @@
 #include "eoc-debug.h"
 #include "zoom.h"
 
-#include <gdk/gdk.h>
+#include <cdk/cdk.h>
 
 /* Maximum size of delayed repaint rectangles */
 #define PAINT_RECT_WIDTH 128
@@ -165,7 +165,7 @@ static void view_on_drag_data_get_cb (CtkWidget *widget,
 				      CtkSelectionData *data, guint info,
 				      guint time, gpointer user_data);
 
-static gboolean _eoc_gdk_rgba_equal0 (const GdkRGBA *a, const GdkRGBA *b);
+static gboolean _eoc_cdk_rgba_equal0 (const GdkRGBA *a, const GdkRGBA *b);
 
 G_DEFINE_TYPE_WITH_PRIVATE (EocScrollView, eoc_scroll_view, CTK_TYPE_GRID)
 
@@ -179,7 +179,7 @@ create_surface_from_pixbuf (EocScrollView *view, GdkPixbuf *pixbuf)
 {
 	cairo_surface_t *surface;
 
-	surface = gdk_cairo_surface_create_from_pixbuf (pixbuf,
+	surface = cdk_cairo_surface_create_from_pixbuf (pixbuf,
 			                                view->priv->scale,
 			                                ctk_widget_get_window (view->priv->display));
 
@@ -229,8 +229,8 @@ compute_scaled_size (EocScrollView *view, double zoom, int *width, int *height)
 	priv = view->priv;
 
 	if (priv->pixbuf) {
-		*width = floor (gdk_pixbuf_get_width (priv->pixbuf) / priv->scale * zoom + 0.5);
-		*height = floor (gdk_pixbuf_get_height (priv->pixbuf) / priv->scale * zoom + 0.5);
+		*width = floor (cdk_pixbuf_get_width (priv->pixbuf) / priv->scale * zoom + 0.5);
+		*height = floor (cdk_pixbuf_get_height (priv->pixbuf) / priv->scale * zoom + 0.5);
 	} else
 		*width = *height = 0;
 }
@@ -369,20 +369,20 @@ eoc_scroll_view_set_cursor (EocScrollView *view, EocScrollViewCursor new_cursor)
 
 	switch (new_cursor) {
 		case EOC_SCROLL_VIEW_CURSOR_NORMAL:
-			gdk_window_set_cursor (ctk_widget_get_window (widget), NULL);
+			cdk_window_set_cursor (ctk_widget_get_window (widget), NULL);
 			break;
                 case EOC_SCROLL_VIEW_CURSOR_HIDDEN:
-                        cursor = gdk_cursor_new_for_display (display, GDK_BLANK_CURSOR);
+                        cursor = cdk_cursor_new_for_display (display, GDK_BLANK_CURSOR);
                         break;
 		case EOC_SCROLL_VIEW_CURSOR_DRAG:
-			cursor = gdk_cursor_new_for_display (display, GDK_FLEUR);
+			cursor = cdk_cursor_new_for_display (display, GDK_FLEUR);
 			break;
 	}
 
 	if (cursor) {
-		gdk_window_set_cursor (ctk_widget_get_window (widget), cursor);
+		cdk_window_set_cursor (ctk_widget_get_window (widget), cursor);
 		g_object_unref (cursor);
-		gdk_display_flush (display);
+		cdk_display_flush (display);
 	}
 }
 
@@ -511,8 +511,8 @@ get_transparency_params (EocScrollView *view, int *size, GdkRGBA *color1, GdkRGB
 	}
 
 	case EOC_TRANSP_CHECKED:
-		g_warn_if_fail (gdk_rgba_parse (color1, CHECK_GRAY));
-		g_warn_if_fail (gdk_rgba_parse (color2, CHECK_LIGHT));
+		g_warn_if_fail (cdk_rgba_parse (color1, CHECK_GRAY));
+		g_warn_if_fail (cdk_rgba_parse (color2, CHECK_LIGHT));
 		break;
 
 	case EOC_TRANSP_COLOR:
@@ -535,7 +535,7 @@ create_background_surface (EocScrollView *view)
 	cairo_surface_t *surface;
 
 	get_transparency_params (view, &check_size, &check_1, &check_2);
-	surface = gdk_window_create_similar_surface (ctk_widget_get_window (view->priv->display),
+	surface = cdk_window_create_similar_surface (ctk_widget_get_window (view->priv->display),
 						     CAIRO_CONTENT_COLOR_ALPHA,
 						     check_size * 2, check_size * 2);
 	cairo_t* cr = cairo_create (surface);
@@ -543,12 +543,12 @@ create_background_surface (EocScrollView *view)
 	/* Use source operator to make fully transparent work */
 	cairo_set_operator (cr, CAIRO_OPERATOR_SOURCE);
 
-	gdk_cairo_set_source_rgba(cr, &check_1);
+	cdk_cairo_set_source_rgba(cr, &check_1);
 	cairo_rectangle (cr, 0, 0, check_size, check_size);
 	cairo_rectangle (cr, check_size, check_size, check_size, check_size);
 	cairo_fill (cr);
 
-	gdk_cairo_set_source_rgba(cr, &check_2);
+	cdk_cairo_set_source_rgba(cr, &check_2);
 	cairo_rectangle (cr, 0, check_size, check_size, check_size);
 	cairo_rectangle (cr, check_size, 0, check_size, check_size);
 	cairo_fill (cr);
@@ -609,7 +609,7 @@ scroll_to (EocScrollView *view, int x, int y, gboolean change_adjustments)
 
 	window = ctk_widget_get_window (CTK_WIDGET (priv->display));
 
-	gdk_window_scroll (window, -xofs, -yofs);
+	cdk_window_scroll (window, -xofs, -yofs);
 
  out:
 	if (!change_adjustments)
@@ -685,8 +685,8 @@ set_minimum_zoom_factor (EocScrollView *view)
 {
 	g_return_if_fail (EOC_IS_SCROLL_VIEW (view));
 
-	view->priv->min_zoom = MAX (1.0 / gdk_pixbuf_get_width (view->priv->pixbuf) / view->priv->scale,
-				    MAX(1.0 / gdk_pixbuf_get_height (view->priv->pixbuf) / view->priv->scale,
+	view->priv->min_zoom = MAX (1.0 / cdk_pixbuf_get_width (view->priv->pixbuf) / view->priv->scale,
+				    MAX(1.0 / cdk_pixbuf_get_height (view->priv->pixbuf) / view->priv->scale,
 					MIN_ZOOM_FACTOR) );
 	return;
 }
@@ -790,8 +790,8 @@ set_zoom_fit (EocScrollView *view)
 	ctk_widget_get_allocation (CTK_WIDGET(priv->display), &allocation);
 
 	new_zoom = zoom_fit_scale (allocation.width, allocation.height,
-				   gdk_pixbuf_get_width (priv->pixbuf) / priv->scale,
-				   gdk_pixbuf_get_height (priv->pixbuf) / priv->scale,
+				   cdk_pixbuf_get_width (priv->pixbuf) / priv->scale,
+				   cdk_pixbuf_get_height (priv->pixbuf) / priv->scale,
 				   priv->upscale);
 
 	if (new_zoom > MAX_ZOOM_FACTOR)
@@ -913,10 +913,10 @@ display_key_press_event (CtkWidget *widget, GdkEventKey *event, gpointer data)
 		GdkDevice *device;
 		gint x, y;
 
-		seat = gdk_display_get_default_seat (ctk_widget_get_display (widget));
-		device = gdk_seat_get_pointer (seat);
+		seat = cdk_display_get_default_seat (ctk_widget_get_display (widget));
+		device = cdk_seat_get_pointer (seat);
 
-		gdk_window_get_device_position (ctk_widget_get_window (widget), device,
+		cdk_window_get_device_position (ctk_widget_get_window (widget), device,
 		                                &x, &y, NULL);
 		set_zoom (view, zoom, TRUE, x, y);
 	}
@@ -1087,7 +1087,7 @@ eoc_scroll_view_motion_event (CtkWidget *widget, GdkEventMotion *event, gpointer
 		return FALSE;
 
 	if (event->is_hint)
-		gdk_window_get_device_position (ctk_widget_get_window (CTK_WIDGET (priv->display)), event->device, &x, &y, &mods);
+		cdk_window_get_device_position (ctk_widget_get_window (CTK_WIDGET (priv->display)), event->device, &x, &y, &mods);
 	else {
 		x = event->x;
 		y = event->y;
@@ -1275,11 +1275,11 @@ display_draw (CtkWidget *widget, cairo_t *cr, gpointer data)
 				       background_color->blue,
 				       background_color->alpha);
 	else
-		cairo_set_source (cr, gdk_window_get_background_pattern (ctk_widget_get_window (priv->display)));
+		cairo_set_source (cr, cdk_window_get_background_pattern (ctk_widget_get_window (priv->display)));
 	cairo_set_fill_rule (cr, CAIRO_FILL_RULE_EVEN_ODD);
 	cairo_fill (cr);
 
-	if (gdk_pixbuf_get_has_alpha (priv->pixbuf)) {
+	if (cdk_pixbuf_get_has_alpha (priv->pixbuf)) {
 		if (priv->background_surface == NULL) {
 			priv->background_surface = create_background_surface (view);
 		}
@@ -1311,17 +1311,17 @@ display_draw (CtkWidget *widget, cairo_t *cr, gpointer data)
 			switch (eoc_transform_get_transform_type (transform)) {
 			case EOC_TRANSFORM_ROT_90:
 			case EOC_TRANSFORM_FLIP_HORIZONTAL:
-				image_offset_x = (double) gdk_pixbuf_get_width (priv->pixbuf);
+				image_offset_x = (double) cdk_pixbuf_get_width (priv->pixbuf);
 				break;
 			case EOC_TRANSFORM_ROT_270:
 			case EOC_TRANSFORM_FLIP_VERTICAL:
-				image_offset_y = (double) gdk_pixbuf_get_height (priv->pixbuf);
+				image_offset_y = (double) cdk_pixbuf_get_height (priv->pixbuf);
 				break;
 			case EOC_TRANSFORM_ROT_180:
 			case EOC_TRANSFORM_TRANSPOSE:
 			case EOC_TRANSFORM_TRANSVERSE:
-				image_offset_x = (double) gdk_pixbuf_get_width (priv->pixbuf);
-				image_offset_y = (double) gdk_pixbuf_get_height (priv->pixbuf);
+				image_offset_x = (double) cdk_pixbuf_get_width (priv->pixbuf);
+				image_offset_y = (double) cdk_pixbuf_get_height (priv->pixbuf);
 				break;
 			case EOC_TRANSFORM_NONE:
 				default:
@@ -1498,7 +1498,7 @@ _transp_background_changed (EocScrollView *view)
 {
 	EocScrollViewPrivate *priv = view->priv;
 
-	if (priv->pixbuf != NULL && gdk_pixbuf_get_has_alpha (priv->pixbuf)) {
+	if (priv->pixbuf != NULL && cdk_pixbuf_get_has_alpha (priv->pixbuf)) {
 		if (priv->background_surface) {
 			cairo_surface_destroy (priv->background_surface);
 			/* Will be recreated if needed during redraw */
@@ -1518,7 +1518,7 @@ eoc_scroll_view_set_transparency_color (EocScrollView *view, GdkRGBA *color)
 
 	priv = view->priv;
 
-	if (!_eoc_gdk_rgba_equal0 (&priv->transp_color, color)) {
+	if (!_eoc_cdk_rgba_equal0 (&priv->transp_color, color)) {
 		priv->transp_color = *color;
 		if (priv->transp_style == EOC_TRANSP_COLOR)
 		    _transp_background_changed (view);
@@ -1775,7 +1775,7 @@ sv_string_to_rgba_mapping (GValue   *value,
 
 	g_return_val_if_fail (g_variant_is_of_type (variant, G_VARIANT_TYPE_STRING), FALSE);
 
-	if (gdk_rgba_parse (&color, g_variant_get_string (variant, NULL))) {
+	if (cdk_rgba_parse (&color, g_variant_get_string (variant, NULL))) {
 		g_value_set_boxed (value, &color);
 		return TRUE;
 	}
@@ -1796,7 +1796,7 @@ sv_rgba_to_string_mapping (const GValue       *value,
 	g_return_val_if_fail (g_variant_type_equal (expected_type, G_VARIANT_TYPE_STRING), NULL);
 
 	color = g_value_get_boxed (value);
-	hex_val = gdk_rgba_to_string(color);
+	hex_val = cdk_rgba_to_string(color);
 	variant = g_variant_new_string (hex_val);
 	g_free (hex_val);
 
@@ -1824,7 +1824,7 @@ eoc_scroll_view_init (EocScrollView *view)
 	priv->pixbuf = NULL;
 	priv->surface = NULL;
 	priv->transp_style = EOC_TRANSP_BACKGROUND;
-	g_warn_if_fail (gdk_rgba_parse(&priv->transp_color, CHECK_BLACK));
+	g_warn_if_fail (cdk_rgba_parse(&priv->transp_color, CHECK_BLACK));
 	priv->cursor = EOC_SCROLL_VIEW_CURSOR_NORMAL;
 	priv->menu = NULL;
 	priv->background_color = NULL;
@@ -1941,12 +1941,12 @@ eoc_scroll_view_dispose (GObject *object)
 	}
 
 	if (priv->background_color != NULL) {
-		gdk_rgba_free (priv->background_color);
+		cdk_rgba_free (priv->background_color);
 		priv->background_color = NULL;
 	}
 
 	if (priv->override_bg_color != NULL) {
-		gdk_rgba_free (priv->override_bg_color);
+		cdk_rgba_free (priv->override_bg_color);
 		priv->override_bg_color = NULL;
 	}
 
@@ -2183,8 +2183,8 @@ view_on_drag_begin_cb (CtkWidget        *widget,
 	thumbnail = eoc_image_get_thumbnail (image);
 
 	if  (thumbnail) {
-		width = gdk_pixbuf_get_width (thumbnail) / view->priv->scale;
-		height = gdk_pixbuf_get_height (thumbnail) / view->priv->scale;
+		width = cdk_pixbuf_get_width (thumbnail) / view->priv->scale;
+		height = cdk_pixbuf_get_height (thumbnail) / view->priv->scale;
 		ctk_drag_set_icon_pixbuf (context, thumbnail, width/2, height/2);
 		g_object_unref (thumbnail);
 	}
@@ -2268,26 +2268,26 @@ eoc_scroll_view_set_popup (EocScrollView *view,
 }
 
 static gboolean
-_eoc_gdk_rgba_equal0 (const GdkRGBA *a, const GdkRGBA *b)
+_eoc_cdk_rgba_equal0 (const GdkRGBA *a, const GdkRGBA *b)
 {
 	if (a == NULL || b == NULL)
 		return (a == b);
 
-	return gdk_rgba_equal (a, b);
+	return cdk_rgba_equal (a, b);
 }
 
 static gboolean
-_eoc_replace_gdk_rgba (GdkRGBA **dest, const GdkRGBA *src)
+_eoc_replace_cdk_rgba (GdkRGBA **dest, const GdkRGBA *src)
 {
 	GdkRGBA *old = *dest;
 
-	if (_eoc_gdk_rgba_equal0 (old, src))
+	if (_eoc_cdk_rgba_equal0 (old, src))
 		return FALSE;
 
 	if (old != NULL)
-		gdk_rgba_free (old);
+		cdk_rgba_free (old);
 
-	*dest = (src) ? gdk_rgba_copy (src) : NULL;
+	*dest = (src) ? cdk_rgba_copy (src) : NULL;
 
 	return TRUE;
 }
@@ -2314,7 +2314,7 @@ eoc_scroll_view_set_background_color (EocScrollView *view,
 {
 	g_return_if_fail (EOC_IS_SCROLL_VIEW (view));
 
-	if (_eoc_replace_gdk_rgba (&view->priv->background_color, color))
+	if (_eoc_replace_cdk_rgba (&view->priv->background_color, color))
 		_eoc_scroll_view_update_bg_color (view);
 }
 
@@ -2324,7 +2324,7 @@ eoc_scroll_view_override_bg_color (EocScrollView *view,
 {
 	g_return_if_fail (EOC_IS_SCROLL_VIEW (view));
 
-	if (_eoc_replace_gdk_rgba (&view->priv->override_bg_color, color))
+	if (_eoc_replace_cdk_rgba (&view->priv->override_bg_color, color))
 		_eoc_scroll_view_update_bg_color (view);
 }
 

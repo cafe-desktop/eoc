@@ -39,7 +39,7 @@
 #include <glib/gi18n.h>
 #include <glib-object.h>
 #include <ctk/ctk.h>
-#include <gdk/gdkx.h>
+#include <cdk/cdkx.h>
 
 #define APPLICATION_SERVICE_NAME "org.cafe.eoc.ApplicationService"
 

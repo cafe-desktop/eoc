@@ -565,7 +565,7 @@ static void
 on_data_loaded_cb (EocJob *job, gpointer data)
 {
 	if (!job->error) {
-		ctk_tooltip_trigger_tooltip_query (gdk_display_get_default());
+		ctk_tooltip_trigger_tooltip_query (cdk_display_get_default());
 	}
 }
 

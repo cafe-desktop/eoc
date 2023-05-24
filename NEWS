@@ -11,7 +11,7 @@
 ### eoc 1.24.0
 
   * Translations update
-  * thumbnailer: add --with-gdk-pixbuf-thumbnailer option
+  * thumbnailer: add --with-cdk-pixbuf-thumbnailer option
   * Add eoc-thumbnailer for webp files
   * autoconf: AC_PROG_CC was called before AX_CHECK_ENABLE_DEBUG
   * Fix preprocessing warning for file: src/eoc-window.c
@@ -135,7 +135,7 @@
   * EocMetadataDetails: Don't install header file
   * EocExifDetails: Rename to EocMetadataDetails
   * Drop eoc_close_confirmation_dialog_set_sensitive
-  * scroll-view: Remove a gdk_window_process_updates call
+  * scroll-view: Remove a cdk_window_process_updates call
   * util: Port to ctk_show_uri_on_window
   * EocImage: Make sure to emit size-prepared after applying orientation
   * EocImage: Fix too early size-prepared emission
@@ -164,7 +164,7 @@
   * Remove unneeded finalize() from EocListStore
   * Update plugins to use EocWindowActivatable interface
   * Add our own activatable interface to EocWindow
-  * Replace gdk_spawn_command_line_on_screen()
+  * Replace cdk_spawn_command_line_on_screen()
   * sidebar: replace deprecated ctk_misc_set_alignment
   * EocWindow: Simplify metadata sidebar title
   * EocSidebar: Set orientation property via g_object_new
@@ -201,7 +201,7 @@
   * svg: Fix offset coordinates when transforming SVG images on HiDPI displays
   * require libpeas 1.8.0
   * plugins: Use Python 3.x for Python plugins
-  * replace deprecated gdk_flush
+  * replace deprecated cdk_flush
   * fix some -Wincompatible-pointer-types warnings
   * Scale HiDPI images correctly
   * eoc-window.c: avoid deprecated CtkButton:use-stock
@@ -219,9 +219,9 @@
 ### eoc 1.19.1
 
   * Translations update
-  * ctk 3.22: avoid deprecated gdk_screen_get_monitor... functions:
+  * ctk 3.22: avoid deprecated cdk_screen_get_monitor... functions:
   * don't use deprecated ctk_show_uri
-  * avoid deprecated gdk_screen_get_number
+  * avoid deprecated cdk_screen_get_number
   * Restore Polish translation credits from GNOME
   * fix warning on closing empty window with multiple eoc windows
 

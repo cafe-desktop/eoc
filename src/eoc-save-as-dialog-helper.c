@@ -153,7 +153,7 @@ prepare_format_combobox (SaveAsData *data)
 		f = (GdkPixbufFormat*) it->data;
 
 		ctk_list_store_append (store, &iter);
-		ctk_list_store_set (store, &iter, 0, gdk_pixbuf_format_get_name (f), 1, f, -1);
+		ctk_list_store_set (store, &iter, 0, cdk_pixbuf_format_get_name (f), 1, f, -1);
 	}
 	g_slist_free (formats);
 

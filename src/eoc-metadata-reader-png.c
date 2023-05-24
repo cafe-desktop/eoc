@@ -28,7 +28,7 @@
 #include <math.h>
 #include <string.h>
 #include <zlib.h>
-#include <gdk/gdkx.h>
+#include <cdk/cdkx.h>
 
 #include "eoc-metadata-reader.h"
 #include "eoc-metadata-reader-png.h"
@@ -586,7 +586,7 @@ eoc_metadata_reader_png_get_icc_profile (EocMetadataReaderPng *emr)
 			return NULL;
 		}
 
-		if (GDK_IS_X11_DISPLAY (gdk_display_get_default ())) {
+		if (GDK_IS_X11_DISPLAY (cdk_display_get_default ())) {
 			profile = cmsOpenProfileFromMem(outbuf, zstr.total_out);
 		}
 		inflateEnd (&zstr);
@@ -600,7 +600,7 @@ eoc_metadata_reader_png_get_icc_profile (EocMetadataReaderPng *emr)
 		/* If the file has an sRGB chunk the image data is in the sRGB
 		 * colorspace. lcms has a built-in sRGB profile. */
 
-		if (GDK_IS_X11_DISPLAY (gdk_display_get_default ())) {
+		if (GDK_IS_X11_DISPLAY (cdk_display_get_default ())) {
 			profile = cmsCreate_sRGBProfile ();
 		}
 	}
@@ -637,13 +637,13 @@ eoc_metadata_reader_png_get_icc_profile (EocMetadataReaderPng *emr)
 		 * profile instead of computing one that "gets close". */
 		if(_chrm_matches_srgb (&whitepoint, &primaries, gammaValue)) {
 			eoc_debug_message (DEBUG_LCMS, "gAMA and cHRM match sRGB");
-			if (GDK_IS_X11_DISPLAY (gdk_display_get_default ())) {
+			if (GDK_IS_X11_DISPLAY (cdk_display_get_default ())) {
 				profile = cmsCreate_sRGBProfile ();
 			}
 		} else {
 			gamma[0] = gamma[1] = gamma[2] =
 				cmsBuildGamma (NULL, gammaValue);
-			if (GDK_IS_X11_DISPLAY (gdk_display_get_default ())) {
+			if (GDK_IS_X11_DISPLAY (cdk_display_get_default ())) {
 				profile = cmsCreateRGBProfile (&whitepoint, &primaries,
 						gamma);
 				cmsFreeToneCurve(gamma[0]);

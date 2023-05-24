@@ -103,7 +103,7 @@ EOC_MODULES="ctk+-3.0 >= $CTK_REQUIRED \
              gio-unix-2.0 >= $GLIB_REQUIRED \
              gthread-2.0 >= $GLIB_REQUIRED \
              cafe-desktop-2.0 >= $CAFE_DESKTOP_REQUIRED \
-             gdk-pixbuf-2.0 >= $GDKPIXBUF_REQUIRED \
+             cdk-pixbuf-2.0 >= $GDKPIXBUF_REQUIRED \
              gio-2.0 >= $GIO_REQUIRED \
              ctk+-unix-print-3.0 >= $CTK_REQUIRED \
              shared-mime-info >= $SHARED_MIME_INFO_REQUIRED \
@@ -297,18 +297,18 @@ AC_ARG_ENABLE(thumbnailer,
 	[enable_thumbnailer=no])
 AM_CONDITIONAL(ENABLE_THUMBNAILER, test x$enable_thumbnailer != xno)
 
-AC_ARG_WITH(gdk-pixbuf-thumbnailer,
-	[AS_HELP_STRING([--without-gdk-pixbuf-thumbnailer],
-		[Disable the use of gdk-pixbuf-thumbnailer])],
+AC_ARG_WITH(cdk-pixbuf-thumbnailer,
+	[AS_HELP_STRING([--without-cdk-pixbuf-thumbnailer],
+		[Disable the use of cdk-pixbuf-thumbnailer])],
 	[],
-	[with_gdk_pixbuf_thumbnailer=yes])
-AM_CONDITIONAL(USE_INTERNAL_THUMBNAILER, test x$with_gdk_pixbuf_thumbnailer != xyes)
+	[with_cdk_pixbuf_thumbnailer=yes])
+AM_CONDITIONAL(USE_INTERNAL_THUMBNAILER, test x$with_cdk_pixbuf_thumbnailer != xyes)
 
 if test "x$enable_thumbnailer" != "xno"; then
-	if test "x$with_gdk_pixbuf_thumbnailer" = "xyes"; then
-		AC_PATH_PROG([GDK_PIXBUF_THUMBNAILER],[gdk-pixbuf-thumbnailer],[])
+	if test "x$with_cdk_pixbuf_thumbnailer" = "xyes"; then
+		AC_PATH_PROG([GDK_PIXBUF_THUMBNAILER],[cdk-pixbuf-thumbnailer],[])
 		if test -z "$GDK_PIXBUF_THUMBNAILER"; then
-			AC_MSG_ERROR([gdk-pixbuf-thumbnailer not found])
+			AC_MSG_ERROR([cdk-pixbuf-thumbnailer not found])
 		fi
 		eoc_thumbnailer="$GDK_PIXBUF_THUMBNAILER"
 	else
@@ -357,9 +357,9 @@ AC_SUBST(EOC_LIBS)
 # *******************************************************
 
 # Check GDK rendering target
-gdk_target_has_x11=`$PKG_CONFIG --variable=targets gdk-3.0 | grep x11`
+cdk_target_has_x11=`$PKG_CONFIG --variable=targets cdk-3.0 | grep x11`
 
-if test "x$have_lcms" = "xyes" || test "$gdk_target_has_x11" != ""; then
+if test "x$have_lcms" = "xyes" || test "$cdk_target_has_x11" != ""; then
 	PKG_CHECK_MODULES(X11, [x11], have_x11=yes, have_x11=no)
 
 	if test "x$have_x11" != "xyes"; then

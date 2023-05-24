@@ -103,7 +103,7 @@ main (int argc, char **argv)
 	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
 	textdomain (GETTEXT_PACKAGE);
 
-	gdk_set_allowed_backends ("wayland,x11");
+	cdk_set_allowed_backends ("wayland,x11");
 
 	ctx = g_option_context_new (_("[FILE…]"));
 	g_option_context_add_main_entries (ctx, goption_options, PACKAGE);
@@ -151,7 +151,7 @@ main (int argc, char **argv)
 		g_clear_error (&error);
 	} else {
 		ctk_style_context_add_provider_for_screen (
-				gdk_screen_get_default(),
+				cdk_screen_get_default(),
 				CTK_STYLE_PROVIDER (provider),
 				CTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
 	}
