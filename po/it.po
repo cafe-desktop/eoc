@@ -403,12 +403,12 @@ msgstr ""
 #: data/org.cafe.eoc.gschema.xml.in:17
 msgid ""
 "The color that is used to fill the area behind the image. If the use-"
-"background-color key is not set, the color is determined by the active GTK+ "
+"background-color key is not set, the color is determined by the active CTK+ "
 "theme instead."
 msgstr ""
 "Il colore che sarà usato per riempire l'area dietro l'immagine. Se la chiave"
 " \"use-background-color\" non è impostata, il colore è determinato dal tema "
-"GTK+ attivo."
+"CTK+ attivo."
 
 #: data/org.cafe.eoc.gschema.xml.in:21
 msgid "Use a custom background color"
@@ -417,11 +417,11 @@ msgstr "Usa un colore dello sfondo personalizzato"
 #: data/org.cafe.eoc.gschema.xml.in:22
 msgid ""
 "If this is active, the color set by the background-color key will be used to"
-" fill the area behind the image. If it is not set, the current GTK+ theme "
+" fill the area behind the image. If it is not set, the current CTK+ theme "
 "will determine the fill color."
 msgstr ""
 "Se attivata, il colore impostato nella chiave background-color sarà usato "
-"per riempire l'area dietro l'immagine. Se non impostata, l'attuale tema GTK+"
+"per riempire l'area dietro l'immagine. Se non impostata, l'attuale tema CTK+"
 " determinerà il colore di riempimento."
 
 #: data/org.cafe.eoc.gschema.xml.in:26

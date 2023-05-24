@@ -403,11 +403,11 @@ msgstr ""
 #: data/org.cafe.eoc.gschema.xml.in:17
 msgid ""
 "The color that is used to fill the area behind the image. If the use-"
-"background-color key is not set, the color is determined by the active GTK+ "
+"background-color key is not set, the color is determined by the active CTK+ "
 "theme instead."
 msgstr ""
 "Колір, яким заповнюється простір за зображенням. Якщо не вказано, "
-"використовуватиметься колір поточної теми GTK+."
+"використовуватиметься колір поточної теми CTK+."
 
 #: data/org.cafe.eoc.gschema.xml.in:21
 msgid "Use a custom background color"
@@ -416,12 +416,12 @@ msgstr "Використовувати власний колір тла"
 #: data/org.cafe.eoc.gschema.xml.in:22
 msgid ""
 "If this is active, the color set by the background-color key will be used to"
-" fill the area behind the image. If it is not set, the current GTK+ theme "
+" fill the area behind the image. If it is not set, the current CTK+ theme "
 "will determine the fill color."
 msgstr ""
 "Якщо увімкнено, для заповнення ділянки поза зображенням буде "
 "використовуватися колір, встановлений ключем background-color. У "
-"протилежному випадку, колір заповнення буде визначено поточною темою GTK+."
+"протилежному випадку, колір заповнення буде визначено поточною темою CTK+."
 
 #: data/org.cafe.eoc.gschema.xml.in:26
 msgid "Interpolate Image"

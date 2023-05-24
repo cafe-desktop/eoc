@@ -63,11 +63,11 @@ eoc_util_show_help (const gchar *section, CtkWindow *parent)
 
 		dialog = ctk_message_dialog_new (parent,
 						 0,
-						 GTK_MESSAGE_ERROR,
-						 GTK_BUTTONS_OK,
+						 CTK_MESSAGE_ERROR,
+						 CTK_BUTTONS_OK,
 						 _("Could not display help for Eye of CAFE"));
 
-		ctk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
+		ctk_message_dialog_format_secondary_text (CTK_MESSAGE_DIALOG (dialog),
 							  "%s", error->message);
 
 		g_signal_connect_swapped (dialog, "response",

@@ -396,10 +396,10 @@ msgstr "EXIF 방향 정보에 따라 그림을 자동으로 회전할 지 여부
 #: data/org.cafe.eoc.gschema.xml.in:17
 msgid ""
 "The color that is used to fill the area behind the image. If the use-"
-"background-color key is not set, the color is determined by the active GTK+ "
+"background-color key is not set, the color is determined by the active CTK+ "
 "theme instead."
 msgstr ""
-"이미지 뒤 영역을 칠할 색상입니다. use-background-color 키를 설정하지 않으면, 활성화된 GTK+ 테마에서 대신 색상을 "
+"이미지 뒤 영역을 칠할 색상입니다. use-background-color 키를 설정하지 않으면, 활성화된 CTK+ 테마에서 대신 색상을 "
 "선택합니다."
 
 #: data/org.cafe.eoc.gschema.xml.in:21
@@ -409,10 +409,10 @@ msgstr "사용자 정의 배경색 사용"
 #: data/org.cafe.eoc.gschema.xml.in:22
 msgid ""
 "If this is active, the color set by the background-color key will be used to"
-" fill the area behind the image. If it is not set, the current GTK+ theme "
+" fill the area behind the image. If it is not set, the current CTK+ theme "
 "will determine the fill color."
 msgstr ""
-"활성화하면, 배경색 키로 설정한 색상 설정을 이미지 뒤의 공간을 채우는데 사용합니다. 설정하지 않았다면 현재 GTK+ 테마가 채울 색상을"
+"활성화하면, 배경색 키로 설정한 색상 설정을 이미지 뒤의 공간을 채우는데 사용합니다. 설정하지 않았다면 현재 CTK+ 테마가 채울 색상을"
 " 결정합니다."
 
 #: data/org.cafe.eoc.gschema.xml.in:26

@@ -391,12 +391,12 @@ msgstr "Արդյոք պատկերը պետք է պտտվի ինքնաբերաբ�
 #: data/org.cafe.eoc.gschema.xml.in:17
 msgid ""
 "The color that is used to fill the area behind the image. If the use-"
-"background-color key is not set, the color is determined by the active GTK+ "
+"background-color key is not set, the color is determined by the active CTK+ "
 "theme instead."
 msgstr ""
 "Գույնը, որն օգտագործվում է պատկերի ետևում տարածքը լրացնելու համար։ Եթե "
 "օգտագործել֊ֆանի֊գույն բանալին սահմանված չէ,ապա փոխարենը գույն որոշում է "
-"ակտիվ GTK+ թեման։"
+"ակտիվ CTK+ թեման։"
 
 #: data/org.cafe.eoc.gschema.xml.in:21
 msgid "Use a custom background color"
@@ -405,12 +405,12 @@ msgstr "Օգտագործել սովորական ֆոնի գույն"
 #: data/org.cafe.eoc.gschema.xml.in:22
 msgid ""
 "If this is active, the color set by the background-color key will be used to"
-" fill the area behind the image. If it is not set, the current GTK+ theme "
+" fill the area behind the image. If it is not set, the current CTK+ theme "
 "will determine the fill color."
 msgstr ""
 "Եթե սա ակտիվ է, ապա գույնը կսահմանվի ֆոնի֊գույն բանալու կողմից, որը "
 "կոգտագործվի պատկերի ետևի տարածքը լրացնելու համար։ Եթե դա սահմանված չէ, ապա "
-"ընթացիկ GTK+ թեման կորոշի լրացնելու գույնը։"
+"ընթացիկ CTK+ թեման կորոշի լրացնելու գույնը։"
 
 #: data/org.cafe.eoc.gschema.xml.in:26
 msgid "Interpolate Image"

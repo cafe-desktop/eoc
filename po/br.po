@@ -394,12 +394,12 @@ msgstr ""
 #: data/org.cafe.eoc.gschema.xml.in:17
 msgid ""
 "The color that is used to fill the area behind the image. If the use-"
-"background-color key is not set, the color is determined by the active GTK+ "
+"background-color key is not set, the color is determined by the active CTK+ "
 "theme instead."
 msgstr ""
 "Al liv arveret evit leuniañ ar maez a-dreñv ar skeudenn. Ma n'eo ket bet "
 "erspizet an alc'hwez use-background-color e vo despizet al liv gant an neuz "
-"oberiant mod GTK+ en e lec'h."
+"oberiant mod CTK+ en e lec'h."
 
 #: data/org.cafe.eoc.gschema.xml.in:21
 msgid "Use a custom background color"
@@ -408,12 +408,12 @@ msgstr "Arverañ ul liv drekleur personelaet"
 #: data/org.cafe.eoc.gschema.xml.in:22
 msgid ""
 "If this is active, the color set by the background-color key will be used to"
-" fill the area behind the image. If it is not set, the current GTK+ theme "
+" fill the area behind the image. If it is not set, the current CTK+ theme "
 "will determine the fill color."
 msgstr ""
 "Mar gweredekaet e vo arveret al liv despizet gant an alc'hwez background-"
 "color da leuniañ ar maez a-dreñv ar skeudenn. Ma n'eo ket bet gweredekaet e "
-"vo despizet al liv leuniañ gant an neuz mod GTK+."
+"vo despizet al liv leuniañ gant an neuz mod CTK+."
 
 #: data/org.cafe.eoc.gschema.xml.in:26
 msgid "Interpolate Image"

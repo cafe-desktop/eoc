@@ -40,7 +40,7 @@ struct _EocListStorePrivate {
 	GMutex mutex;            /* Mutex for saving the jobs in the model */
 };
 
-G_DEFINE_TYPE_WITH_PRIVATE (EocListStore, eoc_list_store, GTK_TYPE_LIST_STORE);
+G_DEFINE_TYPE_WITH_PRIVATE (EocListStore, eoc_list_store, CTK_TYPE_LIST_STORE);
 
 static void
 foreach_monitors_free (gpointer data, gpointer user_data)
@@ -147,7 +147,7 @@ eoc_list_store_init (EocListStore *self)
 	types[EOC_LIST_STORE_THUMB_SET] = G_TYPE_BOOLEAN;
 	types[EOC_LIST_STORE_EOC_JOB]   = G_TYPE_POINTER;
 
-	ctk_list_store_set_column_types (GTK_LIST_STORE (self),
+	ctk_list_store_set_column_types (CTK_LIST_STORE (self),
 					 EOC_LIST_STORE_NUM_COLUMNS, types);
 
 	self->priv = eoc_list_store_get_instance_private (self);
@@ -160,13 +160,13 @@ eoc_list_store_init (EocListStore *self)
 
 	g_mutex_init (&self->priv->mutex);
 
-	ctk_tree_sortable_set_default_sort_func (GTK_TREE_SORTABLE (self),
+	ctk_tree_sortable_set_default_sort_func (CTK_TREE_SORTABLE (self),
 						 eoc_list_store_compare_func,
 						 NULL, NULL);
 
-	ctk_tree_sortable_set_sort_column_id (GTK_TREE_SORTABLE (self),
-					      GTK_TREE_SORTABLE_DEFAULT_SORT_COLUMN_ID,
-					      GTK_SORT_ASCENDING);
+	ctk_tree_sortable_set_sort_column_id (CTK_TREE_SORTABLE (self),
+					      CTK_TREE_SORTABLE_DEFAULT_SORT_COLUMN_ID,
+					      CTK_SORT_ASCENDING);
 }
 
 /**
@@ -197,12 +197,12 @@ is_file_in_list_store (EocListStore *store,
 	gchar *str;
 	CtkTreeIter iter;
 
-	if (!ctk_tree_model_get_iter_first (GTK_TREE_MODEL (store), &iter)) {
+	if (!ctk_tree_model_get_iter_first (CTK_TREE_MODEL (store), &iter)) {
 		return FALSE;
 	}
 
 	do {
-		ctk_tree_model_get (GTK_TREE_MODEL (store), &iter,
+		ctk_tree_model_get (CTK_TREE_MODEL (store), &iter,
 				    EOC_LIST_STORE_EOC_IMAGE, &image,
 				    -1);
 		if (!image)
@@ -218,7 +218,7 @@ is_file_in_list_store (EocListStore *store,
 		g_object_unref (G_OBJECT (image));
 
 	} while (!found &&
-		 ctk_tree_model_iter_next (GTK_TREE_MODEL (store), &iter));
+		 ctk_tree_model_iter_next (CTK_TREE_MODEL (store), &iter));
 
 	if (found && iter_found != NULL) {
 		*iter_found = iter;
@@ -260,7 +260,7 @@ eoc_job_thumbnail_cb (EocJobThumbnail *job, gpointer data)
 	file = eoc_image_get_file (job->image);
 
 	if (is_file_in_list_store_file (store, file, &iter)) {
-		ctk_tree_model_get (GTK_TREE_MODEL (store), &iter,
+		ctk_tree_model_get (CTK_TREE_MODEL (store), &iter,
 				    EOC_LIST_STORE_EOC_IMAGE, &image,
 				    -1);
 
@@ -274,7 +274,7 @@ eoc_job_thumbnail_cb (EocJobThumbnail *job, gpointer data)
 			thumbnail = g_object_ref (store->priv->missing_image);
 		}
 
-		ctk_list_store_set (GTK_LIST_STORE (store), &iter,
+		ctk_list_store_set (CTK_LIST_STORE (store), &iter,
 				    EOC_LIST_STORE_THUMBNAIL, thumbnail,
 				    EOC_LIST_STORE_THUMB_SET, TRUE,
 				    EOC_LIST_STORE_EOC_JOB, NULL,
@@ -296,7 +296,7 @@ on_image_changed (EocImage *image, EocListStore *store)
 	pos = eoc_list_store_get_pos_by_image (store, image);
 	path = ctk_tree_path_new_from_indices (pos, -1);
 
-	ctk_tree_model_get_iter (GTK_TREE_MODEL (store), &iter, path);
+	ctk_tree_model_get_iter (CTK_TREE_MODEL (store), &iter, path);
 	eoc_list_store_thumbnail_refresh (store, &iter);
 	ctk_tree_path_free (path);
 }
@@ -313,14 +313,14 @@ eoc_list_store_remove (EocListStore *store, CtkTreeIter *iter)
 {
 	EocImage *image;
 
-	ctk_tree_model_get (GTK_TREE_MODEL (store), iter,
+	ctk_tree_model_get (CTK_TREE_MODEL (store), iter,
 			    EOC_LIST_STORE_EOC_IMAGE, &image,
 			    -1);
 
 	g_signal_handlers_disconnect_by_func (image, on_image_changed, store);
 	g_object_unref (image);
 
-	ctk_list_store_remove (GTK_LIST_STORE (store), iter);
+	ctk_list_store_remove (CTK_LIST_STORE (store), iter);
 }
 
 /**
@@ -342,8 +342,8 @@ eoc_list_store_append_image (EocListStore *store, EocImage *image)
  			  G_CALLBACK (on_image_changed),
  			  store);
 
-	ctk_list_store_append (GTK_LIST_STORE (store), &iter);
-	ctk_list_store_set (GTK_LIST_STORE (store), &iter,
+	ctk_list_store_append (CTK_LIST_STORE (store), &iter);
+	ctk_list_store_set (CTK_LIST_STORE (store), &iter,
 			    EOC_LIST_STORE_EOC_IMAGE, image,
 			    EOC_LIST_STORE_THUMBNAIL, store->priv->busy_image,
 			    EOC_LIST_STORE_THUMB_SET, FALSE,
@@ -389,7 +389,7 @@ file_monitor_changed_cb (GFileMonitor *monitor,
 
 		if (is_file_in_list_store_file (store, file, &iter)) {
 			if (eoc_image_is_supported_mime_type (mimetype)) {
-				ctk_tree_model_get (GTK_TREE_MODEL (store), &iter,
+				ctk_tree_model_get (CTK_TREE_MODEL (store), &iter,
 						    EOC_LIST_STORE_EOC_IMAGE, &image,
 						    -1);
 				eoc_image_file_changed (image);
@@ -412,7 +412,7 @@ file_monitor_changed_cb (GFileMonitor *monitor,
 		if (is_file_in_list_store_file (store, file, &iter)) {
 			EocImage *image;
 
-			ctk_tree_model_get (GTK_TREE_MODEL (store), &iter,
+			ctk_tree_model_get (CTK_TREE_MODEL (store), &iter,
 					    EOC_LIST_STORE_EOC_IMAGE, &image,
 					    -1);
 
@@ -557,9 +557,9 @@ eoc_list_store_add_files (EocListStore *store, GList *file_list)
 		return;
 	}
 
-	ctk_tree_sortable_set_sort_column_id (GTK_TREE_SORTABLE (store),
-					      GTK_TREE_SORTABLE_UNSORTED_SORT_COLUMN_ID,
-					      GTK_SORT_ASCENDING);
+	ctk_tree_sortable_set_sort_column_id (CTK_TREE_SORTABLE (store),
+					      CTK_TREE_SORTABLE_UNSORTED_SORT_COLUMN_ID,
+					      CTK_SORT_ASCENDING);
 
 	for (it = file_list; it != NULL; it = it->next) {
 		GFile *file = (GFile *) it->data;
@@ -629,9 +629,9 @@ eoc_list_store_add_files (EocListStore *store, GList *file_list)
 		g_free (caption);
 	}
 
-	ctk_tree_sortable_set_sort_column_id (GTK_TREE_SORTABLE (store),
-					      GTK_TREE_SORTABLE_DEFAULT_SORT_COLUMN_ID,
-					      GTK_SORT_ASCENDING);
+	ctk_tree_sortable_set_sort_column_id (CTK_TREE_SORTABLE (store),
+					      CTK_TREE_SORTABLE_DEFAULT_SORT_COLUMN_ID,
+					      CTK_SORT_ASCENDING);
 
 	if (initial_file &&
 	    is_file_in_list_store_file (store, initial_file, &iter)) {
@@ -739,8 +739,8 @@ eoc_list_store_get_image_by_pos (EocListStore *store, gint pos)
 
 	g_return_val_if_fail (EOC_IS_LIST_STORE (store), NULL);
 
-	if (ctk_tree_model_iter_nth_child (GTK_TREE_MODEL (store), &iter, NULL, pos)) {
-		ctk_tree_model_get (GTK_TREE_MODEL (store), &iter,
+	if (ctk_tree_model_iter_nth_child (CTK_TREE_MODEL (store), &iter, NULL, pos)) {
+		ctk_tree_model_get (CTK_TREE_MODEL (store), &iter,
 				    EOC_LIST_STORE_EOC_IMAGE, &image,
 				    -1);
 	}
@@ -765,7 +765,7 @@ eoc_list_store_get_pos_by_iter (EocListStore *store,
 	CtkTreePath *path;
 	gint pos;
 
-	path = ctk_tree_model_get_path (GTK_TREE_MODEL (store), iter);
+	path = ctk_tree_model_get_path (CTK_TREE_MODEL (store), iter);
 	indices = ctk_tree_path_get_indices (path);
 	pos = indices [0];
 	ctk_tree_path_free (path);
@@ -786,7 +786,7 @@ eoc_list_store_length (EocListStore *store)
 {
 	g_return_val_if_fail (EOC_IS_LIST_STORE (store), -1);
 
-	return ctk_tree_model_iter_n_children (GTK_TREE_MODEL (store), NULL);
+	return ctk_tree_model_iter_n_children (CTK_TREE_MODEL (store), NULL);
 }
 
 /**
@@ -813,14 +813,14 @@ eoc_list_store_remove_thumbnail_job (EocListStore *store,
 {
 	EocJob *job;
 
-	ctk_tree_model_get (GTK_TREE_MODEL (store), iter,
+	ctk_tree_model_get (CTK_TREE_MODEL (store), iter,
 			    EOC_LIST_STORE_EOC_JOB, &job,
 			    -1);
 
 	if (job != NULL) {
 		g_mutex_lock (&store->priv->mutex);
 		eoc_job_queue_remove_job (job);
-		ctk_list_store_set (GTK_LIST_STORE (store), iter,
+		ctk_list_store_set (CTK_LIST_STORE (store), iter,
 				    EOC_LIST_STORE_EOC_JOB, NULL,
 				    -1);
 		g_mutex_unlock (&store->priv->mutex);
@@ -835,7 +835,7 @@ eoc_list_store_add_thumbnail_job (EocListStore *store, CtkTreeIter *iter)
 	EocImage *image;
 	EocJob *job;
 
-	ctk_tree_model_get (GTK_TREE_MODEL (store), iter,
+	ctk_tree_model_get (CTK_TREE_MODEL (store), iter,
 			    EOC_LIST_STORE_EOC_IMAGE, &image,
 			    EOC_LIST_STORE_EOC_JOB, &job,
 			    -1);
@@ -853,7 +853,7 @@ eoc_list_store_add_thumbnail_job (EocListStore *store, CtkTreeIter *iter)
 			  store);
 
 	g_mutex_lock (&store->priv->mutex);
-	ctk_list_store_set (GTK_LIST_STORE (store), iter,
+	ctk_list_store_set (CTK_LIST_STORE (store), iter,
 			    EOC_LIST_STORE_EOC_JOB, job,
 			    -1);
 	eoc_job_queue_add_job (job);
@@ -876,7 +876,7 @@ eoc_list_store_thumbnail_set (EocListStore *store,
 {
 	gboolean thumb_set = FALSE;
 
-	ctk_tree_model_get (GTK_TREE_MODEL (store), iter,
+	ctk_tree_model_get (CTK_TREE_MODEL (store), iter,
 			    EOC_LIST_STORE_THUMB_SET, &thumb_set,
 			    -1);
 
@@ -904,13 +904,13 @@ eoc_list_store_thumbnail_unset (EocListStore *store,
 
 	eoc_list_store_remove_thumbnail_job (store, iter);
 
-	ctk_tree_model_get (GTK_TREE_MODEL (store), iter,
+	ctk_tree_model_get (CTK_TREE_MODEL (store), iter,
 			    EOC_LIST_STORE_EOC_IMAGE, &image,
 			    -1);
 	eoc_image_set_thumbnail (image, NULL);
 	g_object_unref (image);
 
-	ctk_list_store_set (GTK_LIST_STORE (store), iter,
+	ctk_list_store_set (CTK_LIST_STORE (store), iter,
 			    EOC_LIST_STORE_THUMBNAIL, store->priv->busy_image,
 			    EOC_LIST_STORE_THUMB_SET, FALSE,
 			    -1);

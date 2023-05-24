@@ -51,7 +51,7 @@ struct _EocFileChooserPrivate
 	CtkWidget *creator_label;
 };
 
-G_DEFINE_TYPE_WITH_PRIVATE (EocFileChooser, eoc_file_chooser, GTK_TYPE_FILE_CHOOSER_DIALOG)
+G_DEFINE_TYPE_WITH_PRIVATE (EocFileChooser, eoc_file_chooser, CTK_TYPE_FILE_CHOOSER_DIALOG)
 
 static void
 eoc_file_chooser_finalize (GObject *object)
@@ -86,9 +86,9 @@ response_cb (CtkDialog *dlg, gint id, gpointer data)
 	char *dir;
 	CtkFileChooserAction action;
 
-	if (id == GTK_RESPONSE_OK) {
-		dir = ctk_file_chooser_get_current_folder (GTK_FILE_CHOOSER (dlg));
-		action = ctk_file_chooser_get_action (GTK_FILE_CHOOSER (dlg));
+	if (id == CTK_RESPONSE_OK) {
+		dir = ctk_file_chooser_get_current_folder (CTK_FILE_CHOOSER (dlg));
+		action = ctk_file_chooser_get_action (CTK_FILE_CHOOSER (dlg));
 
 		if (last_dir [action] != NULL)
 			g_free (last_dir [action]);
@@ -103,10 +103,10 @@ save_response_cb (CtkDialog *dlg, gint id, gpointer data)
 	GFile *file;
 	GdkPixbufFormat *format;
 
-	if (id != GTK_RESPONSE_OK)
+	if (id != CTK_RESPONSE_OK)
 		return;
 
-	file = ctk_file_chooser_get_file (GTK_FILE_CHOOSER (dlg));
+	file = ctk_file_chooser_get_file (CTK_FILE_CHOOSER (dlg));
 	format = eoc_pixbuf_get_format (file);
 	g_object_unref (file);
 
@@ -114,19 +114,19 @@ save_response_cb (CtkDialog *dlg, gint id, gpointer data)
 		CtkWidget *msg_dialog;
 
 		msg_dialog = ctk_message_dialog_new (
-						     GTK_WINDOW (dlg),
-						     GTK_DIALOG_MODAL,
-						     GTK_MESSAGE_ERROR,
-						     GTK_BUTTONS_OK,
+						     CTK_WINDOW (dlg),
+						     CTK_DIALOG_MODAL,
+						     CTK_MESSAGE_ERROR,
+						     CTK_BUTTONS_OK,
 						     _("File format is unknown or unsupported"));
 
 		ctk_message_dialog_format_secondary_text (
-						GTK_MESSAGE_DIALOG (msg_dialog),
+						CTK_MESSAGE_DIALOG (msg_dialog),
 						"%s\n%s",
 		 				_("Eye of CAFE could not determine a supported writable file format based on the filename."),
 		  				_("Please try a different file extension like .png or .jpg."));
 
-		ctk_dialog_run (GTK_DIALOG (msg_dialog));
+		ctk_dialog_run (CTK_DIALOG (msg_dialog));
 		ctk_widget_destroy (msg_dialog);
 
 		g_signal_stop_emission_by_name (dlg, "response");
@@ -148,9 +148,9 @@ eoc_file_chooser_add_filter (EocFileChooser *chooser)
 	int i;
 	CtkFileChooserAction action;
 
-	action = ctk_file_chooser_get_action (GTK_FILE_CHOOSER (chooser));
+	action = ctk_file_chooser_get_action (CTK_FILE_CHOOSER (chooser));
 
-	if (action != GTK_FILE_CHOOSER_ACTION_SAVE && action != GTK_FILE_CHOOSER_ACTION_OPEN) {
+	if (action != CTK_FILE_CHOOSER_ACTION_SAVE && action != CTK_FILE_CHOOSER_ACTION_OPEN) {
 		return;
 	}
 
@@ -163,7 +163,7 @@ eoc_file_chooser_add_filter (EocFileChooser *chooser)
 	all_img_filter = ctk_file_filter_new ();
 	ctk_file_filter_set_name (all_img_filter, _("All Images"));
 
-	if (action == GTK_FILE_CHOOSER_ACTION_SAVE) {
+	if (action == CTK_FILE_CHOOSER_ACTION_SAVE) {
 		formats = eoc_pixbuf_get_savable_formats ();
 	}
 	else {
@@ -216,12 +216,12 @@ eoc_file_chooser_add_filter (EocFileChooser *chooser)
 	g_slist_free (formats);
 
 	/* Add filter to filechooser */
-	ctk_file_chooser_add_filter (GTK_FILE_CHOOSER (chooser), all_file_filter);
-	ctk_file_chooser_add_filter (GTK_FILE_CHOOSER (chooser), all_img_filter);
-	ctk_file_chooser_set_filter (GTK_FILE_CHOOSER (chooser), all_img_filter);
+	ctk_file_chooser_add_filter (CTK_FILE_CHOOSER (chooser), all_file_filter);
+	ctk_file_chooser_add_filter (CTK_FILE_CHOOSER (chooser), all_img_filter);
+	ctk_file_chooser_set_filter (CTK_FILE_CHOOSER (chooser), all_img_filter);
 
 	for (it = filters; it != NULL; it = it->next) {
-		ctk_file_chooser_add_filter (GTK_FILE_CHOOSER (chooser), GTK_FILE_FILTER (it->data));
+		ctk_file_chooser_add_filter (CTK_FILE_CHOOSER (chooser), CTK_FILE_FILTER (it->data));
 	}
 	g_slist_free (filters);
 }
@@ -230,11 +230,11 @@ static void
 set_preview_label (CtkWidget *label, const char *str)
 {
 	if (str == NULL) {
-		ctk_widget_hide (GTK_WIDGET (label));
+		ctk_widget_hide (CTK_WIDGET (label));
 	}
 	else {
-		ctk_label_set_text (GTK_LABEL (label), str);
-		ctk_widget_show (GTK_WIDGET (label));
+		ctk_label_set_text (CTK_LABEL (label), str);
+		ctk_widget_show (CTK_WIDGET (label));
 	}
 }
 
@@ -258,7 +258,7 @@ set_preview_pixbuf (EocFileChooser *chooser, GdkPixbuf *pixbuf, goffset size)
 
 	priv = chooser->priv;
 
-	ctk_image_set_from_pixbuf (GTK_IMAGE (priv->image), pixbuf);
+	ctk_image_set_from_pixbuf (CTK_IMAGE (priv->image), pixbuf);
 
 	if (pixbuf != NULL) {
 		/* try to read file size */
@@ -403,8 +403,8 @@ eoc_file_chooser_add_preview (CtkWidget *widget)
 
 	priv = EOC_FILE_CHOOSER (widget)->priv;
 
-	vbox = ctk_box_new (GTK_ORIENTATION_VERTICAL, 6);
-	ctk_container_set_border_width (GTK_CONTAINER (vbox), 12);
+	vbox = ctk_box_new (CTK_ORIENTATION_VERTICAL, 6);
+	ctk_container_set_border_width (CTK_CONTAINER (vbox), 12);
 
 	priv->image      = ctk_image_new ();
 	/* 128x128 is maximum size of thumbnails */
@@ -414,15 +414,15 @@ eoc_file_chooser_add_preview (CtkWidget *widget)
 	priv->size_label = ctk_label_new (NULL);
 	priv->creator_label = ctk_label_new (NULL);
 
-	ctk_box_pack_start (GTK_BOX (vbox), priv->image, FALSE, TRUE, 0);
-	ctk_box_pack_start (GTK_BOX (vbox), priv->dim_label, FALSE, TRUE, 0);
-	ctk_box_pack_start (GTK_BOX (vbox), priv->size_label, FALSE, TRUE, 0);
-	ctk_box_pack_start (GTK_BOX (vbox), priv->creator_label, FALSE, TRUE, 0);
+	ctk_box_pack_start (CTK_BOX (vbox), priv->image, FALSE, TRUE, 0);
+	ctk_box_pack_start (CTK_BOX (vbox), priv->dim_label, FALSE, TRUE, 0);
+	ctk_box_pack_start (CTK_BOX (vbox), priv->size_label, FALSE, TRUE, 0);
+	ctk_box_pack_start (CTK_BOX (vbox), priv->creator_label, FALSE, TRUE, 0);
 
 	ctk_widget_show_all (vbox);
 
-	ctk_file_chooser_set_preview_widget (GTK_FILE_CHOOSER (widget), vbox);
-	ctk_file_chooser_set_preview_widget_active (GTK_FILE_CHOOSER (widget), FALSE);
+	ctk_file_chooser_set_preview_widget (CTK_FILE_CHOOSER (widget), vbox);
+	ctk_file_chooser_set_preview_widget_active (CTK_FILE_CHOOSER (widget), FALSE);
 
 	priv->thumb_factory = cafe_desktop_thumbnail_factory_new (CAFE_DESKTOP_THUMBNAIL_SIZE_NORMAL);
 
@@ -438,31 +438,31 @@ eoc_file_chooser_new (CtkFileChooserAction action)
 
 	chooser = g_object_new (EOC_TYPE_FILE_CHOOSER,
 				"action", action,
-				"select-multiple", (action == GTK_FILE_CHOOSER_ACTION_OPEN),
+				"select-multiple", (action == CTK_FILE_CHOOSER_ACTION_OPEN),
 				"local-only", FALSE,
 				NULL);
 
 	switch (action) {
-	case GTK_FILE_CHOOSER_ACTION_OPEN:
-		ctk_dialog_add_buttons (GTK_DIALOG (chooser),
-					"ctk-cancel", GTK_RESPONSE_CANCEL,
-					"ctk-open", GTK_RESPONSE_OK,
+	case CTK_FILE_CHOOSER_ACTION_OPEN:
+		ctk_dialog_add_buttons (CTK_DIALOG (chooser),
+					"ctk-cancel", CTK_RESPONSE_CANCEL,
+					"ctk-open", CTK_RESPONSE_OK,
 					NULL);
 		title = _("Open Image");
 		break;
 
-	case GTK_FILE_CHOOSER_ACTION_SAVE:
-		ctk_dialog_add_buttons (GTK_DIALOG (chooser),
-					"ctk-cancel", GTK_RESPONSE_CANCEL,
-					"ctk-save", GTK_RESPONSE_OK,
+	case CTK_FILE_CHOOSER_ACTION_SAVE:
+		ctk_dialog_add_buttons (CTK_DIALOG (chooser),
+					"ctk-cancel", CTK_RESPONSE_CANCEL,
+					"ctk-save", CTK_RESPONSE_OK,
 					NULL);
 		title = _("Save Image");
 		break;
 
-	case GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER:
-		ctk_dialog_add_buttons (GTK_DIALOG (chooser),
-					"ctk-cancel", GTK_RESPONSE_CANCEL,
-					"ctk-open", GTK_RESPONSE_OK,
+	case CTK_FILE_CHOOSER_ACTION_SELECT_FOLDER:
+		ctk_dialog_add_buttons (CTK_DIALOG (chooser),
+					"ctk-cancel", CTK_RESPONSE_CANCEL,
+					"ctk-open", CTK_RESPONSE_OK,
 					NULL);
 		title = _("Open Folder");
 		break;
@@ -471,24 +471,24 @@ eoc_file_chooser_new (CtkFileChooserAction action)
 		g_assert_not_reached ();
 	}
 
-	if (action != GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER) {
+	if (action != CTK_FILE_CHOOSER_ACTION_SELECT_FOLDER) {
 		eoc_file_chooser_add_filter (EOC_FILE_CHOOSER (chooser));
 		eoc_file_chooser_add_preview (chooser);
 	}
 
 	if (last_dir[action] != NULL) {
-		ctk_file_chooser_set_current_folder (GTK_FILE_CHOOSER (chooser), last_dir [action]);
+		ctk_file_chooser_set_current_folder (CTK_FILE_CHOOSER (chooser), last_dir [action]);
 	}
 
 	g_signal_connect (chooser, "response",
-			  G_CALLBACK ((action == GTK_FILE_CHOOSER_ACTION_SAVE) ?
+			  G_CALLBACK ((action == CTK_FILE_CHOOSER_ACTION_SAVE) ?
 				      save_response_cb : response_cb),
 			  NULL);
 
- 	ctk_window_set_title (GTK_WINDOW (chooser), title);
-	ctk_dialog_set_default_response (GTK_DIALOG (chooser), GTK_RESPONSE_OK);
+ 	ctk_window_set_title (CTK_WINDOW (chooser), title);
+	ctk_dialog_set_default_response (CTK_DIALOG (chooser), CTK_RESPONSE_OK);
 
-	ctk_file_chooser_set_do_overwrite_confirmation (GTK_FILE_CHOOSER (chooser), TRUE);
+	ctk_file_chooser_set_do_overwrite_confirmation (CTK_FILE_CHOOSER (chooser), TRUE);
 
 	return chooser;
 }
@@ -501,7 +501,7 @@ eoc_file_chooser_get_format (EocFileChooser *chooser)
 
 	g_return_val_if_fail (EOC_IS_FILE_CHOOSER (chooser), NULL);
 
-	filter = ctk_file_chooser_get_filter (GTK_FILE_CHOOSER (chooser));
+	filter = ctk_file_chooser_get_filter (CTK_FILE_CHOOSER (chooser));
 	if (filter == NULL)
 		return NULL;
 

@@ -109,7 +109,7 @@ static void on_bottom_value_changed (CtkSpinButton *spinbutton, gpointer user_da
 static void on_width_value_changed  (CtkSpinButton *spinbutton, gpointer user_data);
 static void on_height_value_changed (CtkSpinButton *spinbutton, gpointer user_data);
 
-G_DEFINE_TYPE_WITH_PRIVATE (EocPrintImageSetup, eoc_print_image_setup, GTK_TYPE_GRID);
+G_DEFINE_TYPE_WITH_PRIVATE (EocPrintImageSetup, eoc_print_image_setup, CTK_TYPE_GRID);
 
 static void
 block_handlers (EocPrintImageSetup *setup)
@@ -143,10 +143,10 @@ get_scale_to_px_factor (EocPrintImageSetup *setup)
 	gdouble factor = 0.;
 
 	switch (setup->priv->current_unit) {
-	case GTK_UNIT_MM:
+	case CTK_UNIT_MM:
 		factor = FACTOR_MM_TO_PIXEL;
 		break;
-	case GTK_UNIT_INCH:
+	case CTK_UNIT_INCH:
 		factor = FACTOR_INCH_TO_PIXEL;
 		break;
 	default:
@@ -165,8 +165,8 @@ get_max_percentage (EocPrintImageSetup *setup)
 	gint pix_width, pix_height;
 	gdouble perc;
 
-	p_width = ctk_page_setup_get_page_width (priv->page_setup, GTK_UNIT_INCH);
-	p_height = ctk_page_setup_get_page_height (priv->page_setup, GTK_UNIT_INCH);
+	p_width = ctk_page_setup_get_page_width (priv->page_setup, CTK_UNIT_INCH);
+	p_height = ctk_page_setup_get_page_height (priv->page_setup, CTK_UNIT_INCH);
 
 	eoc_image_get_size (priv->image, &pix_width, &pix_height);
 
@@ -213,28 +213,28 @@ on_center_changed (CtkComboBox *combobox,
 	case CENTER_HORIZONTAL:
 		center (ctk_page_setup_get_page_width (priv->page_setup,
 						       priv->current_unit),
-			ctk_spin_button_get_value (GTK_SPIN_BUTTON (priv->width)),
-			GTK_SPIN_BUTTON (priv->left),
-			GTK_SPIN_BUTTON (priv->right));
+			ctk_spin_button_get_value (CTK_SPIN_BUTTON (priv->width)),
+			CTK_SPIN_BUTTON (priv->left),
+			CTK_SPIN_BUTTON (priv->right));
 		break;
 	case CENTER_VERTICAL:
 		center (ctk_page_setup_get_page_height (priv->page_setup,
 							priv->current_unit),
-			ctk_spin_button_get_value (GTK_SPIN_BUTTON (priv->height)),
-			GTK_SPIN_BUTTON (priv->top),
-			GTK_SPIN_BUTTON (priv->bottom));
+			ctk_spin_button_get_value (CTK_SPIN_BUTTON (priv->height)),
+			CTK_SPIN_BUTTON (priv->top),
+			CTK_SPIN_BUTTON (priv->bottom));
 		break;
 	case CENTER_BOTH:
 		center (ctk_page_setup_get_page_width (priv->page_setup,
 						       priv->current_unit),
-			ctk_spin_button_get_value (GTK_SPIN_BUTTON (priv->width)),
-			GTK_SPIN_BUTTON (priv->left),
-			GTK_SPIN_BUTTON (priv->right));
+			ctk_spin_button_get_value (CTK_SPIN_BUTTON (priv->width)),
+			CTK_SPIN_BUTTON (priv->left),
+			CTK_SPIN_BUTTON (priv->right));
 		center (ctk_page_setup_get_page_height (priv->page_setup,
 							priv->current_unit),
-			ctk_spin_button_get_value (GTK_SPIN_BUTTON (priv->height)),
-			GTK_SPIN_BUTTON (priv->top),
-			GTK_SPIN_BUTTON (priv->bottom));
+			ctk_spin_button_get_value (CTK_SPIN_BUTTON (priv->height)),
+			CTK_SPIN_BUTTON (priv->top),
+			CTK_SPIN_BUTTON (priv->bottom));
 		break;
 	case CENTER_NONE:
 	default:
@@ -255,13 +255,13 @@ update_image_pos_ranges (EocPrintImageSetup *setup,
 
 	priv = setup->priv;
 
-	ctk_spin_button_set_range (GTK_SPIN_BUTTON (priv->left),
+	ctk_spin_button_set_range (CTK_SPIN_BUTTON (priv->left),
 				   0, page_width - width);
-	ctk_spin_button_set_range (GTK_SPIN_BUTTON (priv->right),
+	ctk_spin_button_set_range (CTK_SPIN_BUTTON (priv->right),
 				   0, page_width - width);
-	ctk_spin_button_set_range (GTK_SPIN_BUTTON (priv->top),
+	ctk_spin_button_set_range (CTK_SPIN_BUTTON (priv->top),
 				   0, page_height - height);
-	ctk_spin_button_set_range (GTK_SPIN_BUTTON (priv->bottom),
+	ctk_spin_button_set_range (CTK_SPIN_BUTTON (priv->bottom),
 				   0, page_height - height);
 }
 
@@ -282,7 +282,7 @@ on_scale_changed (CtkRange     *range,
 	setup = EOC_PRINT_IMAGE_SETUP (user_data);
 	priv = setup->priv;
 
-	ctk_combo_box_set_active (GTK_COMBO_BOX (priv->center), CENTER_NONE);
+	ctk_combo_box_set_active (CTK_COMBO_BOX (priv->center), CENTER_NONE);
 
 	image = priv->image;
 	eoc_image_get_size (image, &pix_width, &pix_height);
@@ -292,8 +292,8 @@ on_scale_changed (CtkRange     *range,
 	width = (gdouble)pix_width/factor;
 	height = (gdouble)pix_height/factor;
 
-	left = ctk_spin_button_get_value (GTK_SPIN_BUTTON (priv->left));
-	top = ctk_spin_button_get_value (GTK_SPIN_BUTTON (priv->top));
+	left = ctk_spin_button_get_value (CTK_SPIN_BUTTON (priv->left));
+	top = ctk_spin_button_get_value (CTK_SPIN_BUTTON (priv->top));
 
 	scale = CLAMP (0.01*ctk_range_get_value (range), 0, get_max_percentage (setup));
 
@@ -310,10 +310,10 @@ on_scale_changed (CtkRange     *range,
 	right = page_width - left - width;
 	bottom = page_height - top - height;
 
-	ctk_spin_button_set_value (GTK_SPIN_BUTTON (priv->width), width);
-	ctk_spin_button_set_value (GTK_SPIN_BUTTON (priv->height), height);
-	ctk_spin_button_set_value (GTK_SPIN_BUTTON (priv->right), right);
-	ctk_spin_button_set_value (GTK_SPIN_BUTTON (priv->bottom), bottom);
+	ctk_spin_button_set_value (CTK_SPIN_BUTTON (priv->width), width);
+	ctk_spin_button_set_value (CTK_SPIN_BUTTON (priv->height), height);
+	ctk_spin_button_set_value (CTK_SPIN_BUTTON (priv->right), right);
+	ctk_spin_button_set_value (CTK_SPIN_BUTTON (priv->bottom), bottom);
 
 	return FALSE;
 }
@@ -338,24 +338,24 @@ position_values_changed (EocPrintImageSetup *setup,
 	gdouble pos;
 
 	priv = setup->priv;
-	size = ctk_spin_button_get_value (GTK_SPIN_BUTTON (w_size));
-	changed = ctk_spin_button_get_value (GTK_SPIN_BUTTON (w_changed));
+	size = ctk_spin_button_get_value (CTK_SPIN_BUTTON (w_size));
+	changed = ctk_spin_button_get_value (CTK_SPIN_BUTTON (w_changed));
 
 	to_update = total_size - changed - size;
-	ctk_spin_button_set_value (GTK_SPIN_BUTTON (w_to_update), to_update);
-	ctk_combo_box_set_active (GTK_COMBO_BOX (priv->center), CENTER_NONE);
+	ctk_spin_button_set_value (CTK_SPIN_BUTTON (w_to_update), to_update);
+	ctk_combo_box_set_active (CTK_COMBO_BOX (priv->center), CENTER_NONE);
 
 	switch (change) {
 	case CHANGE_HORIZ:
-		pos = ctk_spin_button_get_value (GTK_SPIN_BUTTON (setup->priv->left));
-		if (setup->priv->current_unit == GTK_UNIT_MM) {
+		pos = ctk_spin_button_get_value (CTK_SPIN_BUTTON (setup->priv->left));
+		if (setup->priv->current_unit == CTK_UNIT_MM) {
 			pos *= FACTOR_MM_TO_INCH;
 		}
  		eoc_print_preview_set_image_position (EOC_PRINT_PREVIEW (priv->preview), pos, -1);
 		break;
 	case CHANGE_VERT:
-		pos = ctk_spin_button_get_value (GTK_SPIN_BUTTON (setup->priv->top));
-		if (setup->priv->current_unit == GTK_UNIT_MM) {
+		pos = ctk_spin_button_get_value (CTK_SPIN_BUTTON (setup->priv->top));
+		if (setup->priv->current_unit == CTK_UNIT_MM) {
 			pos *= FACTOR_MM_TO_INCH;
 		}
 		eoc_print_preview_set_image_position (EOC_PRINT_PREVIEW (priv->preview), -1, pos);
@@ -447,9 +447,9 @@ size_changed (EocPrintImageSetup *setup,
 
 	priv = setup->priv;
 
-	size_x = ctk_spin_button_get_value (GTK_SPIN_BUTTON (w_size_x));
-	margin_x_1 = ctk_spin_button_get_value (GTK_SPIN_BUTTON (w_margin_x_1));
-	margin_y_1 = ctk_spin_button_get_value (GTK_SPIN_BUTTON (w_margin_y_1));
+	size_x = ctk_spin_button_get_value (CTK_SPIN_BUTTON (w_size_x));
+	margin_x_1 = ctk_spin_button_get_value (CTK_SPIN_BUTTON (w_margin_x_1));
+	margin_y_1 = ctk_spin_button_get_value (CTK_SPIN_BUTTON (w_margin_y_1));
 
 	eoc_image_get_size (priv->image, &pix_width, &pix_height);
 
@@ -484,13 +484,13 @@ size_changed (EocPrintImageSetup *setup,
 		break;
 	}
 
-	ctk_range_set_value (GTK_RANGE (priv->scaling), 100*scale);
+	ctk_range_set_value (CTK_RANGE (priv->scaling), 100*scale);
 
-	ctk_spin_button_set_value (GTK_SPIN_BUTTON (w_margin_x_2), margin_x_2);
-	ctk_spin_button_set_value (GTK_SPIN_BUTTON (w_size_y), size_y);
-	ctk_spin_button_set_value (GTK_SPIN_BUTTON (w_margin_y_2), margin_y_2);
+	ctk_spin_button_set_value (CTK_SPIN_BUTTON (w_margin_x_2), margin_x_2);
+	ctk_spin_button_set_value (CTK_SPIN_BUTTON (w_size_y), size_y);
+	ctk_spin_button_set_value (CTK_SPIN_BUTTON (w_margin_y_2), margin_y_2);
 
-	ctk_combo_box_set_active (GTK_COMBO_BOX (priv->center), CENTER_NONE);
+	ctk_combo_box_set_active (CTK_COMBO_BOX (priv->center), CENTER_NONE);
 }
 
 static void
@@ -562,13 +562,13 @@ set_scale_unit (EocPrintImageSetup *setup,
 		return;
 
 	switch (unit) {
-	case GTK_UNIT_MM:
+	case CTK_UNIT_MM:
 		factor = FACTOR_INCH_TO_MM;
 		digits = 0;
 		step = 1;
 		page = 10;
 		break;
-	case GTK_UNIT_INCH:
+	case CTK_UNIT_INCH:
 		factor = FACTOR_MM_TO_INCH;
 		digits = 2;
 		step = 0.01;
@@ -580,12 +580,12 @@ set_scale_unit (EocPrintImageSetup *setup,
 
  	block_handlers (setup);
 
-	change_unit (GTK_SPIN_BUTTON (priv->width), factor, digits, step, page);
-	change_unit (GTK_SPIN_BUTTON (priv->height), factor, digits, step, page);
-	change_unit (GTK_SPIN_BUTTON (priv->left), factor, digits, step, page);
-	change_unit (GTK_SPIN_BUTTON (priv->right), factor, digits, step, page);
-	change_unit (GTK_SPIN_BUTTON (priv->top), factor, digits, step, page);
-	change_unit (GTK_SPIN_BUTTON (priv->bottom), factor, digits, step, page);
+	change_unit (CTK_SPIN_BUTTON (priv->width), factor, digits, step, page);
+	change_unit (CTK_SPIN_BUTTON (priv->height), factor, digits, step, page);
+	change_unit (CTK_SPIN_BUTTON (priv->left), factor, digits, step, page);
+	change_unit (CTK_SPIN_BUTTON (priv->right), factor, digits, step, page);
+	change_unit (CTK_SPIN_BUTTON (priv->top), factor, digits, step, page);
+	change_unit (CTK_SPIN_BUTTON (priv->bottom), factor, digits, step, page);
 
  	unblock_handlers (setup);
 
@@ -596,14 +596,14 @@ static void
 on_unit_changed (CtkComboBox *combobox,
 		 gpointer user_data)
 {
-	CtkUnit unit = GTK_UNIT_INCH;
+	CtkUnit unit = CTK_UNIT_INCH;
 
 	switch (ctk_combo_box_get_active (combobox)) {
 	case UNIT_INCH:
-		unit = GTK_UNIT_INCH;
+		unit = CTK_UNIT_INCH;
 		break;
 	case UNIT_MM:
-		unit = GTK_UNIT_MM;
+		unit = CTK_UNIT_MM;
 		break;
 	default:
 		g_assert_not_reached ();
@@ -621,13 +621,13 @@ on_preview_image_moved (EocPrintPreview *preview,
 
 	eoc_print_preview_get_image_position (preview, &x, &y);
 
-	if (priv->current_unit == GTK_UNIT_MM) {
+	if (priv->current_unit == CTK_UNIT_MM) {
 		x *= FACTOR_INCH_TO_MM;
 		y *= FACTOR_INCH_TO_MM;
 	}
 
-	ctk_spin_button_set_value (GTK_SPIN_BUTTON (priv->left), x);
-	ctk_spin_button_set_value (GTK_SPIN_BUTTON (priv->top), y);
+	ctk_spin_button_set_value (CTK_SPIN_BUTTON (priv->left), x);
+	ctk_spin_button_set_value (CTK_SPIN_BUTTON (priv->top), y);
 }
 
 /* Function taken from ctkprintunixdialog.c */
@@ -639,16 +639,16 @@ wrap_in_frame (const gchar *label,
 	gchar *bold_text;
 
 	label_widget = ctk_label_new ("");
-	ctk_widget_set_halign (label_widget, GTK_ALIGN_START);
+	ctk_widget_set_halign (label_widget, CTK_ALIGN_START);
 	ctk_widget_show (label_widget);
 
 	bold_text = g_markup_printf_escaped ("<b>%s</b>", label);
-	ctk_label_set_markup (GTK_LABEL (label_widget), bold_text);
+	ctk_label_set_markup (CTK_LABEL (label_widget), bold_text);
 	g_free (bold_text);
 
-	frame = ctk_box_new (GTK_ORIENTATION_VERTICAL, 6);
-	ctk_box_pack_start (GTK_BOX (frame), label_widget, FALSE, FALSE, 0);
-	ctk_box_pack_start (GTK_BOX (frame), child, FALSE, FALSE, 0);
+	frame = ctk_box_new (CTK_ORIENTATION_VERTICAL, 6);
+	ctk_box_pack_start (CTK_BOX (frame), label_widget, FALSE, FALSE, 0);
+	ctk_box_pack_start (CTK_BOX (frame), child, FALSE, FALSE, 0);
 
 	ctk_widget_set_margin_start (child, 12);
 
@@ -665,14 +665,14 @@ grid_attach_spin_button_with_label (CtkWidget *grid,
 	CtkWidget *label, *spin_button;
 
 	label = ctk_label_new_with_mnemonic (text_label);
-	ctk_label_set_xalign (GTK_LABEL (label), 0.0);
+	ctk_label_set_xalign (CTK_LABEL (label), 0.0);
 	spin_button = ctk_spin_button_new_with_range (0, 100, 0.01);
-	ctk_spin_button_set_digits (GTK_SPIN_BUTTON (spin_button), 2);
-	ctk_entry_set_width_chars (GTK_ENTRY (spin_button), 6);
-	ctk_grid_attach (GTK_GRID (grid), label, left, top, 1, 1);
-	ctk_grid_attach_next_to (GTK_GRID (grid), spin_button, label,
-							 GTK_POS_RIGHT, 1, 1);
-	ctk_label_set_mnemonic_widget (GTK_LABEL (label), spin_button);
+	ctk_spin_button_set_digits (CTK_SPIN_BUTTON (spin_button), 2);
+	ctk_entry_set_width_chars (CTK_ENTRY (spin_button), 6);
+	ctk_grid_attach (CTK_GRID (grid), label, left, top, 1, 1);
+	ctk_grid_attach_next_to (CTK_GRID (grid), spin_button, label,
+							 CTK_POS_RIGHT, 1, 1);
+	ctk_label_set_mnemonic_widget (CTK_LABEL (label), spin_button);
 
 	return spin_button;
 }
@@ -756,25 +756,25 @@ set_initial_values (EocPrintImageSetup *setup)
 	width *= max_perc;
 	height *= max_perc;
 
-	ctk_range_set_range (GTK_RANGE (priv->scaling), 1, 100*max_perc);
-	ctk_range_set_increments (GTK_RANGE (priv->scaling), max_perc, 10*max_perc);
-	ctk_range_set_value (GTK_RANGE (priv->scaling), 100*max_perc);
+	ctk_range_set_range (CTK_RANGE (priv->scaling), 1, 100*max_perc);
+	ctk_range_set_increments (CTK_RANGE (priv->scaling), max_perc, 10*max_perc);
+	ctk_range_set_value (CTK_RANGE (priv->scaling), 100*max_perc);
 
 	eoc_print_preview_set_scale (EOC_PRINT_PREVIEW (priv->preview), max_perc);
-	ctk_spin_button_set_range (GTK_SPIN_BUTTON (priv->width), 0, width);
-	ctk_spin_button_set_range (GTK_SPIN_BUTTON (priv->height), 0, height);
-	ctk_spin_button_set_value (GTK_SPIN_BUTTON (priv->width), width);
-	ctk_spin_button_set_value (GTK_SPIN_BUTTON (priv->height), height);
+	ctk_spin_button_set_range (CTK_SPIN_BUTTON (priv->width), 0, width);
+	ctk_spin_button_set_range (CTK_SPIN_BUTTON (priv->height), 0, height);
+	ctk_spin_button_set_value (CTK_SPIN_BUTTON (priv->width), width);
+	ctk_spin_button_set_value (CTK_SPIN_BUTTON (priv->height), height);
 
-	ctk_combo_box_set_active (GTK_COMBO_BOX (priv->center),
+	ctk_combo_box_set_active (CTK_COMBO_BOX (priv->center),
 				  CENTER_BOTH);
 
 	center (ctk_page_setup_get_page_width (priv->page_setup, priv->current_unit),
-		ctk_spin_button_get_value (GTK_SPIN_BUTTON (priv->width)),
-		GTK_SPIN_BUTTON (priv->left), GTK_SPIN_BUTTON (priv->right));
+		ctk_spin_button_get_value (CTK_SPIN_BUTTON (priv->width)),
+		CTK_SPIN_BUTTON (priv->left), CTK_SPIN_BUTTON (priv->right));
 	center (ctk_page_setup_get_page_height (priv->page_setup, priv->current_unit),
-		ctk_spin_button_get_value (GTK_SPIN_BUTTON (priv->height)),
-		GTK_SPIN_BUTTON (priv->top), GTK_SPIN_BUTTON (priv->bottom));
+		ctk_spin_button_get_value (CTK_SPIN_BUTTON (priv->height)),
+		CTK_SPIN_BUTTON (priv->top), CTK_SPIN_BUTTON (priv->bottom));
 
 	page_width = ctk_page_setup_get_page_width (page_setup, priv->current_unit);
 	page_height = ctk_page_setup_get_page_height (page_setup, priv->current_unit);
@@ -830,7 +830,7 @@ eoc_print_image_setup_class_init (EocPrintImageSetupClass *class)
 					 g_param_spec_object ("page-setup",
 							      _("Page Setup"),
 							      _("The information for the page where the image will be printed"),
-							      GTK_TYPE_PAGE_SETUP,
+							      CTK_TYPE_PAGE_SETUP,
 							      G_PARAM_READWRITE));
 }
 
@@ -853,10 +853,10 @@ eoc_print_image_setup_init (EocPrintImageSetup *setup)
 	priv->image = NULL;
 
 	grid = ctk_grid_new ();
-	ctk_grid_set_row_spacing (GTK_GRID (grid), 6);
-	ctk_grid_set_column_spacing (GTK_GRID (grid), 12);
+	ctk_grid_set_row_spacing (CTK_GRID (grid), 6);
+	ctk_grid_set_column_spacing (CTK_GRID (grid), 12);
 	frame = wrap_in_frame (_("Position"), grid);
-	ctk_grid_attach (GTK_GRID (setup), frame, 0, 0, 1, 1);
+	ctk_grid_attach (CTK_GRID (setup), frame, 0, 0, 1, 1);
 
 	priv->left = grid_attach_spin_button_with_label (grid,
 													 _("_Left:"), 0, 0);
@@ -867,34 +867,34 @@ eoc_print_image_setup_init (EocPrintImageSetup *setup)
 													   2, 1);
 
 	label = ctk_label_new_with_mnemonic (_("C_enter:"));
-	ctk_label_set_xalign (GTK_LABEL (label), 0.0);
+	ctk_label_set_xalign (CTK_LABEL (label), 0.0);
 
 	combobox = ctk_combo_box_text_new ();
-	ctk_combo_box_text_insert_text (GTK_COMBO_BOX_TEXT (combobox),
+	ctk_combo_box_text_insert_text (CTK_COMBO_BOX_TEXT (combobox),
 				   CENTER_NONE, _("None"));
-	ctk_combo_box_text_insert_text (GTK_COMBO_BOX_TEXT (combobox),
+	ctk_combo_box_text_insert_text (CTK_COMBO_BOX_TEXT (combobox),
 				   CENTER_HORIZONTAL, _("Horizontal"));
-	ctk_combo_box_text_insert_text (GTK_COMBO_BOX_TEXT (combobox),
+	ctk_combo_box_text_insert_text (CTK_COMBO_BOX_TEXT (combobox),
 				   CENTER_VERTICAL, _("Vertical"));
-	ctk_combo_box_text_insert_text (GTK_COMBO_BOX_TEXT (combobox),
+	ctk_combo_box_text_insert_text (CTK_COMBO_BOX_TEXT (combobox),
 				   CENTER_BOTH, _("Both"));
-	ctk_combo_box_set_active (GTK_COMBO_BOX (combobox), CENTER_NONE);
+	ctk_combo_box_set_active (CTK_COMBO_BOX (combobox), CENTER_NONE);
 	/* Attach combobox below right margin spinbutton and span until end */
-	ctk_grid_attach_next_to (GTK_GRID (grid), combobox, priv->right,
-							 GTK_POS_BOTTOM, 3, 1);
+	ctk_grid_attach_next_to (CTK_GRID (grid), combobox, priv->right,
+							 CTK_POS_BOTTOM, 3, 1);
 	/* Attach the label to the left of the combobox */
-	ctk_grid_attach_next_to (GTK_GRID (grid), label, combobox, GTK_POS_LEFT,
+	ctk_grid_attach_next_to (CTK_GRID (grid), label, combobox, CTK_POS_LEFT,
 							 1, 1);
-	ctk_label_set_mnemonic_widget (GTK_LABEL (label), combobox);
+	ctk_label_set_mnemonic_widget (CTK_LABEL (label), combobox);
 	priv->center = combobox;
 	g_signal_connect (G_OBJECT (combobox), "changed",
 			  G_CALLBACK (on_center_changed), setup);
 
 	grid = ctk_grid_new ();
-	ctk_grid_set_row_spacing (GTK_GRID (grid), 6);
-	ctk_grid_set_column_spacing (GTK_GRID (grid), 12);
+	ctk_grid_set_row_spacing (CTK_GRID (grid), 6);
+	ctk_grid_set_column_spacing (CTK_GRID (grid), 12);
 	frame = wrap_in_frame (_("Size"), grid);
-	ctk_grid_attach (GTK_GRID (setup), frame, 0, 1, 1, 1);
+	ctk_grid_attach (CTK_GRID (setup), frame, 0, 1, 1, 1);
 
 	priv->width = grid_attach_spin_button_with_label (grid, _("_Width:"),
 							   0, 0);
@@ -902,42 +902,42 @@ eoc_print_image_setup_init (EocPrintImageSetup *setup)
 							    2, 0);
 
 	label = ctk_label_new_with_mnemonic (_("_Scaling:"));
-	hscale = ctk_scale_new_with_range (GTK_ORIENTATION_HORIZONTAL, 1, 100, 1);
-	ctk_scale_set_value_pos (GTK_SCALE (hscale), GTK_POS_RIGHT);
-	ctk_range_set_value (GTK_RANGE (hscale), 100);
-	ctk_grid_attach_next_to (GTK_GRID (grid), hscale, priv->width,
-							 GTK_POS_BOTTOM, 3, 1);
-	ctk_grid_attach_next_to (GTK_GRID (grid), label, hscale, GTK_POS_LEFT,
+	hscale = ctk_scale_new_with_range (CTK_ORIENTATION_HORIZONTAL, 1, 100, 1);
+	ctk_scale_set_value_pos (CTK_SCALE (hscale), CTK_POS_RIGHT);
+	ctk_range_set_value (CTK_RANGE (hscale), 100);
+	ctk_grid_attach_next_to (CTK_GRID (grid), hscale, priv->width,
+							 CTK_POS_BOTTOM, 3, 1);
+	ctk_grid_attach_next_to (CTK_GRID (grid), label, hscale, CTK_POS_LEFT,
 							 1, 1);
-	ctk_label_set_mnemonic_widget (GTK_LABEL (label), hscale);
+	ctk_label_set_mnemonic_widget (CTK_LABEL (label), hscale);
 	priv->scaling = hscale;
 
 	label = ctk_label_new_with_mnemonic (_("_Unit:"));
-	ctk_label_set_xalign (GTK_LABEL (label), 0.0);
+	ctk_label_set_xalign (CTK_LABEL (label), 0.0);
 
 	combobox = ctk_combo_box_text_new ();
-	ctk_combo_box_text_insert_text (GTK_COMBO_BOX_TEXT (combobox), UNIT_MM,
+	ctk_combo_box_text_insert_text (CTK_COMBO_BOX_TEXT (combobox), UNIT_MM,
 				   _("Millimeters"));
-	ctk_combo_box_text_insert_text (GTK_COMBO_BOX_TEXT (combobox), UNIT_INCH,
+	ctk_combo_box_text_insert_text (CTK_COMBO_BOX_TEXT (combobox), UNIT_INCH,
 				   _("Inches"));
 
 #ifdef HAVE__NL_MEASUREMENT_MEASUREMENT
 	locale_scale = nl_langinfo (_NL_MEASUREMENT_MEASUREMENT);
 	if (locale_scale && locale_scale[0] == 2) {
-		ctk_combo_box_set_active (GTK_COMBO_BOX (combobox), UNIT_INCH);
-		set_scale_unit (setup, GTK_UNIT_INCH);
+		ctk_combo_box_set_active (CTK_COMBO_BOX (combobox), UNIT_INCH);
+		set_scale_unit (setup, CTK_UNIT_INCH);
 	} else
 #endif
 	{
-		ctk_combo_box_set_active (GTK_COMBO_BOX (combobox), UNIT_MM);
-		set_scale_unit (setup, GTK_UNIT_MM);
+		ctk_combo_box_set_active (CTK_COMBO_BOX (combobox), UNIT_MM);
+		set_scale_unit (setup, CTK_UNIT_MM);
 	}
 
-	ctk_grid_attach_next_to (GTK_GRID (grid), combobox, hscale,
-							 GTK_POS_BOTTOM, 3, 1);
-	ctk_grid_attach_next_to (GTK_GRID (grid), label, combobox, GTK_POS_LEFT,
+	ctk_grid_attach_next_to (CTK_GRID (grid), combobox, hscale,
+							 CTK_POS_BOTTOM, 3, 1);
+	ctk_grid_attach_next_to (CTK_GRID (grid), label, combobox, CTK_POS_LEFT,
 							 1, 1);
-	ctk_label_set_mnemonic_widget (GTK_LABEL (label), combobox);
+	ctk_label_set_mnemonic_widget (CTK_LABEL (label), combobox);
 	priv->unit = combobox;
 	g_signal_connect (G_OBJECT (combobox), "changed",
 			  G_CALLBACK (on_unit_changed), setup);
@@ -949,9 +949,9 @@ eoc_print_image_setup_init (EocPrintImageSetup *setup)
 
 	frame = wrap_in_frame (_("Preview"), priv->preview);
 	/* The preview widget needs to span the whole grid height */
-	ctk_grid_attach (GTK_GRID (setup), frame, 1, 0, 1, 2);
+	ctk_grid_attach (CTK_GRID (setup), frame, 1, 0, 1, 2);
 
-	ctk_widget_show_all (GTK_WIDGET (setup));
+	ctk_widget_show_all (CTK_WIDGET (setup));
 }
 
 
@@ -974,7 +974,7 @@ eoc_print_image_setup_new (EocImage *image, CtkPageSetup *page_setup)
 	CtkWidget *preview;
 
 	setup = g_object_new (EOC_TYPE_PRINT_IMAGE_SETUP,
-			     "orientation", GTK_ORIENTATION_VERTICAL,
+			     "orientation", CTK_ORIENTATION_VERTICAL,
 			     "row-spacing", 18,
 			     "column-spacing", 18,
 			     "border-width", 12,
@@ -1016,9 +1016,9 @@ eoc_print_image_setup_get_options (EocPrintImageSetup *setup,
 
 	priv = setup->priv;
 
-	*left = ctk_spin_button_get_value (GTK_SPIN_BUTTON (priv->left));
-	*top = ctk_spin_button_get_value (GTK_SPIN_BUTTON (priv->top));
-	*scale = ctk_range_get_value (GTK_RANGE (priv->scaling));
+	*left = ctk_spin_button_get_value (CTK_SPIN_BUTTON (priv->left));
+	*top = ctk_spin_button_get_value (CTK_SPIN_BUTTON (priv->top));
+	*scale = ctk_range_get_value (CTK_RANGE (priv->scaling));
 	*unit = priv->current_unit;
 }
 
@@ -1044,9 +1044,9 @@ eoc_print_image_setup_update (CtkPrintOperation *operation,
 	eoc_print_preview_set_from_page_setup (EOC_PRINT_PREVIEW (preview),
 					       setup->priv->page_setup);
 
-	pos_x = ctk_spin_button_get_value (GTK_SPIN_BUTTON (setup->priv->left));
-	pos_y = ctk_spin_button_get_value (GTK_SPIN_BUTTON (setup->priv->top));
-	if (setup->priv->current_unit == GTK_UNIT_MM) {
+	pos_x = ctk_spin_button_get_value (CTK_SPIN_BUTTON (setup->priv->left));
+	pos_y = ctk_spin_button_get_value (CTK_SPIN_BUTTON (setup->priv->top));
+	if (setup->priv->current_unit == CTK_UNIT_MM) {
 		pos_x *= FACTOR_MM_TO_INCH;
 		pos_y *= FACTOR_MM_TO_INCH;
 	}

@@ -46,7 +46,7 @@
 static void eoc_application_load_accelerators (void);
 static void eoc_application_save_accelerators (void);
 
-G_DEFINE_TYPE_WITH_PRIVATE (EocApplication, eoc_application, GTK_TYPE_APPLICATION);
+G_DEFINE_TYPE_WITH_PRIVATE (EocApplication, eoc_application, CTK_TYPE_APPLICATION);
 
 static void
 eoc_application_activate (GApplication *application)
@@ -245,7 +245,7 @@ eoc_application_get_empty_window (EocApplication *application)
 
 	g_return_val_if_fail (EOC_IS_APPLICATION (application), NULL);
 
-	windows = ctk_application_get_windows (GTK_APPLICATION (application));
+	windows = ctk_application_get_windows (CTK_APPLICATION (application));
 
 	for (l = windows; l != NULL; l = l->next) {
 		EocWindow *window = EOC_WINDOW (l->data);
@@ -281,7 +281,7 @@ eoc_application_open_window (EocApplication  *application,
 {
 	CtkWidget *new_window = NULL;
 
-	new_window = GTK_WIDGET (eoc_application_get_empty_window (application));
+	new_window = CTK_WIDGET (eoc_application_get_empty_window (application));
 
 	if (new_window == NULL) {
 		new_window = eoc_window_new (flags);
@@ -289,7 +289,7 @@ eoc_application_open_window (EocApplication  *application,
 
 	g_return_val_if_fail (EOC_IS_APPLICATION (application), FALSE);
 
-	ctk_window_present_with_time (GTK_WINDOW (new_window),
+	ctk_window_present_with_time (CTK_WINDOW (new_window),
 				      timestamp);
 
 	return TRUE;
@@ -332,10 +332,10 @@ eoc_application_get_file_window (EocApplication *application, GFile *file)
 static void
 eoc_application_show_window (EocWindow *window, gpointer user_data)
 {
-	if (!ctk_widget_get_realized (GTK_WIDGET (window)))
-		ctk_widget_realize (GTK_WIDGET (window));
+	if (!ctk_widget_get_realized (CTK_WIDGET (window)))
+		ctk_widget_realize (CTK_WIDGET (window));
 
-	ctk_window_present_with_time (GTK_WINDOW (window),
+	ctk_window_present_with_time (CTK_WINDOW (window),
 				      GPOINTER_TO_UINT (user_data));
 }
 
@@ -368,7 +368,7 @@ eoc_application_open_file_list (EocApplication  *application,
 							      (GFile *) file_list->data);
 
 	if (new_window != NULL) {
-		ctk_window_present_with_time (GTK_WINDOW (new_window),
+		ctk_window_present_with_time (CTK_WINDOW (new_window),
 					      timestamp);
 		return TRUE;
 	}

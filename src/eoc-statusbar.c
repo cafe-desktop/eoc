@@ -36,7 +36,7 @@ struct _EocStatusbarPrivate
 	CtkWidget *img_num_label;
 };
 
-G_DEFINE_TYPE_WITH_PRIVATE (EocStatusbar, eoc_statusbar, GTK_TYPE_STATUSBAR)
+G_DEFINE_TYPE_WITH_PRIVATE (EocStatusbar, eoc_statusbar, CTK_TYPE_STATUSBAR)
 
 static void
 eoc_statusbar_class_init (EocStatusbarClass *klass)
@@ -53,22 +53,22 @@ eoc_statusbar_init (EocStatusbar *statusbar)
 	statusbar->priv = eoc_statusbar_get_instance_private (statusbar);
 	priv = statusbar->priv;
 
-	ctk_widget_set_margin_top (GTK_WIDGET (statusbar), 0);
-	ctk_widget_set_margin_bottom (GTK_WIDGET (statusbar), 0);
+	ctk_widget_set_margin_top (CTK_WIDGET (statusbar), 0);
+	ctk_widget_set_margin_bottom (CTK_WIDGET (statusbar), 0);
 
 	priv->img_num_label = ctk_label_new (NULL);
 	ctk_widget_set_size_request (priv->img_num_label, 100, 10);
 	ctk_widget_show (priv->img_num_label);
 
-	ctk_box_pack_end (GTK_BOX (statusbar),
+	ctk_box_pack_end (CTK_BOX (statusbar),
 			  priv->img_num_label,
 			  FALSE,
 			  TRUE,
 			  0);
 
-	vbox = ctk_box_new (GTK_ORIENTATION_VERTICAL, 0);
+	vbox = ctk_box_new (CTK_ORIENTATION_VERTICAL, 0);
 
-	ctk_box_pack_end (GTK_BOX (statusbar),
+	ctk_box_pack_end (CTK_BOX (statusbar),
 			  vbox,
 			  FALSE,
 			  FALSE,
@@ -76,7 +76,7 @@ eoc_statusbar_init (EocStatusbar *statusbar)
 
 	statusbar->priv->progressbar = ctk_progress_bar_new ();
 
-	ctk_box_pack_end (GTK_BOX (vbox),
+	ctk_box_pack_end (CTK_BOX (vbox),
 			  priv->progressbar,
 			  TRUE,
 			  TRUE,
@@ -93,7 +93,7 @@ eoc_statusbar_init (EocStatusbar *statusbar)
 CtkWidget *
 eoc_statusbar_new (void)
 {
-	return GTK_WIDGET (g_object_new (EOC_TYPE_STATUSBAR, NULL));
+	return CTK_WIDGET (g_object_new (EOC_TYPE_STATUSBAR, NULL));
 }
 
 void
@@ -121,7 +121,7 @@ eoc_statusbar_set_image_number (EocStatusbar *statusbar,
 	 * too.*/
 	msg = g_strdup_printf (_("%d / %d"), num, tot);
 
-	ctk_label_set_text (GTK_LABEL (statusbar->priv->img_num_label), msg);
+	ctk_label_set_text (CTK_LABEL (statusbar->priv->img_num_label), msg);
 
       	g_free (msg);
 }
@@ -132,7 +132,7 @@ eoc_statusbar_set_progress (EocStatusbar *statusbar,
 {
 	g_return_if_fail (EOC_IS_STATUSBAR (statusbar));
 
-	ctk_progress_bar_set_fraction (GTK_PROGRESS_BAR (statusbar->priv->progressbar),
+	ctk_progress_bar_set_fraction (CTK_PROGRESS_BAR (statusbar->priv->progressbar),
 				       progress);
 
 	if (progress > 0 && progress < 1) {

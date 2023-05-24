@@ -49,17 +49,17 @@ set_message_area_text_and_icon (CtkInfoBar   *message_area,
 	CtkWidget *primary_label;
 	CtkWidget *secondary_label;
 
-	hbox_content = ctk_box_new (GTK_ORIENTATION_HORIZONTAL, 8);
+	hbox_content = ctk_box_new (CTK_ORIENTATION_HORIZONTAL, 8);
 	ctk_widget_show (hbox_content);
 
-	image = ctk_image_new_from_icon_name (icon_name, GTK_ICON_SIZE_DIALOG);
+	image = ctk_image_new_from_icon_name (icon_name, CTK_ICON_SIZE_DIALOG);
 	ctk_widget_show (image);
-	ctk_box_pack_start (GTK_BOX (hbox_content), image, FALSE, FALSE, 0);
-	ctk_widget_set_valign (image, GTK_ALIGN_START);
+	ctk_box_pack_start (CTK_BOX (hbox_content), image, FALSE, FALSE, 0);
+	ctk_widget_set_valign (image, CTK_ALIGN_START);
 
-	vbox = ctk_box_new (GTK_ORIENTATION_VERTICAL, 6);
+	vbox = ctk_box_new (CTK_ORIENTATION_VERTICAL, 6);
 	ctk_widget_show (vbox);
-	ctk_box_pack_start (GTK_BOX (hbox_content), vbox, TRUE, TRUE, 0);
+	ctk_box_pack_start (CTK_BOX (hbox_content), vbox, TRUE, TRUE, 0);
 
 	primary_markup = g_markup_printf_escaped ("<b>%s</b>", primary_text);
 	primary_label = ctk_label_new (primary_markup);
@@ -67,14 +67,14 @@ set_message_area_text_and_icon (CtkInfoBar   *message_area,
 
 	ctk_widget_show (primary_label);
 
-	ctk_box_pack_start (GTK_BOX (vbox), primary_label, TRUE, TRUE, 0);
-	ctk_label_set_use_markup (GTK_LABEL (primary_label), TRUE);
-	ctk_label_set_line_wrap (GTK_LABEL (primary_label), FALSE);
-	ctk_label_set_xalign (GTK_LABEL (primary_label), 0.0);
+	ctk_box_pack_start (CTK_BOX (vbox), primary_label, TRUE, TRUE, 0);
+	ctk_label_set_use_markup (CTK_LABEL (primary_label), TRUE);
+	ctk_label_set_line_wrap (CTK_LABEL (primary_label), FALSE);
+	ctk_label_set_xalign (CTK_LABEL (primary_label), 0.0);
 
 	ctk_widget_set_can_focus (primary_label, TRUE);
 
-	ctk_label_set_selectable (GTK_LABEL (primary_label), TRUE);
+	ctk_label_set_selectable (CTK_LABEL (primary_label), TRUE);
 
 	if (secondary_text != NULL) {
 		secondary_markup = g_markup_printf_escaped ("<small>%s</small>",
@@ -84,17 +84,17 @@ set_message_area_text_and_icon (CtkInfoBar   *message_area,
 
 		ctk_widget_show (secondary_label);
 
-		ctk_box_pack_start (GTK_BOX (vbox), secondary_label, TRUE, TRUE, 0);
+		ctk_box_pack_start (CTK_BOX (vbox), secondary_label, TRUE, TRUE, 0);
 
 		ctk_widget_set_can_focus (secondary_label, TRUE);
 
-		ctk_label_set_use_markup (GTK_LABEL (secondary_label), TRUE);
-		ctk_label_set_line_wrap (GTK_LABEL (secondary_label), TRUE);
-		ctk_label_set_selectable (GTK_LABEL (secondary_label), TRUE);
-		ctk_label_set_xalign (GTK_LABEL (secondary_label), 0.0);
+		ctk_label_set_use_markup (CTK_LABEL (secondary_label), TRUE);
+		ctk_label_set_line_wrap (CTK_LABEL (secondary_label), TRUE);
+		ctk_label_set_selectable (CTK_LABEL (secondary_label), TRUE);
+		ctk_label_set_xalign (CTK_LABEL (secondary_label), 0.0);
 	}
 
-	ctk_box_pack_start (GTK_BOX (ctk_info_bar_get_content_area (GTK_INFO_BAR (message_area))), hbox_content, TRUE, TRUE, 0);
+	ctk_box_pack_start (CTK_BOX (ctk_info_bar_get_content_area (CTK_INFO_BAR (message_area))), hbox_content, TRUE, TRUE, 0);
 }
 
 static CtkWidget *
@@ -106,15 +106,15 @@ create_error_message_area (const gchar *primary_text,
 
 	if (recoverable)
 		message_area = ctk_info_bar_new_with_buttons (_("_Retry"),
-							      GTK_RESPONSE_OK,
+							      CTK_RESPONSE_OK,
 							      NULL);
 	else
 		message_area = ctk_info_bar_new ();
 
-	ctk_info_bar_set_message_type (GTK_INFO_BAR (message_area),
-				       GTK_MESSAGE_ERROR);
+	ctk_info_bar_set_message_type (CTK_INFO_BAR (message_area),
+				       CTK_MESSAGE_ERROR);
 
-	set_message_area_text_and_icon (GTK_INFO_BAR (message_area),
+	set_message_area_text_and_icon (CTK_INFO_BAR (message_area),
 					"dialog-error",
 					primary_text,
 					secondary_text);

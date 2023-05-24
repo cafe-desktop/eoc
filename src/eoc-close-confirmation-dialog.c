@@ -73,7 +73,7 @@ struct _EocCloseConfirmationDialogPrivate
 
 #define IMAGE_COLUMN_HEIGHT 40
 
-G_DEFINE_TYPE_WITH_PRIVATE (EocCloseConfirmationDialog, eoc_close_confirmation_dialog, GTK_TYPE_DIALOG)
+G_DEFINE_TYPE_WITH_PRIVATE (EocCloseConfirmationDialog, eoc_close_confirmation_dialog, CTK_TYPE_DIALOG)
 
 static void 	 set_unsaved_image 		(EocCloseConfirmationDialog *dlg,
 						 const GList                  *list);
@@ -128,7 +128,7 @@ response_cb (EocCloseConfirmationDialog *dlg,
 	if (priv->selected_images != NULL)
 		g_list_free (priv->selected_images);
 
-	if (response_id == GTK_RESPONSE_YES)
+	if (response_id == CTK_RESPONSE_YES)
 	{
 		if (GET_MODE (priv) == SINGLE_IMG_MODE)
 		{
@@ -150,19 +150,19 @@ response_cb (EocCloseConfirmationDialog *dlg,
 static void
 add_buttons (EocCloseConfirmationDialog *dlg)
 {
-	ctk_dialog_add_button (GTK_DIALOG (dlg),
+	ctk_dialog_add_button (CTK_DIALOG (dlg),
 			       _("Close _without Saving"),
-			       GTK_RESPONSE_NO);
+			       CTK_RESPONSE_NO);
 
-	ctk_dialog_add_button (GTK_DIALOG (dlg),
-			       "ctk-cancel", GTK_RESPONSE_CANCEL);
+	ctk_dialog_add_button (CTK_DIALOG (dlg),
+			       "ctk-cancel", CTK_RESPONSE_CANCEL);
 
-	ctk_dialog_add_button (GTK_DIALOG (dlg),
+	ctk_dialog_add_button (CTK_DIALOG (dlg),
 			       "ctk-save",
-			       GTK_RESPONSE_YES);
+			       CTK_RESPONSE_YES);
 
-	ctk_dialog_set_default_response	(GTK_DIALOG (dlg),
-					 GTK_RESPONSE_YES);
+	ctk_dialog_set_default_response	(CTK_DIALOG (dlg),
+					 CTK_RESPONSE_YES);
 }
 
 static void
@@ -172,17 +172,17 @@ eoc_close_confirmation_dialog_init (EocCloseConfirmationDialog *dlg)
 
 	dlg->priv = eoc_close_confirmation_dialog_get_instance_private (dlg);
 
-	ctk_container_set_border_width (GTK_CONTAINER (dlg), 5);
-	ctk_box_set_spacing (GTK_BOX (ctk_dialog_get_content_area (GTK_DIALOG (dlg))), 14);
-	ctk_window_set_resizable (GTK_WINDOW (dlg), FALSE);
-	ctk_window_set_skip_taskbar_hint (GTK_WINDOW (dlg), TRUE);
+	ctk_container_set_border_width (CTK_CONTAINER (dlg), 5);
+	ctk_box_set_spacing (CTK_BOX (ctk_dialog_get_content_area (CTK_DIALOG (dlg))), 14);
+	ctk_window_set_resizable (CTK_WINDOW (dlg), FALSE);
+	ctk_window_set_skip_taskbar_hint (CTK_WINDOW (dlg), TRUE);
 
-	ctk_window_set_title (GTK_WINDOW (dlg), "");
+	ctk_window_set_title (CTK_WINDOW (dlg), "");
 
-	ctk_window_set_modal (GTK_WINDOW (dlg), TRUE);
-	ctk_window_set_destroy_with_parent (GTK_WINDOW (dlg), TRUE);
+	ctk_window_set_modal (CTK_WINDOW (dlg), TRUE);
+	ctk_window_set_destroy_with_parent (CTK_WINDOW (dlg), TRUE);
 
-	atk_obj = ctk_widget_get_accessible (GTK_WIDGET (dlg));
+	atk_obj = ctk_widget_get_accessible (CTK_WIDGET (dlg));
 	atk_object_set_role (atk_obj, ATK_ROLE_ALERT);
 	atk_object_set_name (atk_obj, _("Question"));
 
@@ -318,7 +318,7 @@ eoc_close_confirmation_dialog_new (CtkWindow *parent,
 
 	g_return_val_if_fail (unsaved_images != NULL, NULL);
 
-	dlg = GTK_WIDGET (g_object_new (EOC_TYPE_CLOSE_CONFIRMATION_DIALOG,
+	dlg = CTK_WIDGET (g_object_new (EOC_TYPE_CLOSE_CONFIRMATION_DIALOG,
 				        "unsaved_images", unsaved_images,
 				        NULL));
 	g_return_val_if_fail (dlg != NULL, NULL);
@@ -332,9 +332,9 @@ eoc_close_confirmation_dialog_new (CtkWindow *parent,
 		 * the group here to make sure it's actually in the returned
 		 * group. It makes no difference if it is already. */
 		ctk_window_group_add_window (wg, parent);
-		ctk_window_group_add_window (wg, GTK_WINDOW (dlg));
+		ctk_window_group_add_window (wg, CTK_WINDOW (dlg));
 
-		ctk_window_set_transient_for (GTK_WINDOW (dlg), parent);
+		ctk_window_set_transient_for (CTK_WINDOW (dlg), parent);
 	}
 
 	return dlg;
@@ -386,16 +386,16 @@ build_single_img_dialog (EocCloseConfirmationDialog *dlg)
 
 	/* Image */
 	image = ctk_image_new_from_icon_name ("dialog-warning",
-					  GTK_ICON_SIZE_DIALOG);
-	ctk_widget_set_valign (image, GTK_ALIGN_START);
+					  CTK_ICON_SIZE_DIALOG);
+	ctk_widget_set_valign (image, CTK_ALIGN_START);
 
 	/* Primary label */
 	primary_label = ctk_label_new (NULL);
-	ctk_label_set_line_wrap (GTK_LABEL (primary_label), TRUE);
-	ctk_label_set_use_markup (GTK_LABEL (primary_label), TRUE);
-	ctk_label_set_max_width_chars (GTK_LABEL (primary_label), 88);
-	ctk_label_set_xalign (GTK_LABEL (primary_label), 0.0);
-	ctk_label_set_selectable (GTK_LABEL (primary_label), TRUE);
+	ctk_label_set_line_wrap (CTK_LABEL (primary_label), TRUE);
+	ctk_label_set_use_markup (CTK_LABEL (primary_label), TRUE);
+	ctk_label_set_max_width_chars (CTK_LABEL (primary_label), 88);
+	ctk_label_set_xalign (CTK_LABEL (primary_label), 0.0);
+	ctk_label_set_selectable (CTK_LABEL (primary_label), TRUE);
 
 	image_name = eoc_image_get_caption (img);
 
@@ -404,7 +404,7 @@ build_single_img_dialog (EocCloseConfirmationDialog *dlg)
 	markup_str = g_strconcat ("<span weight=\"bold\" size=\"larger\">", str, "</span>", NULL);
 	g_free (str);
 
-	ctk_label_set_markup (GTK_LABEL (primary_label), markup_str);
+	ctk_label_set_markup (CTK_LABEL (primary_label), markup_str);
 	g_free (markup_str);
 
 	/* Secondary label */
@@ -412,24 +412,24 @@ build_single_img_dialog (EocCloseConfirmationDialog *dlg)
 
 	secondary_label = ctk_label_new (str);
 	g_free (str);
-	ctk_label_set_line_wrap (GTK_LABEL (secondary_label), TRUE);
-	ctk_label_set_xalign (GTK_LABEL (secondary_label), 0.0);
-	ctk_label_set_selectable (GTK_LABEL (secondary_label), TRUE);
+	ctk_label_set_line_wrap (CTK_LABEL (secondary_label), TRUE);
+	ctk_label_set_xalign (CTK_LABEL (secondary_label), 0.0);
+	ctk_label_set_selectable (CTK_LABEL (secondary_label), TRUE);
 
-	hbox = ctk_box_new (GTK_ORIENTATION_HORIZONTAL, 12);
-	ctk_container_set_border_width (GTK_CONTAINER (hbox), 5);
+	hbox = ctk_box_new (CTK_ORIENTATION_HORIZONTAL, 12);
+	ctk_container_set_border_width (CTK_CONTAINER (hbox), 5);
 
-	ctk_box_pack_start (GTK_BOX (hbox), image, FALSE, FALSE, 0);
+	ctk_box_pack_start (CTK_BOX (hbox), image, FALSE, FALSE, 0);
 
-	vbox = ctk_box_new (GTK_ORIENTATION_VERTICAL, 12);
+	vbox = ctk_box_new (CTK_ORIENTATION_VERTICAL, 12);
 
-	ctk_box_pack_start (GTK_BOX (hbox), vbox, FALSE, FALSE, 0);
+	ctk_box_pack_start (CTK_BOX (hbox), vbox, FALSE, FALSE, 0);
 
-	ctk_box_pack_start (GTK_BOX (vbox), primary_label, FALSE, FALSE, 0);
+	ctk_box_pack_start (CTK_BOX (vbox), primary_label, FALSE, FALSE, 0);
 
-	ctk_box_pack_start (GTK_BOX (vbox), secondary_label, FALSE, FALSE, 0);
+	ctk_box_pack_start (CTK_BOX (vbox), secondary_label, FALSE, FALSE, 0);
 
-	ctk_box_pack_start (GTK_BOX (ctk_dialog_get_content_area (GTK_DIALOG (dlg))),
+	ctk_box_pack_start (CTK_BOX (ctk_dialog_get_content_area (CTK_DIALOG (dlg))),
 			    hbox,
 	                    FALSE,
 			    FALSE,
@@ -466,8 +466,8 @@ populate_model (CtkTreeModel *store, GList *imgs)
 		} else
 			buf_scaled = get_nothumb_pixbuf ();
 
-		ctk_list_store_append (GTK_LIST_STORE (store), &iter);
-		ctk_list_store_set (GTK_LIST_STORE (store), &iter,
+		ctk_list_store_append (CTK_LIST_STORE (store), &iter);
+		ctk_list_store_set (CTK_LIST_STORE (store), &iter,
 				    SAVE_COLUMN, TRUE,
 				    IMAGE_COLUMN, buf_scaled,
 				    NAME_COLUMN, name,
@@ -491,7 +491,7 @@ save_toggled (CtkCellRendererToggle *renderer, gchar *path_str, CtkTreeModel *st
 
 	active ^= 1;
 
-	ctk_list_store_set (GTK_LIST_STORE (store), &iter,
+	ctk_list_store_set (CTK_LIST_STORE (store), &iter,
 			    SAVE_COLUMN, active, -1);
 
 	ctk_tree_path_free (path);
@@ -506,18 +506,18 @@ create_treeview (EocCloseConfirmationDialogPrivate *priv)
 	CtkTreeViewColumn *column;
 
 	treeview = ctk_tree_view_new ();
-	ctk_tree_view_set_headers_visible (GTK_TREE_VIEW (treeview), FALSE);
-	ctk_tree_view_set_enable_search (GTK_TREE_VIEW (treeview), FALSE);
+	ctk_tree_view_set_headers_visible (CTK_TREE_VIEW (treeview), FALSE);
+	ctk_tree_view_set_enable_search (CTK_TREE_VIEW (treeview), FALSE);
 
 	/* Create and populate the model */
 	store = ctk_list_store_new (N_COLUMNS, G_TYPE_BOOLEAN, GDK_TYPE_PIXBUF, G_TYPE_STRING, G_TYPE_POINTER);
-	populate_model (GTK_TREE_MODEL (store), priv->unsaved_images);
+	populate_model (CTK_TREE_MODEL (store), priv->unsaved_images);
 
 	/* Set model to the treeview */
-	ctk_tree_view_set_model (GTK_TREE_VIEW (treeview), GTK_TREE_MODEL (store));
+	ctk_tree_view_set_model (CTK_TREE_VIEW (treeview), CTK_TREE_MODEL (store));
 	g_object_unref (store);
 
-	priv->list_store = GTK_TREE_MODEL (store);
+	priv->list_store = CTK_TREE_MODEL (store);
 
 	/* Add columns */
 	priv->toggle_renderer = renderer = ctk_cell_renderer_toggle_new ();
@@ -529,7 +529,7 @@ create_treeview (EocCloseConfirmationDialogPrivate *priv)
 							   "active",
 							   SAVE_COLUMN,
 							   NULL);
-	ctk_tree_view_append_column (GTK_TREE_VIEW (treeview), column);
+	ctk_tree_view_append_column (CTK_TREE_VIEW (treeview), column);
 
 	renderer = ctk_cell_renderer_pixbuf_new ();
 
@@ -538,7 +538,7 @@ create_treeview (EocCloseConfirmationDialogPrivate *priv)
 							   "pixbuf",
 							   IMAGE_COLUMN,
 							   NULL);
-	ctk_tree_view_append_column (GTK_TREE_VIEW (treeview), column);
+	ctk_tree_view_append_column (CTK_TREE_VIEW (treeview), column);
 
 
 
@@ -548,7 +548,7 @@ create_treeview (EocCloseConfirmationDialogPrivate *priv)
 							   "text",
 							   NAME_COLUMN,
 							   NULL);
-	ctk_tree_view_append_column (GTK_TREE_VIEW (treeview), column);
+	ctk_tree_view_append_column (CTK_TREE_VIEW (treeview), column);
 
 	return treeview;
 }
@@ -571,27 +571,27 @@ build_multiple_imgs_dialog (EocCloseConfirmationDialog *dlg)
 
 	priv = dlg->priv;
 
-	hbox = ctk_box_new (GTK_ORIENTATION_HORIZONTAL, 12);
-	ctk_container_set_border_width (GTK_CONTAINER (hbox), 5);
-  	ctk_box_pack_start (GTK_BOX (ctk_dialog_get_content_area (GTK_DIALOG (dlg))),
+	hbox = ctk_box_new (CTK_ORIENTATION_HORIZONTAL, 12);
+	ctk_container_set_border_width (CTK_CONTAINER (hbox), 5);
+  	ctk_box_pack_start (CTK_BOX (ctk_dialog_get_content_area (CTK_DIALOG (dlg))),
 			    hbox, TRUE, TRUE, 0);
 
 	/* Image */
 	image = ctk_image_new_from_icon_name ("dialog-warning",
-					  GTK_ICON_SIZE_DIALOG);
-	ctk_widget_set_valign (image, GTK_ALIGN_START);
-	ctk_box_pack_start (GTK_BOX (hbox), image, FALSE, FALSE, 0);
+					  CTK_ICON_SIZE_DIALOG);
+	ctk_widget_set_valign (image, CTK_ALIGN_START);
+	ctk_box_pack_start (CTK_BOX (hbox), image, FALSE, FALSE, 0);
 
-	vbox = ctk_box_new (GTK_ORIENTATION_VERTICAL, 12);
-	ctk_box_pack_start (GTK_BOX (hbox), vbox, TRUE, TRUE, 0);
+	vbox = ctk_box_new (CTK_ORIENTATION_VERTICAL, 12);
+	ctk_box_pack_start (CTK_BOX (hbox), vbox, TRUE, TRUE, 0);
 
 	/* Primary label */
 	primary_label = ctk_label_new (NULL);
-	ctk_label_set_line_wrap (GTK_LABEL (primary_label), TRUE);
-	ctk_label_set_use_markup (GTK_LABEL (primary_label), TRUE);
-	ctk_label_set_max_width_chars (GTK_LABEL (primary_label), 88);
-	ctk_label_set_xalign (GTK_LABEL (primary_label), 0.0);
-	ctk_label_set_selectable (GTK_LABEL (primary_label), TRUE);
+	ctk_label_set_line_wrap (CTK_LABEL (primary_label), TRUE);
+	ctk_label_set_use_markup (CTK_LABEL (primary_label), TRUE);
+	ctk_label_set_max_width_chars (CTK_LABEL (primary_label), 88);
+	ctk_label_set_xalign (CTK_LABEL (primary_label), 0.0);
+	ctk_label_set_selectable (CTK_LABEL (primary_label), TRUE);
 
 	str = g_strdup_printf (
 			ngettext ("There is %d image with unsaved changes. "
@@ -604,41 +604,41 @@ build_multiple_imgs_dialog (EocCloseConfirmationDialog *dlg)
 	markup_str = g_strconcat ("<span weight=\"bold\" size=\"larger\">", str, "</span>", NULL);
 	g_free (str);
 
-	ctk_label_set_markup (GTK_LABEL (primary_label), markup_str);
+	ctk_label_set_markup (CTK_LABEL (primary_label), markup_str);
 	g_free (markup_str);
-	ctk_box_pack_start (GTK_BOX (vbox), primary_label, FALSE, FALSE, 0);
+	ctk_box_pack_start (CTK_BOX (vbox), primary_label, FALSE, FALSE, 0);
 
-	vbox2 = ctk_box_new (GTK_ORIENTATION_VERTICAL, 8);
-	ctk_box_pack_start (GTK_BOX (vbox), vbox2, FALSE, FALSE, 0);
+	vbox2 = ctk_box_new (CTK_ORIENTATION_VERTICAL, 8);
+	ctk_box_pack_start (CTK_BOX (vbox), vbox2, FALSE, FALSE, 0);
 
 	select_label = ctk_label_new_with_mnemonic (_("S_elect the images you want to save:"));
 
-	ctk_box_pack_start (GTK_BOX (vbox2), select_label, FALSE, FALSE, 0);
-	ctk_label_set_line_wrap (GTK_LABEL (select_label), TRUE);
-	ctk_label_set_xalign (GTK_LABEL (select_label), 0.0);
+	ctk_box_pack_start (CTK_BOX (vbox2), select_label, FALSE, FALSE, 0);
+	ctk_label_set_line_wrap (CTK_LABEL (select_label), TRUE);
+	ctk_label_set_xalign (CTK_LABEL (select_label), 0.0);
 
 	scrolledwindow = ctk_scrolled_window_new (NULL, NULL);
-	ctk_box_pack_start (GTK_BOX (vbox2), scrolledwindow, TRUE, TRUE, 0);
-	ctk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scrolledwindow),
-					GTK_POLICY_AUTOMATIC,
-					GTK_POLICY_AUTOMATIC);
-	ctk_scrolled_window_set_shadow_type (GTK_SCROLLED_WINDOW (scrolledwindow),
-					     GTK_SHADOW_IN);
+	ctk_box_pack_start (CTK_BOX (vbox2), scrolledwindow, TRUE, TRUE, 0);
+	ctk_scrolled_window_set_policy (CTK_SCROLLED_WINDOW (scrolledwindow),
+					CTK_POLICY_AUTOMATIC,
+					CTK_POLICY_AUTOMATIC);
+	ctk_scrolled_window_set_shadow_type (CTK_SCROLLED_WINDOW (scrolledwindow),
+					     CTK_SHADOW_IN);
 
 	treeview = create_treeview (priv);
-	ctk_container_add (GTK_CONTAINER (scrolledwindow), treeview);
+	ctk_container_add (CTK_CONTAINER (scrolledwindow), treeview);
 	ctk_widget_set_size_request (scrolledwindow, 260, 120);
 
 	/* Secondary label */
 	secondary_label = ctk_label_new (_("If you don't save, "
 					   "all your changes will be lost."));
 
-	ctk_box_pack_start (GTK_BOX (vbox2), secondary_label, FALSE, FALSE, 0);
-	ctk_label_set_line_wrap (GTK_LABEL (secondary_label), TRUE);
-	ctk_label_set_xalign (GTK_LABEL (secondary_label), 0.0);
-	ctk_label_set_selectable (GTK_LABEL (secondary_label), TRUE);
+	ctk_box_pack_start (CTK_BOX (vbox2), secondary_label, FALSE, FALSE, 0);
+	ctk_label_set_line_wrap (CTK_LABEL (secondary_label), TRUE);
+	ctk_label_set_xalign (CTK_LABEL (secondary_label), 0.0);
+	ctk_label_set_selectable (CTK_LABEL (secondary_label), TRUE);
 
-	ctk_label_set_mnemonic_widget (GTK_LABEL (select_label), treeview);
+	ctk_label_set_mnemonic_widget (CTK_LABEL (select_label), treeview);
 
 	add_buttons (dlg);
 

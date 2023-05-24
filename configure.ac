@@ -41,7 +41,7 @@ AC_PATH_PROG([GLIB_COMPILE_RESOURCES], [glib-compile-resources])
 AC_PATH_PROG([GLIB_GENMARSHAL], [glib-genmarshal])
 AC_PATH_PROG([GLIB_MKENUMS],[glib-mkenums])
 
-GTK_DOC_CHECK(1.9)
+CTK_DOC_CHECK(1.9)
 
 AC_CHECK_FUNCS(strptime)
 
@@ -87,7 +87,7 @@ YELP_HELP_INIT
 
 GLIB_REQUIRED=2.52.0
 GIO_REQUIRED=2.50.0
-GTK_REQUIRED=3.22.0
+CTK_REQUIRED=3.22.0
 CAFE_DESKTOP_REQUIRED=1.17.0
 GDKPIXBUF_REQUIRED=2.36.5
 SHARED_MIME_INFO_REQUIRED=0.20
@@ -96,7 +96,7 @@ LIBPEAS_REQUIRED=1.8.0
 MAGICK_REQUIRED=6.2.6
 
 PKG_CHECK_MODULES(GMODULE, gmodule-2.0, [GMODULE_ADD="gmodule-2.0"],[GMODULE_ADD=""])
-EOC_MODULES="ctk+-3.0 >= $GTK_REQUIRED \
+EOC_MODULES="ctk+-3.0 >= $CTK_REQUIRED \
              glib-2.0 >= $GLIB_REQUIRED \
              $GMODULE_ADD \
              gio-2.0 >= $GLIB_REQUIRED \
@@ -105,7 +105,7 @@ EOC_MODULES="ctk+-3.0 >= $GTK_REQUIRED \
              cafe-desktop-2.0 >= $CAFE_DESKTOP_REQUIRED \
              gdk-pixbuf-2.0 >= $GDKPIXBUF_REQUIRED \
              gio-2.0 >= $GIO_REQUIRED \
-             ctk+-unix-print-3.0 >= $GTK_REQUIRED \
+             ctk+-unix-print-3.0 >= $CTK_REQUIRED \
              shared-mime-info >= $SHARED_MIME_INFO_REQUIRED \
              libpeas-1.0 >= $LIBPEAS_REQUIRED \
              libpeas-ctk-1.0 >= $LIBPEAS_REQUIRED"
@@ -252,7 +252,7 @@ int main(int c, char**v) { return 0; }
   if test x$with_libjpeg != xno && test -z "$LIBJPEG"; then
      AC_MSG_ERROR([
 *** Checks for JPEG loader failed. You can build without it by passing
-*** --without-libjpeg to configure but some programs using GTK+ may
+*** --without-libjpeg to configure but some programs using CTK+ may
 *** not work properly])
   fi
 AC_SUBST(LIBJPEG)

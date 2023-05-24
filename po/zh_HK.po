@@ -392,9 +392,9 @@ msgstr "是否以 EXIF 的方向資料自動調整圖片的方向。"
 #: data/org.cafe.eoc.gschema.xml.in:17
 msgid ""
 "The color that is used to fill the area behind the image. If the use-"
-"background-color key is not set, the color is determined by the active GTK+ "
+"background-color key is not set, the color is determined by the active CTK+ "
 "theme instead."
-msgstr "用來填滿圖片後方區域的顏色。如果沒有設定 use-background-color 設定鍵，則由使用的  GTK+ 佈景主題來代替。"
+msgstr "用來填滿圖片後方區域的顏色。如果沒有設定 use-background-color 設定鍵，則由使用的  CTK+ 佈景主題來代替。"
 
 #: data/org.cafe.eoc.gschema.xml.in:21
 msgid "Use a custom background color"
@@ -403,10 +403,10 @@ msgstr "使用自選的背景顏色"
 #: data/org.cafe.eoc.gschema.xml.in:22
 msgid ""
 "If this is active, the color set by the background-color key will be used to"
-" fill the area behind the image. If it is not set, the current GTK+ theme "
+" fill the area behind the image. If it is not set, the current CTK+ theme "
 "will determine the fill color."
 msgstr ""
-"如果使用這個選項，會使用 background-color 設定鍵指定的顏色填滿圖片後的區域。如果沒有指定，則由目前的  GTK+ "
+"如果使用這個選項，會使用 background-color 設定鍵指定的顏色填滿圖片後的區域。如果沒有指定，則由目前的  CTK+ "
 "佈景主題決定要填入的顏色。"
 
 #: data/org.cafe.eoc.gschema.xml.in:26

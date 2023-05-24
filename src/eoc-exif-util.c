@@ -204,7 +204,7 @@ eoc_exif_util_set_label_text (CtkLabel *label,
 	const gchar *buf_ptr;
 	gchar *label_text = NULL;
 
-	g_return_if_fail (GTK_IS_LABEL (label));
+	g_return_if_fail (CTK_IS_LABEL (label));
 
 	if (exif_data) {
 		buf_ptr = eoc_exif_data_get_value (exif_data, tag_id,
@@ -228,7 +228,7 @@ eoc_exif_util_format_datetime_label (CtkLabel *label, EocExifData *exif_data,
 	const gchar *buf_ptr;
 	gchar *label_text = NULL;
 
-	g_return_if_fail (GTK_IS_LABEL (label));
+	g_return_if_fail (CTK_IS_LABEL (label));
 	g_warn_if_fail (tag_id == EXIF_TAG_DATE_TIME_ORIGINAL);
 
 	if (exif_data) {

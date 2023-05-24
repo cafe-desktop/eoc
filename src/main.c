@@ -152,8 +152,8 @@ main (int argc, char **argv)
 	} else {
 		ctk_style_context_add_provider_for_screen (
 				gdk_screen_get_default(),
-				GTK_STYLE_PROVIDER (provider),
-				GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+				CTK_STYLE_PROVIDER (provider),
+				CTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
 	}
 	g_object_unref (provider);
 	g_object_unref (css_file);

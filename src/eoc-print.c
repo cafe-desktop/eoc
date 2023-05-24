@@ -93,11 +93,11 @@ eoc_print_draw_page (CtkPrintOperation *operation,
 	dpi_y = ctk_print_context_get_dpi_y (context);
 
 	switch (data->unit) {
-	case GTK_UNIT_INCH:
+	case CTK_UNIT_INCH:
 		x0 = data->left_margin * dpi_x;
 		y0 = data->top_margin  * dpi_y;
 		break;
-	case GTK_UNIT_MM:
+	case CTK_UNIT_MM:
 		x0 = data->left_margin * dpi_x/25.4;
 		y0 = data->top_margin  * dpi_y/25.4;
 		break;
@@ -110,8 +110,8 @@ eoc_print_draw_page (CtkPrintOperation *operation,
 	cairo_translate (cr, x0, y0);
 
 	page_setup = ctk_print_context_get_page_setup (context);
-	p_width =  ctk_page_setup_get_page_width (page_setup, GTK_UNIT_POINTS);
-	p_height = ctk_page_setup_get_page_height (page_setup, GTK_UNIT_POINTS);
+	p_width =  ctk_page_setup_get_page_width (page_setup, CTK_UNIT_POINTS);
+	p_height = ctk_page_setup_get_page_height (page_setup, CTK_UNIT_POINTS);
 
 	eoc_image_get_size (data->image, &width, &height);
 
@@ -329,7 +329,7 @@ eoc_print_operation_new (EocImage *image,
 	data->top_margin = 0;
 	data->scale_factor = 100;
 	data->image = g_object_ref (image);
-	data->unit = GTK_UNIT_INCH;
+	data->unit = CTK_UNIT_INCH;
 
 	eoc_image_get_size (image, &width, &height);
 
@@ -338,10 +338,10 @@ eoc_print_operation_new (EocImage *image,
 
 	if (height >= width) {
 		ctk_page_setup_set_orientation (page_setup,
-						GTK_PAGE_ORIENTATION_PORTRAIT);
+						CTK_PAGE_ORIENTATION_PORTRAIT);
 	} else {
 		ctk_page_setup_set_orientation (page_setup,
-						GTK_PAGE_ORIENTATION_LANDSCAPE);
+						CTK_PAGE_ORIENTATION_LANDSCAPE);
 	}
 
 	ctk_print_operation_set_print_settings (print, print_settings);

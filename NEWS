@@ -171,7 +171,7 @@
   * Replace remaining uses of margin-left and margin-right properties
   * EocMetadataSidebar: Allow filename to be wrapped at char boundaries
   * sidebar: fix a deprecation
-  * EocMetadataSidebar: Fix deprecation warning with newer GTK+
+  * EocMetadataSidebar: Fix deprecation warning with newer CTK+
   * MetadataSidebar: Add a tooltip to the folder button
   * MetadataSidebar: Change layout of the data values
   * Make metadata values in MetadataSidebar selectable
@@ -210,8 +210,8 @@
 ### eoc 1.20.0
 
   * Translations update
-  * drop CSS for GTK+ 3.18
-  * require GTK+ 3.22 and GLib 2.50
+  * drop CSS for CTK+ 3.18
+  * require CTK+ 3.22 and GLib 2.50
   * update copyright year to 2018
   * egg-editable-toolbar.c/egg-toolbars-model.c: drop unused variables
   * print-preview: replace custom code with GDK function call
@@ -253,7 +253,7 @@
   * EocScrollView: Switch to GdkRGBA for background and transparent colors
   * EocPrintPreview: Avoid unnecessary color parsing
   * Fix a few CtkStock deprecations
-  * EocCloseConfirmationDialog: replace deprecated GTK_STOCK_DIALOG_WARNING
+  * EocCloseConfirmationDialog: replace deprecated CTK_STOCK_DIALOG_WARNING
   * toolbar-editor: avoid deprecated CtkAlignment
   * Bring eoc-image.c's SVG handling up to date, properly recognize svgz filetypes
   * eoc_uri_converter: GList leak fix
@@ -263,7 +263,7 @@
   * NEWS: use consistent, project wide, markdown-like formatting
     to make generating release announcements easier
   * Build: require libcafe-desktop >= 1.17
-  * Move to GTK+3 (require GTK+ >= 3.14), drop GTK+2 code and
+  * Move to CTK+3 (require CTK+ >= 3.14), drop CTK+2 code and
     --with-ctk build option
   * Drop Python bindings and --enable-python build option
   * Port plugin system and plugins to libpeas
@@ -275,7 +275,7 @@
   * Prefs dialog: fix runtime warning
   * Fix auto-reload of externally modified image
   * Fix memleak when loading SVG fails
-  * GTK+3: force X11 backend
+  * CTK+3: force X11 backend
 
 ### eoc 1.16.0
 
@@ -288,7 +288,7 @@
 
   * Fix zoom and scroll performance on large images
   * Translations update
-  * Make distcheck use currently selected GTK+ version
+  * Make distcheck use currently selected CTK+ version
 
 ### eoc 1.14.1
 
@@ -300,10 +300,10 @@
   * Drop CafeConf migration script
   * Use org.gnome.SessionManager DBus name to inhibit screensaver
   * Auto-reload unmodified images when their file is changed
-  * GTK+3: add eoc-window style class at top level
-  * GTK+3: add css name EggToolbarEditor for 3.20
-  * GTK+3: fix SVG rendering
-  * GTK+3: fix several deprecations
+  * CTK+3: add eoc-window style class at top level
+  * CTK+3: add css name EggToolbarEditor for 3.20
+  * CTK+3: fix SVG rendering
+  * CTK+3: fix several deprecations
   * Some more fixes and cleanups
   * Translations update
   * Fix Changelog generation
@@ -313,7 +313,7 @@
   * Print preview: avoid integer overflow when allocating a large
    block of memory
   * Fix build with introspection enabled
-  * Fix GTK+3 build when --without-cms is set
+  * Fix CTK+3 build when --without-cms is set
   * Some more fixes
 
 ### eoc 1.12.1
@@ -337,7 +337,7 @@
   * Drop useless dependency on cafe-icon-theme
   * Fix build with libexif when prefix is not /usr
   * Some annotation fixes
-  * Some GTK+3 fixes and improvements
+  * Some CTK+3 fixes and improvements
 
 ### eoc 1.10.3
 
@@ -347,7 +347,7 @@
 ### eoc 1.10.2
 
   * Fix gschema translations.
-  * GTK3 fixes and improvements.
+  * CTK3 fixes and improvements.
 
 ### eoc 1.10.1
 

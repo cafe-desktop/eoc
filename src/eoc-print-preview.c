@@ -91,7 +91,7 @@ enum {
 	PROP_PAGE_BOTTOM_MARGIN
 };
 
-G_DEFINE_TYPE_WITH_PRIVATE (EocPrintPreview, eoc_print_preview, GTK_TYPE_ASPECT_FRAME)
+G_DEFINE_TYPE_WITH_PRIVATE (EocPrintPreview, eoc_print_preview, CTK_TYPE_ASPECT_FRAME)
 
 static void eoc_print_preview_draw (EocPrintPreview *preview, cairo_t *cr);
 static void eoc_print_preview_finalize (GObject *object);
@@ -421,16 +421,16 @@ eoc_print_preview_init (EocPrintPreview *preview)
 
 	priv = preview->priv = eoc_print_preview_get_instance_private (preview);
 
-	priv->area = GTK_WIDGET (ctk_drawing_area_new ());
+	priv->area = CTK_WIDGET (ctk_drawing_area_new ());
 
-	ctk_container_add (GTK_CONTAINER (preview), priv->area);
+	ctk_container_add (CTK_CONTAINER (preview), priv->area);
 
 	priv->p_width  =  8.5;
 	priv->p_height = 11.0;
 
 	ratio = priv->p_width/priv->p_height;
 
-	ctk_aspect_frame_set (GTK_ASPECT_FRAME (preview),
+	ctk_aspect_frame_set (CTK_ASPECT_FRAME (preview),
 			      0.5, 0.5, ratio, FALSE);
 
 	priv->image = NULL;
@@ -486,7 +486,7 @@ eoc_print_preview_new_with_pixbuf (GdkPixbuf *pixbuf)
 
 	update_relative_sizes (preview);
 
-	return GTK_WIDGET (preview);
+	return CTK_WIDGET (preview);
 }
 
 /**
@@ -540,7 +540,7 @@ eoc_print_preview_new (void)
 	g_signal_connect (area, "size-allocate",
 			  G_CALLBACK (size_allocate_cb), preview);
 
-	return GTK_WIDGET (preview);
+	return CTK_WIDGET (preview);
 }
 
 static gboolean
@@ -577,7 +577,7 @@ get_current_image_coordinates (EocPrintPreview *preview,
 	CtkAllocation allocation;
 
 	priv = preview->priv;
-	ctk_widget_get_allocation (GTK_WIDGET (priv->area), &allocation);
+	ctk_widget_get_allocation (CTK_WIDGET (priv->area), &allocation);
 
 	*x0 = (gint)((1 - priv->image_x_align)*priv->l_rmargin +  priv->image_x_align*(allocation.width - priv->r_rmargin - priv->r_width));
 	*y0 = (gint)((1 - priv->image_y_align)*priv->t_rmargin +  priv->image_y_align*(allocation.height - priv->b_rmargin - priv->r_height));
@@ -630,7 +630,7 @@ create_image_scaled (EocPrintPreview *preview)
 			gdouble scale;
 			scale = MIN ((gdouble) allocation.width/i_width,
 				     (gdouble) allocation.height/i_height);
-			scale *= ctk_widget_get_scale_factor (GTK_WIDGET (priv->area));
+			scale *= ctk_widget_get_scale_factor (CTK_WIDGET (priv->area));
 			priv->image_scaled = gdk_pixbuf_scale_simple (priv->image,
 								      i_width*scale,
 								      i_height*scale,
@@ -657,7 +657,7 @@ create_preview_buffer (EocPrintPreview *preview)
 
 	width  = gdk_pixbuf_get_width (preview->priv->image);
 	height = gdk_pixbuf_get_height (preview->priv->image);
-	widget_scale = ctk_widget_get_scale_factor (GTK_WIDGET (preview->priv->area));
+	widget_scale = ctk_widget_get_scale_factor (CTK_WIDGET (preview->priv->area));
 
 	width   *= preview->priv->i_scale * preview->priv->p_scale
 			* widget_scale;
@@ -697,7 +697,7 @@ create_surface (EocPrintPreview *preview)
 	if (pixbuf) {
 		priv->surface =
 			gdk_cairo_surface_create_from_pixbuf (pixbuf, 0,
-			                                      ctk_widget_get_window (GTK_WIDGET (preview)));
+			                                      ctk_widget_get_window (CTK_WIDGET (preview)));
 		g_object_unref (pixbuf);
 	}
 	priv->flag_create_surface = FALSE;
@@ -728,7 +728,7 @@ button_press_event_cb (CtkWidget *widget,
 	}
 
 	if (preview->priv->grabbed) {
-		ctk_widget_queue_draw (GTK_WIDGET (preview));
+		ctk_widget_queue_draw (CTK_WIDGET (preview));
 	}
 
 	ctk_widget_grab_focus (preview->priv->area);
@@ -748,7 +748,7 @@ button_release_event_cb (CtkWidget *widget,
 		preview->priv->grabbed = FALSE;
 		preview->priv->r_dx = 0;
 		preview->priv->r_dy = 0;
-		ctk_widget_queue_draw (GTK_WIDGET (preview));
+		ctk_widget_queue_draw (CTK_WIDGET (preview));
 
 	}
 	return FALSE;
@@ -1025,15 +1025,15 @@ eoc_print_preview_set_from_page_setup (EocPrintPreview *preview,
 				       CtkPageSetup *setup)
 {
 	g_return_if_fail (EOC_IS_PRINT_PREVIEW (preview));
-	g_return_if_fail (GTK_IS_PAGE_SETUP (setup));
+	g_return_if_fail (CTK_IS_PAGE_SETUP (setup));
 
 	g_object_set (G_OBJECT (preview),
-		      "page-left-margin", ctk_page_setup_get_left_margin (setup, GTK_UNIT_INCH),
-		      "page-right-margin", ctk_page_setup_get_right_margin (setup, GTK_UNIT_INCH),
-		      "page-top-margin", ctk_page_setup_get_top_margin (setup, GTK_UNIT_INCH),
-		      "page-bottom-margin", ctk_page_setup_get_bottom_margin (setup, GTK_UNIT_INCH),
-		      "paper-width", ctk_page_setup_get_paper_width (setup, GTK_UNIT_INCH),
-		      "paper-height", ctk_page_setup_get_paper_height (setup, GTK_UNIT_INCH),
+		      "page-left-margin", ctk_page_setup_get_left_margin (setup, CTK_UNIT_INCH),
+		      "page-right-margin", ctk_page_setup_get_right_margin (setup, CTK_UNIT_INCH),
+		      "page-top-margin", ctk_page_setup_get_top_margin (setup, CTK_UNIT_INCH),
+		      "page-bottom-margin", ctk_page_setup_get_bottom_margin (setup, CTK_UNIT_INCH),
+		      "paper-width", ctk_page_setup_get_paper_width (setup, CTK_UNIT_INCH),
+		      "paper-height", ctk_page_setup_get_paper_height (setup, CTK_UNIT_INCH),
 		      NULL);
 
 }

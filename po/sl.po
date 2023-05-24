@@ -400,11 +400,11 @@ msgstr ""
 #: data/org.cafe.eoc.gschema.xml.in:17
 msgid ""
 "The color that is used to fill the area behind the image. If the use-"
-"background-color key is not set, the color is determined by the active GTK+ "
+"background-color key is not set, the color is determined by the active CTK+ "
 "theme instead."
 msgstr ""
 "Dejavna barva, ki je uporabljena kot barva ozadja slike. V kolikor možnost "
-"uporabi-barvo-ozadja ni določena, bo uporabljana barva polnila trenutne GTK+"
+"uporabi-barvo-ozadja ni določena, bo uporabljana barva polnila trenutne CTK+"
 " teme."
 
 #: data/org.cafe.eoc.gschema.xml.in:21
@@ -414,12 +414,12 @@ msgstr "Uporabi barvo ozadja po meri"
 #: data/org.cafe.eoc.gschema.xml.in:22
 msgid ""
 "If this is active, the color set by the background-color key will be used to"
-" fill the area behind the image. If it is not set, the current GTK+ theme "
+" fill the area behind the image. If it is not set, the current CTK+ theme "
 "will determine the fill color."
 msgstr ""
 "V primeru, da je dejavna barva določena s ključem barve-ozadja, bo ta "
 "uporabljena kot barva ozadja slike. V kolikor barva ni določena, bo "
-"uporabljana barva polnila trenutne GTK+ teme."
+"uporabljana barva polnila trenutne CTK+ teme."
 
 #: data/org.cafe.eoc.gschema.xml.in:26
 msgid "Interpolate Image"

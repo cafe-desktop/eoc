@@ -395,11 +395,11 @@ msgstr "Có tự động xoay ảnh dựa vào hướng dẫn EXIF hay không."
 #: data/org.cafe.eoc.gschema.xml.in:17
 msgid ""
 "The color that is used to fill the area behind the image. If the use-"
-"background-color key is not set, the color is determined by the active GTK+ "
+"background-color key is not set, the color is determined by the active CTK+ "
 "theme instead."
 msgstr ""
 "Màu được sử dụng để lấp đầy khu vực đằng sau hình ảnh. Nếu khóa màu nền chưa"
-" được đặt, màu sẽ được quyết định bởi chủ đề GTK+."
+" được đặt, màu sẽ được quyết định bởi chủ đề CTK+."
 
 #: data/org.cafe.eoc.gschema.xml.in:21
 msgid "Use a custom background color"
@@ -408,11 +408,11 @@ msgstr "Sử dụng màu nền tùy chỉnh"
 #: data/org.cafe.eoc.gschema.xml.in:22
 msgid ""
 "If this is active, the color set by the background-color key will be used to"
-" fill the area behind the image. If it is not set, the current GTK+ theme "
+" fill the area behind the image. If it is not set, the current CTK+ theme "
 "will determine the fill color."
 msgstr ""
 "Nếu điều này được hoạt động, màu được đặt bởi khóa màu nền sẽ được sử dụng "
-"để lấp đầy khu vực đằng sau hình ảnh. Nếu nó không được đặt, chủ đề GTK+ "
+"để lấp đầy khu vực đằng sau hình ảnh. Nếu nó không được đặt, chủ đề CTK+ "
 "hiện tại sẽ quyết định màu lấp đầy."
 
 #: data/org.cafe.eoc.gschema.xml.in:26

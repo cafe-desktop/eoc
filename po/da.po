@@ -396,12 +396,12 @@ msgstr "Om billedet skal roteres automatisk baseret på EXIF-orientering."
 #: data/org.cafe.eoc.gschema.xml.in:17
 msgid ""
 "The color that is used to fill the area behind the image. If the use-"
-"background-color key is not set, the color is determined by the active GTK+ "
+"background-color key is not set, the color is determined by the active CTK+ "
 "theme instead."
 msgstr ""
 "Farven som bliver brugt til at udfylde området bagved billedet. Hvis nøgles "
 "use-background-image er deaktiveret, vil farven blive bestemt af det aktive "
-"GTK+-tema i stedet for."
+"CTK+-tema i stedet for."
 
 #: data/org.cafe.eoc.gschema.xml.in:21
 msgid "Use a custom background color"
@@ -410,12 +410,12 @@ msgstr "Brug en brugerdefineret baggrundsfarve"
 #: data/org.cafe.eoc.gschema.xml.in:22
 msgid ""
 "If this is active, the color set by the background-color key will be used to"
-" fill the area behind the image. If it is not set, the current GTK+ theme "
+" fill the area behind the image. If it is not set, the current CTK+ theme "
 "will determine the fill color."
 msgstr ""
 "Hvis dette er aktiveret, vil den farve som er defineret af nøglen "
 "background-color blive brugt til at fylde området bagved baggrundsbilledet. "
-"Hvis det ikke er aktiveret, vil det nuværende GTK+-tema bestemme fyldfarven."
+"Hvis det ikke er aktiveret, vil det nuværende CTK+-tema bestemme fyldfarven."
 
 #: data/org.cafe.eoc.gschema.xml.in:26
 msgid "Interpolate Image"

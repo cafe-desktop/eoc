@@ -402,11 +402,11 @@ msgstr ""
 #: data/org.cafe.eoc.gschema.xml.in:17
 msgid ""
 "The color that is used to fill the area behind the image. If the use-"
-"background-color key is not set, the color is determined by the active GTK+ "
+"background-color key is not set, the color is determined by the active CTK+ "
 "theme instead."
 msgstr ""
 "Spalva, naudojama plotui už paveikslo užpildyti. Jei fono spalva nenurodyta,"
-" ji yra nustatoma iš naudojamos GTK+ temos."
+" ji yra nustatoma iš naudojamos CTK+ temos."
 
 #: data/org.cafe.eoc.gschema.xml.in:21
 msgid "Use a custom background color"
@@ -415,11 +415,11 @@ msgstr "Naudoti pasirinktąją fono spalvą"
 #: data/org.cafe.eoc.gschema.xml.in:22
 msgid ""
 "If this is active, the color set by the background-color key will be used to"
-" fill the area behind the image. If it is not set, the current GTK+ theme "
+" fill the area behind the image. If it is not set, the current CTK+ theme "
 "will determine the fill color."
 msgstr ""
 "Jei įjungta, fono spalva bus naudojama plotui už paveikslo užpildyti. Jei "
-"išjungta, naudojama GTK+ tema nustatys užpildymo spalvą."
+"išjungta, naudojama CTK+ tema nustatys užpildymo spalvą."
 
 #: data/org.cafe.eoc.gschema.xml.in:26
 msgid "Interpolate Image"
