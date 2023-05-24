@@ -73,7 +73,7 @@ pd_string_to_rgba_mapping (GValue   *value,
 			    GVariant *variant,
 			    gpointer user_data)
 {
-	GdkRGBA color;
+	CdkRGBA color;
 
 	g_return_val_if_fail (g_variant_is_of_type (variant, G_VARIANT_TYPE_STRING), FALSE);
 
@@ -92,7 +92,7 @@ pd_rgba_to_string_mapping (const GValue       *value,
 {
 
 	GVariant *variant = NULL;
-	GdkRGBA *color;
+	CdkRGBA *color;
 	gchar *hex_val;
 
 	g_return_val_if_fail (G_VALUE_TYPE (value) == GDK_TYPE_RGBA, NULL);

@@ -28,8 +28,8 @@
 
 struct _EocPrintPreviewPrivate {
 	CtkWidget *area;
-	GdkPixbuf *image;
-	GdkPixbuf *image_scaled;
+	CdkPixbuf *image;
+	CdkPixbuf *image_scaled;
 
 	/* The surface to set to the cairo context, created from the image */
 	cairo_surface_t *surface;
@@ -456,25 +456,25 @@ eoc_print_preview_init (EocPrintPreview *preview)
 	priv->r_dy    = 0;
 }
 
-static gboolean button_press_event_cb   (CtkWidget *widget, GdkEventButton *bev, gpointer user_data);
-static gboolean button_release_event_cb (CtkWidget *widget, GdkEventButton *bev, gpointer user_data);
-static gboolean motion_notify_event_cb  (CtkWidget *widget, GdkEventMotion *mev, gpointer user_data);
-static gboolean key_press_event_cb      (CtkWidget *widget, GdkEventKey *event, gpointer user_data);
+static gboolean button_press_event_cb   (CtkWidget *widget, CdkEventButton *bev, gpointer user_data);
+static gboolean button_release_event_cb (CtkWidget *widget, CdkEventButton *bev, gpointer user_data);
+static gboolean motion_notify_event_cb  (CtkWidget *widget, CdkEventMotion *mev, gpointer user_data);
+static gboolean key_press_event_cb      (CtkWidget *widget, CdkEventKey *event, gpointer user_data);
 
 static gboolean draw_cb (CtkDrawingArea *drawing_area, cairo_t *cr, gpointer user_data);
 static void size_allocate_cb (CtkWidget *widget, CtkAllocation *allocation, gpointer user_data);
 
 /**
  * eoc_print_preview_new_with_pixbuf:
- * @pixbuf: a #GdkPixbuf
+ * @pixbuf: a #CdkPixbuf
  *
- * Creates a new #EocPrintPreview widget, and sets the #GdkPixbuf to preview
+ * Creates a new #EocPrintPreview widget, and sets the #CdkPixbuf to preview
  * on it.
  *
  * Returns: A new #EocPrintPreview widget.
  **/
 CtkWidget *
-eoc_print_preview_new_with_pixbuf (GdkPixbuf *pixbuf)
+eoc_print_preview_new_with_pixbuf (CdkPixbuf *pixbuf)
 {
 	EocPrintPreview *preview;
 
@@ -642,12 +642,12 @@ create_image_scaled (EocPrintPreview *preview)
 	}
 }
 
-static GdkPixbuf *
+static CdkPixbuf *
 create_preview_buffer (EocPrintPreview *preview)
 {
-	GdkPixbuf *pixbuf;
+	CdkPixbuf *pixbuf;
 	gint width, height, widget_scale;
-	GdkInterpType type = GDK_INTERP_TILES;
+	CdkInterpType type = GDK_INTERP_TILES;
 
 	if (preview->priv->image == NULL) {
 		return NULL;
@@ -686,7 +686,7 @@ static void
 create_surface (EocPrintPreview *preview)
 {
 	EocPrintPreviewPrivate *priv = preview->priv;
-	GdkPixbuf *pixbuf;
+	CdkPixbuf *pixbuf;
 
 	if (priv->surface) {
 		cairo_surface_destroy (priv->surface);
@@ -713,7 +713,7 @@ create_surface_when_idle (EocPrintPreview *preview)
 
 static gboolean
 button_press_event_cb (CtkWidget *widget,
-		       GdkEventButton *event,
+		       CdkEventButton *event,
 		       gpointer user_data)
 {
 	EocPrintPreview *preview = EOC_PRINT_PREVIEW (user_data);
@@ -738,7 +738,7 @@ button_press_event_cb (CtkWidget *widget,
 
 static gboolean
 button_release_event_cb (CtkWidget *widget,
-			 GdkEventButton *event,
+			 CdkEventButton *event,
 			 gpointer user_data)
 {
 	EocPrintPreview *preview = EOC_PRINT_PREVIEW (user_data);
@@ -756,7 +756,7 @@ button_release_event_cb (CtkWidget *widget,
 
 static gboolean
 key_press_event_cb (CtkWidget   *widget,
-		    GdkEventKey *event,
+		    CdkEventKey *event,
 		    gpointer     user_data)
 {
 	gfloat delta, align;
@@ -806,7 +806,7 @@ key_press_event_cb (CtkWidget   *widget,
 
 static gboolean
 motion_notify_event_cb (CtkWidget      *widget,
-			GdkEventMotion *event,
+			CdkEventMotion *event,
 			gpointer        user_data)
 {
 	EocPrintPreviewPrivate *priv = EOC_PRINT_PREVIEW (user_data)->priv;
@@ -850,7 +850,7 @@ motion_notify_event_cb (CtkWidget      *widget,
 			       [SIGNAL_IMAGE_MOVED], 0);
 	} else {
 		if (press_inside_image_area (EOC_PRINT_PREVIEW (user_data), event->x, event->y)) {
-		  	GdkCursor *cursor;
+		  	CdkCursor *cursor;
 			cursor = cdk_cursor_new_for_display (ctk_widget_get_display (widget),
 							     GDK_FLEUR);
 			cdk_window_set_cursor (ctk_widget_get_window (widget),

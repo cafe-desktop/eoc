@@ -67,7 +67,7 @@ is_local_file (GFile *file)
 static char*
 get_save_file_type_by_file (GFile *file)
 {
-	GdkPixbufFormat *format;
+	CdkPixbufFormat *format;
 	char *type = NULL;
 
 	format = eoc_pixbuf_get_format (file);
@@ -101,7 +101,7 @@ eoc_image_save_info_new_from_image (EocImage *image)
 }
 
 EocImageSaveInfo*
-eoc_image_save_info_new_from_uri (const char *txt_uri, GdkPixbufFormat *format)
+eoc_image_save_info_new_from_uri (const char *txt_uri, CdkPixbufFormat *format)
 {
 	GFile *file;
 	EocImageSaveInfo *info;
@@ -118,7 +118,7 @@ eoc_image_save_info_new_from_uri (const char *txt_uri, GdkPixbufFormat *format)
 }
 
 EocImageSaveInfo*
-eoc_image_save_info_new_from_file (GFile *file, GdkPixbufFormat *format)
+eoc_image_save_info_new_from_file (GFile *file, CdkPixbufFormat *format)
 {
 	EocImageSaveInfo *info;
 

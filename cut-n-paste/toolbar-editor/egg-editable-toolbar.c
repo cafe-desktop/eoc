@@ -29,7 +29,7 @@
 #include <glib/gi18n.h>
 #include <string.h>
 
-static GdkPixbuf * new_separator_pixbuf         (void);
+static CdkPixbuf * new_separator_pixbuf         (void);
 
 #define MIN_TOOLBAR_HEIGHT 20
 #define EGG_ITEM_NAME      "egg-item-name"
@@ -173,7 +173,7 @@ find_action (EggEditableToolbar *etoolbar,
 
 static void
 drag_data_delete_cb (CtkWidget          *widget,
-		     GdkDragContext     *context,
+		     CdkDragContext     *context,
 		     EggEditableToolbar *etoolbar)
 {
   int pos, toolbar_pos;
@@ -192,7 +192,7 @@ drag_data_delete_cb (CtkWidget          *widget,
 
 static void
 drag_begin_cb (CtkWidget          *widget,
-	       GdkDragContext     *context,
+	       CdkDragContext     *context,
 	       EggEditableToolbar *etoolbar)
 {
   CtkAction *action;
@@ -222,7 +222,7 @@ drag_begin_cb (CtkWidget          *widget,
 
 static void
 drag_end_cb (CtkWidget          *widget,
-	     GdkDragContext     *context,
+	     CdkDragContext     *context,
 	     EggEditableToolbar *etoolbar)
 {
   CtkAction *action;
@@ -255,7 +255,7 @@ drag_end_cb (CtkWidget          *widget,
 
 static void
 drag_data_get_cb (CtkWidget          *widget,
-		  GdkDragContext     *context,
+		  CdkDragContext     *context,
 		  CtkSelectionData   *selection_data,
 		  guint               info,
 		  guint32             time,
@@ -290,8 +290,8 @@ move_item_cb (CtkAction          *action,
   CtkWidget *toolitem = ctk_widget_get_ancestor (egg_editable_toolbar_get_selected (etoolbar), CTK_TYPE_TOOL_ITEM);
   CtkTargetList *list = ctk_target_list_new (dest_drag_types, G_N_ELEMENTS (dest_drag_types));
 
-  GdkEvent *realevent = ctk_get_current_event();
-  GdkEventMotion event;
+  CdkEvent *realevent = ctk_get_current_event();
+  CdkEventMotion event;
   event.type = GDK_MOTION_NOTIFY;
   event.window = realevent->any.window;
   event.send_event = FALSE;
@@ -305,7 +305,7 @@ move_item_cb (CtkAction          *action,
                                    list,
                                    GDK_ACTION_MOVE,
                                    1,
-                                   (GdkEvent *)&event,
+                                   (CdkEvent *)&event,
                                    event.x,
                                    event.y);
   ctk_target_list_unref (list);
@@ -377,7 +377,7 @@ popup_context_menu_cb (CtkWidget          *toolbar,
 
 static gboolean
 button_press_event_cb (CtkWidget *widget,
-                       GdkEventButton *event,
+                       CdkEventButton *event,
                        EggEditableToolbar *etoolbar)
 {
   if (event->button == 3 && etoolbar->priv->popup_path != NULL)
@@ -390,7 +390,7 @@ button_press_event_cb (CtkWidget *widget,
       menu = CTK_MENU (ctk_ui_manager_get_widget (etoolbar->priv->manager,
 						  etoolbar->priv->popup_path));
       g_return_val_if_fail (menu != NULL, FALSE);
-      ctk_menu_popup_at_pointer (menu, (const GdkEvent*) event);
+      ctk_menu_popup_at_pointer (menu, (const CdkEvent*) event);
       g_signal_connect_object (menu, "selection-done",
 			       G_CALLBACK (popup_context_deactivate),
 			       etoolbar, 0);
@@ -432,9 +432,9 @@ configure_item_cursor (CtkToolItem *item,
     {
       if (priv->edit_mode > 0)
         {
-          GdkCursor *cursor;
-	  GdkScreen *screen;
-          GdkPixbuf *pixbuf = NULL;
+          CdkCursor *cursor;
+	  CdkScreen *screen;
+          CdkPixbuf *pixbuf = NULL;
 
 	  screen = ctk_widget_get_screen (CTK_WIDGET (etoolbar));
 
@@ -468,7 +468,7 @@ configure_item_cursor (CtkToolItem *item,
                 }
               if (icon_name)
                 {
-                  GdkScreen *screen;
+                  CdkScreen *screen;
                   CtkIconTheme *icon_theme;
                   gint width, height;
 
@@ -633,7 +633,7 @@ create_item_from_position (EggEditableToolbar *etoolbar,
 
 static void
 toolbar_drag_data_received_cb (CtkToolbar         *toolbar,
-                               GdkDragContext     *context,
+                               CdkDragContext     *context,
                                gint                x,
                                gint                y,
                                CtkSelectionData   *selection_data,
@@ -652,7 +652,7 @@ toolbar_drag_data_received_cb (CtkToolbar         *toolbar,
    *      actually add a new item to the toolbar.
    */
 
-  GdkAtom type = ctk_selection_data_get_data_type (selection_data);
+  CdkAtom type = ctk_selection_data_get_data_type (selection_data);
   const char *data = (char *)ctk_selection_data_get_data (selection_data);
 
   int ipos = -1;
@@ -711,13 +711,13 @@ toolbar_drag_data_received_cb (CtkToolbar         *toolbar,
 
 static gboolean
 toolbar_drag_drop_cb (CtkToolbar         *toolbar,
-		      GdkDragContext     *context,
+		      CdkDragContext     *context,
 		      gint                x,
 		      gint                y,
 		      guint               time,
 		      EggEditableToolbar *etoolbar)
 {
-  GdkAtom target;
+  CdkAtom target;
 
   target = ctk_drag_dest_find_target (CTK_WIDGET (toolbar), context, NULL);
   if (target != GDK_NONE)
@@ -731,13 +731,13 @@ toolbar_drag_drop_cb (CtkToolbar         *toolbar,
 
 static gboolean
 toolbar_drag_motion_cb (CtkToolbar         *toolbar,
-		        GdkDragContext     *context,
+		        CdkDragContext     *context,
 		        gint                x,
 		        gint                y,
 		        guint               time,
 		        EggEditableToolbar *etoolbar)
 {
-  GdkAtom target = ctk_drag_dest_find_target (CTK_WIDGET (toolbar), context, NULL);
+  CdkAtom target = ctk_drag_dest_find_target (CTK_WIDGET (toolbar), context, NULL);
   if (target == GDK_NONE)
     {
       cdk_drag_status (context, 0, time);
@@ -768,7 +768,7 @@ toolbar_drag_motion_cb (CtkToolbar         *toolbar,
 
 static void
 toolbar_drag_leave_cb (CtkToolbar         *toolbar,
-		       GdkDragContext     *context,
+		       CdkDragContext     *context,
 		       guint               time,
 		       EggEditableToolbar *etoolbar)
 {
@@ -1756,11 +1756,11 @@ egg_editable_toolbar_set_fixed (EggEditableToolbar *etoolbar,
  * themes. However, the icon is slightly large for themes
  * with large toolbar icons.
  */
-static GdkPixbuf *
+static CdkPixbuf *
 new_pixbuf_from_widget (CtkWidget *widget)
 {
   CtkWidget *window;
-  GdkPixbuf *pixbuf;
+  CdkPixbuf *pixbuf;
   gint icon_height;
 
   if (!ctk_icon_size_lookup (CTK_ICON_SIZE_LARGE_TOOLBAR,
@@ -1784,11 +1784,11 @@ new_pixbuf_from_widget (CtkWidget *widget)
   return pixbuf;
 }
 
-static GdkPixbuf *
+static CdkPixbuf *
 new_separator_pixbuf (void)
 {
   CtkWidget *separator;
-  GdkPixbuf *pixbuf;
+  CdkPixbuf *pixbuf;
 
   separator = ctk_separator_new (CTK_ORIENTATION_VERTICAL);
   pixbuf = new_pixbuf_from_widget (separator);
@@ -1798,7 +1798,7 @@ new_separator_pixbuf (void)
 static void
 update_separator_image (CtkImage *image)
 {
-  GdkPixbuf *pixbuf = new_separator_pixbuf ();
+  CdkPixbuf *pixbuf = new_separator_pixbuf ();
   ctk_image_set_from_pixbuf (CTK_IMAGE (image), pixbuf);
   g_object_unref (pixbuf);
 }

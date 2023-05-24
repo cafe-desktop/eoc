@@ -52,7 +52,7 @@ GType		 eoc_file_chooser_get_type	(void) G_GNUC_CONST;
 
 CtkWidget	*eoc_file_chooser_new		(CtkFileChooserAction action);
 
-GdkPixbufFormat	*eoc_file_chooser_get_format	(EocFileChooser *chooser);
+CdkPixbufFormat	*eoc_file_chooser_get_format	(EocFileChooser *chooser);
 
 
 G_END_DECLS

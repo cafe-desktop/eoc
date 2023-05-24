@@ -1,7 +1,7 @@
 /* This code is based on the jpeg saving code from cdk-pixbuf. Full copyright
  * notice is given in the following:
  */
-/* GdkPixbuf library - JPEG image loader
+/* CdkPixbuf library - JPEG image loader
  *
  * Copyright (C) 1999 Michael Zucchi
  * Copyright (C) 1999 The Free Software Foundation
@@ -348,7 +348,7 @@ _save_any_as_jpeg (EocImage *image, const char *file, EocImageSaveInfo *source,
 		   EocImageSaveInfo *target, GError **error)
 {
 	EocImagePrivate *priv;
-	GdkPixbuf *pixbuf;
+	CdkPixbuf *pixbuf;
 	struct jpeg_compress_struct cinfo;
 	guchar *buf = NULL;
 	guchar *ptr;

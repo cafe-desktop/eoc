@@ -43,13 +43,13 @@ enum {
 };
 
 struct _EocClipboardHandlerPrivate {
-	GdkPixbuf *pixbuf;
+	CdkPixbuf *pixbuf;
 	gchar     *uri;
 };
 
 G_DEFINE_TYPE_WITH_PRIVATE (EocClipboardHandler, eoc_clipboard_handler, G_TYPE_INITIALLY_UNOWNED)
 
-static GdkPixbuf*
+static CdkPixbuf*
 eoc_clipboard_handler_get_pixbuf (EocClipboardHandler *handler)
 {
 	g_return_val_if_fail (EOC_IS_CLIPBOARD_HANDLER (handler), NULL);
@@ -66,7 +66,7 @@ eoc_clipboard_handler_get_uri (EocClipboardHandler *handler)
 }
 
 static void
-eoc_clipboard_handler_set_pixbuf (EocClipboardHandler *handler, GdkPixbuf *pixbuf)
+eoc_clipboard_handler_set_pixbuf (EocClipboardHandler *handler, CdkPixbuf *pixbuf)
 {
 	g_return_if_fail (EOC_IS_CLIPBOARD_HANDLER (handler));
 	g_return_if_fail (pixbuf == NULL || GDK_IS_PIXBUF (pixbuf));
@@ -131,7 +131,7 @@ eoc_clipboard_handler_set_property (GObject *object, guint property_id,
 	switch (property_id) {
 	case PROP_PIXBUF:
 	{
-		GdkPixbuf *pixbuf;
+		CdkPixbuf *pixbuf;
 
 		pixbuf = g_value_get_object (value);
 		eoc_clipboard_handler_set_pixbuf (handler, pixbuf);
@@ -205,7 +205,7 @@ eoc_clipboard_handler_new (EocImage *img)
 {
 	GObject *obj;
 	GFile *file;
-	GdkPixbuf *pbuf;
+	CdkPixbuf *pbuf;
 	gchar *uri;
 
 	g_object_ref (img);
@@ -239,7 +239,7 @@ eoc_clipboard_handler_get_func (CtkClipboard *clipboard,
 	switch (info) {
 	case TARGET_PIXBUF:
 	{
-		GdkPixbuf *pixbuf = eoc_clipboard_handler_get_pixbuf (handler);
+		CdkPixbuf *pixbuf = eoc_clipboard_handler_get_pixbuf (handler);
 		g_object_ref (pixbuf);
 		ctk_selection_data_set_pixbuf (selection, pixbuf);
 		g_object_unref (pixbuf);

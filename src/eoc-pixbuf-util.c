@@ -15,9 +15,9 @@ eoc_pixbuf_get_savable_formats (void)
 	list = cdk_pixbuf_get_formats ();
 
 	for (it = list; it != NULL; it = it->next) {
-		GdkPixbufFormat *format;
+		CdkPixbufFormat *format;
 
-		format = (GdkPixbufFormat*) it->data;
+		format = (CdkPixbufFormat*) it->data;
 		if (cdk_pixbuf_format_is_writable (format)) {
 			write_list = g_slist_prepend (write_list, format);
 		}
@@ -29,23 +29,23 @@ eoc_pixbuf_get_savable_formats (void)
 	return write_list;
 }
 
-GdkPixbufFormat*
+CdkPixbufFormat*
 eoc_pixbuf_get_format_by_suffix (const char *suffix)
 {
 	GSList *list;
 	GSList *it;
-	GdkPixbufFormat *result = NULL;
+	CdkPixbufFormat *result = NULL;
 
 	g_return_val_if_fail (suffix != NULL, NULL);
 
 	list = cdk_pixbuf_get_formats ();
 
 	for (it = list; (it != NULL) && (result == NULL); it = it->next) {
-		GdkPixbufFormat *format;
+		CdkPixbufFormat *format;
 		gchar **extensions;
 		int i;
 
-		format = (GdkPixbufFormat*) it->data;
+		format = (CdkPixbufFormat*) it->data;
 
 		extensions = cdk_pixbuf_format_get_extensions (format);
 		for (i = 0; extensions[i] != NULL; i++) {
@@ -65,7 +65,7 @@ eoc_pixbuf_get_format_by_suffix (const char *suffix)
 }
 
 char*
-eoc_pixbuf_get_common_suffix (GdkPixbufFormat *format)
+eoc_pixbuf_get_common_suffix (CdkPixbufFormat *format)
 {
 	char **extensions;
 	int i;
@@ -114,10 +114,10 @@ get_suffix_from_basename (const char *basename)
 
 }
 
-GdkPixbufFormat *
+CdkPixbufFormat *
 eoc_pixbuf_get_format (GFile *file)
 {
-	GdkPixbufFormat *format;
+	CdkPixbufFormat *format;
 	char *path, *basename, *suffix;
 	g_return_val_if_fail (file != NULL, NULL);
 

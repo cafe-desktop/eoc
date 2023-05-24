@@ -380,7 +380,7 @@ eoc_window_can_save_changed_cb (GSettings *settings, gchar *key, gpointer user_d
 
 #if defined(HAVE_LCMS) && defined(GDK_WINDOWING_X11)
 static cmsHPROFILE *
-eoc_window_get_display_profile (GdkScreen *screen)
+eoc_window_get_display_profile (CdkScreen *screen)
 {
 	Display *dpy;
 	Atom icc_atom, type;
@@ -767,7 +767,7 @@ image_thumb_changed_cb (EocImage *image, gpointer data)
 {
 	EocWindow *window;
 	EocWindowPrivate *priv;
-	GdkPixbuf *thumb;
+	CdkPixbuf *thumb;
 
 	g_return_if_fail (EOC_IS_WINDOW (data));
 
@@ -1199,9 +1199,9 @@ eoc_window_obtain_desired_size (EocImage  *image,
 				gint       height,
 				EocWindow *window)
 {
-	GdkScreen *screen;
-	GdkDisplay *display;
-	GdkRectangle monitor;
+	CdkScreen *screen;
+	CdkDisplay *display;
+	CdkRectangle monitor;
 	CtkAllocation allocation;
 	gint final_width, final_height;
 	gint screen_width, screen_height;
@@ -1690,9 +1690,9 @@ static void
 eoc_window_update_fullscreen_popup (EocWindow *window)
 {
 	CtkWidget *popup = window->priv->fullscreen_popup;
-	GdkRectangle screen_rect;
-	GdkScreen *screen;
-	GdkDisplay *display;
+	CdkRectangle screen_rect;
+	CdkScreen *screen;
+	CdkDisplay *display;
 
 	g_return_if_fail (popup != NULL);
 
@@ -1713,7 +1713,7 @@ eoc_window_update_fullscreen_popup (EocWindow *window)
 }
 
 static void
-screen_size_changed_cb (GdkScreen *screen, EocWindow *window)
+screen_size_changed_cb (CdkScreen *screen, EocWindow *window)
 {
 	eoc_window_update_fullscreen_popup (window);
 }
@@ -1850,7 +1850,7 @@ show_fullscreen_popup (EocWindow *window)
 
 static gboolean
 fullscreen_motion_notify_cb (CtkWidget      *widget,
-			     GdkEventMotion *event,
+			     CdkEventMotion *event,
 			     gpointer       user_data)
 {
 	EocWindow *window = EOC_WINDOW (user_data);
@@ -1868,7 +1868,7 @@ fullscreen_motion_notify_cb (CtkWidget      *widget,
 
 static gboolean
 fullscreen_leave_notify_cb (CtkWidget *widget,
-			    GdkEventCrossing *event,
+			    CdkEventCrossing *event,
 			    gpointer user_data)
 {
 	EocWindow *window = EOC_WINDOW (user_data);
@@ -1923,7 +1923,7 @@ eoc_window_create_fullscreen_popup (EocWindow *window)
 	CtkWidget *hbox;
 	CtkWidget *button;
 	CtkWidget *toolbar;
-	GdkScreen *screen;
+	CdkScreen *screen;
 
 	eoc_debug (DEBUG_WINDOW);
 
@@ -2068,7 +2068,7 @@ eoc_window_uninhibit_screensaver (EocWindow *window)
 static void
 eoc_window_run_fullscreen (EocWindow *window, gboolean slideshow)
 {
-	static const GdkRGBA black = { 0., 0., 0., 1.};
+	static const CdkRGBA black = { 0., 0., 0., 1.};
 
 	EocWindowPrivate *priv;
 	CtkWidget *menubar;
@@ -2746,8 +2746,8 @@ wallpaper_info_bar_response (CtkInfoBar *bar, gint response, EocWindow *window)
 		}
 
 		if (app_info != NULL) {
-			GdkAppLaunchContext *context;
-			GdkDisplay *display;
+			CdkAppLaunchContext *context;
+			CdkDisplay *display;
 
 			display = ctk_widget_get_display (CTK_WIDGET (window));
 			context = cdk_display_get_app_launch_context (display);
@@ -4174,14 +4174,14 @@ eoc_window_recent_manager_changed_cb (CtkRecentManager *manager, EocWindow *wind
 
 static void
 eoc_window_drag_data_received (CtkWidget *widget,
-                               GdkDragContext *context,
+                               CdkDragContext *context,
                                gint x, gint y,
                                CtkSelectionData *selection_data,
                                guint info, guint time)
 {
 	GSList *file_list;
 	EocWindow *window;
-	GdkAtom target;
+	CdkAtom target;
 	CtkWidget *src;
 
 	target = ctk_selection_data_get_target (selection_data);
@@ -4335,7 +4335,7 @@ static void
 eoc_window_open_editor (CtkAction *action,
                         EocWindow *window)
 {
-	GdkAppLaunchContext *context;
+	CdkAppLaunchContext *context;
 	GAppInfo *app_info;
 	GList files;
 
@@ -4691,8 +4691,8 @@ eoc_window_construct_ui (EocWindow *window)
 static void
 eoc_window_init (EocWindow *window)
 {
-	GdkGeometry hints;
-	GdkScreen *screen;
+	CdkGeometry hints;
+	CdkScreen *screen;
 	EocWindowPrivate *priv;
 
 	eoc_debug (DEBUG_WINDOW);
@@ -4906,7 +4906,7 @@ eoc_window_dispose (GObject *object)
 }
 
 static gint
-eoc_window_delete (CtkWidget *widget, GdkEventAny *event)
+eoc_window_delete (CtkWidget *widget, CdkEventAny *event)
 {
 	EocWindow *window;
 	EocWindowPrivate *priv;
@@ -4930,7 +4930,7 @@ eoc_window_delete (CtkWidget *widget, GdkEventAny *event)
 }
 
 static gint
-eoc_window_key_press (CtkWidget *widget, GdkEventKey *event)
+eoc_window_key_press (CtkWidget *widget, CdkEventKey *event)
 {
 	CtkContainer *tbcontainer = CTK_CONTAINER ((EOC_WINDOW (widget)->priv->toolbar));
 	gint result = FALSE;
@@ -5078,7 +5078,7 @@ eoc_window_key_press (CtkWidget *widget, GdkEventKey *event)
 		ctk_widget_grab_focus (CTK_WIDGET (EOC_WINDOW (widget)->priv->thumbview));
 
 		result = ctk_widget_event (CTK_WIDGET (EOC_WINDOW (widget)->priv->thumbview),
-					   (GdkEvent *) event);
+					   (CdkEvent *) event);
 	}
 
 	/* If the focus is not in the toolbar and we still haven't handled the
@@ -5086,7 +5086,7 @@ eoc_window_key_press (CtkWidget *widget, GdkEventKey *event)
 	if (!ctk_container_get_focus_child (tbcontainer) && result == FALSE &&
 		ctk_widget_get_realized (CTK_WIDGET (EOC_WINDOW (widget)->priv->view))) {
 			result = ctk_widget_event (CTK_WIDGET (EOC_WINDOW (widget)->priv->view),
-						   (GdkEvent *) event);
+						   (CdkEvent *) event);
 	}
 
 	if (result == FALSE && CTK_WIDGET_CLASS (eoc_window_parent_class)->key_press_event) {
@@ -5097,7 +5097,7 @@ eoc_window_key_press (CtkWidget *widget, GdkEventKey *event)
 }
 
 static gint
-eoc_window_button_press (CtkWidget *widget, GdkEventButton *event)
+eoc_window_button_press (CtkWidget *widget, CdkEventButton *event)
 {
 	EocWindow *window = EOC_WINDOW (widget);
 	gint result = FALSE;
@@ -5125,7 +5125,7 @@ eoc_window_button_press (CtkWidget *widget, GdkEventButton *event)
 }
 
 static gboolean
-eoc_window_focus_out_event (CtkWidget *widget, GdkEventFocus *event)
+eoc_window_focus_out_event (CtkWidget *widget, CdkEventFocus *event)
 {
 	EocWindow *window = EOC_WINDOW (widget);
 	EocWindowPrivate *priv = window->priv;

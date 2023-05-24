@@ -48,14 +48,14 @@ void     eoc_scroll_view_set_zoom_upscale (EocScrollView *view, gboolean upscale
 void     eoc_scroll_view_set_zoom_multiplier (EocScrollView *view, gdouble multiplier);
 void     eoc_scroll_view_set_antialiasing_in (EocScrollView *view, gboolean state);
 void     eoc_scroll_view_set_antialiasing_out (EocScrollView *view, gboolean state);
-void     eoc_scroll_view_set_transparency_color (EocScrollView *view, GdkRGBA *color);
+void     eoc_scroll_view_set_transparency_color (EocScrollView *view, CdkRGBA *color);
 void     eoc_scroll_view_set_transparency (EocScrollView *view, EocTransparencyStyle style);
 gboolean eoc_scroll_view_scrollbars_visible (EocScrollView *view);
 void	 eoc_scroll_view_set_popup (EocScrollView *view, CtkMenu *menu);
 void	 eoc_scroll_view_set_background_color (EocScrollView *view,
-					       const GdkRGBA *color);
+					       const CdkRGBA *color);
 void	 eoc_scroll_view_override_bg_color (EocScrollView *view,
-					    const GdkRGBA *color);
+					    const CdkRGBA *color);
 void     eoc_scroll_view_set_use_bg_color (EocScrollView *view, gboolean use);
 /* zoom api */
 void     eoc_scroll_view_zoom_in          (EocScrollView *view, gboolean smooth);

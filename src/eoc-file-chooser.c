@@ -101,7 +101,7 @@ static void
 save_response_cb (CtkDialog *dlg, gint id, gpointer data)
 {
 	GFile *file;
-	GdkPixbufFormat *format;
+	CdkPixbufFormat *format;
 
 	if (id != CTK_RESPONSE_OK)
 		return;
@@ -174,10 +174,10 @@ eoc_file_chooser_add_filter (EocFileChooser *chooser)
 	for (it = formats; it != NULL; it = it->next) {
 		char *filter_name;
 		char *description, *extension;
-		GdkPixbufFormat *format;
+		CdkPixbufFormat *format;
 		filter = ctk_file_filter_new ();
 
-		format = (GdkPixbufFormat*) it->data;
+		format = (CdkPixbufFormat*) it->data;
 		description = cdk_pixbuf_format_get_description (format);
 		extension = cdk_pixbuf_format_get_name (format);
 
@@ -189,14 +189,14 @@ eoc_file_chooser_add_filter (EocFileChooser *chooser)
 		ctk_file_filter_set_name (filter, filter_name);
 		g_free (filter_name);
 
-		mime_types = cdk_pixbuf_format_get_mime_types ((GdkPixbufFormat *) it->data);
+		mime_types = cdk_pixbuf_format_get_mime_types ((CdkPixbufFormat *) it->data);
 		for (i = 0; mime_types[i] != NULL; i++) {
 			ctk_file_filter_add_mime_type (filter, mime_types[i]);
 			ctk_file_filter_add_mime_type (all_img_filter, mime_types[i]);
 		}
 		g_strfreev (mime_types);
 
-		pattern = cdk_pixbuf_format_get_extensions ((GdkPixbufFormat *) it->data);
+		pattern = cdk_pixbuf_format_get_extensions ((CdkPixbufFormat *) it->data);
 		for (i = 0; pattern[i] != NULL; i++) {
 			tmp = g_strconcat ("*.", pattern[i], NULL);
 			ctk_file_filter_add_pattern (filter, tmp);
@@ -205,7 +205,7 @@ eoc_file_chooser_add_filter (EocFileChooser *chooser)
 		}
 		g_strfreev (pattern);
 
-		/* attach GdkPixbufFormat to filter, see also
+		/* attach CdkPixbufFormat to filter, see also
 		 * eoc_file_chooser_get_format. */
 		g_object_set_data (G_OBJECT (filter),
 				   FILE_FORMAT_KEY,
@@ -242,7 +242,7 @@ set_preview_label (CtkWidget *label, const char *str)
  * further information according to the thumbnail spec.
  */
 static void
-set_preview_pixbuf (EocFileChooser *chooser, GdkPixbuf *pixbuf, goffset size)
+set_preview_pixbuf (EocFileChooser *chooser, CdkPixbuf *pixbuf, goffset size)
 {
 	EocFileChooserPrivate *priv;
 	int bytes;
@@ -317,7 +317,7 @@ update_preview_cb (CtkFileChooser *file_chooser, gpointer data)
 	char *thumb_path = NULL;
 	GFile *file;
 	GFileInfo *file_info;
-	GdkPixbuf *pixbuf = NULL;
+	CdkPixbuf *pixbuf = NULL;
 	gboolean have_preview = FALSE;
 
 	priv = EOC_FILE_CHOOSER (file_chooser)->priv;
@@ -493,11 +493,11 @@ eoc_file_chooser_new (CtkFileChooserAction action)
 	return chooser;
 }
 
-GdkPixbufFormat *
+CdkPixbufFormat *
 eoc_file_chooser_get_format (EocFileChooser *chooser)
 {
 	CtkFileFilter *filter;
-	GdkPixbufFormat* format;
+	CdkPixbufFormat* format;
 
 	g_return_val_if_fail (EOC_IS_FILE_CHOOSER (chooser), NULL);
 

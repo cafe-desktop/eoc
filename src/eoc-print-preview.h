@@ -52,7 +52,7 @@ G_GNUC_INTERNAL
 CtkWidget   *eoc_print_preview_new                 (void);
 
 G_GNUC_INTERNAL
-CtkWidget   *eoc_print_preview_new_with_pixbuf     (GdkPixbuf       *pixbuf);
+CtkWidget   *eoc_print_preview_new_with_pixbuf     (CdkPixbuf       *pixbuf);
 
 G_GNUC_INTERNAL
 void         eoc_print_preview_set_page_margins    (EocPrintPreview *preview,

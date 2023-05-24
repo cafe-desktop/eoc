@@ -220,7 +220,7 @@ eoc_sidebar_class_init (EocSidebarClass *eoc_sidebar_class)
 
 static gboolean
 eoc_sidebar_select_button_press_cb (CtkWidget      *widget,
-				    GdkEventButton *event,
+				    CdkEventButton *event,
 				    gpointer        user_data)
 {
 	EocSidebar *eoc_sidebar = EOC_SIDEBAR (user_data);
@@ -245,7 +245,7 @@ eoc_sidebar_select_button_press_cb (CtkWidget      *widget,
 		                          widget,
 		                          GDK_GRAVITY_SOUTH_WEST,
 		                          GDK_GRAVITY_NORTH_WEST,
-		                          (const GdkEvent*) event);
+		                          (const CdkEvent*) event);
 
 		return TRUE;
 	}
@@ -255,7 +255,7 @@ eoc_sidebar_select_button_press_cb (CtkWidget      *widget,
 
 static gboolean
 eoc_sidebar_select_button_key_press_cb (CtkWidget   *widget,
-				        GdkEventKey *event,
+				        CdkEventKey *event,
 				        gpointer     user_data)
 {
 	EocSidebar *eoc_sidebar = EOC_SIDEBAR (user_data);
@@ -270,7 +270,7 @@ eoc_sidebar_select_button_key_press_cb (CtkWidget   *widget,
 		                          widget,
 		                          GDK_GRAVITY_SOUTH_WEST,
 		                          GDK_GRAVITY_NORTH_WEST,
-		                          (const GdkEvent*) event);
+		                          (const CdkEvent*) event);
 
 		return TRUE;
 	}
