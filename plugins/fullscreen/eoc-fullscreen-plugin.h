@@ -36,7 +36,7 @@ typedef struct _EocFullscreenPluginPrivate EocFullscreenPluginPrivate;
 typedef struct _EocFullscreenPlugin EocFullscreenPlugin;
 
 struct _EocFullscreenPlugin {
-	PeasExtensionBase parent_instance;
+	BeanExtensionBase parent_instance;
 
 	EocWindow *window;
 	gulong signal_id;
@@ -48,7 +48,7 @@ struct _EocFullscreenPlugin {
 typedef struct _EocFullscreenPluginClass EocFullscreenPluginClass;
 
 struct _EocFullscreenPluginClass {
-	PeasExtensionBaseClass parent_class;
+	BeanExtensionBaseClass parent_class;
 };
 
 /*
@@ -57,7 +57,7 @@ struct _EocFullscreenPluginClass {
 GType eoc_fullscreen_plugin_get_type (void) G_GNUC_CONST;
 
 /* All the plugins must implement this function */
-G_MODULE_EXPORT void bean_register_types (PeasObjectModule *module);
+G_MODULE_EXPORT void bean_register_types (BeanObjectModule *module);
 
 G_END_DECLS
 

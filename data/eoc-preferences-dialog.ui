@@ -699,7 +699,7 @@
                 <property name="border_width">12</property>
                 <property name="orientation">vertical</property>
                 <child>
-                  <object class="PeasCtkPluginManager" id="plugin_manager">
+                  <object class="BeanCtkPluginManager" id="plugin_manager">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="orientation">vertical</property>

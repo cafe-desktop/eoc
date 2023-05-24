@@ -150,18 +150,18 @@ eoc_application_class_init (EocApplicationClass *eoc_application_class)
 }
 
 static void
-on_extension_added (PeasExtensionSet *set,
-                    PeasPluginInfo   *info,
-                    PeasExtension    *exten,
+on_extension_added (BeanExtensionSet *set,
+                    BeanPluginInfo   *info,
+                    BeanExtension    *exten,
                     EocApplication   *app)
 {
 	eoc_application_activatable_activate (EOC_APPLICATION_ACTIVATABLE (exten));
 }
 
 static void
-on_extension_removed (PeasExtensionSet *set,
-                      PeasPluginInfo   *info,
-                      PeasExtension    *exten,
+on_extension_removed (BeanExtensionSet *set,
+                      BeanPluginInfo   *info,
+                      BeanExtension    *exten,
                       EocApplication   *app)
 {
 	eoc_application_activatable_deactivate (EOC_APPLICATION_ACTIVATABLE (exten));

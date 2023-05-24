@@ -57,7 +57,7 @@ typedef struct _EocStatusbarDatePluginPrivate EocStatusbarDatePluginPrivate;
 typedef struct _EocStatusbarDatePlugin EocStatusbarDatePlugin;
 
 struct _EocStatusbarDatePlugin {
-	PeasExtensionBase parent_instance;
+	BeanExtensionBase parent_instance;
 
 	EocWindow *window;
 	CtkWidget *statusbar_date;
@@ -70,7 +70,7 @@ struct _EocStatusbarDatePlugin {
 typedef struct _EocStatusbarDatePluginClass	EocStatusbarDatePluginClass;
 
 struct _EocStatusbarDatePluginClass {
-	PeasExtensionBaseClass parent_class;
+	BeanExtensionBaseClass parent_class;
 };
 
 /*
@@ -79,7 +79,7 @@ struct _EocStatusbarDatePluginClass {
 GType eoc_statusbar_date_plugin_get_type (void) G_GNUC_CONST;
 
 /* All the plugins must implement this function */
-G_MODULE_EXPORT void bean_register_types (PeasObjectModule *module);
+G_MODULE_EXPORT void bean_register_types (BeanObjectModule *module);
 
 G_END_DECLS
 
