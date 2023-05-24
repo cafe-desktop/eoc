@@ -29,7 +29,7 @@
 
 #include <string.h>
 #include <ctk/ctk.h>
-#include <gdk/gdkkeysyms.h>
+#include <cdk/cdkkeysyms.h>
 
 #include "eoc-sidebar.h"
 

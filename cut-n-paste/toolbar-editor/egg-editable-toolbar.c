@@ -296,10 +296,10 @@ move_item_cb (CtkAction          *action,
   event.window = realevent->any.window;
   event.send_event = FALSE;
   event.axes = NULL;
-  event.time = gdk_event_get_time (realevent);
-  gdk_event_get_state (realevent, &event.state);
-  gdk_event_get_coords (realevent, &event.x, &event.y);
-  gdk_event_get_root_coords (realevent, &event.x_root, &event.y_root);
+  event.time = cdk_event_get_time (realevent);
+  cdk_event_get_state (realevent, &event.state);
+  cdk_event_get_coords (realevent, &event.x, &event.y);
+  cdk_event_get_root_coords (realevent, &event.x_root, &event.y_root);
 
   ctk_drag_begin_with_coordinates (toolitem,
                                    list,
@@ -438,9 +438,9 @@ configure_item_cursor (CtkToolItem *item,
 
 	  screen = ctk_widget_get_screen (CTK_WIDGET (etoolbar));
 
-          cursor = gdk_cursor_new_for_display (gdk_screen_get_display (screen),
+          cursor = cdk_cursor_new_for_display (cdk_screen_get_display (screen),
 					       GDK_HAND2);
-          gdk_window_set_cursor (ctk_widget_get_window (widget), cursor);
+          cdk_window_set_cursor (ctk_widget_get_window (widget), cursor);
           g_object_unref (cursor);
 
           ctk_drag_source_set (widget, GDK_BUTTON1_MASK, dest_drag_types,
@@ -503,7 +503,7 @@ configure_item_cursor (CtkToolItem *item,
         }
       else
         {
-          gdk_window_set_cursor (ctk_widget_get_window (CTK_WIDGET(item)), NULL);
+          cdk_window_set_cursor (ctk_widget_get_window (CTK_WIDGET(item)), NULL);
         }
     }
 }
@@ -698,11 +698,11 @@ toolbar_drag_data_received_cb (CtkToolbar         *toolbar,
         {
           gint tpos = get_toolbar_position (etoolbar, CTK_WIDGET (toolbar));
           egg_toolbars_model_add_item (etoolbar->priv->model, tpos, ipos, name);
-          ctk_drag_finish (context, TRUE, gdk_drag_context_get_selected_action (context) == GDK_ACTION_MOVE, time);
+          ctk_drag_finish (context, TRUE, cdk_drag_context_get_selected_action (context) == GDK_ACTION_MOVE, time);
         }
       else
         {
-          ctk_drag_finish (context, FALSE, gdk_drag_context_get_selected_action (context) == GDK_ACTION_MOVE, time);
+          ctk_drag_finish (context, FALSE, cdk_drag_context_get_selected_action (context) == GDK_ACTION_MOVE, time);
         }
     }
 
@@ -740,7 +740,7 @@ toolbar_drag_motion_cb (CtkToolbar         *toolbar,
   GdkAtom target = ctk_drag_dest_find_target (CTK_WIDGET (toolbar), context, NULL);
   if (target == GDK_NONE)
     {
-      gdk_drag_status (context, 0, time);
+      cdk_drag_status (context, 0, time);
       return FALSE;
     }
 
@@ -761,7 +761,7 @@ toolbar_drag_motion_cb (CtkToolbar         *toolbar,
                                            etoolbar->priv->dnd_toolitem, ipos);
     }
 
-  gdk_drag_status (context, gdk_drag_context_get_suggested_action (context), time);
+  cdk_drag_status (context, cdk_drag_context_get_suggested_action (context), time);
 
   return TRUE;
 }
@@ -1777,7 +1777,7 @@ new_pixbuf_from_widget (CtkWidget *widget)
   ctk_widget_show_all (window);
 
   /* Process the waiting events to have the widget actually drawn */
-  gdk_window_process_updates (ctk_widget_get_window (window), TRUE);
+  cdk_window_process_updates (ctk_widget_get_window (window), TRUE);
   pixbuf = ctk_offscreen_window_get_pixbuf (CTK_OFFSCREEN_WINDOW (window));
   ctk_widget_destroy (window);
 

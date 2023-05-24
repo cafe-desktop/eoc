@@ -66,7 +66,7 @@
 #include <glib-object.h>
 #include <glib/gi18n.h>
 #include <gio/gio.h>
-#include <gdk/gdkkeysyms.h>
+#include <cdk/cdkkeysyms.h>
 #include <gio/gdesktopappinfo.h>
 #include <ctk/ctk.h>
 
@@ -77,7 +77,7 @@
 #include <X11/Xlib.h>
 #include <X11/Xatom.h>
 #ifdef GDK_WINDOWING_X11
-#include <gdk/gdkx.h>
+#include <cdk/cdkx.h>
 #endif
 #include <lcms2.h>
 #endif
@@ -397,19 +397,19 @@ eoc_window_get_display_profile (GdkScreen *screen)
 		return NULL;
 	}
 
-	dpy = GDK_DISPLAY_XDISPLAY (gdk_screen_get_display (screen));
+	dpy = GDK_DISPLAY_XDISPLAY (cdk_screen_get_display (screen));
 
-	if (gdk_x11_screen_get_screen_number (screen) > 0)
-		atom_name = g_strdup_printf ("_ICC_PROFILE_%d", gdk_x11_screen_get_screen_number (screen));
+	if (cdk_x11_screen_get_screen_number (screen) > 0)
+		atom_name = g_strdup_printf ("_ICC_PROFILE_%d", cdk_x11_screen_get_screen_number (screen));
 	else
 		atom_name = g_strdup ("_ICC_PROFILE");
 
-	icc_atom = gdk_x11_get_xatom_by_name_for_display (gdk_screen_get_display (screen), atom_name);
+	icc_atom = cdk_x11_get_xatom_by_name_for_display (cdk_screen_get_display (screen), atom_name);
 
 	g_free (atom_name);
 
 	result = XGetWindowProperty (dpy,
-				     GDK_WINDOW_XID (gdk_screen_get_root_window (screen)),
+				     GDK_WINDOW_XID (cdk_screen_get_root_window (screen)),
 				     icc_atom,
 				     0,
 				     G_MAXLONG,
@@ -1232,9 +1232,9 @@ eoc_window_obtain_desired_size (EocImage  *image,
 	window_height = allocation.height;
 
 	screen = ctk_window_get_screen (CTK_WINDOW (window));
-	display = gdk_screen_get_display (screen);
+	display = cdk_screen_get_display (screen);
 
-	gdk_monitor_get_geometry (gdk_display_get_monitor_at_window (display,
+	cdk_monitor_get_geometry (cdk_display_get_monitor_at_window (display,
 								     ctk_widget_get_window (CTK_WIDGET (window))),
 				  &monitor);
 
@@ -1699,9 +1699,9 @@ eoc_window_update_fullscreen_popup (EocWindow *window)
 	if (ctk_widget_get_window (CTK_WIDGET (window)) == NULL) return;
 
 	screen = ctk_widget_get_screen (CTK_WIDGET (window));
-	display = gdk_screen_get_display (screen);
+	display = cdk_screen_get_display (screen);
 
-	gdk_monitor_get_geometry (gdk_display_get_monitor_at_window (display,
+	cdk_monitor_get_geometry (cdk_display_get_monitor_at_window (display,
 								     ctk_widget_get_window (CTK_WIDGET (window))),
 				  &screen_rect);
 
@@ -2750,7 +2750,7 @@ wallpaper_info_bar_response (CtkInfoBar *bar, gint response, EocWindow *window)
 			GdkDisplay *display;
 
 			display = ctk_widget_get_display (CTK_WIDGET (window));
-			context = gdk_display_get_app_launch_context (display);
+			context = cdk_display_get_app_launch_context (display);
 			g_app_info_launch (app_info, NULL, G_APP_LAUNCH_CONTEXT (context), &error);
 
 			if (error != NULL) {
@@ -4197,11 +4197,11 @@ eoc_window_drag_data_received (CtkWidget *widget,
 	if (src &&
 	    ctk_widget_get_toplevel (src) == ctk_widget_get_toplevel (widget))
 	{
-		gdk_drag_status (context, 0, time);
+		cdk_drag_status (context, 0, time);
 		return;
 	}
 
-	if (gdk_drag_context_get_suggested_action (context) == GDK_ACTION_COPY) {
+	if (cdk_drag_context_get_suggested_action (context) == GDK_ACTION_COPY) {
 		window = EOC_WINDOW (widget);
 
 		file_list = eoc_util_parse_uri_string_list_to_file_list ((const gchar *) ctk_selection_data_get_data (selection_data));
@@ -4344,13 +4344,13 @@ eoc_window_open_editor (CtkAction *action,
 	if (app_info == NULL)
 		return;
 
-	context = gdk_display_get_app_launch_context (
+	context = cdk_display_get_app_launch_context (
 	  ctk_widget_get_display (CTK_WIDGET (window)));
-	gdk_app_launch_context_set_screen (context,
+	cdk_app_launch_context_set_screen (context,
 	  ctk_widget_get_screen (CTK_WIDGET (window)));
-	gdk_app_launch_context_set_icon (context,
+	cdk_app_launch_context_set_icon (context,
 	  g_app_info_get_icon (app_info));
-	gdk_app_launch_context_set_timestamp (context,
+	cdk_app_launch_context_set_timestamp (context,
 	  ctk_get_current_event_time ());
 
 	{

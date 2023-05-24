@@ -1,4 +1,4 @@
-/* This code is based on the jpeg saving code from gdk-pixbuf. Full copyright
+/* This code is based on the jpeg saving code from cdk-pixbuf. Full copyright
  * notice is given in the following:
  */
 /* GdkPixbuf library - JPEG image loader
@@ -47,7 +47,7 @@
 #include <jerror.h>
 #include "transupp.h"
 #include <glib.h>
-#include <gdk-pixbuf/gdk-pixbuf.h>
+#include <cdk-pixbuf/cdk-pixbuf.h>
 #include <glib/gi18n.h>
 #if HAVE_EXIF
 #include <libexif/exif-data.h>
@@ -368,12 +368,12 @@ _save_any_as_jpeg (EocImage *image, const char *file, EocImageSaveInfo *source,
 	priv = image->priv;
 	pixbuf = priv->image;
 
-	rowstride = gdk_pixbuf_get_rowstride (pixbuf);
-	w = gdk_pixbuf_get_width (pixbuf);
-	h = gdk_pixbuf_get_height (pixbuf);
+	rowstride = cdk_pixbuf_get_rowstride (pixbuf);
+	w = cdk_pixbuf_get_width (pixbuf);
+	h = cdk_pixbuf_get_height (pixbuf);
 
 	/* no image data? abort */
-	pixels = gdk_pixbuf_get_pixels (pixbuf);
+	pixels = cdk_pixbuf_get_pixels (pixbuf);
 	g_return_val_if_fail (pixels != NULL, FALSE);
 
 	outfile = fopen (file, "wb");

@@ -85,7 +85,7 @@ eoc_thumb_nav_scroll_event (CtkWidget *widget, GdkEventScroll *event, gpointer u
 	{
 		/* Compatibility code to catch smooth events from mousewheels */
 		gdouble x_delta, y_delta;
-		gboolean set = gdk_event_get_scroll_deltas ((GdkEvent*)event,
+		gboolean set = cdk_event_get_scroll_deltas ((GdkEvent*)event,
 							    &x_delta, &y_delta);
 
 		/* Propagate horizontal smooth scroll events further,

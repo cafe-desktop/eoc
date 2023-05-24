@@ -249,7 +249,7 @@ eoc_print_draw_page (CtkPrintOperation *operation,
 		GdkPixbuf *pixbuf;
 
 		pixbuf = eoc_image_get_pixbuf (data->image);
-		gdk_cairo_set_source_pixbuf (cr, pixbuf, 0, 0);
+		cdk_cairo_set_source_pixbuf (cr, pixbuf, 0, 0);
  		cairo_paint (cr);
 		g_object_unref (pixbuf);
 	}
