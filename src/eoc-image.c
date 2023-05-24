@@ -23,7 +23,7 @@
 #include "config.h"
 #endif
 
-#define GDK_PIXBUF_ENABLE_BACKEND
+#define CDK_PIXBUF_ENABLE_BACKEND
 #include <cdk/cdkx.h>
 
 #include "eoc-image.h"
@@ -59,7 +59,7 @@
 #include <libexif/exif-loader.h>
 #endif
 
-#if defined(HAVE_LCMS) && defined(GDK_WINDOWING_X11)
+#if defined(HAVE_LCMS) && defined(CDK_WINDOWING_X11)
 #include <lcms2.h>
 #ifndef EXIF_TAG_GAMMA
 #define EXIF_TAG_GAMMA 0xa500
@@ -143,9 +143,9 @@ eoc_image_free_mem_private (EocImage *image)
 		}
 #endif
 
-#if defined(HAVE_LCMS) && defined(GDK_WINDOWING_X11)
+#if defined(HAVE_LCMS) && defined(CDK_WINDOWING_X11)
 		if (priv->profile != NULL) {
-			if (GDK_IS_X11_DISPLAY (cdk_display_get_default ())) {
+			if (CDK_IS_X11_DISPLAY (cdk_display_get_default ())) {
 				cmsCloseProfile (priv->profile);
 			}
 			priv->profile = NULL;
@@ -309,7 +309,7 @@ eoc_image_init (EocImage *img)
 #ifdef HAVE_EXEMPI
 	img->priv->xmp = NULL;
 #endif
-#if defined(HAVE_LCMS) && defined(GDK_WINDOWING_X11)
+#if defined(HAVE_LCMS) && defined(CDK_WINDOWING_X11)
 	img->priv->profile = NULL;
 #endif
 #ifdef HAVE_RSVG
@@ -619,7 +619,7 @@ eoc_image_get_file_info (EocImage *img,
 	}
 }
 
-#if defined(HAVE_LCMS) && defined(GDK_WINDOWING_X11)
+#if defined(HAVE_LCMS) && defined(CDK_WINDOWING_X11)
 void
 eoc_image_apply_display_profile (EocImage *img, cmsHPROFILE screen)
 {
@@ -633,7 +633,7 @@ eoc_image_apply_display_profile (EocImage *img, cmsHPROFILE screen)
 	priv = img->priv;
 
 	if (screen == NULL) return;
-	if (!GDK_IS_X11_DISPLAY(cdk_display_get_default())) {
+	if (!CDK_IS_X11_DISPLAY(cdk_display_get_default())) {
 		return;
 	}
 
@@ -1068,7 +1068,7 @@ eoc_image_real_load (EocImage *img,
 				if (set_metadata) {
 					eoc_image_set_exif_data (img, md_reader);
 
-#if defined(HAVE_LCMS) && defined(GDK_WINDOWING_X11)
+#if defined(HAVE_LCMS) && defined(CDK_WINDOWING_X11)
 					eoc_image_set_icc_data (img, md_reader);
 #endif
 
@@ -1304,7 +1304,7 @@ eoc_image_set_thumbnail (EocImage *img, CdkPixbuf *thumbnail)
 	EocImagePrivate *priv;
 
 	g_return_if_fail (EOC_IS_IMAGE (img));
-	g_return_if_fail (GDK_IS_PIXBUF (thumbnail) || thumbnail == NULL);
+	g_return_if_fail (CDK_IS_PIXBUF (thumbnail) || thumbnail == NULL);
 
 	priv = img->priv;
 
@@ -1354,7 +1354,7 @@ eoc_image_get_pixbuf (EocImage *img)
 	return image;
 }
 
-#if defined(HAVE_LCMS) && defined(GDK_WINDOWING_X11)
+#if defined(HAVE_LCMS) && defined(CDK_WINDOWING_X11)
 cmsHPROFILE
 eoc_image_get_profile (EocImage *img)
 {
@@ -2276,7 +2276,7 @@ eoc_image_iter_advance (EocImage *img)
  	gboolean new_frame;
 
 	g_return_val_if_fail (EOC_IS_IMAGE (img), FALSE);
-	g_return_val_if_fail (GDK_IS_PIXBUF_ANIMATION_ITER (img->priv->anim_iter), FALSE);
+	g_return_val_if_fail (CDK_IS_PIXBUF_ANIMATION_ITER (img->priv->anim_iter), FALSE);
 
 	priv = img->priv;
 

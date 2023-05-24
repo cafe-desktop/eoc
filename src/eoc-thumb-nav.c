@@ -72,16 +72,16 @@ eoc_thumb_nav_scroll_event (CtkWidget *widget, CdkEventScroll *event, gpointer u
 		return FALSE;
 
 	switch (event->direction) {
-	case GDK_SCROLL_UP:
-	case GDK_SCROLL_LEFT:
+	case CDK_SCROLL_UP:
+	case CDK_SCROLL_LEFT:
 		inc *= -1;
 		break;
 
-	case GDK_SCROLL_DOWN:
-	case GDK_SCROLL_RIGHT:
+	case CDK_SCROLL_DOWN:
+	case CDK_SCROLL_RIGHT:
 		break;
 
-	case GDK_SCROLL_SMOOTH:
+	case CDK_SCROLL_SMOOTH:
 	{
 		/* Compatibility code to catch smooth events from mousewheels */
 		gdouble x_delta, y_delta;

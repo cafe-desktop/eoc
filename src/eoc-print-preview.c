@@ -158,7 +158,7 @@ eoc_print_preview_set_property (GObject      *object,
 		if (priv->image) {
 			g_object_unref (priv->image);
 		}
-		priv->image = GDK_PIXBUF (g_value_dup_object (value));
+		priv->image = CDK_PIXBUF (g_value_dup_object (value));
 
 		if (priv->image_scaled) {
 			g_object_unref (priv->image_scaled);
@@ -478,7 +478,7 @@ eoc_print_preview_new_with_pixbuf (CdkPixbuf *pixbuf)
 {
 	EocPrintPreview *preview;
 
-	g_return_val_if_fail (GDK_IS_PIXBUF (pixbuf), NULL);
+	g_return_val_if_fail (CDK_IS_PIXBUF (pixbuf), NULL);
 
 	preview = EOC_PRINT_PREVIEW (eoc_print_preview_new ());
 
@@ -509,11 +509,11 @@ eoc_print_preview_new (void)
 	area = preview->priv->area;
 
 	ctk_widget_set_events (area,
-			       GDK_EXPOSURE_MASK            |
-			       GDK_POINTER_MOTION_MASK      |
-			       GDK_BUTTON_PRESS_MASK        |
-			       GDK_BUTTON_RELEASE_MASK      |
-			       GDK_KEY_PRESS_MASK);
+			       CDK_EXPOSURE_MASK            |
+			       CDK_POINTER_MOTION_MASK      |
+			       CDK_BUTTON_PRESS_MASK        |
+			       CDK_BUTTON_RELEASE_MASK      |
+			       CDK_KEY_PRESS_MASK);
 
 	g_object_set (G_OBJECT (area),
 		      "can-focus", TRUE,
@@ -634,7 +634,7 @@ create_image_scaled (EocPrintPreview *preview)
 			priv->image_scaled = cdk_pixbuf_scale_simple (priv->image,
 								      i_width*scale,
 								      i_height*scale,
-								      GDK_INTERP_TILES);
+								      CDK_INTERP_TILES);
 		} else {
 			priv->image_scaled = priv->image;
 			g_object_ref (priv->image_scaled);
@@ -647,7 +647,7 @@ create_preview_buffer (EocPrintPreview *preview)
 {
 	CdkPixbuf *pixbuf;
 	gint width, height, widget_scale;
-	CdkInterpType type = GDK_INTERP_TILES;
+	CdkInterpType type = CDK_INTERP_TILES;
 
 	if (preview->priv->image == NULL) {
 		return NULL;
@@ -667,9 +667,9 @@ create_preview_buffer (EocPrintPreview *preview)
 	if (width < 1 || height < 1)
 		return NULL;
 
-	/* to use GDK_INTERP_TILES for small pixbufs is expensive and unnecessary */
+	/* to use CDK_INTERP_TILES for small pixbufs is expensive and unnecessary */
 	if (width < 25 || height < 25)
-		type = GDK_INTERP_NEAREST;
+		type = CDK_INTERP_NEAREST;
 
 	if (preview->priv->image_scaled) {
 		pixbuf = cdk_pixbuf_scale_simple (preview->priv->image_scaled,
@@ -766,19 +766,19 @@ key_press_event_cb (CtkWidget   *widget,
 	delta = 0;
 
 	switch (event->keyval) {
-	case GDK_KEY_Left:
+	case CDK_KEY_Left:
 		property = "image-x-align";
 		delta = -0.01;
 		break;
-	case GDK_KEY_Right:
+	case CDK_KEY_Right:
 		property = "image-x-align";
 		delta = 0.01;
 		break;
-	case GDK_KEY_Up:
+	case CDK_KEY_Up:
 		property = "image-y-align";
 		delta = -0.01;
 		break;
-	case GDK_KEY_Down:
+	case CDK_KEY_Down:
 		property = "image-y-align";
 		delta = 0.01;
 		break;
@@ -852,7 +852,7 @@ motion_notify_event_cb (CtkWidget      *widget,
 		if (press_inside_image_area (EOC_PRINT_PREVIEW (user_data), event->x, event->y)) {
 		  	CdkCursor *cursor;
 			cursor = cdk_cursor_new_for_display (ctk_widget_get_display (widget),
-							     GDK_FLEUR);
+							     CDK_FLEUR);
 			cdk_window_set_cursor (ctk_widget_get_window (widget),
 					       cursor);
 			g_object_unref (cursor);

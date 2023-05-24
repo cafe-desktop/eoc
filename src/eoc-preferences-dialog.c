@@ -95,7 +95,7 @@ pd_rgba_to_string_mapping (const GValue       *value,
 	CdkRGBA *color;
 	gchar *hex_val;
 
-	g_return_val_if_fail (G_VALUE_TYPE (value) == GDK_TYPE_RGBA, NULL);
+	g_return_val_if_fail (G_VALUE_TYPE (value) == CDK_TYPE_RGBA, NULL);
 	g_return_val_if_fail (g_variant_type_equal (expected_type, G_VARIANT_TYPE_STRING), NULL);
 
 	color = g_value_get_boxed (value);

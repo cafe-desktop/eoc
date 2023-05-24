@@ -145,10 +145,10 @@ eoc_thumb_view_constructed (GObject *object)
 
 	ctk_icon_view_enable_model_drag_source (CTK_ICON_VIEW (thumbview), 0,
 						NULL, 0,
-						GDK_ACTION_COPY |
-						GDK_ACTION_MOVE |
-						GDK_ACTION_LINK |
-						GDK_ACTION_ASK);
+						CDK_ACTION_COPY |
+						CDK_ACTION_MOVE |
+						CDK_ACTION_LINK |
+						CDK_ACTION_ASK);
 	ctk_drag_source_add_uri_targets (CTK_WIDGET (thumbview));
 
 	g_signal_connect (G_OBJECT (thumbview), "drag-data-get",
@@ -408,7 +408,7 @@ thumbview_on_button_press_event_cb (CtkWidget *thumbview, CdkEventButton *event,
 	CtkTreePath *path;
 
 	/* Ignore double-clicks and triple-clicks */
-	if (event->button == 3 && event->type == GDK_BUTTON_PRESS)
+	if (event->button == 3 && event->type == CDK_BUTTON_PRESS)
 	{
 		path = ctk_icon_view_get_path_at_pos (CTK_ICON_VIEW (thumbview),
 						      (gint) event->x, (gint) event->y);

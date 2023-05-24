@@ -379,8 +379,8 @@ _save_any_as_jpeg (EocImage *image, const char *file, EocImageSaveInfo *source,
 	outfile = fopen (file, "wb");
 	if (outfile == NULL) {
 		g_set_error (error,             /* FIXME: Better error message */
-			     GDK_PIXBUF_ERROR,
-			     GDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
+			     CDK_PIXBUF_ERROR,
+			     CDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
 			     _("Couldn't create temporary file for saving: %s"),
 			     file);
 		return FALSE;
@@ -390,8 +390,8 @@ _save_any_as_jpeg (EocImage *image, const char *file, EocImageSaveInfo *source,
 	buf = g_try_malloc (w * 3 * sizeof (guchar));
 	if (!buf) {
 		g_set_error (error,
-			     GDK_PIXBUF_ERROR,
-			     GDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
+			     CDK_PIXBUF_ERROR,
+			     CDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
 			     _("Couldn't allocate memory for loading JPEG file"));
 		fclose (outfile);
 		return FALSE;

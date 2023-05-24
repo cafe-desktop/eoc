@@ -92,7 +92,7 @@ eoc_metadata_reader_get_xmp_data (EocMetadataReader *emr)
 }
 #endif
 
-#if defined(HAVE_LCMS) && defined(GDK_WINDOWING_X11)
+#if defined(HAVE_LCMS) && defined(CDK_WINDOWING_X11)
 cmsHPROFILE
 eoc_metadata_reader_get_icc_profile (EocMetadataReader *emr)
 {

@@ -372,10 +372,10 @@ eoc_scroll_view_set_cursor (EocScrollView *view, EocScrollViewCursor new_cursor)
 			cdk_window_set_cursor (ctk_widget_get_window (widget), NULL);
 			break;
                 case EOC_SCROLL_VIEW_CURSOR_HIDDEN:
-                        cursor = cdk_cursor_new_for_display (display, GDK_BLANK_CURSOR);
+                        cursor = cdk_cursor_new_for_display (display, CDK_BLANK_CURSOR);
                         break;
 		case EOC_SCROLL_VIEW_CURSOR_DRAG:
-			cursor = cdk_cursor_new_for_display (display, GDK_FLEUR);
+			cursor = cdk_cursor_new_for_display (display, CDK_FLEUR);
 			break;
 	}
 
@@ -835,20 +835,20 @@ display_key_press_event (CtkWidget *widget, CdkEventKey *event, gpointer data)
 	ctk_widget_get_allocation (CTK_WIDGET (priv->display), &allocation);
 
 	/* EocScrollView doesn't handle/have any Alt+Key combos */
-	if (event->state & GDK_MOD1_MASK) {
+	if (event->state & CDK_MOD1_MASK) {
 		return FALSE;
 	}
 
 	switch (event->keyval) {
-	case GDK_KEY_Up:
+	case CDK_KEY_Up:
 		do_scroll = TRUE;
 		xofs = 0;
 		yofs = -SCROLL_STEP_SIZE;
 		break;
 
-	case GDK_KEY_Page_Up:
+	case CDK_KEY_Page_Up:
 		do_scroll = TRUE;
-		if (event->state & GDK_CONTROL_MASK) {
+		if (event->state & CDK_CONTROL_MASK) {
 			xofs = -(allocation.width * 3) / 4;
 			yofs = 0;
 		} else {
@@ -857,15 +857,15 @@ display_key_press_event (CtkWidget *widget, CdkEventKey *event, gpointer data)
 		}
 		break;
 
-	case GDK_KEY_Down:
+	case CDK_KEY_Down:
 		do_scroll = TRUE;
 		xofs = 0;
 		yofs = SCROLL_STEP_SIZE;
 		break;
 
-	case GDK_KEY_Page_Down:
+	case CDK_KEY_Page_Down:
 		do_scroll = TRUE;
-		if (event->state & GDK_CONTROL_MASK) {
+		if (event->state & CDK_CONTROL_MASK) {
 			xofs = (allocation.width * 3) / 4;
 			yofs = 0;
 		} else {
@@ -874,32 +874,32 @@ display_key_press_event (CtkWidget *widget, CdkEventKey *event, gpointer data)
 		}
 		break;
 
-	case GDK_KEY_Left:
+	case CDK_KEY_Left:
 		do_scroll = TRUE;
 		xofs = -SCROLL_STEP_SIZE;
 		yofs = 0;
 		break;
 
-	case GDK_KEY_Right:
+	case CDK_KEY_Right:
 		do_scroll = TRUE;
 		xofs = SCROLL_STEP_SIZE;
 		yofs = 0;
 		break;
 
-	case GDK_KEY_plus:
-	case GDK_KEY_equal:
-	case GDK_KEY_KP_Add:
+	case CDK_KEY_plus:
+	case CDK_KEY_equal:
+	case CDK_KEY_KP_Add:
 		do_zoom = TRUE;
 		zoom = priv->zoom * priv->zoom_multiplier;
 		break;
 
-	case GDK_KEY_minus:
-	case GDK_KEY_KP_Subtract:
+	case CDK_KEY_minus:
+	case CDK_KEY_KP_Subtract:
 		do_zoom = TRUE;
 		zoom = priv->zoom / priv->zoom_multiplier;
 		break;
 
-	case GDK_KEY_1:
+	case CDK_KEY_1:
 		do_zoom = TRUE;
 		zoom = 1.0;
 		break;
@@ -948,7 +948,7 @@ eoc_scroll_view_button_press_event (CtkWidget *widget, CdkEventButton *event, gp
 		case 1:
 		case 2:
                         if (event->button == 1 && !priv->scroll_wheel_zoom &&
-			    !(event->state & GDK_CONTROL_MASK))
+			    !(event->state & CDK_CONTROL_MASK))
 				break;
 
 			if (is_image_movable (view)) {
@@ -1021,25 +1021,25 @@ eoc_scroll_view_scroll_event (CtkWidget *widget, CdkEventScroll *event, gpointer
 	yofs = ctk_adjustment_get_page_increment (priv->vadj) / 2;
 
 	switch (event->direction) {
-	case GDK_SCROLL_UP:
+	case CDK_SCROLL_UP:
 		zoom_factor = priv->zoom_multiplier;
 		xofs = 0;
 		yofs = -yofs;
 		break;
 
-	case GDK_SCROLL_LEFT:
+	case CDK_SCROLL_LEFT:
 		zoom_factor = 1.0 / priv->zoom_multiplier;
 		xofs = -xofs;
 		yofs = 0;
 		break;
 
-	case GDK_SCROLL_DOWN:
+	case CDK_SCROLL_DOWN:
 		zoom_factor = 1.0 / priv->zoom_multiplier;
 		xofs = 0;
 		yofs = yofs;
 		break;
 
-	case GDK_SCROLL_RIGHT:
+	case CDK_SCROLL_RIGHT:
 		zoom_factor = priv->zoom_multiplier;
 		xofs = xofs;
 		yofs = 0;
@@ -1051,17 +1051,17 @@ eoc_scroll_view_scroll_event (CtkWidget *widget, CdkEventScroll *event, gpointer
 	}
 
         if (priv->scroll_wheel_zoom) {
-		if (event->state & GDK_SHIFT_MASK)
+		if (event->state & CDK_SHIFT_MASK)
 			scroll_by (view, yofs, xofs);
-		else if (event->state & GDK_CONTROL_MASK)
+		else if (event->state & CDK_CONTROL_MASK)
 			scroll_by (view, xofs, yofs);
 		else
 			set_zoom (view, priv->zoom * zoom_factor,
 				  TRUE, event->x, event->y);
 	} else {
-		if (event->state & GDK_SHIFT_MASK)
+		if (event->state & CDK_SHIFT_MASK)
 			scroll_by (view, yofs, xofs);
-		else if (event->state & GDK_CONTROL_MASK)
+		else if (event->state & CDK_CONTROL_MASK)
 			set_zoom (view, priv->zoom * zoom_factor,
 				  TRUE, event->x, event->y);
 		else
@@ -1792,7 +1792,7 @@ sv_rgba_to_string_mapping (const GValue       *value,
 	CdkRGBA *color;
 	gchar *hex_val;
 
-	g_return_val_if_fail (G_VALUE_TYPE (value) == GDK_TYPE_RGBA, NULL);
+	g_return_val_if_fail (G_VALUE_TYPE (value) == CDK_TYPE_RGBA, NULL);
 	g_return_val_if_fail (g_variant_type_equal (expected_type, G_VARIANT_TYPE_STRING), NULL);
 
 	color = g_value_get_boxed (value);
@@ -1847,13 +1847,13 @@ eoc_scroll_view_init (EocScrollView *view)
 	priv->scale = ctk_widget_get_scale_factor (CTK_WIDGET (priv->display));
 
 	ctk_widget_add_events (CTK_WIDGET (priv->display),
-			       GDK_EXPOSURE_MASK
-			       | GDK_BUTTON_PRESS_MASK
-			       | GDK_BUTTON_RELEASE_MASK
-			       | GDK_POINTER_MOTION_MASK
-			       | GDK_POINTER_MOTION_HINT_MASK
-			       | GDK_SCROLL_MASK
-			       | GDK_KEY_PRESS_MASK);
+			       CDK_EXPOSURE_MASK
+			       | CDK_BUTTON_PRESS_MASK
+			       | CDK_BUTTON_RELEASE_MASK
+			       | CDK_POINTER_MOTION_MASK
+			       | CDK_POINTER_MOTION_HINT_MASK
+			       | CDK_SCROLL_MASK
+			       | CDK_KEY_PRESS_MASK);
 	g_signal_connect (G_OBJECT (priv->display), "configure_event",
 			  G_CALLBACK (display_size_change), view);
 	g_signal_connect (G_OBJECT (priv->display), "draw", G_CALLBACK (display_draw), view);
@@ -1877,10 +1877,10 @@ eoc_scroll_view_init (EocScrollView *view)
 	g_signal_connect (G_OBJECT (view), "key_press_event",
 			  G_CALLBACK (display_key_press_event), view);
 
-	ctk_drag_source_set (priv->display, GDK_BUTTON1_MASK,
+	ctk_drag_source_set (priv->display, CDK_BUTTON1_MASK,
 			     target_table, G_N_ELEMENTS (target_table),
-			     GDK_ACTION_COPY | GDK_ACTION_MOVE |
-			     GDK_ACTION_LINK | GDK_ACTION_ASK);
+			     CDK_ACTION_COPY | CDK_ACTION_MOVE |
+			     CDK_ACTION_LINK | CDK_ACTION_ASK);
 	g_signal_connect (G_OBJECT (priv->display), "drag-data-get",
 			  G_CALLBACK (view_on_drag_data_get_cb), view);
 	g_signal_connect (G_OBJECT (priv->display), "drag-begin",
@@ -2089,7 +2089,7 @@ eoc_scroll_view_class_init (EocScrollViewClass *klass)
 	g_object_class_install_property (
 		gobject_class, PROP_BACKGROUND_COLOR,
 		g_param_spec_boxed ("background-color", NULL, NULL,
-				    GDK_TYPE_RGBA,
+				    CDK_TYPE_RGBA,
 				    G_PARAM_READWRITE | G_PARAM_STATIC_NAME));
 
 	g_object_class_install_property (
@@ -2139,7 +2139,7 @@ eoc_scroll_view_class_init (EocScrollViewClass *klass)
 	g_object_class_install_property (
 		gobject_class, PROP_TRANSP_COLOR,
 		g_param_spec_boxed ("transparency-color", NULL, NULL,
-				    GDK_TYPE_RGBA,
+				    CDK_TYPE_RGBA,
 				    G_PARAM_WRITABLE | G_PARAM_STATIC_NAME));
 
 	/**
@@ -2239,7 +2239,7 @@ view_on_button_press_event_cb (CtkWidget *widget, CdkEventButton *event,
     EocScrollView *view = EOC_SCROLL_VIEW (widget);
 
     /* Ignore double-clicks and triple-clicks */
-    if (event->button == 3 && event->type == GDK_BUTTON_PRESS)
+    if (event->button == 3 && event->type == CDK_BUTTON_PRESS)
     {
 	    ctk_menu_popup_at_pointer (CTK_MENU (view->priv->menu),
 	                               (const CdkEvent*) event);
