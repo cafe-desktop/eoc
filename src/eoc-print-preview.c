@@ -669,7 +669,7 @@ create_preview_buffer (EocPrintPreview *preview)
 
 	/* to use CDK_INTERP_TILES for small pixbufs is expensive and unnecessary */
 	if (width < 25 || height < 25)
-		type = CDK_INTERP_NEAREST;
+		type = GDK_INTERP_NEAREST;
 
 	if (preview->priv->image_scaled) {
 		pixbuf = gdk_pixbuf_scale_simple (preview->priv->image_scaled,
