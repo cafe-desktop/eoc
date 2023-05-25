@@ -11,7 +11,7 @@
 # Efstathios Iosifidis <iefstathios@gmail.com>, 2020
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # thunk <thunk77@gmail.com>, 2020
-# George Kasimis <cdkparos@gmail.com>, 2020
+# George Kasimis <gdkparos@gmail.com>, 2020
 # Alexandros Kapetanios <alexandros@gnugr.org>, 2020
 # Angelos Chraniotis <chraniotis@gmail.com>, 2020
 # 
