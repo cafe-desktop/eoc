@@ -102,9 +102,7 @@ find_action (EggToolbarEditor *t,
     {
       CtkAction *tmp;
 
-      G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
       tmp = ctk_action_group_get_action (CTK_ACTION_GROUP (l->data), name);
-      G_GNUC_END_IGNORE_DEPRECATIONS;
       if (tmp)
 	action = tmp;
     }

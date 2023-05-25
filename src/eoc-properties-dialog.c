@@ -813,7 +813,6 @@ eoc_properties_dialog_new (CtkWindow    *parent,
 
 	g_return_val_if_fail (CTK_IS_WINDOW (parent), NULL);
 	g_return_val_if_fail (EOC_IS_THUMB_VIEW (thumbview), NULL);
-	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
 	g_return_val_if_fail (CTK_IS_ACTION (next_image_action), NULL);
 	g_return_val_if_fail (CTK_IS_ACTION (previous_image_action), NULL);
 
@@ -828,7 +827,6 @@ eoc_properties_dialog_new (CtkWindow    *parent,
 	ctk_activatable_set_related_action (CTK_ACTIVATABLE (EOC_PROPERTIES_DIALOG (prop_dlg)->priv->next_button), next_image_action);
 
 	ctk_activatable_set_related_action (CTK_ACTIVATABLE (EOC_PROPERTIES_DIALOG (prop_dlg)->priv->previous_button), previous_image_action);
-	G_GNUC_END_IGNORE_DEPRECATIONS;
 
 	return CTK_WIDGET (prop_dlg);
 }

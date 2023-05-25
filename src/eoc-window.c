@@ -356,7 +356,6 @@ eoc_window_can_save_changed_cb (GSettings *settings, gchar *key, gpointer user_d
 
 	priv->save_disabled = save_disabled;
 
-	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
 	action_save =
 		ctk_action_group_get_action (priv->actions_image, "ImageSave");
 	action_save_as =
@@ -375,7 +374,6 @@ eoc_window_can_save_changed_cb (GSettings *settings, gchar *key, gpointer user_d
 			ctk_action_set_sensitive (action_save_as, TRUE);
 		}
 	}
-	G_GNUC_END_IGNORE_DEPRECATIONS;
 }
 
 #if defined(HAVE_LCMS) && defined(CDK_WINDOWING_X11)
@@ -583,7 +581,6 @@ update_action_groups_state (EocWindow *window)
 
 	priv = window->priv;
 
-	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
 	action_collection =
 		ctk_action_group_get_action (priv->actions_window,
 					     "ViewImageCollection");
@@ -603,7 +600,6 @@ update_action_groups_state (EocWindow *window)
 	action_print =
 		ctk_action_group_get_action (priv->actions_image,
 					     "ImagePrint");
-	G_GNUC_END_IGNORE_DEPRECATIONS;
 
 	g_assert (action_collection != NULL);
 	g_assert (action_sidebar != NULL);
@@ -618,14 +614,12 @@ update_action_groups_state (EocWindow *window)
 	if (n_images == 0) {
 		ctk_widget_hide (priv->layout);
 
-		G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
 		ctk_action_group_set_sensitive (priv->actions_window,      TRUE);
 		ctk_action_group_set_sensitive (priv->actions_image,       FALSE);
 		ctk_action_group_set_sensitive (priv->actions_collection,  FALSE);
 
 		ctk_action_set_sensitive (action_fscreen, FALSE);
 		ctk_action_set_sensitive (action_sshow,   FALSE);
-		G_GNUC_END_IGNORE_DEPRECATIONS;
 
 		/* If there are no images on model, initialization
  		   stops here. */
@@ -651,7 +645,6 @@ update_action_groups_state (EocWindow *window)
 		if (show_image_collection)
 			ctk_widget_show (priv->nav);
 
-		G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
 		ctk_toggle_action_set_active (CTK_TOGGLE_ACTION (action_collection),
 					      show_image_collection);
 
@@ -668,7 +661,6 @@ update_action_groups_state (EocWindow *window)
 			ctk_action_group_set_sensitive (priv->actions_collection,  TRUE);
 			ctk_action_set_sensitive (action_sshow, TRUE);
 		}
-		G_GNUC_END_IGNORE_DEPRECATIONS;
 
 		if (show_image_collection)
 			ctk_widget_grab_focus (priv->thumbview);
@@ -680,13 +672,11 @@ update_action_groups_state (EocWindow *window)
 						EOC_CONF_LOCKDOWN_CAN_PRINT);
 
 	if (print_disabled) {
-		G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
 		ctk_action_set_sensitive (action_print, FALSE);
 	}
 
 	if (eoc_sidebar_is_empty (EOC_SIDEBAR (priv->sidebar))) {
 		ctk_action_set_sensitive (action_sidebar, FALSE);
-		G_GNUC_END_IGNORE_DEPRECATIONS;
 		ctk_widget_hide (priv->sidebar);
 	}
 }
@@ -702,7 +692,6 @@ update_selection_ui_visibility (EocWindow *window)
 
 	n_selected = eoc_thumb_view_get_n_selected (EOC_THUMB_VIEW (priv->thumbview));
 
-	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
 	wallpaper_action =
 		ctk_action_group_get_action (priv->actions_image,
 					     "ImageSetAsWallpaper");
@@ -712,7 +701,6 @@ update_selection_ui_visibility (EocWindow *window)
 	} else {
 		ctk_action_set_sensitive (wallpaper_action, FALSE);
 	}
-	G_GNUC_END_IGNORE_DEPRECATIONS;
 }
 
 static gboolean
@@ -984,9 +972,7 @@ eoc_window_update_openwith_menu (EocWindow *window, EocImage *image)
 	if (!apps)
 		return;
 
-	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
 	priv->actions_open_with = ctk_action_group_new ("OpenWithActions");
-	G_GNUC_END_IGNORE_DEPRECATIONS;
 	ctk_ui_manager_insert_action_group (priv->ui_mgr, priv->actions_open_with, -1);
 
 	priv->open_with_menu_id = ctk_ui_manager_new_merge_id (priv->ui_mgr);
@@ -1011,16 +997,12 @@ eoc_window_update_openwith_menu (EocWindow *window, EocImage *image)
 		label = g_strdup (g_app_info_get_name (app));
 		tip = g_strdup_printf (_("Use \"%s\" to open the selected image"), g_app_info_get_name (app));
 
-		G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
 		action = ctk_action_new (name, label, tip, NULL);
-		G_GNUC_END_IGNORE_DEPRECATIONS;
 
 		app_icon = g_app_info_get_icon (app);
 		if (G_LIKELY (app_icon != NULL)) {
 			g_object_ref (app_icon);
-			G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
 			ctk_action_set_gicon (action, app_icon);
-			G_GNUC_END_IGNORE_DEPRECATIONS;
 			g_object_unref (app_icon);
 		}
 
@@ -1035,9 +1017,7 @@ eoc_window_update_openwith_menu (EocWindow *window, EocImage *image)
 				          G_CALLBACK (open_with_launch_application_cb),
 				          image);
 
-		G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
 		ctk_action_group_add_action (priv->actions_open_with, action);
-		G_GNUC_END_IGNORE_DEPRECATIONS;
 		g_object_unref (action);
 
 		ctk_ui_manager_add_ui (priv->ui_mgr,
@@ -1093,13 +1073,11 @@ eoc_window_update_openwith_menu (EocWindow *window, EocImage *image)
 
 	g_list_free (apps);
 
-	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
 	action = ctk_action_group_get_action (window->priv->actions_image,
 		                                  "OpenEditor");
 	if (action != NULL) {
 		ctk_action_set_sensitive (action, edit_button_active);
 	}
-	G_GNUC_END_IGNORE_DEPRECATIONS;
 }
 
 static void
@@ -1325,9 +1303,7 @@ eoc_job_load_cb (EocJobLoad *job, gpointer data)
 						 priv->display_profile);
 #endif
 
-		G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
 		ctk_action_group_set_sensitive (priv->actions_image, TRUE);
-		G_GNUC_END_IGNORE_DEPRECATIONS;
 
 		eoc_window_display_image (window, job->image);
 	} else {
@@ -1363,9 +1339,7 @@ eoc_job_load_cb (EocJobLoad *job, gpointer data)
 			g_signal_emit (window, signals[SIGNAL_PREPARED], 0);
 		}
 
-		G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
 		ctk_action_group_set_sensitive (priv->actions_image, FALSE);
-		G_GNUC_END_IGNORE_DEPRECATIONS;
 	}
 
 	eoc_window_clear_load_job (window);
@@ -1379,7 +1353,6 @@ eoc_job_load_cb (EocJobLoad *job, gpointer data)
 			 window);
 	}
 
-	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
 	action_save = ctk_action_group_get_action (priv->actions_image, "ImageSave");
 	action_undo = ctk_action_group_get_action (priv->actions_image, "EditUndo");
 
@@ -1387,7 +1360,6 @@ eoc_job_load_cb (EocJobLoad *job, gpointer data)
 	 * Respect lockdown in case of Save.*/
 	ctk_action_set_sensitive (action_save, (!priv->save_disabled && eoc_image_is_modified (job->image)));
 	ctk_action_set_sensitive (action_undo, eoc_image_is_modified (job->image));
-	G_GNUC_END_IGNORE_DEPRECATIONS;
 
 	g_object_unref (job->image);
 }
@@ -1422,7 +1394,6 @@ eoc_job_transform_cb (EocJobTransform *job, gpointer data)
 
 	eoc_window_clear_transform_job (window);
 
-	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
 	action_undo =
 		ctk_action_group_get_action (window->priv->actions_image, "EditUndo");
 	action_save =
@@ -1436,7 +1407,6 @@ eoc_job_transform_cb (EocJobTransform *job, gpointer data)
 	{
 		ctk_action_set_sensitive (action_save, eoc_image_is_modified (image));
 	}
-	G_GNUC_END_IGNORE_DEPRECATIONS;
 }
 
 static void
@@ -1564,7 +1534,6 @@ view_zoom_changed_cb (CtkWidget *widget, double zoom, gpointer user_data)
 
 	update_status_bar (window);
 
-	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
 	action_zoom_in =
 		ctk_action_group_get_action (window->priv->actions_image,
 					     "ViewZoomIn");
@@ -1577,7 +1546,6 @@ view_zoom_changed_cb (CtkWidget *widget, double zoom, gpointer user_data)
 			!eoc_scroll_view_get_zoom_is_max (EOC_SCROLL_VIEW (window->priv->view)));
 	ctk_action_set_sensitive (action_zoom_out,
 			!eoc_scroll_view_get_zoom_is_min (EOC_SCROLL_VIEW (window->priv->view)));
-	G_GNUC_END_IGNORE_DEPRECATIONS;
 }
 
 static void
@@ -1631,7 +1599,6 @@ eoc_window_update_fullscreen_action (EocWindow *window)
 {
 	CtkAction *action;
 
-	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
 	action = ctk_action_group_get_action (window->priv->actions_image,
 					      "ViewFullscreen");
 
@@ -1640,7 +1607,6 @@ eoc_window_update_fullscreen_action (EocWindow *window)
 
 	ctk_toggle_action_set_active (CTK_TOGGLE_ACTION (action),
 				      window->priv->mode == EOC_WINDOW_MODE_FULLSCREEN);
-	G_GNUC_END_IGNORE_DEPRECATIONS;
 
 	g_signal_handlers_unblock_by_func
 		(action, G_CALLBACK (eoc_window_cmd_fullscreen), window);
@@ -1651,7 +1617,6 @@ eoc_window_update_slideshow_action (EocWindow *window)
 {
 	CtkAction *action;
 
-	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
 	action = ctk_action_group_get_action (window->priv->actions_collection,
 					      "ViewSlideshow");
 
@@ -1660,7 +1625,6 @@ eoc_window_update_slideshow_action (EocWindow *window)
 
 	ctk_toggle_action_set_active (CTK_TOGGLE_ACTION (action),
 				      window->priv->mode == EOC_WINDOW_MODE_SLIDESHOW);
-	G_GNUC_END_IGNORE_DEPRECATIONS;
 
 	g_signal_handlers_unblock_by_func
 		(action, G_CALLBACK (eoc_window_cmd_slideshow), window);
@@ -1671,7 +1635,6 @@ eoc_window_update_pause_slideshow_action (EocWindow *window)
 {
 	CtkAction *action;
 
-	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
 	action = ctk_action_group_get_action (window->priv->actions_image,
 					      "PauseSlideshow");
 
@@ -1680,7 +1643,6 @@ eoc_window_update_pause_slideshow_action (EocWindow *window)
 
 	ctk_toggle_action_set_active (CTK_TOGGLE_ACTION (action),
 				      window->priv->mode != EOC_WINDOW_MODE_SLIDESHOW);
-	G_GNUC_END_IGNORE_DEPRECATIONS;
 
 	g_signal_handlers_unblock_by_func
 		(action, G_CALLBACK (eoc_window_cmd_pause_slideshow), window);
@@ -1887,7 +1849,6 @@ exit_fullscreen_button_clicked_cb (CtkWidget *button, EocWindow *window)
 
 	eoc_debug (DEBUG_WINDOW);
 
-	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
 	if (window->priv->mode == EOC_WINDOW_MODE_SLIDESHOW) {
 		action = ctk_action_group_get_action (window->priv->actions_collection,
 						      "ViewSlideshow");
@@ -1898,7 +1859,6 @@ exit_fullscreen_button_clicked_cb (CtkWidget *button, EocWindow *window)
 	g_return_if_fail (action != NULL);
 
 	ctk_toggle_action_set_active (CTK_TOGGLE_ACTION (action), FALSE);
-	G_GNUC_END_IGNORE_DEPRECATIONS;
 }
 
 static CtkWidget *
@@ -1986,9 +1946,7 @@ update_ui_visibility (EocWindow *window)
 
 	action = ctk_ui_manager_get_action (priv->ui_mgr, "/MainMenu/View/ToolbarToggle");
 	g_assert (action != NULL);
-	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
 	ctk_toggle_action_set_active (CTK_TOGGLE_ACTION (action), visible);
-	G_GNUC_END_IGNORE_DEPRECATIONS;
 	g_object_set (G_OBJECT (priv->toolbar), "visible", visible, NULL);
 
 	visible = g_settings_get_boolean (priv->ui_settings, EOC_CONF_UI_STATUSBAR);
@@ -1996,9 +1954,7 @@ update_ui_visibility (EocWindow *window)
 
 	action = ctk_ui_manager_get_action (priv->ui_mgr, "/MainMenu/View/StatusbarToggle");
 	g_assert (action != NULL);
-	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
 	ctk_toggle_action_set_active (CTK_TOGGLE_ACTION (action), visible);
-	G_GNUC_END_IGNORE_DEPRECATIONS;
 	g_object_set (G_OBJECT (priv->statusbar), "visible", visible, NULL);
 
 	if (priv->status != EOC_WINDOW_STATUS_INIT) {
@@ -2006,9 +1962,7 @@ update_ui_visibility (EocWindow *window)
 		visible = visible && priv->mode != EOC_WINDOW_MODE_SLIDESHOW;
 		action = ctk_ui_manager_get_action (priv->ui_mgr, "/MainMenu/View/ImageCollectionToggle");
 		g_assert (action != NULL);
-		G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
 		ctk_toggle_action_set_active (CTK_TOGGLE_ACTION (action), visible);
-		G_GNUC_END_IGNORE_DEPRECATIONS;
 		if (visible) {
 			ctk_widget_show (priv->nav);
 		} else {
@@ -2020,9 +1974,7 @@ update_ui_visibility (EocWindow *window)
 	visible = visible && !fullscreen_mode;
 	action = ctk_ui_manager_get_action (priv->ui_mgr, "/MainMenu/View/SidebarToggle");
 	g_assert (action != NULL);
-	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
 	ctk_toggle_action_set_active (CTK_TOGGLE_ACTION (action), visible);
-	G_GNUC_END_IGNORE_DEPRECATIONS;
 	if (visible) {
 		ctk_widget_show (priv->sidebar);
 	} else {
@@ -2674,10 +2626,8 @@ eoc_window_cmd_show_hide_bar (CtkAction *action, gpointer user_data)
 	if (priv->mode != EOC_WINDOW_MODE_NORMAL &&
             priv->mode != EOC_WINDOW_MODE_FULLSCREEN) return;
 
-	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
 	visible = ctk_toggle_action_get_active (CTK_TOGGLE_ACTION (action));
 	action_name = ctk_action_get_name (action);
-	G_GNUC_END_IGNORE_DEPRECATIONS;
 
 	if (g_ascii_strcasecmp (action_name, "ViewToolbar") == 0) {
 		g_object_set (G_OBJECT (priv->toolbar), "visible", visible, NULL);
@@ -2851,11 +2801,9 @@ eoc_job_save_cb (EocJobSave *job, gpointer user_data)
 	window->priv->save_job = NULL;
 
 	update_status_bar (window);
-	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
 	action_save = ctk_action_group_get_action (window->priv->actions_image,
 						   "ImageSave");
 	ctk_action_set_sensitive (action_save, FALSE);
-	G_GNUC_END_IGNORE_DEPRECATIONS;
 }
 
 static void
@@ -2891,11 +2839,9 @@ eoc_job_copy_cb (EocJobCopy *job, gpointer user_data)
 
 	ctk_statusbar_pop (CTK_STATUSBAR (window->priv->statusbar),
 			   window->priv->copy_file_cid);
-	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
 	action = ctk_action_group_get_action (window->priv->actions_image,
 					      "ImageSetAsWallpaper");
 	ctk_action_set_sensitive (action, TRUE);
-	G_GNUC_END_IGNORE_DEPRECATIONS;
 
 	window->priv->copy_job = NULL;
 
@@ -3124,7 +3070,6 @@ eoc_window_get_properties_dialog (EocWindow *window)
 	if (priv->properties_dlg == NULL) {
 		CtkAction *next_image_action, *previous_image_action;
 
-		G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
 		next_image_action =
 			ctk_action_group_get_action (priv->actions_collection,
 						     "GoNext");
@@ -3132,7 +3077,6 @@ eoc_window_get_properties_dialog (EocWindow *window)
 		previous_image_action =
 			ctk_action_group_get_action (priv->actions_collection,
 						     "GoPrevious");
-		G_GNUC_END_IGNORE_DEPRECATIONS;
 		priv->properties_dlg =
 			eoc_properties_dialog_new (CTK_WINDOW (window),
 						   EOC_THUMB_VIEW (priv->thumbview),
@@ -3236,11 +3180,9 @@ eoc_window_cmd_wallpaper (CtkAction *action, gpointer user_data)
 		GList *files = NULL;
 		CtkAction *action;
 
-		G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
 		action = ctk_action_group_get_action (window->priv->actions_image,
 						      "ImageSetAsWallpaper");
 		ctk_action_set_sensitive (action, FALSE);
-		G_GNUC_END_IGNORE_DEPRECATIONS;
 
 		priv->copy_file_cid = ctk_statusbar_get_context_id (CTK_STATUSBAR (priv->statusbar),
 								    "copy_file_cid");
@@ -3496,9 +3438,7 @@ eoc_window_cmd_move_to_trash (CtkAction *action, gpointer user_data)
 
 	can_trash = eoc_window_all_images_trasheable (images);
 
-	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
 	action_name = ctk_action_get_name (action);
-	G_GNUC_END_IGNORE_DEPRECATIONS;
 
 	if (g_ascii_strcasecmp (action_name, "Delete") == 0 ||
 	    can_trash == FALSE) {
@@ -3579,9 +3519,7 @@ eoc_window_cmd_fullscreen (CtkAction *action, gpointer user_data)
 
 	window = EOC_WINDOW (user_data);
 
-	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
 	fullscreen = ctk_toggle_action_get_active (CTK_TOGGLE_ACTION (action));
-	G_GNUC_END_IGNORE_DEPRECATIONS;
 
 	if (fullscreen) {
 		eoc_window_run_fullscreen (window, FALSE);
@@ -3602,9 +3540,7 @@ eoc_window_cmd_slideshow (CtkAction *action, gpointer user_data)
 
 	window = EOC_WINDOW (user_data);
 
-	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
 	slideshow = ctk_toggle_action_get_active (CTK_TOGGLE_ACTION (action));
-	G_GNUC_END_IGNORE_DEPRECATIONS;
 
 	if (slideshow) {
 		eoc_window_run_fullscreen (window, TRUE);
@@ -3932,9 +3868,7 @@ menu_item_select_cb (CtkMenuItem *proxy, EocWindow *window)
 	CtkAction *action;
 	char *message;
 
-	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
 	action = ctk_activatable_get_related_action (CTK_ACTIVATABLE (proxy));
-	G_GNUC_END_IGNORE_DEPRECATIONS;
 
 	g_return_if_fail (action != NULL);
 
@@ -3990,7 +3924,6 @@ set_action_properties (CtkActionGroup *window_group,
 {
         CtkAction *action;
 
-	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
         action = ctk_action_group_get_action (collection_group, "GoPrevious");
         g_object_set (action, "short_label", _("Previous"), NULL);
         g_object_set (action, "is-important", TRUE, NULL);
@@ -4025,7 +3958,6 @@ set_action_properties (CtkActionGroup *window_group,
 
         action = ctk_action_group_get_action (image_group, "EditMoveToTrash");
         g_object_set (action, "short_label", C_("action (to trash)", "Trash"), NULL);
-	G_GNUC_END_IGNORE_DEPRECATIONS;
 }
 
 static gint
@@ -4079,7 +4011,6 @@ eoc_window_update_recent_files_menu (EocWindow *window)
 	if (priv->recent_menu_id != 0)
 		ctk_ui_manager_remove_ui (priv->ui_mgr, priv->recent_menu_id);
 
-	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
 	actions = ctk_action_group_list_actions (priv->actions_recent);
 
 	for (li = actions; li != NULL; li = li->next) {
@@ -4090,7 +4021,6 @@ eoc_window_update_recent_files_menu (EocWindow *window)
 		ctk_action_group_remove_action (priv->actions_recent,
 						CTK_ACTION (li->data));
 	}
-	G_GNUC_END_IGNORE_DEPRECATIONS;
 
 	g_list_free (actions);
 
@@ -4132,10 +4062,8 @@ eoc_window_update_recent_files_menu (EocWindow *window)
 		if (tip == NULL)
 			tip = g_uri_unescape_string (ctk_recent_info_get_uri (info), NULL);
 
-		G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
 		action = ctk_action_new (action_name, label, tip, NULL);
 		ctk_action_set_always_show_image (action, TRUE);
-		G_GNUC_END_IGNORE_DEPRECATIONS;
 
 		g_object_set_data_full (G_OBJECT (action), "ctk-recent-info",
 					ctk_recent_info_ref (info),
@@ -4147,9 +4075,7 @@ eoc_window_update_recent_files_menu (EocWindow *window)
 				  G_CALLBACK (eoc_window_open_recent_cb),
 				  window);
 
-		G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
 		ctk_action_group_add_action (priv->actions_recent, action);
-		G_GNUC_END_IGNORE_DEPRECATIONS;
 
 		g_object_unref (action);
 
@@ -4227,7 +4153,6 @@ eoc_window_sidebar_visibility_changed (CtkWidget *widget, EocWindow *window)
 	CtkAction *action;
 	gboolean visible;
 
-	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
 	visible = ctk_widget_get_visible (window->priv->sidebar);
 
 	action = ctk_action_group_get_action (window->priv->actions_window,
@@ -4235,7 +4160,6 @@ eoc_window_sidebar_visibility_changed (CtkWidget *widget, EocWindow *window)
 
 	if (ctk_toggle_action_get_active (CTK_TOGGLE_ACTION (action)) != visible)
 		ctk_toggle_action_set_active (CTK_TOGGLE_ACTION (action), visible);
-	G_GNUC_END_IGNORE_DEPRECATIONS;
 
 	/* Focus the image */
 	if (!visible && window->priv->image != NULL)
@@ -4251,14 +4175,12 @@ eoc_window_sidebar_page_added (EocSidebar  *sidebar,
 		CtkAction *action;
 		gboolean show;
 
-		G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
 		action = ctk_action_group_get_action (window->priv->actions_window,
 						      "ViewSidebar");
 
 		ctk_action_set_sensitive (action, TRUE);
 
 		show = ctk_toggle_action_get_active (CTK_TOGGLE_ACTION (action));
-		G_GNUC_END_IGNORE_DEPRECATIONS;
 
 		if (show)
 			ctk_widget_show (CTK_WIDGET (sidebar));
@@ -4274,12 +4196,10 @@ eoc_window_sidebar_page_removed (EocSidebar  *sidebar,
 
 		ctk_widget_hide (CTK_WIDGET (sidebar));
 
-		G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
 		action = ctk_action_group_get_action (window->priv->actions_window,
 						      "ViewSidebar");
 
 		ctk_action_set_sensitive (action, FALSE);
-		G_GNUC_END_IGNORE_DEPRECATIONS;
 	}
 }
 
@@ -4385,7 +4305,6 @@ eoc_window_add_open_editor_action (EocWindow *window)
 
 	tooltip = g_strdup_printf (_("Edit the current image using %s"),
 	                           g_app_info_get_name (app_info));
-	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
 	action = ctk_action_new ("OpenEditor", _("Edit Image"), tooltip, NULL);
 	ctk_action_set_gicon (action, g_app_info_get_icon (app_info));
 	ctk_action_set_is_important (action, TRUE);
@@ -4394,7 +4313,6 @@ eoc_window_add_open_editor_action (EocWindow *window)
 	                  G_CALLBACK (eoc_window_open_editor), window);
 
 	ctk_action_group_add_action (window->priv->actions_image, action);
-	G_GNUC_END_IGNORE_DEPRECATIONS;
 
 	g_object_unref (action);
 	g_free (tooltip);
@@ -4423,7 +4341,6 @@ eoc_window_construct_ui (EocWindow *window)
 
 	priv->ui_mgr = ctk_ui_manager_new ();
 
-	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
 	priv->actions_window = ctk_action_group_new ("MenuActionsWindow");
 
 	ctk_action_group_set_translation_domain (priv->actions_window,
@@ -4438,11 +4355,9 @@ eoc_window_construct_ui (EocWindow *window)
 					     toggle_entries_window,
 					     G_N_ELEMENTS (toggle_entries_window),
 					     window);
-	G_GNUC_END_IGNORE_DEPRECATIONS;
 
 	ctk_ui_manager_insert_action_group (priv->ui_mgr, priv->actions_window, 0);
 
-	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
 	priv->actions_image = ctk_action_group_new ("MenuActionsImage");
 	ctk_action_group_set_translation_domain (priv->actions_image,
 						 GETTEXT_PACKAGE);
@@ -4458,11 +4373,9 @@ eoc_window_construct_ui (EocWindow *window)
 					     toggle_entries_image,
 					     G_N_ELEMENTS (toggle_entries_image),
 					     window);
-	G_GNUC_END_IGNORE_DEPRECATIONS;
 
 	ctk_ui_manager_insert_action_group (priv->ui_mgr, priv->actions_image, 0);
 
-	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
 	priv->actions_collection = ctk_action_group_new ("MenuActionsCollection");
 	ctk_action_group_set_translation_domain (priv->actions_collection,
 						 GETTEXT_PACKAGE);
@@ -4476,7 +4389,6 @@ eoc_window_construct_ui (EocWindow *window)
 					     toggle_entries_collection,
 					     G_N_ELEMENTS (toggle_entries_collection),
 					     window);
-	G_GNUC_END_IGNORE_DEPRECATIONS;
 
 	set_action_properties (priv->actions_window,
 			       priv->actions_image,
@@ -4545,11 +4457,9 @@ eoc_window_construct_ui (EocWindow *window)
 	ctk_window_add_accel_group (CTK_WINDOW (window),
 				    ctk_ui_manager_get_accel_group (priv->ui_mgr));
 
-	G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
 	priv->actions_recent = ctk_action_group_new ("RecentFilesActions");
 	ctk_action_group_set_translation_domain (priv->actions_recent,
 						 GETTEXT_PACKAGE);
-	G_GNUC_END_IGNORE_DEPRECATIONS;
 
 	g_signal_connect (ctk_recent_manager_get_default (), "changed",
 			  G_CALLBACK (eoc_window_recent_manager_changed_cb),
