@@ -4041,7 +4041,8 @@ sort_recents_mru (CtkRecentInfo *a, CtkRecentInfo *b)
 	has_eoc_b = ctk_recent_info_has_application (b,
 						     EOC_RECENT_FILES_APP_NAME);
 	if (has_eoc_a && has_eoc_b) {
-		time_t time_a, time_b;
+		GDateTime *time_a = NULL;
+		GDateTime *time_b = NULL;
 
 		/* These should not fail as we already checked that
 		 * the application is registered with the info objects */
@@ -4056,7 +4057,7 @@ sort_recents_mru (CtkRecentInfo *a, CtkRecentInfo *b)
 						      NULL,
 						      &time_b);
 
-		return (time_b - time_a);
+		return (g_date_time_to_unix (time_b) - g_date_time_to_unix (time_a));
 	} else if (has_eoc_a) {
 		return -1;
 	} else if (has_eoc_b) {
