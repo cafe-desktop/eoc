@@ -2594,7 +2594,8 @@ eoc_window_cmd_about (CtkAction *action, gpointer user_data)
 			       "version", VERSION,
 			       "copyright", _("Copyright \xc2\xa9 2000-2010 Free Software Foundation, Inc.\n"
 			                      "Copyright \xc2\xa9 2011 Perberos\n"
-			                      "Copyright \xc2\xa9 2012-2020 CAFE developers"),
+			                      "Copyright \xc2\xa9 2012-2020 MATE developers\n"
+			                      "Copyright \xc2\xa9 2023 Pablo Barciela"),
 			       "comments",_("The CAFE image viewer."),
 			       "authors", authors,
 			       "documenters", documenters,
