@@ -7791,7 +7791,7 @@
 2000-11-16  Martin Baulig  <baulig@suse.de>
 
 	* POTFILES.in: Removed cafecomponent-image-generic.c,
-	this has been merged into the caja-image-viewer.
+	this has been merged into the baul-image-viewer.
 
 2000-11-03  ERDI Gergo  <cactus@cactus.rulez.org>
 

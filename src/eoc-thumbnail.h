@@ -4,7 +4,7 @@
  *
  * Author: Lucas Rocha <lucasr@gnome.org>
  *
- * Based on caja code (libcaja-private/caja-thumbnail.c) by:
+ * Based on baul code (libbaul-private/baul-thumbnail.c) by:
  * 	- Andy Hertzfeld <andy@eazel.com>
  *
  * This program is free software; you can redistribute it and/or modify

@@ -1890,7 +1890,7 @@ eoc_image_save_as_by_info (EocImage *img, EocImageSaveInfo *source, EocImageSave
 
 /*
  * This function is extracted from
- * File: caja/libcaja-private/caja-file.c
+ * File: baul/libbaul-private/baul-file.c
  * Revision: 1.309
  * Author: Darin Adler <darin@bentspoon.com>
  */
@@ -1913,7 +1913,7 @@ have_broken_filenames (void)
 
 /*
  * This function is inspired by
- * caja/libcaja-private/caja-file.c:caja_file_get_display_name_nocopy
+ * baul/libbaul-private/baul-file.c:baul_file_get_display_name_nocopy
  * Revision: 1.309
  * Author: Darin Adler <darin@bentspoon.com>
  */

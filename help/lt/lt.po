@@ -808,7 +808,7 @@ msgid ""
 "<application>Caja</application> file manager and move the image file to "
 "another folder. To delete the image permanently, empty the Trash. To find "
 "out more about using the Trash, see the <link xlink:href=\"help:cafe-user-"
-"guide/caja-trash\">Desktop User Guide</link>."
+"guide/baul-trash\">Desktop User Guide</link>."
 msgstr ""
 
 #. (itstool) path: note/para

@@ -260,7 +260,7 @@ msgstr "PNG: gráficos portátiles de red"
 #. (itstool) path: listitem/para
 #: C/index.docbook:275
 msgid "PNM - Portable Anymap from the PPM Toolkit"
-msgstr "PNM: imagen matricial portable de la caja de herramientas PPM"
+msgstr "PNM: imagen matricial portable de la baul de herramientas PPM"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:277
@@ -930,7 +930,7 @@ msgid ""
 "<application>Caja</application> file manager and move the image file to "
 "another folder. To delete the image permanently, empty the Trash. To find "
 "out more about using the Trash, see the <link xlink:href=\"help:cafe-user-"
-"guide/caja-trash\">Desktop User Guide</link>."
+"guide/baul-trash\">Desktop User Guide</link>."
 msgstr ""
 
 #. (itstool) path: note/para

@@ -1000,13 +1000,13 @@ msgid ""
 "<application>Caja</application> file manager and move the image file to "
 "another folder. To delete the image permanently, empty the Trash. To find "
 "out more about using the Trash, see the <link xlink:href=\"help:cafe-user-"
-"guide/caja-trash\">Desktop User Guide</link>."
+"guide/baul-trash\">Desktop User Guide</link>."
 msgstr ""
 "Per ripristinare un'immagine dal cestino, apri la cartella Cestino nel "
 "gestore file <application>Caja</application> e sposta l'immagine in un'altra"
 " cartella. Per cancellare definitivamente l'immagine, svuota il Cestino. Per"
 " saperne di più sull'uso del Cestino, vedi la sezione <link "
-"xlink:href=\"help:cafe-user-guide/caja-trash\">Guida utente</link>."
+"xlink:href=\"help:cafe-user-guide/baul-trash\">Guida utente</link>."
 
 #. (itstool) path: note/para
 #: C/index.docbook:554
