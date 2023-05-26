@@ -203,8 +203,8 @@ msgstr ""
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:235
-msgid "Open an image file in <application>Caja</application>."
-msgstr "Открыть изображение в <application>Caja</application>."
+msgid "Open an image file in <application>Baul</application>."
+msgstr "Открыть изображение в <application>Baul</application>."
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:238
@@ -1026,13 +1026,13 @@ msgstr ""
 #: C/index.docbook:552
 msgid ""
 "To restore an image from the Trash, open the Trash folder in "
-"<application>Caja</application> file manager and move the image file to "
+"<application>Baul</application> file manager and move the image file to "
 "another folder. To delete the image permanently, empty the Trash. To find "
 "out more about using the Trash, see the <link xlink:href=\"help:cafe-user-"
 "guide/baul-trash\">Desktop User Guide</link>."
 msgstr ""
 "Чтобы восстановить изображение из корзины, откройте корзину в файловом "
-"менеджере <application>Caja</application> и переместите нужный файл в другую"
+"менеджере <application>Baul</application> и переместите нужный файл в другую"
 " папку. Чтобы окончательно удалить изображение, очистите корзину. Подробнее "
 "о корзине читайте в <link xlink:href=\"help:cafe-user-guide/baul-"
 "trash\">Руководстве пользователя рабочей среды</link>."
