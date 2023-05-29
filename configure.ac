@@ -48,10 +48,10 @@ AC_CHECK_FUNCS(strptime)
 # Support for nl_langinfo (_NL_MEASUREMENT_MEASUREMENT) (optional)
 # ****************************************************************
 AC_MSG_CHECKING([for _NL_MEASUREMENT_MEASUREMENT])
-AC_TRY_LINK([#include <langinfo.h>], [
+AC_LINK_IFELSE([AC_LANG_PROGRAM([[#include <langinfo.h>]], [[
 char c;
 c = *((unsigned char *)  nl_langinfo(_NL_MEASUREMENT_MEASUREMENT));
-], have_langinfo_measurement=yes, have_langinfo_measurement=no)
+]])], have_langinfo_measurement=yes, have_langinfo_measurement=no)
 AC_MSG_RESULT($have_langinfo_measurement)
 if test "$have_langinfo_measurement" = "yes"; then
   AC_DEFINE([HAVE__NL_MEASUREMENT_MEASUREMENT], [1],
