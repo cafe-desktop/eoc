@@ -211,14 +211,15 @@ AC_ARG_WITH(libjpeg, AS_HELP_STRING([--without-libjpeg], [disable special JPEG s
       AC_MSG_WARN(*** JPEG loader will not be built (JPEG library not found) ***))
     if test "$have_jpeg" = yes; then
       AC_MSG_CHECKING([for jpeglib.h])
-      AC_TRY_CPP(
-[#include <stdio.h>
+      AC_PREPROC_IFELSE([
+        AC_LANG_SOURCE([[
+#include <stdio.h>
 #undef PACKAGE
 #undef VERSION
 #undef HAVE_STDLIB_H
-#include <jpeglib.h>],
-        have_jpeg=yes,
-        have_jpeg=no)
+#include <jpeglib.h>]])],
+        [have_jpeg=yes],
+        [have_jpeg=no])
       AC_MSG_RESULT($have_jpeg)
       if test "$have_jpeg" = yes; then
         LIBJPEG='-ljpeg'
