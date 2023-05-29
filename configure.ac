@@ -32,8 +32,7 @@ CAFE_COMPILE_WARNINGS
 CAFE_MAINTAINER_MODE_DEFINES
 
 # Disable building static archives by default
-AC_DISABLE_STATIC
-AC_PROG_LIBTOOL
+LT_INIT([disable-static])
 
 AC_PROG_CC
 AM_PROG_CC_C_O
