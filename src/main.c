@@ -165,6 +165,9 @@ main (int argc, char **argv)
 	ctk_window_set_default_icon_name ("eoc");
 	g_set_application_name (_("Eye of CAFE Image Viewer"));
 
+	g_object_set (ctk_settings_get_default (), "ctk-button-images", TRUE, NULL);
+	g_object_set (ctk_settings_get_default (), "ctk-menu-images", TRUE, NULL);
+
 	EOC_APP->priv->flags = flags;
 	if (force_new_instance) {
 		GApplicationFlags app_flags = g_application_get_flags (G_APPLICATION (EOC_APP));
