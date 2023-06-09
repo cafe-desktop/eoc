@@ -1453,6 +1453,3 @@ msgid ""
 "the <link xlink:href=\"help:cafe-user-guide/feedback\">CAFE Feedback Page</"
 "link>."
 msgstr ""
-
-#~ msgid "Image Information Pane"
-#~ msgstr "Painel de informações da imagem"
