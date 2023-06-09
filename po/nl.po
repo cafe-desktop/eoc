@@ -1647,21 +1647,3 @@ msgid "Run '%s --help' to see a full list of available command line options."
 msgstr ""
 "Voer ‘%s --help’ uit om een volledige lijst van alle beschikbare "
 "opdrachtregelopties te zien."
-
-#~ msgid "eoc"
-#~ msgstr "eoc"
-
-#~ msgid "view-fullscreen"
-#~ msgstr "view-fullscreen"
-
-#~ msgid "view-refresh"
-#~ msgstr "view-refresh"
-
-#~ msgid ""
-#~ "Copyright © 2000-2010 Free Software Foundation, Inc.\n"
-#~ "Copyright © 2011 Perberos\n"
-#~ "Copyright © 2012-2020 CAFE developers"
-#~ msgstr ""
-#~ "Auteursrecht © 2000-2010 Free Software Foundation, Inc.\n"
-#~ "Auteursrecht © 2011 Perberos\n"
-#~ "Auteursrecht © 2012-2020 CAFE-ontwikkelaars"

@@ -1628,12 +1628,3 @@ msgid "Run '%s --help' to see a full list of available command line options."
 msgstr ""
 "Виконайте '%s --help' щоб побачити повний перелік параметрів командного "
 "рядка."
-
-#~ msgid "eoc"
-#~ msgstr "eoc"
-
-#~ msgid "view-fullscreen"
-#~ msgstr "view-fullscreen"
-
-#~ msgid "view-refresh"
-#~ msgstr "view-refresh"

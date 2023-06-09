@@ -1626,21 +1626,3 @@ msgid "Run '%s --help' to see a full list of available command line options."
 msgstr ""
 "Spustite „%s --help“, aby ste videli úplný zoznam dostupných volieb "
 "príkazového riadku."
-
-#~ msgid "eoc"
-#~ msgstr "eoc"
-
-#~ msgid "view-fullscreen"
-#~ msgstr "view-fullscreen"
-
-#~ msgid "view-refresh"
-#~ msgstr "view-refresh"
-
-#~ msgid ""
-#~ "Copyright © 2000-2010 Free Software Foundation, Inc.\n"
-#~ "Copyright © 2011 Perberos\n"
-#~ "Copyright © 2012-2020 CAFE developers"
-#~ msgstr ""
-#~ "Autorské práva © 2000-2010 Free Software Foundation, Inc.\n"
-#~ "Autorské práva © 2011 Perberos\n"
-#~ "Autorské práva © 2012-2020 Vývojári prostredia CAFE"

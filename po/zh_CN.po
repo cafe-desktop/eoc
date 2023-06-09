@@ -1585,21 +1585,3 @@ msgstr "[文件...]"
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options."
 msgstr "运行“%s --help”来查看可用命令行选项的完整列表。"
-
-#~ msgid "eoc"
-#~ msgstr "eoc"
-
-#~ msgid "view-fullscreen"
-#~ msgstr "全屏"
-
-#~ msgid "view-refresh"
-#~ msgstr "刷新"
-
-#~ msgid ""
-#~ "Copyright © 2000-2010 Free Software Foundation, Inc.\n"
-#~ "Copyright © 2011 Perberos\n"
-#~ "Copyright © 2012-2020 CAFE developers"
-#~ msgstr ""
-#~ "Copyright © 2001–2010 自由软件基金会\n"
-#~ "Copyright © 2011 Perberos\n"
-#~ "Copyright © 2012-2020 CAFE 开发者"

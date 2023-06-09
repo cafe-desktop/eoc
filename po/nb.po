@@ -1618,21 +1618,3 @@ msgstr "[FIL…]"
 msgid "Run '%s --help' to see a full list of available command line options."
 msgstr ""
 "Kjør «%s --help» for å se en full liste med tilgjengelige kommandolinjeflagg."
-
-#~ msgid "eoc"
-#~ msgstr "eoc"
-
-#~ msgid "view-fullscreen"
-#~ msgstr "view-fullscreen"
-
-#~ msgid "view-refresh"
-#~ msgstr "view-refresh"
-
-#~ msgid ""
-#~ "Copyright © 2000-2010 Free Software Foundation, Inc.\n"
-#~ "Copyright © 2011 Perberos\n"
-#~ "Copyright © 2012-2020 CAFE developers"
-#~ msgstr ""
-#~ "Opphavsrett © 2000-2010 Free Software Foundation, Inc.\n"
-#~ "Opphavsrett © 2011 Perberos\n"
-#~ "Opphavsrett © 2012-2020 CAFE-utviklerne"

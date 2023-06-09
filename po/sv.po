@@ -1617,21 +1617,3 @@ msgid "Run '%s --help' to see a full list of available command line options."
 msgstr ""
 "Kör \"%s --help\" för att se en komplett lista över tillgängliga "
 "kommandoradsflaggor."
-
-#~ msgid "eoc"
-#~ msgstr "eoc"
-
-#~ msgid "view-fullscreen"
-#~ msgstr "Visa helskärm"
-
-#~ msgid "view-refresh"
-#~ msgstr "Visa uppdatering"
-
-#~ msgid ""
-#~ "Copyright © 2000-2010 Free Software Foundation, Inc.\n"
-#~ "Copyright © 2011 Perberos\n"
-#~ "Copyright © 2012-2020 CAFE developers"
-#~ msgstr ""
-#~ "Copyright © 2000-2010 Free Software Foundation, Inc.\n"
-#~ "Copyright © 2011 Perberos\n"
-#~ "Copyright © 2012-2020 CAFE-utvecklarna"

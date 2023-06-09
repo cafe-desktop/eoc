@@ -1647,18 +1647,3 @@ msgid "Run '%s --help' to see a full list of available command line options."
 msgstr ""
 "Lancez « %s --help » pour voir la liste complète de options disponibles en "
 "ligne de commande."
-
-#~ msgid "view-fullscreen"
-#~ msgstr "vue plein écran"
-
-#~ msgid "view-refresh"
-#~ msgstr "rafraîchissement de la vue"
-
-#~ msgid ""
-#~ "Copyright © 2000-2010 Free Software Foundation, Inc.\n"
-#~ "Copyright © 2011 Perberos\n"
-#~ "Copyright © 2012-2020 CAFE developers"
-#~ msgstr ""
-#~ "Copyright © 2000-2010 Free Software Foundation, Inc.\n"
-#~ "Copyright © 2011 Perberos\n"
-#~ "Copyright © 2012-2020 Les développeurs de CAFE"

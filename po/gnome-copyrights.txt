@@ -1258,7 +1258,3 @@
 #
 # Zuza Software Foundation <info@translate.org.za>, 2004
 #
-
-
-
-

@@ -1644,21 +1644,3 @@ msgstr "[FAILAS...]"
 msgid "Run '%s --help' to see a full list of available command line options."
 msgstr ""
 "Norėdami pamatyti komandų eilutės parametrų sąrašą, paleiskite „%s --help“."
-
-#~ msgid "eoc"
-#~ msgstr "eoc"
-
-#~ msgid "view-fullscreen"
-#~ msgstr "view-fullscreen"
-
-#~ msgid "view-refresh"
-#~ msgstr "view-refresh"
-
-#~ msgid ""
-#~ "Copyright © 2000-2010 Free Software Foundation, Inc.\n"
-#~ "Copyright © 2011 Perberos\n"
-#~ "Copyright © 2012-2020 CAFE developers"
-#~ msgstr ""
-#~ "Autorių teisės © 2000-2010 Free Software Foundation, Inc.\n"
-#~ "Autorių teisės © 2011 Perberos\n"
-#~ "Autorių teisės © 2012-2020 CAFE kūrėjai"

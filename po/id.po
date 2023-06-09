@@ -1618,21 +1618,3 @@ msgstr "[BERKAS…]"
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options."
 msgstr "Jalankan '%s --help' untuk daftar lengkap opsi yang tersedia."
-
-#~ msgid "eoc"
-#~ msgstr "eoc"
-
-#~ msgid "view-fullscreen"
-#~ msgstr "view-fullscreen"
-
-#~ msgid "view-refresh"
-#~ msgstr "view-refresh"
-
-#~ msgid ""
-#~ "Copyright © 2000-2010 Free Software Foundation, Inc.\n"
-#~ "Copyright © 2011 Perberos\n"
-#~ "Copyright © 2012-2020 CAFE developers"
-#~ msgstr ""
-#~ "Hak Cipta © 2000-2010 Free Software Foundation, Inc.\n"
-#~ "Hak Cipta © 2011 Perberos\n"
-#~ "Hak Cipta © 2012-2020 pengembang CAFE"
