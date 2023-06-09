@@ -1,23 +1,26 @@
-# 
+#
 # Translators:
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # clefebvre <clement.lefebvre@linuxmint.com>, 2020
 # Wolfgang Ulbrich <mate@raveit.de>, 2020
 # Микола Ткач <chistomov@gmail.com>, 2020
 # Oleksii Khalikov <oleksii.khalikov@gmail.com>, 2020
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-07-02 11:34+0200\n"
+"POT-Creation-Date: 2023-06-09 11:11+0200\n"
 "PO-Revision-Date: 2020-02-14 12:08+0000\n"
 "Last-Translator: Oleksii Khalikov <oleksii.khalikov@gmail.com>, 2020\n"
 "Language-Team: Ukrainian (https://www.transifex.com/cafe/teams/13566/uk/)\n"
+"Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: uk\n"
-"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != "
+"11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % "
+"100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
+"(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
@@ -172,16 +175,15 @@ msgstr ""
 #. (itstool) path: listitem/para
 #: C/index.docbook:238
 msgid ""
-"Choose <menuchoice><guimenu>Graphics</guimenu> <guimenuitem>Image "
-"Viewer</guimenuitem></menuchoice> from the <guimenu>Applications</guimenu> "
-"menu."
+"Choose <menuchoice><guimenu>Graphics</guimenu> <guimenuitem>Image Viewer</"
+"guimenuitem></menuchoice> from the <guimenu>Applications</guimenu> menu."
 msgstr ""
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:243
 msgid ""
-"Run <command>eoc</command> at the prompt in a terminal such as <application"
-">cafe-terminal</application>, or from the <application>Run "
+"Run <command>eoc</command> at the prompt in a terminal such as "
+"<application>cafe-terminal</application>, or from the <application>Run "
 "Application</application> dialog."
 msgstr ""
 
@@ -194,9 +196,9 @@ msgstr "Закриття Переглядача зображень"
 #: C/index.docbook:252
 msgid ""
 "To close the current <application>Image Viewer</application> window choose "
-"<menuchoice><guimenu>Image</guimenu> "
-"<guimenuitem>Close</guimenuitem></menuchoice>, or press "
-"<keycombo><keycap>Ctrl</keycap><keycap>W</keycap></keycombo>."
+"<menuchoice><guimenu>Image</guimenu> <guimenuitem>Close</guimenuitem></"
+"menuchoice>, or press <keycombo><keycap>Ctrl</keycap><keycap>W</keycap></"
+"keycombo>."
 msgstr ""
 
 #. (itstool) path: info/title
@@ -317,9 +319,9 @@ msgstr ""
 #: C/index.docbook:309
 msgid ""
 "<application>Image Viewer</application> has a variety of features to help "
-"you view your images. You can zoom in and out or view the image full screen."
-" Regardless of your zoom level, <application>Image Viewer</application> uses"
-" a low amount of memory. You can also rotate and flip the image you are "
+"you view your images. You can zoom in and out or view the image full screen. "
+"Regardless of your zoom level, <application>Image Viewer</application> uses "
+"a low amount of memory. You can also rotate and flip the image you are "
 "viewing."
 msgstr ""
 
@@ -339,8 +341,8 @@ msgid ""
 "feature requires <systemitem class=\"library\">libexif</systemitem> to be "
 "installed on your system. All modifications made in JPEG images are "
 "lossless. That is, saving rotated and flipped JPEG images will not "
-"recompress the image. Beside this all available metadata (like EXIF) will be"
-" preserved and updated accordingly."
+"recompress the image. Beside this all available metadata (like EXIF) will be "
+"preserved and updated accordingly."
 msgstr ""
 
 #. (itstool) path: info/title
@@ -351,8 +353,8 @@ msgstr "Початок роботи"
 #. (itstool) path: section/para
 #: C/index.docbook:331
 msgid ""
-"When you start <application>Image Viewer</application>, the following window"
-" is displayed:"
+"When you start <application>Image Viewer</application>, the following window "
+"is displayed:"
 msgstr ""
 
 #. (itstool) path: info/title
@@ -383,8 +385,8 @@ msgstr "Рядок меню"
 #. (itstool) path: listitem/para
 #: C/index.docbook:349
 msgid ""
-"The menus on the menubar contain all the commands that you need to work with"
-" images in <application>Image Viewer</application>."
+"The menus on the menubar contain all the commands that you need to work with "
+"images in <application>Image Viewer</application>."
 msgstr ""
 
 #. (itstool) path: varlistentry/term
@@ -396,8 +398,8 @@ msgstr "Панель знарядь"
 #: C/index.docbook:355
 msgid ""
 "The toolbar contains a subset of the commands that you can access from the "
-"menubar. To show or hide the toolbar, choose "
-"<menuchoice><guimenu>View</guimenu><guimenuitem>Toolbar</guimenuitem></menuchoice>."
+"menubar. To show or hide the toolbar, choose <menuchoice><guimenu>View</"
+"guimenu><guimenuitem>Toolbar</guimenuitem></menuchoice>."
 msgstr ""
 
 #. (itstool) path: varlistentry/term
@@ -419,8 +421,8 @@ msgstr "Рядок стану"
 #: C/index.docbook:367
 msgid ""
 "The statusbar provides information about the image. To show or hide the "
-"statusbar, choose "
-"<menuchoice><guimenu>View</guimenu><guimenuitem>Statusbar</guimenuitem></menuchoice>."
+"statusbar, choose <menuchoice><guimenu>View</guimenu><guimenuitem>Statusbar</"
+"guimenuitem></menuchoice>."
 msgstr ""
 
 #. (itstool) path: varlistentry/term
@@ -434,23 +436,23 @@ msgid ""
 "The image collection shows you all supported images in the current working "
 "directory. It shows up once an image has been loaded. To show or hide the "
 "collection, choose <menuchoice><guimenu>View</guimenu><guimenuitem>Image "
-"Collection</guimenuitem></menuchoice> or press <keycap>F9</keycap>."
+"Collection</guimenuitem></menuchoice> or press <keycombo><keycap>Ctrl</"
+"keycap><keycap>F9</keycap></keycombo>."
 msgstr ""
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:377
-msgid "Image Information Pane"
-msgstr "Панель інформація про зображення"
+msgid "Side Pane"
+msgstr ""
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:379
 msgid ""
-"The image information pane provides further information about the current "
-"image, for example EXIF metadata (if available). It shows up after an image "
-"has been loaded. To show or hide the image information pane, choose "
-"<menuchoice><guimenu>View</guimenu><guimenuitem>Image "
-"Information</guimenuitem></menuchoice> or press "
-"<keycombo><keycap>Ctrl</keycap><keycap>I</keycap></keycombo>."
+"The side pane provides further information about the current image, for "
+"example EXIF metadata (if available). It shows up after an image has been "
+"loaded. To show or hide the side pane, choose <menuchoice><guimenu>View</"
+"guimenu><guimenuitem>Side Pane</guimenuitem></menuchoice> or press "
+"<keycap>F9</keycap>."
 msgstr ""
 
 #. (itstool) path: section/para
@@ -469,16 +471,15 @@ msgstr ""
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:388
-msgid ""
-"Double-click on an image file in the file manager or other application."
+msgid "Double-click on an image file in the file manager or other application."
 msgstr ""
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:390
 msgid ""
-"Choose <menuchoice><guimenu>Image</guimenu> "
-"<guimenuitem>Open</guimenuitem></menuchoice> and select an image file in the"
-" <application>Load Image</application> dialog."
+"Choose <menuchoice><guimenu>Image</guimenu> <guimenuitem>Open</guimenuitem></"
+"menuchoice> and select an image file in the <application>Load Image</"
+"application> dialog."
 msgstr ""
 
 #. (itstool) path: listitem/para
@@ -507,8 +508,8 @@ msgstr "Щоб відкрити зображення, виконайте так�
 #: C/index.docbook:410
 msgid ""
 "Choose <menuchoice> <guimenu>Image</guimenu><guimenuitem>Open</guimenuitem> "
-"</menuchoice>, or press <keycombo> <keycap>Ctrl</keycap><keycap>O</keycap> "
-"</keycombo>."
+"</menuchoice>, or press <keycombo> <keycap>Ctrl</keycap><keycap>O</keycap> </"
+"keycombo>."
 msgstr ""
 
 #. (itstool) path: listitem/para
@@ -528,9 +529,9 @@ msgstr ""
 #. (itstool) path: section/para
 #: C/index.docbook:424
 msgid ""
-"To open another image, choose <menuchoice> "
-"<guimenu>Image</guimenu><guimenuitem>Open</guimenuitem> </menuchoice> again."
-" <application>Image Viewer</application> opens each image in a new window."
+"To open another image, choose <menuchoice> <guimenu>Image</"
+"guimenu><guimenuitem>Open</guimenuitem> </menuchoice> again. "
+"<application>Image Viewer</application> opens each image in a new window."
 msgstr ""
 
 #. (itstool) path: info/title
@@ -546,26 +547,26 @@ msgstr "Щоб переглянути усі зображення в теці, �
 #. (itstool) path: listitem/para
 #: C/index.docbook:435
 msgid ""
-"Open one of the images in the folder (see <xref linkend=\"eoc-open-"
-"image\"/>)."
+"Open one of the images in the folder (see <xref linkend=\"eoc-open-image\"/"
+">)."
 msgstr ""
-"Відкрийте одне з зображень, що знаходяться в теці (дивіться <xref linkend"
-"=\"eoc-open-image\"/>)."
+"Відкрийте одне з зображень, що знаходяться в теці (дивіться <xref "
+"linkend=\"eoc-open-image\"/>)."
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:439
 msgid ""
-"Open the image collection by choosing "
-"<menuchoice><guimenu>View</guimenu><guimenuitem>Image "
-"Collection</guimenuitem></menuchoice> or pressing <keycap>F9</keycap>."
+"Open the image collection by choosing <menuchoice><guimenu>View</"
+"guimenu><guimenuitem>Image Collection</guimenuitem></menuchoice> or pressing "
+"<keycombo><keycap>Ctrl</keycap><keycap>F9</keycap></keycombo>."
 msgstr ""
 
 #. (itstool) path: section/para
 #: C/index.docbook:444
 msgid ""
 "The collection shows thumbnails of all supported images in the folder. You "
-"can browse the images by clicking on an image in the collection, by choosing"
-" the appropriate option in the <guimenu>Go</guimenu> menu or by pressing "
+"can browse the images by clicking on an image in the collection, by choosing "
+"the appropriate option in the <guimenu>Go</guimenu> menu or by pressing "
 "<keycombo><keycap>Alt</keycap><keycap>Left</keycap></keycombo> or "
 "<keycombo><keycap>Alt</keycap><keycap>Right</keycap></keycombo>."
 msgstr ""
@@ -576,12 +577,11 @@ msgid ""
 "To view all the directory images in fullscreen, choose <menuchoice> "
 "<guimenu>View</guimenu><guimenuitem>Full Screen</guimenuitem> </menuchoice> "
 "or press <keycap>F11</keycap>. To view them as a slide show, choose "
-"<menuchoice><guimenu>View</guimenu><guimenuitem>Slideshow</guimenuitem></menuchoice>"
-" or press <keycap>F5</keycap>. To return to the collection view, press the "
-"<keycap>Esc</keycap> key, or "
-"<keycombo><keycap>Ctrl</keycap><keycap>W</keycap></keycombo>. For more "
-"information about how to customize the slide show, see <xref linkend=\"eoc-"
-"prefs-slideshow\"/>."
+"<menuchoice><guimenu>View</guimenu><guimenuitem>Slideshow</guimenuitem></"
+"menuchoice> or press <keycap>F5</keycap>. To return to the collection view, "
+"press the <keycap>Esc</keycap> key, or <keycombo><keycap>Ctrl</"
+"keycap><keycap>W</keycap></keycombo>. For more information about how to "
+"customize the slide show, see <xref linkend=\"eoc-prefs-slideshow\"/>."
 msgstr ""
 
 #. (itstool) path: info/title
@@ -607,11 +607,11 @@ msgstr "Використовуйте клавіші зі стрілками на
 #: C/index.docbook:456
 msgid ""
 "Drag the image to move it in the window. (This means you drag the image in "
-"the opposite direction you want to scroll in: to scroll down the image, drag"
-" it upwards in the window.)"
+"the opposite direction you want to scroll in: to scroll down the image, drag "
+"it upwards in the window.)"
 msgstr ""
-"Перетягніть зображення для його переміщення у вікні. (Перетягуйте зображення"
-" в бік, протилежний тому, в який бажаєте його прогорнути: щоб прогорнути "
+"Перетягніть зображення для його переміщення у вікні. (Перетягуйте зображення "
+"в бік, протилежний тому, в який бажаєте його прогорнути: щоб прогорнути "
 "зображення вниз, тягніть його вгору у вікні.)"
 
 #. (itstool) path: listitem/para
@@ -639,14 +639,13 @@ msgstr ""
 #. (itstool) path: listitem/para
 #: C/index.docbook:469
 msgid ""
-"Choose <menuchoice><guimenu>View</guimenu><guimenuitem>Zoom "
-"In</guimenuitem></menuchoice> or "
-"<menuchoice><guimenu>View</guimenu><guimenuitem>Zoom "
-"Out</guimenuitem></menuchoice>. To restore the image to its original size, "
-"choose <menuchoice><guimenu>View</guimenu><guimenuitem>Normal "
-"Size</guimenuitem></menuchoice>. To make the image fit in the window, choose"
-" <menuchoice><guimenu>View</guimenu><guimenuitem>Best "
-"Fit</guimenuitem></menuchoice>."
+"Choose <menuchoice><guimenu>View</guimenu><guimenuitem>Zoom In</"
+"guimenuitem></menuchoice> or <menuchoice><guimenu>View</"
+"guimenu><guimenuitem>Zoom Out</guimenuitem></menuchoice>. To restore the "
+"image to its original size, choose <menuchoice><guimenu>View</"
+"guimenu><guimenuitem>Normal Size</guimenuitem></menuchoice>. To make the "
+"image fit in the window, choose <menuchoice><guimenu>View</"
+"guimenu><guimenuitem>Best Fit</guimenuitem></menuchoice>."
 msgstr ""
 
 #. (itstool) path: listitem/para
@@ -660,12 +659,12 @@ msgstr ""
 #. (itstool) path: listitem/para
 #: C/index.docbook:476
 msgid ""
-"Use the keyboard. To zoom in, <keycombo> "
-"<keycap>Ctrl</keycap><keycap>+</keycap> </keycombo> or <keycap>+</keycap>. "
-"To zoom out, <keycombo> <keycap>Ctrl</keycap><keycap>-</keycap> </keycombo> "
-"or <keycap>-</keycap>. To go back to the normal size, <keycombo> "
-"<keycap>Ctrl</keycap><keycap>0</keycap> </keycombo> or <keycap>1</keycap>. "
-"To scale the image to fit the window, press <keycap>F</keycap>."
+"Use the keyboard. To zoom in, <keycombo> <keycap>Ctrl</keycap><keycap>+</"
+"keycap> </keycombo> or <keycap>+</keycap>. To zoom out, <keycombo> "
+"<keycap>Ctrl</keycap><keycap>-</keycap> </keycombo> or <keycap>-</keycap>. "
+"To go back to the normal size, <keycombo> <keycap>Ctrl</keycap><keycap>0</"
+"keycap> </keycombo> or <keycap>1</keycap>. To scale the image to fit the "
+"window, press <keycap>F</keycap>."
 msgstr ""
 
 #. (itstool) path: section/para
@@ -683,9 +682,8 @@ msgstr "Перегляд зображення на увесь екран або 
 #. (itstool) path: section/para
 #: C/index.docbook:484
 msgid ""
-"To show the image using the entire screen, choose "
-"<menuchoice><guimenu>View</guimenu><guimenuitem>Full "
-"Screen</guimenuitem></menuchoice>."
+"To show the image using the entire screen, choose <menuchoice><guimenu>View</"
+"guimenu><guimenuitem>Full Screen</guimenuitem></menuchoice>."
 msgstr ""
 
 #. (itstool) path: section/para
@@ -693,8 +691,7 @@ msgstr ""
 msgid ""
 "No panels, window frames, or menubars are visible when an image is shown "
 "like this. To return to the normal view, press <keycap>Esc</keycap>, or "
-"<keycap>F11</keycap>, or "
-"<keycombo><keycap>Ctrl</keycap><keycap>W</keycap></keycombo>."
+"<keycap>F11</keycap>."
 msgstr ""
 
 #. (itstool) path: section/para
@@ -707,10 +704,10 @@ msgstr ""
 #. (itstool) path: section/para
 #: C/index.docbook:487
 msgid ""
-"If you have multiple images in your collection you can press "
-"<keycap>Space</keycap> or use the right/down cursor keys to advance to the "
-"next image. The previous image can be reached by pressing "
-"<keycap>Backspace</keycap> or using the left/up cursor keys."
+"If you have multiple images in your collection you can press <keycap>Space</"
+"keycap> or use the right/down cursor keys to advance to the next image. The "
+"previous image can be reached by pressing <keycap>Backspace</keycap> or "
+"using the left/up cursor keys."
 msgstr ""
 
 #. (itstool) path: section/para
@@ -718,14 +715,13 @@ msgstr ""
 msgid ""
 "In this case you can also use the slideshow mode, where <application>Image "
 "Viewer</application> automatically switches to the next image in your "
-"collection. You can start a slideshow by choosing "
-"<menuchoice><guimenu>View</guimenu><guimenuitem>Slideshow</guimenuitem></menuchoice>"
-" or by pressing <keycap>F5</keycap>. The slideshow can be paused/continued "
-"by pressing <keycap>P</keycap>. To stop the slideshow, press the "
-"<keycap>Esc</keycap> or <keycap>F5</keycap> key, or "
-"<keycombo><keycap>Ctrl</keycap><keycap>W</keycap></keycombo>. For more "
-"information about how to customize the slide show, see <xref linkend=\"eoc-"
-"prefs-slideshow\"/>."
+"collection. You can start a slideshow by choosing <menuchoice><guimenu>View</"
+"guimenu><guimenuitem>Slideshow</guimenuitem></menuchoice> or by pressing "
+"<keycap>F5</keycap>. The slideshow can be paused/continued by pressing "
+"<keycap>P</keycap>. To stop the slideshow, press the <keycap>Esc</keycap> or "
+"<keycap>F5</keycap> key, or <keycombo><keycap>Ctrl</keycap><keycap>W</"
+"keycap></keycombo>. For more information about how to customize the slide "
+"show, see <xref linkend=\"eoc-prefs-slideshow\"/>."
 msgstr ""
 
 #. (itstool) path: info/title
@@ -750,17 +746,17 @@ msgstr "Обертання зображення"
 #. (itstool) path: section/para
 #: C/index.docbook:504
 msgid ""
-"To flip an image along the horizontal axis of the image, choose <menuchoice>"
-" <guimenu>Edit</guimenu> <guimenuitem>Flip Horizontal</guimenuitem> "
-"</menuchoice>."
+"To flip an image along the horizontal axis of the image, choose <menuchoice> "
+"<guimenu>Edit</guimenu> <guimenuitem>Flip Horizontal</guimenuitem> </"
+"menuchoice>."
 msgstr ""
 
 #. (itstool) path: section/para
 #: C/index.docbook:509
 msgid ""
 "To flip an image along the vertical axis of the image, choose <menuchoice> "
-"<guimenu>Edit</guimenu> <guimenuitem>Flip Vertical</guimenuitem> "
-"</menuchoice>."
+"<guimenu>Edit</guimenu> <guimenuitem>Flip Vertical</guimenuitem> </"
+"menuchoice>."
 msgstr ""
 
 #. (itstool) path: info/title
@@ -772,16 +768,16 @@ msgstr "Поворот зображення"
 #: C/index.docbook:519
 msgid ""
 "To rotate an image 90 degrees in a clockwise direction, choose <menuchoice> "
-"<guimenu>Edit</guimenu> <guimenuitem>Rotate Clockwise</guimenuitem> "
-"</menuchoice>."
+"<guimenu>Edit</guimenu> <guimenuitem>Rotate Clockwise</guimenuitem> </"
+"menuchoice>."
 msgstr ""
 
 #. (itstool) path: section/para
 #: C/index.docbook:524
 msgid ""
 "To rotate an image 90 degrees in an anticlockwise direction, choose "
-"<menuchoice> <guimenu>Edit</guimenu> <guimenuitem>Rotate "
-"Counterclockwise</guimenuitem> </menuchoice>."
+"<menuchoice> <guimenu>Edit</guimenu> <guimenuitem>Rotate Counterclockwise</"
+"guimenuitem> </menuchoice>."
 msgstr ""
 
 #. (itstool) path: info/title
@@ -792,8 +788,8 @@ msgstr "Скасування дії"
 #. (itstool) path: section/para
 #: C/index.docbook:534
 msgid ""
-"To undo a flip or rotate action, choose <menuchoice> <guimenu>Edit</guimenu>"
-" <guimenuitem>Undo</guimenuitem> </menuchoice> or press "
+"To undo a flip or rotate action, choose <menuchoice> <guimenu>Edit</guimenu> "
+"<guimenuitem>Undo</guimenuitem> </menuchoice> or press "
 "<keycombo><keycap>Ctrl</keycap><keycap>Z</keycap></keycombo> ."
 msgstr ""
 
@@ -824,8 +820,8 @@ msgstr ""
 #. (itstool) path: note/para
 #: C/index.docbook:554
 msgid ""
-"You can also use the <keycap>Del</keycap> key to move an image to the Trash,"
-" in which case you will be asked for confirmation."
+"You can also use the <keycap>Del</keycap> key to move an image to the Trash, "
+"in which case you will be asked for confirmation."
 msgstr ""
 
 #. (itstool) path: info/title
@@ -837,10 +833,10 @@ msgstr "Збереження зображень"
 #: C/index.docbook:563
 msgid ""
 "<application>Image Viewer</application> always tries to choose the save "
-"method with the least impact to the image data. For example, if an otherwise"
-" unmodified image is saved under a different name in the same format, the "
-"file is simply copied. If <systemitem class=\"library\">libjpeg</systemitem>"
-" is available on the system all JPEG image modifications are done without "
+"method with the least impact to the image data. For example, if an otherwise "
+"unmodified image is saved under a different name in the same format, the "
+"file is simply copied. If <systemitem class=\"library\">libjpeg</systemitem> "
+"is available on the system all JPEG image modifications are done without "
 "loss of image information."
 msgstr ""
 
@@ -853,8 +849,8 @@ msgstr "Збереження зображення"
 #: C/index.docbook:570
 msgid ""
 "To save an image, choose <menuchoice> <guimenu>Image</guimenu> "
-"<guimenuitem>Save</guimenuitem> </menuchoice>. The image will be saved under"
-" the same name and file type. Therefore, unmodified images needn't be saved."
+"<guimenuitem>Save</guimenuitem> </menuchoice>. The image will be saved under "
+"the same name and file type. Therefore, unmodified images needn't be saved."
 msgstr ""
 
 #. (itstool) path: info/title
@@ -866,29 +862,27 @@ msgstr "Збереження зображення під іншим ім'ям"
 #: C/index.docbook:581
 msgid ""
 "To save an image under a different name, or convert it to a different file "
-"type, choose <menuchoice> <guimenu>Image</guimenu> <guimenuitem>Save "
-"As</guimenuitem> </menuchoice>."
+"type, choose <menuchoice> <guimenu>Image</guimenu> <guimenuitem>Save As</"
+"guimenuitem> </menuchoice>."
 msgstr ""
 
 #. (itstool) path: section/para
 #: C/index.docbook:586
 msgid ""
 "Specify the filename in the <guilabel>Name</guilabel> field in the "
-"<guilabel>Save Image</guilabel> dialog, then click "
-"<guibutton>Save</guibutton>. The file is saved in the current folder by "
-"default. <application>Image Viewer</application> tries to determine the file"
-" type from the given filename suffix. If the image should be saved in "
-"another folder or the file type detection failed, expand the dialog by "
-"clicking on <guilabel>Browse for other folders</guilabel>. This allows "
-"further folder navigation and the specification of the file type from the "
-"drop down box."
+"<guilabel>Save Image</guilabel> dialog, then click <guibutton>Save</"
+"guibutton>. The file is saved in the current folder by default. "
+"<application>Image Viewer</application> tries to determine the file type "
+"from the given filename suffix. If the image should be saved in another "
+"folder or the file type detection failed, expand the dialog by clicking on "
+"<guilabel>Browse for other folders</guilabel>. This allows further folder "
+"navigation and the specification of the file type from the drop down box."
 msgstr ""
 
 #. (itstool) path: section/para
 #: C/index.docbook:587
 msgid "You can save multiple images at once: see the next section."
-msgstr ""
-"Ви можете одночасно зберігати кілька зображень: див. Наступний розділ."
+msgstr "Ви можете одночасно зберігати кілька зображень: див. Наступний розділ."
 
 #. (itstool) path: info/title
 #: C/index.docbook:591
@@ -931,8 +925,7 @@ msgid ""
 "drop-down list to open a standard open folder dialog for browsing the "
 "filesystem. The resulting filename for each image is specified by "
 "<guilabel>Filename format</guilabel>. The filename schema is constructed by "
-"simple characters and special tags. The following special tags are "
-"available:"
+"simple characters and special tags. The following special tags are available:"
 msgstr ""
 
 #. (itstool) path: listitem/para
@@ -958,9 +951,9 @@ msgstr ""
 #: C/index.docbook:621
 msgid ""
 "The image format is determined by the drop-down box after the schema "
-"definition. Select a specific image format or use the <guilabel>as "
-"is</guilabel> option to state that the same format as the original file "
-"should be used."
+"definition. Select a specific image format or use the <guilabel>as is</"
+"guilabel> option to state that the same format as the original file should "
+"be used."
 msgstr ""
 
 #. (itstool) path: section/para
@@ -995,8 +988,8 @@ msgstr "Налаштування параметрів сторінки"
 #: C/index.docbook:637
 msgid ""
 "Before printing you need to set the page settings you would like to use. To "
-"do that choose <menuchoice><guimenu>Image</guimenu><guimenuitem>Page "
-"Setup</guimenuitem></menuchoice>."
+"do that choose <menuchoice><guimenu>Image</guimenu><guimenuitem>Page Setup</"
+"guimenuitem></menuchoice>."
 msgstr ""
 
 #. (itstool) path: section/para
@@ -1020,15 +1013,15 @@ msgstr "Щоб надрукувати зображення, виконайте �
 #. (itstool) path: listitem/para
 #: C/index.docbook:646
 msgid ""
-"Select "
-"<menuchoice><guimenu>Image</guimenu><guimenuitem>Print</guimenuitem></menuchoice>"
+"Select <menuchoice><guimenu>Image</guimenu><guimenuitem>Print</guimenuitem></"
+"menuchoice>"
 msgstr ""
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:649
 msgid ""
-"In the <guilabel>Print</guilabel> dialog, select the printer you want to use"
-" from the list."
+"In the <guilabel>Print</guilabel> dialog, select the printer you want to use "
+"from the list."
 msgstr ""
 
 #. (itstool) path: listitem/para
@@ -1071,8 +1064,8 @@ msgstr ""
 #. (itstool) path: listitem/para
 #: C/index.docbook:666
 msgid ""
-"The options in the <guilabel>Position</guilabel> section allow you to change"
-" the images position on the page."
+"The options in the <guilabel>Position</guilabel> section allow you to change "
+"the images position on the page."
 msgstr ""
 
 #. (itstool) path: listitem/para
@@ -1085,17 +1078,17 @@ msgstr ""
 #. (itstool) path: listitem/para
 #: C/index.docbook:672
 msgid ""
-"The options in the <guilabel>Size</guilabel> section allow you to scale your"
-" image to your liking. Scaling is limited by either the image size or by the"
-" page size, depending on what condition is met first."
+"The options in the <guilabel>Size</guilabel> section allow you to scale your "
+"image to your liking. Scaling is limited by either the image size or by the "
+"page size, depending on what condition is met first."
 msgstr ""
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:675
 msgid ""
 "The <guilabel>Unit</guilabel> option allows you to change the metric unit "
-"which is used by the options on the <guilabel>Image Settings</guilabel> tab."
-" When you change this option the other fields values are converted "
+"which is used by the options on the <guilabel>Image Settings</guilabel> tab. "
+"When you change this option the other fields values are converted "
 "accordingly."
 msgstr ""
 
@@ -1107,8 +1100,8 @@ msgstr "Налаштування панелі знарядь"
 #. (itstool) path: section/para
 #: C/index.docbook:683
 msgid ""
-"Image Viewer's default toolbar contains only a basic set of items to keep it"
-" simple. But you can modify the toolbar if you prefer a different set."
+"Image Viewer's default toolbar contains only a basic set of items to keep it "
+"simple. But you can modify the toolbar if you prefer a different set."
 msgstr ""
 
 #. (itstool) path: info/title
@@ -1120,9 +1113,8 @@ msgstr "Змінювання панелі знарядь"
 #: C/index.docbook:686
 msgid ""
 "If you want to modify the toolbar you need to open the toolbar editor by "
-"going to "
-"<menuchoice><guimenu>Edit</guimenu><guimenuitem>Toolbar</guimenuitem></menuchoice>."
-" The following window will pop up:"
+"going to <menuchoice><guimenu>Edit</guimenu><guimenuitem>Toolbar</"
+"guimenuitem></menuchoice>. The following window will pop up:"
 msgstr ""
 
 #. (itstool) path: info/title
@@ -1166,9 +1158,9 @@ msgstr ""
 #. (itstool) path: section/para
 #: C/index.docbook:711
 msgid ""
-"When you have finished editing the toolbar, click the "
-"<guibutton>Close</guibutton> button in the toolbar editor window. This will "
-"close the toolbar editor and make your modified toolbar active."
+"When you have finished editing the toolbar, click the <guibutton>Close</"
+"guibutton> button in the toolbar editor window. This will close the toolbar "
+"editor and make your modified toolbar active."
 msgstr ""
 
 #. (itstool) path: info/title
@@ -1185,7 +1177,8 @@ msgstr ""
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:718
-msgid "Open the toolbar editor (see <xref linkend=\"eoc-toolbareditor-use\"/>)."
+msgid ""
+"Open the toolbar editor (see <xref linkend=\"eoc-toolbareditor-use\"/>)."
 msgstr ""
 
 #. (itstool) path: listitem/para
@@ -1208,10 +1201,10 @@ msgstr "Параметри"
 #. (itstool) path: section/para
 #: C/index.docbook:731
 msgid ""
-"Preferences can be changed by going to "
-"<menuchoice><guimenu>Edit</guimenu><guimenuitem>Preferences</guimenuitem></menuchoice>."
-" You will be able to change the options for image viewing and slide shows. "
-"The changes apply to all open windows instantly."
+"Preferences can be changed by going to <menuchoice><guimenu>Edit</"
+"guimenu><guimenuitem>Preferences</guimenuitem></menuchoice>. You will be "
+"able to change the options for image viewing and slide shows. The changes "
+"apply to all open windows instantly."
 msgstr ""
 
 #. (itstool) path: info/title
@@ -1304,9 +1297,9 @@ msgstr ""
 #: C/index.docbook:772
 msgid ""
 "Select the <guilabel>Expand images to fit screen</guilabel> option to "
-"enlarge images to fit the screen during the slide show. If you do not select"
-" this option, images that are smaller than the screen size are not resized "
-"to fit the screen."
+"enlarge images to fit the screen during the slide show. If you do not select "
+"this option, images that are smaller than the screen size are not resized to "
+"fit the screen."
 msgstr ""
 
 #. (itstool) path: varlistentry/term
@@ -1338,10 +1331,9 @@ msgid ""
 "Permission is granted to copy, distribute and/or modify this document under "
 "the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any "
 "later version published by the Free Software Foundation with no Invariant "
-"Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy"
-" of the GFDL at this <link "
-"xlink:href=\"https://www.gnu.org/licenses/fdl-1.1.html\">link</link> or in "
-"the file COPYING-DOCS distributed with this manual."
+"Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy "
+"of the GFDL at this <link xlink:href=\"https://www.gnu.org/licenses/fdl-1.1."
+"html\">link</link> or in the file COPYING-DOCS distributed with this manual."
 msgstr ""
 
 #. (itstool) path: legalnotice/para
@@ -1349,8 +1341,8 @@ msgstr ""
 msgid ""
 "This manual is part of a collection of CAFE manuals distributed under the "
 "GFDL. If you want to distribute this manual separately from the collection, "
-"you can do so by adding a copy of the license to the manual, as described in"
-" section 6 of the license."
+"you can do so by adding a copy of the license to the manual, as described in "
+"section 6 of the license."
 msgstr ""
 "Цей посібник є частиною збірки документації CAFE, яка розповсюджується за "
 "умовами ліцензії GFDL. Якщо ви бажаєте розповсюджувати цей посібник окремо "
@@ -1389,29 +1381,29 @@ msgid ""
 msgstr ""
 "ДОКУМЕНТ НАДАЄТЬСЯ \\\"ЯК Є\\\", БЕЗ БУДЬ-ЯКИХ ГАРАНТІЇ, ЯВНИХ ЧИ НЕЯВНИХ, "
 "ВКЛЮЧАЮЧИ, АЛЕ НЕ ОБМЕЖУЮЧИСЬ, ГАРАНТІЙ ЩО ЦЕЙ ДОКУМЕНТ ЧИ ЗМІНЕНА ВЕРСІЯ "
-"ДОКУМЕНТА ВІЛЬНІ ВІД ДЕФЕКТІВ, ПРИДАТНІ ДО ПРОДАЖУ, ВІДПОВІДАЮТЬ ПЕВНІЙ МЕТІ"
-" АБО НЕ ПОРУШУЮТЬ ЧИЇСЬ ПРАВА. ВЕСЬ РИЗИК ЗА ЯКІСТЬ, ТОЧНІСТЬ, ТА ЧИННІСТЬ "
+"ДОКУМЕНТА ВІЛЬНІ ВІД ДЕФЕКТІВ, ПРИДАТНІ ДО ПРОДАЖУ, ВІДПОВІДАЮТЬ ПЕВНІЙ МЕТІ "
+"АБО НЕ ПОРУШУЮТЬ ЧИЇСЬ ПРАВА. ВЕСЬ РИЗИК ЗА ЯКІСТЬ, ТОЧНІСТЬ, ТА ЧИННІСТЬ "
 "ЦЬОГО ДОКУМЕНТУ АБО ЙОГО ЗМІНЕНИХ ВЕРСІЙ ЛЕЖИТЬ НА ВАС.  ЯКЩО БУДЬ-ЯКИЙ "
 "ДОКУМЕНТ ЧИ ЗМІНЕНА ВЕРСІЯ БУДУТЬ ВИЗНАНІ ДЕФЕКТНИМИ У БУДЬ-ЯКОМУ "
-"ВІДНОШЕННІ, ВИ (НЕ ПОЧАТКОВИЙ УКЛАДАЧ, АВТОР АБО БУДЬ-ЯКИЙ СПІВАВТОР) БЕРЕТЕ"
-" НА СЕБЕ ВИТРАТИ ЗА БУДЬ-ЯКЕ НЕОБХІДНЕ ОБСЛУГОВУВАННЯ, РЕМОНТ ЧИ "
-"ВИПРАВЛЕННЯ. ЦЯ ВІДМОВА ВІД ГАРАНТІЙ СКЛАДАЄ ВАЖЛИВУ ЧАСТИНУ ЦІЄЇ ЛІЦЕНЗІЇ. "
-"НЕ ДОПУСКАЄТЬСЯ ВИКОРИСТАННЯ ЦЬОГО ДОКУМЕНТУ АБО ЙОГО ЗМІНЕНОЇ ВЕРСІЇ БЕЗ "
+"ВІДНОШЕННІ, ВИ (НЕ ПОЧАТКОВИЙ УКЛАДАЧ, АВТОР АБО БУДЬ-ЯКИЙ СПІВАВТОР) БЕРЕТЕ "
+"НА СЕБЕ ВИТРАТИ ЗА БУДЬ-ЯКЕ НЕОБХІДНЕ ОБСЛУГОВУВАННЯ, РЕМОНТ ЧИ ВИПРАВЛЕННЯ. "
+"ЦЯ ВІДМОВА ВІД ГАРАНТІЙ СКЛАДАЄ ВАЖЛИВУ ЧАСТИНУ ЦІЄЇ ЛІЦЕНЗІЇ. НЕ "
+"ДОПУСКАЄТЬСЯ ВИКОРИСТАННЯ ЦЬОГО ДОКУМЕНТУ АБО ЙОГО ЗМІНЕНОЇ ВЕРСІЇ БЕЗ "
 "ПРИЙНЯТТЯ ЦІЄЇ ВІДМОВИ; ТА"
 
 #. (itstool) path: listitem/para
 #: C/legal.xml:56
 msgid ""
-"UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING"
-" NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL THE AUTHOR, INITIAL WRITER, ANY "
+"UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING "
+"NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL THE AUTHOR, INITIAL WRITER, ANY "
 "CONTRIBUTOR, OR ANY DISTRIBUTOR OF THE DOCUMENT OR MODIFIED VERSION OF THE "
 "DOCUMENT, OR ANY SUPPLIER OF ANY OF SUCH PARTIES, BE LIABLE TO ANY PERSON "
 "FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF "
 "ANY CHARACTER INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF GOODWILL, "
-"WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER DAMAGES"
-" OR LOSSES ARISING OUT OF OR RELATING TO USE OF THE DOCUMENT AND MODIFIED "
-"VERSIONS OF THE DOCUMENT, EVEN IF SUCH PARTY SHALL HAVE BEEN INFORMED OF THE"
-" POSSIBILITY OF SUCH DAMAGES."
+"WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER DAMAGES "
+"OR LOSSES ARISING OUT OF OR RELATING TO USE OF THE DOCUMENT AND MODIFIED "
+"VERSIONS OF THE DOCUMENT, EVEN IF SUCH PARTY SHALL HAVE BEEN INFORMED OF THE "
+"POSSIBILITY OF SUCH DAMAGES."
 msgstr ""
 "НІ ЗА ЯКИХ ОБСТАВИН ТА ЗА БУДЬ-ЯКОГО ЗАКОНОДАВСТВА, ЧИ ТО ГРОМАДЯНСЬКОЇ "
 "ВІДПОВІДАЛЬНОСТІ (ВКЛЮЧАЮЧИ ХАЛАТНІСТЬ), ДОГОВОРУ, ЧИ ЧОГОСЬ ІНШОГО, АВТОР, "
@@ -1419,11 +1411,11 @@ msgstr ""
 "ЗМІНЕНОЇ ВЕРСІЇ ДОКУМЕНТУ, АБО БУДЬ-ЯКИЙ ПОСТАЧАЛЬНИК БУДЬ-ЯКОЇ З ЦИХ "
 "СТОРІН, НЕ НЕСЕ ВІДПОВІДАЛЬНІСТЬ ПЕРЕД БУДЬ-ЯКОЮ ОСОБОЮ ЗА БУДЬ-ЯКІ ПРЯМІ, "
 "НЕПРЯМІ, ОСОБЛИВІ, ВИПАДКОВІ, АБО ІСТОТНІ ЗБИТКИ БУДЬ-ЯКОГО ХАРАКТЕРУ "
-"ВКЛЮЧАЮЧИ, АЛЕ НЕ ОБМЕЖУЮЧИСЬ, ЗБИТКАМИ ВІД ВТРАТИ ПРЕСТИЖУ, ЗУПИНКИ РОБОТИ,"
-" ЗБОЇВ АБО НЕСПРАВНОСТЕЙ КОМП'ЮТЕРА, АБО БУДЬ-ЯКІ ІНШІ ЗБИТКИ АБО ВТРАТИ ЩО "
+"ВКЛЮЧАЮЧИ, АЛЕ НЕ ОБМЕЖУЮЧИСЬ, ЗБИТКАМИ ВІД ВТРАТИ ПРЕСТИЖУ, ЗУПИНКИ РОБОТИ, "
+"ЗБОЇВ АБО НЕСПРАВНОСТЕЙ КОМП'ЮТЕРА, АБО БУДЬ-ЯКІ ІНШІ ЗБИТКИ АБО ВТРАТИ ЩО "
 "ВИНИКЛИ БЕЗВІДНОСНО АБО ВНАСЛІДОК ВИКОРИСТАННЯ ЦЬОГО ДОКУМЕНТУ ТА ЗМІНЕНИХ "
-"ВЕРСІЙ ЦЬОГО ДОКУМЕНТУ, НАВІТЬ ЯКЩО ЦІ СТОРОНИ, МОЖЛИВО, БУЛИ ПРОІНФОРМОВАНІ"
-" ПРО МОЖЛИВІСТЬ ТАКИХ ЗБИТКІВ."
+"ВЕРСІЙ ЦЬОГО ДОКУМЕНТУ, НАВІТЬ ЯКЩО ЦІ СТОРОНИ, МОЖЛИВО, БУЛИ ПРОІНФОРМОВАНІ "
+"ПРО МОЖЛИВІСТЬ ТАКИХ ЗБИТКІВ."
 
 #. (itstool) path: legalnotice/para
 #: C/legal.xml:29
@@ -1445,6 +1437,9 @@ msgstr "Зворотній зв'язок"
 msgid ""
 "To report a bug or make a suggestion regarding the <application>Image "
 "Viewer</application> application or this manual, follow the directions in "
-"the <link xlink:href=\"help:cafe-user-guide/feedback\">CAFE Feedback "
-"Page</link>."
+"the <link xlink:href=\"help:cafe-user-guide/feedback\">CAFE Feedback Page</"
+"link>."
 msgstr ""
+
+#~ msgid "Image Information Pane"
+#~ msgstr "Панель інформація про зображення"
