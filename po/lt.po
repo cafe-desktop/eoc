@@ -2,7 +2,7 @@
 # Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the eoc package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Audrius Meskauskas, 2020
 # brennus <jonas.ska@gmail.com>, 2020
@@ -10,55 +10,57 @@
 # clefebvre <clement.lefebvre@linuxmint.com>, 2020
 # Moo, 2020
 # Džiugas Grėbliūnas <dziugas.grebliunas@gmail.com>, 2020
-# 
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: eoc 1.23.1\n"
+"Project-Id-Version: eoc 1.25.0\n"
 "Report-Msgid-Bugs-To: http://www.cafe-desktop.org\n"
-"POT-Creation-Date: 2020-01-10 14:33+0100\n"
+"POT-Creation-Date: 2023-06-09 11:11+0200\n"
 "PO-Revision-Date: 2020-02-14 12:07+0000\n"
 "Last-Translator: Džiugas Grėbliūnas <dziugas.grebliunas@gmail.com>, 2020\n"
 "Language-Team: Lithuanian (https://www.transifex.com/cafe/teams/13566/lt/)\n"
+"Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: lt\n"
-"Plural-Forms: nplurals=4; plural=(n % 10 == 1 && (n % 100 > 19 || n % 100 < 11) ? 0 : (n % 10 >= 2 && n % 10 <=9) && (n % 100 > 19 || n % 100 < 11) ? 1 : n % 1 != 0 ? 2: 3);\n"
+"Plural-Forms: nplurals=4; plural=(n % 10 == 1 && (n % 100 > 19 || n % 100 < "
+"11) ? 0 : (n % 10 >= 2 && n % 10 <=9) && (n % 100 > 19 || n % 100 < 11) ? "
+"1 : n % 1 != 0 ? 2: 3);\n"
 
-#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:946
+#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:934
 #, c-format
 msgid "Show “_%s”"
 msgstr "Rodyti „_%s“"
 
-#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1420
+#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1400
 msgid "_Move on Toolbar"
 msgstr "_Perkelti į įrankių juostą"
 
-#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1421
+#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1401
 msgid "Move the selected item on the toolbar"
 msgstr "Perkelti pasirinktą elementą į įrankių juostą"
 
-#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1422
+#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1402
 msgid "_Remove from Toolbar"
 msgstr "_Pašalinti iš įrankių juostos"
 
-#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1423
+#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1403
 msgid "Remove the selected item from the toolbar"
 msgstr "Pašalinti pasirinktą elementą iš įrankių juostos"
 
-#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1424
+#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1404
 msgid "_Delete Toolbar"
 msgstr "_Pašalinti įrankių juostą"
 
-#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1425
+#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1405
 msgid "Remove the selected toolbar"
 msgstr "Pašalinti pasirinktą įrankių juostą"
 
-#: cut-n-paste/toolbar-editor/egg-toolbar-editor.c:483
+#: cut-n-paste/toolbar-editor/egg-toolbar-editor.c:481
 msgid "Separator"
 msgstr "Skirtukas"
 
-#: data/eoc.appdata.xml.in:6 src/eoc-window.c:2640
+#: data/eoc.appdata.xml.in:6 src/eoc-window.c:2592
 msgid "Eye of CAFE"
 msgstr "Eye of CAFE"
 
@@ -68,9 +70,9 @@ msgstr "Paprasta paveikslų žiūryklė"
 
 #: data/eoc.appdata.xml.in:9
 msgid ""
-"Eye of CAFE is a simple viewer for browsing images on your computer. Once an"
-" image is loaded, you can zoom and rotate the image, and also view "
-"subsequent images in the directory the image was loaded from."
+"Eye of CAFE is a simple viewer for browsing images on your computer. Once an "
+"image is loaded, you can zoom and rotate the image, and also view subsequent "
+"images in the directory the image was loaded from."
 msgstr ""
 "Eye of CAFE yra paprasta paveikslų žiūryklė, skirta naršyti po paveikslus "
 "jūsų kompiuteryje. Kai įkeliamas paveikslas, galite ji didinti/mažinti, "
@@ -85,18 +87,12 @@ msgstr "Eye of CAFE paveikslų žiūryklė"
 msgid "Browse and rotate images"
 msgstr "Naršyti ir pasukti atvaizdus"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/eoc.desktop.in.in:8
-msgid "eoc"
-msgstr "eoc"
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/eoc.desktop.in.in:14
 msgid "image;viewer;JPEG;PNG;TIFF;SVG;CAFE;photos;browse;thumbnails;rotate;"
 msgstr ""
-"paveiklsų;paveiksliukų;žiūryklė;JPEG;PNG;TIFF;SVG;CAFE;nuotraukos;nuotraukų;naršyti;miniatiūros;pasukti;"
+"paveiklsų;paveiksliukų;žiūryklė;JPEG;PNG;TIFF;SVG;CAFE;nuotraukos;nuotraukų;"
+"naršyti;miniatiūros;pasukti;"
 
 #: data/eoc-image-properties-dialog.ui:8
 msgid "Image Properties"
@@ -405,8 +401,8 @@ msgid ""
 "background-color key is not set, the color is determined by the active CTK+ "
 "theme instead."
 msgstr ""
-"Spalva, naudojama plotui už paveikslo užpildyti. Jei fono spalva nenurodyta,"
-" ji yra nustatoma iš naudojamos CTK+ temos."
+"Spalva, naudojama plotui už paveikslo užpildyti. Jei fono spalva nenurodyta, "
+"ji yra nustatoma iš naudojamos CTK+ temos."
 
 #: data/org.cafe.eoc.gschema.xml.in:21
 msgid "Use a custom background color"
@@ -414,8 +410,8 @@ msgstr "Naudoti pasirinktąją fono spalvą"
 
 #: data/org.cafe.eoc.gschema.xml.in:22
 msgid ""
-"If this is active, the color set by the background-color key will be used to"
-" fill the area behind the image. If it is not set, the current CTK+ theme "
+"If this is active, the color set by the background-color key will be used to "
+"fill the area behind the image. If it is not set, the current CTK+ theme "
 "will determine the fill color."
 msgstr ""
 "Jei įjungta, fono spalva bus naudojama plotui už paveikslo užpildyti. Jei "
@@ -444,8 +440,7 @@ msgid ""
 "quality and is somewhat slower than non-extrapolated images."
 msgstr ""
 "Ar didinant mastelį, paveikslas turėtų būti ekstrapoliuotas. Taip gaunama "
-"prastesnė kokybė ir tai yra šiek tiek lėčiau už neekstrapoliuotus "
-"paveikslus."
+"prastesnė kokybė ir tai yra šiek tiek lėčiau už neekstrapoliuotus paveikslus."
 
 #: data/org.cafe.eoc.gschema.xml.in:36
 msgid "Transparency indicator"
@@ -476,9 +471,9 @@ msgstr "Mastelio daugiklis"
 #: data/org.cafe.eoc.gschema.xml.in:47
 msgid ""
 "The multiplier to be applied when using the mouse scroll wheel for zooming. "
-"This value defines the zooming step used for each scroll event. For example,"
-" 0.05 results in a 5% zoom increment for each scroll event and 1.00 result "
-"in a 100% zoom increment."
+"This value defines the zooming step used for each scroll event. For example, "
+"0.05 results in a 5% zoom increment for each scroll event and 1.00 result in "
+"a 100% zoom increment."
 msgstr ""
 "Daugiklis taikomas naudojant pelės slinkties ratuką mastelio keitimui. Ši "
 "reikšmė apibrėžia mastelio žingnį naudojama kiekvienam slinkties įvykiui. "
@@ -531,8 +526,8 @@ msgstr "Delsa prieš parodant kitą paveikslą"
 
 #: data/org.cafe.eoc.gschema.xml.in:74
 msgid ""
-"A value greater than 0 determines the seconds an image stays on screen until"
-" the next one is shown automatically. Zero disables the automatic browsing."
+"A value greater than 0 determines the seconds an image stays on screen until "
+"the next one is shown automatically. Zero disables the automatic browsing."
 msgstr ""
 "Reikšmė didesnė už 0 nurodo kiek sekundžių paveikslas išlieka ekrane iki "
 "parodomas kitas. Nulis – išjungti automatinį naršymą."
@@ -591,14 +586,14 @@ msgstr "Ar metaduomenų sąrašas savybių dialoge turėtų turėti savo puslap�
 #: data/org.cafe.eoc.gschema.xml.in:118
 msgid ""
 "If activated, the detailed metadata list in the properties dialog will be "
-"moved to its own page in the dialog. This should make the dialog more usable"
-" on smaller screens, e.g. as used by netbooks. If disabled, the widget will "
+"moved to its own page in the dialog. This should make the dialog more usable "
+"on smaller screens, e.g. as used by netbooks. If disabled, the widget will "
 "be embedded on the \"Metadata\" page."
 msgstr ""
 "Jei įjungta, išsamus metaduomenų sąrašas savybių dialoge bus perkeltas į "
-"atskirą puslapį dialoge. Toks dialogas turėtų būti patogesnis naudoti mažame"
-" ekrane, pvz. internetiniuose kompiuteriuose. Jei išjungta, metaduomenys bus"
-" rodomi „Metaduomenų“ puslapyje."
+"atskirą puslapį dialoge. Toks dialogas turėtų būti patogesnis naudoti mažame "
+"ekrane, pvz. internetiniuose kompiuteriuose. Jei išjungta, metaduomenys bus "
+"rodomi „Metaduomenų“ puslapyje."
 
 #: data/org.cafe.eoc.gschema.xml.in:122
 msgid "External program to use for editing images"
@@ -606,19 +601,19 @@ msgstr "Paveikslų redagavimui skirta išorinė programa"
 
 #: data/org.cafe.eoc.gschema.xml.in:123
 msgid ""
-"The desktop file name (including the \".desktop\") of the application to use"
-" for editing images (when the \"Edit Image\" toolbar button is clicked). Set"
-" to the empty string to disable this feature."
+"The desktop file name (including the \".desktop\") of the application to use "
+"for editing images (when the \"Edit Image\" toolbar button is clicked). Set "
+"to the empty string to disable this feature."
 msgstr ""
-"Programos, kuri bus naudojama paveikslų redagavimui (kuomet įrankių juostoje"
-" bus nuspaudžiamas mygtukas \"Redaguoti paveikslą\") darbalaukio failo "
+"Programos, kuri bus naudojama paveikslų redagavimui (kuomet įrankių juostoje "
+"bus nuspaudžiamas mygtukas \"Redaguoti paveikslą\") darbalaukio failo "
 "pavadinimas (įskaitant \".desktop\"). Palikite tuščią eilutę, norėdami "
 "išjungti šią funkciją."
 
 #: data/org.cafe.eoc.gschema.xml.in:127
 msgid ""
-"Whether the file chooser should show the user's pictures folder if no images"
-" are loaded."
+"Whether the file chooser should show the user's pictures folder if no images "
+"are loaded."
 msgstr ""
 "Ar failų parinkiklis turėtų rodyti naudotojo paveikslų aplanką, jei "
 "neįkeltas joks paveikslas."
@@ -652,10 +647,6 @@ msgstr ""
 msgid "Fullscreen with double-click"
 msgstr "Viso ekrano veiksena dvikarčiu spustelėjimu"
 
-#: plugins/fullscreen/fullscreen.plugin.desktop.in:6
-msgid "view-fullscreen"
-msgstr "view-fullscreen"
-
 #: plugins/reload/eoc-reload-plugin.c:45
 #: plugins/reload/reload.plugin.desktop.in:5
 msgid "Reload Image"
@@ -664,10 +655,6 @@ msgstr "Įkelti iš naujo"
 #: plugins/reload/eoc-reload-plugin.c:45
 msgid "Reload current image"
 msgstr "Įkelti iš naujo esamą atvaizdą"
-
-#: plugins/reload/reload.plugin.desktop.in:6
-msgid "view-refresh"
-msgstr "view-refresh"
 
 #: plugins/statusbar-date/statusbar-date.plugin.desktop.in:5
 msgid "Date in statusbar"
@@ -762,7 +749,7 @@ msgstr "Atverti paveikslą"
 msgid "Save Image"
 msgstr "Įrašyti paveikslą"
 
-#: src/eoc-file-chooser.c:467 src/eoc-window.c:4009
+#: src/eoc-file-chooser.c:467 src/eoc-window.c:3943
 msgid "Open Folder"
 msgstr "Atverti aplanką"
 
@@ -1042,7 +1029,7 @@ msgstr " (neteisingas Unikodas)"
 #. * - image height
 #. * - image size in bytes
 #. * - zoom in percent
-#: src/eoc-window.c:521
+#: src/eoc-window.c:519
 #, c-format
 msgid "%i × %i pixel  %s    %i%%"
 msgid_plural "%i × %i pixels  %s    %i%%"
@@ -1051,16 +1038,16 @@ msgstr[1] "%i × %i pikseliai %s    %i%%"
 msgstr[2] "%i × %i pikselių %s    %i%%"
 msgstr[3] "%i ×  %i pikselių %s %i%%"
 
-#: src/eoc-window.c:832
+#: src/eoc-window.c:820
 msgid "_Reload"
 msgstr "Į_kelti iš naujo"
 
-#: src/eoc-window.c:834 src/eoc-window.c:2794
+#: src/eoc-window.c:822 src/eoc-window.c:2745
 msgctxt "MessageArea"
 msgid "Hi_de"
 msgstr "_Slėpti"
 
-#: src/eoc-window.c:844
+#: src/eoc-window.c:832
 #, c-format
 msgid ""
 "The image \"%s\" has been modified by an external application.\n"
@@ -1069,7 +1056,7 @@ msgstr ""
 "Paveikslas „%s“ pakeistas kitos programos.\n"
 "Ar norite įkelti jį iš naujo?"
 
-#: src/eoc-window.c:1012
+#: src/eoc-window.c:998
 #, c-format
 msgid "Use \"%s\" to open the selected image"
 msgstr "Atverti pasirinktą paveikslą su „%s“"
@@ -1079,25 +1066,25 @@ msgstr "Atverti pasirinktą paveikslą su „%s“"
 #. * - the original filename
 #. * - the current image's position in the queue
 #. * - the total number of images queued for saving
-#: src/eoc-window.c:1176
+#: src/eoc-window.c:1154
 #, c-format
 msgid "Saving image \"%s\" (%u/%u)"
 msgstr "Įrašomas paveikslas „%s“ (%u/%u)"
 
-#: src/eoc-window.c:1543
+#: src/eoc-window.c:1513
 #, c-format
 msgid "Opening image \"%s\""
 msgstr "Atveriamas paveikslas „%s“"
 
-#: src/eoc-window.c:1909
+#: src/eoc-window.c:1869
 msgid "Leave Fullscreen"
 msgstr "Išjungti viso ekrano veikseną"
 
-#: src/eoc-window.c:2050
+#: src/eoc-window.c:2002
 msgid "Viewing a slideshow"
 msgstr "Rodoma pateiktis"
 
-#: src/eoc-window.c:2263
+#: src/eoc-window.c:2215
 #, c-format
 msgid ""
 "Error printing file:\n"
@@ -1106,15 +1093,15 @@ msgstr ""
 "Klaida spausdintant failą:\n"
 "%s"
 
-#: src/eoc-window.c:2526
+#: src/eoc-window.c:2478
 msgid "Toolbar Editor"
 msgstr "Įrankių juostos rengyklė"
 
-#: src/eoc-window.c:2529
+#: src/eoc-window.c:2481
 msgid "_Reset to Default"
 msgstr "_Atkurti numatytuosius"
 
-#: src/eoc-window.c:2594
+#: src/eoc-window.c:2546
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
 "under the terms of the GNU General Public License as published by the Free "
@@ -1126,47 +1113,45 @@ msgstr ""
 "Laisvosios Programinės Įrangos Fondo; 2-osios arba (jūsų pasirinkimu) bet "
 "kurios vėlesnės licencijos versijos sąlygomis.\n"
 
-#: src/eoc-window.c:2598
+#: src/eoc-window.c:2550
 msgid ""
 "This program is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
 "FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
 "more details.\n"
 msgstr ""
-"Ši programa yra platinama tikintis, kad ji bus naudinga, tačiau NESUTEIKIANT"
-" JOKIŲ GARANTIJŲ; netgi numanomų PARDAVIMO arba TINKAMUMO TAM TIKRAM TIKSLUI"
-" garantijų. Išsamesnę informaciją rasite GNU Bendrojoje Viešojoje "
+"Ši programa yra platinama tikintis, kad ji bus naudinga, tačiau NESUTEIKIANT "
+"JOKIŲ GARANTIJŲ; netgi numanomų PARDAVIMO arba TINKAMUMO TAM TIKRAM TIKSLUI "
+"garantijų. Išsamesnę informaciją rasite GNU Bendrojoje Viešojoje "
 "licencijoje.\n"
 
-#: src/eoc-window.c:2602
+#: src/eoc-window.c:2554
 msgid ""
-"You should have received a copy of the GNU General Public License along with"
-" this program; if not, write to the Free Software Foundation, Inc., 51 "
+"You should have received a copy of the GNU General Public License along with "
+"this program; if not, write to the Free Software Foundation, Inc., 51 "
 "Franklin St, Fifth Floor, Boston, MA 02110-1301, USA."
 msgstr ""
 "Prie šios programos turėtų būti pridėta GNU Bendroji viešoji licencija; "
-"jeigu ne, kreipkitės į Laisvosios programinės įrangos fondą, 51 Franklin St,"
-" Fifth Floor, Boston, MA 02110-1301, JAV."
+"jeigu ne, kreipkitės į Laisvosios programinės įrangos fondą, 51 Franklin St, "
+"Fifth Floor, Boston, MA 02110-1301, JAV."
 
-#: src/eoc-window.c:2641
+#: src/eoc-window.c:2593
 msgid "About Eye of CAFE"
 msgstr "Apie Eye of CAFE"
 
-#: src/eoc-window.c:2643
+#: src/eoc-window.c:2595
 msgid ""
 "Copyright © 2000-2010 Free Software Foundation, Inc.\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 CAFE developers"
+"Copyright © 2012-2020 MATE developers\n"
+"Copyright © 2023 Pablo Barciela"
 msgstr ""
-"Autorių teisės © 2000-2010 Free Software Foundation, Inc.\n"
-"Autorių teisės © 2011 Perberos\n"
-"Autorių teisės © 2012-2020 CAFE kūrėjai"
 
-#: src/eoc-window.c:2646
+#: src/eoc-window.c:2599
 msgid "The CAFE image viewer."
 msgstr "CAFE paveikslų žiūryklė."
 
-#: src/eoc-window.c:2649
+#: src/eoc-window.c:2602
 msgid "translator-credits"
 msgstr ""
 "Vertėjai:\n"
@@ -1180,15 +1165,15 @@ msgstr ""
 "Gediminas Paulauskas <menesis@chatsubo.lt>\n"
 "Moo"
 
-#: src/eoc-window.c:2742 src/eoc-window.c:2757
+#: src/eoc-window.c:2693 src/eoc-window.c:2708
 msgid "Error launching appearance preferences dialog: "
 msgstr "Klaida, paleidžiant išvaizdos nustatymų dialogą: "
 
-#: src/eoc-window.c:2792
+#: src/eoc-window.c:2743
 msgid "_Open Background Preferences"
 msgstr "_Atverti fono nustatymus"
 
-#: src/eoc-window.c:2808
+#: src/eoc-window.c:2759
 #, c-format
 msgid ""
 "The image \"%s\" has been set as Desktop Background.\n"
@@ -1197,11 +1182,11 @@ msgstr ""
 "Paveikslas „%s“ nustatytas kaip darbalaukio fonas.\n"
 "Ar norite pakeisti jo išvaizdą?"
 
-#: src/eoc-window.c:3249
+#: src/eoc-window.c:3192
 msgid "Saving image locally…"
 msgstr "Paveikslas įrašomas vietiniame diske…"
 
-#: src/eoc-window.c:3329
+#: src/eoc-window.c:3272
 #, c-format
 msgid ""
 "Are you sure you want to move\n"
@@ -1210,14 +1195,14 @@ msgstr ""
 "Ar tikrai norite perkelti\n"
 "„%s“ į šiukšlinę?"
 
-#: src/eoc-window.c:3332
+#: src/eoc-window.c:3275
 #, c-format
 msgid ""
 "A trash for \"%s\" couldn't be found. Do you want to remove this image "
 "permanently?"
 msgstr "„%s“ šiukšlinė nerasta. Ar norite šį paveikslą ištrinti negrįžtamai?"
 
-#: src/eoc-window.c:3337
+#: src/eoc-window.c:3280
 #, c-format
 msgid ""
 "Are you sure you want to move\n"
@@ -1238,7 +1223,7 @@ msgstr[3] ""
 "Ar tikrai norite perkelti \n"
 "%d pasirinktų paveikslų į šiukšlinę?"
 
-#: src/eoc-window.c:3342
+#: src/eoc-window.c:3285
 msgid ""
 "Some of the selected images can't be moved to the trash and will be removed "
 "permanently. Are you sure you want to proceed?"
@@ -1246,387 +1231,387 @@ msgstr ""
 "Kai kurių pasirinktų paveikslų negalima perkelti į šiukšlinę, tad jie bus "
 "ištrinti negrįžtamai. Ar tikrai norite tęsti?"
 
-#: src/eoc-window.c:3359 src/eoc-window.c:3855 src/eoc-window.c:3882
+#: src/eoc-window.c:3302 src/eoc-window.c:3792 src/eoc-window.c:3819
 msgid "Move to _Trash"
 msgstr "Perkelti į ši_ukšlinę"
 
-#: src/eoc-window.c:3361
+#: src/eoc-window.c:3304
 msgid "_Do not ask again during this session"
 msgstr "_Daugiau neklausti šio seanso metu"
 
-#: src/eoc-window.c:3406 src/eoc-window.c:3420
+#: src/eoc-window.c:3349 src/eoc-window.c:3363
 msgid "Couldn't access trash."
 msgstr "Nepavyko gauti prieigos prie šiukšlinės."
 
-#: src/eoc-window.c:3428
+#: src/eoc-window.c:3371
 msgid "Couldn't delete file"
 msgstr "Nepavyko ištrinti failo"
 
-#: src/eoc-window.c:3530
+#: src/eoc-window.c:3471
 #, c-format
 msgid "Error on deleting image %s"
 msgstr "Trinant paveikslą %s įvyko klaida"
 
-#: src/eoc-window.c:3776
+#: src/eoc-window.c:3713
 msgid "_Image"
 msgstr "_Paveikslas"
 
-#: src/eoc-window.c:3777
+#: src/eoc-window.c:3714
 msgid "_Edit"
 msgstr "_Taisa"
 
-#: src/eoc-window.c:3778
+#: src/eoc-window.c:3715
 msgid "_View"
 msgstr "_Rodymas"
 
-#: src/eoc-window.c:3779
+#: src/eoc-window.c:3716
 msgid "_Go"
 msgstr "_Eiti"
 
-#: src/eoc-window.c:3780
+#: src/eoc-window.c:3717
 msgid "_Tools"
 msgstr "Įr_ankiai"
 
-#: src/eoc-window.c:3781
+#: src/eoc-window.c:3718
 msgid "_Help"
 msgstr "_Žinynas"
 
-#: src/eoc-window.c:3783
+#: src/eoc-window.c:3720
 msgid "_Open…"
 msgstr "_Atverti..."
 
-#: src/eoc-window.c:3784
+#: src/eoc-window.c:3721
 msgid "Open a file"
 msgstr "Atverti failą"
 
-#: src/eoc-window.c:3786
+#: src/eoc-window.c:3723
 msgid "_Close"
 msgstr "_Užverti"
 
-#: src/eoc-window.c:3787
+#: src/eoc-window.c:3724
 msgid "Close window"
 msgstr "Užverti langą"
 
-#: src/eoc-window.c:3789
+#: src/eoc-window.c:3726
 msgid "T_oolbar"
 msgstr "Įr_ankinė"
 
-#: src/eoc-window.c:3790
+#: src/eoc-window.c:3727
 msgid "Edit the application toolbar"
 msgstr "Keisti programos įrankių juostą"
 
-#: src/eoc-window.c:3792
+#: src/eoc-window.c:3729
 msgid "Prefere_nces"
 msgstr "_Nuostatos"
 
-#: src/eoc-window.c:3793
+#: src/eoc-window.c:3730
 msgid "Preferences for Eye of CAFE"
 msgstr "Eye of CAFE nustatymai"
 
-#: src/eoc-window.c:3795
+#: src/eoc-window.c:3732
 msgid "_Contents"
 msgstr "_Turinys"
 
-#: src/eoc-window.c:3796
+#: src/eoc-window.c:3733
 msgid "Help on this application"
 msgstr "Šios programos žinynas"
 
-#: src/eoc-window.c:3798
+#: src/eoc-window.c:3735
 msgid "_About"
 msgstr "_Apie"
 
-#: src/eoc-window.c:3799
+#: src/eoc-window.c:3736
 msgid "About this application"
 msgstr "Apie šią programą"
 
-#: src/eoc-window.c:3804
+#: src/eoc-window.c:3741
 msgid "_Toolbar"
 msgstr "Į_rankių juosta"
 
-#: src/eoc-window.c:3805
+#: src/eoc-window.c:3742
 msgid "Changes the visibility of the toolbar in the current window"
 msgstr "Keičia įrankių juostos esamame lange matomumą"
 
-#: src/eoc-window.c:3807
+#: src/eoc-window.c:3744
 msgid "_Statusbar"
 msgstr "_Būsenos juosta"
 
-#: src/eoc-window.c:3808
+#: src/eoc-window.c:3745
 msgid "Changes the visibility of the statusbar in the current window"
 msgstr "Keičia būsenos juostos esamame lange matomumą"
 
-#: src/eoc-window.c:3810
+#: src/eoc-window.c:3747
 msgid "_Image Collection"
 msgstr "_Kolekcija"
 
-#: src/eoc-window.c:3811
+#: src/eoc-window.c:3748
 msgid ""
 "Changes the visibility of the image collection pane in the current window"
 msgstr "Keičia esamo lango paveikslų kolekcijos polangio matomumą"
 
-#: src/eoc-window.c:3813
+#: src/eoc-window.c:3750
 msgid "Side _Pane"
 msgstr "Šoninis _polangis"
 
-#: src/eoc-window.c:3814
+#: src/eoc-window.c:3751
 msgid "Changes the visibility of the side pane in the current window"
 msgstr "Keičia esamo lango šoninio polangio matomumą"
 
-#: src/eoc-window.c:3819
+#: src/eoc-window.c:3756
 msgid "_Save"
 msgstr "Į_rašyti"
 
-#: src/eoc-window.c:3820
+#: src/eoc-window.c:3757
 msgid "Save changes in currently selected images"
 msgstr "Įrašyti pažymėtų paveikslų pakeitimus"
 
-#: src/eoc-window.c:3822
+#: src/eoc-window.c:3759
 msgid "Open _with"
 msgstr "Atverti _su"
 
-#: src/eoc-window.c:3823
+#: src/eoc-window.c:3760
 msgid "Open the selected image with a different application"
 msgstr "Atverti pažymėtą paveikslą su kita programa"
 
-#: src/eoc-window.c:3825
+#: src/eoc-window.c:3762
 msgid "Save _As…"
 msgstr "Įrašyti k_aip…"
 
-#: src/eoc-window.c:3826
+#: src/eoc-window.c:3763
 msgid "Save the selected images with a different name"
 msgstr "Įrašyti pažymėtus paveikslus kitu pavadinimu"
 
-#: src/eoc-window.c:3828
+#: src/eoc-window.c:3765
 msgid "Open Containing _Folder"
 msgstr "Atverti talpinantį _aplanką"
 
-#: src/eoc-window.c:3829
+#: src/eoc-window.c:3766
 msgid "Show the folder which contains this file in the file manager"
 msgstr "Rodyti failų tvarkytuvėje aplanką, kuriame yra šis failas"
 
-#: src/eoc-window.c:3831
+#: src/eoc-window.c:3768
 msgid "_Print…"
 msgstr "S_pausdinti..."
 
-#: src/eoc-window.c:3832
+#: src/eoc-window.c:3769
 msgid "Print the selected image"
 msgstr "Spausdinti pažymėtą paveikslą"
 
-#: src/eoc-window.c:3834
+#: src/eoc-window.c:3771
 msgid "Prope_rties"
 msgstr "Sa_vybės"
 
-#: src/eoc-window.c:3835
+#: src/eoc-window.c:3772
 msgid "Show the properties and metadata of the selected image"
 msgstr "Rodyti pasirinkto paveikslo savybes ir metaduomenis"
 
-#: src/eoc-window.c:3837
+#: src/eoc-window.c:3774
 msgid "_Undo"
 msgstr "Atša_ukti"
 
-#: src/eoc-window.c:3838
+#: src/eoc-window.c:3775
 msgid "Undo the last change in the image"
 msgstr "Atšaukti paskutinį paveikslo pakeitimą"
 
-#: src/eoc-window.c:3840
+#: src/eoc-window.c:3777
 msgid "Flip _Horizontal"
 msgstr "Apversti _horizontaliai"
 
-#: src/eoc-window.c:3841
+#: src/eoc-window.c:3778
 msgid "Mirror the image horizontally"
 msgstr "Atspindėti paveikslą horizontaliai"
 
-#: src/eoc-window.c:3843
+#: src/eoc-window.c:3780
 msgid "Flip _Vertical"
 msgstr "Apversti _vertikaliai"
 
-#: src/eoc-window.c:3844
+#: src/eoc-window.c:3781
 msgid "Mirror the image vertically"
 msgstr "Atspindėti paveikslą vertikaliai"
 
-#: src/eoc-window.c:3846
+#: src/eoc-window.c:3783
 msgid "_Rotate Clockwise"
 msgstr "Pasukti pagal laik_rodžio rodyklę"
 
-#: src/eoc-window.c:3847
+#: src/eoc-window.c:3784
 msgid "Rotate the image 90 degrees to the right"
 msgstr "Pasukti paveikslą 90 laipsnių į dešinę"
 
-#: src/eoc-window.c:3849
+#: src/eoc-window.c:3786
 msgid "Rotate Counterc_lockwise"
 msgstr "Pasukti prieš _laikrodžio rodyklę"
 
-#: src/eoc-window.c:3850
+#: src/eoc-window.c:3787
 msgid "Rotate the image 90 degrees to the left"
 msgstr "Pasukti paveikslą 90 laipsnių į kairę"
 
-#: src/eoc-window.c:3852
+#: src/eoc-window.c:3789
 msgid "Set as _Desktop Background"
 msgstr "Nustatyti kaip _darbalaukio foną"
 
-#: src/eoc-window.c:3853
+#: src/eoc-window.c:3790
 msgid "Set the selected image as the desktop background"
 msgstr "Nustatyti pasirinktą paveikslą kaip darbalaukio foną"
 
-#: src/eoc-window.c:3856
+#: src/eoc-window.c:3793
 msgid "Move the selected image to the trash folder"
 msgstr "Perkelti pasirinktą paveikslą į šiukšlinę"
 
-#: src/eoc-window.c:3858
+#: src/eoc-window.c:3795
 msgid "_Copy"
 msgstr "_Kopijuoti"
 
-#: src/eoc-window.c:3859
+#: src/eoc-window.c:3796
 msgid "Copy the selected image to the clipboard"
 msgstr "Kopijuoti pasirinktą paveikslą į iškarpinę"
 
-#: src/eoc-window.c:3861 src/eoc-window.c:3873 src/eoc-window.c:3876
+#: src/eoc-window.c:3798 src/eoc-window.c:3810 src/eoc-window.c:3813
 msgid "_Zoom In"
 msgstr "_Didinti"
 
-#: src/eoc-window.c:3862 src/eoc-window.c:3874
+#: src/eoc-window.c:3799 src/eoc-window.c:3811
 msgid "Enlarge the image"
 msgstr "Padidinti paveikslą"
 
-#: src/eoc-window.c:3864 src/eoc-window.c:3879
+#: src/eoc-window.c:3801 src/eoc-window.c:3816
 msgid "Zoom _Out"
 msgstr "_Mažinti"
 
-#: src/eoc-window.c:3865 src/eoc-window.c:3877 src/eoc-window.c:3880
+#: src/eoc-window.c:3802 src/eoc-window.c:3814 src/eoc-window.c:3817
 msgid "Shrink the image"
 msgstr "Sumažinti paveikslą"
 
-#: src/eoc-window.c:3867
+#: src/eoc-window.c:3804
 msgid "_Normal Size"
 msgstr "_Normalus dydis"
 
-#: src/eoc-window.c:3868
+#: src/eoc-window.c:3805
 msgid "Show the image at its normal size"
 msgstr "Rodyti paveikslą normaliu dydžiu"
 
-#: src/eoc-window.c:3870
+#: src/eoc-window.c:3807
 msgid "_Best Fit"
 msgstr "_Geriausiai tinka"
 
-#: src/eoc-window.c:3871
+#: src/eoc-window.c:3808
 msgid "Fit the image to the window"
 msgstr "Pritaikyti paveikslo dydį langui"
 
-#: src/eoc-window.c:3888
+#: src/eoc-window.c:3825
 msgid "_Fullscreen"
 msgstr "_Visame ekrane"
 
-#: src/eoc-window.c:3889
+#: src/eoc-window.c:3826
 msgid "Show the current image in fullscreen mode"
 msgstr "Rodyti pasirinktą paveikslą viso ekrano veiksenoje"
 
-#: src/eoc-window.c:3891
+#: src/eoc-window.c:3828
 msgid "Pause Slideshow"
 msgstr "Stabdyti skaidrių rodymas"
 
-#: src/eoc-window.c:3892
+#: src/eoc-window.c:3829
 msgid "Pause or resume the slideshow"
 msgstr "Stabdyti arba pratęsti skaidrių rodymą"
 
-#: src/eoc-window.c:3897 src/eoc-window.c:3912
+#: src/eoc-window.c:3834 src/eoc-window.c:3849
 msgid "_Previous Image"
 msgstr "_Ankstesnis paveikslas"
 
-#: src/eoc-window.c:3898
+#: src/eoc-window.c:3835
 msgid "Go to the previous image of the collection"
 msgstr "Rodyti ankstesnį rinkinio paveikslą"
 
-#: src/eoc-window.c:3900
+#: src/eoc-window.c:3837
 msgid "_Next Image"
 msgstr "_Kitas paveikslas"
 
-#: src/eoc-window.c:3901
+#: src/eoc-window.c:3838
 msgid "Go to the next image of the collection"
 msgstr "Rodyti kitą rinkinio paveikslą"
 
-#: src/eoc-window.c:3903 src/eoc-window.c:3915
+#: src/eoc-window.c:3840 src/eoc-window.c:3852
 msgid "_First Image"
 msgstr "_Pirmas paveikslas"
 
-#: src/eoc-window.c:3904
+#: src/eoc-window.c:3841
 msgid "Go to the first image of the collection"
 msgstr "Rodyti pirmąjį rinkinio paveikslą"
 
-#: src/eoc-window.c:3906 src/eoc-window.c:3918
+#: src/eoc-window.c:3843 src/eoc-window.c:3855
 msgid "_Last Image"
 msgstr "Pas_kutinis paveikslas"
 
-#: src/eoc-window.c:3907
+#: src/eoc-window.c:3844
 msgid "Go to the last image of the collection"
 msgstr "Rodyti paskutinįjį rinkinio paveikslą"
 
-#: src/eoc-window.c:3909
+#: src/eoc-window.c:3846
 msgid "_Random Image"
 msgstr "_Atsitiktinis paveikslas"
 
-#: src/eoc-window.c:3910
+#: src/eoc-window.c:3847
 msgid "Go to a random image of the collection"
 msgstr "Rodyti atsitiktinį rinkinio paveikslą"
 
-#: src/eoc-window.c:3924
+#: src/eoc-window.c:3861
 msgid "S_lideshow"
 msgstr "S_kaidrių rodymas"
 
-#: src/eoc-window.c:3925
+#: src/eoc-window.c:3862
 msgid "Start a slideshow view of the images"
 msgstr "Rodyti paveikslus kaip skaidrių rodymą"
 
-#: src/eoc-window.c:3995
+#: src/eoc-window.c:3929
 msgid "Previous"
 msgstr "Ankstesnis"
 
-#: src/eoc-window.c:3999
+#: src/eoc-window.c:3933
 msgid "Next"
 msgstr "Kitas"
 
-#: src/eoc-window.c:4003
+#: src/eoc-window.c:3937
 msgid "Right"
 msgstr "Dešinėje"
 
-#: src/eoc-window.c:4006
+#: src/eoc-window.c:3940
 msgid "Left"
 msgstr "Kairėje"
 
-#: src/eoc-window.c:4012
+#: src/eoc-window.c:3946
 msgid "In"
 msgstr "Didinti"
 
-#: src/eoc-window.c:4015
+#: src/eoc-window.c:3949
 msgid "Out"
 msgstr "Mažinti"
 
-#: src/eoc-window.c:4018
+#: src/eoc-window.c:3952
 msgid "Normal"
 msgstr "Normalus"
 
-#: src/eoc-window.c:4021
+#: src/eoc-window.c:3955
 msgid "Fit"
 msgstr "Taikyti"
 
-#: src/eoc-window.c:4024
+#: src/eoc-window.c:3958
 msgid "Collection"
 msgstr "Kolekcija"
 
-#: src/eoc-window.c:4027
+#: src/eoc-window.c:3961
 msgctxt "action (to trash)"
 msgid "Trash"
 msgstr "Šiukšlinė"
 
-#: src/eoc-window.c:4385
+#: src/eoc-window.c:4307
 #, c-format
 msgid "Edit the current image using %s"
 msgstr "Redaguoti esamą paveikslą naudojant %s"
 
-#: src/eoc-window.c:4388
+#: src/eoc-window.c:4309
 msgid "Edit Image"
 msgstr "Redaguoti paveikslą"
 
-#: src/eoc-window.c:4612
+#: src/eoc-window.c:4524
 msgid "Properties"
 msgstr "Savybės"
 
@@ -1659,3 +1644,21 @@ msgstr "[FAILAS...]"
 msgid "Run '%s --help' to see a full list of available command line options."
 msgstr ""
 "Norėdami pamatyti komandų eilutės parametrų sąrašą, paleiskite „%s --help“."
+
+#~ msgid "eoc"
+#~ msgstr "eoc"
+
+#~ msgid "view-fullscreen"
+#~ msgstr "view-fullscreen"
+
+#~ msgid "view-refresh"
+#~ msgstr "view-refresh"
+
+#~ msgid ""
+#~ "Copyright © 2000-2010 Free Software Foundation, Inc.\n"
+#~ "Copyright © 2011 Perberos\n"
+#~ "Copyright © 2012-2020 CAFE developers"
+#~ msgstr ""
+#~ "Autorių teisės © 2000-2010 Free Software Foundation, Inc.\n"
+#~ "Autorių teisės © 2011 Perberos\n"
+#~ "Autorių teisės © 2012-2020 CAFE kūrėjai"

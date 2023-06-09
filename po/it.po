@@ -2,7 +2,7 @@
 # Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the eoc package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Guybrush88 <erpizzo@alice.it>, 2020
 # l3nn4rt, 2020
@@ -11,55 +11,55 @@
 # Giuseppe Pignataro <rogepix@gmail.com>, 2020
 # Enrico B. <enricobe@hotmail.com>, 2020
 # Alessandro Volturno <alelvb@inwind.it>, 2020
-# 
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: eoc 1.23.1\n"
+"Project-Id-Version: eoc 1.25.0\n"
 "Report-Msgid-Bugs-To: http://www.cafe-desktop.org\n"
-"POT-Creation-Date: 2020-01-10 14:33+0100\n"
+"POT-Creation-Date: 2023-06-09 11:11+0200\n"
 "PO-Revision-Date: 2020-02-14 12:07+0000\n"
 "Last-Translator: Alessandro Volturno <alelvb@inwind.it>, 2020\n"
 "Language-Team: Italian (https://www.transifex.com/cafe/teams/13566/it/)\n"
+"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: it\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:946
+#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:934
 #, c-format
 msgid "Show “_%s”"
 msgstr "Mostra \"_%s\""
 
-#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1420
+#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1400
 msgid "_Move on Toolbar"
 msgstr "_Muovi sulla barra strumenti"
 
-#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1421
+#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1401
 msgid "Move the selected item on the toolbar"
 msgstr "Muove l'elemento selezionato sulla barra strumenti"
 
-#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1422
+#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1402
 msgid "_Remove from Toolbar"
 msgstr "_Rimuovi dalla barra strumenti"
 
-#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1423
+#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1403
 msgid "Remove the selected item from the toolbar"
 msgstr "Rimuove l'elemento selezionato dalla barra strumenti"
 
-#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1424
+#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1404
 msgid "_Delete Toolbar"
 msgstr "_Elimina barra strumenti"
 
-#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1425
+#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1405
 msgid "Remove the selected toolbar"
 msgstr "Rimuove la barra strumenti selezionata"
 
-#: cut-n-paste/toolbar-editor/egg-toolbar-editor.c:483
+#: cut-n-paste/toolbar-editor/egg-toolbar-editor.c:481
 msgid "Separator"
 msgstr "Separatore"
 
-#: data/eoc.appdata.xml.in:6 src/eoc-window.c:2640
+#: data/eoc.appdata.xml.in:6 src/eoc-window.c:2592
 msgid "Eye of CAFE"
 msgstr "Eye of CAFE"
 
@@ -69,9 +69,9 @@ msgstr "Semplice visualizzatore di immagini"
 
 #: data/eoc.appdata.xml.in:9
 msgid ""
-"Eye of CAFE is a simple viewer for browsing images on your computer. Once an"
-" image is loaded, you can zoom and rotate the image, and also view "
-"subsequent images in the directory the image was loaded from."
+"Eye of CAFE is a simple viewer for browsing images on your computer. Once an "
+"image is loaded, you can zoom and rotate the image, and also view subsequent "
+"images in the directory the image was loaded from."
 msgstr ""
 "Eye of CAFE è un semplice visualizzatore per navigare nelle immagini sul "
 "computer. Una volta che l'immagine è stata caricata, è possibile "
@@ -86,14 +86,7 @@ msgstr "Visualizzatore di immagini Eye of CAFE"
 msgid "Browse and rotate images"
 msgstr "Esplora e ruota le immagini"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/eoc.desktop.in.in:8
-msgid "eoc"
-msgstr "eoc"
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/eoc.desktop.in.in:14
 msgid "image;viewer;JPEG;PNG;TIFF;SVG;CAFE;photos;browse;thumbnails;rotate;"
 msgstr ""
@@ -406,8 +399,8 @@ msgid ""
 "background-color key is not set, the color is determined by the active CTK+ "
 "theme instead."
 msgstr ""
-"Il colore che sarà usato per riempire l'area dietro l'immagine. Se la chiave"
-" \"use-background-color\" non è impostata, il colore è determinato dal tema "
+"Il colore che sarà usato per riempire l'area dietro l'immagine. Se la chiave "
+"\"use-background-color\" non è impostata, il colore è determinato dal tema "
 "CTK+ attivo."
 
 #: data/org.cafe.eoc.gschema.xml.in:21
@@ -416,13 +409,13 @@ msgstr "Usa un colore dello sfondo personalizzato"
 
 #: data/org.cafe.eoc.gschema.xml.in:22
 msgid ""
-"If this is active, the color set by the background-color key will be used to"
-" fill the area behind the image. If it is not set, the current CTK+ theme "
+"If this is active, the color set by the background-color key will be used to "
+"fill the area behind the image. If it is not set, the current CTK+ theme "
 "will determine the fill color."
 msgstr ""
 "Se attivata, il colore impostato nella chiave background-color sarà usato "
-"per riempire l'area dietro l'immagine. Se non impostata, l'attuale tema CTK+"
-" determinerà il colore di riempimento."
+"per riempire l'area dietro l'immagine. Se non impostata, l'attuale tema CTK+ "
+"determinerà il colore di riempimento."
 
 #: data/org.cafe.eoc.gschema.xml.in:26
 msgid "Interpolate Image"
@@ -434,8 +427,8 @@ msgid ""
 "quality but is somewhat slower than non-interpolated images."
 msgstr ""
 "Indica se l'immagine debba essere interpolata quando viene rimpicciolita. "
-"Ciò comporta una qualità migliore, ma il programma risulta più lento che con"
-" le immagini non interpolate."
+"Ciò comporta una qualità migliore, ma il programma risulta più lento che con "
+"le immagini non interpolate."
 
 #: data/org.cafe.eoc.gschema.xml.in:31
 msgid "Extrapolate Image"
@@ -479,9 +472,9 @@ msgstr "Moltiplicatore di zoom"
 #: data/org.cafe.eoc.gschema.xml.in:47
 msgid ""
 "The multiplier to be applied when using the mouse scroll wheel for zooming. "
-"This value defines the zooming step used for each scroll event. For example,"
-" 0.05 results in a 5% zoom increment for each scroll event and 1.00 result "
-"in a 100% zoom increment."
+"This value defines the zooming step used for each scroll event. For example, "
+"0.05 results in a 5% zoom increment for each scroll event and 1.00 result in "
+"a 100% zoom increment."
 msgstr ""
 "Il moltiplicatore da applicare quando si fa uso della rotellina del mouse "
 "per lo zoom. Questo valore definisce il passo in ingrandimento da usare per "
@@ -518,8 +511,7 @@ msgstr "Reitera la sequenza di immagini"
 #: data/org.cafe.eoc.gschema.xml.in:64
 msgid "Whether the sequence of images should be shown in an endless loop."
 msgstr ""
-"Indica se la sequenza di immagini debba essere mostrata in un ciclo "
-"infinito."
+"Indica se la sequenza di immagini debba essere mostrata in un ciclo infinito."
 
 #: data/org.cafe.eoc.gschema.xml.in:68
 msgid "Allow zoom greater than 100% initially"
@@ -539,8 +531,8 @@ msgstr "Ritardo in secondi prima di mostrare l'immagine successiva"
 
 #: data/org.cafe.eoc.gschema.xml.in:74
 msgid ""
-"A value greater than 0 determines the seconds an image stays on screen until"
-" the next one is shown automatically. Zero disables the automatic browsing."
+"A value greater than 0 determines the seconds an image stays on screen until "
+"the next one is shown automatically. Zero disables the automatic browsing."
 msgstr ""
 "Un valore maggiore di 0 determina quanti secondi un'immagine rimane sullo "
 "schermo prima che la successiva venga mostrata automaticamente. Un valore "
@@ -564,8 +556,7 @@ msgstr "Posizione riquadro di raccolta immagini."
 
 #: data/org.cafe.eoc.gschema.xml.in:96
 msgid "Whether the image collection pane should be resizable."
-msgstr ""
-"Indica se il riquadro raccolta immagini debba essere ridimensionabile."
+msgstr "Indica se il riquadro raccolta immagini debba essere ridimensionabile."
 
 #: data/org.cafe.eoc.gschema.xml.in:100
 msgid "Show/Hide the window side pane."
@@ -578,8 +569,7 @@ msgstr ""
 
 #: data/org.cafe.eoc.gschema.xml.in:108
 msgid "Close main window without asking to save changes."
-msgstr ""
-"Chiudi la finestra principale senza chiedere di salvare i cambiamenti."
+msgstr "Chiudi la finestra principale senza chiedere di salvare i cambiamenti."
 
 #: data/org.cafe.eoc.gschema.xml.in:112
 msgid "Trash images without asking"
@@ -605,8 +595,8 @@ msgstr ""
 #: data/org.cafe.eoc.gschema.xml.in:118
 msgid ""
 "If activated, the detailed metadata list in the properties dialog will be "
-"moved to its own page in the dialog. This should make the dialog more usable"
-" on smaller screens, e.g. as used by netbooks. If disabled, the widget will "
+"moved to its own page in the dialog. This should make the dialog more usable "
+"on smaller screens, e.g. as used by netbooks. If disabled, the widget will "
 "be embedded on the \"Metadata\" page."
 msgstr ""
 "Se attivata, l'elenco dettagliato dei metadati nella finestra delle "
@@ -621,19 +611,19 @@ msgstr "Programma esterno da usare per modificare immagini"
 
 #: data/org.cafe.eoc.gschema.xml.in:123
 msgid ""
-"The desktop file name (including the \".desktop\") of the application to use"
-" for editing images (when the \"Edit Image\" toolbar button is clicked). Set"
-" to the empty string to disable this feature."
+"The desktop file name (including the \".desktop\") of the application to use "
+"for editing images (when the \"Edit Image\" toolbar button is clicked). Set "
+"to the empty string to disable this feature."
 msgstr ""
 "Il nome del desktop file (incluso il \".desktop\") dell'applicazione da "
 "usare per modificare le immagini (quando il bottone della barra degli "
-"strumenti \"Modifica immagine\" viene cliccato). Lascia la stringa vuota per"
-" disabilitare questa funzionalità."
+"strumenti \"Modifica immagine\" viene cliccato). Lascia la stringa vuota per "
+"disabilitare questa funzionalità."
 
 #: data/org.cafe.eoc.gschema.xml.in:127
 msgid ""
-"Whether the file chooser should show the user's pictures folder if no images"
-" are loaded."
+"Whether the file chooser should show the user's pictures folder if no images "
+"are loaded."
 msgstr ""
 "Indica se il selettore dei file debba mostrare la cartella delle immagini "
 "dell'utente se nessuna immagina è caricata."
@@ -668,10 +658,6 @@ msgstr ""
 msgid "Fullscreen with double-click"
 msgstr "Schermo intero col doppio-clic"
 
-#: plugins/fullscreen/fullscreen.plugin.desktop.in:6
-msgid "view-fullscreen"
-msgstr "visualizza-schermo intero"
-
 #: plugins/reload/eoc-reload-plugin.c:45
 #: plugins/reload/reload.plugin.desktop.in:5
 msgid "Reload Image"
@@ -680,10 +666,6 @@ msgstr "Ricarica l'immagine"
 #: plugins/reload/eoc-reload-plugin.c:45
 msgid "Reload current image"
 msgstr "Ricarica l'immagine corrente"
-
-#: plugins/reload/reload.plugin.desktop.in:6
-msgid "view-refresh"
-msgstr "visualizza-aggiorna"
 
 #: plugins/statusbar-date/statusbar-date.plugin.desktop.in:5
 msgid "Date in statusbar"
@@ -715,8 +697,8 @@ msgstr[0] ""
 "C'è %d immagine con modifiche non salvate. Salvare le modifiche prima di "
 "chiudere?"
 msgstr[1] ""
-"Ci sono %d immagini con modifiche non salvate. Salvare le modifiche prima di"
-" chiudere?"
+"Ci sono %d immagini con modifiche non salvate. Salvare le modifiche prima di "
+"chiudere?"
 
 #: src/eoc-close-confirmation-dialog.c:614
 msgid "S_elect the images you want to save:"
@@ -770,7 +752,7 @@ msgstr "Apri l'immagine"
 msgid "Save Image"
 msgstr "Salva l'immagine"
 
-#: src/eoc-file-chooser.c:467 src/eoc-window.c:4009
+#: src/eoc-file-chooser.c:467 src/eoc-window.c:3943
 msgid "Open Folder"
 msgstr "Apri la cartella"
 
@@ -1048,23 +1030,23 @@ msgstr " (Unicode non valido)"
 #. * - image height
 #. * - image size in bytes
 #. * - zoom in percent
-#: src/eoc-window.c:521
+#: src/eoc-window.c:519
 #, c-format
 msgid "%i × %i pixel  %s    %i%%"
 msgid_plural "%i × %i pixels  %s    %i%%"
 msgstr[0] "%i × %i pixel  %s    %i%%"
 msgstr[1] "%i × %i pixel  %s    %i%%"
 
-#: src/eoc-window.c:832
+#: src/eoc-window.c:820
 msgid "_Reload"
 msgstr "_Ricarica"
 
-#: src/eoc-window.c:834 src/eoc-window.c:2794
+#: src/eoc-window.c:822 src/eoc-window.c:2745
 msgctxt "MessageArea"
 msgid "Hi_de"
 msgstr "Nascon_di"
 
-#: src/eoc-window.c:844
+#: src/eoc-window.c:832
 #, c-format
 msgid ""
 "The image \"%s\" has been modified by an external application.\n"
@@ -1073,7 +1055,7 @@ msgstr ""
 "L'immagine «%s» è stata modificata da un'applicazione esterna.\n"
 "Ricaricarla?"
 
-#: src/eoc-window.c:1012
+#: src/eoc-window.c:998
 #, c-format
 msgid "Use \"%s\" to open the selected image"
 msgstr "Usa «%s» per aprire l'immagine selezionata"
@@ -1083,25 +1065,25 @@ msgstr "Usa «%s» per aprire l'immagine selezionata"
 #. * - the original filename
 #. * - the current image's position in the queue
 #. * - the total number of images queued for saving
-#: src/eoc-window.c:1176
+#: src/eoc-window.c:1154
 #, c-format
 msgid "Saving image \"%s\" (%u/%u)"
 msgstr "Salvataggio dell'immagine «%s» (%u/%u)"
 
-#: src/eoc-window.c:1543
+#: src/eoc-window.c:1513
 #, c-format
 msgid "Opening image \"%s\""
 msgstr "Apertura dell'immagine «%s»"
 
-#: src/eoc-window.c:1909
+#: src/eoc-window.c:1869
 msgid "Leave Fullscreen"
 msgstr "Finestra normale"
 
-#: src/eoc-window.c:2050
+#: src/eoc-window.c:2002
 msgid "Viewing a slideshow"
 msgstr "Visualizzazione di una presentazione"
 
-#: src/eoc-window.c:2263
+#: src/eoc-window.c:2215
 #, c-format
 msgid ""
 "Error printing file:\n"
@@ -1110,15 +1092,15 @@ msgstr ""
 "Errore nello stampare il file:\n"
 "%s"
 
-#: src/eoc-window.c:2526
+#: src/eoc-window.c:2478
 msgid "Toolbar Editor"
 msgstr "Modifica barra strumenti"
 
-#: src/eoc-window.c:2529
+#: src/eoc-window.c:2481
 msgid "_Reset to Default"
 msgstr "_Ripristina predefinita"
 
-#: src/eoc-window.c:2594
+#: src/eoc-window.c:2546
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
 "under the terms of the GNU General Public License as published by the Free "
@@ -1130,60 +1112,59 @@ msgstr ""
 "dalla Free Software Foundation; o la versione 2 della licenza o (a propria "
 "scelta) una versione successiva.\n"
 
-#: src/eoc-window.c:2598
+#: src/eoc-window.c:2550
 msgid ""
 "This program is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
 "FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
 "more details.\n"
 msgstr ""
-"Questo programma è distribuito nella speranza che sia utile, ma SENZA ALCUNA"
-" GARANZIA; senza neppure la garanzia implicita di NEGOZIABILITÀ o di "
-"APPLICABILITÀ PER UN PARTICOLARE SCOPO. Si veda la Licenza Pubblica Generica"
-" GNU per avere maggiori dettagli.\n"
+"Questo programma è distribuito nella speranza che sia utile, ma SENZA ALCUNA "
+"GARANZIA; senza neppure la garanzia implicita di NEGOZIABILITÀ o di "
+"APPLICABILITÀ PER UN PARTICOLARE SCOPO. Si veda la Licenza Pubblica Generica "
+"GNU per avere maggiori dettagli.\n"
 
-#: src/eoc-window.c:2602
+#: src/eoc-window.c:2554
 msgid ""
-"You should have received a copy of the GNU General Public License along with"
-" this program; if not, write to the Free Software Foundation, Inc., 51 "
+"You should have received a copy of the GNU General Public License along with "
+"this program; if not, write to the Free Software Foundation, Inc., 51 "
 "Franklin St, Fifth Floor, Boston, MA 02110-1301, USA."
 msgstr ""
-"Si dovrebbe aver ricevuto una copia della GNU General Public License insieme all'applicazione; in caso contrario, scrivere alla\n"
+"Si dovrebbe aver ricevuto una copia della GNU General Public License insieme "
+"all'applicazione; in caso contrario, scrivere alla\n"
 "Free Software Foundation, Inc., \n"
 "51 Franklin St, Fifth Floor, \n"
 "Boston, MA 02110-1301, USA."
 
-#: src/eoc-window.c:2641
+#: src/eoc-window.c:2593
 msgid "About Eye of CAFE"
 msgstr "Info su Eye of CAFE"
 
-#: src/eoc-window.c:2643
+#: src/eoc-window.c:2595
 msgid ""
 "Copyright © 2000-2010 Free Software Foundation, Inc.\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 CAFE developers"
+"Copyright © 2012-2020 MATE developers\n"
+"Copyright © 2023 Pablo Barciela"
 msgstr ""
-"Copyright © 2000-2010 Free Software Foundation, Inc.\n"
-"Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 Sviluppatori di CAFE"
 
-#: src/eoc-window.c:2646
+#: src/eoc-window.c:2599
 msgid "The CAFE image viewer."
 msgstr "Il visualizzatore di immagini di CAFE."
 
-#: src/eoc-window.c:2649
+#: src/eoc-window.c:2602
 msgid "translator-credits"
 msgstr " "
 
-#: src/eoc-window.c:2742 src/eoc-window.c:2757
+#: src/eoc-window.c:2693 src/eoc-window.c:2708
 msgid "Error launching appearance preferences dialog: "
 msgstr "Errore nell'avvio delle preferenze dell'aspetto:"
 
-#: src/eoc-window.c:2792
+#: src/eoc-window.c:2743
 msgid "_Open Background Preferences"
 msgstr "A_pri preferenze dello sfondo"
 
-#: src/eoc-window.c:2808
+#: src/eoc-window.c:2759
 #, c-format
 msgid ""
 "The image \"%s\" has been set as Desktop Background.\n"
@@ -1192,11 +1173,11 @@ msgstr ""
 "L'immagine «%s» è stata impostata come sfondo della scrivania.\n"
 "Modificare il suo aspetto?"
 
-#: src/eoc-window.c:3249
+#: src/eoc-window.c:3192
 msgid "Saving image locally…"
 msgstr "Salvataggio dell'immagine in locale..."
 
-#: src/eoc-window.c:3329
+#: src/eoc-window.c:3272
 #, c-format
 msgid ""
 "Are you sure you want to move\n"
@@ -1205,7 +1186,7 @@ msgstr ""
 "Spostare veramente\n"
 "«%s» nel cestino?"
 
-#: src/eoc-window.c:3332
+#: src/eoc-window.c:3275
 #, c-format
 msgid ""
 "A trash for \"%s\" couldn't be found. Do you want to remove this image "
@@ -1214,7 +1195,7 @@ msgstr ""
 "Impossibile spostare nel cestino «%s». Eliminare definitivamente questa "
 "immagine? "
 
-#: src/eoc-window.c:3337
+#: src/eoc-window.c:3280
 #, c-format
 msgid ""
 "Are you sure you want to move\n"
@@ -1229,7 +1210,7 @@ msgstr[1] ""
 "Sei sicuro di voler spostare\n"
 "le %d immagini selezionate nel cestino?"
 
-#: src/eoc-window.c:3342
+#: src/eoc-window.c:3285
 msgid ""
 "Some of the selected images can't be moved to the trash and will be removed "
 "permanently. Are you sure you want to proceed?"
@@ -1237,390 +1218,390 @@ msgstr ""
 "Alcune delle immagini selezionate non possono essere spostate nel cestino e "
 "saranno eliminate definitivamente. Procedere veramente?"
 
-#: src/eoc-window.c:3359 src/eoc-window.c:3855 src/eoc-window.c:3882
+#: src/eoc-window.c:3302 src/eoc-window.c:3792 src/eoc-window.c:3819
 msgid "Move to _Trash"
 msgstr "Sposta nel _cestino"
 
-#: src/eoc-window.c:3361
+#: src/eoc-window.c:3304
 msgid "_Do not ask again during this session"
 msgstr "_Non domandare ancora durante questa sessione"
 
-#: src/eoc-window.c:3406 src/eoc-window.c:3420
+#: src/eoc-window.c:3349 src/eoc-window.c:3363
 msgid "Couldn't access trash."
 msgstr "Impossibile accedere al cestino."
 
-#: src/eoc-window.c:3428
+#: src/eoc-window.c:3371
 msgid "Couldn't delete file"
 msgstr "Impossibile eliminare il file"
 
-#: src/eoc-window.c:3530
+#: src/eoc-window.c:3471
 #, c-format
 msgid "Error on deleting image %s"
 msgstr "Errore nell'eliminare l'immagine «%s»"
 
-#: src/eoc-window.c:3776
+#: src/eoc-window.c:3713
 msgid "_Image"
 msgstr "Imma_gine"
 
-#: src/eoc-window.c:3777
+#: src/eoc-window.c:3714
 msgid "_Edit"
 msgstr "_Modifica"
 
-#: src/eoc-window.c:3778
+#: src/eoc-window.c:3715
 msgid "_View"
 msgstr "_Visualizza"
 
-#: src/eoc-window.c:3779
+#: src/eoc-window.c:3716
 msgid "_Go"
 msgstr "V_ai"
 
-#: src/eoc-window.c:3780
+#: src/eoc-window.c:3717
 msgid "_Tools"
 msgstr "S_trumenti"
 
-#: src/eoc-window.c:3781
+#: src/eoc-window.c:3718
 msgid "_Help"
 msgstr "_Aiuto"
 
-#: src/eoc-window.c:3783
+#: src/eoc-window.c:3720
 msgid "_Open…"
 msgstr "_Apri…"
 
-#: src/eoc-window.c:3784
+#: src/eoc-window.c:3721
 msgid "Open a file"
 msgstr "Apre un file"
 
-#: src/eoc-window.c:3786
+#: src/eoc-window.c:3723
 msgid "_Close"
 msgstr "_Chiudi"
 
-#: src/eoc-window.c:3787
+#: src/eoc-window.c:3724
 msgid "Close window"
 msgstr "Chiudi la finestra"
 
-#: src/eoc-window.c:3789
+#: src/eoc-window.c:3726
 msgid "T_oolbar"
 msgstr "_Barra degli strumenti"
 
-#: src/eoc-window.c:3790
+#: src/eoc-window.c:3727
 msgid "Edit the application toolbar"
 msgstr "Modifica la barra degli strumenti dell'applicazione"
 
-#: src/eoc-window.c:3792
+#: src/eoc-window.c:3729
 msgid "Prefere_nces"
 msgstr "Preferen_ze"
 
-#: src/eoc-window.c:3793
+#: src/eoc-window.c:3730
 msgid "Preferences for Eye of CAFE"
 msgstr "Preferenze per Eye of CAFE"
 
-#: src/eoc-window.c:3795
+#: src/eoc-window.c:3732
 msgid "_Contents"
 msgstr "_Sommario"
 
-#: src/eoc-window.c:3796
+#: src/eoc-window.c:3733
 msgid "Help on this application"
 msgstr "Aiuto su questa applicazione"
 
-#: src/eoc-window.c:3798
+#: src/eoc-window.c:3735
 msgid "_About"
 msgstr "_Informazioni"
 
-#: src/eoc-window.c:3799
+#: src/eoc-window.c:3736
 msgid "About this application"
 msgstr "Informazioni su questa applicazione"
 
-#: src/eoc-window.c:3804
+#: src/eoc-window.c:3741
 msgid "_Toolbar"
 msgstr "Barra degli _strumenti"
 
-#: src/eoc-window.c:3805
+#: src/eoc-window.c:3742
 msgid "Changes the visibility of the toolbar in the current window"
 msgstr ""
 "Cambia la visibilità della barra degli strumenti nella finestra attuale"
 
-#: src/eoc-window.c:3807
+#: src/eoc-window.c:3744
 msgid "_Statusbar"
 msgstr "Barra di s_tato"
 
-#: src/eoc-window.c:3808
+#: src/eoc-window.c:3745
 msgid "Changes the visibility of the statusbar in the current window"
 msgstr "Cambia la visibilità della barra di stato nella finestra attuale"
 
-#: src/eoc-window.c:3810
+#: src/eoc-window.c:3747
 msgid "_Image Collection"
 msgstr "_Raccolta immagini"
 
-#: src/eoc-window.c:3811
+#: src/eoc-window.c:3748
 msgid ""
 "Changes the visibility of the image collection pane in the current window"
 msgstr ""
 "Cambia la visibilità del riquadro della raccolta immagini nella finestra "
 "attuale"
 
-#: src/eoc-window.c:3813
+#: src/eoc-window.c:3750
 msgid "Side _Pane"
 msgstr "Riquadro _laterale"
 
-#: src/eoc-window.c:3814
+#: src/eoc-window.c:3751
 msgid "Changes the visibility of the side pane in the current window"
 msgstr "Cambia la visibilità del riquadro laterale nella finestra attuale"
 
-#: src/eoc-window.c:3819
+#: src/eoc-window.c:3756
 msgid "_Save"
 msgstr "_Salva"
 
-#: src/eoc-window.c:3820
+#: src/eoc-window.c:3757
 msgid "Save changes in currently selected images"
 msgstr "Salva i cambiamenti alle immagini attualmente selezionate"
 
-#: src/eoc-window.c:3822
+#: src/eoc-window.c:3759
 msgid "Open _with"
 msgstr "A_pri con"
 
-#: src/eoc-window.c:3823
+#: src/eoc-window.c:3760
 msgid "Open the selected image with a different application"
 msgstr "Apre l'immagine selezionata con una diversa applicazione"
 
-#: src/eoc-window.c:3825
+#: src/eoc-window.c:3762
 msgid "Save _As…"
 msgstr "Salva c_ome..."
 
-#: src/eoc-window.c:3826
+#: src/eoc-window.c:3763
 msgid "Save the selected images with a different name"
 msgstr "Salva le immagini selezionate con un nome diverso"
 
-#: src/eoc-window.c:3828
+#: src/eoc-window.c:3765
 msgid "Open Containing _Folder"
 msgstr "Apri la _cartella selezionata"
 
-#: src/eoc-window.c:3829
+#: src/eoc-window.c:3766
 msgid "Show the folder which contains this file in the file manager"
 msgstr "Mostra la cartella contenente gli script che appaiono in questo menù"
 
-#: src/eoc-window.c:3831
+#: src/eoc-window.c:3768
 msgid "_Print…"
 msgstr "Stam_pa…"
 
-#: src/eoc-window.c:3832
+#: src/eoc-window.c:3769
 msgid "Print the selected image"
 msgstr "Stampa l'immagine selezionata"
 
-#: src/eoc-window.c:3834
+#: src/eoc-window.c:3771
 msgid "Prope_rties"
 msgstr "Pr_oprietà"
 
-#: src/eoc-window.c:3835
+#: src/eoc-window.c:3772
 msgid "Show the properties and metadata of the selected image"
 msgstr "Mostra le proprietà e i metadati dell'immagine selezionata"
 
-#: src/eoc-window.c:3837
+#: src/eoc-window.c:3774
 msgid "_Undo"
 msgstr "_Annulla"
 
-#: src/eoc-window.c:3838
+#: src/eoc-window.c:3775
 msgid "Undo the last change in the image"
 msgstr "Annulla l'ultima moifica all'immagine"
 
-#: src/eoc-window.c:3840
+#: src/eoc-window.c:3777
 msgid "Flip _Horizontal"
 msgstr "Capovolgi ori_zzontalmente"
 
-#: src/eoc-window.c:3841
+#: src/eoc-window.c:3778
 msgid "Mirror the image horizontally"
 msgstr "Rifletti l'immagine in orizzontale"
 
-#: src/eoc-window.c:3843
+#: src/eoc-window.c:3780
 msgid "Flip _Vertical"
 msgstr "Capovolgi _verticalmente"
 
-#: src/eoc-window.c:3844
+#: src/eoc-window.c:3781
 msgid "Mirror the image vertically"
 msgstr "Rifletti l'immagine in verticale"
 
-#: src/eoc-window.c:3846
+#: src/eoc-window.c:3783
 msgid "_Rotate Clockwise"
 msgstr "Ruota in senso _orario"
 
-#: src/eoc-window.c:3847
+#: src/eoc-window.c:3784
 msgid "Rotate the image 90 degrees to the right"
 msgstr "Ruota l'immagine di 90 gradi verso destra"
 
-#: src/eoc-window.c:3849
+#: src/eoc-window.c:3786
 msgid "Rotate Counterc_lockwise"
 msgstr "Ruota in senso _antiorario"
 
-#: src/eoc-window.c:3850
+#: src/eoc-window.c:3787
 msgid "Rotate the image 90 degrees to the left"
 msgstr "Ruota l'immagine di 90 gradi verso sinistra"
 
-#: src/eoc-window.c:3852
+#: src/eoc-window.c:3789
 msgid "Set as _Desktop Background"
 msgstr "Imposta come s_fondo"
 
-#: src/eoc-window.c:3853
+#: src/eoc-window.c:3790
 msgid "Set the selected image as the desktop background"
 msgstr "Imposta l'immagine selezionata come sfondo della scrivania"
 
-#: src/eoc-window.c:3856
+#: src/eoc-window.c:3793
 msgid "Move the selected image to the trash folder"
 msgstr "Sposta l'immagine selezionata nella cartella cestino"
 
-#: src/eoc-window.c:3858
+#: src/eoc-window.c:3795
 msgid "_Copy"
 msgstr "_Copia"
 
-#: src/eoc-window.c:3859
+#: src/eoc-window.c:3796
 msgid "Copy the selected image to the clipboard"
 msgstr "Copia l'immagine selezionato negli appunti"
 
-#: src/eoc-window.c:3861 src/eoc-window.c:3873 src/eoc-window.c:3876
+#: src/eoc-window.c:3798 src/eoc-window.c:3810 src/eoc-window.c:3813
 msgid "_Zoom In"
 msgstr "Aum_enta ingrandimento"
 
-#: src/eoc-window.c:3862 src/eoc-window.c:3874
+#: src/eoc-window.c:3799 src/eoc-window.c:3811
 msgid "Enlarge the image"
 msgstr "Allarga l'immagine"
 
-#: src/eoc-window.c:3864 src/eoc-window.c:3879
+#: src/eoc-window.c:3801 src/eoc-window.c:3816
 msgid "Zoom _Out"
 msgstr "Rid_uci ingrandimento"
 
-#: src/eoc-window.c:3865 src/eoc-window.c:3877 src/eoc-window.c:3880
+#: src/eoc-window.c:3802 src/eoc-window.c:3814 src/eoc-window.c:3817
 msgid "Shrink the image"
 msgstr "Restringi l'immagine"
 
-#: src/eoc-window.c:3867
+#: src/eoc-window.c:3804
 msgid "_Normal Size"
 msgstr "_Dimensione normale"
 
-#: src/eoc-window.c:3868
+#: src/eoc-window.c:3805
 msgid "Show the image at its normal size"
 msgstr "Mostra l'immagine alla sua dimensione normale"
 
-#: src/eoc-window.c:3870
+#: src/eoc-window.c:3807
 msgid "_Best Fit"
 msgstr "_Adatta alla pagina"
 
-#: src/eoc-window.c:3871
+#: src/eoc-window.c:3808
 msgid "Fit the image to the window"
 msgstr "Adatta l'immagine alla finestra"
 
-#: src/eoc-window.c:3888
+#: src/eoc-window.c:3825
 msgid "_Fullscreen"
 msgstr "Schermo _intero"
 
-#: src/eoc-window.c:3889
+#: src/eoc-window.c:3826
 msgid "Show the current image in fullscreen mode"
 msgstr "Mostra l'immagine corrente nella modalità schermo intero"
 
-#: src/eoc-window.c:3891
+#: src/eoc-window.c:3828
 msgid "Pause Slideshow"
 msgstr "Pausa di una presentazione"
 
-#: src/eoc-window.c:3892
+#: src/eoc-window.c:3829
 msgid "Pause or resume the slideshow"
 msgstr "Mette in pausa o riprende la presentazione"
 
-#: src/eoc-window.c:3897 src/eoc-window.c:3912
+#: src/eoc-window.c:3834 src/eoc-window.c:3849
 msgid "_Previous Image"
 msgstr "Immagine pr_ecedente"
 
-#: src/eoc-window.c:3898
+#: src/eoc-window.c:3835
 msgid "Go to the previous image of the collection"
 msgstr "Vai alla precedente immagine della raccolta"
 
-#: src/eoc-window.c:3900
+#: src/eoc-window.c:3837
 msgid "_Next Image"
 msgstr "Immagine _successiva"
 
-#: src/eoc-window.c:3901
+#: src/eoc-window.c:3838
 msgid "Go to the next image of the collection"
 msgstr "Vai alla successiva immagine della raccolta"
 
-#: src/eoc-window.c:3903 src/eoc-window.c:3915
+#: src/eoc-window.c:3840 src/eoc-window.c:3852
 msgid "_First Image"
 msgstr "_Prima immagine"
 
-#: src/eoc-window.c:3904
+#: src/eoc-window.c:3841
 msgid "Go to the first image of the collection"
 msgstr "Vai alla prima immagine della raccolta"
 
-#: src/eoc-window.c:3906 src/eoc-window.c:3918
+#: src/eoc-window.c:3843 src/eoc-window.c:3855
 msgid "_Last Image"
 msgstr "_Ultima immagine"
 
-#: src/eoc-window.c:3907
+#: src/eoc-window.c:3844
 msgid "Go to the last image of the collection"
 msgstr "Vai all'ultima immagine della raccolta"
 
-#: src/eoc-window.c:3909
+#: src/eoc-window.c:3846
 msgid "_Random Image"
 msgstr "Immagine cas_uale"
 
-#: src/eoc-window.c:3910
+#: src/eoc-window.c:3847
 msgid "Go to a random image of the collection"
 msgstr "Vai a un'immagine casuale della raccolta"
 
-#: src/eoc-window.c:3924
+#: src/eoc-window.c:3861
 msgid "S_lideshow"
 msgstr "S_lideshow"
 
-#: src/eoc-window.c:3925
+#: src/eoc-window.c:3862
 msgid "Start a slideshow view of the images"
 msgstr "Avvia la visualizzazione delle immagini come presentazione"
 
-#: src/eoc-window.c:3995
+#: src/eoc-window.c:3929
 msgid "Previous"
 msgstr "Precedente"
 
-#: src/eoc-window.c:3999
+#: src/eoc-window.c:3933
 msgid "Next"
 msgstr "Successiva"
 
-#: src/eoc-window.c:4003
+#: src/eoc-window.c:3937
 msgid "Right"
 msgstr "Destra"
 
-#: src/eoc-window.c:4006
+#: src/eoc-window.c:3940
 msgid "Left"
 msgstr "Sinistra"
 
-#: src/eoc-window.c:4012
+#: src/eoc-window.c:3946
 msgid "In"
 msgstr "Aumenta"
 
-#: src/eoc-window.c:4015
+#: src/eoc-window.c:3949
 msgid "Out"
 msgstr "Riduci"
 
-#: src/eoc-window.c:4018
+#: src/eoc-window.c:3952
 msgid "Normal"
 msgstr "Normale"
 
-#: src/eoc-window.c:4021
+#: src/eoc-window.c:3955
 msgid "Fit"
 msgstr "Adatta"
 
-#: src/eoc-window.c:4024
+#: src/eoc-window.c:3958
 msgid "Collection"
 msgstr "Raccolta"
 
-#: src/eoc-window.c:4027
+#: src/eoc-window.c:3961
 msgctxt "action (to trash)"
 msgid "Trash"
 msgstr "Cestino"
 
-#: src/eoc-window.c:4385
+#: src/eoc-window.c:4307
 #, c-format
 msgid "Edit the current image using %s"
 msgstr "Modifica l'immagine corrente usando %s"
 
-#: src/eoc-window.c:4388
+#: src/eoc-window.c:4309
 msgid "Edit Image"
 msgstr "Modifica l'immagine"
 
-#: src/eoc-window.c:4612
+#: src/eoc-window.c:4524
 msgid "Properties"
 msgstr "Proprietà"
 
@@ -1652,5 +1633,23 @@ msgstr "[FILE…]"
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options."
 msgstr ""
-"Eseguire \"%s --help\" per l'elenco completo delle opzioni disponibili dalla"
-" riga di comando."
+"Eseguire \"%s --help\" per l'elenco completo delle opzioni disponibili dalla "
+"riga di comando."
+
+#~ msgid "eoc"
+#~ msgstr "eoc"
+
+#~ msgid "view-fullscreen"
+#~ msgstr "visualizza-schermo intero"
+
+#~ msgid "view-refresh"
+#~ msgstr "visualizza-aggiorna"
+
+#~ msgid ""
+#~ "Copyright © 2000-2010 Free Software Foundation, Inc.\n"
+#~ "Copyright © 2011 Perberos\n"
+#~ "Copyright © 2012-2020 CAFE developers"
+#~ msgstr ""
+#~ "Copyright © 2000-2010 Free Software Foundation, Inc.\n"
+#~ "Copyright © 2011 Perberos\n"
+#~ "Copyright © 2012-2020 Sviluppatori di CAFE"

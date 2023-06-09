@@ -2,7 +2,7 @@
 # Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the eoc package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Youngbin Han <sukso96100@gmail.com>, 2020
 # D.K Kim <pepct84@gmail.com>, 2020
@@ -11,55 +11,55 @@
 # Alan Lee <bkrhlim@aol.com>, 2020
 # 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>, 2020
 # clefebvre <clement.lefebvre@linuxmint.com>, 2020
-# 
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: eoc 1.23.1\n"
+"Project-Id-Version: eoc 1.25.0\n"
 "Report-Msgid-Bugs-To: http://www.cafe-desktop.org\n"
-"POT-Creation-Date: 2020-01-10 14:33+0100\n"
+"POT-Creation-Date: 2023-06-09 11:11+0200\n"
 "PO-Revision-Date: 2020-02-14 12:07+0000\n"
 "Last-Translator: clefebvre <clement.lefebvre@linuxmint.com>, 2020\n"
 "Language-Team: Korean (https://www.transifex.com/cafe/teams/13566/ko/)\n"
+"Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ko\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:946
+#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:934
 #, c-format
 msgid "Show “_%s”"
 msgstr "“_%s” 보이기"
 
-#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1420
+#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1400
 msgid "_Move on Toolbar"
 msgstr "도구 모음에서 옮기기(_M)"
 
-#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1421
+#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1401
 msgid "Move the selected item on the toolbar"
 msgstr "도구 모음에서 선택한 항목을 옮깁니다"
 
-#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1422
+#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1402
 msgid "_Remove from Toolbar"
 msgstr "도구 모음에서 제거(_R)"
 
-#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1423
+#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1403
 msgid "Remove the selected item from the toolbar"
 msgstr "도구 모음에서 선택한 항목을 제거합니다"
 
-#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1424
+#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1404
 msgid "_Delete Toolbar"
 msgstr "도구 모음 삭제(_D)"
 
-#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1425
+#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1405
 msgid "Remove the selected toolbar"
 msgstr "선택한 도구 모음을 제거합니다"
 
-#: cut-n-paste/toolbar-editor/egg-toolbar-editor.c:483
+#: cut-n-paste/toolbar-editor/egg-toolbar-editor.c:481
 msgid "Separator"
 msgstr "구분선"
 
-#: data/eoc.appdata.xml.in:6 src/eoc-window.c:2640
+#: data/eoc.appdata.xml.in:6 src/eoc-window.c:2592
 msgid "Eye of CAFE"
 msgstr "마테의 눈"
 
@@ -69,9 +69,9 @@ msgstr "간단한 그림 보기 프로그램"
 
 #: data/eoc.appdata.xml.in:9
 msgid ""
-"Eye of CAFE is a simple viewer for browsing images on your computer. Once an"
-" image is loaded, you can zoom and rotate the image, and also view "
-"subsequent images in the directory the image was loaded from."
+"Eye of CAFE is a simple viewer for browsing images on your computer. Once an "
+"image is loaded, you can zoom and rotate the image, and also view subsequent "
+"images in the directory the image was loaded from."
 msgstr ""
 
 #: data/eoc.desktop.in.in:3 src/main.c:65 src/main.c:166
@@ -82,14 +82,7 @@ msgstr "마테의 눈 그림 뷰어"
 msgid "Browse and rotate images"
 msgstr "그림 살펴보기 및 돌리기"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/eoc.desktop.in.in:8
-msgid "eoc"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/eoc.desktop.in.in:14
 msgid "image;viewer;JPEG;PNG;TIFF;SVG;CAFE;photos;browse;thumbnails;rotate;"
 msgstr ""
@@ -399,8 +392,8 @@ msgid ""
 "background-color key is not set, the color is determined by the active CTK+ "
 "theme instead."
 msgstr ""
-"이미지 뒤 영역을 칠할 색상입니다. use-background-color 키를 설정하지 않으면, 활성화된 CTK+ 테마에서 대신 색상을 "
-"선택합니다."
+"이미지 뒤 영역을 칠할 색상입니다. use-background-color 키를 설정하지 않으면, "
+"활성화된 CTK+ 테마에서 대신 색상을 선택합니다."
 
 #: data/org.cafe.eoc.gschema.xml.in:21
 msgid "Use a custom background color"
@@ -408,12 +401,12 @@ msgstr "사용자 정의 배경색 사용"
 
 #: data/org.cafe.eoc.gschema.xml.in:22
 msgid ""
-"If this is active, the color set by the background-color key will be used to"
-" fill the area behind the image. If it is not set, the current CTK+ theme "
+"If this is active, the color set by the background-color key will be used to "
+"fill the area behind the image. If it is not set, the current CTK+ theme "
 "will determine the fill color."
 msgstr ""
-"활성화하면, 배경색 키로 설정한 색상 설정을 이미지 뒤의 공간을 채우는데 사용합니다. 설정하지 않았다면 현재 CTK+ 테마가 채울 색상을"
-" 결정합니다."
+"활성화하면, 배경색 키로 설정한 색상 설정을 이미지 뒤의 공간을 채우는데 사용합"
+"니다. 설정하지 않았다면 현재 CTK+ 테마가 채울 색상을 결정합니다."
 
 #: data/org.cafe.eoc.gschema.xml.in:26
 msgid "Interpolate Image"
@@ -424,8 +417,8 @@ msgid ""
 "Whether the image should be interpolated on zoom-out. This leads to better "
 "quality but is somewhat slower than non-interpolated images."
 msgstr ""
-"축소 보기할 때 이미지를 인터폴레이션 할지 결정합니다. 인터폴레이션을 적용하지 않은 그림보다 화질은 좋아질 수 있으나 표시 속도는 "
-"느려집니다."
+"축소 보기할 때 이미지를 인터폴레이션 할지 결정합니다. 인터폴레이션을 적용하"
+"지 않은 그림보다 화질은 좋아질 수 있으나 표시 속도는 느려집니다."
 
 #: data/org.cafe.eoc.gschema.xml.in:31
 msgid "Extrapolate Image"
@@ -436,8 +429,8 @@ msgid ""
 "Whether the image should be extrapolated on zoom-in. This leads to blurry "
 "quality and is somewhat slower than non-extrapolated images."
 msgstr ""
-"축소에서 그림에 엑스트라폴레이션을 할지 여부. 엑스트라폴레이션을 하면 그림이 흐릿해지고, 엑스트라폴레이션을 하지 않는 경우보다 약간 "
-"느립니다."
+"축소에서 그림에 엑스트라폴레이션을 할지 여부. 엑스트라폴레이션을 하면 그림이 "
+"흐릿해지고, 엑스트라폴레이션을 하지 않는 경우보다 약간 느립니다."
 
 #: data/org.cafe.eoc.gschema.xml.in:36
 msgid "Transparency indicator"
@@ -449,8 +442,8 @@ msgid ""
 "color and none. If color is chosen, then the trans-color key determines the "
 "color value used."
 msgstr ""
-"얼마나 투명하게 나타낼지를 결정합니다. 유효한 값은 표시, 색상, 없음 입니다. 색상을 선택하면 색상 투명화 키에서 처리할 색상을 "
-"결정합니다."
+"얼마나 투명하게 나타낼지를 결정합니다. 유효한 값은 표시, 색상, 없음 입니다. "
+"색상을 선택하면 색상 투명화 키에서 처리할 색상을 결정합니다."
 
 #: data/org.cafe.eoc.gschema.xml.in:41
 msgid "Scroll wheel zoom"
@@ -467,12 +460,13 @@ msgstr "확대 비율"
 #: data/org.cafe.eoc.gschema.xml.in:47
 msgid ""
 "The multiplier to be applied when using the mouse scroll wheel for zooming. "
-"This value defines the zooming step used for each scroll event. For example,"
-" 0.05 results in a 5% zoom increment for each scroll event and 1.00 result "
-"in a 100% zoom increment."
+"This value defines the zooming step used for each scroll event. For example, "
+"0.05 results in a 5% zoom increment for each scroll event and 1.00 result in "
+"a 100% zoom increment."
 msgstr ""
-"스크롤 휠로 확대/축소를 사용할 때 적용되는 비율. 각각의 스크롤 이벤트가 생길 때 적용되는 확대/축소 비율입니다. 0.05로 설정되면 "
-"각각의 스크롤 이벤트가 발생될 때 5%씩 확대증가가 되고, 1.00이면 100% 확대증가가 됩니다."
+"스크롤 휠로 확대/축소를 사용할 때 적용되는 비율. 각각의 스크롤 이벤트가 생길 "
+"때 적용되는 확대/축소 비율입니다. 0.05로 설정되면 각각의 스크롤 이벤트가 발생"
+"될 때 5%씩 확대증가가 되고, 1.00이면 100% 확대증가가 됩니다."
 
 #: data/org.cafe.eoc.gschema.xml.in:51
 msgid "Transparency color"
@@ -482,7 +476,9 @@ msgstr "투명 색"
 msgid ""
 "If the transparency key has the value COLOR, then this key determines the "
 "color which is used for indicating transparency."
-msgstr "transparency 키 값이 COLOR일 경우, 이 키 값이 투명한 부분에 사용될 색이 됩니다."
+msgstr ""
+"transparency 키 값이 COLOR일 경우, 이 키 값이 투명한 부분에 사용될 색이 됩니"
+"다."
 
 #: data/org.cafe.eoc.gschema.xml.in:58
 msgid "Randomize the image sequence"
@@ -516,9 +512,11 @@ msgstr "다음 그림을 표시할 때까지 지연 시간(초 단위)"
 
 #: data/org.cafe.eoc.gschema.xml.in:74
 msgid ""
-"A value greater than 0 determines the seconds an image stays on screen until"
-" the next one is shown automatically. Zero disables the automatic browsing."
-msgstr "0보다 큰 값이면 다음 그림으로 자동으로 넘어갈 때까지 유지할 시간입니다. 0이면 자동 넘어가기를 끕니다."
+"A value greater than 0 determines the seconds an image stays on screen until "
+"the next one is shown automatically. Zero disables the automatic browsing."
+msgstr ""
+"0보다 큰 값이면 다음 그림으로 자동으로 넘어갈 때까지 유지할 시간입니다. 0이"
+"면 자동 넘어가기를 끕니다."
 
 #: data/org.cafe.eoc.gschema.xml.in:80
 msgid "Show/Hide the window toolbar."
@@ -562,7 +560,8 @@ msgid ""
 "the trash. It will still ask if any of the files cannot be moved to the "
 "trash and would be deleted instead."
 msgstr ""
-"활성화하면, 그림을 휴지통으로 이동할 때 마테의 눈에서 물어보지 않습니다. 휴지통에 옮길 수 없어 대신 삭제할 경우에도 묻습니다."
+"활성화하면, 그림을 휴지통으로 이동할 때 마테의 눈에서 물어보지 않습니다. 휴지"
+"통에 옮길 수 없어 대신 삭제할 경우에도 묻습니다."
 
 #: data/org.cafe.eoc.gschema.xml.in:117
 msgid ""
@@ -572,12 +571,13 @@ msgstr "속성 창의 메타데이터 목록을 별도 페이지에 표시할지
 #: data/org.cafe.eoc.gschema.xml.in:118
 msgid ""
 "If activated, the detailed metadata list in the properties dialog will be "
-"moved to its own page in the dialog. This should make the dialog more usable"
-" on smaller screens, e.g. as used by netbooks. If disabled, the widget will "
+"moved to its own page in the dialog. This should make the dialog more usable "
+"on smaller screens, e.g. as used by netbooks. If disabled, the widget will "
 "be embedded on the \"Metadata\" page."
 msgstr ""
-"활성화하면, 속성 대화 상자의 자세한 메타데이터 목록을 대화 상자의 자체 페이지로 이동합니다. 이 동작은 작은 화면(예: 넷북 사용)에서"
-" 대화 상자를 쓸모있게 합니다. 비활성화하면, 위젯을 \"메타데이터\" 페이지에 내장합니다."
+"활성화하면, 속성 대화 상자의 자세한 메타데이터 목록을 대화 상자의 자체 페이지"
+"로 이동합니다. 이 동작은 작은 화면(예: 넷북 사용)에서 대화 상자를 쓸모있게 합"
+"니다. 비활성화하면, 위젯을 \"메타데이터\" 페이지에 내장합니다."
 
 #: data/org.cafe.eoc.gschema.xml.in:122
 msgid "External program to use for editing images"
@@ -585,18 +585,21 @@ msgstr "그림을 편집할 때 사용할 외부 프로그램"
 
 #: data/org.cafe.eoc.gschema.xml.in:123
 msgid ""
-"The desktop file name (including the \".desktop\") of the application to use"
-" for editing images (when the \"Edit Image\" toolbar button is clicked). Set"
-" to the empty string to disable this feature."
+"The desktop file name (including the \".desktop\") of the application to use "
+"for editing images (when the \"Edit Image\" toolbar button is clicked). Set "
+"to the empty string to disable this feature."
 msgstr ""
-"그림을 편집할 때(\"그림 편집\" 도구 모듬 단추를 누를 경우) 사용할 프로그램의 desktop 파일 이름(\".desktop\" "
-"포함)입니다. 이 기능을 사용하지 않으려면 입력하지 마십시오."
+"그림을 편집할 때(\"그림 편집\" 도구 모듬 단추를 누를 경우) 사용할 프로그램의 "
+"desktop 파일 이름(\".desktop\" 포함)입니다. 이 기능을 사용하지 않으려면 입력"
+"하지 마십시오."
 
 #: data/org.cafe.eoc.gschema.xml.in:127
 msgid ""
-"Whether the file chooser should show the user's pictures folder if no images"
-" are loaded."
-msgstr "그림을 읽어들이지 않았을 때 파일 선택 창에서 사용자의 그림 폴더를 표시할 지 여부."
+"Whether the file chooser should show the user's pictures folder if no images "
+"are loaded."
+msgstr ""
+"그림을 읽어들이지 않았을 때 파일 선택 창에서 사용자의 그림 폴더를 표시할 지 "
+"여부."
 
 #: data/org.cafe.eoc.gschema.xml.in:128
 msgid ""
@@ -605,8 +608,9 @@ msgid ""
 "directories. If deactivated or the pictures folder has not been set up, it "
 "will show the current working directory."
 msgstr ""
-"활성화하고 활성 창에 불러온 그림이 없다면, 파일 선택 항은 XDG 특수 사용자 디렉터리를 활용하여 사용자의 그림 폴더 내용을 "
-"표시합니다. 비활성화하거나 그림 폴더를 설정하지 않았다면 현재 작업 디렉터리를 보여줍니다."
+"활성화하고 활성 창에 불러온 그림이 없다면, 파일 선택 항은 XDG 특수 사용자 디"
+"렉터리를 활용하여 사용자의 그림 폴더 내용을 표시합니다. 비활성화하거나 그림 "
+"폴더를 설정하지 않았다면 현재 작업 디렉터리를 보여줍니다."
 
 #: data/org.cafe.eoc.gschema.xml.in:134
 msgid "Active plugins"
@@ -618,16 +622,12 @@ msgid ""
 "plugins. See the .eoc-plugin file for obtaining the \"Location\" of a given "
 "plugin."
 msgstr ""
-"사용중인 플러그인 목록. 사용중인 플러그인의 \"위치\"는 포함하지 않습니다. 주어진 플러그인의 \"위치\"는 .eoc-plugin "
-"파일을 참고하십시오."
+"사용중인 플러그인 목록. 사용중인 플러그인의 \"위치\"는 포함하지 않습니다. 주"
+"어진 플러그인의 \"위치\"는 .eoc-plugin 파일을 참고하십시오."
 
 #: plugins/fullscreen/fullscreen.plugin.desktop.in:5
 msgid "Fullscreen with double-click"
 msgstr "두 번 누르면 전체 화면"
-
-#: plugins/fullscreen/fullscreen.plugin.desktop.in:6
-msgid "view-fullscreen"
-msgstr ""
 
 #: plugins/reload/eoc-reload-plugin.c:45
 #: plugins/reload/reload.plugin.desktop.in:5
@@ -637,10 +637,6 @@ msgstr "그림 다시 읽기"
 #: plugins/reload/eoc-reload-plugin.c:45
 msgid "Reload current image"
 msgstr "현재 그림을 다시 읽습니다"
-
-#: plugins/reload/reload.plugin.desktop.in:6
-msgid "view-refresh"
-msgstr ""
 
 #: plugins/statusbar-date/statusbar-date.plugin.desktop.in:5
 msgid "Date in statusbar"
@@ -686,7 +682,8 @@ msgstr "파일 형식이 알 수 없거나 지원하지 않습니다"
 msgid ""
 "Eye of CAFE could not determine a supported writable file format based on "
 "the filename."
-msgstr "마테의 눈이 파일 이름으로 저장할 수 있는 파일 형식을 알아낼 수 없습니다."
+msgstr ""
+"마테의 눈이 파일 이름으로 저장할 수 있는 파일 형식을 알아낼 수 없습니다."
 
 #: src/eoc-file-chooser.c:127
 msgid "Please try a different file extension like .png or .jpg."
@@ -719,7 +716,7 @@ msgstr "그림 열기"
 msgid "Save Image"
 msgstr "그림 저장"
 
-#: src/eoc-file-chooser.c:467 src/eoc-window.c:4009
+#: src/eoc-file-chooser.c:467 src/eoc-window.c:3943
 msgid "Open Folder"
 msgstr "폴더 열기"
 
@@ -996,22 +993,22 @@ msgstr " (잘못된 유니코드)"
 #. * - image height
 #. * - image size in bytes
 #. * - zoom in percent
-#: src/eoc-window.c:521
+#: src/eoc-window.c:519
 #, c-format
 msgid "%i × %i pixel  %s    %i%%"
 msgid_plural "%i × %i pixels  %s    %i%%"
 msgstr[0] ""
 
-#: src/eoc-window.c:832
+#: src/eoc-window.c:820
 msgid "_Reload"
 msgstr "다시 읽기(_R)"
 
-#: src/eoc-window.c:834 src/eoc-window.c:2794
+#: src/eoc-window.c:822 src/eoc-window.c:2745
 msgctxt "MessageArea"
 msgid "Hi_de"
 msgstr "숨기기(_D)"
 
-#: src/eoc-window.c:844
+#: src/eoc-window.c:832
 #, c-format
 msgid ""
 "The image \"%s\" has been modified by an external application.\n"
@@ -1020,7 +1017,7 @@ msgstr ""
 "\"%s\" 그림을 외부 프로그램에서 수정했습니다.\n"
 "다시 읽으시겠습니까?"
 
-#: src/eoc-window.c:1012
+#: src/eoc-window.c:998
 #, c-format
 msgid "Use \"%s\" to open the selected image"
 msgstr "선택한 그림을 열기위해 \"%s\"(을)를 사용합니다"
@@ -1030,25 +1027,25 @@ msgstr "선택한 그림을 열기위해 \"%s\"(을)를 사용합니다"
 #. * - the original filename
 #. * - the current image's position in the queue
 #. * - the total number of images queued for saving
-#: src/eoc-window.c:1176
+#: src/eoc-window.c:1154
 #, c-format
 msgid "Saving image \"%s\" (%u/%u)"
 msgstr "\"%s\" 그림을 저장하는 중 (%u/%u)"
 
-#: src/eoc-window.c:1543
+#: src/eoc-window.c:1513
 #, c-format
 msgid "Opening image \"%s\""
 msgstr "\"%s\" 그림 여는중"
 
-#: src/eoc-window.c:1909
+#: src/eoc-window.c:1869
 msgid "Leave Fullscreen"
 msgstr "전체 화면 나가기"
 
-#: src/eoc-window.c:2050
+#: src/eoc-window.c:2002
 msgid "Viewing a slideshow"
 msgstr "슬라이드쇼 모드로 열기"
 
-#: src/eoc-window.c:2263
+#: src/eoc-window.c:2215
 #, c-format
 msgid ""
 "Error printing file:\n"
@@ -1057,60 +1054,64 @@ msgstr ""
 "파일을 인쇄하는 데 오류가 발생했습니다:\n"
 "%s"
 
-#: src/eoc-window.c:2526
+#: src/eoc-window.c:2478
 msgid "Toolbar Editor"
 msgstr "도구 모음 편집기"
 
-#: src/eoc-window.c:2529
+#: src/eoc-window.c:2481
 msgid "_Reset to Default"
 msgstr "기본값으로 돌아가기(_R)"
 
-#: src/eoc-window.c:2594
+#: src/eoc-window.c:2546
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
 "under the terms of the GNU General Public License as published by the Free "
 "Software Foundation; either version 2 of the License, or (at your option) "
 "any later version.\n"
 msgstr ""
-"이 프로그램은 자유 소프트웨어 입니다. 자유 소프트웨어 재단이 발표한 GNU 일반 공중 사용 허가서 버전 2 또는 (선택에 따라) 그 "
-"이상의 버전의 조항에 의거하여 재배포하거나 수정할 수 있습니다. \n"
+"이 프로그램은 자유 소프트웨어 입니다. 자유 소프트웨어 재단이 발표한 GNU 일반 "
+"공중 사용 허가서 버전 2 또는 (선택에 따라) 그 이상의 버전의 조항에 의거하여 "
+"재배포하거나 수정할 수 있습니다. \n"
 
-#: src/eoc-window.c:2598
+#: src/eoc-window.c:2550
 msgid ""
 "This program is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
 "FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
 "more details.\n"
 msgstr ""
-"마테 터미널은 유용하게 사용될 수 있으리라는 희망에서 배포되고 있지만, 특정한 목적에 맞는 적합성 여부나 판매용으로 사용할 수 있으리라는"
-" 묵시적인 보증을 포함한 어떠한 형태의 보증도 제공하지 않습니다. 보다 자세한 사항에 대해서는 GNU 일반 공중 사용 허가서를 참고하시기"
-" 바랍니다.\n"
+"마테 터미널은 유용하게 사용될 수 있으리라는 희망에서 배포되고 있지만, 특정한 "
+"목적에 맞는 적합성 여부나 판매용으로 사용할 수 있으리라는 묵시적인 보증을 포"
+"함한 어떠한 형태의 보증도 제공하지 않습니다. 보다 자세한 사항에 대해서는 GNU "
+"일반 공중 사용 허가서를 참고하시기 바랍니다.\n"
 
-#: src/eoc-window.c:2602
+#: src/eoc-window.c:2554
 msgid ""
-"You should have received a copy of the GNU General Public License along with"
-" this program; if not, write to the Free Software Foundation, Inc., 51 "
+"You should have received a copy of the GNU General Public License along with "
+"this program; if not, write to the Free Software Foundation, Inc., 51 "
 "Franklin St, Fifth Floor, Boston, MA 02110-1301, USA."
 msgstr ""
-"GNU 일반 공중 사용 허가서 사본을 이 프로그램과 받아야 합니다. 못받으셨다면 Free Software Foundation, Inc.,"
-" 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA에 요청하십시오."
+"GNU 일반 공중 사용 허가서 사본을 이 프로그램과 받아야 합니다. 못받으셨다면 "
+"Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA "
+"02110-1301, USA에 요청하십시오."
 
-#: src/eoc-window.c:2641
+#: src/eoc-window.c:2593
 msgid "About Eye of CAFE"
 msgstr "마테의 눈 소개"
 
-#: src/eoc-window.c:2643
+#: src/eoc-window.c:2595
 msgid ""
 "Copyright © 2000-2010 Free Software Foundation, Inc.\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 CAFE developers"
+"Copyright © 2012-2020 MATE developers\n"
+"Copyright © 2023 Pablo Barciela"
 msgstr ""
 
-#: src/eoc-window.c:2646
+#: src/eoc-window.c:2599
 msgid "The CAFE image viewer."
 msgstr "마테 그림 뷰어."
 
-#: src/eoc-window.c:2649
+#: src/eoc-window.c:2602
 msgid "translator-credits"
 msgstr ""
 "Elex https://launchpad.net/~mysticzizone\n"
@@ -1118,17 +1119,18 @@ msgstr ""
 "Yoo Duk Nam https://launchpad.net/~yoo2001818\n"
 "onlyeriko https://launchpad.net/~onlyeriko\n"
 "Seong-ho Cho <darkcircle.0426@gmail.com>\n"
-"CAFE Desktop Environment Team <https://www.transifex.com/cafe/teams/13566/ko/>"
+"CAFE Desktop Environment Team <https://www.transifex.com/cafe/teams/13566/ko/"
+">"
 
-#: src/eoc-window.c:2742 src/eoc-window.c:2757
+#: src/eoc-window.c:2693 src/eoc-window.c:2708
 msgid "Error launching appearance preferences dialog: "
 msgstr "꾸미기 설정 대화창을 여는 동안 오류가 생겼습니다:"
 
-#: src/eoc-window.c:2792
+#: src/eoc-window.c:2743
 msgid "_Open Background Preferences"
 msgstr "배경 기본 설정 열기(_O)"
 
-#: src/eoc-window.c:2808
+#: src/eoc-window.c:2759
 #, c-format
 msgid ""
 "The image \"%s\" has been set as Desktop Background.\n"
@@ -1137,11 +1139,11 @@ msgstr ""
 "\"%s\" 그림을 데스크톱 배경으로 지정했습니다.\n"
 "모양을 수정하시겠습니까?"
 
-#: src/eoc-window.c:3249
+#: src/eoc-window.c:3192
 msgid "Saving image locally…"
 msgstr "그림을 로컬에 저장하는 중입니다…"
 
-#: src/eoc-window.c:3329
+#: src/eoc-window.c:3272
 #, c-format
 msgid ""
 "Are you sure you want to move\n"
@@ -1150,14 +1152,14 @@ msgstr ""
 "정말로 \"%s\"(을)를 \n"
 "휴지통에 옮기시겠습니까?"
 
-#: src/eoc-window.c:3332
+#: src/eoc-window.c:3275
 #, c-format
 msgid ""
 "A trash for \"%s\" couldn't be found. Do you want to remove this image "
 "permanently?"
 msgstr "\"%s\"에 대한 휴지통이 없습니다. 이 그림을 완전히 제거하시겠습니까?"
 
-#: src/eoc-window.c:3337
+#: src/eoc-window.c:3280
 #, c-format
 msgid ""
 "Are you sure you want to move\n"
@@ -1167,393 +1169,395 @@ msgid_plural ""
 "the %d selected images to the trash?"
 msgstr[0] ""
 
-#: src/eoc-window.c:3342
+#: src/eoc-window.c:3285
 msgid ""
 "Some of the selected images can't be moved to the trash and will be removed "
 "permanently. Are you sure you want to proceed?"
-msgstr "선택한 그림 중에 휴지통으로 옮기지 못해서 완전히 제거할 파일이 있습니다. 계속 하시겠습니까?"
+msgstr ""
+"선택한 그림 중에 휴지통으로 옮기지 못해서 완전히 제거할 파일이 있습니다. 계"
+"속 하시겠습니까?"
 
-#: src/eoc-window.c:3359 src/eoc-window.c:3855 src/eoc-window.c:3882
+#: src/eoc-window.c:3302 src/eoc-window.c:3792 src/eoc-window.c:3819
 msgid "Move to _Trash"
 msgstr "휴지통으로 보내기(_T)"
 
-#: src/eoc-window.c:3361
+#: src/eoc-window.c:3304
 msgid "_Do not ask again during this session"
 msgstr "이 세션에서 다시 묻지 않기(_D)"
 
-#: src/eoc-window.c:3406 src/eoc-window.c:3420
+#: src/eoc-window.c:3349 src/eoc-window.c:3363
 msgid "Couldn't access trash."
 msgstr "휴지통에 접근할 수 없습니다."
 
-#: src/eoc-window.c:3428
+#: src/eoc-window.c:3371
 msgid "Couldn't delete file"
 msgstr "파일을 삭제할 수 없습니다"
 
-#: src/eoc-window.c:3530
+#: src/eoc-window.c:3471
 #, c-format
 msgid "Error on deleting image %s"
 msgstr "%s 그림을 삭제하는 데 오류가 발생했습니다"
 
-#: src/eoc-window.c:3776
+#: src/eoc-window.c:3713
 msgid "_Image"
 msgstr "그림(_I)"
 
-#: src/eoc-window.c:3777
+#: src/eoc-window.c:3714
 msgid "_Edit"
 msgstr "편집(_E)"
 
-#: src/eoc-window.c:3778
+#: src/eoc-window.c:3715
 msgid "_View"
 msgstr "보기(_V)"
 
-#: src/eoc-window.c:3779
+#: src/eoc-window.c:3716
 msgid "_Go"
 msgstr "이동(_G)"
 
-#: src/eoc-window.c:3780
+#: src/eoc-window.c:3717
 msgid "_Tools"
 msgstr "도구(_T)"
 
-#: src/eoc-window.c:3781
+#: src/eoc-window.c:3718
 msgid "_Help"
 msgstr "도움말(_H)"
 
-#: src/eoc-window.c:3783
+#: src/eoc-window.c:3720
 msgid "_Open…"
 msgstr "열기(_O)…"
 
-#: src/eoc-window.c:3784
+#: src/eoc-window.c:3721
 msgid "Open a file"
 msgstr "파일 열기"
 
-#: src/eoc-window.c:3786
+#: src/eoc-window.c:3723
 msgid "_Close"
 msgstr "닫기(_C)"
 
-#: src/eoc-window.c:3787
+#: src/eoc-window.c:3724
 msgid "Close window"
 msgstr "창 닫기"
 
-#: src/eoc-window.c:3789
+#: src/eoc-window.c:3726
 msgid "T_oolbar"
 msgstr "도구 모음(_O)"
 
-#: src/eoc-window.c:3790
+#: src/eoc-window.c:3727
 msgid "Edit the application toolbar"
 msgstr "도구 모음을 고칩니다"
 
-#: src/eoc-window.c:3792
+#: src/eoc-window.c:3729
 msgid "Prefere_nces"
 msgstr "기본 설정(_N)"
 
-#: src/eoc-window.c:3793
+#: src/eoc-window.c:3730
 msgid "Preferences for Eye of CAFE"
 msgstr "마테의 눈 기본 설정"
 
-#: src/eoc-window.c:3795
+#: src/eoc-window.c:3732
 msgid "_Contents"
 msgstr "콘텐츠(_C)"
 
-#: src/eoc-window.c:3796
+#: src/eoc-window.c:3733
 msgid "Help on this application"
 msgstr "이 프로그램에 대한 정보"
 
-#: src/eoc-window.c:3798
+#: src/eoc-window.c:3735
 msgid "_About"
 msgstr "정보(_A)"
 
-#: src/eoc-window.c:3799
+#: src/eoc-window.c:3736
 msgid "About this application"
 msgstr "이 프로그램에 대한 정보"
 
-#: src/eoc-window.c:3804
+#: src/eoc-window.c:3741
 msgid "_Toolbar"
 msgstr "도구 모음(_T)"
 
-#: src/eoc-window.c:3805
+#: src/eoc-window.c:3742
 msgid "Changes the visibility of the toolbar in the current window"
 msgstr "현재 창의 도구 모음 표시 여부를 바꿉니다"
 
-#: src/eoc-window.c:3807
+#: src/eoc-window.c:3744
 msgid "_Statusbar"
 msgstr "상태 표시줄(_S)"
 
-#: src/eoc-window.c:3808
+#: src/eoc-window.c:3745
 msgid "Changes the visibility of the statusbar in the current window"
 msgstr "현재 창의 상태 표시줄 표시 여부를 바꿉니다"
 
-#: src/eoc-window.c:3810
+#: src/eoc-window.c:3747
 msgid "_Image Collection"
 msgstr "그림 모음(_I)"
 
-#: src/eoc-window.c:3811
+#: src/eoc-window.c:3748
 msgid ""
 "Changes the visibility of the image collection pane in the current window"
 msgstr "현재 창의 그림 모음 창 보기 여부를 바꿉니다"
 
-#: src/eoc-window.c:3813
+#: src/eoc-window.c:3750
 msgid "Side _Pane"
 msgstr "가장자리 창(_P)"
 
-#: src/eoc-window.c:3814
+#: src/eoc-window.c:3751
 msgid "Changes the visibility of the side pane in the current window"
 msgstr "현재 창에서 가장자리 창을 보기 여부를 바꿉니다"
 
-#: src/eoc-window.c:3819
+#: src/eoc-window.c:3756
 msgid "_Save"
 msgstr "저장(_S)"
 
-#: src/eoc-window.c:3820
+#: src/eoc-window.c:3757
 msgid "Save changes in currently selected images"
 msgstr "현재 선택한 그림의 바뀐 사항을 저장합니다"
 
-#: src/eoc-window.c:3822
+#: src/eoc-window.c:3759
 msgid "Open _with"
 msgstr "다른 프로그램으로 열기(_W)"
 
-#: src/eoc-window.c:3823
+#: src/eoc-window.c:3760
 msgid "Open the selected image with a different application"
 msgstr "선택한 그림을 다른 프로그램에서 엽니다"
 
-#: src/eoc-window.c:3825
+#: src/eoc-window.c:3762
 msgid "Save _As…"
 msgstr "다른 이름으로 저장(_A)…"
 
-#: src/eoc-window.c:3826
+#: src/eoc-window.c:3763
 msgid "Save the selected images with a different name"
 msgstr "선택한 그림을 다른 이름으로 저장합니다"
 
-#: src/eoc-window.c:3828
+#: src/eoc-window.c:3765
 msgid "Open Containing _Folder"
 msgstr "포함하는 폴더 열기(_F)"
 
-#: src/eoc-window.c:3829
+#: src/eoc-window.c:3766
 msgid "Show the folder which contains this file in the file manager"
 msgstr "파일 관리자에서 이 파일을 포함하는 폴더를 보이기"
 
-#: src/eoc-window.c:3831
+#: src/eoc-window.c:3768
 msgid "_Print…"
 msgstr "인쇄(_P)…"
 
-#: src/eoc-window.c:3832
+#: src/eoc-window.c:3769
 msgid "Print the selected image"
 msgstr "선택한 그림을 인쇄합니다"
 
-#: src/eoc-window.c:3834
+#: src/eoc-window.c:3771
 msgid "Prope_rties"
 msgstr "속성(_R)"
 
-#: src/eoc-window.c:3835
+#: src/eoc-window.c:3772
 msgid "Show the properties and metadata of the selected image"
 msgstr "선택한 그림의 속성과 메타데이터를 봅니다"
 
-#: src/eoc-window.c:3837
+#: src/eoc-window.c:3774
 msgid "_Undo"
 msgstr "실행 취소(_U)"
 
-#: src/eoc-window.c:3838
+#: src/eoc-window.c:3775
 msgid "Undo the last change in the image"
 msgstr "그림에서 마지막에 바꾼 사항을 실행 취소합니다"
 
-#: src/eoc-window.c:3840
+#: src/eoc-window.c:3777
 msgid "Flip _Horizontal"
 msgstr "가로 방향으로 뒤집기(_H)"
 
-#: src/eoc-window.c:3841
+#: src/eoc-window.c:3778
 msgid "Mirror the image horizontally"
 msgstr "그림을 가로 방향으로 뒤바꿉니다"
 
-#: src/eoc-window.c:3843
+#: src/eoc-window.c:3780
 msgid "Flip _Vertical"
 msgstr "세로 방향으로 뒤집기(_V)"
 
-#: src/eoc-window.c:3844
+#: src/eoc-window.c:3781
 msgid "Mirror the image vertically"
 msgstr "그림을 세로 방향으로 뒤바꿉니다"
 
-#: src/eoc-window.c:3846
+#: src/eoc-window.c:3783
 msgid "_Rotate Clockwise"
 msgstr "시계 방향 회전(_R)"
 
-#: src/eoc-window.c:3847
+#: src/eoc-window.c:3784
 msgid "Rotate the image 90 degrees to the right"
 msgstr "그림을 오른쪽 90도만큼 회전합니다"
 
-#: src/eoc-window.c:3849
+#: src/eoc-window.c:3786
 msgid "Rotate Counterc_lockwise"
 msgstr "시계 반대 방향 회전(_L)"
 
-#: src/eoc-window.c:3850
+#: src/eoc-window.c:3787
 msgid "Rotate the image 90 degrees to the left"
 msgstr "그림을 왼쪽 90도만큼 회전합니다"
 
-#: src/eoc-window.c:3852
+#: src/eoc-window.c:3789
 msgid "Set as _Desktop Background"
 msgstr "바탕 화면 배경으로 설정(_D)"
 
-#: src/eoc-window.c:3853
+#: src/eoc-window.c:3790
 msgid "Set the selected image as the desktop background"
 msgstr "선택한 그림을 바탕 화면 배경으로 설정합니다"
 
-#: src/eoc-window.c:3856
+#: src/eoc-window.c:3793
 msgid "Move the selected image to the trash folder"
 msgstr "선택한 그림을 휴지통 폴더로 옮깁니다"
 
-#: src/eoc-window.c:3858
+#: src/eoc-window.c:3795
 msgid "_Copy"
 msgstr "복사(_C)"
 
-#: src/eoc-window.c:3859
+#: src/eoc-window.c:3796
 msgid "Copy the selected image to the clipboard"
 msgstr "선택한 그림을 클립보드에 복사"
 
-#: src/eoc-window.c:3861 src/eoc-window.c:3873 src/eoc-window.c:3876
+#: src/eoc-window.c:3798 src/eoc-window.c:3810 src/eoc-window.c:3813
 msgid "_Zoom In"
 msgstr "확대(_Z)"
 
-#: src/eoc-window.c:3862 src/eoc-window.c:3874
+#: src/eoc-window.c:3799 src/eoc-window.c:3811
 msgid "Enlarge the image"
 msgstr "그림을 크게 확대해서 봅니다"
 
-#: src/eoc-window.c:3864 src/eoc-window.c:3879
+#: src/eoc-window.c:3801 src/eoc-window.c:3816
 msgid "Zoom _Out"
 msgstr "축소(_O)"
 
-#: src/eoc-window.c:3865 src/eoc-window.c:3877 src/eoc-window.c:3880
+#: src/eoc-window.c:3802 src/eoc-window.c:3814 src/eoc-window.c:3817
 msgid "Shrink the image"
 msgstr "그림을 작게 축소해서 봅니다"
 
-#: src/eoc-window.c:3867
+#: src/eoc-window.c:3804
 msgid "_Normal Size"
 msgstr "보통 크기(_N)"
 
-#: src/eoc-window.c:3868
+#: src/eoc-window.c:3805
 msgid "Show the image at its normal size"
 msgstr "그림을 원래 크기로 봅니다"
 
-#: src/eoc-window.c:3870
+#: src/eoc-window.c:3807
 msgid "_Best Fit"
 msgstr "알맞게 맞추기(_B)"
 
-#: src/eoc-window.c:3871
+#: src/eoc-window.c:3808
 msgid "Fit the image to the window"
 msgstr "그림을 창 크기에 맞춥니다"
 
-#: src/eoc-window.c:3888
+#: src/eoc-window.c:3825
 msgid "_Fullscreen"
 msgstr "전체 화면(_F)"
 
-#: src/eoc-window.c:3889
+#: src/eoc-window.c:3826
 msgid "Show the current image in fullscreen mode"
 msgstr "현재 그림을 전체화면 모드에서 봅니다"
 
-#: src/eoc-window.c:3891
+#: src/eoc-window.c:3828
 msgid "Pause Slideshow"
 msgstr "슬라이드 쇼 일시 정지"
 
-#: src/eoc-window.c:3892
+#: src/eoc-window.c:3829
 msgid "Pause or resume the slideshow"
 msgstr "슬라이드 쇼를 잠시 멈추거나 재개합니다"
 
-#: src/eoc-window.c:3897 src/eoc-window.c:3912
+#: src/eoc-window.c:3834 src/eoc-window.c:3849
 msgid "_Previous Image"
 msgstr "이전 그림(_P)"
 
-#: src/eoc-window.c:3898
+#: src/eoc-window.c:3835
 msgid "Go to the previous image of the collection"
 msgstr "그림 모음의 이전 그림으로 이동합니다"
 
-#: src/eoc-window.c:3900
+#: src/eoc-window.c:3837
 msgid "_Next Image"
 msgstr "다음 그림(_N)"
 
-#: src/eoc-window.c:3901
+#: src/eoc-window.c:3838
 msgid "Go to the next image of the collection"
 msgstr "그림 모음의 다음 그림으로 이동합니다"
 
-#: src/eoc-window.c:3903 src/eoc-window.c:3915
+#: src/eoc-window.c:3840 src/eoc-window.c:3852
 msgid "_First Image"
 msgstr "처음 그림(_F)"
 
-#: src/eoc-window.c:3904
+#: src/eoc-window.c:3841
 msgid "Go to the first image of the collection"
 msgstr "그림 모음의 처음 그림으로 이동합니다"
 
-#: src/eoc-window.c:3906 src/eoc-window.c:3918
+#: src/eoc-window.c:3843 src/eoc-window.c:3855
 msgid "_Last Image"
 msgstr "마지막 그림(_L)"
 
-#: src/eoc-window.c:3907
+#: src/eoc-window.c:3844
 msgid "Go to the last image of the collection"
 msgstr "그림 모음의 마지막 그림으로 이동합니다"
 
-#: src/eoc-window.c:3909
+#: src/eoc-window.c:3846
 msgid "_Random Image"
 msgstr "임의의 그림(_R)"
 
-#: src/eoc-window.c:3910
+#: src/eoc-window.c:3847
 msgid "Go to a random image of the collection"
 msgstr "그림 모음에서 임의의 그림으로 이동합니다"
 
-#: src/eoc-window.c:3924
+#: src/eoc-window.c:3861
 msgid "S_lideshow"
 msgstr "슬라이드 쇼(_L)"
 
-#: src/eoc-window.c:3925
+#: src/eoc-window.c:3862
 msgid "Start a slideshow view of the images"
 msgstr "그림으로 슬라이드 쇼를 시작합니다."
 
-#: src/eoc-window.c:3995
+#: src/eoc-window.c:3929
 msgid "Previous"
 msgstr "이전"
 
-#: src/eoc-window.c:3999
+#: src/eoc-window.c:3933
 msgid "Next"
 msgstr "다음"
 
-#: src/eoc-window.c:4003
+#: src/eoc-window.c:3937
 msgid "Right"
 msgstr "오른쪽"
 
-#: src/eoc-window.c:4006
+#: src/eoc-window.c:3940
 msgid "Left"
 msgstr "왼쪽"
 
-#: src/eoc-window.c:4012
+#: src/eoc-window.c:3946
 msgid "In"
 msgstr "확대"
 
-#: src/eoc-window.c:4015
+#: src/eoc-window.c:3949
 msgid "Out"
 msgstr "축소"
 
-#: src/eoc-window.c:4018
+#: src/eoc-window.c:3952
 msgid "Normal"
 msgstr "보통"
 
-#: src/eoc-window.c:4021
+#: src/eoc-window.c:3955
 msgid "Fit"
 msgstr "맞추기"
 
-#: src/eoc-window.c:4024
+#: src/eoc-window.c:3958
 msgid "Collection"
 msgstr "그림 모음"
 
-#: src/eoc-window.c:4027
+#: src/eoc-window.c:3961
 msgctxt "action (to trash)"
 msgid "Trash"
 msgstr "휴지통"
 
-#: src/eoc-window.c:4385
+#: src/eoc-window.c:4307
 #, c-format
 msgid "Edit the current image using %s"
 msgstr "%s 프로그램으로 현재 그림 편집"
 
-#: src/eoc-window.c:4388
+#: src/eoc-window.c:4309
 msgid "Edit Image"
 msgstr "그림 편집"
 
-#: src/eoc-window.c:4612
+#: src/eoc-window.c:4524
 msgid "Properties"
 msgstr "속성"
 

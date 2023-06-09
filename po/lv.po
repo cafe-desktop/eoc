@@ -2,62 +2,63 @@
 # Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the eoc package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Rihards Priedītis <rprieditis@gmail.com>, 2020
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # Imants Liepiņš <imzzinator@gmail.com>, 2020
 # Martin Wimpress <code@flexion.org>, 2020
 # duck <voiceofwise1@gmail.com>, 2020
-# 
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: eoc 1.23.1\n"
+"Project-Id-Version: eoc 1.25.0\n"
 "Report-Msgid-Bugs-To: http://www.cafe-desktop.org\n"
-"POT-Creation-Date: 2020-01-10 14:33+0100\n"
+"POT-Creation-Date: 2023-06-09 11:11+0200\n"
 "PO-Revision-Date: 2020-02-14 12:07+0000\n"
 "Last-Translator: duck <voiceofwise1@gmail.com>, 2020\n"
 "Language-Team: Latvian (https://www.transifex.com/cafe/teams/13566/lv/)\n"
+"Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: lv\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
+"2);\n"
 
-#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:946
+#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:934
 #, c-format
 msgid "Show “_%s”"
 msgstr "Rādīt “_%s”"
 
-#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1420
+#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1400
 msgid "_Move on Toolbar"
 msgstr "_Pārvietot uz rīkjoslu"
 
-#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1421
+#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1401
 msgid "Move the selected item on the toolbar"
 msgstr "Pārvietot izvēlēto elementu uz rīkjoslu"
 
-#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1422
+#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1402
 msgid "_Remove from Toolbar"
 msgstr "Noņemt no _rīkjoslas"
 
-#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1423
+#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1403
 msgid "Remove the selected item from the toolbar"
 msgstr "Aizvākt izvēlētos elementu no rīkjoslas"
 
-#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1424
+#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1404
 msgid "_Delete Toolbar"
 msgstr "_Dzēst rīkjoslu"
 
-#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1425
+#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1405
 msgid "Remove the selected toolbar"
 msgstr "Aizvākt izvēlēto rīkjoslu"
 
-#: cut-n-paste/toolbar-editor/egg-toolbar-editor.c:483
+#: cut-n-paste/toolbar-editor/egg-toolbar-editor.c:481
 msgid "Separator"
 msgstr "Atdalītājs"
 
-#: data/eoc.appdata.xml.in:6 src/eoc-window.c:2640
+#: data/eoc.appdata.xml.in:6 src/eoc-window.c:2592
 msgid "Eye of CAFE"
 msgstr "Eye of CAFE"
 
@@ -67,9 +68,9 @@ msgstr ""
 
 #: data/eoc.appdata.xml.in:9
 msgid ""
-"Eye of CAFE is a simple viewer for browsing images on your computer. Once an"
-" image is loaded, you can zoom and rotate the image, and also view "
-"subsequent images in the directory the image was loaded from."
+"Eye of CAFE is a simple viewer for browsing images on your computer. Once an "
+"image is loaded, you can zoom and rotate the image, and also view subsequent "
+"images in the directory the image was loaded from."
 msgstr ""
 
 #: data/eoc.desktop.in.in:3 src/main.c:65 src/main.c:166
@@ -80,14 +81,7 @@ msgstr "Eye of CAFE attēlu skatītājs"
 msgid "Browse and rotate images"
 msgstr "Pārlūkot un grozīt attēlus"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/eoc.desktop.in.in:8
-msgid "eoc"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/eoc.desktop.in.in:14
 msgid "image;viewer;JPEG;PNG;TIFF;SVG;CAFE;photos;browse;thumbnails;rotate;"
 msgstr ""
@@ -406,8 +400,8 @@ msgstr "Izmantot pielāgotu pamata krāsu"
 
 #: data/org.cafe.eoc.gschema.xml.in:22
 msgid ""
-"If this is active, the color set by the background-color key will be used to"
-" fill the area behind the image. If it is not set, the current CTK+ theme "
+"If this is active, the color set by the background-color key will be used to "
+"fill the area behind the image. If it is not set, the current CTK+ theme "
 "will determine the fill color."
 msgstr ""
 "Ja šis ir ieslēgts, tad pamatkrāsas atslēgas noteiktā krāsa aizpildīs "
@@ -464,9 +458,9 @@ msgstr "Tālummaiņas reizinātājs"
 #: data/org.cafe.eoc.gschema.xml.in:47
 msgid ""
 "The multiplier to be applied when using the mouse scroll wheel for zooming. "
-"This value defines the zooming step used for each scroll event. For example,"
-" 0.05 results in a 5% zoom increment for each scroll event and 1.00 result "
-"in a 100% zoom increment."
+"This value defines the zooming step used for each scroll event. For example, "
+"0.05 results in a 5% zoom increment for each scroll event and 1.00 result in "
+"a 100% zoom increment."
 msgstr ""
 "Reizinātājs, ko pielietot, kad tālummaiņai izmanto peles ritentiņu.  Šī "
 "vērtība nosaka tālummaiņas soli. Piemēram, 0.05 atbilst 5% tālummaiņas "
@@ -518,8 +512,8 @@ msgstr "Aizture sekundēs, pirms parāda nākamo attēlu"
 
 #: data/org.cafe.eoc.gschema.xml.in:74
 msgid ""
-"A value greater than 0 determines the seconds an image stays on screen until"
-" the next one is shown automatically. Zero disables the automatic browsing."
+"A value greater than 0 determines the seconds an image stays on screen until "
+"the next one is shown automatically. Zero disables the automatic browsing."
 msgstr ""
 "Ja vērtība lielāka par 0, tā norāda, cik sekundes katru attēlu rādīt. Nulle "
 "izslēdz automātisku attēlu pārslēgšanu."
@@ -567,8 +561,8 @@ msgid ""
 "trash and would be deleted instead."
 msgstr ""
 "Ja ir ieslēgts, Eye of CAFE nelūgs apstirināt attēlu pārvietošanu uz "
-"atkritni. Tā jautās, ja kādu no failiem nevar pārvietot uz atkritni, bet tas"
-" tiks izdzēsts pavisam."
+"atkritni. Tā jautās, ja kādu no failiem nevar pārvietot uz atkritni, bet tas "
+"tiks izdzēsts pavisam."
 
 #: data/org.cafe.eoc.gschema.xml.in:117
 msgid ""
@@ -579,8 +573,8 @@ msgstr ""
 #: data/org.cafe.eoc.gschema.xml.in:118
 msgid ""
 "If activated, the detailed metadata list in the properties dialog will be "
-"moved to its own page in the dialog. This should make the dialog more usable"
-" on smaller screens, e.g. as used by netbooks. If disabled, the widget will "
+"moved to its own page in the dialog. This should make the dialog more usable "
+"on smaller screens, e.g. as used by netbooks. If disabled, the widget will "
 "be embedded on the \"Metadata\" page."
 msgstr ""
 "Ja ieslēgts, tad sīkāki metadati īpašību logā tiks pārvietoti atsevišķā "
@@ -594,15 +588,15 @@ msgstr ""
 
 #: data/org.cafe.eoc.gschema.xml.in:123
 msgid ""
-"The desktop file name (including the \".desktop\") of the application to use"
-" for editing images (when the \"Edit Image\" toolbar button is clicked). Set"
-" to the empty string to disable this feature."
+"The desktop file name (including the \".desktop\") of the application to use "
+"for editing images (when the \"Edit Image\" toolbar button is clicked). Set "
+"to the empty string to disable this feature."
 msgstr ""
 
 #: data/org.cafe.eoc.gschema.xml.in:127
 msgid ""
-"Whether the file chooser should show the user's pictures folder if no images"
-" are loaded."
+"Whether the file chooser should show the user's pictures folder if no images "
+"are loaded."
 msgstr ""
 "Vai failu izvēlētājam vajadzētu rādīt lietotāja attēlu mapi, ja neviena "
 "bilde nav vēl ielādēta."
@@ -636,10 +630,6 @@ msgstr ""
 msgid "Fullscreen with double-click"
 msgstr "Pilnekrāns ar dubultklikšķi"
 
-#: plugins/fullscreen/fullscreen.plugin.desktop.in:6
-msgid "view-fullscreen"
-msgstr ""
-
 #: plugins/reload/eoc-reload-plugin.c:45
 #: plugins/reload/reload.plugin.desktop.in:5
 msgid "Reload Image"
@@ -648,10 +638,6 @@ msgstr "Pārlādēt attēlu"
 #: plugins/reload/eoc-reload-plugin.c:45
 msgid "Reload current image"
 msgstr "Pārlādēt pašreizējo attēlu"
-
-#: plugins/reload/reload.plugin.desktop.in:6
-msgid "view-refresh"
-msgstr ""
 
 #: plugins/statusbar-date/statusbar-date.plugin.desktop.in:5
 msgid "Date in statusbar"
@@ -736,7 +722,7 @@ msgstr "Atvērt attēlu"
 msgid "Save Image"
 msgstr "Saglabāt attēlu"
 
-#: src/eoc-file-chooser.c:467 src/eoc-window.c:4009
+#: src/eoc-file-chooser.c:467 src/eoc-window.c:3943
 msgid "Open Folder"
 msgstr "Atvērt mapi"
 
@@ -1015,7 +1001,7 @@ msgstr " (nederīgs Unicode)"
 #. * - image height
 #. * - image size in bytes
 #. * - zoom in percent
-#: src/eoc-window.c:521
+#: src/eoc-window.c:519
 #, c-format
 msgid "%i × %i pixel  %s    %i%%"
 msgid_plural "%i × %i pixels  %s    %i%%"
@@ -1023,25 +1009,24 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: src/eoc-window.c:832
+#: src/eoc-window.c:820
 msgid "_Reload"
 msgstr "_Pārlādēt"
 
-#: src/eoc-window.c:834 src/eoc-window.c:2794
+#: src/eoc-window.c:822 src/eoc-window.c:2745
 msgctxt "MessageArea"
 msgid "Hi_de"
 msgstr "Pa_slēpt"
 
-#: src/eoc-window.c:844
+#: src/eoc-window.c:832
 #, c-format
 msgid ""
 "The image \"%s\" has been modified by an external application.\n"
 "Would you like to reload it?"
 msgstr ""
-"Attēls \"%s\" ir izmainīts ar ārēju programmu.⏎ Vai Jūs vēlaties to "
-"pārlādēt?"
+"Attēls \"%s\" ir izmainīts ar ārēju programmu.⏎ Vai Jūs vēlaties to pārlādēt?"
 
-#: src/eoc-window.c:1012
+#: src/eoc-window.c:998
 #, c-format
 msgid "Use \"%s\" to open the selected image"
 msgstr "Lietot \"%s\", lai atvērtu izvēlēto attēlu"
@@ -1051,25 +1036,25 @@ msgstr "Lietot \"%s\", lai atvērtu izvēlēto attēlu"
 #. * - the original filename
 #. * - the current image's position in the queue
 #. * - the total number of images queued for saving
-#: src/eoc-window.c:1176
+#: src/eoc-window.c:1154
 #, c-format
 msgid "Saving image \"%s\" (%u/%u)"
 msgstr "Saglabā attēlu \"%s\" (%u/%u)"
 
-#: src/eoc-window.c:1543
+#: src/eoc-window.c:1513
 #, c-format
 msgid "Opening image \"%s\""
 msgstr "Atver attēlu \"%s\""
 
-#: src/eoc-window.c:1909
+#: src/eoc-window.c:1869
 msgid "Leave Fullscreen"
 msgstr "Pamest pilnekrānu"
 
-#: src/eoc-window.c:2050
+#: src/eoc-window.c:2002
 msgid "Viewing a slideshow"
 msgstr ""
 
-#: src/eoc-window.c:2263
+#: src/eoc-window.c:2215
 #, c-format
 msgid ""
 "Error printing file:\n"
@@ -1078,15 +1063,15 @@ msgstr ""
 "Kļūda, drukājot failu:\n"
 "%s"
 
-#: src/eoc-window.c:2526
+#: src/eoc-window.c:2478
 msgid "Toolbar Editor"
 msgstr "Rīkjoslu redaktors"
 
-#: src/eoc-window.c:2529
+#: src/eoc-window.c:2481
 msgid "_Reset to Default"
 msgstr "_Atstatīt uz noklusēto"
 
-#: src/eoc-window.c:2594
+#: src/eoc-window.c:2546
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
 "under the terms of the GNU General Public License as published by the Free "
@@ -1099,7 +1084,7 @@ msgstr ""
 "izmantojiet Licences versiju 2 vai (pēc jūsu izvēles) jebkuru vēlāku "
 "versiju.\n"
 
-#: src/eoc-window.c:2598
+#: src/eoc-window.c:2550
 msgid ""
 "This program is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
@@ -1111,43 +1096,44 @@ msgstr ""
 "KONKRĒTIEM NOLŪKIEM garantijām. Sīkāku informāciju meklējiet GNU Vispārējā "
 "publiskajā licencē.\n"
 
-#: src/eoc-window.c:2602
+#: src/eoc-window.c:2554
 msgid ""
-"You should have received a copy of the GNU General Public License along with"
-" this program; if not, write to the Free Software Foundation, Inc., 51 "
+"You should have received a copy of the GNU General Public License along with "
+"this program; if not, write to the Free Software Foundation, Inc., 51 "
 "Franklin St, Fifth Floor, Boston, MA 02110-1301, USA."
 msgstr ""
 
-#: src/eoc-window.c:2641
+#: src/eoc-window.c:2593
 msgid "About Eye of CAFE"
 msgstr ""
 
-#: src/eoc-window.c:2643
+#: src/eoc-window.c:2595
 msgid ""
 "Copyright © 2000-2010 Free Software Foundation, Inc.\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 CAFE developers"
+"Copyright © 2012-2020 MATE developers\n"
+"Copyright © 2023 Pablo Barciela"
 msgstr ""
 
-#: src/eoc-window.c:2646
+#: src/eoc-window.c:2599
 msgid "The CAFE image viewer."
 msgstr "CAFE attēlu skatītājs."
 
-#: src/eoc-window.c:2649
+#: src/eoc-window.c:2602
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
 "  Kristaps https://launchpad.net/~retail"
 
-#: src/eoc-window.c:2742 src/eoc-window.c:2757
+#: src/eoc-window.c:2693 src/eoc-window.c:2708
 msgid "Error launching appearance preferences dialog: "
 msgstr ""
 
-#: src/eoc-window.c:2792
+#: src/eoc-window.c:2743
 msgid "_Open Background Preferences"
 msgstr "_Atvērt Fona Iestatījumus"
 
-#: src/eoc-window.c:2808
+#: src/eoc-window.c:2759
 #, c-format
 msgid ""
 "The image \"%s\" has been set as Desktop Background.\n"
@@ -1156,11 +1142,11 @@ msgstr ""
 "Attēls \"%s\" iestatīts kā darbvirsmas fons.\n"
 "Vai vēlaties mainīt tā izskatu?"
 
-#: src/eoc-window.c:3249
+#: src/eoc-window.c:3192
 msgid "Saving image locally…"
 msgstr "Saglabā attēlu lokāli..."
 
-#: src/eoc-window.c:3329
+#: src/eoc-window.c:3272
 #, c-format
 msgid ""
 "Are you sure you want to move\n"
@@ -1169,7 +1155,7 @@ msgstr ""
 "Vai tiešām vēlaties pārvietot\n"
 "\"%s\" uz miskasti?"
 
-#: src/eoc-window.c:3332
+#: src/eoc-window.c:3275
 #, c-format
 msgid ""
 "A trash for \"%s\" couldn't be found. Do you want to remove this image "
@@ -1178,7 +1164,7 @@ msgstr ""
 "Miskasti \"%s\" neizdevās atrast. Vai vēlaties dzēst šo attēlu "
 "neatgriezeniski?"
 
-#: src/eoc-window.c:3337
+#: src/eoc-window.c:3280
 #, c-format
 msgid ""
 "Are you sure you want to move\n"
@@ -1190,7 +1176,7 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: src/eoc-window.c:3342
+#: src/eoc-window.c:3285
 msgid ""
 "Some of the selected images can't be moved to the trash and will be removed "
 "permanently. Are you sure you want to proceed?"
@@ -1198,387 +1184,387 @@ msgstr ""
 "Daži no izvēlētajiem attēliem nevar tikt pārvietoti uz miskasti, tos var "
 "tikai neatgriezeniski dzēst. Vai vēlaties turpināt?"
 
-#: src/eoc-window.c:3359 src/eoc-window.c:3855 src/eoc-window.c:3882
+#: src/eoc-window.c:3302 src/eoc-window.c:3792 src/eoc-window.c:3819
 msgid "Move to _Trash"
 msgstr "Pārvie_tot uz miskasti"
 
-#: src/eoc-window.c:3361
+#: src/eoc-window.c:3304
 msgid "_Do not ask again during this session"
 msgstr "_Neprasīt vairāk šīs sesijas laikā"
 
-#: src/eoc-window.c:3406 src/eoc-window.c:3420
+#: src/eoc-window.c:3349 src/eoc-window.c:3363
 msgid "Couldn't access trash."
 msgstr "Neizdevās piekļūt miskastei."
 
-#: src/eoc-window.c:3428
+#: src/eoc-window.c:3371
 msgid "Couldn't delete file"
 msgstr "Neizdevās izdzēst failu"
 
-#: src/eoc-window.c:3530
+#: src/eoc-window.c:3471
 #, c-format
 msgid "Error on deleting image %s"
 msgstr "Kļūda, dzēšot attēlu %s"
 
-#: src/eoc-window.c:3776
+#: src/eoc-window.c:3713
 msgid "_Image"
 msgstr "_Attēls"
 
-#: src/eoc-window.c:3777
+#: src/eoc-window.c:3714
 msgid "_Edit"
 msgstr "R_ediģēt"
 
-#: src/eoc-window.c:3778
+#: src/eoc-window.c:3715
 msgid "_View"
 msgstr "_Skats"
 
-#: src/eoc-window.c:3779
+#: src/eoc-window.c:3716
 msgid "_Go"
 msgstr "_Doties"
 
-#: src/eoc-window.c:3780
+#: src/eoc-window.c:3717
 msgid "_Tools"
 msgstr "_Rīki"
 
-#: src/eoc-window.c:3781
+#: src/eoc-window.c:3718
 msgid "_Help"
 msgstr "_Palīdzība"
 
-#: src/eoc-window.c:3783
+#: src/eoc-window.c:3720
 msgid "_Open…"
 msgstr "At_vērt..."
 
-#: src/eoc-window.c:3784
+#: src/eoc-window.c:3721
 msgid "Open a file"
 msgstr "Atvērt failu"
 
-#: src/eoc-window.c:3786
+#: src/eoc-window.c:3723
 msgid "_Close"
 msgstr "_Aizvērt"
 
-#: src/eoc-window.c:3787
+#: src/eoc-window.c:3724
 msgid "Close window"
 msgstr "Aizvērt logu"
 
-#: src/eoc-window.c:3789
+#: src/eoc-window.c:3726
 msgid "T_oolbar"
 msgstr "Rīkj_osla"
 
-#: src/eoc-window.c:3790
+#: src/eoc-window.c:3727
 msgid "Edit the application toolbar"
 msgstr "Rediģēt lietotnes rīkjoslu"
 
-#: src/eoc-window.c:3792
+#: src/eoc-window.c:3729
 msgid "Prefere_nces"
 msgstr "Prefere_nces"
 
-#: src/eoc-window.c:3793
+#: src/eoc-window.c:3730
 msgid "Preferences for Eye of CAFE"
 msgstr "Eye of CAFE iestatījumi"
 
-#: src/eoc-window.c:3795
+#: src/eoc-window.c:3732
 msgid "_Contents"
 msgstr "_Saturs"
 
-#: src/eoc-window.c:3796
+#: src/eoc-window.c:3733
 msgid "Help on this application"
 msgstr "Šīs lietotnes palīdzība"
 
-#: src/eoc-window.c:3798
+#: src/eoc-window.c:3735
 msgid "_About"
 msgstr "P_ar"
 
-#: src/eoc-window.c:3799
+#: src/eoc-window.c:3736
 msgid "About this application"
 msgstr "Par šo lietotni"
 
-#: src/eoc-window.c:3804
+#: src/eoc-window.c:3741
 msgid "_Toolbar"
 msgstr "_Rīkjosla"
 
-#: src/eoc-window.c:3805
+#: src/eoc-window.c:3742
 msgid "Changes the visibility of the toolbar in the current window"
 msgstr "Maina aktīvā loga rīkjoslas redzamību"
 
-#: src/eoc-window.c:3807
+#: src/eoc-window.c:3744
 msgid "_Statusbar"
 msgstr "_Statusa josla"
 
-#: src/eoc-window.c:3808
+#: src/eoc-window.c:3745
 msgid "Changes the visibility of the statusbar in the current window"
 msgstr "Maina aktīvā loga statusjoslas redzamību"
 
-#: src/eoc-window.c:3810
+#: src/eoc-window.c:3747
 msgid "_Image Collection"
 msgstr "Attēlu kolekc_ija"
 
-#: src/eoc-window.c:3811
+#: src/eoc-window.c:3748
 msgid ""
 "Changes the visibility of the image collection pane in the current window"
 msgstr "Maina aktīvā loga attēlu kolekcijas redzamību"
 
-#: src/eoc-window.c:3813
+#: src/eoc-window.c:3750
 msgid "Side _Pane"
 msgstr "Sānu _panelis"
 
-#: src/eoc-window.c:3814
+#: src/eoc-window.c:3751
 msgid "Changes the visibility of the side pane in the current window"
 msgstr "Maina aktīvā loga sānu joslas redzamību"
 
-#: src/eoc-window.c:3819
+#: src/eoc-window.c:3756
 msgid "_Save"
 msgstr "_Saglabāt"
 
-#: src/eoc-window.c:3820
+#: src/eoc-window.c:3757
 msgid "Save changes in currently selected images"
 msgstr "Saglabāt izmaiņas šobrīd izvēlētajos attēlos"
 
-#: src/eoc-window.c:3822
+#: src/eoc-window.c:3759
 msgid "Open _with"
 msgstr "_Atvērt ar"
 
-#: src/eoc-window.c:3823
+#: src/eoc-window.c:3760
 msgid "Open the selected image with a different application"
 msgstr "Atvērt izvēlēto attēlu ar citu lietotni"
 
-#: src/eoc-window.c:3825
+#: src/eoc-window.c:3762
 msgid "Save _As…"
 msgstr "Saglabāt _kā..."
 
-#: src/eoc-window.c:3826
+#: src/eoc-window.c:3763
 msgid "Save the selected images with a different name"
 msgstr "Saglabāt izvēlētos attēlus ar citu nosaukumu"
 
-#: src/eoc-window.c:3828
+#: src/eoc-window.c:3765
 msgid "Open Containing _Folder"
 msgstr ""
 
-#: src/eoc-window.c:3829
+#: src/eoc-window.c:3766
 msgid "Show the folder which contains this file in the file manager"
 msgstr ""
 
-#: src/eoc-window.c:3831
+#: src/eoc-window.c:3768
 msgid "_Print…"
 msgstr "_Drukāt..."
 
-#: src/eoc-window.c:3832
+#: src/eoc-window.c:3769
 msgid "Print the selected image"
 msgstr "Drukāt izvēlēto attēlu"
 
-#: src/eoc-window.c:3834
+#: src/eoc-window.c:3771
 msgid "Prope_rties"
 msgstr "Ī_pašības"
 
-#: src/eoc-window.c:3835
+#: src/eoc-window.c:3772
 msgid "Show the properties and metadata of the selected image"
 msgstr "Parādīt izvēlētā attēla īpašības un metadatus"
 
-#: src/eoc-window.c:3837
+#: src/eoc-window.c:3774
 msgid "_Undo"
 msgstr "_Atsaukt"
 
-#: src/eoc-window.c:3838
+#: src/eoc-window.c:3775
 msgid "Undo the last change in the image"
 msgstr "Atsaukt pēdējo attēlā veikto izmaiņu"
 
-#: src/eoc-window.c:3840
+#: src/eoc-window.c:3777
 msgid "Flip _Horizontal"
 msgstr "Apmest _horizontāli"
 
-#: src/eoc-window.c:3841
+#: src/eoc-window.c:3778
 msgid "Mirror the image horizontally"
 msgstr "Atspoguļot attēlu horizontāli"
 
-#: src/eoc-window.c:3843
+#: src/eoc-window.c:3780
 msgid "Flip _Vertical"
 msgstr "Apmest vertikāli"
 
-#: src/eoc-window.c:3844
+#: src/eoc-window.c:3781
 msgid "Mirror the image vertically"
 msgstr "Atspoguļot attēlu vertikāli"
 
-#: src/eoc-window.c:3846
+#: src/eoc-window.c:3783
 msgid "_Rotate Clockwise"
 msgstr "Pag_riezt pulksteņrādītāja virzienā"
 
-#: src/eoc-window.c:3847
+#: src/eoc-window.c:3784
 msgid "Rotate the image 90 degrees to the right"
 msgstr "Pagriezt attēlu 90 grādus pa labi"
 
-#: src/eoc-window.c:3849
+#: src/eoc-window.c:3786
 msgid "Rotate Counterc_lockwise"
 msgstr "Pagriezt pretēji pu_lksteņrādītāja virzienam"
 
-#: src/eoc-window.c:3850
+#: src/eoc-window.c:3787
 msgid "Rotate the image 90 degrees to the left"
 msgstr "Pagriezt attēlu 90 grādus pa kreisi"
 
-#: src/eoc-window.c:3852
+#: src/eoc-window.c:3789
 msgid "Set as _Desktop Background"
 msgstr "Iestatīt kā _darbvirsmas fonu"
 
-#: src/eoc-window.c:3853
+#: src/eoc-window.c:3790
 msgid "Set the selected image as the desktop background"
 msgstr "Iestatīt izvēlēto attēlu kā darbvirsmas fonu"
 
-#: src/eoc-window.c:3856
+#: src/eoc-window.c:3793
 msgid "Move the selected image to the trash folder"
 msgstr "Pārvietot izvēlēto attēlu uz miskasti"
 
-#: src/eoc-window.c:3858
+#: src/eoc-window.c:3795
 msgid "_Copy"
 msgstr "_Kopēt"
 
-#: src/eoc-window.c:3859
+#: src/eoc-window.c:3796
 msgid "Copy the selected image to the clipboard"
 msgstr ""
 
-#: src/eoc-window.c:3861 src/eoc-window.c:3873 src/eoc-window.c:3876
+#: src/eoc-window.c:3798 src/eoc-window.c:3810 src/eoc-window.c:3813
 msgid "_Zoom In"
 msgstr "_Tuvināt"
 
-#: src/eoc-window.c:3862 src/eoc-window.c:3874
+#: src/eoc-window.c:3799 src/eoc-window.c:3811
 msgid "Enlarge the image"
 msgstr "Palielināt attēlu"
 
-#: src/eoc-window.c:3864 src/eoc-window.c:3879
+#: src/eoc-window.c:3801 src/eoc-window.c:3816
 msgid "Zoom _Out"
 msgstr "Tā_lināt"
 
-#: src/eoc-window.c:3865 src/eoc-window.c:3877 src/eoc-window.c:3880
+#: src/eoc-window.c:3802 src/eoc-window.c:3814 src/eoc-window.c:3817
 msgid "Shrink the image"
 msgstr "Samazināt attēlu"
 
-#: src/eoc-window.c:3867
+#: src/eoc-window.c:3804
 msgid "_Normal Size"
 msgstr "_Parastais izmērs"
 
-#: src/eoc-window.c:3868
+#: src/eoc-window.c:3805
 msgid "Show the image at its normal size"
 msgstr "Parādīt attēlu parastajā izmērā"
 
-#: src/eoc-window.c:3870
+#: src/eoc-window.c:3807
 msgid "_Best Fit"
 msgstr "La_bākā saderība"
 
-#: src/eoc-window.c:3871
+#: src/eoc-window.c:3808
 msgid "Fit the image to the window"
 msgstr "Ietilpināt attēlu logā"
 
-#: src/eoc-window.c:3888
+#: src/eoc-window.c:3825
 msgid "_Fullscreen"
 msgstr "Pilne_krāna"
 
-#: src/eoc-window.c:3889
+#: src/eoc-window.c:3826
 msgid "Show the current image in fullscreen mode"
 msgstr "Parādīt izvēlēto attēlu pilnekrāna režīmā"
 
-#: src/eoc-window.c:3891
+#: src/eoc-window.c:3828
 msgid "Pause Slideshow"
 msgstr "Apturēt slīdrādi"
 
-#: src/eoc-window.c:3892
+#: src/eoc-window.c:3829
 msgid "Pause or resume the slideshow"
 msgstr "Aptur vai atjauno slīdrādi"
 
-#: src/eoc-window.c:3897 src/eoc-window.c:3912
+#: src/eoc-window.c:3834 src/eoc-window.c:3849
 msgid "_Previous Image"
 msgstr "Ie_priekšējais attēls"
 
-#: src/eoc-window.c:3898
+#: src/eoc-window.c:3835
 msgid "Go to the previous image of the collection"
 msgstr "Pāriet uz iepriekšējo kolekcijas attēlu"
 
-#: src/eoc-window.c:3900
+#: src/eoc-window.c:3837
 msgid "_Next Image"
 msgstr "_Nākamais attēls"
 
-#: src/eoc-window.c:3901
+#: src/eoc-window.c:3838
 msgid "Go to the next image of the collection"
 msgstr "Pāriet uz nākamo kolekcijas attēlu"
 
-#: src/eoc-window.c:3903 src/eoc-window.c:3915
+#: src/eoc-window.c:3840 src/eoc-window.c:3852
 msgid "_First Image"
 msgstr "_Pirmais attēls"
 
-#: src/eoc-window.c:3904
+#: src/eoc-window.c:3841
 msgid "Go to the first image of the collection"
 msgstr "Pāriet uz pirmo kolekcijas attēlu"
 
-#: src/eoc-window.c:3906 src/eoc-window.c:3918
+#: src/eoc-window.c:3843 src/eoc-window.c:3855
 msgid "_Last Image"
 msgstr "Pēdējais attē_ls"
 
-#: src/eoc-window.c:3907
+#: src/eoc-window.c:3844
 msgid "Go to the last image of the collection"
 msgstr "Pāriet uz pēdējo kolekcijas attēlu"
 
-#: src/eoc-window.c:3909
+#: src/eoc-window.c:3846
 msgid "_Random Image"
 msgstr "Ne_jauši izvēlēts attēls"
 
-#: src/eoc-window.c:3910
+#: src/eoc-window.c:3847
 msgid "Go to a random image of the collection"
 msgstr "Pāriet uz kādu kolekcijas attēlu"
 
-#: src/eoc-window.c:3924
+#: src/eoc-window.c:3861
 msgid "S_lideshow"
 msgstr ""
 
-#: src/eoc-window.c:3925
+#: src/eoc-window.c:3862
 msgid "Start a slideshow view of the images"
 msgstr "Sākt attēlu slīdrādi"
 
-#: src/eoc-window.c:3995
+#: src/eoc-window.c:3929
 msgid "Previous"
 msgstr "Iepriekšējā"
 
-#: src/eoc-window.c:3999
+#: src/eoc-window.c:3933
 msgid "Next"
 msgstr "Nākošais"
 
-#: src/eoc-window.c:4003
+#: src/eoc-window.c:3937
 msgid "Right"
 msgstr "Pa Labi"
 
-#: src/eoc-window.c:4006
+#: src/eoc-window.c:3940
 msgid "Left"
 msgstr "Pa Kreisi"
 
-#: src/eoc-window.c:4012
+#: src/eoc-window.c:3946
 msgid "In"
 msgstr "Tuvāk"
 
-#: src/eoc-window.c:4015
+#: src/eoc-window.c:3949
 msgid "Out"
 msgstr "Tālāk"
 
-#: src/eoc-window.c:4018
+#: src/eoc-window.c:3952
 msgid "Normal"
 msgstr "Parasts"
 
-#: src/eoc-window.c:4021
+#: src/eoc-window.c:3955
 msgid "Fit"
 msgstr "Ietilpināt"
 
-#: src/eoc-window.c:4024
+#: src/eoc-window.c:3958
 msgid "Collection"
 msgstr "Kolekcija"
 
-#: src/eoc-window.c:4027
+#: src/eoc-window.c:3961
 msgctxt "action (to trash)"
 msgid "Trash"
 msgstr "Miskaste"
 
-#: src/eoc-window.c:4385
+#: src/eoc-window.c:4307
 #, c-format
 msgid "Edit the current image using %s"
 msgstr ""
 
-#: src/eoc-window.c:4388
+#: src/eoc-window.c:4309
 msgid "Edit Image"
 msgstr ""
 
-#: src/eoc-window.c:4612
+#: src/eoc-window.c:4524
 msgid "Properties"
 msgstr "Parametri"
 

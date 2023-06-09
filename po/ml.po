@@ -2,59 +2,59 @@
 # Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the eoc package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # Martin Wimpress <code@flexion.org>, 2020
-# 
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: eoc 1.23.1\n"
+"Project-Id-Version: eoc 1.25.0\n"
 "Report-Msgid-Bugs-To: http://www.cafe-desktop.org\n"
-"POT-Creation-Date: 2020-01-10 14:33+0100\n"
+"POT-Creation-Date: 2023-06-09 11:11+0200\n"
 "PO-Revision-Date: 2020-02-14 12:07+0000\n"
 "Last-Translator: Martin Wimpress <code@flexion.org>, 2020\n"
 "Language-Team: Malayalam (https://www.transifex.com/cafe/teams/13566/ml/)\n"
+"Language: ml\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ml\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:946
+#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:934
 #, c-format
 msgid "Show “_%s”"
 msgstr "“_%s” കാണിക്കുക"
 
-#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1420
+#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1400
 msgid "_Move on Toolbar"
 msgstr "ടൂള്‍ ബാറില്‍ മാറ്റുക "
 
-#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1421
+#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1401
 msgid "Move the selected item on the toolbar"
 msgstr "തെരഞ്ഞെടുത്ത വസ്തുവിനെ ടൂള്‍ ബാറില്‍ മാറ്റുക"
 
-#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1422
+#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1402
 msgid "_Remove from Toolbar"
 msgstr "ടൂള്‍ ബാറില്‍ നിന്നും _നീക്കം ചെയ്യുക"
 
-#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1423
+#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1403
 msgid "Remove the selected item from the toolbar"
 msgstr "തെരഞ്ഞെടുത്ത വസ്തുവിനെ ടൂള്‍ ബാറില്‍ നിന്നും നീക്കം ചെയ്യുക"
 
-#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1424
+#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1404
 msgid "_Delete Toolbar"
 msgstr "ടൂള്‍ ബാര്‍ _നീക്കം ചെയ്യുക"
 
-#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1425
+#: cut-n-paste/toolbar-editor/egg-editable-toolbar.c:1405
 msgid "Remove the selected toolbar"
 msgstr "തെരഞ്ഞെടുത്ത ടൂള്‍ ബാര്‍ നീക്കം ചെയ്യുക"
 
-#: cut-n-paste/toolbar-editor/egg-toolbar-editor.c:483
+#: cut-n-paste/toolbar-editor/egg-toolbar-editor.c:481
 msgid "Separator"
 msgstr "വിടവടയാളം"
 
-#: data/eoc.appdata.xml.in:6 src/eoc-window.c:2640
+#: data/eoc.appdata.xml.in:6 src/eoc-window.c:2592
 msgid "Eye of CAFE"
 msgstr "ഗ്നോം മിഴി"
 
@@ -64,9 +64,9 @@ msgstr ""
 
 #: data/eoc.appdata.xml.in:9
 msgid ""
-"Eye of CAFE is a simple viewer for browsing images on your computer. Once an"
-" image is loaded, you can zoom and rotate the image, and also view "
-"subsequent images in the directory the image was loaded from."
+"Eye of CAFE is a simple viewer for browsing images on your computer. Once an "
+"image is loaded, you can zoom and rotate the image, and also view subsequent "
+"images in the directory the image was loaded from."
 msgstr ""
 
 #: data/eoc.desktop.in.in:3 src/main.c:65 src/main.c:166
@@ -77,14 +77,7 @@ msgstr "ഗ്നോ മിഴിയുടെ ചിത്ര ദര്‍ശി
 msgid "Browse and rotate images"
 msgstr "ചിത്രങ്ങള്‍ കാണുകയും തിരിക്കുകയും ചെയ്യുക"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/eoc.desktop.in.in:8
-msgid "eoc"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/eoc.desktop.in.in:14
 msgid "image;viewer;JPEG;PNG;TIFF;SVG;CAFE;photos;browse;thumbnails;rotate;"
 msgstr ""
@@ -401,8 +394,8 @@ msgstr ""
 
 #: data/org.cafe.eoc.gschema.xml.in:22
 msgid ""
-"If this is active, the color set by the background-color key will be used to"
-" fill the area behind the image. If it is not set, the current CTK+ theme "
+"If this is active, the color set by the background-color key will be used to "
+"fill the area behind the image. If it is not set, the current CTK+ theme "
 "will determine the fill color."
 msgstr ""
 
@@ -452,15 +445,13 @@ msgstr "സൂം ചെയ്യാന്‍ ഗുണിക്കേണ്ട 
 #: data/org.cafe.eoc.gschema.xml.in:47
 msgid ""
 "The multiplier to be applied when using the mouse scroll wheel for zooming. "
-"This value defines the zooming step used for each scroll event. For example,"
-" 0.05 results in a 5% zoom increment for each scroll event and 1.00 result "
-"in a 100% zoom increment."
+"This value defines the zooming step used for each scroll event. For example, "
+"0.05 results in a 5% zoom increment for each scroll event and 1.00 result in "
+"a 100% zoom increment."
 msgstr ""
-"മൗസ് സ്ക്രോള്‍ ചക്രം ഉപയോഗിച്ച് സൂം ചെയ്യുമ്പോള്‍  ഗുണന-സംഖ്യ.  ഓരോ "
-"സ്ക്രോള്‍ സംവൃത്തിയുടെയും സൂമിങ്ങ് സ്റ്റെപ്പ് (വലിപ്പം മാറ്റേണ്ട പടി "
-"വലിപ്പം) ഈ വില തീരുമാനിക്കുന്നു. ഉദാഹരണത്തിനായ്, 0.05 കൊടുത്താല്‍ ഓരോ "
-"സ്ക്രോള്‍ സംവൃത്തിക്കും സൂം 5%  കൂട്ടുന്നു , 1.00 ആണെങ്കില്‍ സൂം 100%  "
-"കൂടുന്നു."
+"മൗസ് സ്ക്രോള്‍ ചക്രം ഉപയോഗിച്ച് സൂം ചെയ്യുമ്പോള്‍  ഗുണന-സംഖ്യ.  ഓരോ സ്ക്രോള്‍ സംവൃത്തിയുടെയും സൂമിങ്ങ് "
+"സ്റ്റെപ്പ് (വലിപ്പം മാറ്റേണ്ട പടി വലിപ്പം) ഈ വില തീരുമാനിക്കുന്നു. ഉദാഹരണത്തിനായ്, 0.05 "
+"കൊടുത്താല്‍ ഓരോ സ്ക്രോള്‍ സംവൃത്തിക്കും സൂം 5%  കൂട്ടുന്നു , 1.00 ആണെങ്കില്‍ സൂം 100%  കൂടുന്നു."
 
 #: data/org.cafe.eoc.gschema.xml.in:51
 msgid "Transparency color"
@@ -471,8 +462,8 @@ msgid ""
 "If the transparency key has the value COLOR, then this key determines the "
 "color which is used for indicating transparency."
 msgstr ""
-"സുതാര്യത കീയ്ക്ക് വില കളര്‍ (COLOR) ആണെങ്കില്‍, ഈ കീ സുതാര്യത "
-"സൂചിപ്പിക്കുന്ന നിറം തീരുമാനിക്കുന്നു."
+"സുതാര്യത കീയ്ക്ക് വില കളര്‍ (COLOR) ആണെങ്കില്‍, ഈ കീ സുതാര്യത സൂചിപ്പിക്കുന്ന നിറം "
+"തീരുമാനിക്കുന്നു."
 
 #: data/org.cafe.eoc.gschema.xml.in:58
 msgid "Randomize the image sequence"
@@ -498,9 +489,7 @@ msgstr "തുടക്കത്തില്‍ 100% കൂടുതല്‍ �
 msgid ""
 "If this is set to FALSE small images will not be stretched to fit into the "
 "screen initially."
-msgstr ""
-"ഇത് 'ഫോള്‍സ് (FALSE- വേണ്ട)' ആക്കിയാല്‍ ചെറിയ ചിത്രങ്ങള്‍ സ്ക്രീനില്‍ "
-"നിവര്‍ത്തുകയില്ല"
+msgstr "ഇത് 'ഫോള്‍സ് (FALSE- വേണ്ട)' ആക്കിയാല്‍ ചെറിയ ചിത്രങ്ങള്‍ സ്ക്രീനില്‍ നിവര്‍ത്തുകയില്ല"
 
 #: data/org.cafe.eoc.gschema.xml.in:73
 msgid "Delay in seconds until showing the next image"
@@ -508,12 +497,12 @@ msgstr "അടുത്ത ഇമേജ് കാണിക്കുന്നത�
 
 #: data/org.cafe.eoc.gschema.xml.in:74
 msgid ""
-"A value greater than 0 determines the seconds an image stays on screen until"
-" the next one is shown automatically. Zero disables the automatic browsing."
+"A value greater than 0 determines the seconds an image stays on screen until "
+"the next one is shown automatically. Zero disables the automatic browsing."
 msgstr ""
-"പൂജ്യത്തിലേറെയുള്ള ഒരു സംഖ്യ തീരുമാനിക്കുന്നു എത്ര സെക്കന്റുകള്‍ ഒരു ചിത്രം "
-"സ്ക്രീനേല്‍ നില്‍കുന്നുവെന്നു, അടുത്തത് തനിയെ കാണിക്കും മുംബേ. പൂജ്യം "
-"ഇട്ടാല്‍ തനിയെ ഉള്ള തിരച്ചില്‍ (ബ്രൗസിങ്ങ്) അപ്രാവര്‍ത്തികമാക്കുന്നു."
+"പൂജ്യത്തിലേറെയുള്ള ഒരു സംഖ്യ തീരുമാനിക്കുന്നു എത്ര സെക്കന്റുകള്‍ ഒരു ചിത്രം സ്ക്രീനേല്‍ നില്‍കുന്നുവെന്നു, "
+"അടുത്തത് തനിയെ കാണിക്കും മുംബേ. പൂജ്യം ഇട്ടാല്‍ തനിയെ ഉള്ള തിരച്ചില്‍ (ബ്രൗസിങ്ങ്) "
+"അപ്രാവര്‍ത്തികമാക്കുന്നു."
 
 #: data/org.cafe.eoc.gschema.xml.in:80
 msgid "Show/Hide the window toolbar."
@@ -566,8 +555,8 @@ msgstr "ഗുണഗണങ്ങളുടെ ഡയലോഗില്‍ മെ�
 #: data/org.cafe.eoc.gschema.xml.in:118
 msgid ""
 "If activated, the detailed metadata list in the properties dialog will be "
-"moved to its own page in the dialog. This should make the dialog more usable"
-" on smaller screens, e.g. as used by netbooks. If disabled, the widget will "
+"moved to its own page in the dialog. This should make the dialog more usable "
+"on smaller screens, e.g. as used by netbooks. If disabled, the widget will "
 "be embedded on the \"Metadata\" page."
 msgstr ""
 
@@ -577,15 +566,15 @@ msgstr ""
 
 #: data/org.cafe.eoc.gschema.xml.in:123
 msgid ""
-"The desktop file name (including the \".desktop\") of the application to use"
-" for editing images (when the \"Edit Image\" toolbar button is clicked). Set"
-" to the empty string to disable this feature."
+"The desktop file name (including the \".desktop\") of the application to use "
+"for editing images (when the \"Edit Image\" toolbar button is clicked). Set "
+"to the empty string to disable this feature."
 msgstr ""
 
 #: data/org.cafe.eoc.gschema.xml.in:127
 msgid ""
-"Whether the file chooser should show the user's pictures folder if no images"
-" are loaded."
+"Whether the file chooser should show the user's pictures folder if no images "
+"are loaded."
 msgstr ""
 
 #: data/org.cafe.eoc.gschema.xml.in:128
@@ -606,17 +595,13 @@ msgid ""
 "plugins. See the .eoc-plugin file for obtaining the \"Location\" of a given "
 "plugin."
 msgstr ""
-"സജീവമായ സമ്യോജകങ്ങളുടെ പട്ടിക. സജീവമായ സമ്യോജകങ്ങളുടെ  \"സ്ഥാനം(Location)\" "
-"ഇതിലില്ല. തന്നിരിക്കുന്ന സമ്യോജകത്തിന്റെ \"സ്ഥാനം(Location)\" ലഭിക്കുവാന്‍. "
-"eoc-plugin (.ഇ.ഒ.ജി-പ്ലഗ്-ഇന്‍) ഫയല്‍ കാണുക"
+"സജീവമായ സമ്യോജകങ്ങളുടെ പട്ടിക. സജീവമായ സമ്യോജകങ്ങളുടെ  \"സ്ഥാനം(Location)\" ഇതിലില്ല. "
+"തന്നിരിക്കുന്ന സമ്യോജകത്തിന്റെ \"സ്ഥാനം(Location)\" ലഭിക്കുവാന്‍. eoc-plugin (.ഇ.ഒ.ജി-"
+"പ്ലഗ്-ഇന്‍) ഫയല്‍ കാണുക"
 
 #: plugins/fullscreen/fullscreen.plugin.desktop.in:5
 msgid "Fullscreen with double-click"
 msgstr "ഇരട്ട-ക്ലിക്ക് ഉപയോഗിച്ച് ഫുള്‍(മുഴു) സ്ക്രീന്‍"
-
-#: plugins/fullscreen/fullscreen.plugin.desktop.in:6
-msgid "view-fullscreen"
-msgstr ""
 
 #: plugins/reload/eoc-reload-plugin.c:45
 #: plugins/reload/reload.plugin.desktop.in:5
@@ -626,10 +611,6 @@ msgstr "ചിത്രം വീണ്ടും ലോഡ് ചെയ്യു
 #: plugins/reload/eoc-reload-plugin.c:45
 msgid "Reload current image"
 msgstr "നിലവിലുള്ള ചിത്രം വീണ്ടും ലോഡ് ചെയ്യുക (തുറക്കുക)"
-
-#: plugins/reload/reload.plugin.desktop.in:6
-msgid "view-refresh"
-msgstr ""
 
 #: plugins/statusbar-date/statusbar-date.plugin.desktop.in:5
 msgid "Date in statusbar"
@@ -676,15 +657,11 @@ msgstr "ഫയലിന്റെ രീതി അപരിചിതവും പ
 msgid ""
 "Eye of CAFE could not determine a supported writable file format based on "
 "the filename."
-msgstr ""
-"ഫയല്‍ പേരു ഉപയോഗിച്ച് എഴുതാവുന്ന ഫയല്‍ കണ്ടുപിടിക്കാന്‍ ഗ്നോം മിഴിയ്ക്കു് "
-"കഴിഞ്ഞില്ല"
+msgstr "ഫയല്‍ പേരു ഉപയോഗിച്ച് എഴുതാവുന്ന ഫയല്‍ കണ്ടുപിടിക്കാന്‍ ഗ്നോം മിഴിയ്ക്കു് കഴിഞ്ഞില്ല"
 
 #: src/eoc-file-chooser.c:127
 msgid "Please try a different file extension like .png or .jpg."
-msgstr ""
-".png അല്ലെങ്കില്‍ .jpg പോലുള്ള മറ്റേതെങ്കിലും ഫയല്‍ എക്സ്റ്റെന്‍ഷനുകള്‍ "
-"ഉപയോഗിക്കുക."
+msgstr ".png അല്ലെങ്കില്‍ .jpg പോലുള്ള മറ്റേതെങ്കിലും ഫയല്‍ എക്സ്റ്റെന്‍ഷനുകള്‍ ഉപയോഗിക്കുക."
 
 #: src/eoc-file-chooser.c:159
 msgid "All Files"
@@ -714,7 +691,7 @@ msgstr ""
 msgid "Save Image"
 msgstr "ഇമേജ് സൂക്ഷിക്കുക"
 
-#: src/eoc-file-chooser.c:467 src/eoc-window.c:4009
+#: src/eoc-file-chooser.c:467 src/eoc-window.c:3943
 msgid "Open Folder"
 msgstr "അറ തുറക്കുക"
 
@@ -745,13 +722,11 @@ msgstr "താല്‍ക്കാലിക ഫയല്‍ നിര്‍മ�
 #: src/eoc-image-jpeg.c:384
 #, c-format
 msgid "Couldn't create temporary file for saving: %s"
-msgstr ""
-"സംരക്ഷിക്കുന്നതിനായി താല്‍ക്കാലിക ഫയല്‍ നിര്‍മ്മിക്കുവാന്‍ സാധ്യമായില്ല: %s"
+msgstr "സംരക്ഷിക്കുന്നതിനായി താല്‍ക്കാലിക ഫയല്‍ നിര്‍മ്മിക്കുവാന്‍ സാധ്യമായില്ല: %s"
 
 #: src/eoc-image-jpeg.c:395
 msgid "Couldn't allocate memory for loading JPEG file"
-msgstr ""
-"JPEG ഫയല്‍ ലോഡ് ചെയ്യുന്നതിനായി മെമ്മറി മാറ്റിവയ്ക്കുവാന്‍ സാധ്യമായില്ല"
+msgstr "JPEG ഫയല്‍ ലോഡ് ചെയ്യുന്നതിനായി മെമ്മറി മാറ്റിവയ്ക്കുവാന്‍ സാധ്യമായില്ല"
 
 #: src/eoc-error-message-area.c:108
 msgid "_Retry"
@@ -994,30 +969,30 @@ msgstr " (അസാധുവായ Unicode)"
 #. * - image height
 #. * - image size in bytes
 #. * - zoom in percent
-#: src/eoc-window.c:521
+#: src/eoc-window.c:519
 #, c-format
 msgid "%i × %i pixel  %s    %i%%"
 msgid_plural "%i × %i pixels  %s    %i%%"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/eoc-window.c:832
+#: src/eoc-window.c:820
 msgid "_Reload"
 msgstr "_വീണ്ടും എടുക്കുക"
 
-#: src/eoc-window.c:834 src/eoc-window.c:2794
+#: src/eoc-window.c:822 src/eoc-window.c:2745
 msgctxt "MessageArea"
 msgid "Hi_de"
 msgstr ""
 
-#: src/eoc-window.c:844
+#: src/eoc-window.c:832
 #, c-format
 msgid ""
 "The image \"%s\" has been modified by an external application.\n"
 "Would you like to reload it?"
 msgstr ""
 
-#: src/eoc-window.c:1012
+#: src/eoc-window.c:998
 #, c-format
 msgid "Use \"%s\" to open the selected image"
 msgstr "തിരഞ്ഞെടുത്ത ചിത്രം തുറക്കുന്നതിനായി \"%s\" ഉപയോഗിക്കുക"
@@ -1027,25 +1002,25 @@ msgstr "തിരഞ്ഞെടുത്ത ചിത്രം തുറക്�
 #. * - the original filename
 #. * - the current image's position in the queue
 #. * - the total number of images queued for saving
-#: src/eoc-window.c:1176
+#: src/eoc-window.c:1154
 #, c-format
 msgid "Saving image \"%s\" (%u/%u)"
 msgstr "ചിത്രം \"%s\" (%u/%u)സംരക്ഷിക്കുന്നു"
 
-#: src/eoc-window.c:1543
+#: src/eoc-window.c:1513
 #, c-format
 msgid "Opening image \"%s\""
 msgstr ""
 
-#: src/eoc-window.c:1909
+#: src/eoc-window.c:1869
 msgid "Leave Fullscreen"
 msgstr "പൂര്‍ണ്ണസ്ക്രീനില്‍ നിന്നും പുറത്ത് കടക്കുക"
 
-#: src/eoc-window.c:2050
+#: src/eoc-window.c:2002
 msgid "Viewing a slideshow"
 msgstr ""
 
-#: src/eoc-window.c:2263
+#: src/eoc-window.c:2215
 #, c-format
 msgid ""
 "Error printing file:\n"
@@ -1054,87 +1029,86 @@ msgstr ""
 "ഫയല്‍ അച്ചടിക്കുന്നതില്‍ പിശക്:\n"
 "%s"
 
-#: src/eoc-window.c:2526
+#: src/eoc-window.c:2478
 msgid "Toolbar Editor"
 msgstr "ടൂള്‍ ബാര്‍ എഡിറ്റര്‍"
 
-#: src/eoc-window.c:2529
+#: src/eoc-window.c:2481
 msgid "_Reset to Default"
 msgstr "സഹജമായതിലേക്ക് _മാറ്റുക"
 
-#: src/eoc-window.c:2594
+#: src/eoc-window.c:2546
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
 "under the terms of the GNU General Public License as published by the Free "
 "Software Foundation; either version 2 of the License, or (at your option) "
 "any later version.\n"
 msgstr ""
-"ഈ പ്രോഗ്രാം ഒരു സ്വതന്ത്ര സോഫ്റ്റ്‌വെയര്‍ ആണു്; സ്വതന്ത്ര സോഫ്റ്റ്‌വെയര്‍ "
-"ഫൌണ്ടേഷന്‍ പ്രസിദ്ധീകരിച്ചഗ്നു ജനറല്‍ പബ്ലിക് ലൈസന്‍സ് അനുസരിച്ചു് "
-"നിങ്ങള്‍ക്കിതു്  വീണ്ടും വിതരണം ചെയ്യാവുന്നതും "
-"മാറ്റങ്ങള്‍വരുത്താവുന്നതുമാണു്; ലൈസന്‍സിന്റെ ലക്കം 2 അല്ലെങ്കില്‍ (നിങ്ങള്‍ "
-"തിരഞ്ഞെടുക്കുന്ന) അതിനു് ശേഷമുള്ളഏതെങ്കിലും ലക്കമോ ഉപയോഗിക്കാം.\n"
+"ഈ പ്രോഗ്രാം ഒരു സ്വതന്ത്ര സോഫ്റ്റ്‌വെയര്‍ ആണു്; സ്വതന്ത്ര സോഫ്റ്റ്‌വെയര്‍ ഫൌണ്ടേഷന്‍ പ്രസിദ്ധീകരിച്ചഗ്നു "
+"ജനറല്‍ പബ്ലിക് ലൈസന്‍സ് അനുസരിച്ചു് നിങ്ങള്‍ക്കിതു്  വീണ്ടും വിതരണം ചെയ്യാവുന്നതും "
+"മാറ്റങ്ങള്‍വരുത്താവുന്നതുമാണു്; ലൈസന്‍സിന്റെ ലക്കം 2 അല്ലെങ്കില്‍ (നിങ്ങള്‍ തിരഞ്ഞെടുക്കുന്ന) അതിനു് "
+"ശേഷമുള്ളഏതെങ്കിലും ലക്കമോ ഉപയോഗിക്കാം.\n"
 
-#: src/eoc-window.c:2598
+#: src/eoc-window.c:2550
 msgid ""
 "This program is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
 "FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
 "more details.\n"
 msgstr ""
-"ഈ പ്രോഗ്രാം നിങ്ങള്‍ക്കു് പ്രയോജനപ്പെടും എന്ന പ്രതീക്ഷയില്‍ വിതരണം "
-"ചെയ്യുന്നതാണു്,പക്ഷേ, ഇതിനു് ഒരു വാറണ്ടിയും ലഭ്യമല്ല; വ്യാപാരയോഗ്യതയോ ഒരു "
-"പ്രത്യേക കാര്യത്തിനു്ചേരുന്നതാണെന്നോ പരോക്ഷമായി ഉള്‍‌ക്കൊള്ളുന്ന വാറണ്ടി "
-"പോലും ഇല്ല. കൂടുതല്‍ വിവരങ്ങള്‍ക്കു്ഗ്നു ജനറല്‍ പബ്ലിക് ലൈസന്‍സ് കാണുക.\n"
+"ഈ പ്രോഗ്രാം നിങ്ങള്‍ക്കു് പ്രയോജനപ്പെടും എന്ന പ്രതീക്ഷയില്‍ വിതരണം ചെയ്യുന്നതാണു്,പക്ഷേ, ഇതിനു് ഒരു "
+"വാറണ്ടിയും ലഭ്യമല്ല; വ്യാപാരയോഗ്യതയോ ഒരു പ്രത്യേക കാര്യത്തിനു്ചേരുന്നതാണെന്നോ പരോക്ഷമായി "
+"ഉള്‍‌ക്കൊള്ളുന്ന വാറണ്ടി പോലും ഇല്ല. കൂടുതല്‍ വിവരങ്ങള്‍ക്കു്ഗ്നു ജനറല്‍ പബ്ലിക് ലൈസന്‍സ് കാണുക.\n"
 
-#: src/eoc-window.c:2602
+#: src/eoc-window.c:2554
 msgid ""
-"You should have received a copy of the GNU General Public License along with"
-" this program; if not, write to the Free Software Foundation, Inc., 51 "
+"You should have received a copy of the GNU General Public License along with "
+"this program; if not, write to the Free Software Foundation, Inc., 51 "
 "Franklin St, Fifth Floor, Boston, MA 02110-1301, USA."
 msgstr ""
 
-#: src/eoc-window.c:2641
+#: src/eoc-window.c:2593
 msgid "About Eye of CAFE"
 msgstr ""
 
-#: src/eoc-window.c:2643
+#: src/eoc-window.c:2595
 msgid ""
 "Copyright © 2000-2010 Free Software Foundation, Inc.\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 CAFE developers"
+"Copyright © 2012-2020 MATE developers\n"
+"Copyright © 2023 Pablo Barciela"
 msgstr ""
 
-#: src/eoc-window.c:2646
+#: src/eoc-window.c:2599
 msgid "The CAFE image viewer."
 msgstr "ഗ്നോം ചിത്രദര്‍ശിനി"
 
-#: src/eoc-window.c:2649
+#: src/eoc-window.c:2602
 msgid "translator-credits"
 msgstr ""
 "അനി പീറ്റര്‍ <peter.ani@gmail.com>\n"
 "പ്രവീണ്‍ അരിമ്പ്രത്തൊടിയില്‍ <pravi.a@gmail.com>"
 
-#: src/eoc-window.c:2742 src/eoc-window.c:2757
+#: src/eoc-window.c:2693 src/eoc-window.c:2708
 msgid "Error launching appearance preferences dialog: "
 msgstr ""
 
-#: src/eoc-window.c:2792
+#: src/eoc-window.c:2743
 msgid "_Open Background Preferences"
 msgstr ""
 
-#: src/eoc-window.c:2808
+#: src/eoc-window.c:2759
 #, c-format
 msgid ""
 "The image \"%s\" has been set as Desktop Background.\n"
 "Would you like to modify its appearance?"
 msgstr ""
 
-#: src/eoc-window.c:3249
+#: src/eoc-window.c:3192
 msgid "Saving image locally…"
 msgstr ""
 
-#: src/eoc-window.c:3329
+#: src/eoc-window.c:3272
 #, c-format
 msgid ""
 "Are you sure you want to move\n"
@@ -1143,16 +1117,16 @@ msgstr ""
 "നിങ്ങള്‍ക്ക് \"%s\" ചവറ്റുകുട്ടയിലേക്ക്\n"
 "നീക്കണം എന്നുറപ്പാണോ?"
 
-#: src/eoc-window.c:3332
+#: src/eoc-window.c:3275
 #, c-format
 msgid ""
 "A trash for \"%s\" couldn't be found. Do you want to remove this image "
 "permanently?"
 msgstr ""
-"\"%s\"-നുള്ള ചവറ്റുകുട്ട ലഭ്യമാക്കുവാന്‍ സാധ്യമായില്ല. നിങ്ങള്‍ക്കു് ഈ "
-"ചിത്രം എന്നേക്കുമായി നീക്കം ചെയ്യണമോ?"
+"\"%s\"-നുള്ള ചവറ്റുകുട്ട ലഭ്യമാക്കുവാന്‍ സാധ്യമായില്ല. നിങ്ങള്‍ക്കു് ഈ ചിത്രം എന്നേക്കുമായി നീക്കം "
+"ചെയ്യണമോ?"
 
-#: src/eoc-window.c:3337
+#: src/eoc-window.c:3280
 #, c-format
 msgid ""
 "Are you sure you want to move\n"
@@ -1163,396 +1137,395 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/eoc-window.c:3342
+#: src/eoc-window.c:3285
 msgid ""
 "Some of the selected images can't be moved to the trash and will be removed "
 "permanently. Are you sure you want to proceed?"
 msgstr ""
-"തെരഞ്ഞെടുത്ത ചില ചിത്രങ്ങള്‍ ചവറ്റുകുട്ടയിലേക്കു് നീക്കുവാന്‍ സാധ്യമല്ല, "
-"കൂടാതെ അവ എന്നേക്കുമായി വെട്ടിനീക്കപ്പെടുന്നു. നിങ്ങള്‍ക്കു് "
-"തുടരണമെന്നുറപ്പാണോ?"
+"തെരഞ്ഞെടുത്ത ചില ചിത്രങ്ങള്‍ ചവറ്റുകുട്ടയിലേക്കു് നീക്കുവാന്‍ സാധ്യമല്ല, കൂടാതെ അവ എന്നേക്കുമായി "
+"വെട്ടിനീക്കപ്പെടുന്നു. നിങ്ങള്‍ക്കു് തുടരണമെന്നുറപ്പാണോ?"
 
-#: src/eoc-window.c:3359 src/eoc-window.c:3855 src/eoc-window.c:3882
+#: src/eoc-window.c:3302 src/eoc-window.c:3792 src/eoc-window.c:3819
 msgid "Move to _Trash"
 msgstr "_ചവറ്റുകുട്ടയിലേക്ക് നീക്കുക"
 
-#: src/eoc-window.c:3361
+#: src/eoc-window.c:3304
 msgid "_Do not ask again during this session"
 msgstr "ഈ സെഷനില്‍ ഇനി _ചോദിക്കരുതു്"
 
-#: src/eoc-window.c:3406 src/eoc-window.c:3420
+#: src/eoc-window.c:3349 src/eoc-window.c:3363
 msgid "Couldn't access trash."
 msgstr "ചവറ്റുകുട്ട ലഭ്യമാകുന്നില്ല."
 
-#: src/eoc-window.c:3428
+#: src/eoc-window.c:3371
 msgid "Couldn't delete file"
 msgstr "ഫയല്‍ വെട്ടിനീക്കുവാന്‍ സാധ്യമല്ല"
 
-#: src/eoc-window.c:3530
+#: src/eoc-window.c:3471
 #, c-format
 msgid "Error on deleting image %s"
 msgstr "ചിത്രം %s നീക്കം ചെയ്യുന്നതില്‍ പിശക്"
 
-#: src/eoc-window.c:3776
+#: src/eoc-window.c:3713
 msgid "_Image"
 msgstr "_ചിത്രം"
 
-#: src/eoc-window.c:3777
+#: src/eoc-window.c:3714
 msgid "_Edit"
 msgstr "_മാറ്റം വരുത്തുക"
 
-#: src/eoc-window.c:3778
+#: src/eoc-window.c:3715
 msgid "_View"
 msgstr "_കാഴ്ച"
 
-#: src/eoc-window.c:3779
+#: src/eoc-window.c:3716
 msgid "_Go"
 msgstr "_പോകുക"
 
-#: src/eoc-window.c:3780
+#: src/eoc-window.c:3717
 msgid "_Tools"
 msgstr "_പണിയായുധങ്ങള്‍"
 
-#: src/eoc-window.c:3781
+#: src/eoc-window.c:3718
 msgid "_Help"
 msgstr "_സഹായം"
 
-#: src/eoc-window.c:3783
+#: src/eoc-window.c:3720
 msgid "_Open…"
 msgstr ""
 
-#: src/eoc-window.c:3784
+#: src/eoc-window.c:3721
 msgid "Open a file"
 msgstr "ഒരു ഫയല്‍ തുറക്കുക"
 
-#: src/eoc-window.c:3786
+#: src/eoc-window.c:3723
 msgid "_Close"
 msgstr "_അടയ്ക്കു:"
 
-#: src/eoc-window.c:3787
+#: src/eoc-window.c:3724
 msgid "Close window"
 msgstr "ജാലകം അടയ്ക്കുക"
 
-#: src/eoc-window.c:3789
+#: src/eoc-window.c:3726
 msgid "T_oolbar"
 msgstr "_ടൂള്‍ ബാര്‍ "
 
-#: src/eoc-window.c:3790
+#: src/eoc-window.c:3727
 msgid "Edit the application toolbar"
 msgstr "പ്രയോഗത്തിനുള്ള ഉപകരണപ്പട്ടയില്‍ മാറ്റം വരുത്തുക"
 
-#: src/eoc-window.c:3792
+#: src/eoc-window.c:3729
 msgid "Prefere_nces"
 msgstr "മുന്‍ഗണനകള്‍"
 
-#: src/eoc-window.c:3793
+#: src/eoc-window.c:3730
 msgid "Preferences for Eye of CAFE"
 msgstr "ഗ്നോ മിഴിയ്ക്കുള്ള മുന്‍ഗണനകള്‍"
 
-#: src/eoc-window.c:3795
+#: src/eoc-window.c:3732
 msgid "_Contents"
 msgstr "_ഉളളടക്കം"
 
-#: src/eoc-window.c:3796
+#: src/eoc-window.c:3733
 msgid "Help on this application"
 msgstr "ഈ പ്രയോഗത്തിനുളള സഹായം"
 
-#: src/eoc-window.c:3798
+#: src/eoc-window.c:3735
 msgid "_About"
 msgstr "_സംബന്ധിച്ച്"
 
-#: src/eoc-window.c:3799
+#: src/eoc-window.c:3736
 msgid "About this application"
 msgstr "ഈ പ്രയോഗം സംബന്ധിച്ച് "
 
-#: src/eoc-window.c:3804
+#: src/eoc-window.c:3741
 msgid "_Toolbar"
 msgstr "_ഉപകരണപ്പട്ട"
 
-#: src/eoc-window.c:3805
+#: src/eoc-window.c:3742
 msgid "Changes the visibility of the toolbar in the current window"
 msgstr "നിലവിലുളള ജാലകത്തിന്റെ ഉപകരണപ്പട്ടയുടെ ദൃശ്യത മാറ്റുന്നു"
 
-#: src/eoc-window.c:3807
+#: src/eoc-window.c:3744
 msgid "_Statusbar"
 msgstr "_അവസ്ഥാപട്ട"
 
-#: src/eoc-window.c:3808
+#: src/eoc-window.c:3745
 msgid "Changes the visibility of the statusbar in the current window"
 msgstr "നിലവിലുളള ജാലകത്തിന്റെ അവസ്ഥപട്ടയുടെ ദൃശ്യത മാറ്റുന്നു"
 
-#: src/eoc-window.c:3810
+#: src/eoc-window.c:3747
 msgid "_Image Collection"
 msgstr "_ചിത്ര ശേഖരം"
 
-#: src/eoc-window.c:3811
+#: src/eoc-window.c:3748
 msgid ""
 "Changes the visibility of the image collection pane in the current window"
 msgstr "നിലവിലുള്ള ജാലകത്തിന്റെ ചിത്ര ശേഖരണ പാളിയുടെ ദ്രശ്യത മാറ്റുന്നു"
 
-#: src/eoc-window.c:3813
+#: src/eoc-window.c:3750
 msgid "Side _Pane"
 msgstr "_പാര്‍ശ്വപട്ട"
 
-#: src/eoc-window.c:3814
+#: src/eoc-window.c:3751
 msgid "Changes the visibility of the side pane in the current window"
 msgstr "നിലവിലുളള ജാലകത്തിന്റെ വശത്തുള്ള പാളിയുടെ ദൃശ്യത മാറ്റുന്നു"
 
-#: src/eoc-window.c:3819
+#: src/eoc-window.c:3756
 msgid "_Save"
 msgstr "സംരക്ഷിക്കുക"
 
-#: src/eoc-window.c:3820
+#: src/eoc-window.c:3757
 msgid "Save changes in currently selected images"
 msgstr "ഇപ്പോള്‍ തിരഞ്ഞെടുത്ത ചിത്രങ്ങളിലെ വ്യത്യാസങ്ങള്‍ സൂക്ഷിക്കുക"
 
-#: src/eoc-window.c:3822
+#: src/eoc-window.c:3759
 msgid "Open _with"
 msgstr "ഒരു പ്രയോഗം _ഉപയോഗിച്ച് തുറക്കുക"
 
-#: src/eoc-window.c:3823
+#: src/eoc-window.c:3760
 msgid "Open the selected image with a different application"
 msgstr "തെരഞ്ഞെടുത്ത ചിത്രങ്ങള്‍ വേറെ പ്രയോഗം ഉപയോഗിച്ച് തുറക്കുക"
 
-#: src/eoc-window.c:3825
+#: src/eoc-window.c:3762
 msgid "Save _As…"
 msgstr ""
 
-#: src/eoc-window.c:3826
+#: src/eoc-window.c:3763
 msgid "Save the selected images with a different name"
 msgstr "തെരഞ്ഞെടുത്ത ചിത്രങ്ങള്‍ വേറെ പേരില്‍ സൂക്ഷിക്കുക"
 
-#: src/eoc-window.c:3828
+#: src/eoc-window.c:3765
 msgid "Open Containing _Folder"
 msgstr ""
 
-#: src/eoc-window.c:3829
+#: src/eoc-window.c:3766
 msgid "Show the folder which contains this file in the file manager"
 msgstr ""
 
-#: src/eoc-window.c:3831
+#: src/eoc-window.c:3768
 msgid "_Print…"
 msgstr ""
 
-#: src/eoc-window.c:3832
+#: src/eoc-window.c:3769
 msgid "Print the selected image"
 msgstr "തിരഞ്ഞെടുത്ത ചിത്രം അച്ചടിക്കുക"
 
-#: src/eoc-window.c:3834
+#: src/eoc-window.c:3771
 msgid "Prope_rties"
 msgstr "_ഗുണഗണങ്ങള്‍"
 
-#: src/eoc-window.c:3835
+#: src/eoc-window.c:3772
 msgid "Show the properties and metadata of the selected image"
 msgstr "തിരഞ്ഞെടുത്ത ചിത്രത്തിന്റെ ഗുണഗണങ്ങളും മെറ്റാ-ഡാറ്റയും കാണിക്കുക"
 
-#: src/eoc-window.c:3837
+#: src/eoc-window.c:3774
 msgid "_Undo"
 msgstr "വേണ്ട"
 
-#: src/eoc-window.c:3838
+#: src/eoc-window.c:3775
 msgid "Undo the last change in the image"
 msgstr "ചിത്രത്തിലേ അവസാന മാറ്റം റദ്ദാക്കുക"
 
-#: src/eoc-window.c:3840
+#: src/eoc-window.c:3777
 msgid "Flip _Horizontal"
 msgstr "_തിരശ്ചീന‌മായി ഞൊടിക്കുക"
 
-#: src/eoc-window.c:3841
+#: src/eoc-window.c:3778
 msgid "Mirror the image horizontally"
 msgstr "ചിത്രം തിരശ്ചീനമായി പ്രതിഫലിപ്പിക്കുക"
 
-#: src/eoc-window.c:3843
+#: src/eoc-window.c:3780
 msgid "Flip _Vertical"
 msgstr "_ലംബമായി ഞൊടിക്കുക"
 
-#: src/eoc-window.c:3844
+#: src/eoc-window.c:3781
 msgid "Mirror the image vertically"
 msgstr "ചിത്രം ലംബമായി പ്രതിഫലിപ്പിക്കുക"
 
-#: src/eoc-window.c:3846
+#: src/eoc-window.c:3783
 msgid "_Rotate Clockwise"
 msgstr "ഘടികാരദിശയില്‍ _തിരിയ്ക്കുക"
 
-#: src/eoc-window.c:3847
+#: src/eoc-window.c:3784
 msgid "Rotate the image 90 degrees to the right"
 msgstr "ചിത്രം വലത്തേക്ക് 90 ഡിഗ്രി കറക്കുക"
 
-#: src/eoc-window.c:3849
+#: src/eoc-window.c:3786
 msgid "Rotate Counterc_lockwise"
 msgstr "_ഘടികാരദിശയ്ക്കെതിരെ തിരിയ്ക്കുക"
 
-#: src/eoc-window.c:3850
+#: src/eoc-window.c:3787
 msgid "Rotate the image 90 degrees to the left"
 msgstr "ചിത്രം ഇടത്തേക്ക് 90 ഡിഗ്രി കറക്കുക"
 
-#: src/eoc-window.c:3852
+#: src/eoc-window.c:3789
 msgid "Set as _Desktop Background"
 msgstr "_പണിയിട പശ്ചാത്തലമായി സജ്ജമാക്കുക"
 
-#: src/eoc-window.c:3853
+#: src/eoc-window.c:3790
 msgid "Set the selected image as the desktop background"
 msgstr "തെരഞ്ഞെടുത്ത ചിത്രം പണിയിടത്തില്‍ വോള്‍പേപ്പറായി ഇടുക"
 
-#: src/eoc-window.c:3856
+#: src/eoc-window.c:3793
 msgid "Move the selected image to the trash folder"
 msgstr "തിരഞ്ഞെടുത്ത ചിത്രം ചവറ്റുകുട്ടയിലേക്ക നീക്കുക"
 
-#: src/eoc-window.c:3858
+#: src/eoc-window.c:3795
 msgid "_Copy"
 msgstr "പകര്‍ത്തുക (_C)"
 
-#: src/eoc-window.c:3859
+#: src/eoc-window.c:3796
 msgid "Copy the selected image to the clipboard"
 msgstr ""
 
-#: src/eoc-window.c:3861 src/eoc-window.c:3873 src/eoc-window.c:3876
+#: src/eoc-window.c:3798 src/eoc-window.c:3810 src/eoc-window.c:3813
 msgid "_Zoom In"
 msgstr "_വലുതാക്കുക"
 
-#: src/eoc-window.c:3862 src/eoc-window.c:3874
+#: src/eoc-window.c:3799 src/eoc-window.c:3811
 msgid "Enlarge the image"
 msgstr "ചിത്രം വലുതാക്കുക"
 
-#: src/eoc-window.c:3864 src/eoc-window.c:3879
+#: src/eoc-window.c:3801 src/eoc-window.c:3816
 msgid "Zoom _Out"
 msgstr "_ചെറുതാക്കുക"
 
-#: src/eoc-window.c:3865 src/eoc-window.c:3877 src/eoc-window.c:3880
+#: src/eoc-window.c:3802 src/eoc-window.c:3814 src/eoc-window.c:3817
 msgid "Shrink the image"
 msgstr "ചിത്രം ചെറുതാക്കുക"
 
-#: src/eoc-window.c:3867
+#: src/eoc-window.c:3804
 msgid "_Normal Size"
 msgstr "_സാധാരണ വലിപ്പം"
 
-#: src/eoc-window.c:3868
+#: src/eoc-window.c:3805
 msgid "Show the image at its normal size"
 msgstr "ചിത്രം തനതായ വലിപ്പത്തില്‍ കാണിക്കുക"
 
-#: src/eoc-window.c:3870
+#: src/eoc-window.c:3807
 msgid "_Best Fit"
 msgstr "_അനുയോജ്യമായ വലുപ്പം"
 
-#: src/eoc-window.c:3871
+#: src/eoc-window.c:3808
 msgid "Fit the image to the window"
 msgstr "ചിത്രം പുതിയ ജാലകത്തിനു പാകമാക്കുക"
 
-#: src/eoc-window.c:3888
+#: src/eoc-window.c:3825
 msgid "_Fullscreen"
 msgstr "_പരമാവധി വലുപ്പത്തിലുളള സ്ക്രീന്‍"
 
-#: src/eoc-window.c:3889
+#: src/eoc-window.c:3826
 msgid "Show the current image in fullscreen mode"
 msgstr "നിലവിലുള്ള ചിത്രം മുഴുവന്‍ സ്ക്രീനില്‍ കാണിക്കുക"
 
-#: src/eoc-window.c:3891
+#: src/eoc-window.c:3828
 msgid "Pause Slideshow"
 msgstr ""
 
-#: src/eoc-window.c:3892
+#: src/eoc-window.c:3829
 msgid "Pause or resume the slideshow"
 msgstr ""
 
-#: src/eoc-window.c:3897 src/eoc-window.c:3912
+#: src/eoc-window.c:3834 src/eoc-window.c:3849
 msgid "_Previous Image"
 msgstr "_മുമ്പത്തെ ചിത്രം"
 
-#: src/eoc-window.c:3898
+#: src/eoc-window.c:3835
 msgid "Go to the previous image of the collection"
 msgstr "ശേഖരണത്തില്‍ ഇതിനു മുമ്പുള്ള ചിത്രത്തിലേക്ക് പോവുക"
 
-#: src/eoc-window.c:3900
+#: src/eoc-window.c:3837
 msgid "_Next Image"
 msgstr "_അടുത്ത ചിത്രം"
 
-#: src/eoc-window.c:3901
+#: src/eoc-window.c:3838
 msgid "Go to the next image of the collection"
 msgstr "ശേഖരത്തിലെ അടുത്ത ചിത്രത്തിലേക്ക് പോവുക"
 
-#: src/eoc-window.c:3903 src/eoc-window.c:3915
+#: src/eoc-window.c:3840 src/eoc-window.c:3852
 msgid "_First Image"
 msgstr "_ആദ്യത്തെ ചിത്രം"
 
-#: src/eoc-window.c:3904
+#: src/eoc-window.c:3841
 msgid "Go to the first image of the collection"
 msgstr "ശേഖരത്തിലെ ആദ്യത്തെ ചിത്രത്തിലേക്ക് പോവുക"
 
-#: src/eoc-window.c:3906 src/eoc-window.c:3918
+#: src/eoc-window.c:3843 src/eoc-window.c:3855
 msgid "_Last Image"
 msgstr "_അവസാനത്തെ ചിത്രം"
 
-#: src/eoc-window.c:3907
+#: src/eoc-window.c:3844
 msgid "Go to the last image of the collection"
 msgstr "ശേഖരത്തിലെ അവസാനത്തെ ചിത്രത്തിലേക്ക് പോവുക"
 
-#: src/eoc-window.c:3909
+#: src/eoc-window.c:3846
 msgid "_Random Image"
 msgstr ""
 
-#: src/eoc-window.c:3910
+#: src/eoc-window.c:3847
 msgid "Go to a random image of the collection"
 msgstr ""
 
-#: src/eoc-window.c:3924
+#: src/eoc-window.c:3861
 msgid "S_lideshow"
 msgstr ""
 
-#: src/eoc-window.c:3925
+#: src/eoc-window.c:3862
 msgid "Start a slideshow view of the images"
 msgstr "ചിത്രങ്ങളുടെ ഒരു സ്ലൈഡ്-ഷോ കാണിക്കാന്‍ തുടങ്ങുക"
 
-#: src/eoc-window.c:3995
+#: src/eoc-window.c:3929
 msgid "Previous"
 msgstr "മുമ്പുള്ള"
 
-#: src/eoc-window.c:3999
+#: src/eoc-window.c:3933
 msgid "Next"
 msgstr "അടുത്ത"
 
-#: src/eoc-window.c:4003
+#: src/eoc-window.c:3937
 msgid "Right"
 msgstr "വലത്"
 
-#: src/eoc-window.c:4006
+#: src/eoc-window.c:3940
 msgid "Left"
 msgstr "ഇടത്"
 
-#: src/eoc-window.c:4012
+#: src/eoc-window.c:3946
 msgid "In"
 msgstr "അകത്ത്"
 
-#: src/eoc-window.c:4015
+#: src/eoc-window.c:3949
 msgid "Out"
 msgstr "പുറത്ത്"
 
-#: src/eoc-window.c:4018
+#: src/eoc-window.c:3952
 msgid "Normal"
 msgstr "സാധാരണ"
 
-#: src/eoc-window.c:4021
+#: src/eoc-window.c:3955
 msgid "Fit"
 msgstr "ചേര്‍ച്ച"
 
-#: src/eoc-window.c:4024
+#: src/eoc-window.c:3958
 msgid "Collection"
 msgstr "ശേഖരം "
 
-#: src/eoc-window.c:4027
+#: src/eoc-window.c:3961
 msgctxt "action (to trash)"
 msgid "Trash"
 msgstr "ട്രാഷ്"
 
-#: src/eoc-window.c:4385
+#: src/eoc-window.c:4307
 #, c-format
 msgid "Edit the current image using %s"
 msgstr ""
 
-#: src/eoc-window.c:4388
+#: src/eoc-window.c:4309
 msgid "Edit Image"
 msgstr ""
 
-#: src/eoc-window.c:4612
+#: src/eoc-window.c:4524
 msgid "Properties"
 msgstr "ഗുണഗണങ്ങള്‍"
 
