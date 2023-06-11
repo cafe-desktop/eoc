@@ -2,8 +2,8 @@ AC_PREREQ(2.59)
 AC_CONFIG_MACRO_DIR([m4])
 
 m4_define(eoc_major_version, 1)
-m4_define(eoc_minor_version, 24)
-m4_define(eoc_micro_version, 1)
+m4_define(eoc_minor_version, 25)
+m4_define(eoc_micro_version, 0)
 m4_define(eoc_version, eoc_major_version.eoc_minor_version.eoc_micro_version)
 
 AC_INIT([eoc], eoc_version, [http://www.cafe-desktop.org], [eoc])
