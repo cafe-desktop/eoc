@@ -659,6 +659,8 @@ adjustment_changed_cb (CtkAdjustment *adj, gpointer data)
 
 	scroll_to (view, ctk_adjustment_get_value (priv->hadj),
 		   ctk_adjustment_get_value (priv->vadj), FALSE);
+
+	ctk_widget_queue_resize (CTK_WIDGET (view));
 }
 
 
