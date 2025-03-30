@@ -1,0 +1,4 @@
+eoc-scroll-view: Fix: Ensure scrollbar moves when dragged to move image
+
+based in eom commit:
+https://github.com/mate-desktop/eom/commit/80407681db8740478a12f16d804cebd60dc224c1
