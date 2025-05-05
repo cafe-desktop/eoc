@@ -1,0 +1,3 @@
+eoc-scroll-view: Fix the vertical scrollbar
+
+dragging with mouse over the image if there is no horizontal scrollbar
