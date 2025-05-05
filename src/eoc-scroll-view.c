@@ -963,6 +963,8 @@ eoc_scroll_view_button_press_event (CtkWidget *widget, CdkEventButton *event, gp
 				priv->drag_ofs_x = priv->xofs;
 				priv->drag_ofs_y = priv->yofs;
 
+				ctk_widget_queue_resize (CTK_WIDGET (view));
+
 				return TRUE;
 			}
 		default:
