@@ -88,7 +88,7 @@ eoc_plugin_engine_new (void)
 
 	/* This should be moved to libbean */
 	if (g_irepository_require (g_irepository_get_default (),
-	                           "Bean", "1.0", 0, &error) == NULL)
+	                           "Bean", "2.0", 0, &error) == NULL)
 	{
 		g_warning ("Error loading Bean typelib: %s\n",
 		           error->message);
@@ -96,7 +96,7 @@ eoc_plugin_engine_new (void)
 	}
 
 	if (g_irepository_require (g_irepository_get_default (),
-	                           "BeanCtk", "1.0", 0, &error) == NULL)
+	                           "BeanCtk", "2.0", 0, &error) == NULL)
 	{
 		g_warning ("Error loading BeanCtk typelib: %s\n",
 		           error->message);

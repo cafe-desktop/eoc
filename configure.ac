@@ -91,7 +91,7 @@ CAFE_DESKTOP_REQUIRED=1.17.0
 GDKPIXBUF_REQUIRED=2.36.5
 SHARED_MIME_INFO_REQUIRED=0.20
 EXEMPI_REQUIRED=1.99.5
-LIBBEAN_REQUIRED=1.8.0
+LIBBEAN_REQUIRED=2.0.0
 MAGICK_REQUIRED=6.2.6
 
 PKG_CHECK_MODULES(GMODULE, gmodule-2.0, [GMODULE_ADD="gmodule-2.0"],[GMODULE_ADD=""])
@@ -106,8 +106,8 @@ EOC_MODULES="ctk+-3.0 >= $CTK_REQUIRED \
              gio-2.0 >= $GIO_REQUIRED \
              ctk+-unix-print-3.0 >= $CTK_REQUIRED \
              shared-mime-info >= $SHARED_MIME_INFO_REQUIRED \
-             libbean-1.0 >= $LIBBEAN_REQUIRED \
-             libbean-ctk-1.0 >= $LIBBEAN_REQUIRED"
+             libbean-2.0 >= $LIBBEAN_REQUIRED \
+             libbean-ctk-2.0 >= $LIBBEAN_REQUIRED"
 
 # Introspection
 GOBJECT_INTROSPECTION_CHECK([0.9.3])
