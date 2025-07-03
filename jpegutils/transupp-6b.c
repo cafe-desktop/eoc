@@ -791,9 +791,9 @@ trim_bottom_edge (j_compress_ptr dstinfo)
  */
 
 jvirt_barray_ptr *
-jtransform_adjust_parameters (j_decompress_ptr srcinfo,
-			      j_compress_ptr dstinfo,
-			      jvirt_barray_ptr *src_coef_arrays,
+jtransform_adjust_parameters (j_decompress_ptr     srcinfo GNUC_UNUSED,
+			      j_compress_ptr       dstinfo,
+			      jvirt_barray_ptr    *src_coef_arrays,
 			      jpeg_transform_info *info)
 {
   /* If force-to-grayscale is requested, adjust destination parameters */
@@ -943,8 +943,9 @@ jcopy_markers_setup (j_decompress_ptr srcinfo, JCOPY_OPTION option)
  */
 
 void
-jcopy_markers_execute (j_decompress_ptr srcinfo, j_compress_ptr dstinfo,
-		       JCOPY_OPTION option)
+jcopy_markers_execute (j_decompress_ptr srcinfo,
+		       j_compress_ptr   dstinfo,
+		       JCOPY_OPTION     option GNUC_UNUSED)
 {
   jpeg_saved_marker_ptr marker;
 
