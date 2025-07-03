@@ -1,0 +1,4 @@
+Makefiles: avoid --header and --body at the same time
+
+Fixes the warnings:
+WARNING: Using --header and --body at the same time is deprecated; use --body --prototypes instead
