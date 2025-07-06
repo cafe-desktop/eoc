@@ -2478,7 +2478,7 @@ eoc_window_cmd_edit_toolbar_cb (CtkDialog *dialog, gint response, gpointer data)
 
 static void
 eoc_window_cmd_edit_toolbar (CtkAction *action G_GNUC_UNUSED,
-			     gpointer  *user_data)
+			     gpointer   user_data)
 {
 	EocWindow *window;
 	CtkWidget *dialog;
