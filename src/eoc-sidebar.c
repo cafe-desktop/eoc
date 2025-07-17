@@ -279,7 +279,7 @@ eoc_sidebar_select_button_key_press_cb (CtkWidget   *widget,
 }
 
 static void
-eoc_sidebar_close_clicked_cb (CtkWidget *widget,
+eoc_sidebar_close_clicked_cb (CtkWidget *widget G_GNUC_UNUSED,
  			      gpointer   user_data)
 {
 	EocSidebar *eoc_sidebar = EOC_SIDEBAR (user_data);
@@ -288,8 +288,8 @@ eoc_sidebar_close_clicked_cb (CtkWidget *widget,
 }
 
 static void
-eoc_sidebar_menu_deactivate_cb (CtkWidget *widget,
-			       gpointer   user_data)
+eoc_sidebar_menu_deactivate_cb (CtkWidget *widget G_GNUC_UNUSED,
+				gpointer   user_data)
 {
 	CtkWidget *menu_button;
 
@@ -300,7 +300,7 @@ eoc_sidebar_menu_deactivate_cb (CtkWidget *widget,
 
 static void
 eoc_sidebar_menu_detach_cb (CtkWidget *widget,
-			   CtkMenu   *menu)
+			    CtkMenu   *menu G_GNUC_UNUSED)
 {
 	EocSidebar *eoc_sidebar = EOC_SIDEBAR (widget);
 
@@ -308,7 +308,7 @@ eoc_sidebar_menu_detach_cb (CtkWidget *widget,
 }
 
 static void
-eoc_sidebar_menu_item_activate_cb (CtkWidget *widget,
+eoc_sidebar_menu_item_activate_cb (CtkWidget *widget G_GNUC_UNUSED,
 				   gpointer   user_data)
 {
 	EocSidebar *eoc_sidebar = EOC_SIDEBAR (user_data);

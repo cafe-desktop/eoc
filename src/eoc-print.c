@@ -69,9 +69,9 @@ _cairo_ctx_supports_jpg_metadata (cairo_t *cr)
 }
 
 static void
-eoc_print_draw_page (CtkPrintOperation *operation,
+eoc_print_draw_page (CtkPrintOperation *operation G_GNUC_UNUSED,
 		     CtkPrintContext   *context,
-		     gint               page_nr,
+		     gint               page_nr G_GNUC_UNUSED,
 		     gpointer           user_data)
 {
 	cairo_t *cr;
@@ -275,7 +275,7 @@ eoc_print_create_custom_widget (CtkPrintOperation *operation,
 }
 
 static void
-eoc_print_custom_widget_apply (CtkPrintOperation *operation,
+eoc_print_custom_widget_apply (CtkPrintOperation *operation G_GNUC_UNUSED,
 			       CtkWidget         *widget,
 			       gpointer           user_data)
 {
@@ -298,8 +298,8 @@ eoc_print_custom_widget_apply (CtkPrintOperation *operation,
 }
 
 static void
-eoc_print_end_print (CtkPrintOperation *operation,
-		     CtkPrintContext   *context,
+eoc_print_end_print (CtkPrintOperation *operation G_GNUC_UNUSED,
+		     CtkPrintContext   *context G_GNUC_UNUSED,
 		     gpointer           user_data)
 {
 	EocPrintData *data = (EocPrintData*) user_data;

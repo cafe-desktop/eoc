@@ -70,8 +70,8 @@ G_DEFINE_TYPE_WITH_PRIVATE (EocPreferencesDialog, eoc_preferences_dialog, CTK_TY
 
 static gboolean
 pd_string_to_rgba_mapping (GValue   *value,
-			    GVariant *variant,
-			    gpointer user_data)
+			   GVariant *variant,
+			   gpointer  user_data G_GNUC_UNUSED)
 {
 	CdkRGBA color;
 
@@ -87,8 +87,8 @@ pd_string_to_rgba_mapping (GValue   *value,
 
 static GVariant*
 pd_rgba_to_string_mapping (const GValue       *value,
-			    const GVariantType *expected_type,
-			    gpointer            user_data)
+			   const GVariantType *expected_type,
+			   gpointer            user_data G_GNUC_UNUSED)
 {
 
 	GVariant *variant = NULL;
@@ -128,7 +128,9 @@ random_change_cb (GSettings *settings, gchar *key, CtkWidget *widget)
 }
 
 static void
-eoc_preferences_response_cb (CtkDialog *dlg, gint res_id, gpointer data)
+eoc_preferences_response_cb (CtkDialog *dlg,
+			     gint       res_id,
+			     gpointer   data G_GNUC_UNUSED)
 {
 	switch (res_id) {
 		case CTK_RESPONSE_HELP:

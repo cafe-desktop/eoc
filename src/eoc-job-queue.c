@@ -126,7 +126,7 @@ search_for_jobs_unlocked (void)
 }
 
 static gpointer
-eoc_render_thread (gpointer data)
+eoc_render_thread (gpointer data G_GNUC_UNUSED)
 {
 	while (TRUE) {
 		EocJob *job;

@@ -144,7 +144,7 @@ eoc_statusbar_date_plugin_get_property (GObject    *object,
 }
 
 static void
-eoc_statusbar_date_plugin_init (EocStatusbarDatePlugin *plugin)
+eoc_statusbar_date_plugin_init (EocStatusbarDatePlugin *plugin G_GNUC_UNUSED)
 {
 	eoc_debug_message (DEBUG_PLUGINS, "EocStatusbarDatePlugin initializing");
 }
@@ -213,7 +213,7 @@ eoc_statusbar_date_plugin_class_init (EocStatusbarDatePluginClass *klass)
 }
 
 static void
-eoc_statusbar_date_plugin_class_finalize (EocStatusbarDatePluginClass *klass)
+eoc_statusbar_date_plugin_class_finalize (EocStatusbarDatePluginClass *klass G_GNUC_UNUSED)
 {
 	/* dummy function - used by G_DEFINE_DYNAMIC_TYPE_EXTENDED */
 }

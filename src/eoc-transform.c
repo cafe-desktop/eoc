@@ -56,7 +56,7 @@ eoc_transform_init (EocTransform *trans)
 }
 
 static void
-eoc_transform_class_init (EocTransformClass *klass)
+eoc_transform_class_init (EocTransformClass *klass G_GNUC_UNUSED)
 {
 
 }

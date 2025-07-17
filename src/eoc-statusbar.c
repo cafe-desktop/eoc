@@ -39,7 +39,7 @@ struct _EocStatusbarPrivate
 G_DEFINE_TYPE_WITH_PRIVATE (EocStatusbar, eoc_statusbar, CTK_TYPE_STATUSBAR)
 
 static void
-eoc_statusbar_class_init (EocStatusbarClass *klass)
+eoc_statusbar_class_init (EocStatusbarClass *klass G_GNUC_UNUSED)
 {
     /* empty */
 }

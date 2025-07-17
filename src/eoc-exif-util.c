@@ -57,7 +57,7 @@ G_DEFINE_BOXED_TYPE(EocExifData, eoc_exif_data, eoc_exif_data_copy, eoc_exif_dat
 
 #ifdef HAVE_STRPTIME
 static gpointer
-_check_strptime_updates_wday (gpointer data)
+_check_strptime_updates_wday (gpointer data G_GNUC_UNUSED)
 {
 	struct tm tm;
 

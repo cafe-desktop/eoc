@@ -173,9 +173,9 @@ eoc_uc_error_quark (void)
 
 static void
 eoc_uri_converter_set_property (GObject      *object,
-                                guint         property_id,
-                                const GValue *value,
-                                GParamSpec   *pspec)
+				guint         property_id,
+				const GValue *value,
+				GParamSpec   *pspec G_GNUC_UNUSED)
 {
 	EocURIConverter *conv;
 	EocURIConverterPrivate *priv;
@@ -225,9 +225,9 @@ eoc_uri_converter_set_property (GObject      *object,
 
 static void
 eoc_uri_converter_get_property (GObject    *object,
-                                guint       property_id,
-                                GValue     *value,
-                                GParamSpec *pspec)
+				guint       property_id,
+				GValue     *value,
+				GParamSpec *pspec G_GNUC_UNUSED)
 {
 	EocURIConverter *conv;
 	EocURIConverterPrivate *priv;
@@ -293,7 +293,7 @@ create_token_string (const char *string, int substr_start, int substr_len)
 }
 
 static EocUCToken*
-create_token_counter (int start_counter)
+create_token_counter (int start_counter G_GNUC_UNUSED)
 {
 	EocUCToken *token;
 
@@ -719,8 +719,11 @@ replace_remove_chars (GString *str, gboolean convert_spaces, gunichar space_char
  * is returned in uri and the image format will be in the format pointer.
  */
 gboolean
-eoc_uri_converter_do (EocURIConverter *conv, EocImage *image,
-		      GFile **file, GdkPixbufFormat **format, GError **error)
+eoc_uri_converter_do (EocURIConverter  *conv,
+		      EocImage         *image,
+		      GFile           **file,
+		      GdkPixbufFormat **format,
+		      GError          **error G_GNUC_UNUSED)
 {
 	EocURIConverterPrivate *priv;
 	GList *it;

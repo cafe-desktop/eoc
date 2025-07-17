@@ -27,9 +27,9 @@ enum {
 };
 
 static gboolean
-on_button_press (CtkWidget      *button,
-                 CdkEventButton *event,
-                 EocWindow      *window)
+on_button_press (CtkWidget      *button G_GNUC_UNUSED,
+		 CdkEventButton *event,
+		 EocWindow      *window)
 {
 	if (event->button == 1 && event->type == CDK_2BUTTON_PRESS)
 	{
@@ -91,7 +91,7 @@ eoc_fullscreen_plugin_get_property (GObject    *object,
 }
 
 static void
-eoc_fullscreen_plugin_init (EocFullscreenPlugin *plugin)
+eoc_fullscreen_plugin_init (EocFullscreenPlugin *plugin G_GNUC_UNUSED)
 {
 	eoc_debug_message (DEBUG_PLUGINS, "EocFullscreenPlugin initializing");
 }
@@ -147,7 +147,7 @@ eoc_fullscreen_plugin_class_init (EocFullscreenPluginClass *klass)
 }
 
 static void
-eoc_fullscreen_plugin_class_finalize (EocFullscreenPluginClass *klass)
+eoc_fullscreen_plugin_class_finalize (EocFullscreenPluginClass *klass G_GNUC_UNUSED)
 {
 	/* dummy function - used by G_DEFINE_DYNAMIC_TYPE_EXTENDED */
 }

@@ -105,7 +105,7 @@ fatal_error_handler (j_common_ptr cinfo)
 
 
 static void
-output_message_handler (j_common_ptr cinfo)
+output_message_handler (j_common_ptr cinfo G_GNUC_UNUSED)
 {
 	/* This method keeps libjpeg from dumping crap to stderr */
 	/* do nothing */
@@ -179,8 +179,11 @@ init_transform_info (EocImage *image, jpeg_transform_info *info)
 }
 
 static gboolean
-_save_jpeg_as_jpeg (EocImage *image, const char *file, EocImageSaveInfo *source,
-		    EocImageSaveInfo *target, GError **error)
+_save_jpeg_as_jpeg (EocImage         *image,
+		    const char       *file,
+		    EocImageSaveInfo *source G_GNUC_UNUSED,
+		    EocImageSaveInfo *target G_GNUC_UNUSED,
+		    GError          **error)
 {
 	struct jpeg_decompress_struct  srcinfo;
 	struct jpeg_compress_struct    dstinfo;
@@ -344,8 +347,11 @@ _save_jpeg_as_jpeg (EocImage *image, const char *file, EocImageSaveInfo *source,
 }
 
 static gboolean
-_save_any_as_jpeg (EocImage *image, const char *file, EocImageSaveInfo *source,
-		   EocImageSaveInfo *target, GError **error)
+_save_any_as_jpeg (EocImage         *image,
+		   const char       *file,
+		   EocImageSaveInfo *source G_GNUC_UNUSED,
+		   EocImageSaveInfo *target,
+		   GError          **error)
 {
 	EocImagePrivate *priv;
 	GdkPixbuf *pixbuf;

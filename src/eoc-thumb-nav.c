@@ -63,7 +63,9 @@ struct _EocThumbNavPrivate {
 G_DEFINE_TYPE_WITH_PRIVATE (EocThumbNav, eoc_thumb_nav, CTK_TYPE_BOX);
 
 static gboolean
-eoc_thumb_nav_scroll_event (CtkWidget *widget, CdkEventScroll *event, gpointer user_data)
+eoc_thumb_nav_scroll_event (CtkWidget      *widget G_GNUC_UNUSED,
+			    CdkEventScroll *event,
+			    gpointer        user_data)
 {
 	EocThumbNav *nav = EOC_THUMB_NAV (user_data);
 	gint inc = EOC_THUMB_NAV_SCROLL_INC * 3;
@@ -212,7 +214,8 @@ eoc_thumb_nav_start_scroll (CtkButton *button, EocThumbNav *nav)
 }
 
 static void
-eoc_thumb_nav_stop_scroll (CtkButton *button, EocThumbNav *nav)
+eoc_thumb_nav_stop_scroll (CtkButton   *button G_GNUC_UNUSED,
+			   EocThumbNav *nav)
 {
 	if (nav->priv->scroll_id > 0) {
 		g_source_remove (nav->priv->scroll_id);
@@ -225,7 +228,7 @@ static void
 eoc_thumb_nav_get_property (GObject    *object,
 			    guint       property_id,
 			    GValue     *value,
-			    GParamSpec *pspec)
+			    GParamSpec *pspec G_GNUC_UNUSED)
 {
 	EocThumbNav *nav = EOC_THUMB_NAV (object);
 
@@ -251,7 +254,7 @@ static void
 eoc_thumb_nav_set_property (GObject      *object,
 			    guint         property_id,
 			    const GValue *value,
-			    GParamSpec   *pspec)
+			    GParamSpec   *pspec G_GNUC_UNUSED)
 {
 	EocThumbNav *nav = EOC_THUMB_NAV (object);
 

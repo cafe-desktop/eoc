@@ -346,22 +346,22 @@ eoc_thumb_view_visible_range_changed (EocThumbView *thumbview)
 
 static void
 thumbview_on_visible_range_changed_cb (EocThumbView *thumbview,
-				       gpointer user_data)
+				       gpointer      user_data G_GNUC_UNUSED)
 {
 	eoc_thumb_view_visible_range_changed (thumbview);
 }
 
 static void
 thumbview_on_adjustment_changed_cb (EocThumbView *thumbview,
-				    gpointer user_data)
+				    gpointer user_data G_GNUC_UNUSED)
 {
 	eoc_thumb_view_visible_range_changed (thumbview);
 }
 
 static void
 thumbview_on_parent_set_cb (CtkWidget *widget,
-			    CtkWidget *old_parent,
-			    gpointer   user_data)
+			    CtkWidget *old_parent G_GNUC_UNUSED,
+			    gpointer   user_data G_GNUC_UNUSED)
 {
 	EocThumbView *thumbview = EOC_THUMB_VIEW (widget);
 	CtkScrolledWindow *sw;
@@ -402,8 +402,9 @@ thumbview_on_parent_set_cb (CtkWidget *widget,
 }
 
 static gboolean
-thumbview_on_button_press_event_cb (CtkWidget *thumbview, CdkEventButton *event,
-				    gpointer user_data)
+thumbview_on_button_press_event_cb (CtkWidget      *thumbview,
+				    CdkEventButton *event,
+				    gpointer        user_data G_GNUC_UNUSED)
 {
 	CtkTreePath *path;
 
@@ -434,11 +435,11 @@ thumbview_on_button_press_event_cb (CtkWidget *thumbview, CdkEventButton *event,
 
 static void
 thumbview_on_drag_data_get_cb (CtkWidget        *widget,
-			       CdkDragContext   *drag_context,
+			       CdkDragContext   *drag_context G_GNUC_UNUSED,
 			       CtkSelectionData *data,
-			       guint             info,
-			       guint             time,
-			       gpointer          user_data)
+			       guint             info G_GNUC_UNUSED,
+			       guint             time G_GNUC_UNUSED,
+			       gpointer          user_data G_GNUC_UNUSED)
 {
 	GList *list;
 	GList *node;
@@ -562,7 +563,8 @@ thumbview_get_tooltip_string (EocImage *image)
 }
 
 static void
-on_data_loaded_cb (EocJob *job, gpointer data)
+on_data_loaded_cb (EocJob  *job,
+		   gpointer data G_GNUC_UNUSED)
 {
 	if (!job->error) {
 		ctk_tooltip_trigger_tooltip_query (cdk_display_get_default());
@@ -575,7 +577,7 @@ thumbview_on_query_tooltip_cb (CtkWidget  *widget,
 			       gint        y,
 			       gboolean    keyboard_mode,
 			       CtkTooltip *tooltip,
-			       gpointer    user_data)
+			       gpointer    user_data G_GNUC_UNUSED)
 {
 	CtkTreePath *path;
 	EocImage *image;
@@ -673,10 +675,10 @@ eoc_thumb_view_update_columns (EocThumbView *view)
 }
 
 static void
-eoc_thumb_view_row_inserted_cb (CtkTreeModel    *tree_model,
-                                CtkTreePath     *path,
-                                CtkTreeIter     *iter,
-                                EocThumbView    *view)
+eoc_thumb_view_row_inserted_cb (CtkTreeModel    *tree_model G_GNUC_UNUSED,
+				CtkTreePath     *path G_GNUC_UNUSED,
+				CtkTreeIter     *iter G_GNUC_UNUSED,
+				EocThumbView    *view)
 {
 	EocThumbViewPrivate *priv = view->priv;
 
@@ -685,9 +687,9 @@ eoc_thumb_view_row_inserted_cb (CtkTreeModel    *tree_model,
 }
 
 static void
-eoc_thumb_view_row_deleted_cb (CtkTreeModel    *tree_model,
-                               CtkTreePath     *path,
-                               EocThumbView    *view)
+eoc_thumb_view_row_deleted_cb (CtkTreeModel    *tree_model G_GNUC_UNUSED,
+			       CtkTreePath     *path G_GNUC_UNUSED,
+			       EocThumbView    *view)
 {
 	EocThumbViewPrivate *priv = view->priv;
 
@@ -775,9 +777,9 @@ eoc_thumb_view_set_item_height (EocThumbView *thumbview, gint height)
 }
 
 static void
-eoc_thumb_view_get_n_selected_helper (CtkIconView *thumbview,
-				      CtkTreePath *path,
-				      gpointer data)
+eoc_thumb_view_get_n_selected_helper (CtkIconView *thumbview G_GNUC_UNUSED,
+				      CtkTreePath *path G_GNUC_UNUSED,
+				      gpointer     data)
 {
 	/* data is of type (guint *) */
 	(*(guint *) data) ++;

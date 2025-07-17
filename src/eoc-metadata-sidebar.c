@@ -250,7 +250,8 @@ eoc_metadata_sidebar_update (EocMetadataSidebar *sidebar)
 }
 
 static void
-_thumbnail_changed_cb (EocImage *image, gpointer user_data)
+_thumbnail_changed_cb (EocImage *image G_GNUC_UNUSED,
+		       gpointer  user_data)
 {
 	eoc_metadata_sidebar_update (EOC_METADATA_SIDEBAR (user_data));
 }
@@ -288,7 +289,9 @@ eoc_metadata_sidebar_set_image (EocMetadataSidebar *sidebar, EocImage *image)
 }
 
 static void
-_notify_image_cb (GObject *gobject, GParamSpec *pspec, gpointer user_data)
+_notify_image_cb (GObject    *gobject,
+		  GParamSpec *pspec G_GNUC_UNUSED,
+		  gpointer    user_data)
 {
 	EocImage *image;
 
@@ -305,7 +308,9 @@ _notify_image_cb (GObject *gobject, GParamSpec *pspec, gpointer user_data)
 }
 
 static void
-_folder_label_clicked_cb (CtkLabel *label, const gchar *uri, gpointer user_data)
+_folder_label_clicked_cb (CtkLabel    *label,
+			  const gchar *uri G_GNUC_UNUSED,
+			  gpointer     user_data)
 {
 	EocMetadataSidebarPrivate *priv = EOC_METADATA_SIDEBAR(user_data)->priv;
 	EocImage *img;
@@ -331,7 +336,8 @@ _folder_label_clicked_cb (CtkLabel *label, const gchar *uri, gpointer user_data)
 
 #ifdef HAVE_METADATA
 static void
-_details_button_clicked_cb (CtkButton *button, gpointer user_data)
+_details_button_clicked_cb (CtkButton *button G_GNUC_UNUSED,
+			    gpointer   user_data)
 {
 	EocMetadataSidebarPrivate *priv = EOC_METADATA_SIDEBAR(user_data)->priv;
 	CtkWidget *dlg;

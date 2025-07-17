@@ -426,8 +426,8 @@ pd_resize_dialog (gpointer user_data)
 
 static void
 pd_exif_details_activated_cb (CtkExpander *expander,
-			      GParamSpec *param_spec,
-			      CtkWidget *dialog)
+			      GParamSpec  *param_spec G_GNUC_UNUSED,
+			      CtkWidget   *dialog)
 {
 	gboolean expanded;
 
@@ -441,7 +441,8 @@ pd_exif_details_activated_cb (CtkExpander *expander,
 #endif
 
 static void
-pd_folder_button_clicked_cb (CtkButton *button, gpointer data)
+pd_folder_button_clicked_cb (CtkButton *button G_GNUC_UNUSED,
+			     gpointer   data)
 {
 	EocPropertiesDialogPrivate *priv = EOC_PROPERTIES_DIALOG (data)->priv;
 	CtkWindow *window;
@@ -457,9 +458,9 @@ pd_folder_button_clicked_cb (CtkButton *button, gpointer data)
 }
 
 static gboolean
-eoc_properties_dialog_page_switch (CtkNotebook     *notebook,
-				   gpointer         page,
-				   guint            page_index,
+eoc_properties_dialog_page_switch (CtkNotebook         *notebook G_GNUC_UNUSED,
+				   gpointer             page G_GNUC_UNUSED,
+				   guint                page_index,
 				   EocPropertiesDialog *prop_dlg)
 {
 	if (prop_dlg->priv->update_page)

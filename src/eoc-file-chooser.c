@@ -81,7 +81,9 @@ eoc_file_chooser_init (EocFileChooser *chooser)
 }
 
 static void
-response_cb (CtkDialog *dlg, gint id, gpointer data)
+response_cb (CtkDialog *dlg,
+	     gint       id,
+	     gpointer   data G_GNUC_UNUSED)
 {
 	char *dir;
 	CtkFileChooserAction action;
@@ -310,7 +312,8 @@ set_preview_pixbuf (EocFileChooser *chooser, GdkPixbuf *pixbuf, goffset size)
 }
 
 static void
-update_preview_cb (CtkFileChooser *file_chooser, gpointer data)
+update_preview_cb (CtkFileChooser *file_chooser,
+		   gpointer        data G_GNUC_UNUSED)
 {
 	EocFileChooserPrivate *priv;
 	char *uri;

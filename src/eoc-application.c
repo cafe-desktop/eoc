@@ -61,7 +61,7 @@ static void
 eoc_application_open (GApplication *application,
 		      GFile       **files,
 		      gint          n_files,
-		      const gchar  *hint)
+		      const gchar  *hint G_GNUC_UNUSED)
 {
 	GSList *list = NULL;
 
@@ -150,19 +150,19 @@ eoc_application_class_init (EocApplicationClass *eoc_application_class)
 }
 
 static void
-on_extension_added (BeanExtensionSet *set,
-                    BeanPluginInfo   *info,
-                    BeanExtension    *exten,
-                    EocApplication   *app)
+on_extension_added (BeanExtensionSet *set G_GNUC_UNUSED,
+		    BeanPluginInfo   *info G_GNUC_UNUSED,
+		    BeanExtension    *exten,
+		    EocApplication   *app G_GNUC_UNUSED)
 {
 	eoc_application_activatable_activate (EOC_APPLICATION_ACTIVATABLE (exten));
 }
 
 static void
-on_extension_removed (BeanExtensionSet *set,
-                      BeanPluginInfo   *info,
-                      BeanExtension    *exten,
-                      EocApplication   *app)
+on_extension_removed (BeanExtensionSet *set G_GNUC_UNUSED,
+		      BeanPluginInfo   *info G_GNUC_UNUSED,
+		      BeanExtension    *exten,
+		      EocApplication   *app G_GNUC_UNUSED)
 {
 	eoc_application_activatable_deactivate (EOC_APPLICATION_ACTIVATABLE (exten));
 }
@@ -277,7 +277,7 @@ gboolean
 eoc_application_open_window (EocApplication  *application,
 			     guint32         timestamp,
 			     EocStartupFlags flags,
-			     GError        **error)
+			     GError        **error G_GNUC_UNUSED)
 {
 	CtkWidget *new_window = NULL;
 
@@ -359,7 +359,7 @@ eoc_application_open_file_list (EocApplication  *application,
 				GSList          *file_list,
 				guint           timestamp,
 				EocStartupFlags flags,
-				GError         **error)
+				GError         **error G_GNUC_UNUSED)
 {
 	EocWindow *new_window = NULL;
 

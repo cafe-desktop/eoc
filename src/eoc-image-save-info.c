@@ -29,7 +29,7 @@ eoc_image_save_info_dispose (GObject *object)
 }
 
 static void
-eoc_image_save_info_init (EocImageSaveInfo *obj)
+eoc_image_save_info_init (EocImageSaveInfo *obj G_GNUC_UNUSED)
 {
 
 }
