@@ -319,8 +319,8 @@ on_scale_changed (CtkRange     *range,
 }
 
 static gchar *
-on_scale_format_value (CtkScale *scale,
-		       gdouble value)
+on_scale_format_value (CtkScale *scale G_GNUC_UNUSED,
+		       gdouble   value)
 {
 	return g_strdup_printf ("%i%%", (gint)value);
 }
@@ -364,7 +364,7 @@ position_values_changed (EocPrintImageSetup *setup,
 }
 
 static void
-on_left_value_changed (CtkSpinButton *spinbutton,
+on_left_value_changed (CtkSpinButton *spinbutton G_GNUC_UNUSED,
 		       gpointer       user_data)
 {
 	EocPrintImageSetup *setup;
@@ -381,7 +381,7 @@ on_left_value_changed (CtkSpinButton *spinbutton,
 }
 
 static void
-on_right_value_changed (CtkSpinButton *spinbutton,
+on_right_value_changed (CtkSpinButton *spinbutton G_GNUC_UNUSED,
 			gpointer       user_data)
 {
 	EocPrintImageSetupPrivate *priv;
@@ -396,7 +396,7 @@ on_right_value_changed (CtkSpinButton *spinbutton,
 }
 
 static void
-on_top_value_changed (CtkSpinButton *spinbutton,
+on_top_value_changed (CtkSpinButton *spinbutton G_GNUC_UNUSED,
 		      gpointer       user_data)
 {
 	EocPrintImageSetupPrivate *priv;
@@ -411,7 +411,7 @@ on_top_value_changed (CtkSpinButton *spinbutton,
 }
 
 static void
-on_bottom_value_changed (CtkSpinButton *spinbutton,
+on_bottom_value_changed (CtkSpinButton *spinbutton G_GNUC_UNUSED,
 			 gpointer       user_data)
 {
 	EocPrintImageSetupPrivate *priv;
@@ -494,7 +494,7 @@ size_changed (EocPrintImageSetup *setup,
 }
 
 static void
-on_width_value_changed (CtkSpinButton *spinbutton,
+on_width_value_changed (CtkSpinButton *spinbutton G_GNUC_UNUSED,
 			gpointer       user_data)
 {
 	EocPrintImageSetupPrivate *priv = EOC_PRINT_IMAGE_SETUP (user_data)->priv;
@@ -511,7 +511,7 @@ on_width_value_changed (CtkSpinButton *spinbutton,
 }
 
 static void
-on_height_value_changed (CtkSpinButton *spinbutton,
+on_height_value_changed (CtkSpinButton *spinbutton G_GNUC_UNUSED,
 			 gpointer       user_data)
 {
 	EocPrintImageSetupPrivate *priv = EOC_PRINT_IMAGE_SETUP (user_data)->priv;
@@ -1023,11 +1023,11 @@ eoc_print_image_setup_get_options (EocPrintImageSetup *setup,
 }
 
 void
-eoc_print_image_setup_update (CtkPrintOperation *operation,
+eoc_print_image_setup_update (CtkPrintOperation *operation G_GNUC_UNUSED,
 			      CtkWidget         *custom_widget,
 			      CtkPageSetup      *page_setup,
-			      CtkPrintSettings  *print_settings,
-			      gpointer           user_data)
+			      CtkPrintSettings  *print_settings G_GNUC_UNUSED,
+			      gpointer           user_data G_GNUC_UNUSED)
 {
 	CtkWidget *preview;
 	gdouble    pos_x;

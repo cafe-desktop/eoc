@@ -544,9 +544,9 @@ eoc_print_preview_new (void)
 }
 
 static gboolean
-draw_cb (CtkDrawingArea *drawing_area,
-		 cairo_t *cr,
-		 gpointer  user_data)
+draw_cb (CtkDrawingArea *drawing_area G_GNUC_UNUSED,
+	 cairo_t        *cr,
+	 gpointer        user_data)
 {
 	update_relative_sizes (EOC_PRINT_PREVIEW (user_data));
 
@@ -712,9 +712,9 @@ create_surface_when_idle (EocPrintPreview *preview)
 }
 
 static gboolean
-button_press_event_cb (CtkWidget *widget,
+button_press_event_cb (CtkWidget      *widget G_GNUC_UNUSED,
 		       CdkEventButton *event,
-		       gpointer user_data)
+		       gpointer        user_data)
 {
 	EocPrintPreview *preview = EOC_PRINT_PREVIEW (user_data);
 
@@ -737,9 +737,9 @@ button_press_event_cb (CtkWidget *widget,
 }
 
 static gboolean
-button_release_event_cb (CtkWidget *widget,
+button_release_event_cb (CtkWidget      *widget G_GNUC_UNUSED,
 			 CdkEventButton *event,
-			 gpointer user_data)
+			 gpointer        user_data)
 {
 	EocPrintPreview *preview = EOC_PRINT_PREVIEW (user_data);
 
@@ -755,7 +755,7 @@ button_release_event_cb (CtkWidget *widget,
 }
 
 static gboolean
-key_press_event_cb (CtkWidget   *widget,
+key_press_event_cb (CtkWidget   *widget G_GNUC_UNUSED,
 		    CdkEventKey *event,
 		    gpointer     user_data)
 {
@@ -865,9 +865,9 @@ motion_notify_event_cb (CtkWidget      *widget,
 }
 
 static void
-size_allocate_cb (CtkWidget *widget,
-		  CtkAllocation *allocation,
-		  gpointer user_data)
+size_allocate_cb (CtkWidget     *widget G_GNUC_UNUSED,
+		  CtkAllocation *allocation G_GNUC_UNUSED,
+		  gpointer       user_data)
 {
 	EocPrintPreview *preview;
 
@@ -1000,7 +1000,7 @@ eoc_print_preview_set_page_margins (EocPrintPreview *preview,
 				    gfloat l_margin,
 				    gfloat r_margin,
 				    gfloat t_margin,
-				    gfloat b_margin)
+				    gfloat b_margin G_GNUC_UNUSED)
 {
 	g_return_if_fail (EOC_IS_PRINT_PREVIEW (preview));
 

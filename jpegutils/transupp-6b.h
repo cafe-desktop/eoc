@@ -53,6 +53,9 @@
 
 #include <jpeglib.h>
 
+#define GNUC_UNUSED \
+  __attribute__ ((__unused__))
+
 
 typedef enum {
 	JXFORM_NONE,		/* no transformation */

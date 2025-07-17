@@ -636,7 +636,8 @@ eoc_metadata_reader_jpg_get_icc_profile (EocMetadataReaderJpg *emr)
 #endif
 
 static void
-eoc_metadata_reader_jpg_init_emr_iface (gpointer g_iface, gpointer iface_data)
+eoc_metadata_reader_jpg_init_emr_iface (gpointer g_iface,
+					gpointer iface_data G_GNUC_UNUSED)
 {
 	EocMetadataReaderInterface *iface;
 

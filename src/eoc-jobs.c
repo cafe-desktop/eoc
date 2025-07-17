@@ -179,7 +179,7 @@ eoc_job_set_progress (EocJob *job, float progress)
 	g_idle_add (notify_progress, job);
 }
 
-static void eoc_job_thumbnail_init (EocJobThumbnail *job) { /* Do Nothing */ }
+static void eoc_job_thumbnail_init (EocJobThumbnail *job G_GNUC_UNUSED) { /* Do Nothing */ }
 
 static void
 eoc_job_thumbnail_dispose (GObject *object)
@@ -282,7 +282,7 @@ eoc_job_thumbnail_run (EocJob *ejob)
 	ejob->finished = TRUE;
 }
 
-static void eoc_job_load_init (EocJobLoad *job) { /* Do Nothing */ }
+static void eoc_job_load_init (EocJobLoad *job G_GNUC_UNUSED) { /* Do Nothing */ }
 
 static void
 eoc_job_load_dispose (GObject *object)
@@ -343,7 +343,7 @@ eoc_job_load_run (EocJob *job)
 	job->finished = TRUE;
 }
 
-static void eoc_job_model_init (EocJobModel *job) { /* Do Nothing */ }
+static void eoc_job_model_init (EocJobModel *job G_GNUC_UNUSED) { /* Do Nothing */ }
 
 static void
 eoc_job_model_class_init (EocJobModelClass *class)
@@ -452,7 +452,7 @@ eoc_job_model_run (EocJob *ejob)
 	ejob->finished = TRUE;
 }
 
-static void eoc_job_transform_init (EocJobTransform *job) { /* Do Nothing */ }
+static void eoc_job_transform_init (EocJobTransform *job G_GNUC_UNUSED) { /* Do Nothing */ }
 
 static void
 eoc_job_transform_dispose (GObject *object)
@@ -556,7 +556,7 @@ eoc_job_transform_run (EocJob *ejob)
 	ejob->finished = TRUE;
 }
 
-static void eoc_job_save_init (EocJobSave *job) { /* do nothing */ }
+static void eoc_job_save_init (EocJobSave *job G_GNUC_UNUSED) { /* do nothing */ }
 
 static void
 eoc_job_save_dispose (GObject *object)
@@ -604,7 +604,9 @@ eoc_job_save_new (GList *images)
 }
 
 static void
-save_progress_handler (EocImage *image, gfloat progress, gpointer data)
+save_progress_handler (EocImage *image G_GNUC_UNUSED,
+		       gfloat    progress,
+		       gpointer  data)
 {
 	EocJobSave *job = EOC_JOB_SAVE (data);
 	guint n_images = g_list_length (job->images);
@@ -684,7 +686,7 @@ eoc_job_save_run (EocJob *ejob)
 	ejob->finished = TRUE;
 }
 
-static void eoc_job_save_as_init (EocJobSaveAs *job) { /* do nothing */ }
+static void eoc_job_save_as_init (EocJobSaveAs *job G_GNUC_UNUSED) { /* do nothing */ }
 
 static void eoc_job_save_as_dispose (GObject *object)
 {
@@ -848,7 +850,7 @@ eoc_job_save_as_run (EocJob *ejob)
 	ejob->finished = TRUE;
 }
 
-static void eoc_job_copy_init (EocJobCopy *job) { /* do nothing */};
+static void eoc_job_copy_init (EocJobCopy *job G_GNUC_UNUSED) { /* do nothing */};
 
 static void
 eoc_job_copy_dispose (GObject *object)

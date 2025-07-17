@@ -108,9 +108,9 @@ get_valid_thumbnail (EocThumbData *data, GError **error)
 }
 
 static GdkPixbuf *
-create_thumbnail_from_pixbuf (EocThumbData *data,
-			      GdkPixbuf *pixbuf,
-			      GError **error)
+create_thumbnail_from_pixbuf (EocThumbData *data G_GNUC_UNUSED,
+			      GdkPixbuf    *pixbuf,
+			      GError      **error G_GNUC_UNUSED)
 {
 	GdkPixbuf *thumb;
 	gint width, height;

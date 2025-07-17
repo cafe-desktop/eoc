@@ -785,9 +785,9 @@ image_thumb_changed_cb (EocImage *image, gpointer data)
 }
 
 static void
-file_changed_info_bar_response (CtkInfoBar *info_bar,
-				gint response,
-				EocWindow *window)
+file_changed_info_bar_response (CtkInfoBar *info_bar G_GNUC_UNUSED,
+				gint        response,
+				EocWindow  *window)
 {
 	if (response == CTK_RESPONSE_YES) {
 		eoc_window_reload_image (window);
@@ -1108,7 +1108,9 @@ eoc_window_clear_load_job (EocWindow *window)
 }
 
 static void
-eoc_job_progress_cb (EocJobLoad *job, float progress, gpointer user_data)
+eoc_job_progress_cb (EocJobLoad *job G_GNUC_UNUSED,
+		     float       progress,
+		     gpointer    user_data)
 {
 	EocWindow *window;
 
@@ -1172,7 +1174,7 @@ eoc_job_save_progress_cb (EocJobSave *job, float progress, gpointer user_data)
 }
 
 static void
-eoc_window_obtain_desired_size (EocImage  *image,
+eoc_window_obtain_desired_size (EocImage  *image G_GNUC_UNUSED,
 				gint       width,
 				gint       height,
 				EocWindow *window)
@@ -1250,9 +1252,9 @@ eoc_window_obtain_desired_size (EocImage  *image,
 }
 
 static void
-eoc_window_error_message_area_response (CtkInfoBar       *message_area,
-					gint              response_id,
-					EocWindow        *window)
+eoc_window_error_message_area_response (CtkInfoBar *message_area G_GNUC_UNUSED,
+					gint        response_id,
+					EocWindow  *window)
 {
 	if (response_id != CTK_RESPONSE_OK) {
 		eoc_window_set_message_area (window, NULL);
@@ -1382,7 +1384,8 @@ eoc_window_clear_transform_job (EocWindow *window)
 }
 
 static void
-eoc_job_transform_cb (EocJobTransform *job, gpointer data)
+eoc_job_transform_cb (EocJobTransform *job G_GNUC_UNUSED,
+		      gpointer         data)
 {
 	EocWindow *window;
 	CtkAction *action_undo, *action_save;
@@ -1439,7 +1442,8 @@ apply_transformation (EocWindow *window, EocTransform *trans)
 }
 
 static void
-handle_image_selection_changed_cb (EocThumbView *thumbview, EocWindow *window)
+handle_image_selection_changed_cb (EocThumbView *thumbview G_GNUC_UNUSED,
+				   EocWindow    *window)
 {
 	EocWindowPrivate *priv;
 	EocImage *image;
@@ -1522,7 +1526,9 @@ handle_image_selection_changed_cb (EocThumbView *thumbview, EocWindow *window)
 }
 
 static void
-view_zoom_changed_cb (CtkWidget *widget, double zoom, gpointer user_data)
+view_zoom_changed_cb (CtkWidget *widget G_GNUC_UNUSED,
+		      double     zoom G_GNUC_UNUSED,
+		      gpointer   user_data)
 {
 	EocWindow *window;
 	CtkAction *action_zoom_in;
@@ -1549,7 +1555,8 @@ view_zoom_changed_cb (CtkWidget *widget, double zoom, gpointer user_data)
 }
 
 static void
-eoc_window_open_recent_cb (CtkAction *action, EocWindow *window)
+eoc_window_open_recent_cb (CtkAction *action,
+			   EocWindow *window G_GNUC_UNUSED)
 {
 	CtkRecentInfo *info;
 	const gchar *uri;
@@ -1574,7 +1581,7 @@ eoc_window_open_recent_cb (CtkAction *action, EocWindow *window)
 static void
 file_open_dialog_response_cb (CtkWidget *chooser,
 			      gint       response_id,
-			      EocWindow  *ev_window)
+			      EocWindow *ev_window G_GNUC_UNUSED)
 {
 	if (response_id == CTK_RESPONSE_OK) {
 		GSList *uris;
@@ -1675,7 +1682,8 @@ eoc_window_update_fullscreen_popup (EocWindow *window)
 }
 
 static void
-screen_size_changed_cb (CdkScreen *screen, EocWindow *window)
+screen_size_changed_cb (CdkScreen *screen G_GNUC_UNUSED,
+			EocWindow *window)
 {
 	eoc_window_update_fullscreen_popup (window);
 }
@@ -1811,9 +1819,9 @@ show_fullscreen_popup (EocWindow *window)
 }
 
 static gboolean
-fullscreen_motion_notify_cb (CtkWidget      *widget,
+fullscreen_motion_notify_cb (CtkWidget      *widget G_GNUC_UNUSED,
 			     CdkEventMotion *event,
-			     gpointer       user_data)
+			     gpointer        user_data)
 {
 	EocWindow *window = EOC_WINDOW (user_data);
 
@@ -1829,9 +1837,9 @@ fullscreen_motion_notify_cb (CtkWidget      *widget,
 }
 
 static gboolean
-fullscreen_leave_notify_cb (CtkWidget *widget,
-			    CdkEventCrossing *event,
-			    gpointer user_data)
+fullscreen_leave_notify_cb (CtkWidget        *widget G_GNUC_UNUSED,
+			    CdkEventCrossing *event G_GNUC_UNUSED,
+			    gpointer          user_data)
 {
 	EocWindow *window = EOC_WINDOW (user_data);
 
@@ -1843,7 +1851,8 @@ fullscreen_leave_notify_cb (CtkWidget *widget,
 }
 
 static void
-exit_fullscreen_button_clicked_cb (CtkWidget *button, EocWindow *window)
+exit_fullscreen_button_clicked_cb (CtkWidget *button G_GNUC_UNUSED,
+				   EocWindow *window)
 {
 	CtkAction *action;
 
@@ -2235,7 +2244,8 @@ eoc_window_print (EocWindow *window)
 }
 
 static void
-eoc_window_cmd_file_open (CtkAction *action, gpointer user_data)
+eoc_window_cmd_file_open (CtkAction *action G_GNUC_UNUSED,
+			  gpointer   user_data)
 {
 	EocWindow *window;
 	EocWindowPrivate *priv;
@@ -2390,7 +2400,8 @@ eoc_window_unsaved_images_confirm (EocWindow *window)
 }
 
 static void
-eoc_window_cmd_close_window (CtkAction *action, gpointer user_data)
+eoc_window_cmd_close_window (CtkAction *action G_GNUC_UNUSED,
+			     gpointer   user_data)
 {
 	EocWindow *window;
 	EocWindowPrivate *priv;
@@ -2410,7 +2421,8 @@ eoc_window_cmd_close_window (CtkAction *action, gpointer user_data)
 }
 
 static void
-eoc_window_cmd_preferences (CtkAction *action, gpointer user_data)
+eoc_window_cmd_preferences (CtkAction *action G_GNUC_UNUSED,
+			    gpointer   user_data)
 {
 	EocWindow *window;
 	CtkWidget *pref_dlg;
@@ -2465,7 +2477,8 @@ eoc_window_cmd_edit_toolbar_cb (CtkDialog *dialog, gint response, gpointer data)
 }
 
 static void
-eoc_window_cmd_edit_toolbar (CtkAction *action, gpointer *user_data)
+eoc_window_cmd_edit_toolbar (CtkAction *action G_GNUC_UNUSED,
+			     gpointer  *user_data)
 {
 	EocWindow *window;
 	CtkWidget *dialog;
@@ -2521,7 +2534,8 @@ eoc_window_cmd_edit_toolbar (CtkAction *action, gpointer *user_data)
 }
 
 static void
-eoc_window_cmd_help (CtkAction *action, gpointer user_data)
+eoc_window_cmd_help (CtkAction *action G_GNUC_UNUSED,
+		     gpointer   user_data)
 {
 	EocWindow *window;
 
@@ -2536,7 +2550,8 @@ eoc_window_cmd_help (CtkAction *action, gpointer user_data)
 #define EMAILIFY(string) (g_strdelimit ((string), "%", '@'))
 
 static void
-eoc_window_cmd_about (CtkAction *action, gpointer user_data)
+eoc_window_cmd_about (CtkAction *action G_GNUC_UNUSED,
+		      gpointer   user_data)
 {
 	EocWindow *window;
 
@@ -2678,7 +2693,9 @@ eoc_window_cmd_show_hide_bar (CtkAction *action, gpointer user_data)
 }
 
 static void
-wallpaper_info_bar_response (CtkInfoBar *bar, gint response, EocWindow *window)
+wallpaper_info_bar_response (CtkInfoBar *bar G_GNUC_UNUSED,
+			     gint        response,
+			     EocWindow  *window)
 {
 	if (response == CTK_RESPONSE_YES) {
 		GAppInfo *app_info;
@@ -2879,7 +2896,8 @@ eoc_window_save_images (EocWindow *window, GList *images)
 }
 
 static void
-eoc_window_cmd_save (CtkAction *action, gpointer user_data)
+eoc_window_cmd_save (CtkAction *action G_GNUC_UNUSED,
+		     gpointer   user_data)
 {
 	EocWindowPrivate *priv;
 	EocWindow *window;
@@ -2941,7 +2959,8 @@ eoc_window_retrieve_save_as_file (EocWindow *window, EocImage *image)
 }
 
 static void
-eoc_window_cmd_save_as (CtkAction *action, gpointer user_data)
+eoc_window_cmd_save_as (CtkAction *action G_GNUC_UNUSED,
+			gpointer   user_data)
 {
         EocWindowPrivate *priv;
         EocWindow *window;
@@ -3023,7 +3042,8 @@ eoc_window_cmd_save_as (CtkAction *action, gpointer user_data)
 }
 
 static void
-eoc_window_cmd_open_containing_folder (CtkAction *action, gpointer user_data)
+eoc_window_cmd_open_containing_folder (CtkAction *action G_GNUC_UNUSED,
+				       gpointer   user_data)
 {
 	EocWindowPrivate *priv;
 
@@ -3043,7 +3063,8 @@ eoc_window_cmd_open_containing_folder (CtkAction *action, gpointer user_data)
 }
 
 static void
-eoc_window_cmd_print (CtkAction *action, gpointer user_data)
+eoc_window_cmd_print (CtkAction *action G_GNUC_UNUSED,
+		      gpointer   user_data)
 {
 	EocWindow *window = EOC_WINDOW (user_data);
 
@@ -3096,7 +3117,8 @@ eoc_window_get_properties_dialog (EocWindow *window)
 }
 
 static void
-eoc_window_cmd_properties (CtkAction *action, gpointer user_data)
+eoc_window_cmd_properties (CtkAction *action G_GNUC_UNUSED,
+			   gpointer   user_data)
 {
 	EocWindow *window = EOC_WINDOW (user_data);
 	CtkWidget *dialog;
@@ -3106,7 +3128,8 @@ eoc_window_cmd_properties (CtkAction *action, gpointer user_data)
 }
 
 static void
-eoc_window_cmd_undo (CtkAction *action, gpointer user_data)
+eoc_window_cmd_undo (CtkAction *action G_GNUC_UNUSED,
+		     gpointer   user_data)
 {
 	g_return_if_fail (EOC_IS_WINDOW (user_data));
 
@@ -3114,7 +3137,8 @@ eoc_window_cmd_undo (CtkAction *action, gpointer user_data)
 }
 
 static void
-eoc_window_cmd_flip_horizontal (CtkAction *action, gpointer user_data)
+eoc_window_cmd_flip_horizontal (CtkAction *action G_GNUC_UNUSED,
+				gpointer   user_data)
 {
 	g_return_if_fail (EOC_IS_WINDOW (user_data));
 
@@ -3123,7 +3147,8 @@ eoc_window_cmd_flip_horizontal (CtkAction *action, gpointer user_data)
 }
 
 static void
-eoc_window_cmd_flip_vertical (CtkAction *action, gpointer user_data)
+eoc_window_cmd_flip_vertical (CtkAction *action G_GNUC_UNUSED,
+			      gpointer   user_data)
 {
 	g_return_if_fail (EOC_IS_WINDOW (user_data));
 
@@ -3132,7 +3157,8 @@ eoc_window_cmd_flip_vertical (CtkAction *action, gpointer user_data)
 }
 
 static void
-eoc_window_cmd_rotate_90 (CtkAction *action, gpointer user_data)
+eoc_window_cmd_rotate_90 (CtkAction *action G_GNUC_UNUSED,
+			  gpointer   user_data)
 {
 	g_return_if_fail (EOC_IS_WINDOW (user_data));
 
@@ -3141,7 +3167,8 @@ eoc_window_cmd_rotate_90 (CtkAction *action, gpointer user_data)
 }
 
 static void
-eoc_window_cmd_rotate_270 (CtkAction *action, gpointer user_data)
+eoc_window_cmd_rotate_270 (CtkAction *action G_GNUC_UNUSED,
+			   gpointer   user_data)
 {
 	g_return_if_fail (EOC_IS_WINDOW (user_data));
 
@@ -3150,7 +3177,8 @@ eoc_window_cmd_rotate_270 (CtkAction *action, gpointer user_data)
 }
 
 static void
-eoc_window_cmd_wallpaper (CtkAction *action, gpointer user_data)
+eoc_window_cmd_wallpaper (CtkAction *action G_GNUC_UNUSED,
+			  gpointer   user_data)
 {
 	EocWindow *window;
 	EocWindowPrivate *priv;
@@ -3378,7 +3406,8 @@ move_to_trash_real (EocImage *image, GError **error)
 }
 
 static void
-eoc_window_cmd_copy_image (CtkAction *action, gpointer user_data)
+eoc_window_cmd_copy_image (CtkAction *action G_GNUC_UNUSED,
+			   gpointer   user_data)
 {
 	CtkClipboard *clipboard;
 	EocWindow *window;
@@ -3551,7 +3580,8 @@ eoc_window_cmd_slideshow (CtkAction *action, gpointer user_data)
 }
 
 static void
-eoc_window_cmd_pause_slideshow (CtkAction *action, gpointer user_data)
+eoc_window_cmd_pause_slideshow (CtkAction *action G_GNUC_UNUSED,
+				gpointer   user_data)
 {
 	EocWindow *window;
 	gboolean slideshow;
@@ -3571,7 +3601,8 @@ eoc_window_cmd_pause_slideshow (CtkAction *action, gpointer user_data)
 }
 
 static void
-eoc_window_cmd_zoom_in (CtkAction *action, gpointer user_data)
+eoc_window_cmd_zoom_in (CtkAction *action G_GNUC_UNUSED,
+			gpointer   user_data)
 {
 	EocWindowPrivate *priv;
 
@@ -3587,7 +3618,8 @@ eoc_window_cmd_zoom_in (CtkAction *action, gpointer user_data)
 }
 
 static void
-eoc_window_cmd_zoom_out (CtkAction *action, gpointer user_data)
+eoc_window_cmd_zoom_out (CtkAction *action G_GNUC_UNUSED,
+			 gpointer   user_data)
 {
 	EocWindowPrivate *priv;
 
@@ -3603,7 +3635,8 @@ eoc_window_cmd_zoom_out (CtkAction *action, gpointer user_data)
 }
 
 static void
-eoc_window_cmd_zoom_normal (CtkAction *action, gpointer user_data)
+eoc_window_cmd_zoom_normal (CtkAction *action G_GNUC_UNUSED,
+			    gpointer   user_data)
 {
 	EocWindowPrivate *priv;
 
@@ -3619,7 +3652,8 @@ eoc_window_cmd_zoom_normal (CtkAction *action, gpointer user_data)
 }
 
 static void
-eoc_window_cmd_zoom_fit (CtkAction *action, gpointer user_data)
+eoc_window_cmd_zoom_fit (CtkAction *action G_GNUC_UNUSED,
+			 gpointer   user_data)
 {
 	EocWindowPrivate *priv;
 
@@ -3635,7 +3669,8 @@ eoc_window_cmd_zoom_fit (CtkAction *action, gpointer user_data)
 }
 
 static void
-eoc_window_cmd_go_prev (CtkAction *action, gpointer user_data)
+eoc_window_cmd_go_prev (CtkAction *action G_GNUC_UNUSED,
+			gpointer   user_data)
 {
 	EocWindowPrivate *priv;
 
@@ -3650,7 +3685,8 @@ eoc_window_cmd_go_prev (CtkAction *action, gpointer user_data)
 }
 
 static void
-eoc_window_cmd_go_next (CtkAction *action, gpointer user_data)
+eoc_window_cmd_go_next (CtkAction *action G_GNUC_UNUSED,
+			gpointer   user_data)
 {
 	EocWindowPrivate *priv;
 
@@ -3665,7 +3701,8 @@ eoc_window_cmd_go_next (CtkAction *action, gpointer user_data)
 }
 
 static void
-eoc_window_cmd_go_first (CtkAction *action, gpointer user_data)
+eoc_window_cmd_go_first (CtkAction *action G_GNUC_UNUSED,
+			 gpointer   user_data)
 {
 	EocWindowPrivate *priv;
 
@@ -3680,7 +3717,8 @@ eoc_window_cmd_go_first (CtkAction *action, gpointer user_data)
 }
 
 static void
-eoc_window_cmd_go_last (CtkAction *action, gpointer user_data)
+eoc_window_cmd_go_last (CtkAction *action G_GNUC_UNUSED,
+			gpointer   user_data)
 {
 	EocWindowPrivate *priv;
 
@@ -3695,7 +3733,8 @@ eoc_window_cmd_go_last (CtkAction *action, gpointer user_data)
 }
 
 static void
-eoc_window_cmd_go_random (CtkAction *action, gpointer user_data)
+eoc_window_cmd_go_random (CtkAction *action G_GNUC_UNUSED,
+			  gpointer   user_data)
 {
 	EocWindowPrivate *priv;
 
@@ -3883,7 +3922,8 @@ menu_item_select_cb (CtkMenuItem *proxy, EocWindow *window)
 }
 
 static void
-menu_item_deselect_cb (CtkMenuItem *proxy, EocWindow *window)
+menu_item_deselect_cb (CtkMenuItem *proxy G_GNUC_UNUSED,
+		       EocWindow   *window)
 {
 	ctk_statusbar_pop (CTK_STATUSBAR (window->priv->statusbar),
 			   window->priv->tip_message_cid);
@@ -3905,10 +3945,10 @@ connect_proxy_cb (CtkUIManager *manager,
 }
 
 static void
-disconnect_proxy_cb (CtkUIManager *manager,
-                     CtkAction *action,
-                     CtkWidget *proxy,
-                     EocWindow *window)
+disconnect_proxy_cb (CtkUIManager *manager G_GNUC_UNUSED,
+		     CtkAction    *action G_GNUC_UNUSED,
+		     CtkWidget    *proxy,
+		     EocWindow    *window)
 {
 	if (CTK_IS_MENU_ITEM (proxy)) {
 		g_signal_handlers_disconnect_by_func
@@ -4095,17 +4135,20 @@ eoc_window_update_recent_files_menu (EocWindow *window)
 }
 
 static void
-eoc_window_recent_manager_changed_cb (CtkRecentManager *manager, EocWindow *window)
+eoc_window_recent_manager_changed_cb (CtkRecentManager *manager G_GNUC_UNUSED,
+				      EocWindow        *window)
 {
 	eoc_window_update_recent_files_menu (window);
 }
 
 static void
-eoc_window_drag_data_received (CtkWidget *widget,
-                               CdkDragContext *context,
-                               gint x, gint y,
-                               CtkSelectionData *selection_data,
-                               guint info, guint time)
+eoc_window_drag_data_received (CtkWidget        *widget,
+			       CdkDragContext   *context,
+			       gint              x G_GNUC_UNUSED,
+			       gint              y G_GNUC_UNUSED,
+			       CtkSelectionData *selection_data,
+			       guint             info G_GNUC_UNUSED,
+			       guint             time)
 {
 	GSList *file_list;
 	EocWindow *window;
@@ -4149,7 +4192,8 @@ eoc_window_set_drag_dest (EocWindow *window)
 }
 
 static void
-eoc_window_sidebar_visibility_changed (CtkWidget *widget, EocWindow *window)
+eoc_window_sidebar_visibility_changed (CtkWidget *widget G_GNUC_UNUSED,
+				       EocWindow *window)
 {
 	CtkAction *action;
 	gboolean visible;
@@ -4169,7 +4213,7 @@ eoc_window_sidebar_visibility_changed (CtkWidget *widget, EocWindow *window)
 
 static void
 eoc_window_sidebar_page_added (EocSidebar  *sidebar,
-			       CtkWidget   *main_widget,
+			       CtkWidget   *main_widget G_GNUC_UNUSED,
 			       EocWindow   *window)
 {
 	if (eoc_sidebar_get_n_pages (sidebar) == 1) {
@@ -4189,8 +4233,8 @@ eoc_window_sidebar_page_added (EocSidebar  *sidebar,
 }
 static void
 eoc_window_sidebar_page_removed (EocSidebar  *sidebar,
-			         CtkWidget   *main_widget,
-			         EocWindow   *window)
+				 CtkWidget   *main_widget G_GNUC_UNUSED,
+				 EocWindow   *window)
 {
 	if (eoc_sidebar_is_empty (sidebar)) {
 		CtkAction *action;
@@ -4254,8 +4298,8 @@ get_appinfo_for_editor (EocWindow *window)
 }
 
 static void
-eoc_window_open_editor (CtkAction *action,
-                        EocWindow *window)
+eoc_window_open_editor (CtkAction *action G_GNUC_UNUSED,
+			EocWindow *window)
 {
 	CdkAppLaunchContext *context;
 	GAppInfo *app_info;
@@ -4818,7 +4862,8 @@ eoc_window_dispose (GObject *object)
 }
 
 static gint
-eoc_window_delete (CtkWidget *widget, CdkEventAny *event)
+eoc_window_delete (CtkWidget   *widget,
+		   CdkEventAny *event G_GNUC_UNUSED)
 {
 	EocWindow *window;
 	EocWindowPrivate *priv;
@@ -5118,8 +5163,8 @@ eoc_window_get_property (GObject    *object,
 }
 
 static void
-on_extension_added (BeanExtensionSet *set,
-		    BeanPluginInfo   *info,
+on_extension_added (BeanExtensionSet *set G_GNUC_UNUSED,
+		    BeanPluginInfo   *info G_GNUC_UNUSED,
 		    BeanExtension    *exten,
 		    CtkWindow        *window)
 {
@@ -5127,8 +5172,8 @@ on_extension_added (BeanExtensionSet *set,
 }
 
 static void
-on_extension_removed (BeanExtensionSet *set,
-		      BeanPluginInfo   *info,
+on_extension_removed (BeanExtensionSet *set G_GNUC_UNUSED,
+		      BeanPluginInfo   *info G_GNUC_UNUSED,
 		      BeanExtension    *exten,
 		      CtkWindow        *window)
 {
@@ -5268,10 +5313,10 @@ eoc_window_new (EocStartupFlags flags)
 }
 
 static void
-eoc_window_list_store_image_added (CtkTreeModel *tree_model,
-                                   CtkTreePath  *path,
-                                   CtkTreeIter  *iter,
-                                   gpointer      user_data)
+eoc_window_list_store_image_added (CtkTreeModel *tree_model G_GNUC_UNUSED,
+				   CtkTreePath  *path G_GNUC_UNUSED,
+				   CtkTreeIter  *iter G_GNUC_UNUSED,
+				   gpointer      user_data)
 {
 	EocWindow *window = EOC_WINDOW (user_data);
 
@@ -5280,9 +5325,9 @@ eoc_window_list_store_image_added (CtkTreeModel *tree_model,
 }
 
 static void
-eoc_window_list_store_image_removed (CtkTreeModel *tree_model,
-                                     CtkTreePath  *path,
-                                     gpointer      user_data)
+eoc_window_list_store_image_removed (CtkTreeModel *tree_model G_GNUC_UNUSED,
+				     CtkTreePath  *path G_GNUC_UNUSED,
+				     gpointer      user_data)
 {
 	EocWindow *window = EOC_WINDOW (user_data);
 

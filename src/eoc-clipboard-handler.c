@@ -226,9 +226,10 @@ eoc_clipboard_handler_new (EocImage *img)
 }
 
 static void
-eoc_clipboard_handler_get_func (CtkClipboard *clipboard,
+eoc_clipboard_handler_get_func (CtkClipboard     *clipboard G_GNUC_UNUSED,
 				CtkSelectionData *selection,
-				guint info, gpointer owner)
+				guint             info,
+				gpointer          owner)
 {
 	EocClipboardHandler *handler;
 
@@ -269,7 +270,8 @@ eoc_clipboard_handler_get_func (CtkClipboard *clipboard,
 }
 
 static void
-eoc_clipboard_handler_clear_func (CtkClipboard *clipboard, gpointer owner)
+eoc_clipboard_handler_clear_func (CtkClipboard *clipboard G_GNUC_UNUSED,
+				  gpointer      owner)
 {
 	g_return_if_fail (EOC_IS_CLIPBOARD_HANDLER (owner));
 

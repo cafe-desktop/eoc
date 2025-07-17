@@ -474,7 +474,7 @@ eoc_image_emit_size_prepared (EocImage *img)
 }
 
 static void
-eoc_image_size_prepared (GdkPixbufLoader *loader,
+eoc_image_size_prepared (GdkPixbufLoader *loader G_GNUC_UNUSED,
 			 gint             width,
 			 gint             height,
 			 gpointer         data)
@@ -501,7 +501,9 @@ eoc_image_size_prepared (GdkPixbufLoader *loader,
 }
 
 static EocMetadataReader*
-check_for_metadata_img_format (EocImage *img, guchar *buffer, guint bytes_read)
+check_for_metadata_img_format (EocImage *img G_GNUC_UNUSED,
+			       guchar   *buffer,
+			       guint     bytes_read)
 {
 	EocMetadataReader *md_reader = NULL;
 

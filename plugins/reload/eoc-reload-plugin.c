@@ -27,8 +27,8 @@ enum {
 };
 
 static void
-reload_cb (CtkAction *action,
-           EocWindow *window)
+reload_cb (CtkAction *action G_GNUC_UNUSED,
+	   EocWindow *window)
 {
 	eoc_window_reload_image (window);
 }
@@ -86,7 +86,7 @@ eoc_reload_plugin_get_property (GObject    *object,
 }
 
 static void
-eoc_reload_plugin_init (EocReloadPlugin *plugin)
+eoc_reload_plugin_init (EocReloadPlugin *plugin G_GNUC_UNUSED)
 {
 	eoc_debug_message (DEBUG_PLUGINS, "EocReloadPlugin initializing");
 }
@@ -159,7 +159,7 @@ eoc_reload_plugin_class_init (EocReloadPluginClass *klass)
 }
 
 static void
-eoc_reload_plugin_class_finalize (EocReloadPluginClass *klass)
+eoc_reload_plugin_class_finalize (EocReloadPluginClass *klass G_GNUC_UNUSED)
 {
 	/* dummy function - used by G_DEFINE_DYNAMIC_TYPE_EXTENDED */
 }

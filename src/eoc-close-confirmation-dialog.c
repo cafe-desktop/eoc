@@ -116,8 +116,8 @@ get_nothumb_pixbuf (void)
  */
 static void
 response_cb (EocCloseConfirmationDialog *dlg,
-             gint                        response_id,
-             gpointer                    data)
+	     gint                        response_id,
+	     gpointer                    data G_GNUC_UNUSED)
 {
 	EocCloseConfirmationDialogPrivate *priv;
 
@@ -359,7 +359,7 @@ eoc_close_confirmation_dialog_new_single (CtkWindow     *parent,
 }
 
 static gchar *
-get_text_secondary_label (EocImage *image)
+get_text_secondary_label (EocImage *image G_GNUC_UNUSED)
 {
 	gchar *secondary_msg;
 
@@ -480,7 +480,9 @@ populate_model (CtkTreeModel *store, GList *imgs)
 }
 
 static void
-save_toggled (CtkCellRendererToggle *renderer, gchar *path_str, CtkTreeModel *store)
+save_toggled (CtkCellRendererToggle *renderer G_GNUC_UNUSED,
+	      gchar                 *path_str,
+	      CtkTreeModel          *store)
 {
 	CtkTreePath *path = ctk_tree_path_new_from_string (path_str);
 	CtkTreeIter iter;

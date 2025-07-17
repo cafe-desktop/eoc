@@ -649,7 +649,8 @@ scroll_by (EocScrollView *view, int xofs, int yofs)
 
 /* Callback used when an adjustment is changed */
 static void
-adjustment_changed_cb (CtkAdjustment *adj, gpointer data)
+adjustment_changed_cb (CtkAdjustment *adj G_GNUC_UNUSED,
+		       gpointer       data)
 {
 	EocScrollView *view;
 	EocScrollViewPrivate *priv;
@@ -932,7 +933,9 @@ display_key_press_event (CtkWidget *widget, CdkEventKey *event, gpointer data)
 
 /* Button press event handler for the image view */
 static gboolean
-eoc_scroll_view_button_press_event (CtkWidget *widget, CdkEventButton *event, gpointer data)
+eoc_scroll_view_button_press_event (CtkWidget      *widget G_GNUC_UNUSED,
+				    CdkEventButton *event,
+				    gpointer        data)
 {
 	EocScrollView *view;
 	EocScrollViewPrivate *priv;
@@ -976,7 +979,9 @@ eoc_scroll_view_button_press_event (CtkWidget *widget, CdkEventButton *event, gp
 
 /* Button release event handler for the image view */
 static gboolean
-eoc_scroll_view_button_release_event (CtkWidget *widget, CdkEventButton *event, gpointer data)
+eoc_scroll_view_button_release_event (CtkWidget      *widget G_GNUC_UNUSED,
+				      CdkEventButton *event,
+				      gpointer        data)
 {
 	EocScrollView *view;
 	EocScrollViewPrivate *priv;
@@ -1009,7 +1014,9 @@ eoc_scroll_view_button_release_event (CtkWidget *widget, CdkEventButton *event, 
  * dragging the image with button 1 anyways.
  */
 static gboolean
-eoc_scroll_view_scroll_event (CtkWidget *widget, CdkEventScroll *event, gpointer data)
+eoc_scroll_view_scroll_event (CtkWidget      *widget G_GNUC_UNUSED,
+			      CdkEventScroll *event,
+			      gpointer        data)
 {
 	EocScrollView *view;
 	EocScrollViewPrivate *priv;
@@ -1077,7 +1084,9 @@ eoc_scroll_view_scroll_event (CtkWidget *widget, CdkEventScroll *event, gpointer
 
 /* Motion event handler for the image view */
 static gboolean
-eoc_scroll_view_motion_event (CtkWidget *widget, CdkEventMotion *event, gpointer data)
+eoc_scroll_view_motion_event (CtkWidget      *widget G_GNUC_UNUSED,
+			      CdkEventMotion *event,
+			      gpointer        data)
 {
 	EocScrollView *view;
 	EocScrollViewPrivate *priv;
@@ -1102,7 +1111,9 @@ eoc_scroll_view_motion_event (CtkWidget *widget, CdkEventMotion *event, gpointer
 }
 
 static void
-display_map_event (CtkWidget *widget, CdkEvent *event, gpointer data)
+display_map_event (CtkWidget *widget G_GNUC_UNUSED,
+		   CdkEvent  *event G_GNUC_UNUSED,
+		   gpointer   data)
 {
 	EocScrollView *view;
 	EocScrollViewPrivate *priv;
@@ -1130,7 +1141,9 @@ eoc_scroll_view_size_allocate (CtkWidget *widget, CtkAllocation *alloc)
 }
 
 static void
-display_size_change (CtkWidget *widget, CdkEventConfigure *event, gpointer data)
+display_size_change (CtkWidget         *widget G_GNUC_UNUSED,
+		     CdkEventConfigure *event,
+		     gpointer           data)
 {
 	EocScrollView *view;
 	EocScrollViewPrivate *priv;
@@ -1169,8 +1182,8 @@ display_size_change (CtkWidget *widget, CdkEventConfigure *event, gpointer data)
 
 static gboolean
 eoc_scroll_view_focus_in_event (CtkWidget     *widget,
-			    CdkEventFocus *event,
-			    gpointer data)
+				CdkEventFocus *event G_GNUC_UNUSED,
+				gpointer       data G_GNUC_UNUSED)
 {
 	g_signal_stop_emission_by_name (G_OBJECT (widget), "focus_in_event");
 	return FALSE;
@@ -1178,8 +1191,8 @@ eoc_scroll_view_focus_in_event (CtkWidget     *widget,
 
 static gboolean
 eoc_scroll_view_focus_out_event (CtkWidget     *widget,
-			     CdkEventFocus *event,
-			     gpointer data)
+				 CdkEventFocus *event G_GNUC_UNUSED,
+				 gpointer       data G_GNUC_UNUSED)
 {
 	g_signal_stop_emission_by_name (G_OBJECT (widget), "focus_out_event");
 	return FALSE;
@@ -1674,7 +1687,9 @@ eoc_scroll_view_get_zoom_is_max (EocScrollView *view)
 }
 
 static void
-display_next_frame_cb (EocImage *image, gint delay, gpointer data)
+display_next_frame_cb (EocImage *image,
+		       gint      delay G_GNUC_UNUSED,
+		       gpointer  data)
 {
  	EocScrollViewPrivate *priv;
 	EocScrollView *view;
@@ -1772,8 +1787,8 @@ eoc_scroll_view_scrollbars_visible (EocScrollView *view)
 
 static gboolean
 sv_string_to_rgba_mapping (GValue   *value,
-			    GVariant *variant,
-			    gpointer  user_data)
+			   GVariant *variant,
+			   gpointer  user_data G_GNUC_UNUSED)
 {
 	CdkRGBA color;
 
@@ -1789,8 +1804,8 @@ sv_string_to_rgba_mapping (GValue   *value,
 
 static GVariant*
 sv_rgba_to_string_mapping (const GValue       *value,
-			    const GVariantType *expected_type,
-			    gpointer            user_data)
+			   const GVariantType *expected_type,
+			   gpointer            user_data G_GNUC_UNUSED)
 {
 	GVariant *variant = NULL;
 	CdkRGBA *color;
@@ -2172,9 +2187,9 @@ eoc_scroll_view_class_init (EocScrollViewClass *klass)
 }
 
 static void
-view_on_drag_begin_cb (CtkWidget        *widget,
-		       CdkDragContext   *context,
-		       gpointer          user_data)
+view_on_drag_begin_cb (CtkWidget      *widget G_GNUC_UNUSED,
+		       CdkDragContext *context,
+		       gpointer        user_data)
 {
 	EocScrollView *view;
 	EocImage *image;
@@ -2195,11 +2210,11 @@ view_on_drag_begin_cb (CtkWidget        *widget,
 }
 
 static void
-view_on_drag_data_get_cb (CtkWidget        *widget,
-			  CdkDragContext   *drag_context,
+view_on_drag_data_get_cb (CtkWidget        *widget G_GNUC_UNUSED,
+			  CdkDragContext   *drag_context G_GNUC_UNUSED,
 			  CtkSelectionData *data,
-			  guint             info,
-			  guint             time,
+			  guint             info G_GNUC_UNUSED,
+			  guint             time G_GNUC_UNUSED,
 			  gpointer          user_data)
 {
 	EocScrollView *view;
@@ -2237,8 +2252,9 @@ eoc_scroll_view_new (void)
 }
 
 static gboolean
-view_on_button_press_event_cb (CtkWidget *widget, CdkEventButton *event,
-			       gpointer user_data)
+view_on_button_press_event_cb (CtkWidget      *widget,
+			       CdkEventButton *event,
+			       gpointer        user_data G_GNUC_UNUSED)
 {
     EocScrollView *view = EOC_SCROLL_VIEW (widget);
 

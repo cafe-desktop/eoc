@@ -37,13 +37,14 @@ struct _EocListStorePrivate {
 	gint initial_image;       /* The image that should be selected firstly by the view. */
 	GdkPixbuf *busy_image;    /* Loading image icon */
 	GdkPixbuf *missing_image; /* Missing image icon */
-	GMutex mutex;            /* Mutex for saving the jobs in the model */
+	GMutex mutex;             /* Mutex for saving the jobs in the model */
 };
 
 G_DEFINE_TYPE_WITH_PRIVATE (EocListStore, eoc_list_store, CTK_TYPE_LIST_STORE);
 
 static void
-foreach_monitors_free (gpointer data, gpointer user_data)
+foreach_monitors_free (gpointer data,
+		       gpointer user_data G_GNUC_UNUSED)
 {
 	g_file_monitor_cancel (G_FILE_MONITOR (data));
 }
@@ -89,9 +90,9 @@ eoc_list_store_class_init (EocListStoreClass *klass)
 
 static gint
 eoc_list_store_compare_func (CtkTreeModel *model,
-			     CtkTreeIter *a,
-			     CtkTreeIter *b,
-			     gpointer user_data)
+			     CtkTreeIter  *a,
+			     CtkTreeIter  *b,
+			     gpointer      user_data G_GNUC_UNUSED)
 {
 	gint r_value;
 
@@ -365,11 +366,11 @@ eoc_list_store_append_image_from_file (EocListStore *store,
 }
 
 static void
-file_monitor_changed_cb (GFileMonitor *monitor,
-			 GFile *file,
-			 GFile *other_file,
+file_monitor_changed_cb (GFileMonitor     *monitor G_GNUC_UNUSED,
+			 GFile            *file,
+			 GFile            *other_file G_GNUC_UNUSED,
 			 GFileMonitorEvent event,
-			 EocListStore *store)
+			 EocListStore     *store)
 {
 	const char *mimetype;
 	GFileInfo *file_info;

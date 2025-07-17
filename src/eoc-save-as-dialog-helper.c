@@ -93,13 +93,15 @@ request_preview_update (CtkWidget *dlg)
 }
 
 static void
-on_format_combobox_changed (CtkComboBox *widget, gpointer data)
+on_format_combobox_changed (CtkComboBox *widget G_GNUC_UNUSED,
+			    gpointer     data)
 {
 	request_preview_update (CTK_WIDGET (data));
 }
 
 static void
-on_token_entry_changed (CtkWidget *widget, gpointer user_data)
+on_token_entry_changed (CtkWidget *widget G_GNUC_UNUSED,
+			gpointer   user_data)
 {
 	SaveAsData *data;
 	gboolean enable_save;
@@ -115,13 +117,15 @@ on_token_entry_changed (CtkWidget *widget, gpointer user_data)
 }
 
 static void
-on_replace_spaces_check_clicked (CtkWidget *widget, gpointer data)
+on_replace_spaces_check_clicked (CtkWidget *widget G_GNUC_UNUSED,
+				 gpointer   data)
 {
 	request_preview_update (CTK_WIDGET (data));
 }
 
 static void
-on_counter_spin_changed (CtkWidget *widget, gpointer data)
+on_counter_spin_changed (CtkWidget *widget G_GNUC_UNUSED,
+			 gpointer   data)
 {
 	request_preview_update (CTK_WIDGET (data));
 }
