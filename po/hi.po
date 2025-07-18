@@ -10,9 +10,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: eoc 1.25.0\n"
+"Project-Id-Version: eoc 2.0.0\n"
 "Report-Msgid-Bugs-To: http://www.cafe-desktop.org\n"
-"POT-Creation-Date: 2023-06-09 11:11+0200\n"
+"POT-Creation-Date: 2025-07-18 08:35+0200\n"
 "PO-Revision-Date: 2020-02-14 12:07+0000\n"
 "Last-Translator: Sadgamaya <g.raghavan.g@gmail.com>, 2020\n"
 "Language-Team: Hindi (https://www.transifex.com/cafe/teams/13566/hi/)\n"
@@ -55,7 +55,7 @@ msgstr "चयनित उपकरण-पट्टी हटायें"
 msgid "Separator"
 msgstr "अलगानेवाला"
 
-#: data/eoc.appdata.xml.in:6 src/eoc-window.c:2592
+#: data/eoc.appdata.xml.in:6 src/eoc-window.c:2607
 msgid "Eye of CAFE"
 msgstr "गनोम की आँख"
 
@@ -70,16 +70,16 @@ msgid ""
 "images in the directory the image was loaded from."
 msgstr ""
 
-#: data/eoc.desktop.in.in:3 src/main.c:65 src/main.c:166
+#: data/eoc.desktop.in.in:2 src/main.c:65 src/main.c:166
 msgid "Eye of CAFE Image Viewer"
 msgstr "आई ऑफ गनोम छवि प्रदर्शक"
 
-#: data/eoc.desktop.in.in:4
+#: data/eoc.desktop.in.in:3
 msgid "Browse and rotate images"
 msgstr "ब्रॉउज करें और घुमाएँ छवियाँ"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/eoc.desktop.in.in:14
+#: data/eoc.desktop.in.in:13
 msgid "image;viewer;JPEG;PNG;TIFF;SVG;CAFE;photos;browse;thumbnails;rotate;"
 msgstr ""
 
@@ -600,12 +600,12 @@ msgstr ""
 "plugins. See the .eoc-plugin file for obtaining the \"Location\" of a given "
 "plugin."
 
-#: plugins/fullscreen/fullscreen.plugin.desktop.in:5
+#: plugins/fullscreen/fullscreen.plugin.desktop.in:4
 msgid "Fullscreen with double-click"
 msgstr "दोहरे क्लिक से पूर्ण स्क्रीन विधि"
 
 #: plugins/reload/eoc-reload-plugin.c:45
-#: plugins/reload/reload.plugin.desktop.in:5
+#: plugins/reload/reload.plugin.desktop.in:4
 msgid "Reload Image"
 msgstr "छवि फिर से लोड करें"
 
@@ -613,7 +613,7 @@ msgstr "छवि फिर से लोड करें"
 msgid "Reload current image"
 msgstr "मौजूदा छवि फिर लोड करें"
 
-#: plugins/statusbar-date/statusbar-date.plugin.desktop.in:5
+#: plugins/statusbar-date/statusbar-date.plugin.desktop.in:4
 msgid "Date in statusbar"
 msgstr "स्थिति-पट्टी में तिथि"
 
@@ -634,7 +634,7 @@ msgstr ""
 msgid "Save changes to image \"%s\" before closing?"
 msgstr ""
 
-#: src/eoc-close-confirmation-dialog.c:597
+#: src/eoc-close-confirmation-dialog.c:599
 #, c-format
 msgid "There is %d image with unsaved changes. Save changes before closing?"
 msgid_plural ""
@@ -642,19 +642,19 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/eoc-close-confirmation-dialog.c:614
+#: src/eoc-close-confirmation-dialog.c:616
 msgid "S_elect the images you want to save:"
 msgstr ""
 
-#: src/eoc-close-confirmation-dialog.c:633
+#: src/eoc-close-confirmation-dialog.c:635
 msgid "If you don't save, all your changes will be lost."
 msgstr ""
 
-#: src/eoc-file-chooser.c:121
+#: src/eoc-file-chooser.c:123
 msgid "File format is unknown or unsupported"
 msgstr "फ़ाइल प्रारूप अज्ञात या असमर्थित है"
 
-#: src/eoc-file-chooser.c:126
+#: src/eoc-file-chooser.c:128
 msgid ""
 "Eye of CAFE could not determine a supported writable file format based on "
 "the filename."
@@ -662,72 +662,72 @@ msgstr ""
 "फाइलनाम के आधार पर आई ऑफ गनोम कोई समर्थित लेखन योग्य फाइल प्रारूप नहीं निर्धारित "
 "करता है फाइल नाम के आधार पर."
 
-#: src/eoc-file-chooser.c:127
+#: src/eoc-file-chooser.c:129
 msgid "Please try a different file extension like .png or .jpg."
 msgstr ".png या .jpg की तरह का भिन्न फाइल विस्तार के लिए कोशिश करें."
 
-#: src/eoc-file-chooser.c:159
+#: src/eoc-file-chooser.c:161
 msgid "All Files"
 msgstr "सभी फ़ाइलें"
 
-#: src/eoc-file-chooser.c:164
+#: src/eoc-file-chooser.c:166
 msgid "All Images"
 msgstr "सभी छवियाँ"
 
-#: src/eoc-file-chooser.c:185
+#: src/eoc-file-chooser.c:187
 #, c-format
 msgid "%s (*.%s)"
 msgstr "%s (*.%s)"
 
-#: src/eoc-file-chooser.c:281 src/eoc-properties-dialog.c:163
-#: src/eoc-properties-dialog.c:165 src/eoc-thumb-view.c:516
+#: src/eoc-file-chooser.c:283 src/eoc-properties-dialog.c:163
+#: src/eoc-properties-dialog.c:165 src/eoc-thumb-view.c:517
 msgid "pixel"
 msgid_plural "pixels"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/eoc-file-chooser.c:451
+#: src/eoc-file-chooser.c:454
 msgid "Open Image"
 msgstr ""
 
-#: src/eoc-file-chooser.c:459
+#: src/eoc-file-chooser.c:462
 msgid "Save Image"
 msgstr "छवि सहेजें"
 
-#: src/eoc-file-chooser.c:467 src/eoc-window.c:3943
+#: src/eoc-file-chooser.c:470 src/eoc-window.c:3983
 msgid "Open Folder"
 msgstr "फ़ोल्डर खोलें"
 
-#: src/eoc-image.c:552
+#: src/eoc-image.c:554
 msgid "Transformation on unloaded image."
 msgstr "अनलोडेड विंब में बदलें"
 
-#: src/eoc-image.c:580
+#: src/eoc-image.c:582
 msgid "Transformation failed."
 msgstr "रूपांतरण विफल."
 
-#: src/eoc-image.c:1054
+#: src/eoc-image.c:1056
 msgid "EXIF not supported for this file format."
 msgstr "EXIF इस फाइल प्रारूप के लिये समर्थित नहीं है."
 
-#: src/eoc-image.c:1203
+#: src/eoc-image.c:1205
 msgid "Image loading failed."
 msgstr "छवि लोडिंग विफल."
 
-#: src/eoc-image.c:1732 src/eoc-image.c:1834
+#: src/eoc-image.c:1734 src/eoc-image.c:1836
 msgid "No image loaded."
 msgstr "कोई छवि लोडेड नहीं."
 
-#: src/eoc-image.c:1742 src/eoc-image.c:1846
+#: src/eoc-image.c:1744 src/eoc-image.c:1848
 msgid "Temporary file creation failed."
 msgstr "अस्थाई फ़ाइल सृजन असफ़ल."
 
-#: src/eoc-image-jpeg.c:384
+#: src/eoc-image-jpeg.c:390
 #, c-format
 msgid "Couldn't create temporary file for saving: %s"
 msgstr "%s को सहेजने हेतु अस्थाई फ़ाइल तैयार नहीं कर सका"
 
-#: src/eoc-image-jpeg.c:395
+#: src/eoc-image-jpeg.c:401
 msgid "Couldn't allocate memory for loading JPEG file"
 msgstr "जेपीईजी फ़ाइल को लोड करने हेतु मेमोरी बांटी नहीं जा सकती"
 
@@ -931,7 +931,7 @@ msgstr "इंचेस"
 msgid "Preview"
 msgstr "पूर्वावलोकन"
 
-#: src/eoc-save-as-dialog-helper.c:161
+#: src/eoc-save-as-dialog-helper.c:165
 msgid "as is"
 msgstr "जैसा है वैसा ही"
 
@@ -950,11 +950,11 @@ msgstr "जैसा है वैसा ही"
 msgid "%d / %d"
 msgstr ""
 
-#: src/eoc-thumb-view.c:544
+#: src/eoc-thumb-view.c:545
 msgid "Taken on"
 msgstr "इस पर चालू"
 
-#: src/eoc-uri-converter.c:986
+#: src/eoc-uri-converter.c:989
 msgid "At least two file names are equal."
 msgstr "कम से कम दो फाइल नाम समान हैं."
 
@@ -983,7 +983,7 @@ msgstr[1] ""
 msgid "_Reload"
 msgstr "पुनः लोड करें (_R)"
 
-#: src/eoc-window.c:822 src/eoc-window.c:2745
+#: src/eoc-window.c:822 src/eoc-window.c:2762
 msgctxt "MessageArea"
 msgid "Hi_de"
 msgstr ""
@@ -1005,25 +1005,25 @@ msgstr "\"%s\" का प्रयोग चुनी छवियों को 
 #. * - the original filename
 #. * - the current image's position in the queue
 #. * - the total number of images queued for saving
-#: src/eoc-window.c:1154
+#: src/eoc-window.c:1156
 #, c-format
 msgid "Saving image \"%s\" (%u/%u)"
 msgstr "\"%s\" (%u/%u) छवि सहेज रहा है"
 
-#: src/eoc-window.c:1513
+#: src/eoc-window.c:1517
 #, c-format
 msgid "Opening image \"%s\""
 msgstr ""
 
-#: src/eoc-window.c:1869
+#: src/eoc-window.c:1878
 msgid "Leave Fullscreen"
 msgstr "फुलस्क्रीन छोड़ें"
 
-#: src/eoc-window.c:2002
+#: src/eoc-window.c:2011
 msgid "Viewing a slideshow"
 msgstr ""
 
-#: src/eoc-window.c:2215
+#: src/eoc-window.c:2224
 #, c-format
 msgid ""
 "Error printing file:\n"
@@ -1032,15 +1032,15 @@ msgstr ""
 "फाइल छापने में त्रुटि:\n"
 "%s"
 
-#: src/eoc-window.c:2478
+#: src/eoc-window.c:2491
 msgid "Toolbar Editor"
 msgstr "उपकरण-पट्टी संपादक"
 
-#: src/eoc-window.c:2481
+#: src/eoc-window.c:2494
 msgid "_Reset to Default"
 msgstr "तयशुदा में फिर सेट करें (_R)"
 
-#: src/eoc-window.c:2546
+#: src/eoc-window.c:2561
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
 "under the terms of the GNU General Public License as published by the Free "
@@ -1052,7 +1052,7 @@ msgstr ""
 "Software Foundation; either version 2 of the License, or (at your option) "
 "any later version.\n"
 
-#: src/eoc-window.c:2550
+#: src/eoc-window.c:2565
 msgid ""
 "This program is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
@@ -1064,30 +1064,30 @@ msgstr ""
 "FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
 "more details.\n"
 
-#: src/eoc-window.c:2554
+#: src/eoc-window.c:2569
 msgid ""
 "You should have received a copy of the GNU General Public License along with "
 "this program; if not, write to the Free Software Foundation, Inc., 51 "
 "Franklin St, Fifth Floor, Boston, MA 02110-1301, USA."
 msgstr ""
 
-#: src/eoc-window.c:2593
+#: src/eoc-window.c:2608
 msgid "About Eye of CAFE"
 msgstr ""
 
-#: src/eoc-window.c:2595
+#: src/eoc-window.c:2610
 msgid ""
 "Copyright © 2000-2010 Free Software Foundation, Inc.\n"
 "Copyright © 2011 Perberos\n"
 "Copyright © 2012-2020 MATE developers\n"
-"Copyright © 2023 Pablo Barciela"
+"Copyright © 2023-2025 Pablo Barciela"
 msgstr ""
 
-#: src/eoc-window.c:2599
+#: src/eoc-window.c:2614
 msgid "The CAFE image viewer."
 msgstr "गनोम छवि प्रदर्शक"
 
-#: src/eoc-window.c:2602
+#: src/eoc-window.c:2617
 msgid "translator-credits"
 msgstr ""
 "राजेश रंजन (rajeshkajha@yahoo.com)\n"
@@ -1095,26 +1095,26 @@ msgstr ""
 "रविशंकर श्रीवास्तव (raviratlami@gmail.com)\n"
 "राघवन गोपालकृष्णन्  (g.raghavan.g@gmail.com)"
 
-#: src/eoc-window.c:2693 src/eoc-window.c:2708
+#: src/eoc-window.c:2710 src/eoc-window.c:2725
 msgid "Error launching appearance preferences dialog: "
 msgstr ""
 
-#: src/eoc-window.c:2743
+#: src/eoc-window.c:2760
 msgid "_Open Background Preferences"
 msgstr ""
 
-#: src/eoc-window.c:2759
+#: src/eoc-window.c:2776
 #, c-format
 msgid ""
 "The image \"%s\" has been set as Desktop Background.\n"
 "Would you like to modify its appearance?"
 msgstr ""
 
-#: src/eoc-window.c:3192
+#: src/eoc-window.c:3220
 msgid "Saving image locally…"
 msgstr ""
 
-#: src/eoc-window.c:3272
+#: src/eoc-window.c:3300
 #, c-format
 msgid ""
 "Are you sure you want to move\n"
@@ -1123,7 +1123,7 @@ msgstr ""
 "क्या आप\n"
 "\"%s\" को रद्दी में डालना चाहते हैं?"
 
-#: src/eoc-window.c:3275
+#: src/eoc-window.c:3303
 #, c-format
 msgid ""
 "A trash for \"%s\" couldn't be found. Do you want to remove this image "
@@ -1131,7 +1131,7 @@ msgid ""
 msgstr ""
 "\"%s\" के लिए रद्दी नहीं मिल सका. क्या आप इस छवि को स्थाई रूप से हटाना चाहते हैं?"
 
-#: src/eoc-window.c:3280
+#: src/eoc-window.c:3308
 #, c-format
 msgid ""
 "Are you sure you want to move\n"
@@ -1142,7 +1142,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/eoc-window.c:3285
+#: src/eoc-window.c:3313
 msgid ""
 "Some of the selected images can't be moved to the trash and will be removed "
 "permanently. Are you sure you want to proceed?"
@@ -1150,387 +1150,387 @@ msgstr ""
 "कुछ चुनी छवियाँ रद्दी में स्थायी रूप से खिसकायी नहीं जा सकती है. क्या आप निश्चित रूप से आगे "
 "बढ़ना चाहते हैं?"
 
-#: src/eoc-window.c:3302 src/eoc-window.c:3792 src/eoc-window.c:3819
+#: src/eoc-window.c:3330 src/eoc-window.c:3831 src/eoc-window.c:3858
 msgid "Move to _Trash"
 msgstr "रद्दी में ले जायें (_T)"
 
-#: src/eoc-window.c:3304
+#: src/eoc-window.c:3332
 msgid "_Do not ask again during this session"
 msgstr "इस सत्र के दौरान मत पूछें (_D)"
 
-#: src/eoc-window.c:3349 src/eoc-window.c:3363
+#: src/eoc-window.c:3377 src/eoc-window.c:3391
 msgid "Couldn't access trash."
 msgstr "रद्दी पर पंहुच नहीं सका."
 
-#: src/eoc-window.c:3371
+#: src/eoc-window.c:3399
 msgid "Couldn't delete file"
 msgstr "फाइल मिटा नहीं सका"
 
-#: src/eoc-window.c:3471
+#: src/eoc-window.c:3500
 #, c-format
 msgid "Error on deleting image %s"
 msgstr "छवि %s मिटाने में त्रुटि"
 
-#: src/eoc-window.c:3713
+#: src/eoc-window.c:3752
 msgid "_Image"
 msgstr "छवि (_I)"
 
-#: src/eoc-window.c:3714
+#: src/eoc-window.c:3753
 msgid "_Edit"
 msgstr "संपादन (_E)"
 
-#: src/eoc-window.c:3715
+#: src/eoc-window.c:3754
 msgid "_View"
 msgstr "देखें (_V)"
 
-#: src/eoc-window.c:3716
+#: src/eoc-window.c:3755
 msgid "_Go"
 msgstr "जाएँ (_G)"
 
-#: src/eoc-window.c:3717
+#: src/eoc-window.c:3756
 msgid "_Tools"
 msgstr "औज़ार (_T)"
 
-#: src/eoc-window.c:3718
+#: src/eoc-window.c:3757
 msgid "_Help"
 msgstr "मदद (_H)"
 
-#: src/eoc-window.c:3720
+#: src/eoc-window.c:3759
 msgid "_Open…"
 msgstr ""
 
-#: src/eoc-window.c:3721
+#: src/eoc-window.c:3760
 msgid "Open a file"
 msgstr "फ़ाइल खोलें"
 
-#: src/eoc-window.c:3723
+#: src/eoc-window.c:3762
 msgid "_Close"
 msgstr "बंद करें (_C)"
 
-#: src/eoc-window.c:3724
+#: src/eoc-window.c:3763
 msgid "Close window"
 msgstr "विंडो बंद करें"
 
-#: src/eoc-window.c:3726
+#: src/eoc-window.c:3765
 msgid "T_oolbar"
 msgstr "टूलबार (_o)"
 
-#: src/eoc-window.c:3727
+#: src/eoc-window.c:3766
 msgid "Edit the application toolbar"
 msgstr "अनुप्रयोग औजारपट्टी संपादित करें"
 
-#: src/eoc-window.c:3729
+#: src/eoc-window.c:3768
 msgid "Prefere_nces"
 msgstr "वरीयता (_n)"
 
-#: src/eoc-window.c:3730
+#: src/eoc-window.c:3769
 msgid "Preferences for Eye of CAFE"
 msgstr "ग्नोम की आँख हेतु वरीयताएँ"
 
-#: src/eoc-window.c:3732
+#: src/eoc-window.c:3771
 msgid "_Contents"
 msgstr "विषय सूची (_C)"
 
-#: src/eoc-window.c:3733
+#: src/eoc-window.c:3772
 msgid "Help on this application"
 msgstr "इस अनुप्रयोग पर मदद"
 
-#: src/eoc-window.c:3735
+#: src/eoc-window.c:3774
 msgid "_About"
 msgstr "परिचय (_A)"
 
-#: src/eoc-window.c:3736
+#: src/eoc-window.c:3775
 msgid "About this application"
 msgstr "इस अनुप्रयोग के बारे में"
 
-#: src/eoc-window.c:3741
+#: src/eoc-window.c:3780
 msgid "_Toolbar"
 msgstr "उपकरण-पट्टी (_T)"
 
-#: src/eoc-window.c:3742
+#: src/eoc-window.c:3781
 msgid "Changes the visibility of the toolbar in the current window"
 msgstr "मौजूदा विंडो में उपकरण पट्टी की दृश्यता बदलें"
 
-#: src/eoc-window.c:3744
+#: src/eoc-window.c:3783
 msgid "_Statusbar"
 msgstr "स्थिति-पट्टी (_S)"
 
-#: src/eoc-window.c:3745
+#: src/eoc-window.c:3784
 msgid "Changes the visibility of the statusbar in the current window"
 msgstr "मौजूदा विंडो में प्रस्थिति पट्टी की दृश्यता बदलें"
 
-#: src/eoc-window.c:3747
+#: src/eoc-window.c:3786
 msgid "_Image Collection"
 msgstr "छवि संग्रह (_I)"
 
-#: src/eoc-window.c:3748
+#: src/eoc-window.c:3787
 msgid ""
 "Changes the visibility of the image collection pane in the current window"
 msgstr "मौजूदा विंडो में चित्र संग्रह पैन की दृश्यता बदलें"
 
-#: src/eoc-window.c:3750
+#: src/eoc-window.c:3789
 msgid "Side _Pane"
 msgstr "किनारे की पट्टी (_P)"
 
-#: src/eoc-window.c:3751
+#: src/eoc-window.c:3790
 msgid "Changes the visibility of the side pane in the current window"
 msgstr "मौजूदा विंडो में बाजू पट की दृश्यता बदलें"
 
-#: src/eoc-window.c:3756
+#: src/eoc-window.c:3795
 msgid "_Save"
 msgstr "सहेजें (_S)"
 
-#: src/eoc-window.c:3757
+#: src/eoc-window.c:3796
 msgid "Save changes in currently selected images"
 msgstr "मौजूदा चुनी छवियों में परिवर्तन सहेजें"
 
-#: src/eoc-window.c:3759
+#: src/eoc-window.c:3798
 msgid "Open _with"
 msgstr "इससे खोलें (_w)"
 
-#: src/eoc-window.c:3760
+#: src/eoc-window.c:3799
 msgid "Open the selected image with a different application"
 msgstr "चयनित छवि भिन्न अनुप्रयोग से खोलें"
 
-#: src/eoc-window.c:3762
+#: src/eoc-window.c:3801
 msgid "Save _As…"
 msgstr ""
 
-#: src/eoc-window.c:3763
+#: src/eoc-window.c:3802
 msgid "Save the selected images with a different name"
 msgstr "चयनित छवियों को भिन्न नाम से सहेजें"
 
-#: src/eoc-window.c:3765
+#: src/eoc-window.c:3804
 msgid "Open Containing _Folder"
 msgstr ""
 
-#: src/eoc-window.c:3766
+#: src/eoc-window.c:3805
 msgid "Show the folder which contains this file in the file manager"
 msgstr ""
 
-#: src/eoc-window.c:3768
+#: src/eoc-window.c:3807
 msgid "_Print…"
 msgstr ""
 
-#: src/eoc-window.c:3769
+#: src/eoc-window.c:3808
 msgid "Print the selected image"
 msgstr "चुनी छवियाँ छापें"
 
-#: src/eoc-window.c:3771
+#: src/eoc-window.c:3810
 msgid "Prope_rties"
 msgstr "गुण (_r)"
 
-#: src/eoc-window.c:3772
+#: src/eoc-window.c:3811
 msgid "Show the properties and metadata of the selected image"
 msgstr "चयनित छवि की मेटाडेटा व गुण दिखाएँ"
 
-#: src/eoc-window.c:3774
+#: src/eoc-window.c:3813
 msgid "_Undo"
 msgstr "पहले जैसा (_U)"
 
-#: src/eoc-window.c:3775
+#: src/eoc-window.c:3814
 msgid "Undo the last change in the image"
 msgstr "छवि में अंतिम परिवर्तन वापस लें"
 
-#: src/eoc-window.c:3777
+#: src/eoc-window.c:3816
 msgid "Flip _Horizontal"
 msgstr "आड़ा पलटें (_H)"
 
-#: src/eoc-window.c:3778
+#: src/eoc-window.c:3817
 msgid "Mirror the image horizontally"
 msgstr "छवि क्षैतिज रूप से मिरर करें"
 
-#: src/eoc-window.c:3780
+#: src/eoc-window.c:3819
 msgid "Flip _Vertical"
 msgstr "खड़ा पलटें (_V)"
 
-#: src/eoc-window.c:3781
+#: src/eoc-window.c:3820
 msgid "Mirror the image vertically"
 msgstr "छवि लंबवत रूप से मिरर करें"
 
-#: src/eoc-window.c:3783
+#: src/eoc-window.c:3822
 msgid "_Rotate Clockwise"
 msgstr "घड़ी की दिशा में घुमाएँ (_R)"
 
-#: src/eoc-window.c:3784
+#: src/eoc-window.c:3823
 msgid "Rotate the image 90 degrees to the right"
 msgstr "छवि को 90 डिग्री पर दाहिने घुमाएँ"
 
-#: src/eoc-window.c:3786
+#: src/eoc-window.c:3825
 msgid "Rotate Counterc_lockwise"
 msgstr "वामावर्त घुमाएँ (_l)"
 
-#: src/eoc-window.c:3787
+#: src/eoc-window.c:3826
 msgid "Rotate the image 90 degrees to the left"
 msgstr "छवि को 90 डिग्री पर बाएँ घुमाएँ"
 
-#: src/eoc-window.c:3789
+#: src/eoc-window.c:3828
 msgid "Set as _Desktop Background"
 msgstr "बतौर डेस्कटॉप पृष्ठभूमि सेट करें (_D)"
 
-#: src/eoc-window.c:3790
+#: src/eoc-window.c:3829
 msgid "Set the selected image as the desktop background"
 msgstr "चयनित छवि बतौर डेस्कटॉप पृष्ठभूमि सेट करें"
 
-#: src/eoc-window.c:3793
+#: src/eoc-window.c:3832
 msgid "Move the selected image to the trash folder"
 msgstr "चयनित छवि रद्दी फोल्डर में खिसकाएँ"
 
-#: src/eoc-window.c:3795
+#: src/eoc-window.c:3834
 msgid "_Copy"
 msgstr "प्रतिलिपि (_C)"
 
-#: src/eoc-window.c:3796
+#: src/eoc-window.c:3835
 msgid "Copy the selected image to the clipboard"
 msgstr ""
 
-#: src/eoc-window.c:3798 src/eoc-window.c:3810 src/eoc-window.c:3813
+#: src/eoc-window.c:3837 src/eoc-window.c:3849 src/eoc-window.c:3852
 msgid "_Zoom In"
 msgstr "बड़ा आकार (_Z)"
 
-#: src/eoc-window.c:3799 src/eoc-window.c:3811
+#: src/eoc-window.c:3838 src/eoc-window.c:3850
 msgid "Enlarge the image"
 msgstr "छवि बड़ा करें"
 
-#: src/eoc-window.c:3801 src/eoc-window.c:3816
+#: src/eoc-window.c:3840 src/eoc-window.c:3855
 msgid "Zoom _Out"
 msgstr "छोटा आकार (_O)"
 
-#: src/eoc-window.c:3802 src/eoc-window.c:3814 src/eoc-window.c:3817
+#: src/eoc-window.c:3841 src/eoc-window.c:3853 src/eoc-window.c:3856
 msgid "Shrink the image"
 msgstr "छवि छोटा करें"
 
-#: src/eoc-window.c:3804
+#: src/eoc-window.c:3843
 msgid "_Normal Size"
 msgstr "सामान्य आकार (_N)"
 
-#: src/eoc-window.c:3805
+#: src/eoc-window.c:3844
 msgid "Show the image at its normal size"
 msgstr "इसके सामान्य आकार पर छवि दिखाएँ"
 
-#: src/eoc-window.c:3807
+#: src/eoc-window.c:3846
 msgid "_Best Fit"
 msgstr "उत्तम अनुरूप (_B)"
 
-#: src/eoc-window.c:3808
+#: src/eoc-window.c:3847
 msgid "Fit the image to the window"
 msgstr "विंडो में छवि फिट करें"
 
-#: src/eoc-window.c:3825
+#: src/eoc-window.c:3864
 msgid "_Fullscreen"
 msgstr "फुलस्क्रीन (_F)"
 
-#: src/eoc-window.c:3826
+#: src/eoc-window.c:3865
 msgid "Show the current image in fullscreen mode"
 msgstr "पूर्ण स्क्रीन मोड में मौजूदा छवि दिखाएँ"
 
-#: src/eoc-window.c:3828
+#: src/eoc-window.c:3867
 msgid "Pause Slideshow"
 msgstr ""
 
-#: src/eoc-window.c:3829
+#: src/eoc-window.c:3868
 msgid "Pause or resume the slideshow"
 msgstr ""
 
-#: src/eoc-window.c:3834 src/eoc-window.c:3849
+#: src/eoc-window.c:3873 src/eoc-window.c:3888
 msgid "_Previous Image"
 msgstr "पिछली छवि (_P)"
 
-#: src/eoc-window.c:3835
+#: src/eoc-window.c:3874
 msgid "Go to the previous image of the collection"
 msgstr "संग्रह के पिछली छवि पर जाएँ"
 
-#: src/eoc-window.c:3837
+#: src/eoc-window.c:3876
 msgid "_Next Image"
 msgstr "अगली छवि (_N)"
 
-#: src/eoc-window.c:3838
+#: src/eoc-window.c:3877
 msgid "Go to the next image of the collection"
 msgstr "संग्रह की अगली छवि पर जाएँ"
 
-#: src/eoc-window.c:3840 src/eoc-window.c:3852
+#: src/eoc-window.c:3879 src/eoc-window.c:3891
 msgid "_First Image"
 msgstr "पहली छवि (_F)"
 
-#: src/eoc-window.c:3841
+#: src/eoc-window.c:3880
 msgid "Go to the first image of the collection"
 msgstr "संग्रह की पहली छवि पर जाएँ"
 
-#: src/eoc-window.c:3843 src/eoc-window.c:3855
+#: src/eoc-window.c:3882 src/eoc-window.c:3894
 msgid "_Last Image"
 msgstr "अंतिम छवि (_L)"
 
-#: src/eoc-window.c:3844
+#: src/eoc-window.c:3883
 msgid "Go to the last image of the collection"
 msgstr "संग्रह की अंतिम छवि पर जाएँ"
 
-#: src/eoc-window.c:3846
+#: src/eoc-window.c:3885
 msgid "_Random Image"
 msgstr ""
 
-#: src/eoc-window.c:3847
+#: src/eoc-window.c:3886
 msgid "Go to a random image of the collection"
 msgstr ""
 
-#: src/eoc-window.c:3861
+#: src/eoc-window.c:3900
 msgid "S_lideshow"
 msgstr ""
 
-#: src/eoc-window.c:3862
+#: src/eoc-window.c:3901
 msgid "Start a slideshow view of the images"
 msgstr "छवि की स्लाइड शो दृश्य आरंभ करें"
 
-#: src/eoc-window.c:3929
+#: src/eoc-window.c:3969
 msgid "Previous"
 msgstr "पिछला"
 
-#: src/eoc-window.c:3933
+#: src/eoc-window.c:3973
 msgid "Next"
 msgstr "अगला"
 
-#: src/eoc-window.c:3937
+#: src/eoc-window.c:3977
 msgid "Right"
 msgstr "दाहिना"
 
-#: src/eoc-window.c:3940
+#: src/eoc-window.c:3980
 msgid "Left"
 msgstr "बायाँ"
 
-#: src/eoc-window.c:3946
+#: src/eoc-window.c:3986
 msgid "In"
 msgstr "अन्दर"
 
-#: src/eoc-window.c:3949
+#: src/eoc-window.c:3989
 msgid "Out"
 msgstr "बाहर"
 
-#: src/eoc-window.c:3952
+#: src/eoc-window.c:3992
 msgid "Normal"
 msgstr "सामान्य"
 
-#: src/eoc-window.c:3955
+#: src/eoc-window.c:3995
 msgid "Fit"
 msgstr "अनुरूप"
 
-#: src/eoc-window.c:3958
+#: src/eoc-window.c:3998
 msgid "Collection"
 msgstr "संग्रह"
 
-#: src/eoc-window.c:3961
+#: src/eoc-window.c:4001
 msgctxt "action (to trash)"
 msgid "Trash"
 msgstr "कूडे मे डाले"
 
-#: src/eoc-window.c:4307
+#: src/eoc-window.c:4351
 #, c-format
 msgid "Edit the current image using %s"
 msgstr ""
 
-#: src/eoc-window.c:4309
+#: src/eoc-window.c:4353
 msgid "Edit Image"
 msgstr ""
 
-#: src/eoc-window.c:4524
+#: src/eoc-window.c:4568
 msgid "Properties"
 msgstr "गुण"
 

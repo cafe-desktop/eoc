@@ -9,9 +9,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: eoc 1.25.0\n"
+"Project-Id-Version: eoc 2.0.0\n"
 "Report-Msgid-Bugs-To: http://www.cafe-desktop.org\n"
-"POT-Creation-Date: 2023-06-09 11:11+0200\n"
+"POT-Creation-Date: 2025-07-18 08:35+0200\n"
 "PO-Revision-Date: 2020-02-14 12:07+0000\n"
 "Last-Translator: Mihail Varantsou <meequz@gmail.com>, 2020\n"
 "Language-Team: Belarusian (https://www.transifex.com/cafe/teams/13566/be/)\n"
@@ -56,7 +56,7 @@ msgstr "Прыняць выбраную панэль начыння"
 msgid "Separator"
 msgstr "Межнік"
 
-#: data/eoc.appdata.xml.in:6 src/eoc-window.c:2592
+#: data/eoc.appdata.xml.in:6 src/eoc-window.c:2607
 msgid "Eye of CAFE"
 msgstr "Eye of CAFE"
 
@@ -71,16 +71,16 @@ msgid ""
 "images in the directory the image was loaded from."
 msgstr ""
 
-#: data/eoc.desktop.in.in:3 src/main.c:65 src/main.c:166
+#: data/eoc.desktop.in.in:2 src/main.c:65 src/main.c:166
 msgid "Eye of CAFE Image Viewer"
 msgstr "Прагляднік выяваў Eye of CAFE"
 
-#: data/eoc.desktop.in.in:4
+#: data/eoc.desktop.in.in:3
 msgid "Browse and rotate images"
 msgstr "Дазваляе аглядаць і паварочваць выявы"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/eoc.desktop.in.in:14
+#: data/eoc.desktop.in.in:13
 msgid "image;viewer;JPEG;PNG;TIFF;SVG;CAFE;photos;browse;thumbnails;rotate;"
 msgstr ""
 
@@ -597,12 +597,12 @@ msgid ""
 "plugin."
 msgstr ""
 
-#: plugins/fullscreen/fullscreen.plugin.desktop.in:5
+#: plugins/fullscreen/fullscreen.plugin.desktop.in:4
 msgid "Fullscreen with double-click"
 msgstr "На ўвесь экран па падвойным пстрыку"
 
 #: plugins/reload/eoc-reload-plugin.c:45
-#: plugins/reload/reload.plugin.desktop.in:5
+#: plugins/reload/reload.plugin.desktop.in:4
 msgid "Reload Image"
 msgstr "Перачытаць выяву"
 
@@ -610,7 +610,7 @@ msgstr "Перачытаць выяву"
 msgid "Reload current image"
 msgstr "Перачытаць дзейную выяву"
 
-#: plugins/statusbar-date/statusbar-date.plugin.desktop.in:5
+#: plugins/statusbar-date/statusbar-date.plugin.desktop.in:4
 msgid "Date in statusbar"
 msgstr "Дата ў радку стану"
 
@@ -631,7 +631,7 @@ msgstr "Калі не захаваць, змены страцяцца."
 msgid "Save changes to image \"%s\" before closing?"
 msgstr "Захаваць змены выявы \"%s\" перад закрываннем?"
 
-#: src/eoc-close-confirmation-dialog.c:597
+#: src/eoc-close-confirmation-dialog.c:599
 #, c-format
 msgid "There is %d image with unsaved changes. Save changes before closing?"
 msgid_plural ""
@@ -641,19 +641,19 @@ msgstr[1] ""
 msgstr[2] ""
 msgstr[3] ""
 
-#: src/eoc-close-confirmation-dialog.c:614
+#: src/eoc-close-confirmation-dialog.c:616
 msgid "S_elect the images you want to save:"
 msgstr "_Адзначце выявы, якія хочаце захаваць:"
 
-#: src/eoc-close-confirmation-dialog.c:633
+#: src/eoc-close-confirmation-dialog.c:635
 msgid "If you don't save, all your changes will be lost."
 msgstr "Калі не захаваць, усе змены страцяцца."
 
-#: src/eoc-file-chooser.c:121
+#: src/eoc-file-chooser.c:123
 msgid "File format is unknown or unsupported"
 msgstr "Фармат файла не падтрымліваецца"
 
-#: src/eoc-file-chooser.c:126
+#: src/eoc-file-chooser.c:128
 msgid ""
 "Eye of CAFE could not determine a supported writable file format based on "
 "the filename."
@@ -661,25 +661,25 @@ msgstr ""
 "Eye of CAFE не здолеў вызначыць фармат файла, запіс у які б падтрымліваўся, "
 "абапіраючыся на назву файла."
 
-#: src/eoc-file-chooser.c:127
+#: src/eoc-file-chooser.c:129
 msgid "Please try a different file extension like .png or .jpg."
 msgstr "Паспрабуйце іншае пашырэнне файла кшталту .png ці .jpg."
 
-#: src/eoc-file-chooser.c:159
+#: src/eoc-file-chooser.c:161
 msgid "All Files"
 msgstr "Усе файлы"
 
-#: src/eoc-file-chooser.c:164
+#: src/eoc-file-chooser.c:166
 msgid "All Images"
 msgstr "Усе выявы"
 
-#: src/eoc-file-chooser.c:185
+#: src/eoc-file-chooser.c:187
 #, c-format
 msgid "%s (*.%s)"
 msgstr "%s (*.%s)"
 
-#: src/eoc-file-chooser.c:281 src/eoc-properties-dialog.c:163
-#: src/eoc-properties-dialog.c:165 src/eoc-thumb-view.c:516
+#: src/eoc-file-chooser.c:283 src/eoc-properties-dialog.c:163
+#: src/eoc-properties-dialog.c:165 src/eoc-thumb-view.c:517
 msgid "pixel"
 msgid_plural "pixels"
 msgstr[0] ""
@@ -687,48 +687,48 @@ msgstr[1] ""
 msgstr[2] ""
 msgstr[3] ""
 
-#: src/eoc-file-chooser.c:451
+#: src/eoc-file-chooser.c:454
 msgid "Open Image"
 msgstr "Адкрыць выяву"
 
-#: src/eoc-file-chooser.c:459
+#: src/eoc-file-chooser.c:462
 msgid "Save Image"
 msgstr "Запісаць выяву"
 
-#: src/eoc-file-chooser.c:467 src/eoc-window.c:3943
+#: src/eoc-file-chooser.c:470 src/eoc-window.c:3983
 msgid "Open Folder"
 msgstr "Адкрывае каталог"
 
-#: src/eoc-image.c:552
+#: src/eoc-image.c:554
 msgid "Transformation on unloaded image."
 msgstr "Трансфармаванне незагружанай выявы."
 
-#: src/eoc-image.c:580
+#: src/eoc-image.c:582
 msgid "Transformation failed."
 msgstr "Памылка пры трансфармацыі"
 
-#: src/eoc-image.c:1054
+#: src/eoc-image.c:1056
 msgid "EXIF not supported for this file format."
 msgstr "EXIF не падтрымліваецца для гэтага фармату."
 
-#: src/eoc-image.c:1203
+#: src/eoc-image.c:1205
 msgid "Image loading failed."
 msgstr "Не выйшла загрузіць выяву"
 
-#: src/eoc-image.c:1732 src/eoc-image.c:1834
+#: src/eoc-image.c:1734 src/eoc-image.c:1836
 msgid "No image loaded."
 msgstr "Выява не загружана."
 
-#: src/eoc-image.c:1742 src/eoc-image.c:1846
+#: src/eoc-image.c:1744 src/eoc-image.c:1848
 msgid "Temporary file creation failed."
 msgstr "Памылка стварэння часовага файла."
 
-#: src/eoc-image-jpeg.c:384
+#: src/eoc-image-jpeg.c:390
 #, c-format
 msgid "Couldn't create temporary file for saving: %s"
 msgstr "Немагчыма стварыць часовы файл, каб захаваць %s"
 
-#: src/eoc-image-jpeg.c:395
+#: src/eoc-image-jpeg.c:401
 msgid "Couldn't allocate memory for loading JPEG file"
 msgstr "Немагчыма вызваліць памяць для загрузкі файла JPEG"
 
@@ -934,7 +934,7 @@ msgstr "Цалі"
 msgid "Preview"
 msgstr "Перадпрагляд"
 
-#: src/eoc-save-as-dialog-helper.c:161
+#: src/eoc-save-as-dialog-helper.c:165
 msgid "as is"
 msgstr "як ёсць"
 
@@ -953,11 +953,11 @@ msgstr "як ёсць"
 msgid "%d / %d"
 msgstr "%d / %d"
 
-#: src/eoc-thumb-view.c:544
+#: src/eoc-thumb-view.c:545
 msgid "Taken on"
 msgstr "Знята"
 
-#: src/eoc-uri-converter.c:986
+#: src/eoc-uri-converter.c:989
 msgid "At least two file names are equal."
 msgstr "Не менш за две аднолькавыя назвы файлаў."
 
@@ -988,7 +988,7 @@ msgstr[3] ""
 msgid "_Reload"
 msgstr "_Перачытаць"
 
-#: src/eoc-window.c:822 src/eoc-window.c:2745
+#: src/eoc-window.c:822 src/eoc-window.c:2762
 msgctxt "MessageArea"
 msgid "Hi_de"
 msgstr "Сх_аваць"
@@ -1012,25 +1012,25 @@ msgstr "Выкарыстоўвайце \"%s\", каб адкрыць вылуч�
 #. * - the original filename
 #. * - the current image's position in the queue
 #. * - the total number of images queued for saving
-#: src/eoc-window.c:1154
+#: src/eoc-window.c:1156
 #, c-format
 msgid "Saving image \"%s\" (%u/%u)"
 msgstr "Захаванне выявы \"%s\" (%u/%u)"
 
-#: src/eoc-window.c:1513
+#: src/eoc-window.c:1517
 #, c-format
 msgid "Opening image \"%s\""
 msgstr "Адкрыванне выявы \"%s\""
 
-#: src/eoc-window.c:1869
+#: src/eoc-window.c:1878
 msgid "Leave Fullscreen"
 msgstr "Вярнуцца ў звычайны рэжым"
 
-#: src/eoc-window.c:2002
+#: src/eoc-window.c:2011
 msgid "Viewing a slideshow"
 msgstr ""
 
-#: src/eoc-window.c:2215
+#: src/eoc-window.c:2224
 #, c-format
 msgid ""
 "Error printing file:\n"
@@ -1039,15 +1039,15 @@ msgstr ""
 "Памылка друку файла:\n"
 "%s"
 
-#: src/eoc-window.c:2478
+#: src/eoc-window.c:2491
 msgid "Toolbar Editor"
 msgstr "Рэдактар панэлі"
 
-#: src/eoc-window.c:2481
+#: src/eoc-window.c:2494
 msgid "_Reset to Default"
 msgstr "Скінуць да стандартнага"
 
-#: src/eoc-window.c:2546
+#: src/eoc-window.c:2561
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
 "under the terms of the GNU General Public License as published by the Free "
@@ -1058,7 +1058,7 @@ msgstr ""
 "GNU General Public License версіі 2 ці пазнейшай (на ваш выбар), "
 "апублікаванай Free Software Foundation.\n"
 
-#: src/eoc-window.c:2550
+#: src/eoc-window.c:2565
 msgid ""
 "This program is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
@@ -1070,7 +1070,7 @@ msgstr ""
 "КАМЕРЦЫЙНАГА ПРОДАЖУ ці ПЭЎНАЙ МЭТЫ. Па падрабязнасці звяртайцеся да GNU "
 "General Public License.\n"
 
-#: src/eoc-window.c:2554
+#: src/eoc-window.c:2569
 msgid ""
 "You should have received a copy of the GNU General Public License along with "
 "this program; if not, write to the Free Software Foundation, Inc., 51 "
@@ -1080,37 +1080,37 @@ msgstr ""
 "калі не атрымалі, лістуйце да Free Software Foundation, Inc., 51 Franklin "
 "Street, Fifth Floor, Boston, MA 02110-1301 USA"
 
-#: src/eoc-window.c:2593
+#: src/eoc-window.c:2608
 msgid "About Eye of CAFE"
 msgstr ""
 
-#: src/eoc-window.c:2595
+#: src/eoc-window.c:2610
 msgid ""
 "Copyright © 2000-2010 Free Software Foundation, Inc.\n"
 "Copyright © 2011 Perberos\n"
 "Copyright © 2012-2020 MATE developers\n"
-"Copyright © 2023 Pablo Barciela"
+"Copyright © 2023-2025 Pablo Barciela"
 msgstr ""
 
-#: src/eoc-window.c:2599
+#: src/eoc-window.c:2614
 msgid "The CAFE image viewer."
 msgstr "Прагляднік выяў асяроддзя CAFE."
 
-#: src/eoc-window.c:2602
+#: src/eoc-window.c:2617
 msgid "translator-credits"
 msgstr ""
 "Belarusian Language Linux Team <i18n@mova.org>\n"
 "Mikhas Varantsou <meequz@gmail.com> 2014-2016"
 
-#: src/eoc-window.c:2693 src/eoc-window.c:2708
+#: src/eoc-window.c:2710 src/eoc-window.c:2725
 msgid "Error launching appearance preferences dialog: "
 msgstr ""
 
-#: src/eoc-window.c:2743
+#: src/eoc-window.c:2760
 msgid "_Open Background Preferences"
 msgstr "_Адкрыць настáўленні абруса"
 
-#: src/eoc-window.c:2759
+#: src/eoc-window.c:2776
 #, c-format
 msgid ""
 "The image \"%s\" has been set as Desktop Background.\n"
@@ -1119,11 +1119,11 @@ msgstr ""
 "Цяпер выява \"%s\" ляжыць на стале ў якасці абруса.\n"
 "Жадаеце змяніць абрус?"
 
-#: src/eoc-window.c:3192
+#: src/eoc-window.c:3220
 msgid "Saving image locally…"
 msgstr "Лакальнае захаванне выяў..."
 
-#: src/eoc-window.c:3272
+#: src/eoc-window.c:3300
 #, c-format
 msgid ""
 "Are you sure you want to move\n"
@@ -1132,14 +1132,14 @@ msgstr ""
 "Вы насамрэч жадаеце перанесці\n"
 "\"%s\" у сметніцу?"
 
-#: src/eoc-window.c:3275
+#: src/eoc-window.c:3303
 #, c-format
 msgid ""
 "A trash for \"%s\" couldn't be found. Do you want to remove this image "
 "permanently?"
 msgstr "Сметніца для \"%s\" не знойдзена. Жадаеце выдаліць выяву назаўсёды?"
 
-#: src/eoc-window.c:3280
+#: src/eoc-window.c:3308
 #, c-format
 msgid ""
 "Are you sure you want to move\n"
@@ -1152,7 +1152,7 @@ msgstr[1] ""
 msgstr[2] ""
 msgstr[3] ""
 
-#: src/eoc-window.c:3285
+#: src/eoc-window.c:3313
 msgid ""
 "Some of the selected images can't be moved to the trash and will be removed "
 "permanently. Are you sure you want to proceed?"
@@ -1160,387 +1160,387 @@ msgstr ""
 "Некаторыя з вылучаных выяў нельга перанесці ў сметніцу. Яны будуць выдалены "
 "назаўсёды. Сапраўды жадаеце працягнуць?"
 
-#: src/eoc-window.c:3302 src/eoc-window.c:3792 src/eoc-window.c:3819
+#: src/eoc-window.c:3330 src/eoc-window.c:3831 src/eoc-window.c:3858
 msgid "Move to _Trash"
 msgstr "Перанесці ў _сметніцу"
 
-#: src/eoc-window.c:3304
+#: src/eoc-window.c:3332
 msgid "_Do not ask again during this session"
 msgstr "_Больш падчас гэтага сеансу не пытацца."
 
-#: src/eoc-window.c:3349 src/eoc-window.c:3363
+#: src/eoc-window.c:3377 src/eoc-window.c:3391
 msgid "Couldn't access trash."
 msgstr "Сметніца недаступная."
 
-#: src/eoc-window.c:3371
+#: src/eoc-window.c:3399
 msgid "Couldn't delete file"
 msgstr "Нельга выдаліць файл."
 
-#: src/eoc-window.c:3471
+#: src/eoc-window.c:3500
 #, c-format
 msgid "Error on deleting image %s"
 msgstr "Памылка выдалення выявы %s"
 
-#: src/eoc-window.c:3713
+#: src/eoc-window.c:3752
 msgid "_Image"
 msgstr "_Выява"
 
-#: src/eoc-window.c:3714
+#: src/eoc-window.c:3753
 msgid "_Edit"
 msgstr "_Змяніць"
 
-#: src/eoc-window.c:3715
+#: src/eoc-window.c:3754
 msgid "_View"
 msgstr "_Выгляд"
 
-#: src/eoc-window.c:3716
+#: src/eoc-window.c:3755
 msgid "_Go"
 msgstr "_Перайсці"
 
-#: src/eoc-window.c:3717
+#: src/eoc-window.c:3756
 msgid "_Tools"
 msgstr "_Начынне"
 
-#: src/eoc-window.c:3718
+#: src/eoc-window.c:3757
 msgid "_Help"
 msgstr "_Даведка"
 
-#: src/eoc-window.c:3720
+#: src/eoc-window.c:3759
 msgid "_Open…"
 msgstr "_Адкрыць"
 
-#: src/eoc-window.c:3721
+#: src/eoc-window.c:3760
 msgid "Open a file"
 msgstr "Адкрыць файл"
 
-#: src/eoc-window.c:3723
+#: src/eoc-window.c:3762
 msgid "_Close"
 msgstr "_Закрыць"
 
-#: src/eoc-window.c:3724
+#: src/eoc-window.c:3763
 msgid "Close window"
 msgstr "Закрыць акно"
 
-#: src/eoc-window.c:3726
+#: src/eoc-window.c:3765
 msgid "T_oolbar"
 msgstr "Панэль _начыння"
 
-#: src/eoc-window.c:3727
+#: src/eoc-window.c:3766
 msgid "Edit the application toolbar"
 msgstr "Змяніць панэль начыння"
 
-#: src/eoc-window.c:3729
+#: src/eoc-window.c:3768
 msgid "Prefere_nces"
 msgstr "_Настáўленні"
 
-#: src/eoc-window.c:3730
+#: src/eoc-window.c:3769
 msgid "Preferences for Eye of CAFE"
 msgstr "Настáўленні для Eye of CAFE"
 
-#: src/eoc-window.c:3732
+#: src/eoc-window.c:3771
 msgid "_Contents"
 msgstr "_Змесціва"
 
-#: src/eoc-window.c:3733
+#: src/eoc-window.c:3772
 msgid "Help on this application"
 msgstr "Даведнік па праграме"
 
-#: src/eoc-window.c:3735
+#: src/eoc-window.c:3774
 msgid "_About"
 msgstr "_Пра аплет"
 
-#: src/eoc-window.c:3736
+#: src/eoc-window.c:3775
 msgid "About this application"
 msgstr "Пра праграму"
 
-#: src/eoc-window.c:3741
+#: src/eoc-window.c:3780
 msgid "_Toolbar"
 msgstr "_Панэль начыння"
 
-#: src/eoc-window.c:3742
+#: src/eoc-window.c:3781
 msgid "Changes the visibility of the toolbar in the current window"
 msgstr "Змяняе бачнасць панэлі начыння ў дзейным акне"
 
-#: src/eoc-window.c:3744
+#: src/eoc-window.c:3783
 msgid "_Statusbar"
 msgstr "_Радок стану"
 
-#: src/eoc-window.c:3745
+#: src/eoc-window.c:3784
 msgid "Changes the visibility of the statusbar in the current window"
 msgstr "Змяняе бачнасць радка стану ў дзейным акне"
 
-#: src/eoc-window.c:3747
+#: src/eoc-window.c:3786
 msgid "_Image Collection"
 msgstr "_Калекцыя выяваў"
 
-#: src/eoc-window.c:3748
+#: src/eoc-window.c:3787
 msgid ""
 "Changes the visibility of the image collection pane in the current window"
 msgstr "Змяняе бачнасць прасторы калекцыі выяў у актыўным акне"
 
-#: src/eoc-window.c:3750
+#: src/eoc-window.c:3789
 msgid "Side _Pane"
 msgstr "Бакавая _панэль"
 
-#: src/eoc-window.c:3751
+#: src/eoc-window.c:3790
 msgid "Changes the visibility of the side pane in the current window"
 msgstr "Змяняе бачнасць бакавой панэлі ў актыўным акне"
 
-#: src/eoc-window.c:3756
+#: src/eoc-window.c:3795
 msgid "_Save"
 msgstr "_Захаваць"
 
-#: src/eoc-window.c:3757
+#: src/eoc-window.c:3796
 msgid "Save changes in currently selected images"
 msgstr "Захаваць змяненні ў вылучаных выявах"
 
-#: src/eoc-window.c:3759
+#: src/eoc-window.c:3798
 msgid "Open _with"
 msgstr "Адкрыць у"
 
-#: src/eoc-window.c:3760
+#: src/eoc-window.c:3799
 msgid "Open the selected image with a different application"
 msgstr "Адкрыць вылучаную выяву ў іншай праграме"
 
-#: src/eoc-window.c:3762
+#: src/eoc-window.c:3801
 msgid "Save _As…"
 msgstr "Захаваць _як…"
 
-#: src/eoc-window.c:3763
+#: src/eoc-window.c:3802
 msgid "Save the selected images with a different name"
 msgstr "Захаваць вылучаную выяву пад іншай назвай"
 
-#: src/eoc-window.c:3765
+#: src/eoc-window.c:3804
 msgid "Open Containing _Folder"
 msgstr "Адкрыць змяшчальны каталог"
 
-#: src/eoc-window.c:3766
+#: src/eoc-window.c:3805
 msgid "Show the folder which contains this file in the file manager"
 msgstr ""
 
-#: src/eoc-window.c:3768
+#: src/eoc-window.c:3807
 msgid "_Print…"
 msgstr "_Друк…"
 
-#: src/eoc-window.c:3769
+#: src/eoc-window.c:3808
 msgid "Print the selected image"
 msgstr "Друкаваць вылучаную выяву"
 
-#: src/eoc-window.c:3771
+#: src/eoc-window.c:3810
 msgid "Prope_rties"
 msgstr "Улас_цівасці"
 
-#: src/eoc-window.c:3772
+#: src/eoc-window.c:3811
 msgid "Show the properties and metadata of the selected image"
 msgstr "Паказаць уласцівасці і метазвесткі вылучанай выявы"
 
-#: src/eoc-window.c:3774
+#: src/eoc-window.c:3813
 msgid "_Undo"
 msgstr "_Адрабіць"
 
-#: src/eoc-window.c:3775
+#: src/eoc-window.c:3814
 msgid "Undo the last change in the image"
 msgstr "Скасаваць апошняе змяненне выявы"
 
-#: src/eoc-window.c:3777
+#: src/eoc-window.c:3816
 msgid "Flip _Horizontal"
 msgstr "_Адвярнуць гарызантальна"
 
-#: src/eoc-window.c:3778
+#: src/eoc-window.c:3817
 msgid "Mirror the image horizontally"
 msgstr "Гарызантальна адлюстраваць выяву"
 
-#: src/eoc-window.c:3780
+#: src/eoc-window.c:3819
 msgid "Flip _Vertical"
 msgstr "_Адвярнуць вертыкальна"
 
-#: src/eoc-window.c:3781
+#: src/eoc-window.c:3820
 msgid "Mirror the image vertically"
 msgstr "Вертыкальна адлюстраваць выяву"
 
-#: src/eoc-window.c:3783
+#: src/eoc-window.c:3822
 msgid "_Rotate Clockwise"
 msgstr "Па_вярнуць па сонцу"
 
-#: src/eoc-window.c:3784
+#: src/eoc-window.c:3823
 msgid "Rotate the image 90 degrees to the right"
 msgstr "Павярнуць выяву на 90 градусаў па сонцу"
 
-#: src/eoc-window.c:3786
+#: src/eoc-window.c:3825
 msgid "Rotate Counterc_lockwise"
 msgstr "Павярнуць супраць сонца"
 
-#: src/eoc-window.c:3787
+#: src/eoc-window.c:3826
 msgid "Rotate the image 90 degrees to the left"
 msgstr "Павярнуць выяву на 90 градусаў супраць сонца"
 
-#: src/eoc-window.c:3789
+#: src/eoc-window.c:3828
 msgid "Set as _Desktop Background"
 msgstr "Зрабіць абрусам стала"
 
-#: src/eoc-window.c:3790
+#: src/eoc-window.c:3829
 msgid "Set the selected image as the desktop background"
 msgstr "Зрабіць вылучаную выяву абрусам стала"
 
-#: src/eoc-window.c:3793
+#: src/eoc-window.c:3832
 msgid "Move the selected image to the trash folder"
 msgstr "Перанесці вылучаную выяву ў сметніцу"
 
-#: src/eoc-window.c:3795
+#: src/eoc-window.c:3834
 msgid "_Copy"
 msgstr "_Капіяваць"
 
-#: src/eoc-window.c:3796
+#: src/eoc-window.c:3835
 msgid "Copy the selected image to the clipboard"
 msgstr "Капіяваць вылучаную выяву ў буфер"
 
-#: src/eoc-window.c:3798 src/eoc-window.c:3810 src/eoc-window.c:3813
+#: src/eoc-window.c:3837 src/eoc-window.c:3849 src/eoc-window.c:3852
 msgid "_Zoom In"
 msgstr "На_блізіць"
 
-#: src/eoc-window.c:3799 src/eoc-window.c:3811
+#: src/eoc-window.c:3838 src/eoc-window.c:3850
 msgid "Enlarge the image"
 msgstr "Наблізіць выяву"
 
-#: src/eoc-window.c:3801 src/eoc-window.c:3816
+#: src/eoc-window.c:3840 src/eoc-window.c:3855
 msgid "Zoom _Out"
 msgstr "З_меншыць маштаб"
 
-#: src/eoc-window.c:3802 src/eoc-window.c:3814 src/eoc-window.c:3817
+#: src/eoc-window.c:3841 src/eoc-window.c:3853 src/eoc-window.c:3856
 msgid "Shrink the image"
 msgstr "Аддаліць выяву"
 
-#: src/eoc-window.c:3804
+#: src/eoc-window.c:3843
 msgid "_Normal Size"
 msgstr "_Звычайны памер"
 
-#: src/eoc-window.c:3805
+#: src/eoc-window.c:3844
 msgid "Show the image at its normal size"
 msgstr "Паказаць выяву ў стандартным памеры"
 
-#: src/eoc-window.c:3807
+#: src/eoc-window.c:3846
 msgid "_Best Fit"
 msgstr "_Падагнаць пад акно"
 
-#: src/eoc-window.c:3808
+#: src/eoc-window.c:3847
 msgid "Fit the image to the window"
 msgstr "Падагнаць выяву пад акно"
 
-#: src/eoc-window.c:3825
+#: src/eoc-window.c:3864
 msgid "_Fullscreen"
 msgstr "_На ўвесь экран"
 
-#: src/eoc-window.c:3826
+#: src/eoc-window.c:3865
 msgid "Show the current image in fullscreen mode"
 msgstr "Адкрыць дзейную выяву на ўвесь экран"
 
-#: src/eoc-window.c:3828
+#: src/eoc-window.c:3867
 msgid "Pause Slideshow"
 msgstr "Прыпыніць слайдшоў"
 
-#: src/eoc-window.c:3829
+#: src/eoc-window.c:3868
 msgid "Pause or resume the slideshow"
 msgstr "Прыпыніць ці ўзнавіць слайдшоў"
 
-#: src/eoc-window.c:3834 src/eoc-window.c:3849
+#: src/eoc-window.c:3873 src/eoc-window.c:3888
 msgid "_Previous Image"
 msgstr "_Пяпярэдняя выява"
 
-#: src/eoc-window.c:3835
+#: src/eoc-window.c:3874
 msgid "Go to the previous image of the collection"
 msgstr "Перайсці да папярэдняй выявы ў калекцыі"
 
-#: src/eoc-window.c:3837
+#: src/eoc-window.c:3876
 msgid "_Next Image"
 msgstr "_Наступная выява"
 
-#: src/eoc-window.c:3838
+#: src/eoc-window.c:3877
 msgid "Go to the next image of the collection"
 msgstr "Перайсці да наступнай выявы ў калекцыі"
 
-#: src/eoc-window.c:3840 src/eoc-window.c:3852
+#: src/eoc-window.c:3879 src/eoc-window.c:3891
 msgid "_First Image"
 msgstr "Пер_шая выява"
 
-#: src/eoc-window.c:3841
+#: src/eoc-window.c:3880
 msgid "Go to the first image of the collection"
 msgstr "Перайсці да першай выявы ў калекцыі"
 
-#: src/eoc-window.c:3843 src/eoc-window.c:3855
+#: src/eoc-window.c:3882 src/eoc-window.c:3894
 msgid "_Last Image"
 msgstr "Ап_ошняя выява"
 
-#: src/eoc-window.c:3844
+#: src/eoc-window.c:3883
 msgid "Go to the last image of the collection"
 msgstr "Перайсці да апошняй выявы ў калекцыі"
 
-#: src/eoc-window.c:3846
+#: src/eoc-window.c:3885
 msgid "_Random Image"
 msgstr "_Выпадковая выява"
 
-#: src/eoc-window.c:3847
+#: src/eoc-window.c:3886
 msgid "Go to a random image of the collection"
 msgstr "Перайсці да выпадковай выявы з калекцыі"
 
-#: src/eoc-window.c:3861
+#: src/eoc-window.c:3900
 msgid "S_lideshow"
 msgstr "С_лайдшоў"
 
-#: src/eoc-window.c:3862
+#: src/eoc-window.c:3901
 msgid "Start a slideshow view of the images"
 msgstr "Пачаць слайдшоў з выяў"
 
-#: src/eoc-window.c:3929
+#: src/eoc-window.c:3969
 msgid "Previous"
 msgstr "Папярэдняя"
 
-#: src/eoc-window.c:3933
+#: src/eoc-window.c:3973
 msgid "Next"
 msgstr "Наступная"
 
-#: src/eoc-window.c:3937
+#: src/eoc-window.c:3977
 msgid "Right"
 msgstr "Справа"
 
-#: src/eoc-window.c:3940
+#: src/eoc-window.c:3980
 msgid "Left"
 msgstr "Злева"
 
-#: src/eoc-window.c:3946
+#: src/eoc-window.c:3986
 msgid "In"
 msgstr "Павялічыць"
 
-#: src/eoc-window.c:3949
+#: src/eoc-window.c:3989
 msgid "Out"
 msgstr "Паменшыць"
 
-#: src/eoc-window.c:3952
+#: src/eoc-window.c:3992
 msgid "Normal"
 msgstr "Звычайны"
 
-#: src/eoc-window.c:3955
+#: src/eoc-window.c:3995
 msgid "Fit"
 msgstr "Запоўніць"
 
-#: src/eoc-window.c:3958
+#: src/eoc-window.c:3998
 msgid "Collection"
 msgstr "Калекцыя"
 
-#: src/eoc-window.c:3961
+#: src/eoc-window.c:4001
 msgctxt "action (to trash)"
 msgid "Trash"
 msgstr "Сметніца"
 
-#: src/eoc-window.c:4307
+#: src/eoc-window.c:4351
 #, c-format
 msgid "Edit the current image using %s"
 msgstr "Рэдагаваць дзейную выяву ў %s"
 
-#: src/eoc-window.c:4309
+#: src/eoc-window.c:4353
 msgid "Edit Image"
 msgstr "Рэдагаваць выяву"
 
-#: src/eoc-window.c:4524
+#: src/eoc-window.c:4568
 msgid "Properties"
 msgstr "Уласцівасці"
 

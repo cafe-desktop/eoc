@@ -8,9 +8,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: eoc 1.25.0\n"
+"Project-Id-Version: eoc 2.0.0\n"
 "Report-Msgid-Bugs-To: http://www.cafe-desktop.org\n"
-"POT-Creation-Date: 2023-06-09 11:11+0200\n"
+"POT-Creation-Date: 2025-07-18 08:35+0200\n"
 "PO-Revision-Date: 2020-02-14 12:07+0000\n"
 "Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2020\n"
 "Language-Team: Assamese (https://www.transifex.com/cafe/teams/13566/as/)\n"
@@ -53,7 +53,7 @@ msgstr "চিহ্নিত টুলবাৰ অপসাৰণ কৰো"
 msgid "Separator"
 msgstr "বিভাজক"
 
-#: data/eoc.appdata.xml.in:6 src/eoc-window.c:2592
+#: data/eoc.appdata.xml.in:6 src/eoc-window.c:2607
 msgid "Eye of CAFE"
 msgstr "Eye of CAFE"
 
@@ -68,16 +68,16 @@ msgid ""
 "images in the directory the image was loaded from."
 msgstr ""
 
-#: data/eoc.desktop.in.in:3 src/main.c:65 src/main.c:166
+#: data/eoc.desktop.in.in:2 src/main.c:65 src/main.c:166
 msgid "Eye of CAFE Image Viewer"
 msgstr "Eye of CAFE ছবি প্ৰদৰ্শন ব্যৱস্থা"
 
-#: data/eoc.desktop.in.in:4
+#: data/eoc.desktop.in.in:3
 msgid "Browse and rotate images"
 msgstr "ছবি ব্ৰাউজ কৰক আৰু ঘুৰায় লওক"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/eoc.desktop.in.in:14
+#: data/eoc.desktop.in.in:13
 msgid "image;viewer;JPEG;PNG;TIFF;SVG;CAFE;photos;browse;thumbnails;rotate;"
 msgstr ""
 
@@ -600,12 +600,12 @@ msgstr ""
 "সক্ৰিয় প্লাগ-ইনৰ তালিকা । ইয়াত সক্ৰিয় প্লাগ-ইনৰ \"স্থান\" নাথাকে । এটা প্লাগ-ইনৰ "
 "\"স্থান\"ৰ কাৰণে .eoc-plugin নথিপত্ৰ চাওক ।"
 
-#: plugins/fullscreen/fullscreen.plugin.desktop.in:5
+#: plugins/fullscreen/fullscreen.plugin.desktop.in:4
 msgid "Fullscreen with double-click"
 msgstr "দুবাৰ ক্লিকত সম্পূৰ্ণ পৰ্দাত প্ৰদৰ্শন"
 
 #: plugins/reload/eoc-reload-plugin.c:45
-#: plugins/reload/reload.plugin.desktop.in:5
+#: plugins/reload/reload.plugin.desktop.in:4
 msgid "Reload Image"
 msgstr "ছবি পুনঃ তুলি লওক"
 
@@ -613,7 +613,7 @@ msgstr "ছবি পুনঃ তুলি লওক"
 msgid "Reload current image"
 msgstr "বৰ্তমান ছবি পুনঃ তুলি লওক"
 
-#: plugins/statusbar-date/statusbar-date.plugin.desktop.in:5
+#: plugins/statusbar-date/statusbar-date.plugin.desktop.in:4
 msgid "Date in statusbar"
 msgstr "অৱস্থাবাৰত তাৰিখ"
 
@@ -634,7 +634,7 @@ msgstr ""
 msgid "Save changes to image \"%s\" before closing?"
 msgstr ""
 
-#: src/eoc-close-confirmation-dialog.c:597
+#: src/eoc-close-confirmation-dialog.c:599
 #, c-format
 msgid "There is %d image with unsaved changes. Save changes before closing?"
 msgid_plural ""
@@ -642,19 +642,19 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/eoc-close-confirmation-dialog.c:614
+#: src/eoc-close-confirmation-dialog.c:616
 msgid "S_elect the images you want to save:"
 msgstr ""
 
-#: src/eoc-close-confirmation-dialog.c:633
+#: src/eoc-close-confirmation-dialog.c:635
 msgid "If you don't save, all your changes will be lost."
 msgstr ""
 
-#: src/eoc-file-chooser.c:121
+#: src/eoc-file-chooser.c:123
 msgid "File format is unknown or unsupported"
 msgstr "নথিপত্ৰৰ আকৃতি অজ্ঞাত বা অসমৰ্থিত"
 
-#: src/eoc-file-chooser.c:126
+#: src/eoc-file-chooser.c:128
 msgid ""
 "Eye of CAFE could not determine a supported writable file format based on "
 "the filename."
@@ -662,72 +662,72 @@ msgstr ""
 "Eye of CAFE এ নথিপত্ৰৰ নামৰ আধাৰত এটা সমৰ্থিত লিখিব পৰা নথিপত্ৰৰ আকৃতি নিৰ্ধাৰণ "
 "কৰিব নোৱাৰিলে ।"
 
-#: src/eoc-file-chooser.c:127
+#: src/eoc-file-chooser.c:129
 msgid "Please try a different file extension like .png or .jpg."
 msgstr "অনুগ্ৰহ কৰি .png বা .jpg ৰ দৰে এটা অন্য নথিপত্ৰৰ সম্প্ৰসাৰণ বাচি লওক ।"
 
-#: src/eoc-file-chooser.c:159
+#: src/eoc-file-chooser.c:161
 msgid "All Files"
 msgstr "সৰ্বধৰনৰ নথিপত্ৰ"
 
-#: src/eoc-file-chooser.c:164
+#: src/eoc-file-chooser.c:166
 msgid "All Images"
 msgstr "সকলো ছবি"
 
-#: src/eoc-file-chooser.c:185
+#: src/eoc-file-chooser.c:187
 #, c-format
 msgid "%s (*.%s)"
 msgstr "%s (*.%s)"
 
-#: src/eoc-file-chooser.c:281 src/eoc-properties-dialog.c:163
-#: src/eoc-properties-dialog.c:165 src/eoc-thumb-view.c:516
+#: src/eoc-file-chooser.c:283 src/eoc-properties-dialog.c:163
+#: src/eoc-properties-dialog.c:165 src/eoc-thumb-view.c:517
 msgid "pixel"
 msgid_plural "pixels"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/eoc-file-chooser.c:451
+#: src/eoc-file-chooser.c:454
 msgid "Open Image"
 msgstr ""
 
-#: src/eoc-file-chooser.c:459
+#: src/eoc-file-chooser.c:462
 msgid "Save Image"
 msgstr "ছবি সংৰক্ষণ কৰো"
 
-#: src/eoc-file-chooser.c:467 src/eoc-window.c:3943
+#: src/eoc-file-chooser.c:470 src/eoc-window.c:3983
 msgid "Open Folder"
 msgstr "ফোল্ডাৰ খোলক"
 
-#: src/eoc-image.c:552
+#: src/eoc-image.c:554
 msgid "Transformation on unloaded image."
 msgstr "আন-লোডছ কৰা ছবিত ৰূপান্তৰণ  ।"
 
-#: src/eoc-image.c:580
+#: src/eoc-image.c:582
 msgid "Transformation failed."
 msgstr "ৰূপান্তৰণ বিফল ।"
 
-#: src/eoc-image.c:1054
+#: src/eoc-image.c:1056
 msgid "EXIF not supported for this file format."
 msgstr "এই নথিপত্ৰ আকৃতিৰ বাবে EXIF সমৰ্থিত নহয় ।"
 
-#: src/eoc-image.c:1203
+#: src/eoc-image.c:1205
 msgid "Image loading failed."
 msgstr "ছবি তুলি লোৱা বিফল ।"
 
-#: src/eoc-image.c:1732 src/eoc-image.c:1834
+#: src/eoc-image.c:1734 src/eoc-image.c:1836
 msgid "No image loaded."
 msgstr "কোনো ছবি তুলি লোৱা নহয় ।"
 
-#: src/eoc-image.c:1742 src/eoc-image.c:1846
+#: src/eoc-image.c:1744 src/eoc-image.c:1848
 msgid "Temporary file creation failed."
 msgstr "অস্থায়ী নথিপত্ৰ সৃষ্টি কৰিবলৈ বিফল ।"
 
-#: src/eoc-image-jpeg.c:384
+#: src/eoc-image-jpeg.c:390
 #, c-format
 msgid "Couldn't create temporary file for saving: %s"
 msgstr "সংৰক্ষণ কৰাৰ বাবে অস্থায়ী নথিপত্ৰ সৃষ্টি কৰা ন'গ'ল: %s"
 
-#: src/eoc-image-jpeg.c:395
+#: src/eoc-image-jpeg.c:401
 msgid "Couldn't allocate memory for loading JPEG file"
 msgstr "JPEG নথিপত্ৰ পঢ়াৰ বাবে স্মৃতিশক্তি বিতৰণ কৰা ন'গ'ল"
 
@@ -931,7 +931,7 @@ msgstr "ইঞ্চিসমূহ"
 msgid "Preview"
 msgstr "পূৰ্ব প্ৰদৰ্শন"
 
-#: src/eoc-save-as-dialog-helper.c:161
+#: src/eoc-save-as-dialog-helper.c:165
 msgid "as is"
 msgstr "যেনে আছে"
 
@@ -950,11 +950,11 @@ msgstr "যেনে আছে"
 msgid "%d / %d"
 msgstr "%d / %d"
 
-#: src/eoc-thumb-view.c:544
+#: src/eoc-thumb-view.c:545
 msgid "Taken on"
 msgstr "চলি আছে"
 
-#: src/eoc-uri-converter.c:986
+#: src/eoc-uri-converter.c:989
 msgid "At least two file names are equal."
 msgstr "অন্ততঃ দুটা নথিপত্ৰৰ নাম একেই ।"
 
@@ -983,7 +983,7 @@ msgstr[1] ""
 msgid "_Reload"
 msgstr "পুনৰায় লোড (_R)"
 
-#: src/eoc-window.c:822 src/eoc-window.c:2745
+#: src/eoc-window.c:822 src/eoc-window.c:2762
 msgctxt "MessageArea"
 msgid "Hi_de"
 msgstr ""
@@ -1005,25 +1005,25 @@ msgstr "নিৰ্বাচিত ছবি খুলিবলৈ \"%s\" ব�
 #. * - the original filename
 #. * - the current image's position in the queue
 #. * - the total number of images queued for saving
-#: src/eoc-window.c:1154
+#: src/eoc-window.c:1156
 #, c-format
 msgid "Saving image \"%s\" (%u/%u)"
 msgstr "\"%s\" ছবি ৰক্ষা কৰা হৈছে (%u/%u)"
 
-#: src/eoc-window.c:1513
+#: src/eoc-window.c:1517
 #, c-format
 msgid "Opening image \"%s\""
 msgstr ""
 
-#: src/eoc-window.c:1869
+#: src/eoc-window.c:1878
 msgid "Leave Fullscreen"
 msgstr "পূৰ্ণপৰ্দা মোড ত্যাগ কৰো"
 
-#: src/eoc-window.c:2002
+#: src/eoc-window.c:2011
 msgid "Viewing a slideshow"
 msgstr ""
 
-#: src/eoc-window.c:2215
+#: src/eoc-window.c:2224
 #, c-format
 msgid ""
 "Error printing file:\n"
@@ -1032,15 +1032,15 @@ msgstr ""
 "নথিপত্ৰ মূদ্ৰণ কৰোঁতে ভুল:\n"
 "%s"
 
-#: src/eoc-window.c:2478
+#: src/eoc-window.c:2491
 msgid "Toolbar Editor"
 msgstr "টুলবাৰ সম্পাদক"
 
-#: src/eoc-window.c:2481
+#: src/eoc-window.c:2494
 msgid "_Reset to Default"
 msgstr "অবিকল্পিতলৈ পুনঃ নিৰ্ধাৰণ কৰক (_R)"
 
-#: src/eoc-window.c:2546
+#: src/eoc-window.c:2561
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
 "under the terms of the GNU General Public License as published by the Free "
@@ -1052,7 +1052,7 @@ msgstr ""
 "Software Foundation; either version 2 of the License, or (at your option) "
 "any later version.\n"
 
-#: src/eoc-window.c:2550
+#: src/eoc-window.c:2565
 msgid ""
 "This program is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
@@ -1064,53 +1064,53 @@ msgstr ""
 "FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
 "more details.\n"
 
-#: src/eoc-window.c:2554
+#: src/eoc-window.c:2569
 msgid ""
 "You should have received a copy of the GNU General Public License along with "
 "this program; if not, write to the Free Software Foundation, Inc., 51 "
 "Franklin St, Fifth Floor, Boston, MA 02110-1301, USA."
 msgstr ""
 
-#: src/eoc-window.c:2593
+#: src/eoc-window.c:2608
 msgid "About Eye of CAFE"
 msgstr ""
 
-#: src/eoc-window.c:2595
+#: src/eoc-window.c:2610
 msgid ""
 "Copyright © 2000-2010 Free Software Foundation, Inc.\n"
 "Copyright © 2011 Perberos\n"
 "Copyright © 2012-2020 MATE developers\n"
-"Copyright © 2023 Pablo Barciela"
+"Copyright © 2023-2025 Pablo Barciela"
 msgstr ""
 
-#: src/eoc-window.c:2599
+#: src/eoc-window.c:2614
 msgid "The CAFE image viewer."
 msgstr "CAFE ছবি প্ৰদৰ্শন ব্যৱস্থা ।"
 
-#: src/eoc-window.c:2602
+#: src/eoc-window.c:2617
 msgid "translator-credits"
 msgstr "অমিতাক্ষ ফুকন (aphukan@fedoraproject.org)"
 
-#: src/eoc-window.c:2693 src/eoc-window.c:2708
+#: src/eoc-window.c:2710 src/eoc-window.c:2725
 msgid "Error launching appearance preferences dialog: "
 msgstr ""
 
-#: src/eoc-window.c:2743
+#: src/eoc-window.c:2760
 msgid "_Open Background Preferences"
 msgstr ""
 
-#: src/eoc-window.c:2759
+#: src/eoc-window.c:2776
 #, c-format
 msgid ""
 "The image \"%s\" has been set as Desktop Background.\n"
 "Would you like to modify its appearance?"
 msgstr ""
 
-#: src/eoc-window.c:3192
+#: src/eoc-window.c:3220
 msgid "Saving image locally…"
 msgstr ""
 
-#: src/eoc-window.c:3272
+#: src/eoc-window.c:3300
 #, c-format
 msgid ""
 "Are you sure you want to move\n"
@@ -1119,7 +1119,7 @@ msgstr ""
 "আপুনি নিশ্চিতৰূপে\n"
 "\"%s\" আবৰ্জনাৰ বক্সত স্থানান্তৰ কৰিবলৈ নিশ্চিত নে ?"
 
-#: src/eoc-window.c:3275
+#: src/eoc-window.c:3303
 #, c-format
 msgid ""
 "A trash for \"%s\" couldn't be found. Do you want to remove this image "
@@ -1128,7 +1128,7 @@ msgstr ""
 "\"%s\"-ৰ বাবে প্ৰযোজ্য আবৰ্জনাৰ বাকচ পোৱা নাযায় । আপুনি এইটো স্থায়ীৰূপে বৰ্জন "
 "কৰিবলৈ ইচ্ছুক নেকি ?"
 
-#: src/eoc-window.c:3280
+#: src/eoc-window.c:3308
 #, c-format
 msgid ""
 "Are you sure you want to move\n"
@@ -1139,7 +1139,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/eoc-window.c:3285
+#: src/eoc-window.c:3313
 msgid ""
 "Some of the selected images can't be moved to the trash and will be removed "
 "permanently. Are you sure you want to proceed?"
@@ -1147,387 +1147,387 @@ msgstr ""
 "নিৰ্বাচিত কিছু ছবি, আবৰ্জনাৰ বাকচত স্থানান্তৰ কৰা সম্ভব ন'হ'ব আৰু স্থায়ীভাবে বৰ্জন "
 "কৰা হ'ব । আগবাঢ়িবলৈ আপুনি নিশ্চিত নে ?"
 
-#: src/eoc-window.c:3302 src/eoc-window.c:3792 src/eoc-window.c:3819
+#: src/eoc-window.c:3330 src/eoc-window.c:3831 src/eoc-window.c:3858
 msgid "Move to _Trash"
 msgstr "আবৰ্জনাৰ বক্সত স্থানান্তৰণ (_T)"
 
-#: src/eoc-window.c:3304
+#: src/eoc-window.c:3332
 msgid "_Do not ask again during this session"
 msgstr "বৰ্তমানৰ অধিবেশনত পুনঃ প্ৰশ্ন কৰা ন'হ'ব (_D)"
 
-#: src/eoc-window.c:3349 src/eoc-window.c:3363
+#: src/eoc-window.c:3377 src/eoc-window.c:3391
 msgid "Couldn't access trash."
 msgstr "আবৰ্জনা ফোল্ডাৰত প্ৰবেশ কৰা নাযায় ।"
 
-#: src/eoc-window.c:3371
+#: src/eoc-window.c:3399
 msgid "Couldn't delete file"
 msgstr "নথিপত্ৰ আঁতৰাবলৈ ব্যৰ্থ"
 
-#: src/eoc-window.c:3471
+#: src/eoc-window.c:3500
 #, c-format
 msgid "Error on deleting image %s"
 msgstr "%s আঁতৰাওঁতে ভুল ।"
 
-#: src/eoc-window.c:3713
+#: src/eoc-window.c:3752
 msgid "_Image"
 msgstr "ছবি (_I)"
 
-#: src/eoc-window.c:3714
+#: src/eoc-window.c:3753
 msgid "_Edit"
 msgstr "সম্পাদনা (_E)"
 
-#: src/eoc-window.c:3715
+#: src/eoc-window.c:3754
 msgid "_View"
 msgstr "প্ৰদৰ্শন (_V)"
 
-#: src/eoc-window.c:3716
+#: src/eoc-window.c:3755
 msgid "_Go"
 msgstr "গন্তব্য (_G)"
 
-#: src/eoc-window.c:3717
+#: src/eoc-window.c:3756
 msgid "_Tools"
 msgstr "সৰঞ্জাম (_T)"
 
-#: src/eoc-window.c:3718
+#: src/eoc-window.c:3757
 msgid "_Help"
 msgstr "সাহায্য (_H)"
 
-#: src/eoc-window.c:3720
+#: src/eoc-window.c:3759
 msgid "_Open…"
 msgstr ""
 
-#: src/eoc-window.c:3721
+#: src/eoc-window.c:3760
 msgid "Open a file"
 msgstr "নথিপত্ৰ খোলো"
 
-#: src/eoc-window.c:3723
+#: src/eoc-window.c:3762
 msgid "_Close"
 msgstr "বন্ধ কৰক (_C)"
 
-#: src/eoc-window.c:3724
+#: src/eoc-window.c:3763
 msgid "Close window"
 msgstr "সংযোগক্ষেত্ৰ বন্ধ কৰক"
 
-#: src/eoc-window.c:3726
+#: src/eoc-window.c:3765
 msgid "T_oolbar"
 msgstr "টুল-বাৰ(_o)"
 
-#: src/eoc-window.c:3727
+#: src/eoc-window.c:3766
 msgid "Edit the application toolbar"
 msgstr "অনুপ্ৰয়োগৰ টুলবাৰ সম্পাদন কৰক"
 
-#: src/eoc-window.c:3729
+#: src/eoc-window.c:3768
 msgid "Prefere_nces"
 msgstr "পছন্দ(_n)"
 
-#: src/eoc-window.c:3730
+#: src/eoc-window.c:3769
 msgid "Preferences for Eye of CAFE"
 msgstr "Eye of CAFE সংক্ৰান্ত পছন্দ"
 
-#: src/eoc-window.c:3732
+#: src/eoc-window.c:3771
 msgid "_Contents"
 msgstr "বিষয়বস্তু (_C)"
 
-#: src/eoc-window.c:3733
+#: src/eoc-window.c:3772
 msgid "Help on this application"
 msgstr "এই অনুপ্ৰয়োগৰ কাৰণে সহায়"
 
-#: src/eoc-window.c:3735
+#: src/eoc-window.c:3774
 msgid "_About"
 msgstr "বিষয়ে (_A)"
 
-#: src/eoc-window.c:3736
+#: src/eoc-window.c:3775
 msgid "About this application"
 msgstr "এপ্লিকেশন পৰিচিত"
 
-#: src/eoc-window.c:3741
+#: src/eoc-window.c:3780
 msgid "_Toolbar"
 msgstr "টুল-বাৰ (_T)"
 
-#: src/eoc-window.c:3742
+#: src/eoc-window.c:3781
 msgid "Changes the visibility of the toolbar in the current window"
 msgstr "বৰ্তমান সংযোগক্ষেত্ৰত টুলবাৰৰ উপস্থিতি বদলায়"
 
-#: src/eoc-window.c:3744
+#: src/eoc-window.c:3783
 msgid "_Statusbar"
 msgstr "স্ট্যাটাস-বাৰ (_S)"
 
-#: src/eoc-window.c:3745
+#: src/eoc-window.c:3784
 msgid "Changes the visibility of the statusbar in the current window"
 msgstr "বৰ্তমান সংযোগক্ষেত্ৰত অৱস্থাসূচক বাৰৰ উপস্থিতি বদলায়"
 
-#: src/eoc-window.c:3747
+#: src/eoc-window.c:3786
 msgid "_Image Collection"
 msgstr "ছবিৰ সংকলন (_I)"
 
-#: src/eoc-window.c:3748
+#: src/eoc-window.c:3787
 msgid ""
 "Changes the visibility of the image collection pane in the current window"
 msgstr "বৰ্তমান সংযোগক্ষেত্ৰৰ ছবি সংকলনৰ পেইনৰ প্ৰদৰ্শন পৰিবৰ্তন কৰে"
 
-#: src/eoc-window.c:3750
+#: src/eoc-window.c:3789
 msgid "Side _Pane"
 msgstr "পাৰ্শ্ববৰ্তী পেইন (_P)"
 
-#: src/eoc-window.c:3751
+#: src/eoc-window.c:3790
 msgid "Changes the visibility of the side pane in the current window"
 msgstr "বৰ্তমান সংযোগক্ষেত্ৰত কাষৰ পেইনৰ উপস্থিতি বদলায়"
 
-#: src/eoc-window.c:3756
+#: src/eoc-window.c:3795
 msgid "_Save"
 msgstr "সংৰক্ষণ (_S)"
 
-#: src/eoc-window.c:3757
+#: src/eoc-window.c:3796
 msgid "Save changes in currently selected images"
 msgstr "বৰ্ত্তমানে নিৰ্বাচিত ছবিৰ সলনিসমূহ সংৰক্ষণ কৰক"
 
-#: src/eoc-window.c:3759
+#: src/eoc-window.c:3798
 msgid "Open _with"
 msgstr "ইয়াৰ সহায়ত খোলক (_w)"
 
-#: src/eoc-window.c:3760
+#: src/eoc-window.c:3799
 msgid "Open the selected image with a different application"
 msgstr "নিৰ্বাচিত ছবিক অন্য এটা অনুপ্ৰয়োগেৰে খোলক"
 
-#: src/eoc-window.c:3762
+#: src/eoc-window.c:3801
 msgid "Save _As…"
 msgstr ""
 
-#: src/eoc-window.c:3763
+#: src/eoc-window.c:3802
 msgid "Save the selected images with a different name"
 msgstr "নিৰ্বাচিত ছবিক অন্য নামেৰে ৰক্ষা কৰক"
 
-#: src/eoc-window.c:3765
+#: src/eoc-window.c:3804
 msgid "Open Containing _Folder"
 msgstr ""
 
-#: src/eoc-window.c:3766
+#: src/eoc-window.c:3805
 msgid "Show the folder which contains this file in the file manager"
 msgstr ""
 
-#: src/eoc-window.c:3768
+#: src/eoc-window.c:3807
 msgid "_Print…"
 msgstr ""
 
-#: src/eoc-window.c:3769
+#: src/eoc-window.c:3808
 msgid "Print the selected image"
 msgstr "নিৰ্বাচিত ছবি মূদ্ৰণ কৰক"
 
-#: src/eoc-window.c:3771
+#: src/eoc-window.c:3810
 msgid "Prope_rties"
 msgstr "গুণসমূহ (_r)"
 
-#: src/eoc-window.c:3772
+#: src/eoc-window.c:3811
 msgid "Show the properties and metadata of the selected image"
 msgstr "নিৰ্বাচিত ছবিৰ গুণসমূহ আৰু মিটাডাটা দেখাওক"
 
-#: src/eoc-window.c:3774
+#: src/eoc-window.c:3813
 msgid "_Undo"
 msgstr "পূৰ্বাবস্থা (_U)"
 
-#: src/eoc-window.c:3775
+#: src/eoc-window.c:3814
 msgid "Undo the last change in the image"
 msgstr "ছবিক পূৰ্বাৱস্থালৈ নিয়ক"
 
-#: src/eoc-window.c:3777
+#: src/eoc-window.c:3816
 msgid "Flip _Horizontal"
 msgstr "অনুভূমিক দিশত ওলোটাওক (_H)"
 
-#: src/eoc-window.c:3778
+#: src/eoc-window.c:3817
 msgid "Mirror the image horizontally"
 msgstr "ছবিৰ অনুভূমিক ভাবে মিৰৰ কৰক"
 
-#: src/eoc-window.c:3780
+#: src/eoc-window.c:3819
 msgid "Flip _Vertical"
 msgstr "উলম্বভাবে ওলোটাওক (_V)"
 
-#: src/eoc-window.c:3781
+#: src/eoc-window.c:3820
 msgid "Mirror the image vertically"
 msgstr "ছবিক উলম্বভাবে মিৰৰ কৰক"
 
-#: src/eoc-window.c:3783
+#: src/eoc-window.c:3822
 msgid "_Rotate Clockwise"
 msgstr "ঘড়িৰ কাঁটাৰ দিশত ঘূৰাওক (_R)"
 
-#: src/eoc-window.c:3784
+#: src/eoc-window.c:3823
 msgid "Rotate the image 90 degrees to the right"
 msgstr "ছবিক ৯০ ডিগ্ৰী সোঁফালে ঘূৰাওক"
 
-#: src/eoc-window.c:3786
+#: src/eoc-window.c:3825
 msgid "Rotate Counterc_lockwise"
 msgstr "ঘড়িৰ কাঁটাৰ বিপৰীত দিশত ঘূৰাওক (_l)"
 
-#: src/eoc-window.c:3787
+#: src/eoc-window.c:3826
 msgid "Rotate the image 90 degrees to the left"
 msgstr "ছবিক ৯০ ডিগ্ৰী বাওঁফালে ঘূৰাওক"
 
-#: src/eoc-window.c:3789
+#: src/eoc-window.c:3828
 msgid "Set as _Desktop Background"
 msgstr "ডেষ্কট'পৰ পটভূমি ৰূপে নিৰ্ধাৰণ কৰা হ'ব (_D)"
 
-#: src/eoc-window.c:3790
+#: src/eoc-window.c:3829
 msgid "Set the selected image as the desktop background"
 msgstr "নিৰ্বাচিত ছবি ডেস্কট'পৰ পটভূমি ৰূপে ধাৰ্য কৰক"
 
-#: src/eoc-window.c:3793
+#: src/eoc-window.c:3832
 msgid "Move the selected image to the trash folder"
 msgstr "নিৰ্বাচিত ছবিক আবৰ্জনাৰ বাকচলৈ নিয়ক"
 
-#: src/eoc-window.c:3795
+#: src/eoc-window.c:3834
 msgid "_Copy"
 msgstr "নকল কৰক (_C)"
 
-#: src/eoc-window.c:3796
+#: src/eoc-window.c:3835
 msgid "Copy the selected image to the clipboard"
 msgstr ""
 
-#: src/eoc-window.c:3798 src/eoc-window.c:3810 src/eoc-window.c:3813
+#: src/eoc-window.c:3837 src/eoc-window.c:3849 src/eoc-window.c:3852
 msgid "_Zoom In"
 msgstr "ডাঙৰ কৰি প্ৰদৰ্শন (_Z)"
 
-#: src/eoc-window.c:3799 src/eoc-window.c:3811
+#: src/eoc-window.c:3838 src/eoc-window.c:3850
 msgid "Enlarge the image"
 msgstr "ছবি ডাঙৰ কৰক"
 
-#: src/eoc-window.c:3801 src/eoc-window.c:3816
+#: src/eoc-window.c:3840 src/eoc-window.c:3855
 msgid "Zoom _Out"
 msgstr "সৰু কৰি প্ৰদৰ্শন (_O)"
 
-#: src/eoc-window.c:3802 src/eoc-window.c:3814 src/eoc-window.c:3817
+#: src/eoc-window.c:3841 src/eoc-window.c:3853 src/eoc-window.c:3856
 msgid "Shrink the image"
 msgstr "ছবি সৰু কৰক"
 
-#: src/eoc-window.c:3804
+#: src/eoc-window.c:3843
 msgid "_Normal Size"
 msgstr "স্বাভাবিক মাপ (_N)"
 
-#: src/eoc-window.c:3805
+#: src/eoc-window.c:3844
 msgid "Show the image at its normal size"
 msgstr "স্বাভাবিক মাপত ছবি দেখুৱাওক"
 
-#: src/eoc-window.c:3807
+#: src/eoc-window.c:3846
 msgid "_Best Fit"
 msgstr "সৰ্বোত্তম মাপ (_B)"
 
-#: src/eoc-window.c:3808
+#: src/eoc-window.c:3847
 msgid "Fit the image to the window"
 msgstr "ছবিক সংযোগক্ষেত্ৰত খাপ খোৱাওক"
 
-#: src/eoc-window.c:3825
+#: src/eoc-window.c:3864
 msgid "_Fullscreen"
 msgstr "সম্পূৰ্ণ পৰ্দাজুড়ে প্ৰদৰ্শন (_F)"
 
-#: src/eoc-window.c:3826
+#: src/eoc-window.c:3865
 msgid "Show the current image in fullscreen mode"
 msgstr "বৰ্ত্তমানৰ ছবিক সম্পূৰ্ণ পৰ্দ্দাত দেখুৱাওক"
 
-#: src/eoc-window.c:3828
+#: src/eoc-window.c:3867
 msgid "Pause Slideshow"
 msgstr ""
 
-#: src/eoc-window.c:3829
+#: src/eoc-window.c:3868
 msgid "Pause or resume the slideshow"
 msgstr ""
 
-#: src/eoc-window.c:3834 src/eoc-window.c:3849
+#: src/eoc-window.c:3873 src/eoc-window.c:3888
 msgid "_Previous Image"
 msgstr "আগৰ ছবি (_P)"
 
-#: src/eoc-window.c:3835
+#: src/eoc-window.c:3874
 msgid "Go to the previous image of the collection"
 msgstr "সংকলনৰ আগৰ ছবিলৈ যাওক"
 
-#: src/eoc-window.c:3837
+#: src/eoc-window.c:3876
 msgid "_Next Image"
 msgstr "পিছৰ ছবি (_N)"
 
-#: src/eoc-window.c:3838
+#: src/eoc-window.c:3877
 msgid "Go to the next image of the collection"
 msgstr "সংকলনৰ পিছৰ ছবিলৈ যাওক"
 
-#: src/eoc-window.c:3840 src/eoc-window.c:3852
+#: src/eoc-window.c:3879 src/eoc-window.c:3891
 msgid "_First Image"
 msgstr "প্ৰথম ছবি (_F)"
 
-#: src/eoc-window.c:3841
+#: src/eoc-window.c:3880
 msgid "Go to the first image of the collection"
 msgstr "সংকলনৰ প্ৰথম ছবিলৈ যাওক"
 
-#: src/eoc-window.c:3843 src/eoc-window.c:3855
+#: src/eoc-window.c:3882 src/eoc-window.c:3894
 msgid "_Last Image"
 msgstr "সৰ্বশেষ ছবি (_L)"
 
-#: src/eoc-window.c:3844
+#: src/eoc-window.c:3883
 msgid "Go to the last image of the collection"
 msgstr "সংকলনৰ সৰ্বশেষ ছবিলৈ যাওক"
 
-#: src/eoc-window.c:3846
+#: src/eoc-window.c:3885
 msgid "_Random Image"
 msgstr ""
 
-#: src/eoc-window.c:3847
+#: src/eoc-window.c:3886
 msgid "Go to a random image of the collection"
 msgstr ""
 
-#: src/eoc-window.c:3861
+#: src/eoc-window.c:3900
 msgid "S_lideshow"
 msgstr ""
 
-#: src/eoc-window.c:3862
+#: src/eoc-window.c:3901
 msgid "Start a slideshow view of the images"
 msgstr "ছবিসমূহৰ এটা স্লাইড-ছো প্ৰদৰ্শন আৰম্ভ কৰক"
 
-#: src/eoc-window.c:3929
+#: src/eoc-window.c:3969
 msgid "Previous"
 msgstr "পূৰ্বাবস্থা"
 
-#: src/eoc-window.c:3933
+#: src/eoc-window.c:3973
 msgid "Next"
 msgstr "পৰবৰ্তী"
 
-#: src/eoc-window.c:3937
+#: src/eoc-window.c:3977
 msgid "Right"
 msgstr "সোঁফালে"
 
-#: src/eoc-window.c:3940
+#: src/eoc-window.c:3980
 msgid "Left"
 msgstr "বাওঁফালে"
 
-#: src/eoc-window.c:3946
+#: src/eoc-window.c:3986
 msgid "In"
 msgstr "ভিতৰত"
 
-#: src/eoc-window.c:3949
+#: src/eoc-window.c:3989
 msgid "Out"
 msgstr "বাহিৰত"
 
-#: src/eoc-window.c:3952
+#: src/eoc-window.c:3992
 msgid "Normal"
 msgstr "স্বাভাবিক"
 
-#: src/eoc-window.c:3955
+#: src/eoc-window.c:3995
 msgid "Fit"
 msgstr "সৰ্বোত্তম মাপ"
 
-#: src/eoc-window.c:3958
+#: src/eoc-window.c:3998
 msgid "Collection"
 msgstr "সংগ্ৰহ"
 
-#: src/eoc-window.c:3961
+#: src/eoc-window.c:4001
 msgctxt "action (to trash)"
 msgid "Trash"
 msgstr "আবৰ্জনাৰ বাক্স"
 
-#: src/eoc-window.c:4307
+#: src/eoc-window.c:4351
 #, c-format
 msgid "Edit the current image using %s"
 msgstr ""
 
-#: src/eoc-window.c:4309
+#: src/eoc-window.c:4353
 msgid "Edit Image"
 msgstr ""
 
-#: src/eoc-window.c:4524
+#: src/eoc-window.c:4568
 msgid "Properties"
 msgstr "বৈশিষ্ট্যাবলী"
 

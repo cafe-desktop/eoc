@@ -8,13 +8,13 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: eoc 1.25.0\n"
+"Project-Id-Version: eoc 2.0.0\n"
 "Report-Msgid-Bugs-To: http://www.cafe-desktop.org\n"
-"POT-Creation-Date: 2023-06-09 11:11+0200\n"
+"POT-Creation-Date: 2025-07-18 08:35+0200\n"
 "PO-Revision-Date: 2020-02-14 12:07+0000\n"
 "Last-Translator: 趙惟倫 <bluebat@member.fsf.org>, 2020\n"
-"Language-Team: Chinese (Mandarin) (https://www.transifex.com/cafe/"
-"teams/13566/cmn/)\n"
+"Language-Team: Chinese (Mandarin) (https://www.transifex.com/cafe/teams/"
+"13566/cmn/)\n"
 "Language: cmn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -54,7 +54,7 @@ msgstr "移除選取的工具列"
 msgid "Separator"
 msgstr "分隔線"
 
-#: data/eoc.appdata.xml.in:6 src/eoc-window.c:2592
+#: data/eoc.appdata.xml.in:6 src/eoc-window.c:2607
 msgid "Eye of CAFE"
 msgstr "Eye of CAFE"
 
@@ -69,16 +69,16 @@ msgid ""
 "images in the directory the image was loaded from."
 msgstr ""
 
-#: data/eoc.desktop.in.in:3 src/main.c:65 src/main.c:166
+#: data/eoc.desktop.in.in:2 src/main.c:65 src/main.c:166
 msgid "Eye of CAFE Image Viewer"
 msgstr "Eye of CAFE 圖片檢視器"
 
-#: data/eoc.desktop.in.in:4
+#: data/eoc.desktop.in.in:3
 msgid "Browse and rotate images"
 msgstr "瀏覽及更改圖片的方向"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/eoc.desktop.in.in:14
+#: data/eoc.desktop.in.in:13
 msgid "image;viewer;JPEG;PNG;TIFF;SVG;CAFE;photos;browse;thumbnails;rotate;"
 msgstr ""
 
@@ -612,12 +612,12 @@ msgstr ""
 "使用中外掛程式的列表。這裡沒有包含這些外掛程式的「位置」。請參閱 .eoc-plugin "
 "檔案來取得這些外掛程式的「位置」資訊。"
 
-#: plugins/fullscreen/fullscreen.plugin.desktop.in:5
+#: plugins/fullscreen/fullscreen.plugin.desktop.in:4
 msgid "Fullscreen with double-click"
 msgstr "雙擊全螢幕模式"
 
 #: plugins/reload/eoc-reload-plugin.c:45
-#: plugins/reload/reload.plugin.desktop.in:5
+#: plugins/reload/reload.plugin.desktop.in:4
 msgid "Reload Image"
 msgstr "重新載入圖片"
 
@@ -625,7 +625,7 @@ msgstr "重新載入圖片"
 msgid "Reload current image"
 msgstr "重新載入目前的圖片"
 
-#: plugins/statusbar-date/statusbar-date.plugin.desktop.in:5
+#: plugins/statusbar-date/statusbar-date.plugin.desktop.in:4
 msgid "Date in statusbar"
 msgstr "狀態列中的日期"
 
@@ -646,96 +646,96 @@ msgstr "如果您不儲存它們，您的變更就會消失。"
 msgid "Save changes to image \"%s\" before closing?"
 msgstr "關閉前要儲存修改到圖片「%s」嗎？"
 
-#: src/eoc-close-confirmation-dialog.c:597
+#: src/eoc-close-confirmation-dialog.c:599
 #, c-format
 msgid "There is %d image with unsaved changes. Save changes before closing?"
 msgid_plural ""
 "There are %d images with unsaved changes. Save changes before closing?"
 msgstr[0] ""
 
-#: src/eoc-close-confirmation-dialog.c:614
+#: src/eoc-close-confirmation-dialog.c:616
 msgid "S_elect the images you want to save:"
 msgstr "請選擇要儲存的圖片(_E):"
 
-#: src/eoc-close-confirmation-dialog.c:633
+#: src/eoc-close-confirmation-dialog.c:635
 msgid "If you don't save, all your changes will be lost."
 msgstr "如果不儲存，您所有的變更將會消失。"
 
-#: src/eoc-file-chooser.c:121
+#: src/eoc-file-chooser.c:123
 msgid "File format is unknown or unsupported"
 msgstr "檔案格式不明或不支援"
 
-#: src/eoc-file-chooser.c:126
+#: src/eoc-file-chooser.c:128
 msgid ""
 "Eye of CAFE could not determine a supported writable file format based on "
 "the filename."
 msgstr "Eye of CAFE 無法依據此檔案名稱來判斷是否為可寫入的檔案格式。"
 
-#: src/eoc-file-chooser.c:127
+#: src/eoc-file-chooser.c:129
 msgid "Please try a different file extension like .png or .jpg."
 msgstr "請嘗試不同的延伸檔名如 .png 或 .jpg。"
 
-#: src/eoc-file-chooser.c:159
+#: src/eoc-file-chooser.c:161
 msgid "All Files"
 msgstr "所有檔案"
 
-#: src/eoc-file-chooser.c:164
+#: src/eoc-file-chooser.c:166
 msgid "All Images"
 msgstr "所有圖片"
 
-#: src/eoc-file-chooser.c:185
+#: src/eoc-file-chooser.c:187
 #, c-format
 msgid "%s (*.%s)"
 msgstr "%s (*.%s)"
 
-#: src/eoc-file-chooser.c:281 src/eoc-properties-dialog.c:163
-#: src/eoc-properties-dialog.c:165 src/eoc-thumb-view.c:516
+#: src/eoc-file-chooser.c:283 src/eoc-properties-dialog.c:163
+#: src/eoc-properties-dialog.c:165 src/eoc-thumb-view.c:517
 msgid "pixel"
 msgid_plural "pixels"
 msgstr[0] ""
 
-#: src/eoc-file-chooser.c:451
+#: src/eoc-file-chooser.c:454
 msgid "Open Image"
 msgstr "開啟圖片"
 
-#: src/eoc-file-chooser.c:459
+#: src/eoc-file-chooser.c:462
 msgid "Save Image"
 msgstr "儲存圖片"
 
-#: src/eoc-file-chooser.c:467 src/eoc-window.c:3943
+#: src/eoc-file-chooser.c:470 src/eoc-window.c:3983
 msgid "Open Folder"
 msgstr "開啟資料夾"
 
-#: src/eoc-image.c:552
+#: src/eoc-image.c:554
 msgid "Transformation on unloaded image."
 msgstr "改變未載入的圖片。"
 
-#: src/eoc-image.c:580
+#: src/eoc-image.c:582
 msgid "Transformation failed."
 msgstr "轉換失敗。"
 
-#: src/eoc-image.c:1054
+#: src/eoc-image.c:1056
 msgid "EXIF not supported for this file format."
 msgstr "本檔案格式不支 EXIF。"
 
-#: src/eoc-image.c:1203
+#: src/eoc-image.c:1205
 msgid "Image loading failed."
 msgstr "載入圖片失敗。"
 
-#: src/eoc-image.c:1732 src/eoc-image.c:1834
+#: src/eoc-image.c:1734 src/eoc-image.c:1836
 msgid "No image loaded."
 msgstr "沒有載入圖片。"
 
-#: src/eoc-image.c:1742 src/eoc-image.c:1846
+#: src/eoc-image.c:1744 src/eoc-image.c:1848
 msgid "Temporary file creation failed."
 msgstr "建立暫存檔失敗。"
 
-#: src/eoc-image-jpeg.c:384
+#: src/eoc-image-jpeg.c:390
 #, c-format
 msgid "Couldn't create temporary file for saving: %s"
 msgstr "無法建立暫存檔來儲存： %s"
 
-#: src/eoc-image-jpeg.c:395
+#: src/eoc-image-jpeg.c:401
 msgid "Couldn't allocate memory for loading JPEG file"
 msgstr "無法分配記憶體來載入 JPEG 檔案"
 
@@ -938,7 +938,7 @@ msgstr "英吋"
 msgid "Preview"
 msgstr "預覽"
 
-#: src/eoc-save-as-dialog-helper.c:161
+#: src/eoc-save-as-dialog-helper.c:165
 msgid "as is"
 msgstr "原來格式"
 
@@ -957,11 +957,11 @@ msgstr "原來格式"
 msgid "%d / %d"
 msgstr "%d / %d"
 
-#: src/eoc-thumb-view.c:544
+#: src/eoc-thumb-view.c:545
 msgid "Taken on"
 msgstr "拍攝日"
 
-#: src/eoc-uri-converter.c:986
+#: src/eoc-uri-converter.c:989
 msgid "At least two file names are equal."
 msgstr "最少有兩個檔案的名稱相同。"
 
@@ -989,7 +989,7 @@ msgstr[0] ""
 msgid "_Reload"
 msgstr "重新載入(_R)"
 
-#: src/eoc-window.c:822 src/eoc-window.c:2745
+#: src/eoc-window.c:822 src/eoc-window.c:2762
 msgctxt "MessageArea"
 msgid "Hi_de"
 msgstr "隱藏(_D)"
@@ -1013,25 +1013,25 @@ msgstr "使用「%s」開啟選定的圖片"
 #. * - the original filename
 #. * - the current image's position in the queue
 #. * - the total number of images queued for saving
-#: src/eoc-window.c:1154
+#: src/eoc-window.c:1156
 #, c-format
 msgid "Saving image \"%s\" (%u/%u)"
 msgstr "儲存圖片「%s」(%u/%u)"
 
-#: src/eoc-window.c:1513
+#: src/eoc-window.c:1517
 #, c-format
 msgid "Opening image \"%s\""
 msgstr "正在開啟圖片「%s」"
 
-#: src/eoc-window.c:1869
+#: src/eoc-window.c:1878
 msgid "Leave Fullscreen"
 msgstr "離開全螢幕"
 
-#: src/eoc-window.c:2002
+#: src/eoc-window.c:2011
 msgid "Viewing a slideshow"
 msgstr ""
 
-#: src/eoc-window.c:2215
+#: src/eoc-window.c:2224
 #, c-format
 msgid ""
 "Error printing file:\n"
@@ -1040,15 +1040,15 @@ msgstr ""
 "列印檔案時發生錯誤：\n"
 "%s"
 
-#: src/eoc-window.c:2478
+#: src/eoc-window.c:2491
 msgid "Toolbar Editor"
 msgstr "工具列編輯器"
 
-#: src/eoc-window.c:2481
+#: src/eoc-window.c:2494
 msgid "_Reset to Default"
 msgstr "重設為預設值(_R)"
 
-#: src/eoc-window.c:2546
+#: src/eoc-window.c:2561
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
 "under the terms of the GNU General Public License as published by the Free "
@@ -1059,7 +1059,7 @@ msgstr ""
 "本程式再為散布與／或修改；無論您依據的是本授權的第二版或（您自行選擇的）任一"
 "日後發行的版本。\n"
 
-#: src/eoc-window.c:2550
+#: src/eoc-window.c:2565
 msgid ""
 "This program is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
@@ -1069,45 +1069,45 @@ msgstr ""
 "本程式係基於使用目的而加以散布，然而不負任何擔保責任；亦無對適售性或特定目的"
 "適用性所為的默示性擔保。詳情請參照 GNU 通用公共授權。\n"
 
-#: src/eoc-window.c:2554
+#: src/eoc-window.c:2569
 msgid ""
 "You should have received a copy of the GNU General Public License along with "
 "this program; if not, write to the Free Software Foundation, Inc., 51 "
 "Franklin St, Fifth Floor, Boston, MA 02110-1301, USA."
 msgstr ""
 
-#: src/eoc-window.c:2593
+#: src/eoc-window.c:2608
 msgid "About Eye of CAFE"
 msgstr ""
 
-#: src/eoc-window.c:2595
+#: src/eoc-window.c:2610
 msgid ""
 "Copyright © 2000-2010 Free Software Foundation, Inc.\n"
 "Copyright © 2011 Perberos\n"
 "Copyright © 2012-2020 MATE developers\n"
-"Copyright © 2023 Pablo Barciela"
+"Copyright © 2023-2025 Pablo Barciela"
 msgstr ""
 
-#: src/eoc-window.c:2599
+#: src/eoc-window.c:2614
 msgid "The CAFE image viewer."
 msgstr "CAFE 圖片瀏覽程式。"
 
-#: src/eoc-window.c:2602
+#: src/eoc-window.c:2617
 msgid "translator-credits"
 msgstr ""
 "Woodman Tuen <wmtuen@gmail.com>, 2005-06\n"
 "Abel Cheung <abel@oaka.org>, 2003-04\n"
 "趙惟倫 <bluebat@member.fsf.org>, 2013"
 
-#: src/eoc-window.c:2693 src/eoc-window.c:2708
+#: src/eoc-window.c:2710 src/eoc-window.c:2725
 msgid "Error launching appearance preferences dialog: "
 msgstr ""
 
-#: src/eoc-window.c:2743
+#: src/eoc-window.c:2760
 msgid "_Open Background Preferences"
 msgstr "開啟背景偏好設定(_O)"
 
-#: src/eoc-window.c:2759
+#: src/eoc-window.c:2776
 #, c-format
 msgid ""
 "The image \"%s\" has been set as Desktop Background.\n"
@@ -1116,25 +1116,25 @@ msgstr ""
 "圖片「%s」已被設為桌面背景。\n"
 "您是否想要修改它的外觀？"
 
-#: src/eoc-window.c:3192
+#: src/eoc-window.c:3220
 msgid "Saving image locally…"
 msgstr "將圖片儲存到本地端…"
 
-#: src/eoc-window.c:3272
+#: src/eoc-window.c:3300
 #, c-format
 msgid ""
 "Are you sure you want to move\n"
 "\"%s\" to the trash?"
 msgstr "確定要將“%s”移至回收筒嗎？"
 
-#: src/eoc-window.c:3275
+#: src/eoc-window.c:3303
 #, c-format
 msgid ""
 "A trash for \"%s\" couldn't be found. Do you want to remove this image "
 "permanently?"
 msgstr "找不到「%s」的回收筒。是否要永久移除這個圖片？"
 
-#: src/eoc-window.c:3280
+#: src/eoc-window.c:3308
 #, c-format
 msgid ""
 "Are you sure you want to move\n"
@@ -1144,393 +1144,393 @@ msgid_plural ""
 "the %d selected images to the trash?"
 msgstr[0] ""
 
-#: src/eoc-window.c:3285
+#: src/eoc-window.c:3313
 msgid ""
 "Some of the selected images can't be moved to the trash and will be removed "
 "permanently. Are you sure you want to proceed?"
 msgstr "有部分被選取的圖片不能移至回收筒，因而將被直接刪除。您確定要繼續嗎？"
 
-#: src/eoc-window.c:3302 src/eoc-window.c:3792 src/eoc-window.c:3819
+#: src/eoc-window.c:3330 src/eoc-window.c:3831 src/eoc-window.c:3858
 msgid "Move to _Trash"
 msgstr "移至回收筒(_T)"
 
-#: src/eoc-window.c:3304
+#: src/eoc-window.c:3332
 msgid "_Do not ask again during this session"
 msgstr "在這個作業階段中不要再詢問(_D)"
 
-#: src/eoc-window.c:3349 src/eoc-window.c:3363
+#: src/eoc-window.c:3377 src/eoc-window.c:3391
 msgid "Couldn't access trash."
 msgstr "無法存取回收筒。"
 
-#: src/eoc-window.c:3371
+#: src/eoc-window.c:3399
 msgid "Couldn't delete file"
 msgstr "無法刪除檔案"
 
-#: src/eoc-window.c:3471
+#: src/eoc-window.c:3500
 #, c-format
 msgid "Error on deleting image %s"
 msgstr "當刪除圖片 %s 時發生錯誤"
 
-#: src/eoc-window.c:3713
+#: src/eoc-window.c:3752
 msgid "_Image"
 msgstr "圖片(_I)"
 
-#: src/eoc-window.c:3714
+#: src/eoc-window.c:3753
 msgid "_Edit"
 msgstr "編輯(_E)"
 
-#: src/eoc-window.c:3715
+#: src/eoc-window.c:3754
 msgid "_View"
 msgstr "檢視(_V)"
 
-#: src/eoc-window.c:3716
+#: src/eoc-window.c:3755
 msgid "_Go"
 msgstr "前往(_G)"
 
-#: src/eoc-window.c:3717
+#: src/eoc-window.c:3756
 msgid "_Tools"
 msgstr "工具(_T)"
 
-#: src/eoc-window.c:3718
+#: src/eoc-window.c:3757
 msgid "_Help"
 msgstr "求助(_H)"
 
-#: src/eoc-window.c:3720
+#: src/eoc-window.c:3759
 msgid "_Open…"
 msgstr "開啟(_O)…"
 
-#: src/eoc-window.c:3721
+#: src/eoc-window.c:3760
 msgid "Open a file"
 msgstr "開啟檔案"
 
-#: src/eoc-window.c:3723
+#: src/eoc-window.c:3762
 msgid "_Close"
 msgstr "關閉(_C)"
 
-#: src/eoc-window.c:3724
+#: src/eoc-window.c:3763
 msgid "Close window"
 msgstr "關閉視窗"
 
-#: src/eoc-window.c:3726
+#: src/eoc-window.c:3765
 msgid "T_oolbar"
 msgstr "工具列(_O)"
 
-#: src/eoc-window.c:3727
+#: src/eoc-window.c:3766
 msgid "Edit the application toolbar"
 msgstr "編輯應用程式工具列"
 
-#: src/eoc-window.c:3729
+#: src/eoc-window.c:3768
 msgid "Prefere_nces"
 msgstr "偏好設定(_N)"
 
-#: src/eoc-window.c:3730
+#: src/eoc-window.c:3769
 msgid "Preferences for Eye of CAFE"
 msgstr "Eye of CAFE 偏好設定"
 
-#: src/eoc-window.c:3732
+#: src/eoc-window.c:3771
 msgid "_Contents"
 msgstr "內容(_C)"
 
-#: src/eoc-window.c:3733
+#: src/eoc-window.c:3772
 msgid "Help on this application"
 msgstr "本應用程式的說明文件"
 
-#: src/eoc-window.c:3735
+#: src/eoc-window.c:3774
 msgid "_About"
 msgstr "關於(_A)"
 
-#: src/eoc-window.c:3736
+#: src/eoc-window.c:3775
 msgid "About this application"
 msgstr "關於此程式"
 
-#: src/eoc-window.c:3741
+#: src/eoc-window.c:3780
 msgid "_Toolbar"
 msgstr "工具列(_T)"
 
-#: src/eoc-window.c:3742
+#: src/eoc-window.c:3781
 msgid "Changes the visibility of the toolbar in the current window"
 msgstr "在目前的視窗中切換是否顯示工具列"
 
-#: src/eoc-window.c:3744
+#: src/eoc-window.c:3783
 msgid "_Statusbar"
 msgstr "狀態列(_S)"
 
-#: src/eoc-window.c:3745
+#: src/eoc-window.c:3784
 msgid "Changes the visibility of the statusbar in the current window"
 msgstr "在目前的視窗中切換是否顯示狀態列"
 
-#: src/eoc-window.c:3747
+#: src/eoc-window.c:3786
 msgid "_Image Collection"
 msgstr "圖片集(_I)"
 
-#: src/eoc-window.c:3748
+#: src/eoc-window.c:3787
 msgid ""
 "Changes the visibility of the image collection pane in the current window"
 msgstr "在目前的視窗中切換是否顯示資訊窗格"
 
-#: src/eoc-window.c:3750
+#: src/eoc-window.c:3789
 msgid "Side _Pane"
 msgstr "側邊窗格(_P)"
 
-#: src/eoc-window.c:3751
+#: src/eoc-window.c:3790
 msgid "Changes the visibility of the side pane in the current window"
 msgstr "在目前的視窗中切換是否顯示側邊窗格"
 
-#: src/eoc-window.c:3756
+#: src/eoc-window.c:3795
 msgid "_Save"
 msgstr "儲存(_S)"
 
-#: src/eoc-window.c:3757
+#: src/eoc-window.c:3796
 msgid "Save changes in currently selected images"
 msgstr "儲存對目前選定圖片所做的變更"
 
-#: src/eoc-window.c:3759
+#: src/eoc-window.c:3798
 msgid "Open _with"
 msgstr "以此開啟(_W)"
 
-#: src/eoc-window.c:3760
+#: src/eoc-window.c:3799
 msgid "Open the selected image with a different application"
 msgstr "使用不同的應用程式開啟選定的圖片"
 
-#: src/eoc-window.c:3762
+#: src/eoc-window.c:3801
 msgid "Save _As…"
 msgstr "儲存為(_A)…"
 
-#: src/eoc-window.c:3763
+#: src/eoc-window.c:3802
 msgid "Save the selected images with a different name"
 msgstr "將選定的圖片儲存為不同的名稱"
 
-#: src/eoc-window.c:3765
+#: src/eoc-window.c:3804
 msgid "Open Containing _Folder"
 msgstr ""
 
-#: src/eoc-window.c:3766
+#: src/eoc-window.c:3805
 msgid "Show the folder which contains this file in the file manager"
 msgstr ""
 
-#: src/eoc-window.c:3768
+#: src/eoc-window.c:3807
 msgid "_Print…"
 msgstr "列印(_P)…"
 
-#: src/eoc-window.c:3769
+#: src/eoc-window.c:3808
 msgid "Print the selected image"
 msgstr "列印選定的圖片"
 
-#: src/eoc-window.c:3771
+#: src/eoc-window.c:3810
 msgid "Prope_rties"
 msgstr "屬性(_R)"
 
-#: src/eoc-window.c:3772
+#: src/eoc-window.c:3811
 msgid "Show the properties and metadata of the selected image"
 msgstr "顯示選定圖片的屬性和中繼資料"
 
-#: src/eoc-window.c:3774
+#: src/eoc-window.c:3813
 msgid "_Undo"
 msgstr "復原(_U)"
 
-#: src/eoc-window.c:3775
+#: src/eoc-window.c:3814
 msgid "Undo the last change in the image"
 msgstr "復原上次對該圖片所做的變更"
 
-#: src/eoc-window.c:3777
+#: src/eoc-window.c:3816
 msgid "Flip _Horizontal"
 msgstr "左右相反(_H)"
 
-#: src/eoc-window.c:3778
+#: src/eoc-window.c:3817
 msgid "Mirror the image horizontally"
 msgstr "水平鏡射該圖片"
 
-#: src/eoc-window.c:3780
+#: src/eoc-window.c:3819
 msgid "Flip _Vertical"
 msgstr "上下顛倒(_V)"
 
-#: src/eoc-window.c:3781
+#: src/eoc-window.c:3820
 msgid "Mirror the image vertically"
 msgstr "垂直鏡射該圖片"
 
-#: src/eoc-window.c:3783
+#: src/eoc-window.c:3822
 msgid "_Rotate Clockwise"
 msgstr "順時針方向旋轉(_R)"
 
-#: src/eoc-window.c:3784
+#: src/eoc-window.c:3823
 msgid "Rotate the image 90 degrees to the right"
 msgstr "向右 90 度旋轉該圖片"
 
-#: src/eoc-window.c:3786
+#: src/eoc-window.c:3825
 msgid "Rotate Counterc_lockwise"
 msgstr "逆時針方向旋轉(_L)"
 
-#: src/eoc-window.c:3787
+#: src/eoc-window.c:3826
 msgid "Rotate the image 90 degrees to the left"
 msgstr "向左 90 度旋轉該圖片"
 
-#: src/eoc-window.c:3789
+#: src/eoc-window.c:3828
 msgid "Set as _Desktop Background"
 msgstr "設為桌面背景(_D)"
 
-#: src/eoc-window.c:3790
+#: src/eoc-window.c:3829
 msgid "Set the selected image as the desktop background"
 msgstr "將選取的圖片設為桌布"
 
-#: src/eoc-window.c:3793
+#: src/eoc-window.c:3832
 msgid "Move the selected image to the trash folder"
 msgstr "將選定的圖片移至回收筒"
 
-#: src/eoc-window.c:3795
+#: src/eoc-window.c:3834
 msgid "_Copy"
 msgstr "拷貝(_C)"
 
-#: src/eoc-window.c:3796
+#: src/eoc-window.c:3835
 msgid "Copy the selected image to the clipboard"
 msgstr ""
 
-#: src/eoc-window.c:3798 src/eoc-window.c:3810 src/eoc-window.c:3813
+#: src/eoc-window.c:3837 src/eoc-window.c:3849 src/eoc-window.c:3852
 msgid "_Zoom In"
 msgstr "拉近(_Z)"
 
-#: src/eoc-window.c:3799 src/eoc-window.c:3811
+#: src/eoc-window.c:3838 src/eoc-window.c:3850
 msgid "Enlarge the image"
 msgstr "放大該圖片"
 
-#: src/eoc-window.c:3801 src/eoc-window.c:3816
+#: src/eoc-window.c:3840 src/eoc-window.c:3855
 msgid "Zoom _Out"
 msgstr "拉遠(_O)"
 
-#: src/eoc-window.c:3802 src/eoc-window.c:3814 src/eoc-window.c:3817
+#: src/eoc-window.c:3841 src/eoc-window.c:3853 src/eoc-window.c:3856
 msgid "Shrink the image"
 msgstr "縮小該圖片"
 
-#: src/eoc-window.c:3804
+#: src/eoc-window.c:3843
 msgid "_Normal Size"
 msgstr "正常大小(_N)"
 
-#: src/eoc-window.c:3805
+#: src/eoc-window.c:3844
 msgid "Show the image at its normal size"
 msgstr "以圖片的原始尺寸顯示"
 
-#: src/eoc-window.c:3807
+#: src/eoc-window.c:3846
 msgid "_Best Fit"
 msgstr "最適大小(_B)"
 
-#: src/eoc-window.c:3808
+#: src/eoc-window.c:3847
 msgid "Fit the image to the window"
 msgstr "圖片符合視窗尺寸"
 
-#: src/eoc-window.c:3825
+#: src/eoc-window.c:3864
 msgid "_Fullscreen"
 msgstr "全螢幕(_F)"
 
-#: src/eoc-window.c:3826
+#: src/eoc-window.c:3865
 msgid "Show the current image in fullscreen mode"
 msgstr "以全螢幕模式顯示目前的圖片"
 
-#: src/eoc-window.c:3828
+#: src/eoc-window.c:3867
 msgid "Pause Slideshow"
 msgstr "暫停投影片"
 
-#: src/eoc-window.c:3829
+#: src/eoc-window.c:3868
 msgid "Pause or resume the slideshow"
 msgstr "暫停或繼續播放投影片"
 
-#: src/eoc-window.c:3834 src/eoc-window.c:3849
+#: src/eoc-window.c:3873 src/eoc-window.c:3888
 msgid "_Previous Image"
 msgstr "上一幅圖片(_P)"
 
-#: src/eoc-window.c:3835
+#: src/eoc-window.c:3874
 msgid "Go to the previous image of the collection"
 msgstr "移至圖片集的上一幅圖片"
 
-#: src/eoc-window.c:3837
+#: src/eoc-window.c:3876
 msgid "_Next Image"
 msgstr "下一幅圖片(_N)"
 
-#: src/eoc-window.c:3838
+#: src/eoc-window.c:3877
 msgid "Go to the next image of the collection"
 msgstr "移至圖片集的下一張圖片"
 
-#: src/eoc-window.c:3840 src/eoc-window.c:3852
+#: src/eoc-window.c:3879 src/eoc-window.c:3891
 msgid "_First Image"
 msgstr "第一幅圖片(_F)"
 
-#: src/eoc-window.c:3841
+#: src/eoc-window.c:3880
 msgid "Go to the first image of the collection"
 msgstr "移至圖片集的第一張圖片"
 
-#: src/eoc-window.c:3843 src/eoc-window.c:3855
+#: src/eoc-window.c:3882 src/eoc-window.c:3894
 msgid "_Last Image"
 msgstr "最後一幅圖片(_L)"
 
-#: src/eoc-window.c:3844
+#: src/eoc-window.c:3883
 msgid "Go to the last image of the collection"
 msgstr "移至圖片集的最後一張圖片"
 
-#: src/eoc-window.c:3846
+#: src/eoc-window.c:3885
 msgid "_Random Image"
 msgstr "隨機圖片(_R)"
 
-#: src/eoc-window.c:3847
+#: src/eoc-window.c:3886
 msgid "Go to a random image of the collection"
 msgstr "移至圖片集的隨意圖片"
 
-#: src/eoc-window.c:3861
+#: src/eoc-window.c:3900
 msgid "S_lideshow"
 msgstr ""
 
-#: src/eoc-window.c:3862
+#: src/eoc-window.c:3901
 msgid "Start a slideshow view of the images"
 msgstr "以幻燈片檢視播放圖片"
 
-#: src/eoc-window.c:3929
+#: src/eoc-window.c:3969
 msgid "Previous"
 msgstr "上一頁"
 
-#: src/eoc-window.c:3933
+#: src/eoc-window.c:3973
 msgid "Next"
 msgstr "下一頁"
 
-#: src/eoc-window.c:3937
+#: src/eoc-window.c:3977
 msgid "Right"
 msgstr "右"
 
-#: src/eoc-window.c:3940
+#: src/eoc-window.c:3980
 msgid "Left"
 msgstr "左"
 
-#: src/eoc-window.c:3946
+#: src/eoc-window.c:3986
 msgid "In"
 msgstr "拉近"
 
-#: src/eoc-window.c:3949
+#: src/eoc-window.c:3989
 msgid "Out"
 msgstr "拉遠"
 
-#: src/eoc-window.c:3952
+#: src/eoc-window.c:3992
 msgid "Normal"
 msgstr "一般"
 
-#: src/eoc-window.c:3955
+#: src/eoc-window.c:3995
 msgid "Fit"
 msgstr "符合"
 
-#: src/eoc-window.c:3958
+#: src/eoc-window.c:3998
 msgid "Collection"
 msgstr "圖片集"
 
-#: src/eoc-window.c:3961
+#: src/eoc-window.c:4001
 msgctxt "action (to trash)"
 msgid "Trash"
 msgstr "回收筒"
 
-#: src/eoc-window.c:4307
+#: src/eoc-window.c:4351
 #, c-format
 msgid "Edit the current image using %s"
 msgstr ""
 
-#: src/eoc-window.c:4309
+#: src/eoc-window.c:4353
 msgid "Edit Image"
 msgstr ""
 
-#: src/eoc-window.c:4524
+#: src/eoc-window.c:4568
 msgid "Properties"
 msgstr "屬性"
 

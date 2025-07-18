@@ -9,9 +9,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: eoc 1.25.0\n"
+"Project-Id-Version: eoc 2.0.0\n"
 "Report-Msgid-Bugs-To: http://www.cafe-desktop.org\n"
-"POT-Creation-Date: 2023-06-09 11:11+0200\n"
+"POT-Creation-Date: 2025-07-18 08:35+0200\n"
 "PO-Revision-Date: 2020-02-14 12:07+0000\n"
 "Last-Translator: karthik holla <karthikholla87@gmail.com>, 2020\n"
 "Language-Team: Kannada (https://www.transifex.com/cafe/teams/13566/kn/)\n"
@@ -54,7 +54,7 @@ msgstr "ಆರಿಸಲಾದ ಉಪಕರಣ ಪಟ್ಟಿಯನ್ನು ತ
 msgid "Separator"
 msgstr "ವಿಭಜಕ"
 
-#: data/eoc.appdata.xml.in:6 src/eoc-window.c:2592
+#: data/eoc.appdata.xml.in:6 src/eoc-window.c:2607
 msgid "Eye of CAFE"
 msgstr "ಐ ಆಫ್  CAFE"
 
@@ -69,16 +69,16 @@ msgid ""
 "images in the directory the image was loaded from."
 msgstr ""
 
-#: data/eoc.desktop.in.in:3 src/main.c:65 src/main.c:166
+#: data/eoc.desktop.in.in:2 src/main.c:65 src/main.c:166
 msgid "Eye of CAFE Image Viewer"
 msgstr "ಐ ಆಫ್ CAFE ಚಿತ್ರ ವೀಕ್ಷಕ"
 
-#: data/eoc.desktop.in.in:4
+#: data/eoc.desktop.in.in:3
 msgid "Browse and rotate images"
 msgstr "ಚಿತ್ರಗಳನ್ನು ವೀಕ್ಷಿಸು ಹಾಗು ತಿರುಗಿಸು"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/eoc.desktop.in.in:14
+#: data/eoc.desktop.in.in:13
 msgid "image;viewer;JPEG;PNG;TIFF;SVG;CAFE;photos;browse;thumbnails;rotate;"
 msgstr ""
 
@@ -606,12 +606,12 @@ msgstr ""
 "ಸಕ್ರಿಯ ಪ್ಲಗ್‌ಇನ್‌ಗಳನ್ನು ಪಟ್ಟಿ. ಇದು ಸಕ್ರಿಯ ಪ್ಲಗ್‌ಇನ್‌ಗಳು ಇರುವ \"ಸ್ಥಳ\"ವನ್ನು ಹೊಂದಿಲ್ಲ. ನೀಡಲಾದ "
 "ಪ್ಲಗ್‌ಇನ್‌ ಇರುವ \"ಸ್ಥಳ\"ವನ್ನು ನೋಡಲು .eoc-plugin ಕಡತವನ್ನು ನೋಡಿ."
 
-#: plugins/fullscreen/fullscreen.plugin.desktop.in:5
+#: plugins/fullscreen/fullscreen.plugin.desktop.in:4
 msgid "Fullscreen with double-click"
 msgstr "ಎರಡು-ಬಾರಿ ಕ್ಲಿಕ್ಕಿಸಿದಾಗ ಸಂಪೂರ್ಣತೆರೆ"
 
 #: plugins/reload/eoc-reload-plugin.c:45
-#: plugins/reload/reload.plugin.desktop.in:5
+#: plugins/reload/reload.plugin.desktop.in:4
 msgid "Reload Image"
 msgstr "ಚಿತ್ರವನ್ನು ಮತ್ತೊಮ್ಮೆ ಲೋಡ್ ಮಾಡು"
 
@@ -619,7 +619,7 @@ msgstr "ಚಿತ್ರವನ್ನು ಮತ್ತೊಮ್ಮೆ ಲೋಡ್ 
 msgid "Reload current image"
 msgstr "ಪ್ರಸಕ್ತ ಚಿತ್ರವನ್ನು ಪುನಃ ಲೋಡ್ ಮಾಡು"
 
-#: plugins/statusbar-date/statusbar-date.plugin.desktop.in:5
+#: plugins/statusbar-date/statusbar-date.plugin.desktop.in:4
 msgid "Date in statusbar"
 msgstr "ಸ್ಥಿತಿ ಪಟ್ಟಿಯಲ್ಲಿನ ದಿನಾಂಕ"
 
@@ -640,7 +640,7 @@ msgstr ""
 msgid "Save changes to image \"%s\" before closing?"
 msgstr ""
 
-#: src/eoc-close-confirmation-dialog.c:597
+#: src/eoc-close-confirmation-dialog.c:599
 #, c-format
 msgid "There is %d image with unsaved changes. Save changes before closing?"
 msgid_plural ""
@@ -648,19 +648,19 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/eoc-close-confirmation-dialog.c:614
+#: src/eoc-close-confirmation-dialog.c:616
 msgid "S_elect the images you want to save:"
 msgstr ""
 
-#: src/eoc-close-confirmation-dialog.c:633
+#: src/eoc-close-confirmation-dialog.c:635
 msgid "If you don't save, all your changes will be lost."
 msgstr ""
 
-#: src/eoc-file-chooser.c:121
+#: src/eoc-file-chooser.c:123
 msgid "File format is unknown or unsupported"
 msgstr "ಕಡತ ವಿನ್ಯಾಸವು ತಿಳಿದಿಲ್ಲ ಅಥವ ಬೆಂಬಲಿತವಾಗಿಲ್ಲ"
 
-#: src/eoc-file-chooser.c:126
+#: src/eoc-file-chooser.c:128
 msgid ""
 "Eye of CAFE could not determine a supported writable file format based on "
 "the filename."
@@ -668,72 +668,72 @@ msgstr ""
 "ಕಡತ ಆಧಾರದ ಮೇಲೆ ಬರೆಯಬಹುದಾದ ಕಡತದ ವಿನ್ಯಾಸವನ್ನು ಪತ್ತೆ ಮಾಡಲು ಐ ಆಫ್‌ CAFE ನಿಂದ "
 "ಸಾಧ್ಯವಾಗಲಿಲ್ಲ."
 
-#: src/eoc-file-chooser.c:127
+#: src/eoc-file-chooser.c:129
 msgid "Please try a different file extension like .png or .jpg."
 msgstr "ದಯವಿಟ್ಟು .png ಅಥವ .jpg ಯಂತಹ ಬೇರೊಂದು ಕಡತದ ವಿಸ್ತರಣೆಯನ್ನು ಬಳಸಿ."
 
-#: src/eoc-file-chooser.c:159
+#: src/eoc-file-chooser.c:161
 msgid "All Files"
 msgstr "ಎಲ್ಲಾ ಕಡತಗಳು"
 
-#: src/eoc-file-chooser.c:164
+#: src/eoc-file-chooser.c:166
 msgid "All Images"
 msgstr "ಎಲ್ಲಾ ಚಿತ್ರಗಳು"
 
-#: src/eoc-file-chooser.c:185
+#: src/eoc-file-chooser.c:187
 #, c-format
 msgid "%s (*.%s)"
 msgstr "%s (*.%s)"
 
-#: src/eoc-file-chooser.c:281 src/eoc-properties-dialog.c:163
-#: src/eoc-properties-dialog.c:165 src/eoc-thumb-view.c:516
+#: src/eoc-file-chooser.c:283 src/eoc-properties-dialog.c:163
+#: src/eoc-properties-dialog.c:165 src/eoc-thumb-view.c:517
 msgid "pixel"
 msgid_plural "pixels"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/eoc-file-chooser.c:451
+#: src/eoc-file-chooser.c:454
 msgid "Open Image"
 msgstr ""
 
-#: src/eoc-file-chooser.c:459
+#: src/eoc-file-chooser.c:462
 msgid "Save Image"
 msgstr "ಚಿತ್ರವನ್ನು ಉಳಿಸು"
 
-#: src/eoc-file-chooser.c:467 src/eoc-window.c:3943
+#: src/eoc-file-chooser.c:470 src/eoc-window.c:3983
 msgid "Open Folder"
 msgstr "ಕಡತಕೋಶವನ್ನು ತೆರೆ"
 
-#: src/eoc-image.c:552
+#: src/eoc-image.c:554
 msgid "Transformation on unloaded image."
 msgstr "ಲೋಡ್ ಆಗದೆ ಇರುವ ಚಿತ್ರದ ಮೇಲೆ ವರ್ಗಾವಣೆ."
 
-#: src/eoc-image.c:580
+#: src/eoc-image.c:582
 msgid "Transformation failed."
 msgstr "ವರ್ಗಾವಣೆಯು ವಿಫಲಗೊಂಡಿದೆ."
 
-#: src/eoc-image.c:1054
+#: src/eoc-image.c:1056
 msgid "EXIF not supported for this file format."
 msgstr "ಈ ಬಗೆಯ ಕಡತದ ವಿನ್ಯಾಸಕ್ಕೆ EXIF ಬೆಂಬಲವಿಲ್ಲ."
 
-#: src/eoc-image.c:1203
+#: src/eoc-image.c:1205
 msgid "Image loading failed."
 msgstr "ಚಿತ್ರದ ಲೋಡ್ ಮಾಡುವಿಕೆಯು ವಿಫಲಗೊಂಡಿದೆ."
 
-#: src/eoc-image.c:1732 src/eoc-image.c:1834
+#: src/eoc-image.c:1734 src/eoc-image.c:1836
 msgid "No image loaded."
 msgstr "ಯಾವುದೆ ಚಿತ್ರವು ಲೋಡ್ ಆಗಿಲ್ಲ."
 
-#: src/eoc-image.c:1742 src/eoc-image.c:1846
+#: src/eoc-image.c:1744 src/eoc-image.c:1848
 msgid "Temporary file creation failed."
 msgstr "ತಾತ್ಕಾಲಿಕ ಕಡತದ ರಚನೆಯಲ್ಲಿ ವಿಫಲತೆ."
 
-#: src/eoc-image-jpeg.c:384
+#: src/eoc-image-jpeg.c:390
 #, c-format
 msgid "Couldn't create temporary file for saving: %s"
 msgstr "ಉಳಿಸಲು ತಾತ್ಕಾಲಿಕ ಕಡತವನ್ನು ನಿರ್ಮಿಸಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ: %s"
 
-#: src/eoc-image-jpeg.c:395
+#: src/eoc-image-jpeg.c:401
 msgid "Couldn't allocate memory for loading JPEG file"
 msgstr "JPEG ಚಿತ್ರವನ್ನು ಲೋಡ್ ಮಾಡಲು ಮೆಮೊರಿಯನ್ನು ನಿಯೋಜಿಸಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ"
 
@@ -937,7 +937,7 @@ msgstr "ಇಂಚುಗಳು"
 msgid "Preview"
 msgstr "ಮುನ್ನೋಟ"
 
-#: src/eoc-save-as-dialog-helper.c:161
+#: src/eoc-save-as-dialog-helper.c:165
 msgid "as is"
 msgstr "ಇದ್ದಂತೆ "
 
@@ -956,11 +956,11 @@ msgstr "ಇದ್ದಂತೆ "
 msgid "%d / %d"
 msgstr "%d / %d"
 
-#: src/eoc-thumb-view.c:544
+#: src/eoc-thumb-view.c:545
 msgid "Taken on"
 msgstr "ತೆಗೆದದ್ದು"
 
-#: src/eoc-uri-converter.c:986
+#: src/eoc-uri-converter.c:989
 msgid "At least two file names are equal."
 msgstr "ಕನಿಷ್ಟ ಎರಡು ಕಡತದ ಹೆಸರುಗಳು ಒಂದೇ ರೀತಿ ಇವೆ."
 
@@ -989,7 +989,7 @@ msgstr[1] ""
 msgid "_Reload"
 msgstr "ಪುನಃ ಲೋಡ್ ಮಾಡು(_R)"
 
-#: src/eoc-window.c:822 src/eoc-window.c:2745
+#: src/eoc-window.c:822 src/eoc-window.c:2762
 msgctxt "MessageArea"
 msgid "Hi_de"
 msgstr ""
@@ -1011,25 +1011,25 @@ msgstr "ಆರಿಸಲಾದ ಚಿತ್ರವನ್ನು ತೆರೆಯಲ�
 #. * - the original filename
 #. * - the current image's position in the queue
 #. * - the total number of images queued for saving
-#: src/eoc-window.c:1154
+#: src/eoc-window.c:1156
 #, c-format
 msgid "Saving image \"%s\" (%u/%u)"
 msgstr "\"%s\" ಚಿತ್ರವನ್ನು ಉಳಿಸಲಾಗುತ್ತಿದೆ (%u/%u)"
 
-#: src/eoc-window.c:1513
+#: src/eoc-window.c:1517
 #, c-format
 msgid "Opening image \"%s\""
 msgstr ""
 
-#: src/eoc-window.c:1869
+#: src/eoc-window.c:1878
 msgid "Leave Fullscreen"
 msgstr "ಪೂರ್ಣತೆರೆಯನ್ನು ಬಿಟ್ಟು ಬಿಡು"
 
-#: src/eoc-window.c:2002
+#: src/eoc-window.c:2011
 msgid "Viewing a slideshow"
 msgstr ""
 
-#: src/eoc-window.c:2215
+#: src/eoc-window.c:2224
 #, c-format
 msgid ""
 "Error printing file:\n"
@@ -1038,15 +1038,15 @@ msgstr ""
 "ಕಡತವನ್ನು ಮುದ್ರಿಸುವಾಗ ದೋಷ:\n"
 "%s"
 
-#: src/eoc-window.c:2478
+#: src/eoc-window.c:2491
 msgid "Toolbar Editor"
 msgstr "ಉಪಕರಣ ಪಟ್ಟಿ ಸಂಪಾದಕ"
 
-#: src/eoc-window.c:2481
+#: src/eoc-window.c:2494
 msgid "_Reset to Default"
 msgstr "ಪೂರ್ವನಿಯೋಜಿತಕ್ಕೆ ಮರಳಿ ಹೊಂದಿಸು(_R)"
 
-#: src/eoc-window.c:2546
+#: src/eoc-window.c:2561
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
 "under the terms of the GNU General Public License as published by the Free "
@@ -1058,7 +1058,7 @@ msgstr ""
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version.\n"
 
-#: src/eoc-window.c:2550
+#: src/eoc-window.c:2565
 msgid ""
 "This program is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
@@ -1070,54 +1070,54 @@ msgstr ""
 "FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
 "more details.\n"
 
-#: src/eoc-window.c:2554
+#: src/eoc-window.c:2569
 msgid ""
 "You should have received a copy of the GNU General Public License along with "
 "this program; if not, write to the Free Software Foundation, Inc., 51 "
 "Franklin St, Fifth Floor, Boston, MA 02110-1301, USA."
 msgstr ""
 
-#: src/eoc-window.c:2593
+#: src/eoc-window.c:2608
 msgid "About Eye of CAFE"
 msgstr ""
 
-#: src/eoc-window.c:2595
+#: src/eoc-window.c:2610
 msgid ""
 "Copyright © 2000-2010 Free Software Foundation, Inc.\n"
 "Copyright © 2011 Perberos\n"
 "Copyright © 2012-2020 MATE developers\n"
-"Copyright © 2023 Pablo Barciela"
+"Copyright © 2023-2025 Pablo Barciela"
 msgstr ""
 
-#: src/eoc-window.c:2599
+#: src/eoc-window.c:2614
 msgid "The CAFE image viewer."
 msgstr "CAFE ಚಿತ್ರ ವೀಕ್ಷಕ."
 
-#: src/eoc-window.c:2602
+#: src/eoc-window.c:2617
 msgid "translator-credits"
 msgstr ""
 "ಶಂಕರ್ ಪ್ರಸಾದ್ <svenkate@redhat.com>,ಕಾರ್ತಿಕ ಹೊಳ್ಳ <karthikholla87@gmail.com>"
 
-#: src/eoc-window.c:2693 src/eoc-window.c:2708
+#: src/eoc-window.c:2710 src/eoc-window.c:2725
 msgid "Error launching appearance preferences dialog: "
 msgstr ""
 
-#: src/eoc-window.c:2743
+#: src/eoc-window.c:2760
 msgid "_Open Background Preferences"
 msgstr ""
 
-#: src/eoc-window.c:2759
+#: src/eoc-window.c:2776
 #, c-format
 msgid ""
 "The image \"%s\" has been set as Desktop Background.\n"
 "Would you like to modify its appearance?"
 msgstr ""
 
-#: src/eoc-window.c:3192
+#: src/eoc-window.c:3220
 msgid "Saving image locally…"
 msgstr "ಚಿತ್ರವನ್ನು ಸ್ಥಳೀಯವಾಗಿ ಉಳಿಸಲಾಗುತ್ತಿದೆ…"
 
-#: src/eoc-window.c:3272
+#: src/eoc-window.c:3300
 #, c-format
 msgid ""
 "Are you sure you want to move\n"
@@ -1126,7 +1126,7 @@ msgstr ""
 "ನೀವು ಖಚಿತವಾಗಿಯೂ ಕಸದಬುಟ್ಟಿಗೆ \n"
 "\"%s\" ಅನ್ನು ವರ್ಗಾಯಿಸಲು ಬಯಸುತ್ತೀರೆ?"
 
-#: src/eoc-window.c:3275
+#: src/eoc-window.c:3303
 #, c-format
 msgid ""
 "A trash for \"%s\" couldn't be found. Do you want to remove this image "
@@ -1135,7 +1135,7 @@ msgstr ""
 "\"%s\" ಗಾಗಿ ಕಸದಬುಟ್ಟಿಯು ಕಂಡುಬಂದಿಲ್ಲ. ಈ ಚಿತ್ರವನ್ನು ನೀವು ಖಚಿತವಾಗಿ ತೆಗೆದು ಹಾಕಲು "
 "ಬಯಸುತ್ತೀರೆ?"
 
-#: src/eoc-window.c:3280
+#: src/eoc-window.c:3308
 #, c-format
 msgid ""
 "Are you sure you want to move\n"
@@ -1146,7 +1146,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/eoc-window.c:3285
+#: src/eoc-window.c:3313
 msgid ""
 "Some of the selected images can't be moved to the trash and will be removed "
 "permanently. Are you sure you want to proceed?"
@@ -1154,387 +1154,387 @@ msgstr ""
 "ಆಯ್ಕೆ ಮಾಡಲಾದ ಕೆಲವು ಚಿತ್ರಗಳನ್ನು ಕಸದಬುಟ್ಟಿಗೆ ವರ್ಗಾಯಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ ಹಾಗು ಶಾಶ್ವತವಾಗಿ "
 "ತೆಗೆದು ಹಾಕಲ್ಪಡುತ್ತವೆ. ನೀವು ಖಚಿತವಾಗಿಯೂ ಮುಂದುವರೆಯಲು ಬಯಸುತ್ತೀರೆ?"
 
-#: src/eoc-window.c:3302 src/eoc-window.c:3792 src/eoc-window.c:3819
+#: src/eoc-window.c:3330 src/eoc-window.c:3831 src/eoc-window.c:3858
 msgid "Move to _Trash"
 msgstr "ಕಸದ ಬುಟ್ಟಿಗೆ ವರ್ಗಾಯಿಸು(_T)"
 
-#: src/eoc-window.c:3304
+#: src/eoc-window.c:3332
 msgid "_Do not ask again during this session"
 msgstr "ಈ ಅಧಿವೇಶನದಲ್ಲಿ ಇನ್ನೊಮ್ಮೆ ನನ್ನನ್ನು ಕೇಳಬೇಡ(_D)"
 
-#: src/eoc-window.c:3349 src/eoc-window.c:3363
+#: src/eoc-window.c:3377 src/eoc-window.c:3391
 msgid "Couldn't access trash."
 msgstr "ಕಸದಬುಟ್ಟಿಯನ್ನು ನಿಲುಕಿಸಿಕೊಳ್ಳಲಾಗಲಿಲ್ಲ."
 
-#: src/eoc-window.c:3371
+#: src/eoc-window.c:3399
 msgid "Couldn't delete file"
 msgstr "ಕಡತವನ್ನು ಅಳಿಸಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ"
 
-#: src/eoc-window.c:3471
+#: src/eoc-window.c:3500
 #, c-format
 msgid "Error on deleting image %s"
 msgstr "%s ಚಿತ್ರವನ್ನು ಅಳಿಸುವಾಗ ದೋಷ"
 
-#: src/eoc-window.c:3713
+#: src/eoc-window.c:3752
 msgid "_Image"
 msgstr "ಚಿತ್ರ(_I)"
 
-#: src/eoc-window.c:3714
+#: src/eoc-window.c:3753
 msgid "_Edit"
 msgstr "ಸಂಪಾದಿಸು(_E)"
 
-#: src/eoc-window.c:3715
+#: src/eoc-window.c:3754
 msgid "_View"
 msgstr "ನೋಟ(_V)"
 
-#: src/eoc-window.c:3716
+#: src/eoc-window.c:3755
 msgid "_Go"
 msgstr "ತೆರಳು(_G)"
 
-#: src/eoc-window.c:3717
+#: src/eoc-window.c:3756
 msgid "_Tools"
 msgstr "ಉಪಕರಣಗಳು(_T)"
 
-#: src/eoc-window.c:3718
+#: src/eoc-window.c:3757
 msgid "_Help"
 msgstr "ನೆರವು(_H)"
 
-#: src/eoc-window.c:3720
+#: src/eoc-window.c:3759
 msgid "_Open…"
 msgstr "ತೆರೆ(_O)..."
 
-#: src/eoc-window.c:3721
+#: src/eoc-window.c:3760
 msgid "Open a file"
 msgstr "ಕಡತವನ್ನು ತೆಗೆ"
 
-#: src/eoc-window.c:3723
+#: src/eoc-window.c:3762
 msgid "_Close"
 msgstr "ಮುಚ್ಚು (_C)"
 
-#: src/eoc-window.c:3724
+#: src/eoc-window.c:3763
 msgid "Close window"
 msgstr "ವಿಂಡೋ ಅನ್ನು ಮುಚ್ಚು"
 
-#: src/eoc-window.c:3726
+#: src/eoc-window.c:3765
 msgid "T_oolbar"
 msgstr "ಉಪಕರಣಪಟ್ಟಿ(_o)"
 
-#: src/eoc-window.c:3727
+#: src/eoc-window.c:3766
 msgid "Edit the application toolbar"
 msgstr "ಅನ್ವಯ ಉಪಕರಣವನ್ನು ಸಂಪಾದಿಸು"
 
-#: src/eoc-window.c:3729
+#: src/eoc-window.c:3768
 msgid "Prefere_nces"
 msgstr "ಆದ್ಯತೆಗಳು(_n)"
 
-#: src/eoc-window.c:3730
+#: src/eoc-window.c:3769
 msgid "Preferences for Eye of CAFE"
 msgstr "ಐ ಆಫ್ CAFE ನ ಆದ್ಯತೆಗಳು"
 
-#: src/eoc-window.c:3732
+#: src/eoc-window.c:3771
 msgid "_Contents"
 msgstr "ವಿಷಯಗಳು(_C)"
 
-#: src/eoc-window.c:3733
+#: src/eoc-window.c:3772
 msgid "Help on this application"
 msgstr "ಈ ಅನ್ವಯಕ್ಕಾಗಿನ ಸಹಾಯ"
 
-#: src/eoc-window.c:3735
+#: src/eoc-window.c:3774
 msgid "_About"
 msgstr "ಇದರ ಬಗ್ಗೆ(_A)"
 
-#: src/eoc-window.c:3736
+#: src/eoc-window.c:3775
 msgid "About this application"
 msgstr "ಈ ಅನ್ವಯದ ಬಗ್ಗೆ"
 
-#: src/eoc-window.c:3741
+#: src/eoc-window.c:3780
 msgid "_Toolbar"
 msgstr "ಉಪಕರಣ ಪಟ್ಟಿ(_T)"
 
-#: src/eoc-window.c:3742
+#: src/eoc-window.c:3781
 msgid "Changes the visibility of the toolbar in the current window"
 msgstr "ಪ್ರಸಕ್ತ ವಿಂಡೊದಲ್ಲಿ ಉಪಕರಣಪಟ್ಟಿಯ ಗೋಚರಿಕೆಯನ್ನು ಬದಲಾಯಿಸುತ್ತದೆ"
 
-#: src/eoc-window.c:3744
+#: src/eoc-window.c:3783
 msgid "_Statusbar"
 msgstr "ಸ್ಥಿತಿಪಟ್ಟಿ(_S)"
 
-#: src/eoc-window.c:3745
+#: src/eoc-window.c:3784
 msgid "Changes the visibility of the statusbar in the current window"
 msgstr "ಈಗಿನ ವಿಂಡೊ"
 
-#: src/eoc-window.c:3747
+#: src/eoc-window.c:3786
 msgid "_Image Collection"
 msgstr "ಚಿತ್ರ ಸಂಗ್ರಹ(_I)"
 
-#: src/eoc-window.c:3748
+#: src/eoc-window.c:3787
 msgid ""
 "Changes the visibility of the image collection pane in the current window"
 msgstr "ಪ್ರಸಕ್ತ ವಿಂಡೊದಲ್ಲಿ ಚಿತ್ರ ಸಂಗ್ರಹದ ಫಲಕದ ಗೋಚರಿಕೆಯನ್ನು ಬದಲಾಯಿಸುತ್ತದೆ"
 
-#: src/eoc-window.c:3750
+#: src/eoc-window.c:3789
 msgid "Side _Pane"
 msgstr "ಬಲಬದಿಯ ಫಲಕ(_P)"
 
-#: src/eoc-window.c:3751
+#: src/eoc-window.c:3790
 msgid "Changes the visibility of the side pane in the current window"
 msgstr "ಪ್ರಸಕ್ತ ವಿಂಡೊದಲ್ಲಿ ಬದಿಯ ಫಲಕದ ಗೋಚರಿಕೆಯನ್ನು ಬದಲಾಯಿಸುತ್ತದೆ"
 
-#: src/eoc-window.c:3756
+#: src/eoc-window.c:3795
 msgid "_Save"
 msgstr "ಉಳಿಸು(_S)"
 
-#: src/eoc-window.c:3757
+#: src/eoc-window.c:3796
 msgid "Save changes in currently selected images"
 msgstr "ಈಗ ಆರಿಸಲಾದ ಚಿತ್ರಗಳಲ್ಲಿನ ಬದಲಾವಣೆಗಳನ್ನು ಉಳಿಸು"
 
-#: src/eoc-window.c:3759
+#: src/eoc-window.c:3798
 msgid "Open _with"
 msgstr "ಇದರೊಂದಿಗೆ ತೆಗೆ(_w)"
 
-#: src/eoc-window.c:3760
+#: src/eoc-window.c:3799
 msgid "Open the selected image with a different application"
 msgstr "ಆರಿಸಲಾದ ಚಿತ್ರಗಳನ್ನು ಬೇರೊಂದು ಅನ್ವಯದೊಂದಿಗೆ ತೆರೆ"
 
-#: src/eoc-window.c:3762
+#: src/eoc-window.c:3801
 msgid "Save _As…"
 msgstr ""
 
-#: src/eoc-window.c:3763
+#: src/eoc-window.c:3802
 msgid "Save the selected images with a different name"
 msgstr "ಆರಿಸಲಾದ ಚಿತ್ರಗಳನ್ನು ಬೇರೊಂದು ಹೆಸರಿನೊಂದಿಗೆ ಉಳಿಸು"
 
-#: src/eoc-window.c:3765
+#: src/eoc-window.c:3804
 msgid "Open Containing _Folder"
 msgstr ""
 
-#: src/eoc-window.c:3766
+#: src/eoc-window.c:3805
 msgid "Show the folder which contains this file in the file manager"
 msgstr ""
 
-#: src/eoc-window.c:3768
+#: src/eoc-window.c:3807
 msgid "_Print…"
 msgstr "ಮುದ್ರಿಸು(_P)..."
 
-#: src/eoc-window.c:3769
+#: src/eoc-window.c:3808
 msgid "Print the selected image"
 msgstr "ಆರಿಸಲಾದ ಚಿತ್ರವನ್ನು ಮುದ್ರಿಸು "
 
-#: src/eoc-window.c:3771
+#: src/eoc-window.c:3810
 msgid "Prope_rties"
 msgstr "ಗುಣಲಕ್ಷಣಗಳು(_r)"
 
-#: src/eoc-window.c:3772
+#: src/eoc-window.c:3811
 msgid "Show the properties and metadata of the selected image"
 msgstr "ಆರಿಸಲಾದ ಚಿತ್ರದ ಗುಣಲಕ್ಷಣಗಳು ಹಾಗು ಮೆಟಾಡಾಟವನ್ನು ತೋರಿಸು"
 
-#: src/eoc-window.c:3774
+#: src/eoc-window.c:3813
 msgid "_Undo"
 msgstr "ರದ್ದು ಮಾಡು(_U)"
 
-#: src/eoc-window.c:3775
+#: src/eoc-window.c:3814
 msgid "Undo the last change in the image"
 msgstr "ಚಿತ್ರದಲ್ಲಿ ಮಾಡಲಾದ ಕೊನೆಯ ಬದಲಾಣೆಯನ್ನು ರದ್ದುಗೊಳಿಸು"
 
-#: src/eoc-window.c:3777
+#: src/eoc-window.c:3816
 msgid "Flip _Horizontal"
 msgstr "ಅಡ್ಡವಾಗಿ ತಿರುಗಿಸು(_H)"
 
-#: src/eoc-window.c:3778
+#: src/eoc-window.c:3817
 msgid "Mirror the image horizontally"
 msgstr "ಚಿತ್ರವನ್ನು ಅಡ್ಡವಾಗಿ ಪ್ರತಿಬಿಂಬಿಸು"
 
-#: src/eoc-window.c:3780
+#: src/eoc-window.c:3819
 msgid "Flip _Vertical"
 msgstr "ಲಂಬವಾಗಿ ತಿರುಗಿಸು(_V)"
 
-#: src/eoc-window.c:3781
+#: src/eoc-window.c:3820
 msgid "Mirror the image vertically"
 msgstr "ಚಿತ್ರವನ್ನು ಲಂಬವಾಗಿ ಪ್ರತಿಬಿಂಬಿಸು"
 
-#: src/eoc-window.c:3783
+#: src/eoc-window.c:3822
 msgid "_Rotate Clockwise"
 msgstr "ಅಪ್ರದಕ್ಷಿಣೆಯಲ್ಲಿ ತಿರುಗಿಸು(_R)"
 
-#: src/eoc-window.c:3784
+#: src/eoc-window.c:3823
 msgid "Rotate the image 90 degrees to the right"
 msgstr "ಚಿತ್ರವನ್ನು 90 ಡಿಗ್ರಿಯಷ್ಟು ಬಲಕ್ಕೆ ತಿರುಗಿಸು"
 
-#: src/eoc-window.c:3786
+#: src/eoc-window.c:3825
 msgid "Rotate Counterc_lockwise"
 msgstr "ಅಪ್ರದಕ್ಷಿಣೆಯಲ್ಲಿ ತಿರುಗಿಸು(_l)"
 
-#: src/eoc-window.c:3787
+#: src/eoc-window.c:3826
 msgid "Rotate the image 90 degrees to the left"
 msgstr "ಚಿತ್ರವನ್ನು 90 ಡಿಗ್ರಿಯಷ್ಟು ಎಡಕ್ಕೆ ತಿರುಗಿಸು"
 
-#: src/eoc-window.c:3789
+#: src/eoc-window.c:3828
 msgid "Set as _Desktop Background"
 msgstr "ಗಣಕತೆರೆಯ ಹಿನ್ನಲೆಯಾಗಿ ಹೊಂದಿಸು(_D)"
 
-#: src/eoc-window.c:3790
+#: src/eoc-window.c:3829
 msgid "Set the selected image as the desktop background"
 msgstr "ಆರಿಸಲಾದ ಚಿತ್ರವನ್ನು ಗಣಕತೆರೆಯ ಹಿನ್ನಲೆಯಾಗಿ ಬಳಸು"
 
-#: src/eoc-window.c:3793
+#: src/eoc-window.c:3832
 msgid "Move the selected image to the trash folder"
 msgstr "ಆರಿಸಲಾದ ಚಿತ್ರವನ್ನು ಕಸದಬುಟ್ಟಿ ಸ್ಥಳಾಂತರಿಸು"
 
-#: src/eoc-window.c:3795
+#: src/eoc-window.c:3834
 msgid "_Copy"
 msgstr "ಕಾಪಿ ಮಾಡು(_C)"
 
-#: src/eoc-window.c:3796
+#: src/eoc-window.c:3835
 msgid "Copy the selected image to the clipboard"
 msgstr ""
 
-#: src/eoc-window.c:3798 src/eoc-window.c:3810 src/eoc-window.c:3813
+#: src/eoc-window.c:3837 src/eoc-window.c:3849 src/eoc-window.c:3852
 msgid "_Zoom In"
 msgstr "ಹಿಗ್ಗಿಸು(_Z)s"
 
-#: src/eoc-window.c:3799 src/eoc-window.c:3811
+#: src/eoc-window.c:3838 src/eoc-window.c:3850
 msgid "Enlarge the image"
 msgstr "ಚಿತ್ರವನ್ನು ಹಿಗ್ಗಿಸು"
 
-#: src/eoc-window.c:3801 src/eoc-window.c:3816
+#: src/eoc-window.c:3840 src/eoc-window.c:3855
 msgid "Zoom _Out"
 msgstr "ಕುಗ್ಗಿಸು(_O)"
 
-#: src/eoc-window.c:3802 src/eoc-window.c:3814 src/eoc-window.c:3817
+#: src/eoc-window.c:3841 src/eoc-window.c:3853 src/eoc-window.c:3856
 msgid "Shrink the image"
 msgstr "ಚಿತ್ರವನ್ನು ಕುಗ್ಗಿಸು"
 
-#: src/eoc-window.c:3804
+#: src/eoc-window.c:3843
 msgid "_Normal Size"
 msgstr "ಮಾಮೂಲಿ ಗಾತ್ರ(_N)"
 
-#: src/eoc-window.c:3805
+#: src/eoc-window.c:3844
 msgid "Show the image at its normal size"
 msgstr "ಚಿತ್ರವನ್ನು ಅದರ ಮಾಮೂಲಿ ಗಾತ್ರದಲ್ಲಿ ತೋರಿಸು"
 
-#: src/eoc-window.c:3807
+#: src/eoc-window.c:3846
 msgid "_Best Fit"
 msgstr "ಉತ್ತಮವಾಗಿ ಹೊಂದುವ(_B)"
 
-#: src/eoc-window.c:3808
+#: src/eoc-window.c:3847
 msgid "Fit the image to the window"
 msgstr "ಚಿತ್ರವನ್ನು ವಿಂಡೊದ ಗಾತ್ರಕ್ಕೆ ಸರಿಹೊಂದಿಸು"
 
-#: src/eoc-window.c:3825
+#: src/eoc-window.c:3864
 msgid "_Fullscreen"
 msgstr "ಪೂರ್ಣತೆರೆ(_F)"
 
-#: src/eoc-window.c:3826
+#: src/eoc-window.c:3865
 msgid "Show the current image in fullscreen mode"
 msgstr "ಈಗಿನ ಚಿತ್ರವನ್ನು ಪೂರ್ಣತೆರೆ ಕ್ರಮದಲ್ಲಿ ತೋರಿಸು"
 
-#: src/eoc-window.c:3828
+#: src/eoc-window.c:3867
 msgid "Pause Slideshow"
 msgstr ""
 
-#: src/eoc-window.c:3829
+#: src/eoc-window.c:3868
 msgid "Pause or resume the slideshow"
 msgstr ""
 
-#: src/eoc-window.c:3834 src/eoc-window.c:3849
+#: src/eoc-window.c:3873 src/eoc-window.c:3888
 msgid "_Previous Image"
 msgstr "ಹಿಂದಿನ ಚಿತ್ರ(_P)"
 
-#: src/eoc-window.c:3835
+#: src/eoc-window.c:3874
 msgid "Go to the previous image of the collection"
 msgstr "ಸಂಗ್ರಹದ ಹಿಂದಿನ ಚಿತ್ರಕ್ಕೆ ತೆರಳು"
 
-#: src/eoc-window.c:3837
+#: src/eoc-window.c:3876
 msgid "_Next Image"
 msgstr "ಮುಂದಿನ ಚಿತ್ರ(_N)"
 
-#: src/eoc-window.c:3838
+#: src/eoc-window.c:3877
 msgid "Go to the next image of the collection"
 msgstr "ಸಂಗ್ರಹದ ಮುಂದಿನ ಚಿತ್ರಕ್ಕೆ ತೆರಳು"
 
-#: src/eoc-window.c:3840 src/eoc-window.c:3852
+#: src/eoc-window.c:3879 src/eoc-window.c:3891
 msgid "_First Image"
 msgstr "ಮೊದಲ ಚಿತ್ರ(_F)"
 
-#: src/eoc-window.c:3841
+#: src/eoc-window.c:3880
 msgid "Go to the first image of the collection"
 msgstr "ಸಂಗ್ರಹದಲ್ಲಿನ ಮೊದಲ ಚಿತ್ರಕ್ಕೆ ತೆರಳು"
 
-#: src/eoc-window.c:3843 src/eoc-window.c:3855
+#: src/eoc-window.c:3882 src/eoc-window.c:3894
 msgid "_Last Image"
 msgstr "ಕೊನೆಯ ಚಿತ್ರ(_L)"
 
-#: src/eoc-window.c:3844
+#: src/eoc-window.c:3883
 msgid "Go to the last image of the collection"
 msgstr "ಸಂಗ್ರಹದಲ್ಲಿನ ಕೊನೆಯ ಚಿತ್ರಕ್ಕೆ ತೆರಳು"
 
-#: src/eoc-window.c:3846
+#: src/eoc-window.c:3885
 msgid "_Random Image"
 msgstr ""
 
-#: src/eoc-window.c:3847
+#: src/eoc-window.c:3886
 msgid "Go to a random image of the collection"
 msgstr ""
 
-#: src/eoc-window.c:3861
+#: src/eoc-window.c:3900
 msgid "S_lideshow"
 msgstr ""
 
-#: src/eoc-window.c:3862
+#: src/eoc-window.c:3901
 msgid "Start a slideshow view of the images"
 msgstr "ಚಿತ್ರಗಳ ಒಂದು ಜಾರುಫಲಕ ಪ್ರದರ್ಶನವನ್ನು ಆರಂಭಿಸು"
 
-#: src/eoc-window.c:3929
+#: src/eoc-window.c:3969
 msgid "Previous"
 msgstr "ಹಿಂದಿನ"
 
-#: src/eoc-window.c:3933
+#: src/eoc-window.c:3973
 msgid "Next"
 msgstr "ಮುಂದಿನ"
 
-#: src/eoc-window.c:3937
+#: src/eoc-window.c:3977
 msgid "Right"
 msgstr "ಬಲ"
 
-#: src/eoc-window.c:3940
+#: src/eoc-window.c:3980
 msgid "Left"
 msgstr "ಎಡ"
 
-#: src/eoc-window.c:3946
+#: src/eoc-window.c:3986
 msgid "In"
 msgstr "ಒಳಗೆ"
 
-#: src/eoc-window.c:3949
+#: src/eoc-window.c:3989
 msgid "Out"
 msgstr "ಹೊರಗೆ"
 
-#: src/eoc-window.c:3952
+#: src/eoc-window.c:3992
 msgid "Normal"
 msgstr "ಸಾಮಾನ್ಯ"
 
-#: src/eoc-window.c:3955
+#: src/eoc-window.c:3995
 msgid "Fit"
 msgstr "ಹೊಂದಿಸು"
 
-#: src/eoc-window.c:3958
+#: src/eoc-window.c:3998
 msgid "Collection"
 msgstr "ಸಂಗ್ರಹ"
 
-#: src/eoc-window.c:3961
+#: src/eoc-window.c:4001
 msgctxt "action (to trash)"
 msgid "Trash"
 msgstr "ಕಸದ ಬುಟ್ಟಿ"
 
-#: src/eoc-window.c:4307
+#: src/eoc-window.c:4351
 #, c-format
 msgid "Edit the current image using %s"
 msgstr ""
 
-#: src/eoc-window.c:4309
+#: src/eoc-window.c:4353
 msgid "Edit Image"
 msgstr ""
 
-#: src/eoc-window.c:4524
+#: src/eoc-window.c:4568
 msgid "Properties"
 msgstr "ಗುಣಲಕ್ಷಣಗಳು"
 
