@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2023-06-09 11:11+0200\n"
+"POT-Creation-Date: 2025-07-18 08:35+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1047,3 +1047,4 @@ msgstr ""
 #: C/legal.xml:78
 msgid "To report a bug or make a suggestion regarding the <application>Image Viewer</application> application or this manual, follow the directions in the <link xlink:href=\"help:cafe-user-guide/feedback\">CAFE Feedback Page</link>."
 msgstr ""
+
