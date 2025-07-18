@@ -1,3 +1,13 @@
+### eoc 2.0.0
+
+  * eoc-scroll-view: Fix scrollbars behavior
+  * ci: add debian sid build
+  * Require libbean 2.0
+  * Makefiles: avoid --header and --body at the same time
+  * add G_GNUC_UNUSED in unused parameters
+  * eoc-window: parameter user_data without * (Fixes build warnings)
+  * update translations
+
 ### eoc 1.25.0
 
   * initial release: eom 1.24.1 fork
