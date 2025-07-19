@@ -4,7 +4,7 @@
 requires:
   debian:
     # Useful URL: https://github.com/cafe-desktop/debian-packages
-    # Useful URL: https://salsa.debian.org/debian-cafe-team/eoc
+    # cafe B-D: libctk-3-dev libctk-3-doc libbean-dev libcafe-desktop-dev cafe-common
     - aptitude
     - autopoint
     - clang
