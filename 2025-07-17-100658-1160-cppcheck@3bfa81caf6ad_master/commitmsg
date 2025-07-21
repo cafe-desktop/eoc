@@ -1,0 +1,13 @@
+eoc-window: parameter user_data without *
+
+inside eoc_window_cmd_edit_toolbar function
+
+Fixes the warnings:
+
+eoc-window.c:2487:20: warning: Casting a non-structure type to a structure type and accessing a field can lead to memory access errors or data corruption [alpha.core.CastToStruct]
+ 2487 |         g_return_if_fail (EOC_IS_WINDOW (user_data));
+      |         ~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+
+eoc-window.c:2489:11: warning: Casting a non-structure type to a structure type and accessing a field can lead to memory access errors or data corruption [alpha.core.CastToStruct]
+ 2489 |         window = EOC_WINDOW (user_data);
+      |                  ^~~~~~~~~~~~~~~~~~~~~~
