@@ -44,7 +44,6 @@ requires:
 
     # required for libbean
     - libgirepository1.0-doc
-    - libgladeui-dev
     - meson
     - python-gi-dev
     - python3-dev
