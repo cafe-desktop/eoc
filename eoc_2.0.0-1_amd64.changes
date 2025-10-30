@@ -1,0 +1,44 @@
+Format: 1.8
+Date: Sat, 19 Jul 2025 09:48:22 +0200
+Source: eoc
+Binary: eoc eoc-common eoc-dbgsym eoc-dev gir1.2-eoc gir1.2-eoc-2.0
+Architecture: all amd64
+Version: 2.0.0-1
+Distribution: unstable
+Urgency: medium
+Maintainer: Pablo Barciela <scow@riseup.net>
+Changed-By: Pablo Barciela <scow@riseup.net>
+Description:
+ eoc        - Eye of CAFE graphics viewer program
+ eoc-common - Eye of CAFE graphics viewer program (common files)
+ eoc-dev    - Eye of CAFE graphics viewer program (development files)
+ gir1.2-eoc - GObject introspection data for eoc (transitional package)
+ gir1.2-eoc-2.0 - GObject introspection data for the eoc library
+Changes:
+ eoc (2.0.0-1) unstable; urgency=medium
+ .
+   * New upstream release
+Checksums-Sha1:
+ 953a54a4d9aa1f4cc26a830777b439205b0ba707 1581032 eoc-common_2.0.0-1_all.deb
+ d20de4a1cad118183f52704c31f66c181ad4bb9f 576944 eoc-dbgsym_2.0.0-1_amd64.deb
+ 4b5d72f38f7e46856e526d586d11a9b574877c96 33204 eoc-dev_2.0.0-1_amd64.deb
+ 4c9c7081343ea2a5448a4a1a34e6c909c70f93f6 17723 eoc_2.0.0-1_amd64.buildinfo
+ dcd4c745e0e8010000de479df88679ddfd9bcbcc 185212 eoc_2.0.0-1_amd64.deb
+ 6f0d1e2e970f649285f1abb4e50c8a8e6240f014 14592 gir1.2-eoc-2.0_2.0.0-1_amd64.deb
+ d2c517ed1ffb576af16202067c91be164a553133 5344 gir1.2-eoc_2.0.0-1_amd64.deb
+Checksums-Sha256:
+ 0a17743d2021ec0a3a46ba501a4ea4496b0dc861b95abcc0854f97f97d09d912 1581032 eoc-common_2.0.0-1_all.deb
+ 4f1376e8be416a9d80ef82c646e6785a8ac1615161ef5d47840461ac1921e90a 576944 eoc-dbgsym_2.0.0-1_amd64.deb
+ b31298eafe147c73512b9099f675429717b352f325c2991dd4768c76cc6b689d 33204 eoc-dev_2.0.0-1_amd64.deb
+ abc5c5a69846507a0ad503dc635beab551f9b5cb55dd8e8d9bd2a0ee038705fd 17723 eoc_2.0.0-1_amd64.buildinfo
+ 8b8b7dd22623a75656a19f67f77fab12c7fa7c29aa053903f027189d8b7b6fb6 185212 eoc_2.0.0-1_amd64.deb
+ 715ae869dbe93d65fdf5413ea26bdf9a0a46c541d163c196c95a2e2e8afe6739 14592 gir1.2-eoc-2.0_2.0.0-1_amd64.deb
+ ae1c9e32dd2e4df046944b9a9d995980bca7ba4558bd8c1ae747fc67f1337899 5344 gir1.2-eoc_2.0.0-1_amd64.deb
+Files:
+ a6fab6b6d1c0b371a39c08af9358febc 1581032 graphics optional eoc-common_2.0.0-1_all.deb
+ 5a367ecab2f3aa93c7e3d343e17299ac 576944 debug optional eoc-dbgsym_2.0.0-1_amd64.deb
+ 3965642993ec6e3ea491aa6ba1c11517 33204 libdevel optional eoc-dev_2.0.0-1_amd64.deb
+ 549951974a9e07c5d1cff26c846d976e 17723 graphics optional eoc_2.0.0-1_amd64.buildinfo
+ 6397e5c14bbf77780ac798991d51b59b 185212 graphics optional eoc_2.0.0-1_amd64.deb
+ 1228eff411af46c3dcb310f35009d3cd 14592 introspection optional gir1.2-eoc-2.0_2.0.0-1_amd64.deb
+ 445cf751feda3b960094d00985c0281b 5344 oldlibs optional gir1.2-eoc_2.0.0-1_amd64.deb
