@@ -51,16 +51,17 @@ requires:
     - xauth
 
 before_scripts:
-  - ./html-cppcheck
-  - ./debrepo-install 'libctk-3-dev gir1.2-ctk-3.0 libctk-3-common libctk-3-0 libctk-3-doc'
-  - ./install-from-git https://github.com/cafe-desktop/cafe-common master
-  - ./install-from-git https://github.com/cafe-desktop/cafe-desktop master
-  - ./install-from-git https://github.com/cafe-desktop/libbean master meson '--libdir=/usr/lib/x86_64-linux-gnu --libexecdir=/usr/lib/x86_64-linux-gnu'
+#  - ./html-cppcheck
+  - ./debrepo-install #'libctk-3-dev gir1.2-ctk-3.0 libctk-3-common libctk-3-0 libctk-3-doc'
+#  - ./install-from-git https://github.com/cafe-desktop/cafe-common master
+#  - ./install-from-git https://github.com/cafe-desktop/cafe-desktop master
+#  - ./install-from-git https://github.com/cafe-desktop/libbean master meson '--libdir=/usr/lib/x86_64-linux-gnu --libexecdir=/usr/lib/x86_64-linux-gnu'
 
 build_scripts:
-  - ./before-build
-  - ./make-scanbuild '--enable-compile-warnings=maximum'
-  - ./after-build
+#  - ./before-build
+#  - ./make-scanbuild '--enable-compile-warnings=maximum'
+#  - ./after-build
+  - ./build-debs
 
 after_scripts:
   - if [ -f "gen-index" ]; then ./gen-index -l 20 -i https://github.com/cafe-desktop/eoc/raw/master/data/icons/16x16/apps/eoc.png; fi
