@@ -34,7 +34,7 @@
 #include <glib/gi18n.h>
 #include <glib.h>
 #include <gio/gio.h>
-#include <girepository.h>
+#include <girepository/girepository.h>
 
 #define USER_EOC_PLUGINS_LOCATION "plugins/"
 
@@ -87,7 +87,7 @@ eoc_plugin_engine_new (void)
 	private_path = g_build_filename (LIBDIR, "girepository-1.0", NULL);
 
 	/* This should be moved to libbean */
-	if (g_irepository_require (g_irepository_get_default (),
+	if (gi_repository_require (gi_repository_dup_default (),
 	                           "Bean", "2.0", 0, &error) == NULL)
 	{
 		g_warning ("Error loading Bean typelib: %s\n",
@@ -95,7 +95,7 @@ eoc_plugin_engine_new (void)
 		g_clear_error (&error);
 	}
 
-	if (g_irepository_require (g_irepository_get_default (),
+	if (gi_repository_require (gi_repository_dup_default (),
 	                           "BeanCtk", "2.0", 0, &error) == NULL)
 	{
 		g_warning ("Error loading BeanCtk typelib: %s\n",
@@ -103,7 +103,7 @@ eoc_plugin_engine_new (void)
 		g_clear_error (&error);
 	}
 
-	if (g_irepository_require_private (g_irepository_get_default (),
+	if (gi_repository_require_private (gi_repository_dup_default (),
 	                                   private_path, "Eoc", "1.0", 0,
 	                                   &error) == NULL)
 	{

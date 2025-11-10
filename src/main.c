@@ -27,7 +27,7 @@
 #include "config.h"
 #endif
 #ifdef HAVE_INTROSPECTION
-#include <girepository.h>
+#include <girepository/girepository.h>
 #endif
 
 #include "eoc-session.h"
@@ -111,7 +111,7 @@ main (int argc, char **argv)
 	 * Using ctk_get_option_group here initializes ctk during parsing */
 	g_option_context_add_group (ctx, ctk_get_option_group (TRUE));
 #ifdef HAVE_INTROSPECTION
-	g_option_context_add_group (ctx, g_irepository_get_option_group ());
+	g_option_context_add_group (ctx, gi_repository_get_option_group ());
 #endif
 
 	if (!g_option_context_parse (ctx, &argc, &argv, &error)) {
