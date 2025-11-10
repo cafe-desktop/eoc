@@ -17,7 +17,7 @@ requires:
     - libdconf-dev
     - libexempi-dev
     - libexif-dev
-    - libgirepository1.0-dev
+    - libgirepository-2.0-dev
     - libglib2.0-dev
     - libjpeg-dev
     - liblcms2-dev
@@ -43,7 +43,6 @@ requires:
     - libx11-dev
 
     # required for libbean
-    - libgirepository1.0-doc
     - meson
     - python-gi-dev
     - python3-dev
