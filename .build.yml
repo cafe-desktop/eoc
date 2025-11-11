@@ -53,6 +53,9 @@ requires:
 before_scripts:
   - ./html-cppcheck
   - ./debrepo-install 'libctk-3-dev gir1.2-ctk-3.0 libctk-3-common libctk-3-0 libctk-3-doc'
+  - if [ ${DISTRO_VERSION} == "stable" ];then
+  -     ./install-from-git https://gitlab.gnome.org/GNOME/glib 2.85.4 meson '--libdir=/usr/lib/x86_64-linux-gnu --libexecdir=/usr/lib/x86_64-linux-gnu -Dtests=false'
+  - fi
   - ./install-from-git https://github.com/cafe-desktop/cafe-common master
   - ./install-from-git https://github.com/cafe-desktop/cafe-desktop master
   - ./install-from-git https://github.com/cafe-desktop/libbean master meson '--libdir=/usr/lib/x86_64-linux-gnu --libexecdir=/usr/lib/x86_64-linux-gnu'
