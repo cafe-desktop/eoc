@@ -1,0 +1,385 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Cppcheck - HTML report - eoc (cppcheck 2.18.0-2)</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+    </style>
+    <script>
+      function getStyle(el, styleProp) {
+        var y;
+
+        if (el.currentStyle) {
+          y = el.currentStyle[styleProp];
+        } else if (window.getComputedStyle) {
+          y = document.defaultView.getComputedStyle(el, null).getPropertyValue(styleProp);
+        }
+
+        return y;
+      }
+
+      function toggle() {
+        var el = this.expandable_content;
+        var mark = this.expandable_marker;
+
+        if (el.style.display === "block") {
+          el.style.display = "none";
+          mark.textContent = "[+]";
+        } else {
+          el.style.display = "block";
+          mark.textContent = "[-]";
+        }
+      }
+
+      function initExpandables() {
+        var elements = document.querySelectorAll(".expandable");
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          var el = elements[i];
+          var clickable = el.querySelector("span");
+          var marker = clickable.querySelector(".marker");
+          var content = el.querySelector(".content");
+          var width = clickable.clientWidth - parseInt(getStyle(content, "padding-left")) - parseInt(getStyle(content, "padding-right"));
+          content.style.width = width + "px";
+          clickable.expandable_content = content;
+          clickable.expandable_marker = marker;
+          clickable.addEventListener("click", toggle);
+        }
+      }
+
+      function toggleDisplay(cb) {
+        var elements = document.querySelectorAll("." + cb.id);
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          elements[i].classList.toggle("id-filtered", !cb.checked);
+        }
+
+        updateFileRows();
+      }
+
+      function toggleSeverity(cb) {
+        cb.parentElement.classList.toggle("unchecked", !cb.checked);
+        var elements = document.querySelectorAll(".sev_" + cb.id);
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          elements[i].classList.toggle("severity-filtered", !cb.checked);
+        }
+
+        updateFileRows();
+      }
+      
+      function toggleClassification(cb) {
+        cb.parentElement.classList.toggle("unchecked", !cb.checked);
+        var elements = document.querySelectorAll(".class_" + cb.id);
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          elements[i].classList.toggle("classification-filtered", !cb.checked);
+        }
+
+        updateFileRows();
+      }
+    
+      function toggleTool(cb) {
+        cb.parentElement.classList.toggle("unchecked", !cb.checked);
+
+        var elements;
+        if (cb.id == "clang-tidy")
+            elements = document.querySelectorAll("[class^=clang-tidy-]");
+        else
+            elements = document.querySelectorAll(".issue:not([class^=clang-tidy-])");
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          elements[i].classList.toggle("tool-filtered", !cb.checked);
+        }
+
+        updateFileRows();
+      }
+
+      function toggleAll() {
+        var elements = document.querySelectorAll(".idToggle");
+
+        // starting from 1 since 0 is the "toggle all" input
+        for (var i = 1, len = elements.length; i < len; i++) {
+          var changed = elements[i].checked != elements[0].checked;
+          if (changed) {
+            elements[i].checked = elements[0].checked;
+            toggleDisplay(elements[i]);
+          }
+        }
+      }
+
+      function filterFile(filter) {
+        var elements = document.querySelectorAll(".fileEntry");
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          var visible = elements[i].querySelector("tr").querySelector("td").textContent.toLowerCase().includes(filter.toLowerCase());
+          elements[i].classList.toggle("text-filtered", !visible);
+        }
+      }
+
+      function filterText(text) {
+        filter = text.toLowerCase();
+        var elements = document.querySelectorAll(".issue");
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          var visible = false;
+          var fields = elements[i].querySelectorAll("td");
+          for (var n = 0, num = fields.length; n < num; n++) {
+            if (fields[n].textContent.toLowerCase().includes(filter)) {
+              visible = true;
+              break;
+            }
+          }
+          elements[i].classList.toggle("text-filtered", !visible);
+        }
+
+        updateFileRows();
+      }
+
+      function updateFileRows(element) {
+        var elements = document.querySelectorAll(".fileEntry");
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          var visible = elements[i].querySelector(".issue:not(.id-filtered):not(.severity-filtered):not(.classification-filtered):not(.tool-filtered):not(.text-filtered)");
+          elements[i].classList.toggle("file-filtered", !visible);
+        }
+      }
+
+      window.addEventListener("load", initExpandables);
+    </script>
+  </head>
+  <body>
+    <div id="wrapper">
+    <div id="header" class="header">
+      <h1>Cppcheck report - eoc (cppcheck 2.18.0-2)</h1>
+      <div id="filters">
+
+        <label class="checkBtn"><input type="checkbox" onclick="toggleSeverity(this)" id="error"checked/>error</label>
+        <label class="checkBtn disabled"><input type="checkbox" onclick="toggleSeverity(this)" id="warning"disabled/>warning</label>
+        <label class="checkBtn disabled"><input type="checkbox" onclick="toggleSeverity(this)" id="portability"disabled/>portability</label>
+        <label class="checkBtn disabled"><input type="checkbox" onclick="toggleSeverity(this)" id="performance"disabled/>performance</label>
+        <label class="checkBtn"><input type="checkbox" onclick="toggleSeverity(this)" id="style"checked/>style</label>
+        <label class="checkBtn"><input type="checkbox" onclick="toggleSeverity(this)" id="information"checked/>information</label>
+        | 
+        <label class="checkBtn"><input type="checkbox" onclick="toggleTool(this)" id="cppcheck"checked/>cppcheck</label>
+        <label class="checkBtn disabled"><input type="checkbox" onclick="toggleTool(this)" id="clang-tidy"disabled/>clang-tidy</label>
+        | 
+        <label class="severityHeader">File: <input type="search" oninput="filterFile(this.value)"/></label>
+        <label class="severityHeader">Filter: <input type="search" oninput="filterText(this.value)"/></label>
+      </div>
+
+    </div>
+
+    <div id="menu_index">
+     <p><a href="index.html">Defect summary</a> </p>
+
+       <label><input type="checkbox" class="idToggle" onclick="toggleAll()" checked> Toggle all</label>
+       <table>
+           <tr><th>Show</th><th>#</th><th>Defect ID</th></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="variableScope" name="variableScope" checked></td><td>30</td><td>variableScope</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="unknownMacro" name="unknownMacro" checked></td><td>24</td><td>unknownMacro</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="staticFunction" name="staticFunction" checked></td><td>12</td><td>staticFunction</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="constVariablePointer" name="constVariablePointer" checked></td><td>10</td><td>constVariablePointer</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="unreadVariable" name="unreadVariable" checked></td><td>7</td><td>unreadVariable</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="unusedStructMember" name="unusedStructMember" checked></td><td>4</td><td>unusedStructMember</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="constParameterCallback" name="constParameterCallback" checked></td><td>2</td><td>constParameterCallback</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="constParameterPointer" name="constParameterPointer" checked></td><td>2</td><td>constParameterPointer</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="checkersReport" name="checkersReport" checked></td><td>1</td><td>checkersReport</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="knownConditionTrueFalse" name="knownConditionTrueFalse" checked></td><td>1</td><td>knownConditionTrueFalse</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="shadowVariable" name="shadowVariable" checked></td><td>1</td><td>shadowVariable</td></tr>
+           <tr><td></td><td>94</td><td>total</td></tr>
+       </table>
+       <p><a href="stats.html">Statistics</a></p>
+    </div>
+    <div id="content_index">
+
+       <table class="summaryTable">
+       <tr><th>Line</th><th>Id</th><th>CWE</th><th>Severity</th><th>Message</th><th>Timestamp</th></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="39.html"></a></td></tr>
+         <tr class="checkersReport sev_information class_ issue"><td></td><td>checkersReport</td><td></td><td>information</td><td>Active checkers: There was critical errors (use --checkers-report=&lt;filename&gt; to see details)</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="0.html">cut-n-paste/toolbar-editor/egg-editable-toolbar.c</a></td></tr>
+         <tr class="unknownMacro sev_error class_ issue"><td><a href="0.html#line-82">82</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="1.html">cut-n-paste/toolbar-editor/egg-toolbar-editor.c</a></td></tr>
+         <tr class="unknownMacro sev_error class_ issue"><td><a href="1.html#line-72">72</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="2.html">cut-n-paste/toolbar-editor/egg-toolbars-model.c</a></td></tr>
+         <tr class="unknownMacro sev_error class_ issue"><td><a href="2.html#line-65">65</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="3.html">jpegutils/transupp-6b.c</a></td></tr>
+         <tr class="variableScope sev_style class_ issue"><td><a href="3.html#line-137">137</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;compptr&apos; can be reduced.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+         <tr class="variableScope sev_style class_ issue"><td><a href="3.html#line-187">187</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;compptr&apos; can be reduced.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+         <tr class="variableScope sev_style class_ issue"><td><a href="3.html#line-257">257</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;compptr&apos; can be reduced.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+         <tr class="variableScope sev_style class_ issue"><td><a href="3.html#line-305">305</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;compptr&apos; can be reduced.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+         <tr class="variableScope sev_style class_ issue"><td><a href="3.html#line-369">369</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;compptr&apos; can be reduced.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+         <tr class="variableScope sev_style class_ issue"><td><a href="3.html#line-434">434</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;compptr&apos; can be reduced.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+         <tr class="variableScope sev_style class_ issue"><td><a href="3.html#line-538">538</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;compptr&apos; can be reduced.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+         <tr class="variableScope sev_style class_ issue"><td><a href="3.html#line-704">704</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;itemp&apos; can be reduced.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+         <tr class="variableScope sev_style class_ issue"><td><a href="3.html#line-924">924</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;m&apos; can be reduced.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="4.html">jpegutils/transupp-8a.h</a></td></tr>
+         <tr class="unknownMacro sev_error class_ issue"><td><a href="4.html#line-162">162</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If EXTERN is a macro then please configure it.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="5.html">plugins/fullscreen/eoc-fullscreen-plugin.c</a></td></tr>
+         <tr class="constParameterCallback sev_style class_ issue"><td><a href="5.html#line-31">31</a></td><td>constParameterCallback</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;event&apos; can be declared as pointer to const. However it seems that &apos;on_button_press&apos; is a callback function, if &apos;event&apos; is declared with const you might also need to cast function pointer(s).</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="35.html">src/eoc-application.c</a></td></tr>
+         <tr class="staticFunction sev_style class_ issue"><td><a href="35.html#line-277">277</a></td><td>staticFunction</td><td></td><td>style</td><td>The function &apos;eoc_application_open_window&apos; should have static linkage since it is not used outside of its translation unit.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+         <tr class="staticFunction sev_style class_ issue"><td><a href="35.html#line-358">358</a></td><td>staticFunction</td><td></td><td>style</td><td>The function &apos;eoc_application_open_file_list&apos; should have static linkage since it is not used outside of its translation unit.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="6.html">src/eoc-clipboard-handler.c</a></td></tr>
+         <tr class="unknownMacro sev_error class_ issue"><td><a href="6.html#line-50">50</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="7.html">src/eoc-close-confirmation-dialog.c</a></td></tr>
+         <tr class="unknownMacro sev_error class_ issue"><td><a href="7.html#line-76">76</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="8.html">src/eoc-error-message-area.c</a></td></tr>
+         <tr class="variableScope sev_style class_ issue"><td><a href="8.html#line-48">48</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;secondary_markup&apos; can be reduced.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+         <tr class="variableScope sev_style class_ issue"><td><a href="8.html#line-50">50</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;secondary_label&apos; can be reduced.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="9.html">src/eoc-exif-util.c</a></td></tr>
+         <tr class="unknownMacro sev_error class_ issue"><td><a href="9.html#line-56">56</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_BOXED_TYPE is a macro then please configure it.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="10.html">src/eoc-file-chooser.c</a></td></tr>
+         <tr class="unknownMacro sev_error class_ issue"><td><a href="10.html#line-54">54</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="11.html">src/eoc-image-jpeg.c</a></td></tr>
+         <tr class="unreadVariable sev_style class_ issue"><td><a href="11.html#line-212">212</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;jsrcerr.error&apos; is assigned a value that is never used.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+         <tr class="unreadVariable sev_style class_ issue"><td><a href="11.html#line-218">218</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;jdsterr.filename&apos; is assigned a value that is never used.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+         <tr class="unreadVariable sev_style class_ issue"><td><a href="11.html#line-222">222</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;jdsterr.error&apos; is assigned a value that is never used.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+         <tr class="constVariablePointer sev_style class_ issue"><td><a href="11.html#line-360">360</a></td><td>constVariablePointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Variable &apos;ptr&apos; can be declared as pointer to const</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+         <tr class="unreadVariable sev_style class_ issue"><td><a href="11.html#line-407">407</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;jerr.filename&apos; is assigned a value that is never used.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+         <tr class="unreadVariable sev_style class_ issue"><td><a href="11.html#line-411">411</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;jerr.error&apos; is assigned a value that is never used.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="12.html">src/eoc-image-save-info.c</a></td></tr>
+         <tr class="unknownMacro sev_error class_ issue"><td><a href="12.html#line-11">11</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE is a macro then please configure it.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="13.html">src/eoc-image.c</a></td></tr>
+         <tr class="staticFunction sev_style class_ issue"><td><a href="13.html#line-334">334</a></td><td>staticFunction</td><td></td><td>style</td><td>The function &apos;eoc_image_error_quark&apos; should have static linkage since it is not used outside of its translation unit.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+         <tr class="constParameterPointer sev_style class_ issue"><td><a href="13.html#line-346">346</a></td><td>constParameterPointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;image&apos; can be declared as pointer to const</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+         <tr class="variableScope sev_style class_ issue"><td><a href="13.html#line-631">631</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;p&apos; can be reduced.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+         <tr class="constVariablePointer sev_style class_ issue"><td><a href="13.html#line-1214">1214</a></td><td>constVariablePointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Variable &apos;priv&apos; can be declared as pointer to const</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+         <tr class="constVariablePointer sev_style class_ issue"><td><a href="13.html#line-1392">1392</a></td><td>constVariablePointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Variable &apos;priv&apos; can be declared as pointer to const</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+         <tr class="variableScope sev_style class_ issue"><td><a href="13.html#line-1443">1443</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;tmp_file&apos; can be reduced.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+         <tr class="knownConditionTrueFalse sev_style class_ issue"><td><a href="13.html#line-1962">1962</a></td><td>knownConditionTrueFalse</td><td><a href="https://cwe.mitre.org/data/definitions/571.html">571</a></td><td>style</td><td>Condition &apos;!broken_filenames&apos; is always true</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+         <tr class="staticFunction sev_style class_ issue"><td><a href="13.html#line-2222">2222</a></td><td>staticFunction</td><td></td><td>style</td><td>The function &apos;eoc_image_get_supported_mime_types&apos; should have static linkage since it is not used outside of its translation unit.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+         <tr class="variableScope sev_style class_ issue"><td><a href="13.html#line-2225">2225</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;mime_types&apos; can be reduced.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+         <tr class="variableScope sev_style class_ issue"><td><a href="13.html#line-2226">2226</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;i&apos; can be reduced.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+         <tr class="shadowVariable sev_style class_ issue"><td><a href="13.html#line-2256">2256</a></td><td>shadowVariable</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Local variable &apos;supported_mime_types&apos; shadows outer variable</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+         <tr class="constVariablePointer sev_style class_ issue"><td><a href="13.html#line-2256">2256</a></td><td>constVariablePointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Variable &apos;result&apos; can be declared as pointer to const</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+         <tr class="staticFunction sev_style class_ issue"><td><a href="13.html#line-2317">2317</a></td><td>staticFunction</td><td></td><td>style</td><td>The function &apos;eoc_image_is_animation&apos; should have static linkage since it is not used outside of its translation unit.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="14.html">src/eoc-jobs.c</a></td></tr>
+         <tr class="variableScope sev_style class_ issue"><td><a href="14.html#line-922">922</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;src&apos; can be reduced.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+         <tr class="variableScope sev_style class_ issue"><td><a href="14.html#line-922">922</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;dest&apos; can be reduced.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+         <tr class="variableScope sev_style class_ issue"><td><a href="14.html#line-923">923</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;filename&apos; can be reduced.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+         <tr class="variableScope sev_style class_ issue"><td><a href="14.html#line-923">923</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;dest_filename&apos; can be reduced.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="15.html">src/eoc-list-store.c</a></td></tr>
+         <tr class="unknownMacro sev_error class_ issue"><td><a href="15.html#line-520">520</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_FILE_ATTRIBUTE_STANDARD_DISPLAY_NAME is a macro then please configure it.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="16.html">src/eoc-metadata-details.c</a></td></tr>
+         <tr class="unknownMacro sev_error class_ issue"><td><a href="16.html#line-208">208</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="17.html">src/eoc-metadata-reader-jpg.c</a></td></tr>
+         <tr class="unknownMacro sev_error class_ issue"><td><a href="17.html#line-94">94</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_CODE is a macro then please configure it.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="18.html">src/eoc-metadata-reader-png.c</a></td></tr>
+         <tr class="unknownMacro sev_error class_ issue"><td><a href="18.html#line-93">93</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_CODE is a macro then please configure it.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="19.html">src/eoc-metadata-reader.c</a></td></tr>
+         <tr class="unknownMacro sev_error class_ issue"><td><a href="19.html#line-31">31</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_INTERFACE is a macro then please configure it.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="20.html">src/eoc-metadata-sidebar.c</a></td></tr>
+         <tr class="unknownMacro sev_error class_ issue"><td><a href="20.html#line-94">94</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="36.html">src/eoc-pixbuf-util.c</a></td></tr>
+         <tr class="staticFunction sev_style class_ issue"><td><a href="36.html#line-33">33</a></td><td>staticFunction</td><td></td><td>style</td><td>The function &apos;eoc_pixbuf_get_format_by_suffix&apos; should have static linkage since it is not used outside of its translation unit.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="21.html">src/eoc-plugin-engine.c</a></td></tr>
+         <tr class="unknownMacro sev_error class_ issue"><td><a href="21.html#line-45">45</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="22.html">src/eoc-preferences-dialog.c</a></td></tr>
+         <tr class="unusedStructMember sev_style class_ issue"><td><a href="22.html#line-46">46</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>struct member &apos;_EocPreferencesDialogPrivate::ui_settings&apos; is never used.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="23.html">src/eoc-print-image-setup.c</a></td></tr>
+         <tr class="constParameterPointer sev_style class_ issue"><td><a href="23.html#line-141">141</a></td><td>constParameterPointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;setup&apos; can be declared as pointer to const</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+         <tr class="variableScope sev_style class_ issue"><td><a href="23.html#line-688">688</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;pixbuf&apos; can be reduced.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+         <tr class="constVariablePointer sev_style class_ issue"><td><a href="23.html#line-848">848</a></td><td>constVariablePointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Variable &apos;locale_scale&apos; can be declared as pointer to const</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="24.html">src/eoc-print-preview.c</a></td></tr>
+         <tr class="unknownMacro sev_error class_ issue"><td><a href="24.html#line-94">94</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="25.html">src/eoc-properties-dialog.c</a></td></tr>
+         <tr class="unusedStructMember sev_style class_ issue"><td><a href="25.html#line-71">71</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>struct member &apos;_EocPropertiesDialogPrivate::general_box&apos; is never used.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+         <tr class="unusedStructMember sev_style class_ issue"><td><a href="25.html#line-97">97</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>struct member &apos;_EocPropertiesDialogPrivate::xmp_box&apos; is never used.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+         <tr class="unusedStructMember sev_style class_ issue"><td><a href="25.html#line-98">98</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>struct member &apos;_EocPropertiesDialogPrivate::xmp_box_label&apos; is never used.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+         <tr class="variableScope sev_style class_ issue"><td><a href="25.html#line-148">148</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;mime_str&apos; can be reduced.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+         <tr class="staticFunction sev_style class_ issue"><td><a href="25.html#line-473">473</a></td><td>staticFunction</td><td></td><td>style</td><td>The function &apos;eoc_properties_dialog_set_netbook_mode&apos; should have static linkage since it is not used outside of its translation unit.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="26.html">src/eoc-scroll-view.c</a></td></tr>
+         <tr class="unknownMacro sev_error class_ issue"><td><a href="26.html#line-170">170</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="27.html">src/eoc-sidebar.c</a></td></tr>
+         <tr class="unknownMacro sev_error class_ issue"><td><a href="27.html#line-68">68</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="28.html">src/eoc-statusbar.c</a></td></tr>
+         <tr class="unknownMacro sev_error class_ issue"><td><a href="28.html#line-39">39</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="37.html">src/eoc-thumb-nav.c</a></td></tr>
+         <tr class="staticFunction sev_style class_ issue"><td><a href="37.html#line-478">478</a></td><td>staticFunction</td><td></td><td>style</td><td>The function &apos;eoc_thumb_nav_get_show_buttons&apos; should have static linkage since it is not used outside of its translation unit.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+         <tr class="staticFunction sev_style class_ issue"><td><a href="37.html#line-494">494</a></td><td>staticFunction</td><td></td><td>style</td><td>The function &apos;eoc_thumb_nav_set_show_buttons&apos; should have static linkage since it is not used outside of its translation unit.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+         <tr class="staticFunction sev_style class_ issue"><td><a href="37.html#line-521">521</a></td><td>staticFunction</td><td></td><td>style</td><td>The function &apos;eoc_thumb_nav_get_mode&apos; should have static linkage since it is not used outside of its translation unit.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="29.html">src/eoc-thumb-view.c</a></td></tr>
+         <tr class="unknownMacro sev_error class_ issue"><td><a href="29.html#line-90">90</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_IMPLEMENT_INTERFACE is a macro then please configure it.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="30.html">src/eoc-thumbnail.c</a></td></tr>
+         <tr class="unknownMacro sev_error class_ issue"><td><a href="30.html#line-164">164</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_FILE_ATTRIBUTE_TIME_MODIFIED is a macro then please configure it.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="31.html">src/eoc-transform.c</a></td></tr>
+         <tr class="unknownMacro sev_error class_ issue"><td><a href="31.html#line-50">50</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="32.html">src/eoc-uri-converter.c</a></td></tr>
+         <tr class="unknownMacro sev_error class_ issue"><td><a href="32.html#line-54">54</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="33.html">src/eoc-util.c</a></td></tr>
+         <tr class="variableScope sev_style class_ issue"><td><a href="33.html#line-87">87</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;valid_bytes&apos; can be reduced.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+         <tr class="variableScope sev_style class_ issue"><td><a href="33.html#line-211">211</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;file&apos; can be reduced.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="34.html">src/eoc-window.c</a></td></tr>
+         <tr class="unreadVariable sev_style class_ issue"><td><a href="34.html#line-575">575</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;show_image_collection&apos; is assigned a value that is never used.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+         <tr class="constParameterCallback sev_style class_ issue"><td><a href="34.html#line-1823">1823</a></td><td>constParameterCallback</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;event&apos; can be declared as pointer to const. However it seems that &apos;fullscreen_motion_notify_cb&apos; is a callback function, if &apos;event&apos; is declared with const you might also need to cast function pointer(s).</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+         <tr class="constVariablePointer sev_style class_ issue"><td><a href="34.html#line-2001">2001</a></td><td>constVariablePointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Variable &apos;priv&apos; can be declared as pointer to const</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+         <tr class="variableScope sev_style class_ issue"><td><a href="34.html#line-2185">2185</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;dialog&apos; can be reduced.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+         <tr class="variableScope sev_style class_ issue"><td><a href="34.html#line-2317">2317</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;priv&apos; can be reduced.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+         <tr class="variableScope sev_style class_ issue"><td><a href="34.html#line-2354">2354</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;dialog&apos; can be reduced.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+         <tr class="constVariablePointer sev_style class_ issue"><td><a href="34.html#line-2407">2407</a></td><td>constVariablePointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Variable &apos;priv&apos; can be declared as pointer to const</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+         <tr class="staticFunction sev_style class_ issue"><td><a href="34.html#line-3084">3084</a></td><td>staticFunction</td><td></td><td>style</td><td>The function &apos;eoc_window_get_properties_dialog&apos; should have static linkage since it is not used outside of its translation unit.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+         <tr class="variableScope sev_style class_ issue"><td><a href="34.html#line-3249">3249</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;file&apos; can be reduced.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+         <tr class="variableScope sev_style class_ issue"><td><a href="34.html#line-3250">3250</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;file_info&apos; can be reduced.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+         <tr class="variableScope sev_style class_ issue"><td><a href="34.html#line-3445">3445</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;response&apos; can be reduced.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+         <tr class="variableScope sev_style class_ issue"><td><a href="34.html#line-4153">4153</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;file_list&apos; can be reduced.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+         <tr class="constVariablePointer sev_style class_ issue"><td><a href="34.html#line-4254">4254</a></td><td>constVariablePointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Variable &apos;priv&apos; can be declared as pointer to const</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+         <tr class="constVariablePointer sev_style class_ issue"><td><a href="34.html#line-4651">4651</a></td><td>constVariablePointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Variable &apos;screen&apos; can be declared as pointer to const</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+         <tr class="unreadVariable sev_style class_ issue"><td><a href="34.html#line-4664">4664</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;screen&apos; is assigned a value that is never used.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+         <tr class="constVariablePointer sev_style class_ issue"><td><a href="34.html#line-4869">4869</a></td><td>constVariablePointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Variable &apos;priv&apos; can be declared as pointer to const</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="38.html">src/zoom.c</a></td></tr>
+         <tr class="staticFunction sev_style class_ issue"><td><a href="38.html#line-42">42</a></td><td>staticFunction</td><td></td><td>style</td><td>The function &apos;zoom_fit_size&apos; should have static linkage since it is not used outside of its translation unit.</td><td>Mon Dec 22 15:20:29 2025</td></tr>
+      </tbody>
+       </table>
+    </div>
+    <div id="footer" class="footer">
+      <p>
+        Created by Cppcheck 2.18.0 (<a href="https://cppcheck.sourceforge.io">Sourceforge</a>, <a href="irc://irc.libera.chat/#cppcheck">IRC</a>)
+      </p>
+    </div>
+    </div>
+  </body>
+</html>
