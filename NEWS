@@ -1,3 +1,10 @@
+### eoc 2.1.0
+
+  * ci: some improvements
+  * Build with a libbean that uses libgirepository-2.0
+  * Require glib 2.85.0
+
+
 ### eoc 2.0.0
 
   * eoc-scroll-view: Fix scrollbars behavior
@@ -7,6 +14,7 @@
   * add G_GNUC_UNUSED in unused parameters
   * eoc-window: parameter user_data without * (Fixes build warnings)
   * update translations
+
 
 ### eoc 1.25.0
 
