@@ -3,67 +3,15 @@
 ##########################################################
 requires:
   debian:
-    # Useful URL: https://github.com/cafe-desktop/debian-packages
-    # cafe B-D: libctk-3-dev libctk-3-doc libbean-dev libcafe-desktop-dev cafe-common
-    - aptitude
-    - autopoint
-    - clang
-    - clang-tools
-    - cppcheck
-    - expect #required for unbuffer
-    - git
-    - gobject-introspection
-    - gtk-doc-tools
-    - libdconf-dev
-    - libexempi-dev
-    - libexif-dev
-    - libgirepository-2.0-dev
-    - libglib2.0-dev
-    - libjpeg-dev
-    - liblcms2-dev
-    - libmagickwand-dev
-    - librsvg2-dev
-    - libstartup-notification0-dev
-    - libxml2-dev
-    - make
-    - shared-mime-info
-    - x11proto-core-dev
-    - yelp-tools
-    - zlib1g-dev
-
-    # required for cafe-common
-    - autoconf
-
-    # required for cafe-desktop
-    - autoconf-archive
-    - intltool
-    - iso-codes
-    - libglib2.0-doc
-    - libtool
-    - libx11-dev
-
-    # required for libbean
-    - gir1.2-girepository-3.0-dev
-    - meson
-    - python-gi-dev
-    - python3-dev
-    - python3-gi
-    - xauth
 
 before_scripts:
-  - ./html-cppcheck
-  - ./debrepo-install 'libctk-3-dev gir1.2-ctk-3.0 libctk-3-common libctk-3-0 libctk-3-doc'
-  - if [ ${DISTRO_VERSION} == "stable" ];then
-  -     ./install-from-git https://gitlab.gnome.org/GNOME/glib 2.85.4 meson '--libdir=/usr/lib/x86_64-linux-gnu --libexecdir=/usr/lib/x86_64-linux-gnu -Dtests=false'
-  - fi
-  - ./install-from-git https://github.com/cafe-desktop/cafe-common master
-  - ./install-from-git https://github.com/cafe-desktop/cafe-desktop master
-  - ./install-from-git https://github.com/cafe-desktop/libbean master meson '--libdir=/usr/lib/x86_64-linux-gnu --libexecdir=/usr/lib/x86_64-linux-gnu'
+  - ./debrepo-install
 
 build_scripts:
   - ./before-build
   - ./make-scanbuild '--enable-compile-warnings=maximum'
   - ./after-build
+  - ./build-debs https://github.com/cafe-desktop/debian-packages devel eoc
 
 after_scripts:
   - if [ -f "gen-index" ]; then ./gen-index -l 20 -i https://github.com/cafe-desktop/eoc/raw/master/data/icons/16x16/apps/eoc.png; fi
