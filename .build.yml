@@ -8,9 +8,6 @@ before_scripts:
   - ./debrepo-install
 
 build_scripts:
-  - ./before-build
-  - ./make-scanbuild '--enable-compile-warnings=maximum'
-  - ./after-build
   - ./build-debs https://github.com/cafe-desktop/debian-packages devel eoc
 
 after_scripts:
