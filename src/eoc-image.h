@@ -30,7 +30,7 @@
 
 #include <glib.h>
 #include <glib-object.h>
-#include <gdk-pixbuf/gdk-pixbuf.h>
+#include <cdk-pixbuf/cdk-pixbuf.h>
 
 #ifdef HAVE_EXIF
 #include <libexif/exif-data.h>

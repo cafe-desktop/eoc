@@ -460,9 +460,9 @@ populate_model (CtkTreeModel *store, GList *imgs)
 		buf = eoc_image_get_thumbnail (img);
 
 		if (buf) {
-			ratio = IMAGE_COLUMN_HEIGHT / (double) gdk_pixbuf_get_height (buf);
-			width = (int) (gdk_pixbuf_get_width (buf) * ratio);
-			buf_scaled = gdk_pixbuf_scale_simple (buf, width, IMAGE_COLUMN_HEIGHT, GDK_INTERP_BILINEAR);
+			ratio = IMAGE_COLUMN_HEIGHT / (double) cdk_pixbuf_get_height (buf);
+			width = (int) (cdk_pixbuf_get_width (buf) * ratio);
+			buf_scaled = cdk_pixbuf_scale_simple (buf, width, IMAGE_COLUMN_HEIGHT, GDK_INTERP_BILINEAR);
 		} else
 			buf_scaled = get_nothumb_pixbuf ();
 
