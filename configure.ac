@@ -88,7 +88,7 @@ GLIB_REQUIRED=2.85.0
 GIO_REQUIRED=2.50.0
 CTK_REQUIRED=3.22.0
 CAFE_DESKTOP_REQUIRED=1.17.0
-GDKPIXBUF_REQUIRED=2.36.5
+CDKPIXBUF_REQUIRED=2.36.5
 SHARED_MIME_INFO_REQUIRED=0.20
 EXEMPI_REQUIRED=1.99.5
 LIBBEAN_REQUIRED=2.0.0
@@ -102,7 +102,7 @@ EOC_MODULES="ctk+-3.0 >= $CTK_REQUIRED \
              gio-unix-2.0 >= $GLIB_REQUIRED \
              gthread-2.0 >= $GLIB_REQUIRED \
              cafe-desktop-2.0 >= $CAFE_DESKTOP_REQUIRED \
-             cdk-pixbuf-2.0 >= $GDKPIXBUF_REQUIRED \
+             cdk-pixbuf-2.0 >= $CDKPIXBUF_REQUIRED \
              gio-2.0 >= $GIO_REQUIRED \
              ctk+-unix-print-3.0 >= $CTK_REQUIRED \
              shared-mime-info >= $SHARED_MIME_INFO_REQUIRED \
@@ -306,11 +306,11 @@ AM_CONDITIONAL(USE_INTERNAL_THUMBNAILER, test x$with_cdk_pixbuf_thumbnailer != x
 
 if test "x$enable_thumbnailer" != "xno"; then
 	if test "x$with_cdk_pixbuf_thumbnailer" = "xyes"; then
-		AC_PATH_PROG([GDK_PIXBUF_THUMBNAILER],[cdk-pixbuf-thumbnailer],[])
-		if test -z "$GDK_PIXBUF_THUMBNAILER"; then
+		AC_PATH_PROG([CDK_PIXBUF_THUMBNAILER],[cdk-pixbuf-thumbnailer],[])
+		if test -z "$CDK_PIXBUF_THUMBNAILER"; then
 			AC_MSG_ERROR([cdk-pixbuf-thumbnailer not found])
 		fi
-		eoc_thumbnailer="$GDK_PIXBUF_THUMBNAILER"
+		eoc_thumbnailer="$CDK_PIXBUF_THUMBNAILER"
 	else
 		PKG_CHECK_MODULES(GLIB, glib-2.0 >= $GLIB_REQUIRED)
 		PKG_CHECK_MODULES(GIO, gio-2.0 >= $GLIB_REQUIRED)
