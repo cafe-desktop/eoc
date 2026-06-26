@@ -51,7 +51,7 @@ struct _EocTransformClass {
 
 GType         eoc_transform_get_type (void) G_GNUC_CONST;
 
-GdkPixbuf*    eoc_transform_apply   (EocTransform *trans, GdkPixbuf *pixbuf, EocJob *job);
+CdkPixbuf*    eoc_transform_apply   (EocTransform *trans, CdkPixbuf *pixbuf, EocJob *job);
 EocTransform* eoc_transform_reverse (EocTransform *trans);
 EocTransform* eoc_transform_compose (EocTransform *trans, EocTransform *compose);
 gboolean      eoc_transform_is_identity (EocTransform *trans);
