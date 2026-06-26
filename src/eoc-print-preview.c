@@ -158,7 +158,7 @@ eoc_print_preview_set_property (GObject      *object,
 		if (priv->image) {
 			g_object_unref (priv->image);
 		}
-		priv->image = GDK_PIXBUF (g_value_dup_object (value));
+		priv->image = CDK_PIXBUF (g_value_dup_object (value));
 
 		if (priv->image_scaled) {
 			g_object_unref (priv->image_scaled);
@@ -478,7 +478,7 @@ eoc_print_preview_new_with_pixbuf (GdkPixbuf *pixbuf)
 {
 	EocPrintPreview *preview;
 
-	g_return_val_if_fail (GDK_IS_PIXBUF (pixbuf), NULL);
+	g_return_val_if_fail (CDK_IS_PIXBUF (pixbuf), NULL);
 
 	preview = EOC_PRINT_PREVIEW (eoc_print_preview_new ());
 
@@ -634,7 +634,7 @@ create_image_scaled (EocPrintPreview *preview)
 			priv->image_scaled = cdk_pixbuf_scale_simple (priv->image,
 								      i_width*scale,
 								      i_height*scale,
-								      GDK_INTERP_TILES);
+								      CDK_INTERP_TILES);
 		} else {
 			priv->image_scaled = priv->image;
 			g_object_ref (priv->image_scaled);
@@ -647,7 +647,7 @@ create_preview_buffer (EocPrintPreview *preview)
 {
 	GdkPixbuf *pixbuf;
 	gint width, height, widget_scale;
-	GdkInterpType type = GDK_INTERP_TILES;
+	GdkInterpType type = CDK_INTERP_TILES;
 
 	if (preview->priv->image == NULL) {
 		return NULL;
@@ -667,9 +667,9 @@ create_preview_buffer (EocPrintPreview *preview)
 	if (width < 1 || height < 1)
 		return NULL;
 
-	/* to use GDK_INTERP_TILES for small pixbufs is expensive and unnecessary */
+	/* to use CDK_INTERP_TILES for small pixbufs is expensive and unnecessary */
 	if (width < 25 || height < 25)
-		type = GDK_INTERP_NEAREST;
+		type = CDK_INTERP_NEAREST;
 
 	if (preview->priv->image_scaled) {
 		pixbuf = cdk_pixbuf_scale_simple (preview->priv->image_scaled,
