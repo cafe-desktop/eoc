@@ -31,7 +31,7 @@
 #include "eoc-thumbnail.h"
 #include "eoc-pixbuf-util.h"
 
-#include <gdk-pixbuf/gdk-pixbuf.h>
+#include <cdk-pixbuf/cdk-pixbuf.h>
 
 #define EOC_JOB_GET_PRIVATE(object) \
 	(G_TYPE_INSTANCE_GET_PRIVATE ((object), EOC_TYPE_JOB, EocJobPrivate))
@@ -252,8 +252,8 @@ eoc_job_thumbnail_run (EocJob *ejob)
 		return;
 	}
 
-	orig_width = g_strdup (gdk_pixbuf_get_option (job->thumbnail, "tEXt::Thumb::Image::Width"));
-	orig_height = g_strdup (gdk_pixbuf_get_option (job->thumbnail, "tEXt::Thumb::Image::Height"));
+	orig_width = g_strdup (cdk_pixbuf_get_option (job->thumbnail, "tEXt::Thumb::Image::Width"));
+	orig_height = g_strdup (cdk_pixbuf_get_option (job->thumbnail, "tEXt::Thumb::Image::Height"));
 
 	pixbuf = eoc_thumbnail_fit_to_size (job->thumbnail, EOC_LIST_STORE_THUMB_SIZE);
 	g_object_unref (job->thumbnail);
