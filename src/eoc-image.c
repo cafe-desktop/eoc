@@ -1134,9 +1134,46 @@ eoc_image_real_load (EocImage *img,
 		}
 
 #ifdef HAVE_RSVG
-                if (use_rsvg) {
-                    priv->image = rsvg_handle_get_pixbuf (priv->svg);
-                } else
+		if (use_rsvg) {
+			GdkPixbuf *gdk_pixbuf = rsvg_handle_get_pixbuf (priv->svg);
+
+			if (gdk_pixbuf != NULL) {
+				int width, height, rowstride, n_channels, bits_per_sample;
+				gboolean has_alpha;
+				guchar *src_pixels;
+
+				g_object_get (gdk_pixbuf,
+					      "width", &width,
+					      "height", &height,
+					      "rowstride", &rowstride,
+					      "n-channels", &n_channels,
+					      "has-alpha", &has_alpha,
+					      "bits-per-sample", &bits_per_sample,
+					      "pixels", &src_pixels,
+					      NULL);
+
+				priv->image = cdk_pixbuf_new (CDK_COLORSPACE_RGB,
+							      has_alpha,
+							      bits_per_sample,
+							      width, height);
+
+				if (priv->image != NULL) {
+					int dest_rowstride = cdk_pixbuf_get_rowstride (priv->image);
+					int bytes_per_row  = width * n_channels;
+					guchar *dest_pixels = cdk_pixbuf_get_pixels (priv->image);
+
+					for (int y = 0; y < height; y++) {
+						memcpy (dest_pixels + y * dest_rowstride,
+							src_pixels + y * rowstride,
+							bytes_per_row);
+					}
+				}
+
+				g_object_unref (gdk_pixbuf);
+			} else {
+				priv->image = NULL;
+			}
+		} else
 #endif
 
                 {
