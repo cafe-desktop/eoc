@@ -95,7 +95,7 @@ struct _EocScrollViewPrivate {
 	EocImage *image;
 	guint image_changed_id;
 	guint frame_changed_id;
-	GdkPixbuf *pixbuf;
+	CdkPixbuf *pixbuf;
 	cairo_surface_t *surface;
 
 	/* scale factor */
@@ -175,7 +175,7 @@ G_DEFINE_TYPE_WITH_PRIVATE (EocScrollView, eoc_scroll_view, CTK_TYPE_GRID)
   ---------------------------------*/
 
 static cairo_surface_t *
-create_surface_from_pixbuf (EocScrollView *view, GdkPixbuf *pixbuf)
+create_surface_from_pixbuf (EocScrollView *view, CdkPixbuf *pixbuf)
 {
 	cairo_surface_t *surface;
 
@@ -1401,7 +1401,7 @@ display_draw (CtkWidget *widget, cairo_t *cr, gpointer data)
 /* Use when the pixbuf in the view is changed, to keep a
    reference to it and create its cairo surface. */
 static void
-update_pixbuf (EocScrollView *view, GdkPixbuf *pixbuf)
+update_pixbuf (EocScrollView *view, CdkPixbuf *pixbuf)
 {
 	EocScrollViewPrivate *priv;
 
@@ -2193,7 +2193,7 @@ view_on_drag_begin_cb (CtkWidget      *widget G_GNUC_UNUSED,
 {
 	EocScrollView *view;
 	EocImage *image;
-	GdkPixbuf *thumbnail;
+	CdkPixbuf *thumbnail;
 	gint width, height;
 
 	view = EOC_SCROLL_VIEW (user_data);

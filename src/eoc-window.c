@@ -755,7 +755,7 @@ image_thumb_changed_cb (EocImage *image, gpointer data)
 {
 	EocWindow *window;
 	EocWindowPrivate *priv;
-	GdkPixbuf *thumb;
+	CdkPixbuf *thumb;
 
 	g_return_if_fail (EOC_IS_WINDOW (data));
 

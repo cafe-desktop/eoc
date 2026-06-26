@@ -139,7 +139,7 @@ struct _EocJobThumbnail
 {
 	EocJob       parent;
 	EocImage    *image;
-	GdkPixbuf   *thumbnail;
+	CdkPixbuf   *thumbnail;
 };
 
 struct _EocJobThumbnailClass
