@@ -1,3 +1,9 @@
+### eoc 2.2.0
+
+  * port from GdkPixbuf to CdkPixbuf
+  * update translations
+
+
 ### eoc 2.1.0
 
   * ci: some improvements
