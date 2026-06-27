@@ -11,9 +11,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: eoc 2.0.0\n"
+"Project-Id-Version: eoc 2.2.0\n"
 "Report-Msgid-Bugs-To: http://www.cafe-desktop.org\n"
-"POT-Creation-Date: 2025-07-18 08:35+0200\n"
+"POT-Creation-Date: 2026-06-27 16:33+0200\n"
 "PO-Revision-Date: 2020-02-14 12:07+0000\n"
 "Last-Translator: Miguel Anxo Bouzada <mbouzada@gmail.com>, 2020\n"
 "Language-Team: Galician (https://www.transifex.com/cafe/teams/13566/gl/)\n"
@@ -757,15 +757,15 @@ msgstr "Fallou a transformación."
 msgid "EXIF not supported for this file format."
 msgstr "EXIF non é compatíbel con este formato de ficheiro."
 
-#: src/eoc-image.c:1205
+#: src/eoc-image.c:1242
 msgid "Image loading failed."
 msgstr "Produciuse un fallo ao cargar a imaxe."
 
-#: src/eoc-image.c:1734 src/eoc-image.c:1836
+#: src/eoc-image.c:1771 src/eoc-image.c:1873
 msgid "No image loaded."
 msgstr "Non se cargou ningunha imaxe."
 
-#: src/eoc-image.c:1744 src/eoc-image.c:1848
+#: src/eoc-image.c:1781 src/eoc-image.c:1885
 msgid "Temporary file creation failed."
 msgstr "Produciuse un fallo ao crear o ficheiro temporal."
 
@@ -1132,7 +1132,7 @@ msgid ""
 "Copyright © 2000-2010 Free Software Foundation, Inc.\n"
 "Copyright © 2011 Perberos\n"
 "Copyright © 2012-2020 MATE developers\n"
-"Copyright © 2023-2025 Pablo Barciela"
+"Copyright © 2023-2026 Pablo Barciela"
 msgstr ""
 
 #: src/eoc-window.c:2614

@@ -8,9 +8,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: eoc 2.0.0\n"
+"Project-Id-Version: eoc 2.2.0\n"
 "Report-Msgid-Bugs-To: http://www.cafe-desktop.org\n"
-"POT-Creation-Date: 2025-07-18 08:35+0200\n"
+"POT-Creation-Date: 2026-06-27 16:33+0200\n"
 "PO-Revision-Date: 2020-02-14 12:07+0000\n"
 "Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2020\n"
 "Language-Team: Georgian (https://www.transifex.com/cafe/teams/13566/ka/)\n"
@@ -701,15 +701,15 @@ msgstr ""
 msgid "EXIF not supported for this file format."
 msgstr "EXIF-ი ვერ კიტხულობს მოცემული ფორმატის ფაილებს."
 
-#: src/eoc-image.c:1205
+#: src/eoc-image.c:1242
 msgid "Image loading failed."
 msgstr ""
 
-#: src/eoc-image.c:1734 src/eoc-image.c:1836
+#: src/eoc-image.c:1771 src/eoc-image.c:1873
 msgid "No image loaded."
 msgstr "გრაფიკული გამოსახულება ჩატვირთული არაა."
 
-#: src/eoc-image.c:1744 src/eoc-image.c:1848
+#: src/eoc-image.c:1781 src/eoc-image.c:1885
 msgid "Temporary file creation failed."
 msgstr "ვერ ვქმნი დროებით ფაილს."
 
@@ -1061,7 +1061,7 @@ msgid ""
 "Copyright © 2000-2010 Free Software Foundation, Inc.\n"
 "Copyright © 2011 Perberos\n"
 "Copyright © 2012-2020 MATE developers\n"
-"Copyright © 2023-2025 Pablo Barciela"
+"Copyright © 2023-2026 Pablo Barciela"
 msgstr ""
 
 #: src/eoc-window.c:2614
