@@ -1,0 +1,6 @@
+eoc-image: cdk_pixbuf_new from gdk_pixbuf
+
+Fixes the warning:
+eoc-image.c:1138:33: error: assignment to 'CdkPixbuf *' {aka 'struct _CdkPixbuf *'} from incompatible pointer type 'GdkPixbuf *' {aka 'struct _GdkPixbuf *'} [-Wincompatible-pointer-types]
+ 1138 |                     priv->image = rsvg_handle_get_pixbuf (priv->svg);
+      |                                 ^
